@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\ViewComposers;
-
 use App\Models\Menu;
 use Illuminate\View\View;
+
+
+//В этом классе будем доставать данные из базы и
+//передавать в соответствующее представление (например, resources/layouts/partials/_nav.blade.php)
 
 class NavigationComposer
 {

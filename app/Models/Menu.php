@@ -14,15 +14,15 @@ class Menu extends Model
         'published'
     ];
 
-    public function parent()
-    {
-        return $this->belongsTo(Menu::class, 'parent_id');
-    }
+    // public function parent()
+    // {
+    //     return $this->belongsTo(Menu::class, 'parent_id');
+    // }
 
-    public function children()
-    {
-        return $this->hasMany(Menu::class, 'parent_id');
-    }
+    // public function children()
+    // {
+    //     return $this->hasMany(Menu::class, 'parent_id');
+    // }
 
     // Локальные области позволяют определять общие наборы ограничений, которые можно легко повторно
     // использовать в своем приложении. Например, вам может потребоваться часто получать всех пользователей,

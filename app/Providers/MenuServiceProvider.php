@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Http\ViewComposers\NavigationComposer;
 use Illuminate\Support\Facades\View;
 use App\Models\Menu;
+use App\Http\ViewComposers\NavigationComposer;
 
 class MenuServiceProvider extends ServiceProvider
 {
@@ -26,11 +26,9 @@ class MenuServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('layouts.partials.nav', function($view) {
-            $view->with('menuitems', Menu::IsPublished()->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get());
-        });
+        view()->composer('layouts.header', NavigationComposer::class);
     }
-
+    }
 
 
 
@@ -39,4 +37,3 @@ class MenuServiceProvider extends ServiceProvider
     //которые вызываются, когда представление отрисовано. Если у вас есть данные, которые вы хотите привязать
     //к представлению при каждой его отрисовке,
     // то построители помогут вам выделить такую логику в отдельном месте.
-}

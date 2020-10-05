@@ -10,41 +10,38 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="left_section">
-
-                        <!-- Time -->
-                        <!-- <div class="social">
-                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                            <!--Twitter-->
-                            <!-- <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                            <!--Google +-->
-                           <!-- <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                            <!--Linkedin-->
-                            <!-- <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
-                            <!--Pinterest-->
-                            <!-- <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a> -->
-                        <!-- </div> -->
-                        <!-- Top Social Section -->
-                        <h5>Фонд поддержки добровольного переселения соотечественников «ОРИЕНТИР» </h5>
-                        <span class="date">
-                                            190068,Санкт-Петербург, пр.
+                                            <span class="date">
+                                                Sunday .
                                             </span>
                         <!-- Date -->
                                             <span class="time">
-                                            Римского-Корсакова,д 39
+                                                09 August . 2016
                                             </span>
-
+                        <!-- Time -->
+                        <div class="social">
+                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+                            <!--Twitter-->
+                            <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+                            <!--Google +-->
+                            <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
+                            <!--Linkedin-->
+                            <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
+                            <!--Pinterest-->
+                            <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
+                        </div>
+                        <!-- Top Social Section -->
                     </div>
                     <!-- Left Header Section -->
                 </div>
                 <div class="col-md-4">
                     <div class="logo">
-                        <a href="/"><img src="assets/images/logo.png" alt="Tech NewsLogo"></a>
+                        <a href="index.html"><img src="assets/images/logo.png" alt="Tech NewsLogo"></a>
                     </div>
                     <!-- Logo Section -->
                 </div>
                 <div class="col-md-4">
                     <div class="right_section">
-                        <!-- <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav">
                             <li><a href="#">Login</a></li>
                             <li><a href="#">Register</a></li>
                             <li class="dropdown lang">
@@ -55,15 +52,9 @@
                                     <li><a href="#">Bn</a></li>
                                 </ul>
                             </li>
-                        </ul> -->
+                        </ul>
                         <!-- Language Section -->
-                       <h3>Запись на прием – ежедневно с 09.00 до 19.00</h3>
-                        <p>Е-mail: inlo@fondorientir.ru</p>
-                        <p>+7(812) 385 -69-89, +7(911)253-85-01</p>
-                        <a href="#"><img src="assets/images/phone.jpg"alt ="backcall"></img>
-                        <p>Заказать обратный звонок</p>
 
-<!--
                         <ul class="nav-cta hidden-xs">
                             <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i
                                     class="fa fa-search"></i></a>
@@ -72,7 +63,7 @@
                                         <div class="head-search">
                                             <form role="form">
                                                 <!-- Input Group -->
-                                                <!-- <div class="input-group">
+                                                <div class="input-group">
                                                     <input type="text" class="form-control"
                                                            placeholder="Type Something"> <span class="input-group-btn">
                                                                             <button type="submit"
@@ -84,7 +75,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul> -->
+                        </ul>
                         <!-- Search Section -->
                     </div>
                     <!-- Right Header Section -->
@@ -105,77 +96,41 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="#navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav">
-
-                        <li><a href="/">Главная</a></li>
-                            <li class="dropdown m-menu-fw"><a href="/about" data-toggle="dropdown" class="dropdown-toggle">О фонде
+                        @php
+                            function buildMenu($menuitems, $level = 0)
+                            {
+                                foreach ($menuitems as $item) {
+                                    if (isset($item->children)) {
+                                       @endphp
+                        <li class="dropdown m-menu-fw"><a href="/reception" data-toggle="dropdown" class="dropdown-toggle">{{ $item->title }}
                                 <span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
+
                                     <li>
                                         <div class="m-menu-content">
-                                                <ul class="col-sm-3">
-                                                <li class="dropdown-header">О Фонде</li>
-                                                <li><a href="#">Ранее реализованные проекты</a></li>
-                                                <li><a href="#">Ранее реализованные проекты</a></li>
-                                                <li><a href="#">Ранее реализованные проекты</a></li>
+                                          <ul class="col-sm-3">
+                                                <li class="dropdown-header">{{ $item->title }}</li>
+                                                <li><a href="#">{{ $item->title }}</a></li>
+
+                                                @php
+                                                buildMenu($item->children, 'subnav-'.$item->id)
+                                                @endphp
+
                                             </ul>
                                             </div>
                                     </li>
                                 </ul>
                         </li>
-
-                        <li class="dropdown m-menu-fw"><a href="/reception" data-toggle="dropdown" class="dropdown-toggle">Интернет-приемная
-                                <span><i class="fa fa-angle-down"></i></span></a>
-                            <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="m-menu-content">
-                            <ul class="col-sm-3">
-                                                <li class="dropdown-header">Интернет-Приемная</li>
-                                                <li><a href="#">Интернет-примная</a></li>
-                                                <li><a href="#">Запись на прием к юристу</a></li>
-                                                <li><a href="#">Справочная информация</a></li>
-                                                <li><a href="#">Брошюры для иммигрантов</a></li>
-                                            </ul>
-                                            </div>
-                                    </li>
-                                </ul>
-                        </li>
-
-                            <li><a href="blog.html">Вопрос-Ответ</a></li>
-
-                            <li class="dropdown m-menu-fw"><a href="/news" data-toggle="dropdown" class="dropdown-toggle">Новости
-                                <span><i class="fa fa-angle-down"></i></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="m-menu-content">
-                                            <ul class="col-sm-3">
-                                                <li class="dropdown-header">Миграционные новости</li>
-                                                <li><a href="#">Вид на жительство</a></li>
-                                                <li><a href="#">Временная регистрация</a></li>
-                                                <li><a href="#">Запрет на выезд</a></li>
-                                                <li><a href="#">Миграционный учет</a></li>
-                                                <li><a href="#">Патент на работу</a></li>
-                                                <li><a href="#">Получение гражданства РФ</a></li>
-                                                <li><a href="#">Приглашение ВКС</a></li>
-                                                <li><a href="#">Разрешение на работу</a></li>
-                                                <li><a href="#">Разрешение на временное проживание(РВП)</a></li>
-                                            </ul>
-                                            <ul class="col-sm-3">
-                                                <li class="dropdown-header">СМИ о нас</li>
-                                                <li><a href="#">Телекомпания СТВ. Сосновый Бор</a></li>
-                                                <li><a href="#">О возвращении соотечественников в Россию 2017!</a></li>
-                                                <li><a href="#">Соотечественники, ВОЗВРАЩАЙТЕСЬ!</a></li>
-                                                <li><a href="#">О возвращении соотечественников в Россию</a></li>
-                                            </ul>
-                                            <ul class="col-sm-3">
-                                                <li class="dropdown-header">Наши новости</li>
-                                                <li><a href="#">Наши новости</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="/contacts">Контакты</a></li>
-                       // </ul -->
+                        @php
+            } else {
+            @endphp
+                        <li><a href="blog.html">{{ $item->title }}</a></li>
+                        @php
+            }
+                                }
+                            }
+    buildMenu($menuitems, 'mainMenu')
+    @endphp
                         </ul>
                     </div>
                     <!-- .navbar-collapse -->

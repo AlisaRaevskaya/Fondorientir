@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Replies extends Model
 {
     use HasFactory;
+    public function comments(){
+        return $this->hasMany('App\Models\Comment')
+    }
 }
