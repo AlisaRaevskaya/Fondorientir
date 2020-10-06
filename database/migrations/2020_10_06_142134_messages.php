@@ -24,7 +24,6 @@ class Messages extends Migration
             $table->string('job')->nullable();
             $table->integer('userid');
             $table->integer('dateline')->default(0);
-            $table->integer('comment_id')->nullable();;
             $table->timestamps();
         });
     }

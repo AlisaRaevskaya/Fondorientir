@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    public function post()
+    public function categories()
     {
         return $this->belongsTo('App\Models\Category');
     }

@@ -25,3 +25,4 @@ Route::get('/reception', [ReceptionController::class, 'index'])->name('reception
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+Route::get('/about/projects', [MainController::class, 'projects'])->name('about.projects');

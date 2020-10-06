@@ -1,9 +1,3 @@
-<!-- •	Логотип (при клике должен вести на главную страницу)
-•	Номера телефонов для разных категорий посетителей, при клике вызывается функция набора номера
-•	Кнопка обратный звонок
-•	Контактная информация -->
-
-
 <section id="header_section_wrapper" class="header_section_wrapper">
     <div class="container">
         <div class="header-section">
@@ -105,20 +99,18 @@
                         <li class="dropdown m-menu-fw"><a href="/reception" data-toggle="dropdown" class="dropdown-toggle">{{ $item->title }}
                                 <span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
-
                                     <li>
                                         <div class="m-menu-content">
                                           <ul class="col-sm-3">
-                                                <li class="dropdown-header">{{ $item->title }}</li>
-                                                <li><a href="#">{{ $item->title }}</a></li>
-
-                                                @php
-                                                buildMenu($item->children, 'subnav-'.$item->id)
-                                                @endphp
-
+                                                <!-- <li class="dropdown-header">{{ $item->title }}</li> -->
+                                                <li><a href="{{route('about.projects', $item->laravel_name)}}">{{ $item->title }}</a></li>
                                             </ul>
+
                                             </div>
                                     </li>
+                                    @php
+                                                buildMenu($item->children, 'subnav-'.$item->id)
+                                                @endphp
                                 </ul>
                         </li>
                         @php

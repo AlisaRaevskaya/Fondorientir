@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
-    use HasFactory;
+    //1:>
+    public function comments(){
+        return $this->HasMany('App\Models\Comment')
+    }
+    //1:1
+    public function replies(){
+        return $this->belongsTo('App\Models\Reply')
+    }
 }
