@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class Topic extends Model
 {
-    public function categories()
-    {
-        return $this->belongsTo('App\Models\Category');
+    public function replies(){
+        return $this->belongsTo('App\Models\Reply')
     }
-
-
 }

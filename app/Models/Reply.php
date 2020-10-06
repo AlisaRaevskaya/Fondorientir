@@ -18,4 +18,7 @@ class Reply extends Model
     public function users(){
         return $this->belongsTo('App\Models\User')
     }
+    public function topics(){
+        return $this->hasOne('App\Models\Topic')
+    }
 }

@@ -17,7 +17,7 @@ class Replies extends Migration
             $table->bigIncrements('id')->unique();
             $table->longtext('body');
             $table->integer('dateline')->default(0);
-            $table->foreignId('messages_id')->default(0);;
+            $table->foreignId('messages_id')->default(0);
             $table->timestamps();
         });
         // Schema::table('replies', function (Blueprint $table){

@@ -96,14 +96,14 @@
                                 foreach ($menuitems as $item) {
                                     if (isset($item->children)) {
                                        @endphp
-                        <li class="dropdown m-menu-fw"><a href="/reception" data-toggle="dropdown" class="dropdown-toggle">{{ $item->title }}
+                        <li class="dropdown m-menu-fw"><a href="/{{$item->url}}" data-toggle="dropdown" class="dropdown-toggle">{{ $item->title }}
                                 <span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
                                     <li>
                                         <div class="m-menu-content">
                                           <ul class="col-sm-3">
                                                 <!-- <li class="dropdown-header">{{ $item->title }}</li> -->
-                                                <li><a href="{{route('about.projects', $item->laravel_name)}}">{{ $item->title }}</a></li>
+                                                <li><a href="/{{$item->url}}">{{ $item->title }}</a></li>
                                             </ul>
 
                                             </div>
@@ -116,7 +116,7 @@
                         @php
             } else {
             @endphp
-                        <li><a href="blog.html">{{ $item->title }}</a></li>
+                        <li><a href="/{{$item->url}}">{{ $item->title }}</a></li>
                         @php
             }
                                 }
