@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Topic extends Model
+class Pages extends Model
 {
-    public function replies(){
-        return $this->belongsTo('App\Models\Reply');
+    public function menus(){
+        return $this->belongsTo('App\Models\Menu');
     }
 }

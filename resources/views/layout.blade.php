@@ -7,24 +7,24 @@
     <title>TechNews - HTML and CSS Template</title>
 
     <!-- favicon -->
-    <link href="assets/img/favicon.png" rel=icon>
+    <link href="/assets/img/favicon.png" rel=icon>
 
     <!-- web-fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font-awesome -->
-    <link href="assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
     <!-- Mobile Menu Style -->
-    <link href="assets/css/mobile-menu.css" rel="stylesheet">
+    <link href="/assets/css/mobile-menu.css" rel="stylesheet">
 
     <!-- Owl carousel -->
-    <link href="assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="/assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet">
     <!-- Theme Style -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,38 +35,30 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
-<div id="main-wrapper">
 
     @include('preloader')
-
-    <div class="uc-mobile-menu-pusher">
-    <div class="content-wrapper">
 
     @include('layouts.header')
 
     @yield('content')
 
     @include('layouts.footer')
-        </div>
-        </div>
-    @include('offcanvas')
 
-</div>
 <!-- #main-wrapper -->
 
 <!-- jquery Core-->
-<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="/assets/js/jquery-2.1.4.min.js"></script>
 
 <!-- Bootstrap -->
 <script src="assets/js/bootstrap.min.js"></script>
 
 <!-- Theme Menu -->
-<script src="assets/js/mobile-menu.js"></script>
+<script src="/assets/js/mobile-menu.js"></script>
 
 <!-- Owl carousel -->
-<script src="assets/js/owl.carousel.min.js"></script>
+<script src="/assets/js/owl.carousel.min.js"></script>
 
 <!-- Theme Script -->
-<script src="assets/js/script.js"></script>
+<script src="/assets/js/script.js"></script>
 </body>
 </html>

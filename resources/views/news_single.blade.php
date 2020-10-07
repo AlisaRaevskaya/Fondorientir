@@ -5,12 +5,13 @@
 <div class="row">
 <div class="col-md-8">
 <div class="entity_wrapper">
+@foreach($news as $item)
     <div class="entity_title">
-        <h1><a href="#">Chevrolet car-saving technology delivers 'superhuman' sight when you need it most</a></h1>
+        <h1><a href="/news/{category}/{id}</a>">{{$item->title}}</a></h1>
     </div>
     <!-- entity_title -->
 
-    <div class="entity_meta"><a href="#" target="_self">10Aug- 2015</a>, by: <a href="#" target="_self">Eric joan</a>
+    <div class="entity_meta"><a href="#" target="_self">{{$item->created_at}}</a>, by: <a href="#" target="_self">Eric joan</a>
     </div>
     <!-- entity_meta -->
 
@@ -607,24 +608,37 @@
 
 </section>
 <!-- Entity Section Wrapper -->
+<!--Readers Comment-->
 
-<section id="subscribe_section" class="subscribe_section">
-    <div class="row">
-        <form action="#" method="post" class="form-horizontal">
-            <div class="form-group form-group-lg">
-                <label class="col-sm-6 control-label" for="formGroupInputLarge">
-                    <h1><span class="red-color">Sign up</span> for the latest news</h1>
-                </label>
+<div class="widget_advertisement">
+    <img class="img-responsive" src="assets/img/category_advertisement.jpg" alt="feature-top">
+</div>
+<!--Advertisement-->
 
-                <div class="col-sm-3">
-                    <input type="text" id="subscribe" name="subscribe" class="form-control input-lg">
-                </div>
-                <div class="col-sm-1">
-                    <input type="submit" value="Sign Up" class="btn btn-large pink">
-                </div>
-                <div class="col-sm-2"></div>
+<div class="entity_comments">
+    <div class="entity_inner__title header_black">
+        <h2>Add a Comment</h2>
+    </div>
+    <!--Entity Title -->
+
+    <div class="entity_comment_from">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputName" placeholder="Name">
             </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+            <div class="form-group comment">
+                <textarea class="form-control" id="inputComment" placeholder="Comment"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit red">Submit</button>
         </form>
     </div>
-</section>
+    <!--Entity Comments From -->
+
+</div>
+<!--Entity Comments -->
+
 @endsection

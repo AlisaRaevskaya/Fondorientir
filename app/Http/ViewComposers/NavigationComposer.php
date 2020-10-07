@@ -2,6 +2,7 @@
 
 namespace App\Http\ViewComposers;
 use App\Models\Menu;
+use App\Models\News;
 use Illuminate\View\View;
 
 
@@ -13,10 +14,11 @@ class NavigationComposer
     public function compose(View $view)
     {
         $menuitems = Menu::IsPublished()->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
+        $newsitems = News::orderBy('dateline', 'desc')->limit(3)->get();
 
         $menuitems = $this->buildTree($menuitems);
 
-        return $view->with('menuitems', $menuitems);
+        return $view->with(compact('menuitems', 'newsitems'));
     }
 
     public function buildTree($items)

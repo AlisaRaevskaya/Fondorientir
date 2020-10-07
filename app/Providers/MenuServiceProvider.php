@@ -26,7 +26,7 @@ class MenuServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('layouts.header', NavigationComposer::class);
+        view()->composer(['layouts.header','layouts.footer'], NavigationComposer::class);
     }
     }
 

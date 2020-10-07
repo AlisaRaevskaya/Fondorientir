@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    $table=""
+    /**
+     * Получить новости к категории.
+     */
     public function news()
     {
         return $this->hasMany('App\Models\News');

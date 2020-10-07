@@ -3,14 +3,15 @@
         <hr class="footer-top">
         <div class="row">
             <div class="col-md-3">
-                <div class="footer_widget_title"><h3><a href="category.html" target="_self">About Tech</a></h3></div>
+                <div class="footer_widget_title"><h3><a href="category.html" target="_self">О Фонде</a></h3></div>
                 <div class="logo footer-logo">
                     <a title="fontanero" href="index.html">
-                        <img src="assets/img/tech_about.jpg" alt="technews">
+                        <img src="/assets/images/logo.png" alt="technews">
                     </a>
 
-                    <p>Competently conceptualize go forward testing procedures and B2B expertise. Phosfluorescently
-                        cultivate principle-centered methods.of empowerment through fully researched.</p>
+                    <p>Фонд поддержки добровольного переселения соотечественников «ОРИЕНТИР»</p>
+                    <p> (ОГРН: 1117800001912, ИНН: 7838030503)</p>
+                    <p> “ORIENTEER" Fund Supporting Voluntary Resettlement of compatriots</p>
                 </div>
             </div>
             <div class="col-md-3">
@@ -18,7 +19,7 @@
                     <h3><a href="category.html" target="_self">Discover</a></h3>
                 </div>
                 <div class="row">
-                    <div class="col-xs-4">
+                    <!-- <div class="col-xs-4">
                         <ul class="list-unstyled left">
                             <li><a href="#">Mobile</a></li>
                             <li><a href="#">Tablet</a></li>
@@ -33,21 +34,14 @@
                             <li><a href="#">Job</a></li>
                             <li><a href="#">SiteMap</a></li>
                         </ul>
-                    </div>
-                    <div class="col-xs-8">
+                    </div> -->
+                    <div class="col-xs-">
                         <ul class="list-unstyled">
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Newsletter Alerts</a></li>
-                            <li><a href="#">Podcast</a></li>
-                            <li><a href="#">Sms Subscription</a></li>
-                            <li><a href="#">Advertisement Policy</a></li>
-                            <li><a href="#">Report Technical issue</a></li>
-                            <li><a href="#">Complaints and Corrections</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                            <li><a href="#">Securedrop</a></li>
-                            <li><a href="#">Archives</a></li>
+                        @foreach($menuitems as $item)
+                            <li><a href="{{$item->laravel_name ? route($item->laravel_name) : $item->url }}">
+                            {{$item->title}}</a></li>
+
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -56,15 +50,18 @@
                 <div class="footer_widget_title">
                     <h3><a href="#" target="_self">Editor Picks</a></h3>
                 </div>
+
                 <div class="media">
-                    <div class="media-left">
+                @foreach($newsitems as $new)
+
+                    <!-- <div class="media-left">
                         <a href="#"><img class="media-object" src="assets/img/editor_pic1.jpg"
                                          alt="Generic placeholder image"></a>
-                    </div>
+                    </div> -->
                     <div class="media-body">
-                        <h3 class="media-heading">
-                            <a href="single.html">Apple launches photo-centric wrist watch for Android</a>
-                        </h3>
+                        <p class="media-heading">
+                            <a href="{{$new->id}}">{{$new->title}}</a>
+                        </p>
                         <span class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -73,42 +70,7 @@
                             <i class="fa fa-star-half-full"></i>
                         </span>
                     </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#"><img class="media-object" src="assets/img/editor_pic2.jpg"
-                                         alt="Generic placeholder image"></a>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">
-                            <a href="single.html">Apple launches photo-centric wrist watch for Android</a>
-                        </h3>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="media">
-                    <div class="media-left">
-                        <a href="#"><img class="media-object" src="assets/img/editor_pic3.jpg"
-                                         alt="Generic placeholder image"></a>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">
-                            <a href="single.html">Apple launches photo-centric wrist watch for Android</a>
-                        </h3>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                        </span>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-3">

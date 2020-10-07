@@ -15,4 +15,7 @@ class Message extends Model
     public function replies(){
         return $this->belongsTo('App\Models\Reply')
     }
+    public function pages(){
+        return $this->hasOne('App\Models\Page)
+    }
 }

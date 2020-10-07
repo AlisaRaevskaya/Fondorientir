@@ -9,16 +9,16 @@ class Reply extends Model
 {
 //>:>
     public function comments(){
-        return $this->belongsToMany('App\Models\Comment')
+        return $this->belongsToMany('App\Models\Comment');
     }
     //1:1
     public function messages(){
-        return $this->hasOne('App\Models\Message')
+        return $this->hasOne('App\Models\Message');
     }
     public function users(){
-        return $this->belongsTo('App\Models\User')
+        return $this->belongsTo('App\Models\User');
     }
     public function topics(){
-        return $this->hasOne('App\Models\Topic')
+        return $this->hasOne('App\Models\Topic');
     }
 }
