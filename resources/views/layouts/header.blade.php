@@ -96,7 +96,9 @@
                                 foreach ($menuitems as $item) {
                                     if (isset($item->children)) {
                                        @endphp
-                        <li class="dropdown m-menu-fw"><a href="{{$item->laravel_name ? route($item->laravel_name) : $item->url }}" data-toggle="dropdown" class="dropdown-toggle">{{ $item->title }}
+                        <li class="dropdown m-menu-fw">
+                        <a href="{{$item->laravel_name ? route($item->laravel_name) : $item->url }}" data-toggle="dropdown"
+                        class="dropdown-toggle">{{ $item->title }}
                                 <span><i class="fa fa-angle-down"></i></span></a>
                             <ul class="dropdown-menu">
                                     <li>

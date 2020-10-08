@@ -3,7 +3,7 @@
         <form action="#" method="post" class="form-horizontal">
             <div class="form-group form-group-lg">
                 <label class="col-sm-6 control-label" for="formGroupInputLarge">
-                    <h1><span class="red-color">Sign up</span> for the latest news</h1>
+                    <h1><span class="red-color">Подписка</span> на наи новости<h1>
                 </label>
 
                 <div class="col-sm-3">
