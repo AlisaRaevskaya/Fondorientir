@@ -22,14 +22,34 @@ class NewsController extends Controller
     return date("Ymd", $date);
     }
 
-    public function showByCategory(){
-        $newsby = Category::find(1)->news;
+    //Schema::table('news', function (Blueprint $table) {
+        // $table->unsignedBigInteger('category_id')->default(1);
+        // $table->foreign('category_id')->references('id')->on('categories');
+    //});
 
-        return view('', compact('newsby','date'));
+    public function showByCategory($category){
+
+        $category = Category::find(1)->where('name', $category)->first();
+        $newsby = $category->news;
+        // $categories = Categorie::where(['published'=> true, 'url' => $category])->firstOrFail();
+
+        // $products = Product::where('categorie_id', $categories->id)->orderBy('sort')->paginate(12);
+
+        // return view('page.catalog.catalog_one', compact('categories','products'));
+
+        // $category = Category::;
+        // $category_id = $category->id;
+
+        // // $posts_collection = $category->news()->get();
+
+        // $newsby = Category::find(1)->news->where('id', $category_id)->get();
+
+        return view('categories', compact('newsby', 'category'));
 
     }
-    public function showById(){
+    public function showById($id){
     //$comments = App\Post::find(1)->comments()->where('title', 'foo')->first();;
+    $category = $this->allnews->find($id);
     }
     public function showBySubCategory(){
 

@@ -18,6 +18,10 @@ class Categories extends Migration
             $table->integer('parent_id')->unsigned()->nullable()->index();
             $table->string('name');
         });
+
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('ru_name');
+        });
     }
 
     /**

@@ -32,12 +32,12 @@ class Contacts extends Migration
             $table->timestamps();
         });
     }
-    Schema::table('contacts', function(Blueprint $table){
-        $table->string('vk')->nullable();
-        $table->string('fb')->nullable();
-        $table->string('fb')->nullable();
-        $table->string('fb')->nullable();
-    });
+    // Schema::table('contacts', function(Blueprint $table){
+    //     $table->string('vk')->nullable();
+    //     $table->string('fb')->nullable();
+    //     $table->string('fb')->nullable();
+    //     $table->string('fb')->nullable();
+    // });
     /**
      * Reverse the migrations.
      *

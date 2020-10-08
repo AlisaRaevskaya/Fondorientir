@@ -36,6 +36,7 @@ Route::get('/about/info', [FeedbackController::class, 'info'])->name('feedback.i
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('feedback.lawyer');
 Route::get('/feedback/brochures', [FeedbackController::class, 'brochures'])->name('feedback.brochures');
 
-Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
-Route::get('/news/{category}/{id}', [NewsController::class, 'showById'])->name('news.category.id');
-Route::get('/news/{category}/{subcategory}', [NewsController::class, 'showBySubCategory'])->name('news.subcategory');
+Route::get('/news/{category?}', [NewsController::class, 'showByCategory'])->name('news.category');
+Route::get('/news/{category?}/{id?}', [NewsController::class, 'showById'])->name('news.category.id');
+Route::get('/news/{category?}/{subcategory?}', [NewsController::class, 'showBySubCategory'])->name('news.subcategory');
+Route::get('/news/{category?}/{subcategory?}/{id?}', [NewsController::class, 'showBySubCategoryId'])->name('news.subcategory.id');

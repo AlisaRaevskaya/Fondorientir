@@ -1,4 +1,3 @@
-<!-- Left Section -->
 @extends('layout')
 
 @section('content')
@@ -7,7 +6,9 @@
 <div class="row">
 <div class="col-md-8">
 <div class="entity_wrapper">
-@foreach($news as $item)
+
+<h1>{{$category->name}}</h1>
+@foreach($newsby as $item)
     <div class="entity_title">
         <h1><a href="#" target="_self">
         {{$item->title}}</a>
@@ -16,7 +17,7 @@
     <!-- entity_title -->
 
     <div class="entity_meta">
-        <a href="#">{{$date}}</a>, by: <a href="#">Eric joan</a>
+        <a href="#">{{$item->dateline}}</a>, by: <a href="#">Eric joan</a>
     </div>
     <!-- entity_meta -->
 

@@ -59,58 +59,12 @@
 	(<a title="Федеральный закон РФ от 2 мая 2006г. № 59-ФЗ 'О порядке рассмотрения
 	обращений граждан Российской Федерации'" href="{{route('feedback.fzakon')}}">Федеральный закон РФ от 2 мая 2006г. № 59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации"</a>)
 </div>
-<form id="feedback_static_form" class="field" style="width: 525px">
 
-	<p>Поля, отмеченные <span class="red">*</span> - обязательны для заполнения.</p>
 
-	<table class="fiedls" style="width:520px;"><tbody>
-		<tr>
-			<td><label>Фамилия</label> <label class="red">*</label></td>
-			<td><input type="text" id="txt-feedback-fam" style="width: 300px" /></td>
-		</tr>
-		<tr>
-			<td><label>Имя</label> <label class="red">*</label></td>
-			<td><input type="text" id="txt-feedback-im" style="width: 300px" /></td>
-		</tr>
-		<tr>
-			<td><label>Отчество</label> <label class="red">*</label></td>
-			<td><input type="text" id="txt-feedback-otch" style="width: 300px" /></td>
-		</tr>
-		<tr>
-			<td><label>Почтовый адрес</label> <label class="red">*</label></td>
-			<td><input type="text" id="txt-feedback-adress" style="width: 300px" /></td>
-		</tr>
-		<tr>
-			<td><label>Место работы или учебы&nbsp;</label></td>
-			<td><input type="text" id="txt-feedback-work" style="width: 300px" /></td>
-		</tr>
-		<tr>
-			<td><label>Контактный телефон</label></td>
-			<td><input type="text" id="txt-feedback-phone" style="width: 300px" /></td>
-		</tr>
-		<tr>
-			<td><label>Электронная почта</label></td>
-			<td><input type="text" id="txt-feedback-email" value="" style="width: 300px" /></td>
-		</tr>
-	</tbody></table>
+@include('blocks.form')
 
-	<label>Ваш вопрос</label> <label class="red">*</label><br />
-	<textarea id="txt-feedback-msg" style="width: 500px; height: 200px"></textarea>
 
-	<p>
-		<label for="txt-feedback-chemail">
-			Я хочу получить ответ по электронной почте <input id="txt-feedback-chemail" type="checkbox" checked="checked" />
-		</label>
-		<br />
-		<label for="txt-feedback-chpub">
-			Я не против, чтобы мой вопрос был опубликован <input id="txt-feedback-chpub" checked="checked" type="checkbox" />
-		</label>
-	</p>
 
-	<div class="buttons center send-button">
-		<input class="btn-send" onclick="feedBackSendMessage(); return false;" type="button" value="Отправить" class="btn" />
-	</div>
-</form>
     </div>
     <!-- entity_content -->
 

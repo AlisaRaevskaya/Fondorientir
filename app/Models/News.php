@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    public function categories()
+/**
+     * Определяем категорию которой принадлежит новость .
+     */
+    public function category()
     {
         return $this->belongsTo('App\Models\Category');
     }

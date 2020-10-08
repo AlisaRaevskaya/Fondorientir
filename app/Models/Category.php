@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     /**
-     * Получить новости к категории.
+     * Получаем новости к категории.
      */
     public function news()
     {
