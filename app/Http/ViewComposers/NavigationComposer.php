@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\ViewComposers;
 use App\Models\Menu;
 use App\Models\News;

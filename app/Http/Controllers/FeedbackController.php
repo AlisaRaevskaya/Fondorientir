@@ -15,7 +15,7 @@ class FeedbackController extends Controller
     }
 
     public function fzakon(){
-        return view('fzakon59-f3');
+        return view('blocks.fzakon59-f3');
     }
 
     public function info(){

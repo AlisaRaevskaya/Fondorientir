@@ -32,7 +32,7 @@ class NewsController extends Controller
         $category = Category::find(1)->where('name', $category)->first();
         $newsby = $category->news;
 
-        return view('newsbycategory', compact('newsby', 'category'));
+        return view('news.newsbycategory', compact('newsby', 'category'));
     }
     public function showById($id){
     //$comments = App\Post::find(1)->comments()->where('title', 'foo')->first();;

@@ -97,23 +97,33 @@
                                     if (isset($item->children)) {
                                        @endphp
                         <li class="dropdown m-menu-fw">
-                        <a href="{{$item->laravel_name ? route($item->laravel_name): $item->url }}" data-toggle="dropdown"
-                        class="dropdown-toggle">{{ $item->title }}
-                                <span><i class="fa fa-angle-down"></i></span></a>
+                        <a href="{{$item->laravel_name ? route($item->laravel_name): $item->url }}"
+                                data-toggle="dropdown"
+                                class="dropdown-toggle">
+                                {{ $item->title }}
+                                <span><i class="fa fa-angle-down"></i></span>
+                        </a>
                             <ul class="dropdown-menu">
                                     <li>
                                         <div class="m-menu-content">
                                           <ul class="col-sm-3">
-                                                <!-- <li class="dropdown-header">{{ $item->title }}</li> -->
-                                                <li><a href="{{$item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $item->title }}</a></li>
-                                            </ul>
 
+                                                    <!-- <a href="{{$item->laravel_name ? route($item->laravel_name) :
+                                                    $item->url }}">{{ $item->title }}
+                                                </a>
+                                                    </li> -->
+
+
+                                                    @php
+                                                    buildMenu($item->children, 'subnav-'.$item->id)
+                                                    @endphp
+                                                    <!-- </ul> -->
+
+                                            </ul>
                                             </div>
                                     </li>
-                                    @php
-                                                buildMenu($item->children, 'subnav-'.$item->id)
-                                                @endphp
-                                </ul>
+
+                        </ul>
                         </li>
                         @php
             } else {

@@ -11,7 +11,8 @@ use App\Models\Topic;
 class MainController extends Controller
 {
     public function index(){
-    $mainContent= Pages::all();
+
+    $mainContent= Pages::where('id','=',1);
 
     $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
     ->select('replies.body','topics.title','replies.dateline','replies.id')->limit(6)->get();
