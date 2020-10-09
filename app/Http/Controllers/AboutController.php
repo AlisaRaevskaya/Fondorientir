@@ -19,7 +19,7 @@ class AboutController extends Controller
     }
 
     public function testmaterial(){
-        return view('testmaterials');
+        return view('testmaterial');
     }
 
     public function reports(){

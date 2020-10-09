@@ -12,9 +12,13 @@ class MainController extends Controller
 {
     public function index(){
     $mainContent= Pages::all();
-    $faq=Reply::find(1)->topics();
-    $news = News::orderBy('dateline', 'desc')->paginate(4);
-    return view('main', compact('mainContent', 'faq', 'news'));
+
+    $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
+    ->select('replies.body','topics.title','replies.dateline','replies.id')->limit(6)->get();
+
+    $news = News::orderBy('dateline', 'desc')->limit(4)->get();
+
+    return view('main', compact('mainContent', 'replies', 'news'));
     }
 
 }

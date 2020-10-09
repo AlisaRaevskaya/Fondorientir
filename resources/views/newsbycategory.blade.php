@@ -1,34 +1,45 @@
 @extends('layout')
+
 @section('content')
+
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
 <div class="col-md-8">
 
-    <h1>Вопрос-ответ</h1>
+<div class="entity_wrapper">
 
-    @foreach($replies as $reply)
-<div class="entity_wrapper ">
+<h1>{{$category->name}}</h1>
+@foreach($newsby as $item)
+@if($item->children)
 
+<div class="entity_footer">
+    <div class="entity_tag">
+            <span class="blank"><a href="#">Миграционные новости</a></span>
+            <span class="blank"><a href="#">СМИ о нас</a></span>
+            <span class="blank"><a href="#">Наши новости</a></span>
+        </div>
+</div>
+@endif
     <div class="entity_title">
-        <h2><a href="/faq/{{$reply->id}}" target="_self">
-           {{$reply->title}}</a>
-        </h2>
+        <h1><a href="#" target="_self">
+        {{$item->title}}</a>
+        </h1>
     </div>
     <!-- entity_title -->
 
     <div class="entity_meta">
-        <a href="#">{{$reply->dateline}}</a>, by: <a href="#">{{$reply->title}}</a>
+        <a href="#">{{$item->dateline}}</a>, by: <a href="#">Eric joan</a>
     </div>
     <!-- entity_meta -->
 
-    <!-- <div class="rating">
+    <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
         <i class="fa fa-star-half-full"></i>
-    </div> -->
+    </div>
     <!-- rating -->
 
     <div class="entity_social">
@@ -47,22 +58,34 @@
         <span class="arrow">&raquo;</span>
     </div>
     <!-- entity_social -->
-    <p><a href="/faq/{{$reply->id}}" target="_self">
-          Подробнее>></a></p>
 
+    <div class="entity_thumb">
+        <img class="img-responsive" src="/assets/img/category_img_top.jpg" alt="feature-top">
+    </div>
+    <!-- entity_thumb -->
+
+    <div class="entity_content">
+        <p>{{$item->title}}</p>
+    </div>
     <!-- entity_content -->
 
+
+
+@endforeach
 </div>
 <!-- entity_wrapper -->
-@endforeach
-<button class="btn blue">Посмотреть все</button>
-
-
-
-<!--  -->
 
 </div>
+<!-- col-md-4 -->
+
 </div>
+<!-- row -->
+
 </div>
+<!-- container -->
+
 </section>
+<!-- entity_section -->
+
 @endsection
+<!-- Popular News -->

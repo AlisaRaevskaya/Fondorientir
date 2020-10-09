@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Topic extends Model
 {
-    public function replies(){
+    public function reply(){
         return $this->belongsTo('App\Models\Reply');
     }
 }

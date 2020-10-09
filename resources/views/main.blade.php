@@ -30,7 +30,7 @@
 
 <div class="related_news">
     <div class="entity_inner__title header_purple">
-        <h2><a href="/faq">Новости</a></h2>
+        <h2><a href="/news">Новости</a></h2>
     </div>
     <!-- entity_title -->
 
@@ -205,7 +205,6 @@
 
     <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&raquo;</a></p>
 </div>
-<!-- Popular News -->
 <div class="widget hidden-xs m30">
     <!-- <img class="img-responsive widget_img" src="assets/img/right_add5.jpg" alt="add_one"> -->
     @include('blocks.checkstatus')
@@ -224,66 +223,21 @@
 
 <div class="widget reviews m30">
     <div class="widget_title widget_black">
-        <h2><a href="#">Вопрос-ответ</a></h2>
+        <h2><a href="{{route('faq')}}">Вопрос-ответ</a></h2>
     </div>
+    @foreach($replies as $reply)
     <div class="media">
-    @foreach($news as $item)
         <div class="media-left">
             <a href="#"><img class="media-object" src="assets/img/pop_right1.jpg" alt="Generic placeholder image"></a>
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="single.html">{{$item->title}}</a>
+                <a href="{{route('faq')}}">{{$reply->title}}</a>
             </h3>
         </div>
-        @endforeach
     </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="assets/img/pop_right2.jpg" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body"><h3 class="media-heading"><a href="single.html" target="_self">Samsung is the best
-            mobile in the android market.</a></h3> <span class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-full"></i>
-            </span></div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="assets/img/pop_right3.jpg" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">Apple launches photo-centric wrist watch for Android</a>
-            </h3>
-            <span class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-full"></i>
-            </span></div>
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="assets/img/pop_right4.jpg" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="single.html" target="_self">Yasaki camera launches new generic hi-speed shutter camera.</a>
-            </h3>
-            <span class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-full"></i>
-            </span></div>
-    </div>
-    <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&raquo;</a></p>
+    @endforeach
+    <p class="widget_divider"><a href="#" target="_self">Все вопросы&nbsp;&raquo;</a></p>
 </div>
 <!-- Reviews News -->
 
@@ -301,10 +255,6 @@
             <h3 class="media-heading">
                 <a href="single.html" target="_self">Отправить сообщение.</a>
             </h3>
-
-            <div class="media_social">
-                <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>
-            </div>
         </div>
     </div>
 
@@ -339,23 +289,6 @@
 </div>
 <!--Advertisement -->
 
-<div class="widget m30">
-    <div class="widget_title widget_black">
-        <h2><a href="#">Readers Corner</a></h2>
-    </div>
-    <div class="widget_body"><img class="img-responsive left" src="assets/img/reader.jpg"
-                                  alt="Generic placeholder image">
-
-        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
-            users after installed base benefits. Dramatically visualize customer directed convergence without</p>
-
-        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C
-            users after installed base benefits. Dramatically visualize customer directed convergence without
-            revolutionary ROI.</p>
-        <button class="btn pink">Read more</button>
-    </div>
-</div>
-<!--  Readers Corner News -->
 
 <div class="widget hidden-xs m30">
     <img class="img-responsive widget_img" src="assets/img/podcast.jpg" alt="add_one">

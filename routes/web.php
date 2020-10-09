@@ -32,7 +32,7 @@ Route::get('/about/partners', [AboutController::class, 'partners'])->name('about
 Route::get('/about/reports', [AboutController::class, 'reports'])->name('about.reports');
 
 Route::get('/feedback/fzakon', [FeedbackController::class, 'fzakon'])->name('feedback.fzakon');
-Route::get('/about/info', [FeedbackController::class, 'info'])->name('feedback.info');
+Route::get('/feedback/info', [FeedbackController::class, 'info'])->name('feedback.info');
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('feedback.lawyer');
 Route::get('/feedback/brochures', [FeedbackController::class, 'brochures'])->name('feedback.brochures');
 
@@ -40,3 +40,5 @@ Route::get('/news/{category?}', [NewsController::class, 'showByCategory'])->name
 Route::get('/news/{category?}/{id?}', [NewsController::class, 'showById'])->name('news.category.id');
 Route::get('/news/{category?}/{subcategory?}', [NewsController::class, 'showBySubCategory'])->name('news.subcategory');
 Route::get('/news/{category?}/{subcategory?}/{id?}', [NewsController::class, 'showBySubCategoryId'])->name('news.subcategory.id');
+
+Route::get('/faq/{id}', [FaqController::class, 'byid'])->name('faq.id');
