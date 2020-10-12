@@ -335,19 +335,7 @@ section {
     width: 90%;
 }
 
-.crunchify-top:hover {
-    background-color: rgb(49, 160, 177);
-    color: #fff;
-}
-.media .avatar {
-    width: 64px;
-}
-.shadow-textarea textarea.form-control::placeholder {
-    font-weight: 300;
-}
-.shadow-textarea textarea.form-control{
-    padding-left: 0.8rem;
-}
+
 
 
 @media screen and (max-width: 768px) {

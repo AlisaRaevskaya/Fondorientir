@@ -42,9 +42,10 @@ Route::get('/feedback/brochures', [FeedbackController::class, 'brochures'])->nam
 Route::get('/news/press-news', [NewsController::class, 'showPressNews'])->name('news.press-news');
 Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
 Route::get('/news/{category}/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')->name('news.category.id');
-Route::get('/news/migration-news/{subcategory}', [NewsController::class, 'showBySubCategory'])->where('subcategory', '[A-Za-z]+')
+Route::get('/news/{category}/{subcategory}', [NewsController::class, 'showBySubCategory'])
+->where('subcategory', '[A-Za-z]+')
 ->name('news.subcategory');
-Route::get('/news/migration-news/{subcategory}/{id}', [NewsController::class, 'showBySubCategoryId'])->
+Route::get('/news/{category}/{subcategory}/{id}', [NewsController::class, 'showBySubCategoryId'])->
 name('news.subcategory.id');
 
 

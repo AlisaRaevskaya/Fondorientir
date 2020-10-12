@@ -10,10 +10,10 @@
         </div>
         <div class="media-body">
         <p>Ваше мнение имеет значение!</p>
-        <p><a href="/feedback/send">Отправьте нам </a>свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.
+        <p><a class="popup_link" href="/feedback/send">Отправьте нам </a>свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.
 	</p>
             <h3 class="media-heading">
-                <a href="/feedback/send" target="_self">Отправить</a>
+                <button class="popup_link">Отправить</button>
             </h3>
         </div>
     </div>

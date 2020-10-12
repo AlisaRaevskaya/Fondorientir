@@ -35,14 +35,14 @@ class NewsController extends Controller
 
     public function showBySubCategory($category, $subcategory){
         $category = Category::find(1)->where('name', $category)->first();
-        $subcategory = Category::find('name')->where('parent_id', 2)->get();
+        $subcategory = Category::where('name', $subcategory)->get();
         $newsby = $subcategory->news;
         return view('news.migration_news', compact('newsby', 'subcategory', 'category'));
     }
 
     public function showBySubCategoryId($subcategory, $id=false){
-        $category= Category::find(1)->where('name', $subcategory)->first();
-        $newsby = $category->news->find($id);
+        $category= Category::find($id)->where('name', $subcategory)->get();
+        $newsby = $category->news->find();
         return view('news.news_single', compact('newsby', 'category'));
     }
 

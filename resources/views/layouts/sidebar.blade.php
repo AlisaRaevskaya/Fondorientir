@@ -2,7 +2,7 @@
 
 <!-- Advertisement -->
 
-
+<section>
 <div class="widget hidden-xs m30">
     <!-- <img class="img-responsive widget_img" src="assets/img/right_add5.jpg" alt="add_one"> -->
     @include('blocks.receipt_block')
@@ -71,8 +71,8 @@
 
 
 <!-- Most Commented News -->
+</section>
 
-
-<div style="width:300pt;padding:10pt;background-color:lightblue;border-radius:5pt" class="hidden">
+<!-- <div class="popup-box">
     @include('blocks.popup');
-</div>
+</div> -->

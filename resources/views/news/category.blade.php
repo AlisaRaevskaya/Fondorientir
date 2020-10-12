@@ -16,7 +16,7 @@
             <div class="col-md-6">
                 <div class="top_article_img">
                     <a href="single.html" target="_self"><img class="img-responsive"
-                                                               src="assets/img/cat-mobi-left-1.jpg" alt="feature-top">
+                    src="/assets/img/cat-mobi-left-1.jpg" alt="feature-top">
                     </a>
                 </div>
                 <!----top_article_img------>

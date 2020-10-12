@@ -58,7 +58,7 @@
 
     <div class="entity_footer">
         <div class="entity_tag">
-            <span class="blank"><a href="#">{{$category->name}}</a></span>
+            <span class="blank"><a href="#">{{$category->ru_name}}</a></span>
             <!-- <span class="blank"><a href="#">$subcategory? $subcategory->name: ''</a></span>-->
 
         </div>

@@ -20,6 +20,7 @@
     <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
     <!-- Mobile Menu Style -->
     <link href="/assets/css/mobile-menu.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
 
     <!-- Owl carousel -->
     <link href="/assets/css/owl.carousel.css" rel="stylesheet">
@@ -40,19 +41,24 @@
     @include('preloader')
 
     @include('layouts.header')
+
 <div class="container">
 <div class="row">
-<section class="col-2"></section>
-    <section class="col-4 float-right">
-    @include('layouts.sidebar')
+    <section class="col-8 left_section">
+        @yield('content')
     </section>
+    <section class="col-4 right_section">
+        @include('layouts.sidebar')
+        </section>
 
-    <section class="col-6">
-    @yield('content')
-    </section>
 </div>
-<div>
+</div>
+
+    <div class="popup-box d-none">
+    @include('blocks.popup')
+</div>
     @include('layouts.footer')
+
 
 <!-- #main-wrapper -->
 
@@ -70,5 +76,7 @@
 
 <!-- Theme Script -->
 <script src="/assets/js/script.js"></script>
+<script src="/assets/js/new.js"></script>
+
 </body>
 </html>

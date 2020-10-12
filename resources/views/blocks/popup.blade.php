@@ -16,15 +16,13 @@
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
 
-  <div class="form-group">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
   <div>
     <label for="exampleInputText">Сообщение:</label>
-    <textarea class="form-control" id="exampleInputText"placeholder="Сообщение:" col=7></textarea>
+    <textarea class="form-control" id="exampleInputText"placeholder="Сообщение:" rows="4" cols='7'></textarea>
 
   </div>
+  <div>
   <button type="submit" class="btn btn-primary">Отправить</button>
-  <a href="">X</a>
+</div>
+  <a href="" class="close">X</a>
 </form>

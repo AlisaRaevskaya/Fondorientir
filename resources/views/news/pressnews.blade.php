@@ -9,7 +9,7 @@
 
 <div class="entity_wrapper">
 
-<h1>{{$category->name}}</h1>
+<h1>{{$category->ru_name}}</h1>
 @foreach($pressnews as $item)
 
     <div class="entity_title">
@@ -20,7 +20,7 @@
     <!-- entity_title -->
 
     <div class="entity_meta">
-        {{$item->dateline}}, by: <a href="#">Eric joan</a>
+        {{$item->dateline}}
     </div>
     <!-- entity_meta -->
 
@@ -51,7 +51,7 @@
     <!-- entity_social -->
 
     <div class="entity_thumb">
-        <img class="img-responsive" src="/assets/img/category_img_top.jpg" alt="feature-top">
+        <img class="img-responsive" src="/assets/images/{{$item->image}}" alt="feature-top">
     </div>
     <!-- entity_thumb -->
 
@@ -75,7 +75,7 @@
 
 </div>
 <!-- row -->
-<h2><a href="{{route('news.category', $chosen_category->name)}}">{{$chosen_category->name}}</a></h2>
+<h2><a href="{{route('news.category', $chosen_category->name)}}">{{$chosen_category->ru_name}}</a></h2>
 
 <div class="col-md-4">
 <div class="widget">
@@ -85,14 +85,15 @@
     </div>
     <div class="media">
         <div class="media-left">
-            <a href="#"><img class="media-object" src="/assets/img/pop_right1.jpg" alt="Generic placeholder image"></a>
+            <a href="#"><img class="media-object" src="/assets/images/{{$choice->image}}" alt="Generic placeholder image"></a>
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="{{route('news.category.id', [$category->name, $choice->id])}}" target="_blank">{{$choice->title}}</a>
+                <a href="{{route('news.category.id', [$category->name, $choice->id])}}" target="_blank">
+                {{$choice->title}}</a>
             </h3>
             <span class="media-date">
-            <a href="#">{{$choice->dateline}}</a>,  by: <a href="#">Eric joan</a></span>
+            <a href="#">{{$choice->dateline}}</a></span>
 
             <div class="widget_article_social">
                 <span>
@@ -108,7 +109,6 @@
 
  <p class="widget_divider"><a href="#" target="_blank">Больше новостей</a></p>
 </div>
-
 
 
 <nav aria-label="Page navigation" class="pagination_section">

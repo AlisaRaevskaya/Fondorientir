@@ -1,0 +1,38 @@
+.crunchify-top:hover {
+    background-color: rgb(49, 160, 177);
+    color: #fff;
+}
+.media .avatar {
+    width: 64px;
+}
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control{
+    padding-left: 0.8rem;
+}
+
+.popup-box{
+    position: absolute;
+    border-radius: 5px;
+    background: #fff;
+    /* display: none; */
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    z-index: 9999999;
+    font-size: 14px;
+    width:300px;
+    padding:10px;
+    background-color:lightblue;
+}
+
+.popup-box .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: #434343;
+    padding: 20px;
+    font-size: 20px;
+}

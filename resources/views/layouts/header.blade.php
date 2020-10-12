@@ -4,14 +4,11 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="left_section">
-                                            <span class="date">
-                                                Sunday .
-                                            </span>
+                    @foreach($contacts as $contact)
+                    <span>{{$contact->name}}</span>
                         <!-- Date -->
-                                            <span class="time">
-                                                09 August . 2016
-                                            </span>
-                        <!-- Time -->
+
+
                         <div class="social">
                             <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                             <!--Twitter-->
@@ -36,16 +33,18 @@
                 <div class="col-md-4">
                     <div class="right_section">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
-                            <li class="dropdown lang">
+                            <li><a href="#">{{$contact->email}}</a></li>
+                            <li><a href="#">{{$contact->phone}}</a></li>
+                            <li><a href="">Часы работы: c 09-00:18-00</a></li>
+                            <!-- <li class="dropdown lang">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">En <i
                                         class="fa fa-angle-down"></i></button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li><a href="#">Bn</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
+                            <li><a href="">Заказать обратный звонок</a></li>
                         </ul>
                         <!-- Language Section -->
 
@@ -76,6 +75,8 @@
                 </div>
             </div>
         </div>
+
+        @endforeach
         <!-- Header Section -->
 <div class="navigation-section">
             <nav class="navbar m-menu navbar-default">
