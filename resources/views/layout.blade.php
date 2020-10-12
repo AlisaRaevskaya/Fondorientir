@@ -35,14 +35,23 @@
     <![endif]-->
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar">
+<body id="page-top" data-spy="scroll" data-target=".navbar container">
 
     @include('preloader')
 
     @include('layouts.header')
+<div class="container">
+<div class="row">
+<section class="col-2"></section>
+    <section class="col-4 float-right">
+    @include('layouts.sidebar')
+    </section>
 
+    <section class="col-6">
     @yield('content')
-
+    </section>
+</div>
+<div>
     @include('layouts.footer')
 
 <!-- #main-wrapper -->

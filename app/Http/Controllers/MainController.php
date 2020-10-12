@@ -12,14 +12,10 @@ class MainController extends Controller
 {
     public function index(){
 
-    $mainContent= Pages::where('id','=',1);
+    $mainContent= Pages::where('laravel_name', 'main')->get();
 
-    $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
-    ->select('replies.body','topics.title','replies.dateline','replies.id')->limit(6)->get();
 
-    $news = News::orderBy('dateline', 'desc')->limit(4)->get();
-
-    return view('main', compact('mainContent', 'replies', 'news'));
+    return view('main', compact('mainContent'));
     }
 
 }

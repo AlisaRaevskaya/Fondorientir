@@ -2,19 +2,23 @@
     <div class="row">
         <form action="#" method="post" class="form-horizontal">
             <div class="form-group form-group-lg">
+
                 <label class="col-sm-6 control-label" for="formGroupInputLarge">
-                    <h1><span class="red-color">Подписка</span> на наи новости<h1>
+                    <h1><span class="red-color">Подписка</span> на наши новости<h1>
                 </label>
 
                 <div class="col-sm-3">
                     <input type="text" id="subscribe" name="subscribe" class="form-control input-lg">
                 </div>
+
                 <div class="col-sm-1">
                     <input type="submit" value="Sign Up" class="btn btn-large pink">
                 </div>
+
                 <div class="col-sm-2"></div>
             </div>
         </form>
     </div>
 </section>
+
 <!-- Subscriber Section -->

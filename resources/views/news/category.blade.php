@@ -1,3 +1,7 @@
+
+
+<!-- "{{ route('admin.news.edit',$news->id) -->
+
 <section id="category_section" class="category_section">
 <div class="container">
 <div class="row">

@@ -26,6 +26,8 @@ Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 
+Route::get('/faq/{id}', [FaqController::class, 'byid'])->name('faq.id');
+
 Route::get('/about/testmaterial',[AboutController::class, 'testmaterial'])->name('about.testmaterial');
 Route::get('/about/projects', [AboutController::class, 'projects'])->name('about.projects');
 Route::get('/about/partners', [AboutController::class, 'partners'])->name('about.partners');
@@ -36,9 +38,20 @@ Route::get('/feedback/info', [FeedbackController::class, 'info'])->name('feedbac
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('feedback.lawyer');
 Route::get('/feedback/brochures', [FeedbackController::class, 'brochures'])->name('feedback.brochures');
 
-Route::get('/news/{category?}', [NewsController::class, 'showByCategory'])->name('news.category');
-Route::get('/news/{category?}/{id?}', [NewsController::class, 'showById'])->name('news.category.id');
-Route::get('/news/{category?}/{subcategory?}', [NewsController::class, 'showBySubCategory'])->name('news.subcategory');
-Route::get('/news/{category?}/{subcategory?}/{id?}', [NewsController::class, 'showBySubCategoryId'])->name('news.subcategory.id');
 
-Route::get('/faq/{id}', [FaqController::class, 'byid'])->name('faq.id');
+Route::get('/news/press-news', [NewsController::class, 'showPressNews'])->name('news.press-news');
+Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
+Route::get('/news/{category}/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')->name('news.category.id');
+Route::get('/news/migration-news/{subcategory}', [NewsController::class, 'showBySubCategory'])->where('subcategory', '[A-Za-z]+')
+->name('news.subcategory');
+Route::get('/news/migration-news/{subcategory}/{id}', [NewsController::class, 'showBySubCategoryId'])->
+name('news.subcategory.id');
+
+
+
+
+
+// Route::get('/post/{post}', function () {
+//     //
+// })->name('post.show');
+// echo route('post.show', ['post' => 1]);

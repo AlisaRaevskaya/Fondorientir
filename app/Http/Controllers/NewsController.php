@@ -8,40 +8,49 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
     public function index(){
-     $news = News::orderBy('dateline', 'desc')->limit(4)->get();
-     $category = Category::find(1)->where('name', $category)->first();
-        // $date=$this->parseUnix($news->dateline);
-        return view('news', compact('news', 'category'));
+
+    $news = News::orderBy('dateline', 'desc')->limit(4)->get();
+    $new = News::find(1)->first();
+    // $cta= Category::find('name')->where('id', $cta_id);
+
+    // $cta_id = News::find('category_id');
+    $category= $new->category;
+    return view('news', compact('news', 'category'));
 
     }
 
-    public function parseUnix($array){
-    foreach($array as $item){
-        $date=$item->dateline;
-    }
-    return date("Ymd", $date);
-    }
-
-    //Schema::table('news', function (Blueprint $table) {
-        // $table->unsignedBigInteger('category_id')->default(1);
-        // $table->foreign('category_id')->references('id')->on('categories');
-    //});
-
-    public function showByCategory($category){
-
+    public function showByCategory($category, $subcategory=false){
         $category = Category::find(1)->where('name', $category)->first();
         $newsby = $category->news;
-
-        return view('news.newsbycategory', compact('newsby', 'category'));
-    }
-    public function showById($id){
-    //$comments = App\Post::find(1)->comments()->where('title', 'foo')->first();;
-    $category = $this->allnews->find($id);
+        $subcategory = Category::where('parent_id', 2)->get();
+        return view('news.newsbycategory', compact('newsby', 'category', 'subcategory'));
     }
 
-    public function showBySubCategory(){
+    public function showByCategoryId($category, $id=false){
 
+        $category = Category::find(1)->where('name', $category)->first();
+        $newsby = $category->news->where('id', $id);
+        return view('news.news_single', compact('newsby', 'category'));
     }
 
+    public function showBySubCategory($category, $subcategory){
+        $category = Category::find(1)->where('name', $category)->first();
+        $subcategory = Category::find('name')->where('parent_id', 2)->get();
+        $newsby = $subcategory->news;
+        return view('news.migration_news', compact('newsby', 'subcategory', 'category'));
+    }
 
+    public function showBySubCategoryId($subcategory, $id=false){
+        $category= Category::find(1)->where('name', $subcategory)->first();
+        $newsby = $category->news->find($id);
+        return view('news.news_single', compact('newsby', 'category'));
+    }
+
+    public function showPressNews(){
+        $category = Category::find(1)->where('name', 'press-news')->first();
+        $pressnews = $category->news;
+        $chosen_category=Category::find(1)->where('name', 'chosen')->first();
+        $chosen = $chosen_category->news;
+    return view('news.pressnews', compact('pressnews', 'category','chosen', 'chosen_category'));
+    }
 }

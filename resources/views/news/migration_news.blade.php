@@ -9,18 +9,27 @@
 
 <div class="entity_wrapper">
 
-<h1>{{$category->name}}</h1>
-@foreach($pressnews as $item)
+<div class="entity_footer">
+    <div class="entity_tag">
+            <span class="blank"><a href="{{route('news.subcategory', [$category->name, $subcategory->name])}}">
+                {{$category->name}}</a></span>
+            <span class="blank"><a href="{{route('news.subcategory', [$category->name, $subcategory->name])}}">
+                {{$subcategory->name}}</a></span>
+        </div>
+</div>
+
+
+@foreach($newsby as $item)
 
     <div class="entity_title">
-        <h1><a href="{{route('news.category.id', [$category->name, $item->id])}}" target="_self">
+        <h1><a href="{{route('news.category.id', [$category->name,$subcategory->name, $item->id])}}" target="_self">
         {{$item->title}}</a>
         </h1>
     </div>
     <!-- entity_title -->
 
     <div class="entity_meta">
-        {{$item->dateline}}, by: <a href="#">Eric joan</a>
+        {{$item->dateline}}
     </div>
     <!-- entity_meta -->
 
@@ -56,16 +65,13 @@
     <!-- entity_thumb -->
 
     <div class="entity_content">
-        <p>{{$item->title}}</p>
+        <p>{{$item->body}}</p>
     </div>
 
-    <div class="entity_content">
-        <p>{{$item->intro}}</p>
-    </div>
-
+<p><a href="Подробнее"></a></p>
 
     <!-- entity_content -->
-<p><a href="{{route('news.category.id', [$category->name, $item->id])}}"> Подробнее>>></a></p>
+
 @endforeach
 </div>
 <!-- entity_wrapper -->
@@ -75,42 +81,12 @@
 
 </div>
 <!-- row -->
-<h2><a href="{{route('news.category', $chosen_category->name)}}">{{$chosen_category->name}}</a></h2>
 
-<div class="col-md-4">
-<div class="widget">
-    <div class="widget_title widget_black">
-@foreach($chosen as $choice)
-
-    </div>
-    <div class="media">
-        <div class="media-left">
-            <a href="#"><img class="media-object" src="/assets/img/pop_right1.jpg" alt="Generic placeholder image"></a>
-        </div>
-        <div class="media-body">
-            <h3 class="media-heading">
-                <a href="{{route('news.category.id', [$category->name, $choice->id])}}" target="_blank">{{$choice->title}}</a>
-            </h3>
-            <span class="media-date">
-            <a href="#">{{$choice->dateline}}</a>,  by: <a href="#">Eric joan</a></span>
-
-            <div class="widget_article_social">
-                <span>
-                    <a href="single.html" target="_blank"> <i class="fa fa-share-alt"></i>424</a> Shares
-                </span>
-                <span>
-                    <a href="single.html" target="_blank"><i class="fa fa-comments-o"></i>4</a> Comments
-                </span>
-            </div>
-@endforeach
-        </div>
-    </div>
-
- <p class="widget_divider"><a href="#" target="_blank">Больше новостей</a></p>
 </div>
+<!-- container -->
 
-
-
+</section>
+<!-- entity_section -->
 <nav aria-label="Page navigation" class="pagination_section">
     <ul class="pagination">
         <li>
@@ -126,13 +102,23 @@
         </li>
     </ul>
 </nav>
-</div>
-<!-- container -->
-<!-- entity_section -->
-
-</section>
-
 @endsection
+<!-- Popular News -->
 
 
+<div class="entity_footer">
+    @foreach($subcategory as $cat)
+        <div class="entity_tag">
+        <span class="blank"><a href="#">{{$cat->name}}</a></span>
+        <span class="blank"><a href="#">{{$category->name}}</a></span>
+        </div>
+        <!-- entity_tag -->
 
+        <div class="entity_social">
+            <span><i class="fa fa-comments-o"></i>4 <a href="#">Comments</a> </span>
+        </div>
+        <!-- entity_social -->
+    @endforeach
+    </div>
+    <!-- entity_footer -->
+    @endsection

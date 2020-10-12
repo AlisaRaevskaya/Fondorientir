@@ -2,25 +2,27 @@
 @extends('layout')
 
 @section('content')
+
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
 <div class="col-md-8">
 <div class="entity_wrapper">
 
-
 @foreach($news as $item)
     <div class="entity_title">
-        <h1><a href="#" target="_self">
+        <h1><a href="{{route('news.category.id', [$category->name, $item->id])}}" target="_self">
         {{$item->title}}</a>
         </h1>
     </div>
     <!-- entity_title -->
 
     <div class="entity_meta">
-        <a href="/news/{{$category}}/{{$item->id}}">{{$item->dateline}}</a>, by: <a href="#">Eric joan</a>
+        <a href="route('news.category.id', $category->name, $item->id)">{{$item->dateline}}
+       </a>
     </div>
     <!-- entity_meta -->
+
 
     <div class="rating">
         <i class="fa fa-star"></i>
@@ -49,13 +51,24 @@
     <!-- entity_social -->
 
     <div class="entity_thumb">
-        <img class="img-responsive" src="assets/img/category_img_top.jpg" alt="feature-top">
+        <img class="img-responsive" src="assets/img/{{$item->image}}" alt="feature-top">
     </div>
     <!-- entity_thumb -->
 
+    <div class="entity_thumb">
+        <img class="img-responsive" src="assets/img/{{$item->image}}" alt="feature-top">
+    </div>
+
+<div class="entity_footer">
+    <div class="entity_tag">
+            <span class="blank"><a href="#">{{$category->name}}</a></span>
+        </div>
+</div>
+
+
     <div class="entity_content">
 
-        <a href="{{route('news.category.id')}}">Подробнее>>></a>,
+        <a href="{{route('news.category.id', [$category->name, $item->id])}}">Подробнее>>></a>,
 
     </div>
     <!-- entity_content -->

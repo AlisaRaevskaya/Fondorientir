@@ -89,7 +89,7 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="#navbar-collapse-1">
-                        <ul class="nav navbar-nav main-nav">
+                        <ul class="nav navbar-nav main-nav container">
                         @php
                             function buildMenu($menuitems, $level = 0)
                             {
@@ -97,7 +97,7 @@
                                     if (isset($item->children)) {
                                        @endphp
                         <li class="dropdown m-menu-fw">
-                        <a href="{{$item->laravel_name ? route($item->laravel_name): $item->url }}"
+                        <a href="{{$item->laravel_name ?route($item->laravel_name): $item->url }}"
                                 data-toggle="dropdown"
                                 class="dropdown-toggle">
                                 {{ $item->title }}
@@ -145,9 +145,8 @@
         </div>
         <!-- .navigation-section -->
 
-
-
     </div>
     <!-- .container -->
 </section>
 <!-- header_section_wrapper -->
+

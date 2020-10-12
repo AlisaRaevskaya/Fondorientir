@@ -7,22 +7,22 @@
 <div class="row">
 <div class="col-md-8">
 
-<div class="entity_wrapper">
-
-<h1>{{$category->name}}</h1>
-@foreach($newsby as $item)
-@if($item->children)
 
 <div class="entity_footer">
-    <div class="entity_tag">
-            <span class="blank"><a href="#">Миграционные новости</a></span>
-            <span class="blank"><a href="#">СМИ о нас</a></span>
-            <span class="blank"><a href="#">Наши новости</a></span>
-        </div>
-</div>
-@endif
+
+<div class="entity_tag">
+<span class="blank"><a href="{{route('news.category', $category->name)}}"></a></span>
+    </div>
+    </div>
+
+
+<div class="entity_wrapper">
+
+@foreach($newsby as $item)
+
     <div class="entity_title">
-        <h1><a href="#" target="_self">
+        <h1><a href="{{route('news.category.id', [$category->name, $item->id])}}"
+            target="_self">
         {{$item->title}}</a>
         </h1>
     </div>
@@ -64,14 +64,19 @@
     </div>
     <!-- entity_thumb -->
 
-    <div class="entity_content">
-        <p>{{$item->title}}</p>
-    </div>
     <!-- entity_content -->
+    <div class="entity_footer">
+    <div class="entity_tag">
+            <span class="blank"><a href="#">{{$category->name}}</a></span>
+        <!-- @If($subcategory)
+        <span class="blank"><a href="#">$subcategory->name</a></span>
+        @endif -->
+        </div>
+</div>
 
-
-
+<p><a href="{{route('news.category.id', [$category->name, $item->id])}}"> Подробнее>>></a></p>
 @endforeach
+
 </div>
 <!-- entity_wrapper -->
 
@@ -80,7 +85,21 @@
 
 </div>
 <!-- row -->
-
+<nav aria-label="Page navigation" class="pagination_section">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next" class="active"> <span aria-hidden="true">&raquo;</span> </a>
+        </li>
+    </ul>
+</nav>
 </div>
 <!-- container -->
 

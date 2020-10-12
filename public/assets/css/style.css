@@ -15,13 +15,13 @@ Author: uiCookies.com
            - date
            - year
         - middle
-       - logo	
+       - logo
         - right
            - share
            - language dropdown
 
 
-           
+
 
     font-family: 'PT Serif', serif;
 
@@ -32,7 +32,7 @@ Author: uiCookies.com
     font-family: 'Limelight', cursive;
 
 
-           
+
 # [Color codes]
 
 # Body  (text): #888
@@ -183,7 +183,7 @@ section {
 }
 .breadcrumb > li + li:before{
     content: "\00BB";
-    font-size: 18px;   
+    font-size: 18px;
 }
 .breadcrumb > .active{
     color: #ccc;
@@ -334,6 +334,21 @@ section {
 .search-menu .input-group .form-control {
     width: 90%;
 }
+
+.crunchify-top:hover {
+    background-color: rgb(49, 160, 177);
+    color: #fff;
+}
+.media .avatar {
+    width: 64px;
+}
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control{
+    padding-left: 0.8rem;
+}
+
 
 @media screen and (max-width: 768px) {
     .header-section {
@@ -713,7 +728,7 @@ section {
     margin-top: 10px;
 }
 .article_wrapper{
-    margin-bottom: 30px;   
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 768px) {
@@ -1599,7 +1614,7 @@ section {
     margin-top: 0;
 }
 .footer-top hr{
-    margin-top: 0px; 
+    margin-top: 0px;
     margin-bottom: 30px;
 }
 
@@ -1735,9 +1750,4 @@ section {
     text-align: center;
     cursor: pointer;
     z-index: 333;
-}
-
-.crunchify-top:hover {
-    background-color: rgb(49, 160, 177);
-    color: #fff;
 }
