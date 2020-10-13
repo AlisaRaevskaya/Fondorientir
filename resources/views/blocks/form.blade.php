@@ -1,23 +1,23 @@
-<form class="form-horizontal">
-<div>Поля отмеченные * обязательны для заполнения</div>
+
+<form class="form-horizontal" action ="submit" method="post">
   <div class="form-group">
-    <label class="control-label col-xs-3" for="lastName">Фамилия:</label>
+    <label class="control-label col-xs-3" for="lastName">Фамилия*:</label>
     <div class="col-xs-9">
-      <input type="text" class="form-control" id="lastName" placeholder="Введите фамилию">
+      <input type="text" required class="form-control" id="lastName"name="lastName"placeholder="Введите фамилию">
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-xs-3" for="firstName">Имя:</label>
+    <label class="control-label col-xs-3" for="firstName">Имя*:</label>
     <div class="col-xs-9">
-      <input type="text" class="form-control" id="firstName" placeholder="Введите имя">
+      <input type="text" required class="form-control" id="firstName" name="firstName" placeholder="Введите имя">
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-xs-3" for="fatherName">Отчество:</label>
+    <label class="control-label col-xs-3" for="fatherName">Отчество*:</label>
     <div class="col-xs-9">
-      <input type="text" class="form-control" id="fatherName" placeholder="Введите отчество">
+      <input type="text" required class="form-control" id="fatherName" name="fatherName" placeholder="Введите отчество">
     </div>
   </div>
 
@@ -25,38 +25,38 @@
   <div class="form-group">
     <label class="control-label col-xs-3" for="address">Почтовый адрес:</label>
     <div class="col-xs-9">
-      <input type="text" class="form-control" id="address" placeholder="Почтовый адрес">
+      <input type="text" required class="form-control" id="address" name="address" placeholder="Почтовый адрес">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-xs-3" for="job">Место работы или учебы :</label>
     <div class="col-xs-9">
-      <input type="password" class="form-control" id="inputPasswordjob" placeholder="Место работы или учебы">
+      <input type="text" required class="form-control" id="inputPasswordjob" name="job" placeholder="Место работы или учебы">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-xs-3" for="phoneNumber">Контактный телефон:</label>
     <div class="col-xs-9">
-      <input type="tel" class="form-control" id="phoneNumber" placeholder="Введите номер телефона">
+      <input type="tel" required class="form-control" id="phoneNumber"name="phoneNumber"  placeholder="Введите номер телефона">
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-xs-3" for="inputEmail">Электронная почта:</label>
+    <label class="control-label col-xs-3" for="inputEmail">Электронная почта*:</label>
     <div class="col-xs-9">
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+      <input type="email" required class="form-control" id="inputEmail" name="email" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-xs-3" for="postalAddress">Ваш вопрос:</label>
+    <label class="control-label col-xs-3" for="yourMessage">Ваш вопрос*:</label>
     <div class="col-xs-9">
-      <textarea rows="9" class="form-control" id="postalAddress" placeholder="Ваш вопрос"></textarea>
+      <textarea rows="9" required class="form-control" id="yourMessage" placeholder="Ваш вопрос"></textarea>
     </div>
   </div>
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
       <label class="checkbox-inline">
-        <input type="checkbox" value="agree" checked> Я хочу получить ответ по электронной почте.
+        <input type="checkbox"required value="agree" checked id="sendbyemail"> Я хочу получить ответ по электронной почте.
       </label>
     </div>
   </div>
@@ -65,14 +65,16 @@
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
       <label class="checkbox-inline">
-        <input type="checkbox" value="agree" checked> Я не против, чтобы мой вопрос был опубликован.
+        <input type="checkbox"required value="agree" checked id="publish"> Я не против, чтобы мой вопрос был опубликован.
       </label>
     </div>
   </div>
   <br />
+
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
-      <input type="submit" class="btn btn-primary" value="Отправить">
+      <input type="submit" class="btn btn-primary btn-messages" value="Отправить">
     </div>
   </div>
+  <div id="success"></div>
 </form>

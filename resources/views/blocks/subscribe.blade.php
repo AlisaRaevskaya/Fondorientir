@@ -1,6 +1,6 @@
 <section id="subscribe_section" class="subscribe_section">
     <div class="row">
-        <form action="#" method="post" class="form-horizontal">
+        <form action="/subscribe" method="post" class="form-horizontal">
 
             <div class="form-group form-group-lg">
 
@@ -9,10 +9,12 @@
                 </label>
 
                 <div class="col-sm-3">
-                    <input type="email" id="subscribe" name="subscribe" class="form-control input-lg" placeholder="Ваш email">
+                    <input type="email" id="subscribe" name="subscribe" class="form-control input-lg"
+                    placeholder="Ваш email">
                 </div>
+                <div id="sub_success"></div>
                 <div class="col-sm-1">
-                    <input type="submit" value="Подписаться" class="btn blue">
+                    <input type="submit" value="Подписаться" class="btn blue subscription_btn">
                 </div>
 
                 <div class="col-sm-2"></div>

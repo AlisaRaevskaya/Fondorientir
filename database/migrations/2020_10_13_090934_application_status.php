@@ -19,6 +19,7 @@ class ApplicationStatus extends Migration
             $table->integer('in_ref');
             $table->date('in_date');
             $table->string('status');
+            $table->timestamps();
         });
     }
 

@@ -1,29 +1,30 @@
 
 <div class="popup-box hidden">
 <h5>Отправить сообщение администрации сайта</h5>
-<form>
+<form action="" method="post" >
 
   <div class="form-group">
     <label for="exampleInputName">Контактное лицо:</label>
-    <input type="text" class="form-control" id="exampleInputName" placeholder="Контактное лицо">
+    <input type="text" class="form-control" id="InputName" placeholder="Контактное лицо" name="name">
   </div>
   <div>
     <label for="exampleInputPhone">Телефон:</label>
-    <input type="text" class="form-control" id="exampleInputPhone" placeholder="Телефон:">
+    <input type="tel" class="form-control" id="InputPhone" placeholder="Телефон:" name="phone">
   </div>
 
 <div>
-    <label for="exampleInputEmail1">E-mail:</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <label for="InputEmail1">E-mail:</label>
+    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+    placeholder="Enter email" name="email">
   </div>
 
   <div>
-    <label for="exampleInputText">Сообщение:</label>
-    <textarea class="form-control" id="exampleInputText"placeholder="Сообщение:" rows="4" cols='7'></textarea>
-
+    <label for="popup_textarea">Сообщение:</label>
+    <textarea class="form-control" id="popup_textarea" placeholder="Сообщение:" rows="4" cols='7'></textarea>
   </div>
+  <div id="w-success"></div>
   <div>
-  <button type="submit" class="btn btn-primary">Отправить</button>
+  <button type="submit" class="btn btn-primary btn-web-feedback">Отправить</button>
 </div>
   <a href="#" class="close">X</a>
 </form>

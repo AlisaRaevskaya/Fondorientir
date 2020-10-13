@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Subscription extends Migration
+class AddAgreeEmailMessages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Subscription extends Migration
      */
     public function up()
     {
-        Schema::create('subscription', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->text('email');
-            $table->timestamps();
+        Schema::table('messages', function (Blueprint $table) {
+            $table->boolean('sendbyemail')->default(false);
+            $table->boolean('publish')->default(false);
         });
     }
 
@@ -27,6 +26,8 @@ class Subscription extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscription');
+        Schema::table('messages', function (Blueprint $table) {
+            $table->dropColumn('sendbyemail','publish');
+        });
     }
 }

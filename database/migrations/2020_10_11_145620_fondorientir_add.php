@@ -14,7 +14,7 @@ class FondorientirAdd extends Migration
     public function up()
     {
         Schema::table('menus', function (Blueprint $table) {
-            $table->string('parameter');
+            $table->boolean('parameter')->default(false);
         });
     }
 
@@ -26,7 +26,7 @@ class FondorientirAdd extends Migration
     public function down()
     {
         Schema::table('menus', function (Blueprint $table) {
-            //
+            $table->dropColumn('parameter');
         });
     }
 }

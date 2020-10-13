@@ -99,17 +99,19 @@
                   </div>
 
                 <div class="row">
-        <form action="#" method="post" class="form-horizontal">
+        <form action="/subscribe" method="post" class="form-horizontal">
 
             <div class="">
                 <label class="" for="formGroupInputLarge">
                     <h3><span class="red-color">Подписка</span> на наши новости<h3>
                 </label>
-                <div class="">
-                    <input type="text" id="subscribe" name="subscribe" class="form-control input-lg">
+                <div>
+                    <input type="email" id="subscribe" name="subscribe" class="form-control input-lg"
+                    placeholder="Ваш email">
                 </div>
+                <div id="sub_success"></div>
                 <div class="">
-                    <input type="submit" value="Sign Up" class="btn btn-large pink">
+                    <input type="submit" value="Подписаться" class="btn btn-large blue subscription_btn">
                 </div>
                 <div class="col-sm-2"></div>
             </div>

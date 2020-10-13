@@ -92,22 +92,24 @@
     <h1>Задать вопрос юристу бесплатно</h1>
     </div>
 
-    <form action="#" method="post"style="padding-left:20px">
+    <form action="/lawyer-question" method="post" style="padding-left:20px">
 
-    <div class="form-group">
-    <input type="email" name="email" placeholder="Ваш email">
-    </div>
     <div class="form-group">
     <input type="text" name="name" placeholder="Контактное лицо">
     </div>
 
-    <div class="form-group shadow-textarea">
-    <label for="exampleFormControlTextarea6"></label>
-    <textarea class="form-control rounded-0" id="exampleFormControlTextarea6"rows="3" cols="5"
-    placeholder="Задайте свой вопрос"></textarea>
+    <div class="form-group">
+    <input type="email" name="email" placeholder="Ваш email">
     </div>
 
-    <input type="submit" class="form-group black" value="Отправить">
+    <div class="form-group shadow-textarea">
+    <label for="formControlTextarea"></label>
+    <textarea class="form-control rounded-0" id="formControlTextarea" rows="3" cols="5"
+    placeholder="Задайте свой вопрос"></textarea>
+    </div>
+    <div id="law_success"></div>
+    <input type="submit" class="form-group black btn-law" value="Отправить">
+
     </form>
 
     </div>
