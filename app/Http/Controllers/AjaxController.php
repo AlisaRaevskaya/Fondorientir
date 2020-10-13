@@ -28,7 +28,7 @@ class AjaxController extends Controller
         #create or update your data here
         $request->input($data);
         return response()->json(['success'=>'Ajax request submitted successfully']);
-
+    }
 
     public function saveWebsiteFeedback(Request $request)
     {

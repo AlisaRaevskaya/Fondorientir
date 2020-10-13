@@ -1,5 +1,6 @@
 
-<form class="form-horizontal" action ="submit" method="post">
+<form class="form-horizontal" action ="/submit" method="post">
+@csrf
   <div class="form-group">
     <label class="control-label col-xs-3" for="lastName">Фамилия*:</label>
     <div class="col-xs-9">

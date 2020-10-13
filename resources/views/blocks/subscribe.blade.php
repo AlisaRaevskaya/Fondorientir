@@ -1,7 +1,7 @@
 <section id="subscribe_section" class="subscribe_section">
     <div class="row">
         <form action="/subscribe" method="post" class="form-horizontal">
-
+        @csrf
             <div class="form-group form-group-lg">
 
                 <label class="col-sm-6 control-label" for="formGroupInputLarge">

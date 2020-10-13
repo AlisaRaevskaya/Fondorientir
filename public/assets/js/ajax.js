@@ -106,13 +106,12 @@ $(".btn-web-feedback").click(function(event){
 $(".btn-law").click(function(event){
     event.preventDefault();
 
- 
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
 
     $.ajax({
       url: "/lawyer-question",
@@ -129,4 +128,31 @@ $(".btn-law").click(function(event){
         }
       },
      });
+
+
+     $(".btn_comment").click(function(event){
+        event.preventDefault();
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+          url: "/commentForm",
+          method:"POST",
+          data:{
+            name:$("input[name=name]").val(),
+            email:$("input[name=email]").val(),
+            message:$('#inputComment').val(),
+          },
+          success:function(response){
+            console.log(response);
+            if(response){
+              $('#com_success').html(response.success);
+            }
+          },
+         });
 

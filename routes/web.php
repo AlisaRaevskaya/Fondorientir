@@ -8,6 +8,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\AjaxController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,8 +54,11 @@ name('news.subcategory.id');
 
 Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
 Route::post('/submit', [AjaxController::class, 'saveMessages']);
+Route::get('/website-feedback', [AjaxController::class, 'saveWebsiteFeedback']);
 Route::post('/website-feedback', [AjaxController::class, 'saveWebsiteFeedback']);
 Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion']);
+Route::post('/commentForm', [AjaxController::class, 'saveLawQuestion']);
+
 // Route::get('/post/{post}', function () {
 //     //
 // })->name('post.show');

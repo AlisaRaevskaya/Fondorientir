@@ -100,17 +100,17 @@
 
                 <div class="row">
         <form action="/subscribe" method="post" class="form-horizontal">
-
-            <div class="">
+        @csrf
+            <div class="form-group ">
                 <label class="" for="formGroupInputLarge">
                     <h3><span class="red-color">Подписка</span> на наши новости<h3>
                 </label>
-                <div>
+                <div class="form-group">
                     <input type="email" id="subscribe" name="subscribe" class="form-control input-lg"
                     placeholder="Ваш email">
                 </div>
                 <div id="sub_success"></div>
-                <div class="">
+                <div class="form-group ">
                     <input type="submit" value="Подписаться" class="btn btn-large blue subscription_btn">
                 </div>
                 <div class="col-sm-2"></div>
@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <p>&copy; Copyright 2016-Tech News . Design by: <a href="https://uicookies.com">uiCookies</a> </p>
+                        <p>&copy;2016 "ОРИЕНТИР"</a> </p>
                     </div>
                     <div class="col-sm-3">
                         <p>Technology News Magazine</p>

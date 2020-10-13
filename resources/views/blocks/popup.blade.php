@@ -1,7 +1,7 @@
 
 <div class="popup-box hidden">
 <h5>Отправить сообщение администрации сайта</h5>
-<form action="" method="post" >
+<form action="/website-feedback" method="post" >
 
   <div class="form-group">
     <label for="exampleInputName">Контактное лицо:</label>
@@ -24,7 +24,7 @@
   </div>
   <div id="w-success"></div>
   <div>
-  <button type="submit" class="btn btn-primary btn-web-feedback">Отправить</button>
+  <input type="submit" class="btn btn-primary btn-web-feedback">Отправить</input>
 </div>
   <a href="#" class="close">X</a>
 </form>

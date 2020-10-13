@@ -53,4 +53,6 @@ class NewsController extends Controller
         $chosen = $chosen_category->news;
     return view('news.pressnews', compact('pressnews', 'category','chosen', 'chosen_category'));
     }
+
+
 }
