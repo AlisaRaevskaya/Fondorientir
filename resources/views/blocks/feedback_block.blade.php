@@ -6,14 +6,14 @@
     </div>
     <div class="media">
         <div class="media-left">
-        <a href="#"><img class="media-object" src="assets/img/pop_right1.jpg" alt="Generic placeholder image">
+        <img class="media-object" src="/assets/images/feed.jpg" alt="Generic placeholder image">
         </div>
         <div class="media-body">
         <p>Ваше мнение имеет значение!</p>
-        <p><a class="popup_link" href="/feedback/send">Отправьте нам </a>свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.
-	</p>
+        <p><a class="popup_link" href="#" style="text-decoration:underline">Отправьте нам</a>
+        свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.</p>
             <h3 class="media-heading">
-                <button class="popup_link">Отправить</button>
+            <a class="popup_link" style="color:blue" href="#">Отправить</a>
             </h3>
         </div>
     </div>

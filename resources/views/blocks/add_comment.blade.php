@@ -16,7 +16,9 @@
             <div class="form-group comment">
                 <textarea class="form-control" id="inputComment" placeholder="Comment"></textarea>
             </div>
-
+            <div class="form-group">
+                <input type="submit" class="form-control" placeholder="Отправить">
+            </div>
         </form>
     </div>
     <!--Entity Comments From -->

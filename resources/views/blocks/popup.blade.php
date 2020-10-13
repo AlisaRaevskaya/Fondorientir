@@ -1,5 +1,6 @@
 
-<h2>Отправить сообщение администрации сайта</h2>
+<div class="popup-box hidden">
+<h5>Отправить сообщение администрации сайта</h5>
 <form>
 
   <div class="form-group">
@@ -24,5 +25,6 @@
   <div>
   <button type="submit" class="btn btn-primary">Отправить</button>
 </div>
-  <a href="" class="close">X</a>
+  <a href="#" class="close">X</a>
 </form>
+</div>

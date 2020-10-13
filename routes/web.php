@@ -7,6 +7,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\StatusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,7 @@ Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+Route::get('/status', [StatusController::class, 'index'])->name('status');
 
 Route::get('/faq/{id}', [FaqController::class, 'byid'])->name('faq.id');
 

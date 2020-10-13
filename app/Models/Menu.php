@@ -44,4 +44,15 @@ class Menu extends Model
         return $query;
     }
 
+    public function createLink($obj){
+    if ($obj->laravel_name){
+            return '$obj->laravel_name';
+        }
+    if ($obj->param){
+        return 'news.subcategory';
+    }else
+    {
+        return '$obj->url';
+    }
+}
 }

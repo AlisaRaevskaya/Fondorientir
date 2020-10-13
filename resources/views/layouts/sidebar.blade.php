@@ -20,7 +20,7 @@
             <h3 class="media-heading">
                 <a href="single.html" target="_self">{{$item->title}}</a>
             </h3>
-            <span class="media-date"><a href="#">{{$item->dateline}}</a>,  by: <a href="#">Eric joan</a></span>
+            <span class="media-date"><a href="#">{{$item->dateline}}</a></span>
 
             <div class="widget_article_social">
                 <span>
@@ -31,11 +31,12 @@
     </div>
     @endforeach
 
-    <p class="widget_divider"><a href="#" target="_self">More News&nbsp;&raquo;</a></p>
+    <p class="widget_divider"><a href="{{route('news')}}" target="_self">Больше новостей>>></a></p>
 </div>
+
 <div class="widget hidden-xs m30">
-    <!-- <img class="img-responsive widget_img" src="assets/img/right_add5.jpg" alt="add_one"> -->
-    @include('blocks.checkstatus')
+<h2>Проверить статус заявления </h2>
+<p style="text-decoration: underline"><a href="{{route('status')}}">Просмотреть статус заявления по входящему номеру</a></p>
 </div>
 <div class="widget hidden-xs m30">
     <!-- <img class="img-responsive widget_img" src="assets/img/right_add5.jpg" alt="add_one"> -->
@@ -65,7 +66,7 @@
         </div>
     </div>
     @endforeach
-    <p class="widget_divider"><a href="#" target="_self">Все вопросы&nbsp;&raquo;</a></p>
+    <p class="widget_divider"><a href="{{route('faq')}}" target="_self">Все вопросы</a></p>
 </div>
 <!-- Reviews News -->
 

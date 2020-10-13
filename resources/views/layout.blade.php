@@ -44,19 +44,19 @@
 
 <div class="container">
 <div class="row">
-    <section class="col-8 left_section">
-        @yield('content')
-    </section>
-    <section class="col-4 right_section">
+<div class="col-3">
         @include('layouts.sidebar')
-        </section>
-
+        </div>
+    <div class="col-6">
+        @yield('content')
+    </div>
 </div>
 </div>
 
-    <div class="popup-box d-none">
+    <div class="">
     @include('blocks.popup')
 </div>
+
     @include('layouts.footer')
 
 
