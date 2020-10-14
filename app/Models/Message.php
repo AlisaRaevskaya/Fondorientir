@@ -7,15 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
-    //1:>
-    public function comments(){
-        return $this->HasMany('App\Models\Comment')
-    }
+
     //1:1
     public function replies(){
-        return $this->belongsTo('App\Models\Reply')
+        return $this->belongsTo('App\Models\Reply');
     }
     public function pages(){
-        return $this->hasOne('App\Models\Page)
+        return $this->hasOne('App\Models\Page');
     }
 }

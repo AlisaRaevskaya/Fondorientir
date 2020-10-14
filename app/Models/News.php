@@ -16,12 +16,10 @@ class News extends Model
         return $this->belongsTo('App\Models\Category');
     }
 
-    public function getDateAttribute()
+    public function getDateAttribute($value)
     {
-        $date = Carbon::createFromTimestamp($this->dateline)->format('m/d/Y');
-
+        $date = Carbon::createFromTimestamp($value)->toDateTimeString();
         return $date;
     }
-
 
 }

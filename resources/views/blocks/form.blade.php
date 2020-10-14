@@ -4,21 +4,24 @@
   <div class="form-group">
     <label class="control-label col-xs-3" for="lastName">Фамилия*:</label>
     <div class="col-xs-9">
-      <input type="text" required class="form-control" id="lastName"name="lastName"placeholder="Введите фамилию">
+      <input type="text" required class="form-control"
+      id="lastName"name="lastName" placeholder="Введите фамилию">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-xs-3" for="firstName">Имя*:</label>
     <div class="col-xs-9">
-      <input type="text" required class="form-control" id="firstName" name="firstName" placeholder="Введите имя">
+      <input type="text" required class="form-control"
+      id="firstName" name="firstName" placeholder="Введите имя">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-xs-3" for="fatherName">Отчество*:</label>
     <div class="col-xs-9">
-      <input type="text" required class="form-control" id="fatherName" name="fatherName" placeholder="Введите отчество">
+      <input type="text" required class="form-control" id="fatherName"
+      name="fatherName" placeholder="Введите отчество">
     </div>
   </div>
 
@@ -39,7 +42,7 @@
   <div class="form-group">
     <label class="control-label col-xs-3" for="phoneNumber">Контактный телефон:</label>
     <div class="col-xs-9">
-      <input type="tel" required class="form-control" id="phoneNumber"name="phoneNumber"  placeholder="Введите номер телефона">
+      <input type="tel" required class="form-control" id="phoneNumber"name="phone"  placeholder="Введите номер телефона">
     </div>
   </div>
   <div class="form-group">
@@ -51,22 +54,23 @@
   <div class="form-group">
     <label class="control-label col-xs-3" for="yourMessage">Ваш вопрос*:</label>
     <div class="col-xs-9">
-      <textarea rows="9" required class="form-control" id="yourMessage" placeholder="Ваш вопрос"></textarea>
+      <textarea rows="9" required class="form-control" id="yourMessage"
+      name="message" placeholder="Ваш вопрос"></textarea>
     </div>
   </div>
+
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
       <label class="checkbox-inline">
-        <input type="checkbox"required value="agree" checked id="sendbyemail"> Я хочу получить ответ по электронной почте.
+        <input type="checkbox" checked name="sendbyemail"> Я хочу получить ответ по электронной почте.
       </label>
     </div>
   </div>
 
-
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
       <label class="checkbox-inline">
-        <input type="checkbox"required value="agree" checked id="publish"> Я не против, чтобы мой вопрос был опубликован.
+        <input type="checkbox" checked name="publish">Я не против, чтобы мой вопрос был опубликован.
       </label>
     </div>
   </div>
@@ -77,5 +81,7 @@
       <input type="submit" class="btn btn-primary btn-messages" value="Отправить">
     </div>
   </div>
+
   <div id="success"></div>
+
 </form>

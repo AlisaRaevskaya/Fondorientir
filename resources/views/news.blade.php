@@ -18,20 +18,9 @@
     <!-- entity_title -->
 
     <div class="entity_meta">
-        <a href="route('news.category.id', $category->name, $item->id)">{{$item->dateline}}
-       </a>
+        <p>{{$item->dateline}}</p>
     </div>
     <!-- entity_meta -->
-
-
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-full"></i>
-    </div>
-    <!-- rating -->
 
     <div class="entity_social">
         <a href="#" class="icons-sm sh-ic"><i class="fa fa-share-alt"></i><b>424</b>
@@ -51,28 +40,42 @@
     <!-- entity_social -->
 
     <div class="entity_thumb">
-        <img class="img-responsive" src="assets/img/{{$item->image}}" alt="feature-top">
+        <img class="img-responsive" src="/assets/img/{{$item->image}}" alt="feature-top">
     </div>
     <!-- entity_thumb -->
 
-    <div class="entity_thumb">
-        <img class="img-responsive" src="assets/img/{{$item->image}}" alt="feature-top">
-    </div>
-
 <div class="entity_footer">
     <div class="entity_tag">
-            <span class="blank"><a href="#">{{$category->ru_name}}</a></span>
+            <span class="blank">{{$category->ru_name}}</span>
         </div>
+        <div class="entity_tag">
+        <span class="blank"><a href="{{route('news.category.id', [$category->name, $item->id])}}">
+        Подробнее>>></a></span>
+</div>
 </div>
 
 
-    <div class="entity_content">
-
-        <a href="{{route('news.category.id', [$category->name, $item->id])}}">Подробнее>>></a>,
+<div class="entity_footer">
 
     </div>
     <!-- entity_content -->
+
 @endforeach
+<nav aria-label="Page navigation" class="pagination_section">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next" class="active"> <span aria-hidden="true">&raquo;</span> </a>
+        </li>
+    </ul>
+</nav>
 </div>
 <!-- entity_wrapper -->
 
@@ -90,21 +93,7 @@
 </section>
 <!-- entity_section -->
 
-<nav aria-label="Page navigation" class="pagination_section">
-    <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next" class="active"> <span aria-hidden="true">&raquo;</span> </a>
-        </li>
-    </ul>
-</nav>
+
 
 @endsection
 <!-- Popular News -->

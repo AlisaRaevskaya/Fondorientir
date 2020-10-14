@@ -1,5 +1,6 @@
-
 //feedback-messages
+
+
 $(".btn-messages").click(function(event){
     event.preventDefault();
 
@@ -12,25 +13,27 @@ $(".btn-messages").click(function(event){
 
     //$("input[name=fatherName]").val()//lastName
 
-    let $firstname = $('input[name="firstname"]').val() ;
-    let  $lastname = $('input[name="lastname"]').val() ;
-    let $fathername = $('input[name="fathername"]').val();
-    let $fullname= $firstname + ' ' + $lastname + ' ' + $fathername;
+    let $firstname = $('input[name="firstName"]').val() ;
+    let $lastname = $('input[name="lastName"]').val() ;
+    let $fathername = $('input[name="fatherName"]').val();
 
+    let $fullname= $lastname + ' ' + $firstname + ' ' + $fathername;
 
 
     $.ajax({
       url: "/submit",
       method:"POST",
       data:{
-        name:$fullname,
+        firstname = $('input[name="firstName"]').val(),
+        lastname = $('input[name="lastName"]').val(),
+        fathername = $('input[name="fatherName"]').val(),
         email:$("input[name=email]").val(),
         job:$("input[name=job]").val(),
         phone:$("input[name=phone]").val(),
         address:$("input[name=address]").val(),
         message:$('#yourMessage').val(),
-        sendbyemail:$('#sendbyemail').val(),
-        publish:$('#publish').val(),
+        sendbyemail:$("input[name=sendbyemail]").is(":checked") ? 1 : 0,
+        publish:$("input[name=publish]").is(":checked") ? 1 : 0,
         // token:$('meta[name="csrf-token"]').attr('content')
       },
       success:function(response){
@@ -64,7 +67,7 @@ $(".subscription_btn").click(function(event){
       success:function(response){
         console.log(response);
         if(response){
-          $('#sub_success').html(response.success);
+          $('#sub_success').html(JSON.parse(response.success));
         }
       },
      });
@@ -90,7 +93,7 @@ $(".btn-web-feedback").click(function(event){
         name:$("input[name=name]").val(),
         email:$("input[name=email]").val(),
         phone:$("input[name=phone]").val(),
-        message:$('#popup_textarea').val(),
+        message:$('textarea[name="message"]').val(),
       },
       success:function(response){
         console.log(response);
@@ -146,7 +149,7 @@ $(".btn-law").click(function(event){
           data:{
             name:$("input[name=name]").val(),
             email:$("input[name=email]").val(),
-            message:$('#inputComment').val(),
+            body:$('#inputComment').val(),
           },
           success:function(response){
             console.log(response);
@@ -155,4 +158,5 @@ $(".btn-law").click(function(event){
             }
           },
          });
+
 

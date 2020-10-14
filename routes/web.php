@@ -44,7 +44,8 @@ Route::get('/feedback/brochures', [FeedbackController::class, 'brochures'])->nam
 
 Route::get('/news/press-news', [NewsController::class, 'showPressNews'])->name('news.press-news');
 Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
-Route::get('/news/{category}/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')->name('news.category.id');
+Route::get('/news/{category}/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')
+->name('news.category.id');
 Route::get('/news/{category}/{subcategory}', [NewsController::class, 'showBySubCategory'])
 ->where('subcategory', '[A-Za-z]+')
 ->name('news.subcategory');
@@ -54,10 +55,9 @@ name('news.subcategory.id');
 
 Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
 Route::post('/submit', [AjaxController::class, 'saveMessages']);
-Route::get('/website-feedback', [AjaxController::class, 'saveWebsiteFeedback']);
 Route::post('/website-feedback', [AjaxController::class, 'saveWebsiteFeedback']);
 Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion']);
-Route::post('/commentForm', [AjaxController::class, 'saveLawQuestion']);
+Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 // Route::get('/post/{post}', function () {
 //     //

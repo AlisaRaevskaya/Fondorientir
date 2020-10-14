@@ -1,7 +1,7 @@
 
 <div class="entity_comments">
-    <div class="entity_inner__title header_black">
-        <h2>Add a Comment</h2>
+    <div class="entity_inner__title">
+        <h2>Добавить комментарий</h2>
     </div>
     <!--Entity Title -->
 

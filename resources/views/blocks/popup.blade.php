@@ -1,13 +1,14 @@
 
 <div class="popup-box hidden">
 <h5>Отправить сообщение администрации сайта</h5>
-<form action="/website-feedback" method="post" >
-
+<form action="/website-feedback" method="POST" >
+@csrf
   <div class="form-group">
     <label for="exampleInputName">Контактное лицо:</label>
     <input type="text" class="form-control" id="InputName" placeholder="Контактное лицо" name="name">
   </div>
   <div>
+
     <label for="exampleInputPhone">Телефон:</label>
     <input type="tel" class="form-control" id="InputPhone" placeholder="Телефон:" name="phone">
   </div>
@@ -20,12 +21,15 @@
 
   <div>
     <label for="popup_textarea">Сообщение:</label>
-    <textarea class="form-control" id="popup_textarea" placeholder="Сообщение:" rows="4" cols='7'></textarea>
+    <textarea class="form-control" id="popup_textarea" name="message" placeholder="Сообщение:" rows="4" cols='7'></textarea>
   </div>
+
   <div id="w-success"></div>
+
   <div>
   <input type="submit" class="btn btn-primary btn-web-feedback">Отправить</input>
 </div>
+
   <a href="#" class="close">X</a>
 </form>
 </div>

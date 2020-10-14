@@ -63,9 +63,12 @@
         <p>{{$item->intro}}</p>
     </div>
 
+    <div class="entity_footer">
+    <div class="entity_tag">
+<span class="blank"><a href="{{route('news.category.id', [$category->name, $item->id])}}"> Подробнее>>></a></span>
+</div>
+</div>
 
-    <!-- entity_content -->
-<p><a href="{{route('news.category.id', [$category->name, $item->id])}}"> Подробнее>>></a></p>
 @endforeach
 </div>
 <!-- entity_wrapper -->
@@ -85,7 +88,6 @@
     </div>
     <div class="media">
         <div class="media-left">
-            <a href="#"><img class="media-object" src="/assets/images/{{$choice->image}}" alt="Generic placeholder image"></a>
         </div>
         <div class="media-body">
             <h3 class="media-heading">

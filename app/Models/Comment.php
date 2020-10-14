@@ -11,8 +11,8 @@ class Comment extends Model
     // protected $fillable = ['name', 'description'];
 
 //1:1
-    public function messages(){
-        return $this->belongsTo('App\Models\Message')
+    public function topic(){
+        return $this->belongsTo('App\Models\Message');
     }
    // >:>
     public function replies()

@@ -16,10 +16,11 @@
     position: absolute;
     border-radius: 5px;
     background: #fff;
-    /* display: none; */
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
     z-index: 9999999;
     font-size: 14px;
+    top:50%;
+    left:50%;
     width:300px;
     padding:10px;
     background-color:lightblue;

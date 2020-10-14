@@ -1,19 +1,21 @@
-<div>
-    <div class="media mt-3 shadow-textarea blue">
 
-    <div class="row" style="padding-left:20pt">
+    <div class="shadow-textarea blue">
+
+    <div class="row" style="padding:5pt 20pt">
+    <h1>
     <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="/assets/images/avatar-5.jpg"alt="Avatar">
-    <h1>Задать вопрос юристу бесплатно</h1>
+    Задать вопрос юристу бесплатно</h1>
     </div>
 
-    <form action="/lawyer-question" method="POST" style="padding-left:20px">
+    <form action="/lawyer-question" method="POST" style="padding:5px 10px">
     @csrf
+
     <div class="form-group">
-    <input type="text" name="name" placeholder="Контактное лицо">
+    <input type="text" class="form-control" name="name" placeholder="Контактное лицо">
     </div>
 
     <div class="form-group">
-    <input type="email" name="email" placeholder="Ваш email">
+    <input type="email"class="form-control" name="email" placeholder="Ваш email">
     </div>
 
     <div class="form-group shadow-textarea">
@@ -28,6 +30,6 @@
     </form>
 
     </div>
-  </div>
+
 
 

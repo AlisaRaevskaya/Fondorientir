@@ -12,8 +12,10 @@
                     <input type="email" id="subscribe" name="subscribe" class="form-control input-lg"
                     placeholder="Ваш email">
                 </div>
-                <div id="sub_success"></div>
+
+                <p id="sub_success"></p>
                 <div class="col-sm-1">
+
                     <input type="submit" value="Подписаться" class="btn blue subscription_btn">
                 </div>
 

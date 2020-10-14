@@ -81,8 +81,6 @@
 </div>
 <!--Advertisement-->
 
-
-@include('blocks.add_comment')
 @include('blocks.lawyer_form')
 
 

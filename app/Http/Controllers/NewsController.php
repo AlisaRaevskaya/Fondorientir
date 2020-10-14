@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
@@ -11,13 +12,11 @@ class NewsController extends Controller
 
     $news = News::orderBy('dateline', 'desc')->limit(4)->get();
     $new = News::find(1)->first();
-    // $cta= Category::find('name')->where('id', $cta_id);
-
-    // $cta_id = News::find('category_id');
     $category= $new->category;
     return view('news', compact('news', 'category'));
 
     }
+
 
     public function showByCategory($category, $subcategory=false){
         $category = Category::find(1)->where('name', $category)->first();

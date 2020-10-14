@@ -37,26 +37,29 @@
     <![endif]-->
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar container">
+<body id="page-top" data-spy="scroll" class="container" data-target=".navbar">
 
     @include('preloader')
 
     @include('layouts.header')
+<div class="container">
+    @include('blocks.popup')
+</div>
 
 <div class="container">
 <div class="row">
-<div class="col-3">
+<div class="col-4">
         @include('layouts.sidebar')
         </div>
-    <div class="col-6">
+
+    <div class="col-8">
         @yield('content')
     </div>
 </div>
 </div>
 
-    <div class="">
-    @include('blocks.popup')
-</div>
+
+
 
     @include('layouts.footer')
 
