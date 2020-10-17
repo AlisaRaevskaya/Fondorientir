@@ -29,6 +29,7 @@
     <!-- Theme Style -->
     <link href="/assets/css/style.css" rel="stylesheet">
 
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -81,6 +82,6 @@
 <!-- Theme Script -->
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/new.js"></script>
-
+<script src="/assets/js/ajax.js"></script>
 </body>
 </html>

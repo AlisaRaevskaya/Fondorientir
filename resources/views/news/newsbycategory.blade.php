@@ -8,12 +8,8 @@
 <div class="col-md-8">
 
 
-<div class="entity_footer">
+<h1 style="text-decoration:underline">{{$category->ru_name}}</h1>
 
-<div class="entity_tag">
-<span class="blank"><a href="{{route('news.category', $category->name)}}"></a></span>
-    </div>
-    </div>
 
 
 <div class="entity_wrapper">
@@ -29,18 +25,10 @@
     <!-- entity_title -->
 
     <div class="entity_meta">
-        <a href="#">{{$item->dateline}}</a>, by: <a href="#">Eric joan</a>
+        <a href="#">{{$item->dateline}}</a>
     </div>
     <!-- entity_meta -->
 
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-full"></i>
-    </div>
-    <!-- rating -->
 
     <div class="entity_social">
         <a href="#" class="icons-sm sh-ic"><i class="fa fa-share-alt"></i><b>424</b>
@@ -67,14 +55,15 @@
     <!-- entity_content -->
     <div class="entity_footer">
     <div class="entity_tag">
-            <span class="blank"><a href="#">{{$category->name}}</a></span>
+            <span class="blank">{{$category->ru_name}}</span>
         <!-- @If($subcategory)
         <span class="blank"><a href="#">$subcategory->name</a></span>
         @endif -->
         </div>
 </div>
 
-<p><a href="{{route('news.category.id', [$category->name, $item->id])}}"> Подробнее>>></a></p>
+<h3><a href="{{route('news.category.id', [$category->name, $item->id])}}"> Подробнее>>></a></h3>
+
 @endforeach
 
 </div>
@@ -87,17 +76,7 @@
 <!-- row -->
 <nav aria-label="Page navigation" class="pagination_section">
     <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next" class="active"> <span aria-hidden="true">&raquo;</span> </a>
-        </li>
+        <li>{{$newsby->links()}}</li>
     </ul>
 </nav>
 </div>

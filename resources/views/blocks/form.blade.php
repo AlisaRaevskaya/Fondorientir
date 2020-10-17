@@ -78,7 +78,7 @@
 
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
-      <input type="submit" class="btn btn-primary btn-messages" value="Отправить">
+      <input type="submit" class="btn btn-primary" id="btn-messages"value="Отправить">
     </div>
   </div>
 

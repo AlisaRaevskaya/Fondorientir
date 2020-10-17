@@ -10,17 +10,16 @@ class NewsController extends Controller
 {
     public function index(){
 
-    $news = News::orderBy('dateline', 'desc')->limit(4)->get();
+    $news = News::orderBy('dateline', 'desc')->paginate(4);
     $new = News::find(1)->first();
     $category= $new->category;
     return view('news', compact('news', 'category'));
 
     }
 
-
     public function showByCategory($category, $subcategory=false){
         $category = Category::find(1)->where('name', $category)->first();
-        $newsby = $category->news;
+        $newsby = $category->news()->paginate(5);
         $subcategory = Category::where('parent_id', 2)->get();
         return view('news.newsbycategory', compact('newsby', 'category', 'subcategory'));
     }
@@ -47,7 +46,7 @@ class NewsController extends Controller
 
     public function showPressNews(){
         $category = Category::find(1)->where('name', 'press-news')->first();
-        $pressnews = $category->news;
+        $pressnews = $category->news()->paginate(5);
         $chosen_category=Category::find(1)->where('name', 'chosen')->first();
         $chosen = $chosen_category->news;
     return view('news.pressnews', compact('pressnews', 'category','chosen', 'chosen_category'));

@@ -5,31 +5,34 @@
 <div class="row">
 <div class="col-md-8">
 
-    <h1>Вопрос-ответ</h1>
+  <div class="row justify-content-center">
+  <h1 style="text-decoration:underline">Вопрос-ответ</h1>
+  </div>
 
-    @foreach($replies as $reply)
-<div class="entity_wrapper ">
+@foreach($replies as $reply)
+<div class="entity_wrapper">
 
     <div class="entity_title">
-        <h2><a href="/faq/{{$reply->id}}" target="_self">
+        <h2 style="text-decoration:underline" >
+        <a href="{{route('faq.id', $reply->id)}}" target="_self">
            {{$reply->title}}</a>
         </h2>
     </div>
     <!-- entity_title -->
 
+        <p>
+           {{$reply->intro}}</a>
+        </p>
+
     <div class="entity_meta">
-        <a href="#">{{$reply->dateline}}</a>, by: <a href="#">{{$reply->title}}</a>
+        {{$reply->dateline}}
     </div>
     <!-- entity_meta -->
 
-    <!-- <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-full"></i>
-    </div> -->
-    <!-- rating -->
+<div class="rating">
+<p>tags</p>
+
+   </div>
 
     <div class="entity_social">
         <a href="#" class="icons-sm sh-ic"><i class="fa fa-share-alt"></i><b>424</b>
@@ -47,8 +50,8 @@
         <span class="arrow">&raquo;</span>
     </div>
     <!-- entity_social -->
-    <p><a href="/faq/{{$reply->id}}" target="_self">
-          Подробнее>></a></p>
+    <h3 class="widget_divider"><a href="/faq/{{$reply->id}}" target="_self">
+          Подробнее>></a></h3>
 
     <!-- entity_content -->
 
@@ -59,17 +62,7 @@
 
 <nav aria-label="Page navigation" class="pagination_section">
     <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next" class="active"> <span aria-hidden="true">&raquo;</span> </a>
-        </li>
+        <li>{{$replies->links()}}</li>
     </ul>
 </nav>
 

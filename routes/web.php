@@ -29,7 +29,7 @@ Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/status', [StatusController::class, 'index'])->name('status');
 
-Route::get('/faq/{id}', [FaqController::class, 'byid'])->name('faq.id');
+Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
 
 Route::get('/about/testmaterial',[AboutController::class, 'testmaterial'])->name('about.testmaterial');
 Route::get('/about/projects', [AboutController::class, 'projects'])->name('about.projects');

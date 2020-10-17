@@ -12,17 +12,18 @@
 <div class="col-md-3">
 <div class="widget">
     <div class="widget_title widget_black">
-        <h2><a href="#">Новости</a></h2>
+        <h2><a href="{{route('news')}}">Новости</a></h2>
     </div>
     @foreach($news as $item)
     <div class="media">
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="single.html" target="_self">{{$item->title}}</a>
+                <a href="{{route('news.category.id',[$category->name, $item->id])}}" target="_self">{{$item->title}}</a>
             </h3>
             <span class="media-date">{{$item->dateline}}</span>
-
+            @if($item->intro)
             <div>{{$item->intro}}</div>
+            @endif
         </div>
     </div>
     @endforeach
@@ -53,7 +54,7 @@
     @foreach($replies as $reply)
     <div class="media">
         <div class="media-left">
-            <a href="{{route('faq.id', $reply->id)}}"><img class="media-object" src="/assets/img/pop_right1.jpg" alt="Generic placeholder image"></a>
+            <a href="{{route('faq.id', $reply->id)}}"><img class="media-object" src="/assets/images/faq3.png" alt="Generic placeholder image"></a>
         </div>
         <div class="media-body">
             <h3 class="media-heading">

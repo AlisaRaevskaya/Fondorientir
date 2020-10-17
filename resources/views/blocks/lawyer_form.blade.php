@@ -23,6 +23,7 @@
     <textarea class="form-control rounded-0" id="formControlTextarea" rows="3" cols="5"
     placeholder="Задайте свой вопрос"></textarea>
     </div>
+
     <div id="law_success"></div>
 
     <input type="submit" class="form-group black btn-law" value="Отправить">

@@ -1,3 +1,4 @@
+
 @extends('layout')
 @section('content')
 <section id="entity_section" class="entity_section">
@@ -6,7 +7,9 @@
 <div class="col-md-8">
 
 <div class="category_article_wrapper conatiner">
-@foreach($topic as $top)
+@if(isset($topics))
+    @foreach ($topics as $top)
+
     <div class="entity_title">
         <h1>{{$top->title}}</h1>
     </div>
@@ -36,7 +39,7 @@
     <!-- entity_social -->
 
     <div class="entity_thumb">
-        <img class="img-responsive" src="/assets/images/law.jpg" alt="feature-top">
+        <img class="img-responsive" src="/assets/images/{{$top->image}}.jpg" alt="feature-top">
     </div>
 
     <div class="entity_content">
@@ -66,7 +69,7 @@
                 id="inputComment" placeholder="Comment"></textarea>
             </div>
             <div class="form-group hidden">
-                <input type="text" name="topic_id" value="{{$top->id}}">
+                <input type="text" name="topic_reply_id" value="{{$top->id}}">
             </div>
 
             <div id="com_success"></div>
@@ -81,16 +84,18 @@
 </div>
 <!--Entity Comments -->
 
-
-
-
+@if($comments)
+@include('blocks.comments')
+@endif
 
 </div>
 @endforeach
-
+@endif
 
 </div>
 </div>
 </div>
 </section>
 @endsection
+
+

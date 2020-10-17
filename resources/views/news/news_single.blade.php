@@ -8,7 +8,7 @@
 
 @foreach($newsby as $item)
     <div class="entity_title">
-        <h1><a href="/news/{category}/{id}</a>">{{$item->title}}</a></h1>
+        <h1>{{$item->title}}</a></h1>
     </div>
     <!-- entity_title -->
 
@@ -17,14 +17,7 @@
     </div>
     <!-- entity_meta -->
 
-    <div class="entity_rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-full"></i>
-    </div>
-    <!-- entity_rating -->
+
 
     <div class="entity_social">
         <a href="#" class="icons-sm sh-ic">
@@ -44,7 +37,7 @@
     <!-- entity_social -->
 
     <div class="entity_thumb">
-        <img class="img-responsive" src="assets/img/category_img_top.jpg" alt="feature-top">
+        <img class="img-responsive" src="/assets/images/{{$item->image}}" alt="feature-top">
     </div>
     <!-- entity_thumb -->
 
@@ -58,7 +51,7 @@
 
     <div class="entity_footer">
         <div class="entity_tag">
-            <span class="blank"><a href="#">{{$category->ru_name}}</a></span>
+            <span class="blank"><a href="route({{'news.category', $category->name}})">{{$category->ru_name}}</a></span>
             <!-- <span class="blank"><a href="#">$subcategory? $subcategory->name: ''</a></span>-->
         </div>
         <!-- entity_tag -->

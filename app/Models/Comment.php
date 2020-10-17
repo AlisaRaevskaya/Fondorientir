@@ -7,16 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    // protected $table = 'categories';
-    // protected $fillable = ['name', 'description'];
+    protected $table = 'comments';
 
-//1:1
+    protected $fillable = ['name', 'email','body'];
+
+//1:many
     public function topic(){
-        return $this->belongsTo('App\Models\Message');
+        return $this->belongsTo('App\Models\Topic', 'topic_reply_id', 'reply_id');
     }
+
    // >:>
-    public function replies()
-    {
-        return $this->belongsToMany('App\Models\Reply');
-    }
+    // public function replies()
+    // {
+    //     return $this->belongsToMany('App\Models\Reply');
+    // }
 }

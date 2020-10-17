@@ -1,4 +1,3 @@
-
 <div class="entity_comments">
     <div class="entity_inner__title">
         <h2>Добавить комментарий</h2>
@@ -11,6 +10,9 @@
             <div class="form-group">
                 <input type="text" class="form-control" id="inputName" name="name"
                 placeholder="Name">
+                $errors('name')
+                <span>{{$message}}</span>
+                @enderror
             </div>
             <div class="form-group">
                 <input type="email" class="form-control"
@@ -18,8 +20,11 @@
             </div>
             <div class="form-group comment">
                 <textarea class="form-control"
-                id="inputComment" placeholder="Comment"></textarea>
+                id="inputComment" placeholder="Comment" name="body"></textarea>
             </div>
+
+            <input type="text" class="hidden" name="topic_id" value={{$top->id}}>
+
             <div id="com_success"></div>
             <div class="form-group">
                 <input type="submit" class="form-control"

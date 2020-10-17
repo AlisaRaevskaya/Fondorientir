@@ -5,12 +5,14 @@
 @csrf
   <div class="form-group">
     <label for="exampleInputName">Контактное лицо:</label>
-    <input type="text" class="form-control" id="InputName" placeholder="Контактное лицо" name="name">
+    <input type="text" class="form-control" id="InputName"
+    placeholder="Контактное лицо" name="name">
   </div>
   <div>
 
     <label for="exampleInputPhone">Телефон:</label>
-    <input type="tel" class="form-control" id="InputPhone" placeholder="Телефон:" name="phone">
+    <input type="tel" class="form-control" id="InputPhone" placeholder="Телефон:"
+     name="phone">
   </div>
 
 <div>

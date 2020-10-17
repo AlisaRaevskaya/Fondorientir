@@ -38,7 +38,7 @@
                         @foreach($menuitems as $item)
                         @if(isset($item->children))
                         @foreach($item->children as $i)
-                        <li><a href="#">{{$i->title}}</a></li>
+                        <li><a href="{{$item->laravel_name ?route($item->laravel_name): $item->url }}">{{$i->title}}</a></li>
                         @endforeach
                         @endif
                         @endforeach
@@ -64,13 +64,6 @@
                         <p class="media-heading">
                             <a href="{{$new->id}}">{{$new->title}}</a>
                         </p>
-                        <span class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                        </span>
                     </div>
                     @endforeach
                 </div>
@@ -80,42 +73,42 @@
                     <h3><a href="category.html" target="_self">Контакты</a></h3>
                 </div>
                 <div class="widget_photos">
-                <div>
-            <p>Часы работы: с 9.00 до 18.00(кроме субботы и воскресенья)</p>
-               <p>Тел.: +7(812) 385 -69-89, +7(911)253-85-01</p>
-                <p>Е-mail: inlo®fondorientir.ru</p>
-                </div>
-                <div>
-                <h3>Мы в социальных сетях:</h3>
-                <!--Twitter-->
-                <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                            <!--Google +-->
-                            <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                            <!--Linkedin-->
-                            <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
-                            <!--Pinterest-->
-                            <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
-                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                  </div>
+                    <div>
+                        <p>Часы работы: с 9.00 до 18.00(кроме субботы и воскресенья)</p>
+                        <p>Тел.: +7(812) 385 -69-89, +7(911)253-85-01</p>
+                        <p>Е-mail: inlo®fondorientir.ru</p>
+                    </div>
+                    <div>
+                    <h3>Мы в социальных сетях:</h3>
+                    <!--Twitter-->
+                    <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+                                <!--Google +-->
+                                <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
+                                <!--Linkedin-->
+                                <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
+                                <!--Pinterest-->
+                                <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
+                                <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+                    </div>
 
                 <div class="row">
-        <form action="/subscribe" method="post" class="form-horizontal">
-        @csrf
-            <div class="form-group ">
+                <form action="/subscribe" method="post" >
+                @csrf
+                <div class="form-group ">
                 <label class="" for="formGroupInputLarge">
                     <h3><span class="red-color">Подписка</span> на наши новости<h3>
                 </label>
                 <div class="form-group">
-                    <input type="email" id="subscribe" name="subscribe" class="form-control input-lg"
+                    <input type="email" name="email" class="form-control input-lg"
                     placeholder="Ваш email">
                 </div>
                 <div id="sub_success"></div>
                 <div class="form-group ">
                     <input type="submit" value="Подписаться" class="btn btn-large blue subscription_btn">
                 </div>
-                <div class="col-sm-2"></div>
-            </div>
-        </form>
+                <!-- <div class="col-sm-2"></div> -->
+                </div>
+                </form>
     </div>
 
                 </div>

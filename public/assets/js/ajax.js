@@ -1,7 +1,7 @@
 //feedback-messages
 
 
-$(".btn-messages").click(function(event){
+$("#btn-messages").click(function(event){
     event.preventDefault();
 
 
@@ -13,29 +13,16 @@ $(".btn-messages").click(function(event){
 
     //$("input[name=fatherName]").val()//lastName
 
-    let $firstname = $('input[name="firstName"]').val() ;
-    let $lastname = $('input[name="lastName"]').val() ;
-    let $fathername = $('input[name="fatherName"]').val();
 
-    let $fullname= $lastname + ' ' + $firstname + ' ' + $fathername;
 
+   let form_data = $(this).serialize(); // Собираем все данные из формы
 
     $.ajax({
       url: "/submit",
       method:"POST",
-      data:{
-        firstname = $('input[name="firstName"]').val(),
-        lastname = $('input[name="lastName"]').val(),
-        fathername = $('input[name="fatherName"]').val(),
-        email:$("input[name=email]").val(),
-        job:$("input[name=job]").val(),
-        phone:$("input[name=phone]").val(),
-        address:$("input[name=address]").val(),
-        message:$('#yourMessage').val(),
-        sendbyemail:$("input[name=sendbyemail]").is(":checked") ? 1 : 0,
-        publish:$("input[name=publish]").is(":checked") ? 1 : 0,
-        // token:$('meta[name="csrf-token"]').attr('content')
-      },
+      data:form_data,
+      dataType: "json",
+      contentType: 'application/json',
       success:function(response){
         console.log(response);
         if(response){
@@ -61,13 +48,14 @@ $(".subscription_btn").click(function(event){
     $.ajax({
       url: "/subscribe",
       method:"POST",
+      dataType: "json",
       data:{
-        email:$("input[name=subscribe]").val(),
+        email:$("input[name=email]").val(),
       },
       success:function(response){
         console.log(response);
         if(response){
-          $('#sub_success').html(JSON.parse(response.success));
+          $('#sub_success').html(response.success);
         }
       },
      });
@@ -78,7 +66,7 @@ $(".subscription_btn").click(function(event){
 $(".btn-web-feedback").click(function(event){
     event.preventDefault();
 
-
+    let f_data=$(this).serialize();
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -89,12 +77,8 @@ $(".btn-web-feedback").click(function(event){
     $.ajax({
       url: "/website-feedback",
       method:"POST",
-      data:{
-        name:$("input[name=name]").val(),
-        email:$("input[name=email]").val(),
-        phone:$("input[name=phone]").val(),
-        message:$('textarea[name="message"]').val(),
-      },
+      data:f_data,
+      dataType: "json",
       success:function(response){
         console.log(response);
         if(response){
@@ -108,7 +92,7 @@ $(".btn-web-feedback").click(function(event){
 
 $(".btn-law").click(function(event){
     event.preventDefault();
-
+let l_data = $(this).serialize();
 
     $.ajaxSetup({
         headers: {
@@ -119,23 +103,21 @@ $(".btn-law").click(function(event){
     $.ajax({
       url: "/lawyer-question",
       method:"POST",
-      data:{
-        name:$("input[name=name]").val(),
-        email:$("input[name=email]").val(),
-        message:$('#formControlTextarea').val(),
-      },
+      dataType: "json",
+      data:l_data,
       success:function(response){
         console.log(response);
         if(response){
           $('#law_success').html(response.success);
         }
-      },
-     });
-
+    },
+   });
+});
 
      $(".btn_comment").click(function(event){
         event.preventDefault();
 
+        let com_data= $(this).serialize();
 
         $.ajaxSetup({
             headers: {
@@ -146,17 +128,15 @@ $(".btn-law").click(function(event){
         $.ajax({
           url: "/commentForm",
           method:"POST",
-          data:{
-            name:$("input[name=name]").val(),
-            email:$("input[name=email]").val(),
-            body:$('#inputComment').val(),
-          },
+          dataType: "json",
+          data:com_data,
           success:function(response){
             console.log(response);
             if(response){
               $('#com_success').html(response.success);
             }
-          },
-         });
+        },
+       });
+  });
 
 

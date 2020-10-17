@@ -20,10 +20,6 @@ class Comments extends Migration
             $table->timestamps();
         });
 
-        Schema::table('comments', function (Blueprint $table) {
-            $table->unsignedBigInteger('message_id')->default(1);
-            $table->foreign('message_id')->references('id')->on('messages');
-        });
     }
 
     /**

@@ -70,13 +70,17 @@
 </div>
 
 @endforeach
-</div>
-<!-- entity_wrapper -->
 
+<nav aria-label="Page navigation" class="pagination_section">
+    <ul class="pagination">
+        <li>{{$pressnews->links()}}</li>
+    </ul>
+</nav>
 </div>
-<!-- col-md-4 -->
 
-</div>
+
+
+
 <!-- row -->
 <h2><a href="{{route('news.category', $chosen_category->name)}}">{{$chosen_category->ru_name}}</a></h2>
 
@@ -109,29 +113,19 @@
         </div>
     </div>
 
- <p class="widget_divider"><a href="#" target="_blank">Больше новостей</a></p>
 </div>
 
 
-<nav aria-label="Page navigation" class="pagination_section">
-    <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next" class="active"> <span aria-hidden="true">&raquo;</span> </a>
-        </li>
-    </ul>
-</nav>
 </div>
 <!-- container -->
 <!-- entity_section -->
+</div>
+<!-- entity_wrapper -->
 
+</div>
+<!-- col-md-4 -->
+
+</div>
 </section>
 
 @endsection

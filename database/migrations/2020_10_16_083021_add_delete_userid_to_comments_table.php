@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNameEmailCommentTable extends Migration
+class AddDeleteUseridToCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddNameEmailCommentTable extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->renameColumn('topic_id','topic_reply_id')->references('reply_id')->on('topics');
+            $table->dropColumn('user_id');
+            $table->integer('parent_id')->nullable()->change();
         });
     }
 
@@ -26,7 +27,7 @@ class AddNameEmailCommentTable extends Migration
     public function down()
     {
         Schema::table('comments', function (Blueprint $table) {
-                $table->dropColumn('topic_reply_id');
-            });
+            $table->integer('user_id');
+        });
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNameEmailCommentTable extends Migration
+class AddImageToTopicsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddNameEmailCommentTable extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function (Blueprint $table) {
-            $table->renameColumn('topic_id','topic_reply_id')->references('reply_id')->on('topics');
+        Schema::table('topics', function (Blueprint $table) {
+            $table->string('image')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddNameEmailCommentTable extends Migration
      */
     public function down()
     {
-        Schema::table('comments', function (Blueprint $table) {
-                $table->dropColumn('topic_reply_id');
-            });
+        Schema::table('topics', function (Blueprint $table) {
+            $table->dropColumn('image');
+        });
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Reply;
 use App\Models\Topic;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -11,19 +12,24 @@ class FaqController extends Controller
 
         // $reply= Reply::find(1)->where('id', $reply_id)->first();
         $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
-        ->select('replies.body','topics.title','replies.dateline','replies.id')->limit(5)->get();
+        ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
+        ->orderBy('dateline', 'desc')->paginate(5);
         return view('faq', compact('replies'));
     }
 
-    public function byid($id){
+     //http://fondorientir/faq/25
 
-      $topic=$this->getArray()->where('id', $id);
-        return view('reply', compact('topic'));
+    public function replyByid($id){
+
+        $topics=Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
+        ->select('replies.body','topics.title','topics.dateline','replies.id', 'topics.image')
+        ->where('replies.id', $id)->get();
+
+
+        $comments=Comment::where('topic_reply_id', $id)->get();
+
+        return view('replies', compact('topics', 'comments'));
     }
 
-    public function getArray(){
 
-        return Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')->get();
-
-    }
 }
