@@ -11,6 +11,7 @@ class NewsController extends Controller
     public function index(){
 
     $news = News::orderBy('dateline', 'desc')->paginate(4);
+
     $new = News::find(1)->first();
     $category= $new->category;
     return view('news', compact('news', 'category'));

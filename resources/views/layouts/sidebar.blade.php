@@ -22,7 +22,7 @@
             </h3>
             <span class="media-date">{{$item->dateline}}</span>
             @if($item->intro)
-            <div>{{$item->intro}}</div>
+            <div>{!!$item->intro!!}</div>
             @endif
         </div>
     </div>
@@ -58,7 +58,7 @@
         </div>
         <div class="media-body">
             <h3 class="media-heading">
-                <a href="{{route('faq.id', $reply->id)}}">{{$reply->title}}</a>
+                <a href="{{route('faq.id', $reply->id)}}">{!!$reply->title!!}</a>
             </h3>
             <div class="widget_article_social">
                 <span>
@@ -77,6 +77,4 @@
 <!-- Most Commented News -->
 </section>
 
-<!-- <div class="popup-box">
-    @include('blocks.popup');
-</div> -->
+

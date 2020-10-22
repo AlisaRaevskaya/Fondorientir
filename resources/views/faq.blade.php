@@ -29,9 +29,6 @@
     </div>
     <!-- entity_meta -->
 
-<div class="rating">
-<p>tags</p>
-
    </div>
 
     <div class="entity_social">

@@ -10,3 +10,8 @@ $(".close").click(function(e){
      // Обрабатываем клик по заднему фону
     $(".popup-box").addClass('hidden'); // Скрываем затемнённый задний фон и основное всплывающее окно
 })
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+

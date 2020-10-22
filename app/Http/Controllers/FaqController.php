@@ -14,6 +14,7 @@ class FaqController extends Controller
         $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
         ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
         ->orderBy('dateline', 'desc')->paginate(5);
+
         return view('faq', compact('replies'));
     }
 
@@ -25,10 +26,13 @@ class FaqController extends Controller
         ->select('replies.body','topics.title','topics.dateline','replies.id', 'topics.image')
         ->where('replies.id', $id)->get();
 
+        foreach($topics as $top){
+            $body= htmlspecialchars_decode($top->body, ENT_HTML5);
+         }
 
         $comments=Comment::where('topic_reply_id', $id)->get();
 
-        return view('replies', compact('topics', 'comments'));
+        return view('replies', compact('topics', 'comments', 'body'));
     }
 
 

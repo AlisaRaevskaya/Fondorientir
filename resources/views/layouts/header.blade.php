@@ -33,18 +33,13 @@
                 <div class="col-md-4">
                     <div class="right_section">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">{{$contact->email}}</a></li>
-                            <li><a href="#">{{$contact->phone}}</a></li>
-                            <li><a href="">Часы работы: c 09-00:18-00</a></li>
-                            <!-- <li class="dropdown lang">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">En <i
-                                        class="fa fa-angle-down"></i></button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Bn</a></li>
-                                </ul>
-                            </li> -->
-                            <li><a href="">Заказать обратный звонок</a></li>
+                            <li><a href='#'>{{$contact->phone}}</a></li>
+                            <li><a href='#'>Часы работы:{{$contact->hours}}</a></li>
+                            <li><a>Е-mail:{{$contact->email}}</a></li>
+                            <button type="button"
+                            class="btn btn-primary"
+                            data-toggle="modal" data-target="#exampleModalLong">
+                            Заказать обратный звонок</button>
                         </ul>
                         <!-- Language Section -->
 

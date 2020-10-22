@@ -16,10 +16,12 @@ class NavigationComposer
         $menuitems = Menu::IsPublished()->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
         $newsitems = News::orderBy('dateline', 'desc')->limit(3)->get();
         $contacts= Contact::all();
+        $new = News::find(1)->first();
+        $category= $new->category;
 
         $menuitems = $this->buildTree($menuitems);
 
-        return $view->with(compact('menuitems', 'newsitems', 'contacts'));
+        return $view->with(compact('menuitems', 'newsitems', 'contacts','category'));
     }
 
     public function buildTree($items)

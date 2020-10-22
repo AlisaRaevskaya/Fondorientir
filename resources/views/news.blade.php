@@ -23,9 +23,7 @@
     <!-- entity_meta -->
 
     <div class="entity_social">
-        <a href="#" class="icons-sm sh-ic"><i class="fa fa-share-alt"></i><b>424</b>
-            <span class="share_ic">Shares</span>
-        </a>
+
         <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
         <!--Twitter-->
         <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
@@ -39,19 +37,19 @@
     </div>
     <!-- entity_social -->
 
-    <div class="entity_thumb">
+    <!-- <div class="entity_thumb">
         <img class="img-responsive" src="/assets/img/{{$item->image}}" alt="feature-top">
-    </div>
+    </div> -->
     <!-- entity_thumb -->
 
 <div class="entity_footer">
     <div class="entity_tag">
             <span class="blank">{{$category->ru_name}}</span>
-        </div>
-        <div class="entity_tag">
-        <span class="blank"><a href="{{route('news.category.id', [$category->name, $item->id])}}">
-        Подробнее>>></a></span>
+    </div>
 </div>
+<div>
+    <a href="{{route('news.category.id', [$category->name, $item->id])}}" class="btn btn-outline-primary btn-lg active" role="button" aria-pressed="true">
+        Подробнее>>></a>
 </div>
 
 

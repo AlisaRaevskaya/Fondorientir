@@ -65,7 +65,7 @@
     <!-- entity_thumb -->
 
     <div class="entity_content">
-        <p>{{$item->body}}</p>
+        <p>{!!$item->body!!}</p>
     </div>
 
 <p><a href="Подробнее"></a></p>

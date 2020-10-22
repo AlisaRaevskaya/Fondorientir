@@ -56,9 +56,6 @@
     <div class="entity_footer">
     <div class="entity_tag">
             <span class="blank">{{$category->ru_name}}</span>
-        <!-- @If($subcategory)
-        <span class="blank"><a href="#">$subcategory->name</a></span>
-        @endif -->
         </div>
 </div>
 

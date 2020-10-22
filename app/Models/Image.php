@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Webfeedback extends Model
+class Image extends Model
 {
-    protected $table ="webfeedback";
-
+    public function page(){
+        return $this->belongsTo('App\Models\Pages');
+    }
 }

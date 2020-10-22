@@ -3,24 +3,25 @@
         <hr class="footer-top">
         <div class="row">
             <div class="col-md-3">
-                <div class="footer_widget_title"><h3><a href="category.html" target="_self">О Фонде</a></h3></div>
+                <div class="footer_widget_title"><h3><a href="/about" target="_self">О Фонде</a></h3></div>
                 <div class="logo footer-logo">
-                    <a title="fontanero" href="index.html">
-                        <img src="/assets/images/logo.png" alt="technews" width:="95pt"height ="95pt">
+                @foreach($contacts as $contact)
+                    <a title="fontanero" href="/">
+                        <img src="/assets/images/{{$contact->logo}}" alt="technews" width:="95pt"height ="95pt">
                     </a>
-
-                    <p>Фонд поддержки добровольного переселения соотечественников «ОРИЕНТИР»</p>
-                    <p> (ОГРН: 1117800001912, ИНН: 7838030503)</p>
-                    <p> “ORIENTEER" Fund Supporting Voluntary Resettlement of compatriots</p>
-                    <p>Санкт-Петербург, 190068,пр. Римского-Корсакова, д 39</p>
-                   <p> http://www.fondorentir.ru</p>
+                    <p>{{$contact->name}}</p>
+                    <p> {{$contact->inn}}</p>
+                    <p> {{$contact->eng_name}}</p>
+                    <p>{{$contact->index}}{{$contact->city}}{{$contact->street}}</p>
+                   <p> {{$contact->web}}</p>
+                   @endforeach
                 </div>
             </div>
 
             <div class="col-md-3">
 
                 <div class="footer_widget_title">
-                    <h3><a href="category.html" target="_self">Карта сайта</a></h3>
+                    <h3><a href="#" target="_self">Карта сайта</a></h3>
                 </div>
                 <div class="row">
 
@@ -55,14 +56,9 @@
 
                 <div class="media">
                 @foreach($newsitems as $new)
-
-                    <!-- <div class="media-left">
-                        <a href="#"><img class="media-object" src="assets/img/editor_pic1.jpg"
-                                         alt="Generic placeholder image"></a>
-                    </div> -->
                     <div class="media-body">
                         <p class="media-heading">
-                            <a href="{{$new->id}}">{{$new->title}}</a>
+                            <a href="{{route('news.category.id',[$category->name, $new->id])}}">{{$new->title}}</a>
                         </p>
                     </div>
                     @endforeach
@@ -70,7 +66,7 @@
             </div>
             <div class="col-md-3">
                 <div class="footer_widget_title">
-                    <h3><a href="category.html" target="_self">Контакты</a></h3>
+                    <h3><a href="/contacts" target="_self">Контакты</a></h3>
                 </div>
                 <div class="widget_photos">
                     <div>
@@ -92,7 +88,7 @@
                     </div>
 
                 <div class="row">
-                <form action="/subscribe" method="post" >
+                <form action="/subscribe" method="post" name="subForm">
                 @csrf
                 <div class="form-group ">
                 <label class="" for="formGroupInputLarge">
@@ -104,7 +100,7 @@
                 </div>
                 <div id="sub_success"></div>
                 <div class="form-group ">
-                    <input type="submit" value="Подписаться" class="btn btn-large blue subscription_btn">
+                    <input type="submit" value="Подписаться" id="subscription_btn" class="btn btn-large blue">
                 </div>
                 <!-- <div class="col-sm-2"></div> -->
                 </div>
@@ -137,9 +133,7 @@
                     <div class="col-sm-6">
                         <p>&copy;2016 "ОРИЕНТИР"</a> </p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>Technology News Magazine</p>
-                    </div>
+
                 </div>
             </div>
         </div>

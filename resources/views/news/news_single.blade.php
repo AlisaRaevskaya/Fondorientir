@@ -43,7 +43,7 @@
 
     <div class="entity_content">
         <p>
-        {{$item->body}}
+        {!!$item->body!!}
         </p>
     </div>
 
