@@ -76,6 +76,7 @@
         <li>{{$newsby->links()}}</li>
     </ul>
 </nav>
+
 </div>
 <!-- container -->
 

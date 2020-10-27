@@ -2,12 +2,19 @@
     <div class="container">
         <div class="header-section">
             <div class="row">
+
                 <div class="col-md-4">
                     <div class="left_section">
-                    @foreach($contacts as $contact)
-                    <span>{{$contact->name}}</span>
-                        <!-- Date -->
 
+                    <div class="row justify-content-between">
+                    <div class="logo">
+                        <a href="/"><img src="/assets/images/logo1.png" alt="Tech NewsLogo"></a>
+                        <!-- <div>
+                        @foreach($contacts as $contact)
+                        <span>{{$contact->name}}</span>
+                        </div> -->
+                    </div>
+                        </div>
 
                         <div class="social">
                             <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
@@ -24,47 +31,23 @@
                     </div>
                     <!-- Left Header Section -->
                 </div>
-                <div class="col-md-4">
-                    <div class="logo">
-                        <a href="index.html"><img src="/assets/images/logo.png" alt="Tech NewsLogo"></a>
-                    </div>
-                    <!-- Logo Section -->
-                </div>
+
+                <div class="col-md-4"></div>
+
                 <div class="col-md-4">
                     <div class="right_section">
                         <ul class="nav navbar-nav">
-                            <li><a href='#'>{{$contact->phone}}</a></li>
-                            <li><a href='#'>Часы работы:{{$contact->hours}}</a></li>
+                            <li><a>Часы работы:{{$contact->hours}}</a></li>
                             <li><a>Е-mail:{{$contact->email}}</a></li>
+                            <li><a>Адрес:{{$contact->index}} {{$contact->city}} {{$contact->street}}</a></li>
+                            <li><a>Схема проезда (интерактивная карта)</a></li>
+                            <li><a href='#'>{{$contact->phone}}</a></li>
                             <button type="button"
                             class="btn btn-primary"
                             data-toggle="modal" data-target="#exampleModalLong">
                             Заказать обратный звонок</button>
                         </ul>
                         <!-- Language Section -->
-
-                        <ul class="nav-cta hidden-xs">
-                            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i
-                                    class="fa fa-search"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="head-search">
-                                            <form role="form">
-                                                <!-- Input Group -->
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control"
-                                                           placeholder="Type Something"> <span class="input-group-btn">
-                                                                            <button type="submit"
-                                                                                    class="btn btn-primary">Search
-                                                                            </button>
-                                                                        </span></div>
-                                            </form>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- Search Section -->
                     </div>
                     <!-- Right Header Section -->
                 </div>
@@ -86,53 +69,37 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="#navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav container">
-                        @php
-                            function buildMenu($menuitems, $level = 0)
-                            {
-                                foreach ($menuitems as $item) {
-                                    if (isset($item->children)) {
-                                       @endphp
-                        <li class="dropdown m-menu-fw">
-                        <a href="{{$item->laravel_name ?route($item->laravel_name): $item->url }}"
-                                data-toggle="dropdown"
-                                class="dropdown-toggle">
-                                {{ $item->title }}
-                                <span><i class="fa fa-angle-down"></i></span>
-                        </a>
-                            <ul class="dropdown-menu">
-                                    <li>
-                                        <div class="m-menu-content">
-                                          <ul class="col-sm-3">
-
-                                                    <!-- <a href="{{$item->laravel_name ? route($item->laravel_name) :
-                                                    $item->url }}">{{ $item->title }}
-                                                </a>
-                                                    </li> -->
-
-
-                                                    @php
-                                                    buildMenu($item->children, 'subnav-'.$item->id)
-                                                    @endphp
-                                                    <!-- </ul> -->
-
-                                            </ul>
-                                            </div>
+                            @foreach($menuitems as $item)
+                                @if(!!$item->children)
+                                    <li class="dropdown m-menu-fw">
+                                        <a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}"
+                                           data-toggle="dropdown"
+                                           class="dropdown-toggle">
+                                            {{ $item->title }}
+                                            <span><i class="fa fa-angle-down"></i></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="m-menu-content">
+                                                    <ul class="col-sm-3">
+                                                        @foreach($item->children as $children)
+                                                            <a href="{{$children->laravel_name ? route($children->laravel_name)
+                                                             : $children->url}}">{{$children->title}}</a>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </li>
-
-                        </ul>
-                        </li>
-                        @php
-            } else {
-            @endphp
-                        <li><a href="{{$item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $item->title }}</a></li>
-                        @php
-            }
-                                }
-                            }
-    buildMenu($menuitems, 'mainMenu')
-    @endphp
+                                @else
+                                    <li class="dropdown m-menu-fw">
+                                        <a href="{{$item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $item->title}}</a>
+                                    </li>
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
+
                     <!-- .navbar-collapse -->
                 </div>
                 <!-- .container -->

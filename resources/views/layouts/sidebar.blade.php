@@ -5,13 +5,15 @@
 <section>
 <div class="widget hidden-xs m30">
     <!-- <img class="img-responsive widget_img" src="assets/img/right_add5.jpg" alt="add_one"> -->
-    @include('blocks.receipt_block')
+
 </div>
 
 
 <div class="col-md-3">
 <div class="widget">
-    <div class="widget_title widget_black">
+@include('blocks.receipt_block')
+
+    <div class="widget_title widget_black" style="overflow:hidden">
         <h2><a href="{{route('news')}}">Новости</a></h2>
     </div>
     @foreach($news as $item)

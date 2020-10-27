@@ -1,5 +1,7 @@
+@extends('layout')
+@section('content')
 
-<div class="popup-box hidden">
+<div>
 <h5>Отправить сообщение администрации сайта</h5>
 <form action="/website-feedback" method="POST" name="popForm" >
 @csrf
@@ -35,3 +37,6 @@
 </div>
 </form>
 </div>
+
+
+@endsection

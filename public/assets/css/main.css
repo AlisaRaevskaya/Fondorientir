@@ -13,18 +13,17 @@
 }
 
 .popup-box{
-    position: fixed;
+
     border-radius: 5px;
     background: #fff;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-    z-index: 9999999;
     font-size: 14px;
     top:10%;
     left:40%;
     padding:20px;
     background-color:lightblue;
 }
-.popup-box .close {
+/* .popup-box .close {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -34,7 +33,7 @@
     color: #434343;
     padding: 10px;
     font-size: 20px;
-}
+} */
 #btn-web-feedback{
     margin-top:10px;
 }

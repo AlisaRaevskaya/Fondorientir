@@ -47,24 +47,15 @@
 
 <body id="page-top" data-spy="scroll" class="container" data-target=".navbar">
 
-    @include('preloader')
 
     @include('layouts.header')
 <div class="container">
     @include('blocks.popup')
 </div>
 
-<div class="container">
-<div class="row">
-<div class="col-4">
-        @include('layouts.sidebar')
-        </div>
 
-    <div class="col-8">
-        @yield('content')
-    </div>
-</div>
-</div>
+@yield('content')
+
 
 @include('blocks.call')
 
@@ -86,7 +77,7 @@
 <script src="/assets/js/bootstrap-datepicker.js"></script>
 <!-- Theme Script -->
 <script src="/assets/js/script.js"></script>
-<script src="/assets/js/new.js"></script>
+<script src="/assets/js/index.js"></script>
 
 <script src="/assets/js/callajax.js"></script>
 <script src="/assets/js/sub-ajax.js"></script>

@@ -1,6 +1,7 @@
 
 @extends('layout')
 @section('content')
+
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
@@ -14,8 +15,8 @@
 <p>Ниже представлены файлы, в которых приведены основные вопросы по законодательству Российской Федерации и Истории,
  встречающиеся при сдаче теста по русскому языку.</p>
 
-<a href="#">Вопросы по законодательству.pdf<a>
-<a href="#">Вопросы по истории.pdf<a>
+<div><a href="#">Вопросы по законодательству.pdf<a></div>
+<div><a href="#">Вопросы по истории.pdf<a></div>
 
 </div>
     <!-- entity_content -->

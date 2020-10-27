@@ -1,5 +1,4 @@
 @extends('layout')
-
 @section('content')
 <section id="entity_section" class="entity_section">
 <div class="container">
@@ -53,22 +52,5 @@ target=\"_blank\"><span style=\"text-decoration: underline;\">ОФОРМЛЕНИ
 
 </div>
 <!-- container -->
-
 </section>
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

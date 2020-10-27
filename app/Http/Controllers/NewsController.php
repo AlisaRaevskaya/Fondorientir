@@ -17,6 +17,30 @@ class NewsController extends Controller
     return view('news', compact('news', 'category'));
 
     }
+    public function interview(){
+        return view('info.interview');
+    }
+    public function showFoto(){
+        return view('info.foto');
+    }
+    public function forPress(){
+        return view('info.pressnews');
+    }
+    public function notForPress(){
+        return view('info.foto');
+    }
+    public function pressnews(){
+        return view('news.pressnews');
+    }
+
+    public function showPressNews(){
+        $category = Category::find(1)->where('name', 'press-news')->first();
+        $pressnews = $category->news()->paginate(5);
+        $chosen_category=Category::find(1)->where('name', 'chosen')->first();
+        $chosen = $chosen_category->news;
+    return view('news.pressnews', compact('pressnews', 'category','chosen', 'chosen_category'));
+    }
+
 
     public function showByCategory($category, $subcategory=false){
         $category = Category::find(1)->where('name', $category)->first();
@@ -45,13 +69,6 @@ class NewsController extends Controller
         return view('news.news_single', compact('newsby', 'category'));
     }
 
-    public function showPressNews(){
-        $category = Category::find(1)->where('name', 'press-news')->first();
-        $pressnews = $category->news()->paginate(5);
-        $chosen_category=Category::find(1)->where('name', 'chosen')->first();
-        $chosen = $chosen_category->news;
-    return view('news.pressnews', compact('pressnews', 'category','chosen', 'chosen_category'));
-    }
 
 
 }

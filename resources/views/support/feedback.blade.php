@@ -18,7 +18,7 @@
     <!-- entity_social -->
 
     <div class="entity_thumb">
-        <img class="img-responsive" src="assets/images/priemnaya.jpg" alt="feature-top">
+        <img class="img-responsive" src="/assets/images/priemnaya.jpg" alt="feature-top">
     </div>
     <!-- entity_thumb -->
 
