@@ -9,8 +9,9 @@
     <title>Фонд поддержки добровольного переселения соотечественников</title>
 
     <!-- favicon -->
-    <link href="/assets/img/favicon.png" rel=icon>
-
+    <!-- <link href="/assets/images/favicon.ico" rel=icon> -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <!-- web-fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
 
@@ -82,6 +83,6 @@
 <script src="/assets/js/callajax.js"></script>
 <script src="/assets/js/sub-ajax.js"></script>
 <script src="/assets/js/web-ajax.js"></script>
-<script src="/assets/js/faajax.js"></script>
+
 </body>
 </html>

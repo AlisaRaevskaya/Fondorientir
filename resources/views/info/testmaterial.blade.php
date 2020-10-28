@@ -5,8 +5,12 @@
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
+
+<div class="col-md-1"></div>
+
+<div class="col-md-10 ">
 <div class="entity_wrapper">
+
 <div class="entity_title">
 <h1 style="margin-left: 18pt; text-align: center;">Партнеры ФОНДА "ОРИЕНТИР"</h1>
 </div>
@@ -24,6 +28,8 @@
 
 </div>
 <!--Right Section-->
+
+<div class="col-md-1"></div>
 
 </div>
 <!-- row -->

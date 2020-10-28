@@ -4,14 +4,15 @@
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
+<div class="col-md-10">
 
-<div class="category_article_wrapper conatiner">
+
+<div class="category_article_wrapper container">
 @if(isset($topics))
 @foreach ($topics as $top)
 
     <div class="entity_title">
-        <h1>{{$top->title}}</h1>
+        <h1>{!!$top->title!!}</h1>
     </div>
     <!-- entity_title -->
 
@@ -19,27 +20,12 @@
        {{$top->dateline}}
     </div>
     <!-- entity_meta -->
-    <!-- rating -->
 
-    <div class="entity_social">
-
-        <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-        <!--Twitter-->
-        <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-        <!--Google +-->
-        <a href="#" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a>
-        <!--Linkedin-->
-        <a href="#" class="icons-sm tmb-ic"><i class="fa fa-ge"> </i></a>
-        <!--Pinterest-->
-        <a href="#" class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
-        <span class="arrow"></span>
-    </div>
-    <!-- entity_social -->
-
+    @if(isset($top->image))
     <div class="entity_thumb">
         <img class="img-responsive" src="/assets/images/{{$top->image}}" alt="feature-top">
     </div>
-
+    @endif
     <div class="entity_content">
         <p>{!!$top->body!!}</p>
     </div>

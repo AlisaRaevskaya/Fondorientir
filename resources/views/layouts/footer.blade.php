@@ -88,7 +88,7 @@
                     </div>
 
                 <div class="row">
-                <form action="/subscribe" method="post" name="subForm">
+                <form action="/subscribe" method="post" class="subForm">
                 @csrf
                 <div class="form-group ">
                 <label class="" for="formGroupInputLarge">
@@ -98,7 +98,7 @@
                     <input type="email" name="email" class="form-control input-lg"
                     placeholder="Ваш email">
                 </div>
-                <div id="sub_success"></div>
+                <div class="sub_success"></div>
                 <div class="form-group ">
                     <input type="submit" value="Подписаться" id="subscription_btn" class="btn btn-large blue">
                 </div>

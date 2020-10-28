@@ -4,22 +4,28 @@
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
+
+<div class="col-md-1"></div>
+
+<div class="col-md-10">
+<div class="entity-wrapper">
 
   <div class="row justify-content-center">
   <h1 style="text-decoration:underline">Вопрос-ответ</h1>
   </div>
-  @foreach($replies as $reply)
-    <div class="entity-wrapper">
 
+
+  @foreach($replies as $reply)
         <div class="entity_title">
-            <a href="{{route('faq.id', $reply->id)}}" target="_self" style="text-decoration:underline">
-            {{$reply->title}}</a>
+        <h1>  <a href="{{route('faq.id', $reply->id)}}"
+            target="_self" style="text-decoration:underline">
+            {!!$reply->title!!}</a></h1>
         </div>
+
         <!-- entity_title -->
-        <div class="entity_title">
+        <div class="entity_content">
             <p>
-            {{$reply->intro}}</a>
+            {!!$reply->intro!!}</a>
             </p>
         </div>
 
@@ -28,32 +34,20 @@
         </div>
         <!-- entity_meta -->
 
-        </div>
 
-        <div class="entity_social">
-            <a href="#" class="icons-sm sh-ic"><i class="fa fa-share-alt"></i><b>424</b>
-                <span class="share_ic">Shares</span>
-            </a>
-            <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-            <!--Twitter-->
-            <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-            <!--Google +-->
-            <a href="#" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a>
-            <!--Linkedin-->
-            <a href="#" class="icons-sm tmb-ic"><i class="fa fa-ge"> </i></a>
-            <!--Pinterest-->
-            <a href="#" class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
-            <span class="arrow">&raquo;</span>
-        </div>
-
+        <div>
         <!-- entity_social -->
-        <h3><a href="/faq/{{$reply->id}}" target="_self">
-            Подробнее>></a></h3>
+        <h3><a href="/faq/{{$reply->id}}" target="_self" class="btn btn-outline-primary btn-lg active" role="button" aria-pressed="true">
+            Читать ответ</a></h3>
+        </div>
 
+        <hr>
         <!-- entity_content -->
 
-    </div>
     @endforeach
+
+    </div>
+
 
     <!-- entity_wrapper -->
     <nav aria-label="Page navigation" class="pagination_section">
@@ -61,6 +55,8 @@
         <li>{{$replies->links()}}</li>
     </ul>
 </nav>
+
+<div class="col-md-1"></div>
 
 </div>
 </div>

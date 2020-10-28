@@ -28,7 +28,11 @@
                     <!-- Left Header Section -->
                 </div>
 
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                <div>
+                    <a href="/feedback/reception"><img src="/assets/images/banner.jpg" alt="receipt"></a>
+                    </div>
+                </div>
 
                 <div class="col-md-4">
                     <div class="right_section">
@@ -37,7 +41,9 @@
                             <li><a>Е-mail:{{$contact->email}}</a></li>
                             <li><a>Адрес:{{$contact->index}} {{$contact->city}} {{$contact->street}}</a></li>
                             <li><a>Схема проезда (интерактивная карта)</a></li>
-                            <li><a href='#'>{{$contact->phone}}</a></li>
+                            <li><a href='#'>Миграционные новости</a></li>
+                            <li><a href='#'>Трудовые споры</a></li>
+                            <li><a href='#'>Гражданские споры</a></li>
                             <button type="button"
                             class="btn btn-primary"
                             data-toggle="modal" data-target="#exampleModalLong">

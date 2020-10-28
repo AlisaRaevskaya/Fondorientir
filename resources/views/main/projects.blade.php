@@ -3,8 +3,12 @@
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
-<div class="entity_wrapper">
+
+<div class="col-md-1"></div>
+
+<div class="col-md-10">
+<div class="entity-wrapper">
+
     <div class="entity_title">
     <h2>Фонд поддержки добровольного переселения соотечественников «ОРИЕНТИР» (ОГРН: 1117800001912, ИНН: 7838030503)
 “ORIENTEER" Fund Supporting Voluntary Resettlement of compatriots</h2>
@@ -79,6 +83,8 @@
 
 </div>
 <!--Right Section-->
+
+<div class="col-md-1"></div>
 
 </div>
 <!-- row -->

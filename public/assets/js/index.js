@@ -15,7 +15,19 @@ $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   })
 
-  $('.carousel').carousel({
-    interval: 2000
-  })
 
+  $(function() {
+    // Owl Carousel
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+      items: 3,
+      margin: 10,
+      loop: true,
+      nav: true
+    });
+  });
+
+// $(".popup_link").click(function(e) {
+//     e.preventDefault();
+//     $(".popup-box").removeClass('hidden');
+// });

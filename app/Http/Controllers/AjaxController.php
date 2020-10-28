@@ -44,11 +44,10 @@ class AjaxController extends Controller
     }
 
     public function saveMessages(Request $req)
-
     {
         $data = new Message();
 
-        $fullname=$req->input('lastName') . ' ' .$req->input('firstName') . '' . $req->input('fatherName');
+        $fullname= $req->input('lastName') . ' ' .$req->input('firstName') . '' . $req->input('fatherName');
 
         $data->fio =$fullname;
         $data->job = $req->input('job');
@@ -56,8 +55,7 @@ class AjaxController extends Controller
         $data->email = $req->input('email');
         $data->address= $req->input('address');
         $data->message = $req->input('message');
-        $data->sendbyemail = $req->input('sendbyemail');
-        $data->publish = $req->input('publish');
+        $data->publish = $req->input('consent');
 
         dd($data);
         $data->save();
@@ -91,6 +89,12 @@ class AjaxController extends Controller
             $data->save();
 
             return response()->json(['success'=>"Ваша заявка отправлена.Ждите звонка"]);
+        }
+
+        public function saveLawQuestion(Request $req)
+        {
+
+            return response()->json(['success'=>'Данные успешно отправлены']);
         }
 
 }

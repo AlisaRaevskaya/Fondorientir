@@ -4,7 +4,7 @@ $("#btn-messages").on("click", function(event){
     let checkbox = $("input[type='checkbox']");
 
     checkbox.is(":checked") ? checkbox.text(1) : checkbox.text(0);
-
+    console.log(checkbox.val());
 
     $.ajaxSetup({
         headers: {
@@ -20,7 +20,6 @@ $("#btn-messages").on("click", function(event){
       method:"POST",
       data:form_data,
       dataType: "json",
-      contentType: 'application/json',
       success:function(response){
         console.log(response);
         if(response){

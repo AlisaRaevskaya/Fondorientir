@@ -37,3 +37,17 @@
 #btn-web-feedback{
     margin-top:10px;
 }
+
+hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+.brochure-item img{
+      width:250px;
+  }
+.partner-item{
+    margin-left: 18px;
+}

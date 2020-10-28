@@ -2,7 +2,9 @@
 $(".subscription_btn").on("click", function(event){
     event.preventDefault();
 
-    let sub= $('form[name="subForm"]').serialize();
+    let sub_data= $('.subForm').serialize();
+
+    console.log(sub_data);
 
     $.ajaxSetup({
         headers: {
@@ -15,11 +17,11 @@ $(".subscription_btn").on("click", function(event){
       url: "/subscribe",
       method:"POST",
       dataType: "json",
-      data:sub,
+      data:sub_data,
       success:function(response){
         console.log(response);
         if(response){
-          $('#sub_success').html(response.success);
+          $('.sub_success').html(response.success);
         }
       },
      });

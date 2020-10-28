@@ -6,8 +6,15 @@
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
-<div class="entity_wrapper">
+
+<div class="col-md-1"></div>
+
+<div class="col-md-10">
+<div class="entity-wrapper">
+
+<div class="row justify-content-center">
+<h1 style="text-decoration:underline">Новости</h1>
+</div>
 
 @foreach($news as $item)
     <div class="entity_title">
@@ -22,36 +29,15 @@
     </div>
     <!-- entity_meta -->
 
-    <div class="entity_social">
-
-        <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-        <!--Twitter-->
-        <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-        <!--Google +-->
-        <a href="#" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a>
-        <!--Linkedin-->
-        <a href="#" class="icons-sm tmb-ic"><i class="fa fa-ge"> </i></a>
-        <!--Pinterest-->
-        <a href="#" class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
-        <span class="arrow">&raquo;</span>
+    <div class="">
+        <p>{!!$item->intro!!}</p>
     </div>
-    <!-- entity_social -->
 
-    <!-- <div class="entity_thumb">
-        <img class="img-responsive" src="/assets/img/{{$item->image}}" alt="feature-top">
-    </div> -->
-    <!-- entity_thumb -->
-
-<div class="entity_footer">
-    <div class="entity_tag">
-            <span class="blank">{{$category->ru_name}}</span>
-    </div>
-</div>
 <div>
     <a href="{{route('news.category.id', [$category->name, $item->id])}}" class="btn btn-outline-primary btn-lg active" role="button" aria-pressed="true">
         Подробнее>>></a>
 </div>
-
+<hr>
 
 @endforeach
 
@@ -71,6 +57,7 @@
 <!--Advertisement-->
 </div>
 <!-- col-md-4 -->
+<div class="col-md-1"></div>
 
 </div>
 <!-- row -->

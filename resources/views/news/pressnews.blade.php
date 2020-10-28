@@ -9,7 +9,10 @@
 
 <div class="entity_wrapper">
 
-<h1>{{$category->ru_name}}</h1>
+<div class="row justify-content-center">
+<h1 style="text-decoration:underline">{{$category->ru_name}}</h1>
+</div>
+
 @foreach($pressnews as $item)
 
     <div class="entity_title">
@@ -24,31 +27,6 @@
     </div>
     <!-- entity_meta -->
 
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-half-full"></i>
-    </div>
-    <!-- rating -->
-
-    <div class="entity_social">
-        <a href="#" class="icons-sm sh-ic"><i class="fa fa-share-alt"></i><b>424</b>
-            <span class="share_ic">Shares</span>
-        </a>
-        <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-        <!--Twitter-->
-        <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-        <!--Google +-->
-        <a href="#" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a>
-        <!--Linkedin-->
-        <a href="#" class="icons-sm tmb-ic"><i class="fa fa-ge"> </i></a>
-        <!--Pinterest-->
-        <a href="#" class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
-        <span class="arrow">&raquo;</span>
-    </div>
-    <!-- entity_social -->
 
     <div class="entity_thumb">
         <img class="img-responsive" src="/assets/images/{{$item->image}}" alt="feature-top">
@@ -56,11 +34,7 @@
     <!-- entity_thumb -->
 
     <div class="entity_content">
-        <p>{{$item->title}}</p>
-    </div>
-
-    <div class="entity_content">
-        <p>{{$item->intro}}</p>
+        <p>{!!$item->intro!!}</p>
     </div>
 
     <div class="entity_footer">
@@ -79,12 +53,10 @@
 </div>
 
 
-
-
+<div class="col-md-4">
 <!-- row -->
 <h2><a href="{{route('news.category', $chosen_category->name)}}">{{$chosen_category->ru_name}}</a></h2>
 
-<div class="col-md-4">
 <div class="widget">
     <div class="widget_title widget_black">
 @foreach($chosen as $choice)

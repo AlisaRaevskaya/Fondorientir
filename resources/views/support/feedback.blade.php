@@ -81,5 +81,5 @@
 
 </section>
 <!-- Entity Section Wrapper -->
-
+<script src="/assets/js/faajax.js"></script>
 @endsection

@@ -30,6 +30,7 @@
 
   <div id="w-success"></div>
 
+  <div class="close">X</div>
   <div>
   <input type="submit" class="btn btn-primary btn-web-feedback"  value="Отправить"></input>
 </div>

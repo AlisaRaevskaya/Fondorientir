@@ -1,7 +1,8 @@
 <section id="subscribe_section" class="subscribe_section">
+
 <div class="row">
-                <form action="/subscribe" method="post" name="subForm" >
-                @csrf
+                <form action="/subscribe" method="post" class="subForm" >
+                <!-- @csrf -->
                 <div class="form-group ">
 
                 <label class="col-sm-6 control-label" for="formGroupInputLarge">
@@ -12,7 +13,7 @@
                     <input type="email" name="email" class="form-control input-lg"
                     placeholder="Ваш email">
                 </div>
-                <div id="sub_success"></div>
+                <div class="sub_success"></div>
 
                 <div class="form-group" class="col-sm-1">
                     <input type="submit" value="Подписаться" class="btn btn-large blue subscription_btn">

@@ -44,7 +44,7 @@
   <div class="form-group">
     <label class="control-label col-xs-3" for="phoneNumber">Контактный телефон*:</label>
     <div class="col-xs-9">
-      <input type="tel" required class="form-control"
+      <input type="tel"required class="form-control"
       id="phoneNumber" name="phone"  placeholder="Введите номер телефона">
     </div>
   </div>
@@ -63,26 +63,20 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <div class="col-xs-offset-3 col-xs-9">
-      <label class="checkbox-inline">
-        <input type="checkbox" checked class="check-box" name="sendbyemail"> Я хочу получить ответ по электронной почте.
-      </label>
-    </div>
-  </div>
 
   <div class="form-group">
     <div class="col-xs-offset-3 col-xs-9">
-      <label class="checkbox-inline">
-        <input type="checkbox" checked class="check-box" name="publish">Я не против, чтобы мой вопрос был опубликован.
-      </label>
-    </div>
+    <input required checked type="checkbox" id="rules_ok"
+    class="check-box" name="publish">
+    <label for="rules_ok">Ознакомлен(-а) и согласен
+        <a href="assets/dw/soglasie.pdf" target="_blank"class ="consent"> на обработку моих данных </a></br></label>
   </div>
+
   <br />
 
   <div class="form-group">
 
-    <div class="col-xs-offset-3 col-xs-9">
+<div class="col-xs-offset-3 col-xs-9">
       <input type="submit" class="btn btn-primary" id="btn-messages" value="Отправить">
     </div>
   </div>
