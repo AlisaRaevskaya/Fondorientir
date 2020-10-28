@@ -25,27 +25,27 @@
             <div class="col-md-4">
                      <div class="feature_static_wrapper">
                     <div class="feature_article_img">
-                        <img class="img-responsive" src="/assets/images/rec1.jpg" alt="feature-top">
+                        <img class="img-responsive" src="/assets/images/banner.png" alt="feature-top">
                     </div>
                     <!-- feature_article_img -->
 
-                    <div class="feature_article_inner">
+                    <!-- <div class="feature_article_inner">
                         <div class="feature_article_title">
                             <h2><a href="single.html" target="_self" style="color:#1414b8">Уважаемые посетители!</a></h2>
                         </div>
                         <!-- feature_article_title -->
 
-                        <div class="feature_article_content">
+                        <!-- <div class="feature_article_content">
                             <h5>В интернет приемной вы можете задать любой интересующий Вас вопрос в любое время.
                             Оставьте заявку и наши специалисты с Вами свяжутся.</h5>
                             <button type="button" class="btn btn-primary">
                             <a href="{{route('feedback.reception')}}">Задать Вопрос</a></button>
-                        </div>
+                        </div> -->
 
 
                         <!-- feature_article_content -->
-
-                    </div>
+<!--
+                    </div> -->
                     <!-- feature_article_inner -->
 
                 </div>
@@ -87,6 +87,7 @@
 
                 <div class="container">
                     <div class="row">
+
                     <div class="col-md-8">
                     @foreach($news as $new)
                         <div class="col-md-6 col">
@@ -111,17 +112,26 @@
                                 </div>
                                 <!-- category_article_content -->
 
+
                             </div>
                             <!-- category_article_body -->
+                            <div class=""><a href ="" class="btn btn-primary">Подробнее>></a></div>
                         </div>
                         <!-- col-md-6 -->
                         @endforeach
-                        </div> <--col-8
+                        <h1 class="divider"><a href="{{route('news')}}">Все новости&nbsp;&raquo;</a></h1>
+                        </div>
+
+
+
                         <div class="col-md-4"></div>
                     </div>
                 <!-- row -->
+
+
                 </div>
             <!-- container -->
+
                 @include('blocks.subscribe')
                 </div>
                 </div>
