@@ -81,7 +81,7 @@ sub {
 }
 
 img {
-    border: 0
+     border: 0
 }
 
 svg:not(:root) {

@@ -47,17 +47,16 @@ class AjaxController extends Controller
     {
         $data = new Message();
 
-        $fullname= $req->input('lastName') . ' ' .$req->input('firstName') . '' . $req->input('fatherName');
+        $fullname= $req->input('lastName') . ' ' .$req->input('firstName') . ' ' . $req->input('fatherName');
 
-        $data->fio =$fullname;
+        $data->fio = $fullname;
         $data->job = $req->input('job');
         $data->phone = $req->input('phone');
         $data->email = $req->input('email');
         $data->address= $req->input('address');
         $data->message = $req->input('message');
-        $data->publish = $req->input('consent');
+        $data->consent = $req->input('consent');
 
-        dd($data);
         $data->save();
 
         return response()->json(['success'=>'Ваша заявка отправлена, В ближайшее время с вами свяжется наш специалист']);

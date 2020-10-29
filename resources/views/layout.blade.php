@@ -83,6 +83,6 @@
 <script src="/assets/js/callajax.js"></script>
 <script src="/assets/js/sub-ajax.js"></script>
 <script src="/assets/js/web-ajax.js"></script>
-
+<script src="/assets/js/faajax.js"></script>
 </body>
 </html>

@@ -1,3 +1,9 @@
+.partner_item img{
+    width: 140px;
+    height: 140px;
+    border-radius:50%;
+}
+
 .crunchify-top:hover {
     background-color: rgb(49, 160, 177);
     color: #fff;
@@ -51,3 +57,5 @@ hr{
 .partner-item{
     margin-left: 18px;
 }
+
+

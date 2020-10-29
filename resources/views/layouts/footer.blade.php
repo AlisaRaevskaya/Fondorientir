@@ -1,6 +1,59 @@
 <section id="footer_section" class="footer_section">
     <div class="container">
+
+        <div class="footer_bottom_Section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-10">
+
+                        <div class="entity_title">
+                            <h1> Взаимодействуем:</h1>
+                        </div>
+
+                        <div class="entity_content">
+                            <div class="partner_item">
+                                <p>Кадастровая палата</p>
+                                <img src="/assets/images/footer/kadastr.jpg" alt="kadastrovaya_palata">
+                            </div>
+                            <div class="partner_item">
+                                <p>Федеральная налоговая служба</p>
+                                <div class="part_img">
+                                <img src="/assets/images/footer/nalogovaya.jpg" alt="nalogovaya" class="rounded-circle">
+                                </div>
+                            </div>
+                            <div class="partner_item">
+                                <p>Служба судебных приставов</p>
+                                <img src="/assets/images/footer/pristavy.jpg" alt="pristavy">
+                            </div>
+                            <div class="partner_item">
+                                <p> Федеральная служба защиты прав потребителей</p>
+                                <img src="/assets/images/footer/potrebitel.jpg" alt="potrebitel_service">
+                            </div>
+                            <div class="partner_item">
+                                <p>Россотрудничество</p>
+                                <img src="/assets/images/footer/rossotrudnichestvo.png" alt="rossotrudnichestvo">
+                            </div>
+                            <div class="partner_item_2">
+                                <p>Федеральное агентство
+                                    по делам национальностей</p>
+                                <img src="/assets/images/footer/fadn.jpg" alt="nation_agency">
+                            </div>
+                            <div class="partner_item_2">
+                                <p>Федеральная служба по экологическому, технологическому и атомному надзору (Ростехнадзор)
+                                </p>
+                                <img src="/assets/images/footer/rosteh.jpg" alt="rostehnadzor">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+
         <hr class="footer-top">
+
         <div class="row">
             <div class="col-md-3">
                 <div class="footer_widget_title"><h3><a href="/about" target="_self">О Фонде</a></h3></div>

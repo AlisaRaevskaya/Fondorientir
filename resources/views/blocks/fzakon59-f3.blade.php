@@ -4,7 +4,8 @@
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
+<div class="col-md-1"></div>
+<div class="col-md-10">
 <div class="entity_wrapper">
     <div class="entity_title">
 
@@ -108,7 +109,7 @@
     <!-- entity_content -->
 </div>
 <!--Right Section-->
-
+<div class="col-md-1"></div>
 </div>
 <!-- row -->
 

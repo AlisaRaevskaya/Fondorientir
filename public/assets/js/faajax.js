@@ -3,8 +3,7 @@ $("#btn-messages").on("click", function (event) {
 
   let checkbox = $("input[type='checkbox']");
 
-  checkbox.is(":checked") ? checkbox.text(1) : checkbox.text(0);
-  console.log(checkbox.val());
+  checkbox.is(":checked") ? checkbox.val(1) : checkbox.val(0);
 
   $.ajaxSetup({
     headers: {
@@ -13,16 +12,18 @@ $("#btn-messages").on("click", function (event) {
   });
 
   let form_data = $('form[name="feedbackForm"]').serialize(); // Собираем все данные из формы
+  console.log($(".success_messages"));
 
   $.ajax({
     url: "/submit",
     method: "POST",
     data: form_data,
     success: function (response) {
-      console.log(response);
       if (response) {
-        $("#success").html(response.success);
-        $('form[name="feedbackForm"]').reset();
+        $(".success_messages").html(response.success);
+        setTimeout(() => {
+          $('form[name="feedbackForm"]').trigger("reset");
+        }, 2000);
       }
     },
   });
