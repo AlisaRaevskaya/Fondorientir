@@ -1,6 +1,6 @@
 <!--[*]
 [*]-->
-<div class="widget m30">
+<div class="widget">
     <div class="widget_title widget_black">
         <h2>Обратная связь</h2>
     </div>
@@ -10,10 +10,10 @@
         </div>
         <div class="media-body">
         <p>Ваше мнение имеет значение!</p>
-        <p><a class="popup_link" href="#" style="text-decoration:underline">Отправьте нам</a>
+        <p><a class="popup_link" href="{{route('feedback.problem')}}" style="text-decoration:underline">Отправьте нам</a>
         свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.</p>
             <h3 class="media-heading">
-            <a class="popup_link" style="color:blue" href="#">Отправить</a>
+            <a class="popup_link" style="color:blue" href="{{route('feedback.problem')}}">Отправить</a>
             </h3>
         </div>
     </div>

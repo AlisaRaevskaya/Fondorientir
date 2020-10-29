@@ -18,8 +18,10 @@ class MainController extends Controller
     $mainContent= Pages::where('laravel_name', 'main')->get();
     $images= Image::find(1)->where('page_id', '1')->get();
     $news = News::orderBy('dateline', 'desc')->paginate(4);
+    $new = News::find(1)->first();
+    $category= $new->category;
 
-    return view('main.index', compact('mainContent', 'images', 'news'));
+    return view('main.index', compact('mainContent', 'images', 'news', 'category'));
     }
 
     public function history(){

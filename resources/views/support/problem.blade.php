@@ -9,6 +9,7 @@
 
             <div class="col-md-8 ">
                 <div class="entity_wrapper">
+                <h5>Отправьте нам свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.</h5>
 <div class="for_form">
 <h5>Отправить сообщение администрации сайта</h5>
 <form action="/website-feedback" method="POST" name="popForm" >
@@ -45,8 +46,6 @@
 </div>
 </form>
 </div>
-
-
 
 </div>
 </div>

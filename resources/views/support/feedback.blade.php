@@ -7,7 +7,9 @@
 <section id="entity_section" class="entity_section">
 <div class="container">
 <div class="row">
-<div class="col-md-8">
+<div class="col-md-1"></div>
+
+<div class="col-md-10">
 <div class="entity_wrapper">
     <div class="entity_title">
         <h1><a href="#">Интернет-приемная</a></h1>
@@ -62,7 +64,7 @@
 
 <div>
 <div style="padding:10pt 0;">Поля отмеченные * обязательны для заполнения</div>
-@include('blocks.form')
+@include('forms.feedbackForm')
 </div>
 
 
@@ -73,6 +75,7 @@
 </div>
 <!--Right Section-->
 
+<div class="col-md-1"></div>
 </div>
 <!-- row -->
 

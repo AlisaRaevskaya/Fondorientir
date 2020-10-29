@@ -1,12 +1,12 @@
 <section id="subscribe_section" class="subscribe_section">
 
-<div class="row">
+                <div class="row">
                 <form action="/subscribe" method="post" class="subForm" >
                 <!-- @csrf -->
                 <div class="form-group ">
 
                 <label class="col-sm-6 control-label" for="formGroupInputLarge">
-                    <h1><span class="red-color">Подпишитесь </span> на наши новости<h1>
+                    <h2><span class="red-color">Подпишитесь </span> на наши новости<h2>
                 </label>
 
                 <div class="form-group" class="col-sm-3">
