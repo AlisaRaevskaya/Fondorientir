@@ -1,7 +1,8 @@
+
 <section id="entity_section" class="entity_section">
 <div class="container">
-
 <div class="row">
+
 <div id="map" style="width: 600px; height: 400px"></div>
 </div>
 </div>

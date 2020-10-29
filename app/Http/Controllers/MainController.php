@@ -20,8 +20,11 @@ class MainController extends Controller
     $news = News::orderBy('dateline', 'desc')->paginate(4);
     $new = News::find(1)->first();
     $category= $new->category;
+    $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
+        ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
+        ->orderBy('dateline', 'desc')->paginate(4);
 
-    return view('main.index', compact('mainContent', 'images', 'news', 'category'));
+    return view('main.index', compact('mainContent', 'images', 'news', 'category','replies'));
     }
 
     public function history(){
