@@ -88,7 +88,7 @@ class AjaxController extends Controller
 
             $data->save();
 
-            return response()->json(['success'=>"Ваша заявка отправлена.Ждите звонка"]);
+            return response()->json(['success'=>"Ваша заявка принята.Ждите звонка"]);
         }
 
         public function saveLawQuestion(Request $req)

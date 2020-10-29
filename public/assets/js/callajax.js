@@ -15,12 +15,15 @@ $("#btn_call").on("click", function () {
     headers: {
       "X-CSRF-TOKEN": $('meta[name="csrf_token"]').attr("content"),
       _method: "patch",
-    },
-    dataType: "json", // тип передачи данных
+    }, // тип передачи данных
     data: user_data,
+    // dataType: "json",
     // после получения ответа сервера
-    success: function (data) {
-      $(".messages").html(data.result); // выводим ответ сервера
+    success: function (response) {
+      if (response) {
+        let result = JSON.parse(response);
+        $(".success_call").html(result.success);
+      }
     },
   });
 });

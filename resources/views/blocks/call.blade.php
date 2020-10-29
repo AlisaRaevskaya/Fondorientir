@@ -1,6 +1,5 @@
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-aria-labelledby="exampleModalLongTitle"
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
 aria-hidden="true">
 
   <div class="modal-dialog" role="document">
@@ -23,13 +22,13 @@ aria-hidden="true">
         <span>Ваш телефон</span>
         <input id="user_phone" required type="text" name="phone" placeholder="+7">
 
-        <div class="messages"></div>
       </div>
 
       <div class="modal-footer">
         <input type="button" value="Отправить" id="btn_call">
       </div>
 
+      <div class="success_call"></div>
       </form>
 
     </div>

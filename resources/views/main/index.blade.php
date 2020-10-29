@@ -20,7 +20,8 @@
             <div class="col-md-4">
                      <div class="feature_static_wrapper">
                     <div class="feature_article_img">
-                        <img class="img-responsive" src="/assets/images/banner.png" alt="feature-top">
+                 <a href="{{route('feedback.reception')}}"><img class="img-responsive" src="/assets/images/banner.png"
+                 alt="banner"></a>
                     </div>
 
                 </div>
