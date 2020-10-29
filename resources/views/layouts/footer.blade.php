@@ -88,20 +88,25 @@
                     </div>
 
                 <div class="row">
-                <form action="/subscribe" method="post" class="subForm">
+                <form action="/subscribe" method="post"
+                class="subForm">
                 @csrf
                 <div class="form-group ">
-                <label class="" for="formGroupInputLarge">
+                <label class="control-label"
+                for="formGroupInputLarge">
                     <h3><span class="red-color">Подписка</span> на наши новости<h3>
                 </label>
+
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control input-lg"
+                    <input type="email"
+                    name="email" class="form-control input-lg"
                     placeholder="Ваш email">
                 </div>
-                <div class="sub_success"></div>
+
                 <div class="form-group ">
                     <input type="submit" value="Подписаться" id="subscription_btn" class="btn btn-large blue">
                 </div>
+                <div class="sub_success"></div>
                 <!-- <div class="col-sm-2"></div> -->
                 </div>
                 </form>

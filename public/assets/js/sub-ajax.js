@@ -4,7 +4,6 @@ $(".subscription_btn").on("click", function(event) {
 
     let sub_data = $(".subForm").serialize();
 
-    console.log(sub_data);
 
     $.ajaxSetup({
         headers: {
@@ -15,13 +14,14 @@ $(".subscription_btn").on("click", function(event) {
     $.ajax({
         url: "/subscribe",
         method: "POST",
-        dataType: "json",
         data: sub_data,
         success: function(response) {
-            console.log(response);
-            if (response) {
+            if (response){
                 $(".sub_success").html(response.success);
-            }
+                setTimeout(() => {
+                $(".subForm").trigger("reset");
+                }, 2000);
+              }
         }
     });
 });

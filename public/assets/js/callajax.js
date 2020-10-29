@@ -2,6 +2,7 @@ $("#btn_call").on("click", function () {
   // собираем данные с формы
   let user_data = $('form[name="callForm"]').serialize();
 
+
   // отправляем данные
   $.ajaxSetup({
     headers: {
@@ -17,13 +18,15 @@ $("#btn_call").on("click", function () {
       _method: "patch",
     }, // тип передачи данных
     data: user_data,
-    // dataType: "json",
     // после получения ответа сервера
     success: function (response) {
-      if (response) {
-        let result = JSON.parse(response);
-        $(".success_call").html(result.success);
-      }
+        if (response){
+            $(".success_call").html(response.success);
+            setTimeout(() => {
+              $('form[name="callForm"]').trigger("reset");
+              $("#exampleModalLong").addClass('hidden');
+            }, 2000);
+          }
     },
   });
 });

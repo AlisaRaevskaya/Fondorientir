@@ -14,7 +14,6 @@ $(".btn-web-feedback").on("click", function (event) {
     method: "POST",
     data: f_data,
     success: function (response) {
-      console.log($("#w_success"));
       if (response) {
         $("#w_success").html(response.success);
         setTimeout(() => {
