@@ -1,7 +1,11 @@
 .partner_item img{
-    width: 140px;
-    height: 140px;
-    border-radius:50%;
+    width: 100px;
+    height: 100px;
+    border-radius:80%;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+.partner_item p{
+    font-size: smaller;
 }
 
 .crunchify-top:hover {
@@ -58,4 +62,9 @@ hr{
     margin-left: 18px;
 }
 
-
+.margin-top{
+margin-top:2rem;
+}
+.partner_item_2{
+margin-top: 4rem;
+}
