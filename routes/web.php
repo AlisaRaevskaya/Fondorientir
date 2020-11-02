@@ -78,3 +78,4 @@ Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion']);
 Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
+

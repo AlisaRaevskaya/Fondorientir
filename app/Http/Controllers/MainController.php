@@ -53,5 +53,8 @@ class MainController extends Controller
     public function reports(){
         return view('main.reports');
     }
+    public function map(){
+        return view('blocks.map');
+    }
 
 }

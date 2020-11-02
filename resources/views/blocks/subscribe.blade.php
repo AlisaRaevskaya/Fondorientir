@@ -1,7 +1,7 @@
 <section id="subscribe_section" class="subscribe_section">
 
                 <div class="row">
-                <form action="/subscribe" method="post" class="subForm" >
+                <form action="/subscribe" method="post" class="subForm">
                 @csrf
                 <div class="form-group ">
 

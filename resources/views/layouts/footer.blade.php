@@ -74,12 +74,17 @@
                                 <img src="/assets/images/{{ $contact->logo }}" alt="technews" width:="95pt"
                                     height="95pt">
                             </a>
-                            <p>{{ $contact->name }}</p>
-                            <p> {{ $contact->inn }}</p>
-                            <p> {{ $contact->eng_name }}</p>
-                            <p>{{ $contact->index, $contact->city, $contact->street }}</p>
-                            <p> {{ $contact->web }}</p>
-                        @endforeach
+                            <h1>Фонд "ОРИЕНТИР"</h1>
+                        <p>Дополнительные сведения: при реализации проекта используются средства государственной поддержки,
+                            в соответствии с распоряжением Президента Российской Федерации от 30 января 2019 г. № 30 c
+                            01.07.2019 с использованием гранта Президента Российской Федерации на развитие гражданского общества,
+                            предоставленного Фондом президентских грантов, Фонд «ОРИЕНТИР» реализует проект
+                             «Цивилизованная миграция - Санкт-Петербург и Ленинградская область» (далее – Проект).
+                             В рамках Проекта работает правовая приемная Фонда «ОРИЕНТИР», где мигранты-соотечественники
+                            бесплатно получают юридическую помощь в сфере миграционного и трудового законодательства.</p>
+
+
+                            @endforeach
                     </div>
                 </div>
 
@@ -138,11 +143,21 @@
                         <h3><a href="/contacts" target="_self">Контакты</a></h3>
                     </div>
                     <div class="widget_photos">
+                        @foreach ($contacts as $contact)
+                            <p>{{ $contact->name }}</p>
+                            <p> {{ $contact->inn }}</p>
+                            <p> {{ $contact->eng_name }}</p>
+                            <p>{{ $contact->index}}, {{$contact->city}},{{$contact->street }}</p>
+                            <p> {{ $contact->email}}</p>
+                            <p> {{ $contact->phone}}</p>
+                            <p> {{ $contact->web }}</p>
+                        @endforeach
+{{--
                         <div>
                             <p>Часы работы: с 9.00 до 18.00(кроме субботы и воскресенья)</p>
                             <p>Тел.: +7(812) 385 -69-89, +7(911)253-85-01</p>
                             <p>Е-mail: inlo®fondorientir.ru</p>
-                        </div>
+                        </div> --}}
                         <div>
                             <h3>Мы в социальных сетях:</h3>
                             <!--Twitter-->
@@ -158,26 +173,29 @@
 
                         <div class="row">
                             <form action="/subscribe" method="post" class="subForm">
-                                @csrf
-                                <div class="form-group ">
-                                    <label class="control-label" for="formGroupInputLarge">
-                                        <h3><span class="red-color">Подписка</span> на наши новости<h3>
-                                    </label>
+                            @csrf
+                            <div class="form-group ">
 
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control input-lg"
-                                            placeholder="Ваш email">
-                                    </div>
+                            <label class="control-label">
+                                <h2><span class="red-color">Подпишитесь </span> на наши новости<h2>
+                            </label>
 
-                                    <div class="form-group ">
-                                        <input type="submit" value="Подписаться" id="subscription_btn"
-                                            class="btn btn-large blue">
-                                    </div>
-                                    <div class="sub_success"></div>
-                                    <!-- <div class="col-sm-2"></div> -->
-                                </div>
+                            <div class="form-group">
+                                <input type="email" name="email"
+                                class="form-control input-lg"
+                                placeholder="Ваш email">
+                            </div>
+
+                            <div class="form-group" >
+                                <input type="submit" value="Подписаться" class="btn btn-large blue subscription_btn">
+                            </div>
+
+                            <div class="sub_success"></div>
+
+                            <div class="col-sm-2"></div>
+                            </div>
                             </form>
-                        </div>
+                </div>
 
                     </div>
 

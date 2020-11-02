@@ -36,7 +36,7 @@
                             <li><a>Часы работы:{{$contact->hours}}</a></li>
                             <li><a>Е-mail:{{$contact->email}}</a></li>
                             <li><a>Адрес:{{$contact->index}} {{$contact->city}} {{$contact->street}}</a></li>
-                            <li><a>Схема проезда (интерактивная карта)</a></li>
+                            <li><a href="#" class="pop_map_link" data-toggle="modal" data-target=".bd-example-modal-lg">Схема проезда (интерактивная карта)</a></li>
                             <li><a href='#'>{{$contact->phone}}</a></li>
                             <button type="button"
                             class="btn btn-primary"

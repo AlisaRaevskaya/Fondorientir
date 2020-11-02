@@ -66,7 +66,7 @@
                 <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
                 <label for="rules_ok">Ознакомлен(-а) и согласен
                     <a href="/assets/dw/soglasie.pdf" target="_blank" class="consent"> на обработку моих данных
-                    </a></br></label>
+                    </a></label>
             </div>
 
             <br />
@@ -74,10 +74,13 @@
             <div class="form-group">
 
                 <div class="col-xs-offset-3 col-xs-9">
-                    <input type="submit" class="btn btn-primary" id="btn-messages" value="Отправить">
+                    <input type="submit" class="btn btn-primary g-recaptcha" id="btn-messages"
+                     value="Отправить" data-sitekey="6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"
+                     data-callback='onSubmit' data-action='submit'>
                 </div>
             </div>
 
             <div id="success_messages"></div>
 
 </form>
+

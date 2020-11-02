@@ -36,6 +36,9 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU" type="text/javascript">
     </script>
 
+<script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
+
+
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -64,7 +67,7 @@
 
 
 <!-- #main-wrapper -->
-
+@include('blocks.map')
 <!-- jquery Core-->
 
 <script src="/assets/js/bootstrap.min.js"></script>
@@ -84,5 +87,7 @@
 <script src="/assets/js/sub-ajax.js"></script>
 <script src="/assets/js/web-ajax.js"></script>
 <script src="/assets/js/faajax.js"></script>
+
+
 </body>
 </html>

@@ -85,4 +85,17 @@
 </section>
 <!-- Entity Section Wrapper -->
 <script src="/assets/js/faajax.js"></script>
+
+<script>
+
+    grecaptcha.ready(function(){
+
+    grecaptcha.execute('6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg', {action:'/submit'}).then(function(token){
+
+
+
+        });
+
+        });
+        </script>
 @endsection

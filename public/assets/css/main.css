@@ -22,18 +22,18 @@
     padding-left: 0.8rem;
 }
 
-.popup-box{
-
-    border-radius: 5px;
-    background: #fff;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-    font-size: 14px;
-    top:10%;
-    left:40%;
-    padding:20px;
-    background-color:lightblue;
-}
-/* .popup-box .close {
+/* .popup_map{
+position:fixed;
+border-radius: 5px;
+background: #fff;
+box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+font-size: 14px;
+top:10%;
+left:40%;
+padding:20px;
+/* background-color:lightblue; */
+/*
+.popup_map .close{
     position: absolute;
     top: 0px;
     right: 0px;
@@ -44,6 +44,7 @@
     padding: 10px;
     font-size: 20px;
 } */
+
 #btn-web-feedback{
     margin-top:10px;
 }
@@ -67,4 +68,7 @@ margin-top:2rem;
 }
 .partner_item_2{
 margin-top: 4rem;
+}
+.side-block{
+margin-top:5rem;
 }
