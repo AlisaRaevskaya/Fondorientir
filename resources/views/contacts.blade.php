@@ -114,4 +114,5 @@ ymaps.ready(function () {
         .add(myPlacemarkWithContent);
 });
 </script>
+
 @endsection

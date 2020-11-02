@@ -72,3 +72,13 @@ margin-top: 4rem;
 .side-block{
 margin-top:5rem;
 }
+
+.news-item{
+    overflow:hidden;
+    width:300px;
+}
+.intro-item{
+    overflow:hidden;
+    max-width:300px;
+    max-height:
+}

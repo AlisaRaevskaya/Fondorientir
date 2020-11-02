@@ -7,9 +7,12 @@
                         <div class="left_section">
 
                             <div class="row justify-content-between">
-                                <div class="logo">
-                                    <a href="/"><img src="/assets/images/logo1.png" alt="Logo"></a>
-                                </div>
+                                <a href="/" class="logo"><img src="/assets/images/logo.png" alt="Logo"></a>
+                                <div style="position:absolute;top:0%;
+                                left:40%;float:right;">
+                                    <h5>Фонд поддержки добровольного переселения соотечественников «ОРИЕНТИР»
+                                </h5>
+                            </div>
                             </div>
 
                             <div class="social">

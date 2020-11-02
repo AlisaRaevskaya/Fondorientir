@@ -7,16 +7,19 @@
 
                     <div class="col-md-1"></div>
 
-                    <div class="col-md-10 ">
+                    <div class="col-md-10">
 
                         <div class="entity_title">
                             <h1> Взаимодействуем:</h1>
                         </div>
-                        <div class="row justify-content-between">
 
-                            <div class="partner_item col-md-2">
-                                <p>Кадастровая палата</p>
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+
+                            <div class="partner_item col-md-2 ">
+                                <p>Кадастровая палата</p><br>
+                                <div class="part_img">
                                 <img src="/assets/images/footer/kadastr.jpg" alt="kadastrovaya_palata">
+                                </div>
                             </div>
 
                             <div class="partner_item col-md-2">
@@ -26,17 +29,26 @@
                                         class="rounded-circle">
                                 </div>
                             </div>
+
                             <div class="partner_item col-md-2">
                                 <p>Служба судебных приставов</p>
+                                <div class="part_img">
                                 <img src="/assets/images/footer/pristavy.jpg" alt="pristavy">
+                                </div>
                             </div>
+
                             <div class="partner_item col-md-3">
                                <p> Федеральная служба защиты прав потребителей</p>
+                               <div class="part_img">
                                 <img src="/assets/images/footer/potrebitel.jpg" alt="potrebitel_service">
+                               </div>
                             </div>
+
                             <div class="partner_item col-md-2">
-                                <p>Россотрудничество</p>
+                                <p>Россотрудничество</p><br>
+                                <div>
                                 <img src="/assets/images/footer/rossotrudnichestvo.png" alt="rossotrudnichestvo">
+                                </div>
                             </div>
 
                             <div class="row justify-content-between margin-top">
@@ -46,11 +58,11 @@
                                     <div><img src="/assets/images/footer/fadn.jpg" alt="nation_agency"></div>
                                 </div>
 
-                                <div class="partner_item_3 col-md-7 d-flex margin-top flex-column justify-content-between">
-                                  <div>  <p>Федеральная служба по экологическому, технологическому и атомному надзору
+                                <div class="partner_item_3 col-md-7 margin-top d-flex flex-column justify-content-between">
+                                  <div><p>Федеральная служба по экологическому, технологическому и атомному надзору
                                         (Ростехнадзор)
                                     </p></div>
-                                  <div>  <img src="/assets/images/footer/rosteh.jpg" alt="rostehnadzor"></div>
+                                  <div><img src="/assets/images/footer/rosteh.jpg" alt="rostehnadzor"></div>
                                 </div>
 
                             </div>

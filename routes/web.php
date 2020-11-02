@@ -27,7 +27,7 @@ Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/info', [InfoController::class, 'index'])->name('info');
 Route::get('/press-news', [NewsController::class, 'pressnews'])->name('press-news');
-// Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
+Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/status', [StatusController::class, 'index'])->name('status');
 
 Route::get('/history', [MainController::class, 'history'])->name('main.history');

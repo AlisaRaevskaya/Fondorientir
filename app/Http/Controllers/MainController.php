@@ -17,12 +17,12 @@ class MainController extends Controller
 
     $mainContent= Pages::where('laravel_name', 'main')->get();
     $images= Image::find(1)->where('page_id', '1')->get();
-    $news = News::orderBy('dateline', 'desc')->paginate(4);
+    $news = News::orderBy('dateline', 'desc')->paginate(6);
     $new = News::find(1)->first();
     $category= $new->category;
     $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
         ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
-        ->orderBy('dateline', 'desc')->paginate(4);
+        ->orderBy('dateline', 'desc')->paginate(5);
 
     return view('main.index', compact('mainContent', 'images', 'news', 'category','replies'));
     }
