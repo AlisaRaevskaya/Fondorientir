@@ -67,13 +67,8 @@ class MainController extends Controller
         }
         return $result;
     }
-
     public function admin(){
         return view('admin');
-        // dd(\Illuminate\Support\Facades\Auth::user());
     }
-    public function home(){
-        return view('home');
-        // dd(\Illuminate\Support\Facades\Auth::user());
-    }
+
 }

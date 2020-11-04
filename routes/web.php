@@ -80,8 +80,8 @@ Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
-Route::view('/home', [MainController::class, 'admin'])->middleware('auth');
-// Route::get('/admin', [MainController::class, 'admin'])->name('admin');
+Route::view('/home', [MainController::class, 'admin']);
+
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except' => ['create', 'show','save']]);
