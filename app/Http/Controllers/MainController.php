@@ -24,7 +24,10 @@ class MainController extends Controller
         ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
         ->orderBy('dateline', 'desc')->paginate(5);
 
-    return view('main.index', compact('mainContent', 'images', 'news', 'category','replies'));
+    $int = $news->pluck('intro');
+    $intros= $this->changeIntro($int);
+
+    return view('main.index', compact('mainContent', 'images', 'news', 'category','replies', 'intros'));
     }
 
     public function history(){
@@ -57,4 +60,20 @@ class MainController extends Controller
         return view('blocks.map');
     }
 
+    public function changeIntro($arr){
+        $result = [];
+        foreach($arr as $in){
+        array_push($result, substr($in, 0, 150) . '...');
+        }
+        return $result;
+    }
+
+    public function admin(){
+        return view('admin');
+        // dd(\Illuminate\Support\Facades\Auth::user());
+    }
+    public function home(){
+        return view('home');
+        // dd(\Illuminate\Support\Facades\Auth::user());
+    }
 }

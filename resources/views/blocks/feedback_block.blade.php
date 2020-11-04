@@ -1,7 +1,7 @@
 <!--[*]
 [*]-->
 <div class="widget">
-    <div class="widget_title widget_black">
+    <div class="widget_title" style="padding-right:10pt;">
         <h2>Обратная связь</h2>
     </div>
     <div class="media">

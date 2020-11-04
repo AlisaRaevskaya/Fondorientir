@@ -56,9 +56,7 @@ class News extends Model
     public function setIntroAttribute($value){
         $this->attributes['intro'] = htmlspecialchars($value,ENT_HTML5);
     }
-    public function getIntroAttribute($value){
-        return htmlspecialchars_decode($value,ENT_HTML5);
-    }
+
     public function setSource_NameAttribute($value){
         $this->attributes['source_name'] = htmlspecialchars($value,ENT_HTML5);
     }
@@ -71,5 +69,6 @@ class News extends Model
     public function getSource_linkAttribute($value){
         return htmlspecialchars_decode($value,ENT_HTML5);
     }
+
 
 }

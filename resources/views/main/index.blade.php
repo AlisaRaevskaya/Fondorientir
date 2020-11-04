@@ -86,13 +86,16 @@
                             <div class="category_article_wrapper">
                                 <div class="row justify-content-between">
                                     @foreach ($news as $new)
+
                                         <div class="col-md-6">
                                             <div class="category_article_body">
 
                                                 <div class="top_article_img">
-                                                    <a href="{{route('news.category.id', [$category->name, $new->id])}}" target="_self">
-                                                        <img class="img-responsive" src="/assets/images/news.jpg"
-                                                            alt="feature-top">
+                                                    <a href="{{route('news.category.id',
+                                                     [$category->name, $new->id])}}" target="_self">
+                                                        <img class="img-responsive"
+                                                        src="/assets/images/news.jpg"
+                                                            alt="news">
                                                     </a>
                                                 </div>
 
@@ -102,17 +105,24 @@
                                                 {!!$new->title!!}</a></h2>
                                                 </div>
 
+
                                                 <div class="category_article_date">
                                                     {{$new->dateline}}
                                                 </div>
 
+                                                @foreach($intros as $intro) @endforeach
                                                 <div class="category_article_content"style="margin-bottom:10pt;">
                                                     {!!$new->intro!!}
                                                 </div>
+
+
                                                 <!-- media_social -->
+                                                <h6> <a href="{{ route('news.category.id',
+                                                [$category->name, $new->id]) }}">Подробнее>></a></h6>
                                             </div>
                                             <!-- category_article_body -->
                                         </div>
+
                                     @endforeach
                                     <!-- col-md-6 -->
                                     <p class="divider"><a href="{{ route('news') }}"> Все новости</a></p>
@@ -124,7 +134,7 @@
                         <div class="col-md-3">
 
                             <div class="widget reviews">
-                                <div class="widget_title widget_black">
+                                <div class="widget_title">
                                     <h2><a href="{{ route('faq') }}">Вопрос-ответ</a></h2>
                                 </div>
 

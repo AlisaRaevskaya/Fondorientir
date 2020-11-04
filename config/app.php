@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MenuServiceProvider::class,
         App\Providers\SidebarServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
     ],
 
     /*
