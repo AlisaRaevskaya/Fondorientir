@@ -80,7 +80,7 @@ Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
-Route::view('/home', [MainController::class, 'admin']);
+Route::view('/home', [MainController::class, 'home']);
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){

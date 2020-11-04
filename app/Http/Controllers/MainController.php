@@ -67,7 +67,8 @@ class MainController extends Controller
         }
         return $result;
     }
-    public function admin(){
+
+    public function home(){
         return view('admin');
     }
 
