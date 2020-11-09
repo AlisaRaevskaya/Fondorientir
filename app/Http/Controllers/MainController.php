@@ -33,30 +33,42 @@ class MainController extends Controller
     }
 
     public function history(){
-        return view('main.history');
+        $history= Pages::where('title', 'history')->get();
+        return view('main.history', compact('history'));
     }
     public function mission(){
-        return view('main.mission');
+        $mission= Pages::where('title', 'mission')->get();
+        return view('main.mission',compact('mission') );
     }
+
     public function structure(){
-        return view('main.structure');
+        $history= Pages::where('title', 'structure')->get();
+        return view('main.structure', compact('structure') );
     }
 
     public function projects(){
         $newProjects =Projects::all();
         $projects=PreProject::all();
-        return view('main.projects', compact('projects' ,'newProjects'));
+        $pages=Pages::where('title', 'projects')->get();
+
+        foreach($pages as $page){
+            $content= $page->content;
+        }
+        return view('main.projects', compact('projects' ,'newProjects', 'content'));
     }
 
     public function partners(){
-        return view('main.partners');
+        $partners= Pages::where('title', 'partners')->get();
+        return view('main.partners', compact('partners'));
     }
 
     public function bankinfo(){
-        return view('main.bankinfo');
+        $bankinfo= Pages::where('title', 'bankinfo')->get();
+        return view('main.bankinfo', compact('bankinfo'));
     }
     public function reports(){
-        return view('main.reports');
+        $reports=Pages::where('title', 'reports')->get();
+        return view('main.reports', compact('reports'));
     }
     public function map(){
         return view('blocks.map');

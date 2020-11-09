@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,12 +41,31 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function replies(){
+    public function replies()
+    {
         return $this->HasMany('App\Models\Reply');
     }
 
-    public function roles(){
-        return $this->belongsTo('App\Models\Role');
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role');
     }
 
+    public function hasRole($role)
+    {
+        if ($this->roles()->where('name', $role)->first()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function hasAnyRoles($roles)
+    {
+        if ($this->roles()->whereIn('name', $roles)->first()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -80,9 +80,30 @@ Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
-Route::view('/home', [MainController::class, 'home']);
+Route::view('/home', 'home');
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+
 Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except' => ['create', 'show','save']]);
+Route::resource('/faq', '\App\Http\Controllers\Admin\FaqController');
+Route::resource('/about', '\App\Http\Controllers\Admin\AboutController');
+Route::resource('/info', '\App\Http\Controllers\Admin\InfoController');
+Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactController');
+Route::resource('/history', '\App\Http\Controllers\Admin\About\HistoryController');
+Route::resource('/reports', '\App\Http\Controllers\Admin\About\ReportsController');
+Route::resource('/structure', '\App\Http\Controllers\Admin\About\StructureController');
+Route::resource('/projects', '\App\Http\Controllers\Admin\About\ProjectsController');
+Route::resource('/partners', '\App\Http\Controllers\Admin\About\PartnersController');
+Route::resource('/bankinfo', '\App\Http\Controllers\Admin\About\BankinfoController');
+
 });
+
+Route::view('/static','admin.layout-static');
+Route::view('/404','admin.errors.404');
+Route::view('/401','admin.errors.401');
+Route::view('/500','admin.errors.500');
+Route::view('/inbox','admin.mail.mail');
+Route::view('/read','admin.mail.read_mail');
+Route::view('/compose','admin.mail.compose');
+

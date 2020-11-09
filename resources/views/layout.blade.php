@@ -17,7 +17,8 @@
 
     <!-- Bootstrap -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/bootstrap-datepicker-standalone.css" rel="stylesheet">
+
+
 
     <!-- font-awesome -->
     <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
@@ -62,8 +63,6 @@
 
 
 @include('blocks.call')
-
-
 
 
 @include('layouts.footer')
