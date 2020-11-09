@@ -7,7 +7,7 @@
                     <div class="col-md-9">
                         <div class="feature_article_wrapper">
                             <div class="feature_article_img">
-                                <img class="img-responsive top_static_article_img" src="/assets/images/imm21.jpg"
+                                <img class="img-responsive top_static_article_img" src="/assets/images/immigrants.jpg"
                                     alt="feature-top">
 
                             </div>
@@ -21,7 +21,7 @@
                         <div class="feature_static_wrapper">
                             <div class="feature_article_img">
                                 <a href="{{ route('feedback.reception') }}"><img class="img-responsive"
-                                        src="/assets/images/b2.png" alt="banner"></a>
+                                        src="/assets/images/banner.png" alt="banner"></a>
                             </div>
 
                         </div>

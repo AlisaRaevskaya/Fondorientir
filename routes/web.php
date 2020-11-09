@@ -31,13 +31,13 @@ Route::get('/press-news', [NewsController::class, 'pressnews'])->name('press-new
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/status', [StatusController::class, 'index'])->name('status');
 
-Route::get('/history', [MainController::class, 'history'])->name('main.history');
-Route::get('/mission', [MainController::class, 'mission'])->name('main.mission');
-Route::get('/structure', [MainController::class, 'structure'])->name('main.structure');
-Route::get('/projects', [MainController::class, 'projects'])->name('main.projects');
-Route::get('/partners', [MainController::class, 'partners'])->name('main.partners');
-Route::get('/reports', [MainController::class, 'reports'])->name('main.reports');
-Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('main.bankinfo');
+Route::get('/history', [MainController::class, 'history'])->name('history');
+Route::get('/mission', [MainController::class, 'mission'])->name('mission');
+Route::get('/structure', [MainController::class, 'structure'])->name('structure');
+Route::get('/projects', [MainController::class, 'projects'])->name('projects');
+Route::get('/partners', [MainController::class, 'partners'])->name('partners');
+Route::get('/reports', [MainController::class, 'reports'])->name('reports');
+Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
 
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('feedback.lawyer');
 Route::get('/feedback/reception', [FeedbackController::class, 'feedback'])->name('feedback.reception');
@@ -86,17 +86,14 @@ Route::view('/home', 'home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
 Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except' => ['create', 'show','save']]);
-Route::resource('/faq', '\App\Http\Controllers\Admin\FaqController');
-Route::resource('/about', '\App\Http\Controllers\Admin\AboutController');
-Route::resource('/info', '\App\Http\Controllers\Admin\InfoController');
-Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactController');
+Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactsController');
 Route::resource('/history', '\App\Http\Controllers\Admin\About\HistoryController');
 Route::resource('/reports', '\App\Http\Controllers\Admin\About\ReportsController');
 Route::resource('/structure', '\App\Http\Controllers\Admin\About\StructureController');
 Route::resource('/projects', '\App\Http\Controllers\Admin\About\ProjectsController');
 Route::resource('/partners', '\App\Http\Controllers\Admin\About\PartnersController');
 Route::resource('/bankinfo', '\App\Http\Controllers\Admin\About\BankinfoController');
-
+Route::resource('/', '\App\Http\Controllers\Admin\MainController');
 });
 
 Route::view('/static','admin.layout-static');
@@ -106,4 +103,4 @@ Route::view('/500','admin.errors.500');
 Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
-
+// Route::view('/index','admin.main.index')->name('admin.main.index');

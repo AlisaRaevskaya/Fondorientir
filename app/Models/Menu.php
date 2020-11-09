@@ -55,4 +55,10 @@ class Menu extends Model
         return '$obj->url';
     }
 }
+
+public function larName($val){
+$result= 'admin'.'.' . $val . '.' . '.index';
+    return route($result);
+}
+
 }

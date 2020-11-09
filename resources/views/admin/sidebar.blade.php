@@ -35,21 +35,26 @@
                      <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
                          data-parent="#sidenavAccordion">
                          <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link" href="{{route('admin.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Главная</a>
                              @foreach ($menuitems as $item)
-
-                             <a class="nav-link collapsed" href="{{$item->url}}" data-toggle="collapse"
-                             data-target="#page_{{$item->id}}"
-                                     aria-expanded="false" aria-controls="page_{{$item->id}}">
+                             @if(!$item->children)
+                             <a class="nav-link" href="{{$item->url}}">
+                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                             {{ $item->title }}</a>
+                            @else
+                             <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                             data-target="#page_{{$item->id}}" aria-expanded="false" aria-controls="page_{{$item->id}}">
                                          <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                          {{ $item->title }}
-                                         @if($item->children)
                                          <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                              </a>
                              @foreach ($item->children as $child1)@endforeach
                                  <div class="collapse" id="page_{{$child1->parent_id}}">
                                     <nav class="sb-sidenav-menu-nested nav">
                                      @foreach ($item->children as $child)
-                                         <a class="nav-link collapse" href="charts.html">
+                                         <a class="nav-link collapse" href="{{$child->url}}">
                                              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                              {{ $child->title }}
                                          </a>

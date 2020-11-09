@@ -22,7 +22,7 @@ class MainController extends Controller
      */
     public function index()
     {
-            $mainContent= Pages::where('laravel_name', 'main')->get();
+            $pages= Pages::where('laravel_name', 'main')->get();
             $images= Image::find(1)->where('page_id', '1')->get();
             $news = News::orderBy('dateline', 'desc')->paginate(6);
             $new = News::find(1)->first();
@@ -34,7 +34,7 @@ class MainController extends Controller
             $int = $news->pluck('intro');
             $intros= $this->changeIntro($int);
 
-            return view('admin. main.index', compact('mainContent', 'images', 'news', 'category','replies', 'intros'));
+            return view('admin.main.index', compact('pages', 'images', 'news', 'category','replies', 'intros'));
     }
 
     /**
@@ -66,7 +66,11 @@ class MainController extends Controller
      */
     public function show($id)
     {
-        //
+        $pages= Pages::where('id', $id)->get();
+        $slider_images=Image::find('name')->where('module', 'slider')->all();
+        $banner=Image::find(1)->where('module', 'banner')->get();
+
+        return view('admin.main.show', compact('pages', 'slider_images', 'banner'));
     }
 
     /**
@@ -75,21 +79,22 @@ class MainController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        $mainContent= Pages::where('laravel_name', 'main')->get();
-        $images= Image::find(1)->where('page_id', '1')->get();
-        $news = News::orderBy('dateline', 'desc')->paginate(6);
-        $new = News::find(1)->first();
-        $category= $new->category;
-        $replies = Topic::join('replies', 'topics.reply_id', '=', 'replies.id')
-                ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
-                ->orderBy('dateline', 'desc')->paginate(5);
+        $pages= Pages::where('id', $id)->get();
+        $slider_images=Image::find('name')->where('module', 'slider')->all();
+        $banner=Image::find(1)->where('module', 'banner')->get();
+        // $news = News::orderBy('dateline', 'desc')->paginate(6);
+        // $new = News::find(1)->first();
+        // $category= $new->category;
+        // $replies = Topic::join('replies', 'topics.reply_id', '=', 'replies.id')
+        //         ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
+        //         ->orderBy('dateline', 'desc')->paginate(5);
 
-        $int = $news->pluck('intro');
-        $intros= $this->changeIntro($int);
+        // $int = $news->pluck('intro');
+        // $intros= $this->changeIntro($int);
 
-        return view('admin.main.edit', compact('mainContent', 'images', 'news', 'category','replies', 'intros'));
+        return view('admin.main.edit', compact('pages', 'slider_images', 'banner'));
     }
 
     /**

@@ -25,7 +25,7 @@
         <li class="dropdown messages-menu nav-item">
         <li class="dropdown messages-menu open">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <i class="fa fa-envelope-square" aria-hidden="true"></i>
                 <span class="label label-success">4</span>
             </a>
             <ul class="dropdown-menu">

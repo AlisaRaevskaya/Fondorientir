@@ -2,11 +2,14 @@
 @section('content')
 
 
-    <div class="wrapper" style="padding: 0 20px;">
+    <div class="wrapper container" style="padding: 0 20px; ">
 
-        <div>
-         <button><a href="{{route('admin.main.edit', $mainContent->id)}}" class="fa fa-pencil"></a></button>
+
+        @foreach ($pages as $page)
+        <div class="container-fluid">
+            <a href="{{route('admin.edit', $page->id)}}" class="btn btn-primary">Редактировать</a>
         </div>
+
 
         <section id="feature_news_section" class="feature_news_section">
             <div class="container">
@@ -14,7 +17,7 @@
                     <div class="col-md-9">
                         <div class="feature_article_wrapper">
                             <div class="feature_article_img">
-                                <img class="img-responsive top_static_article_img" src="/assets/images/imm21.jpg"
+                                <img class="img-responsive top_static_article_img" src="/assets/images/immigrants.jpg"
                                     alt="feature-top">
                             </div>
                         </div>
@@ -24,8 +27,8 @@
                     <div class="col-md-3">
                         <div class="feature_static_wrapper">
                             <div class="feature_article_img">
-                                <a href="{{ route('feedback.reception') }}"><img class="img-responsive"
-                                        src="/assets/images/b2.png" alt="banner"></a>
+                                <a href="{{route('feedback.reception') }}"><img class="img-responsive"
+                                        src="/assets/images/banner.png" alt="banner"></a>
                             </div>
                         </div>
                         <!-- feature_static_wrapper -->
@@ -35,8 +38,10 @@
                 <!-- Row -->
             </div>
             <!-- container -->
-        </section>
 
+        </section>
+    </div>
+</div>
         <!-- Feature News Section -->
         <section>
             <div class="container">
@@ -50,9 +55,7 @@
                             </div>
 
                             <div class="entity_content">
-                                @foreach ($mainContent as $item)
-                                    <p class="text-justify">{!! $item->content !!}</p>
-                                @endforeach
+                                    <p class="text-justify">{!! $page->content !!}</p>
                             </div>
 
                         </div>
@@ -147,12 +150,12 @@
                     </div>
                 </div>
             </section>
-    </div>
-    </div>
+
 
     </div>
     </div>
     </section>
+    @endforeach
     </div>
 
 @endsection
