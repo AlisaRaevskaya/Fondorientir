@@ -1,8 +1,8 @@
 <!--[*]
 [*]-->
-<div class="widget">
-    <div class="widget_title" style="padding-right:10pt;">
-        <h2>Обратная связь</h2>
+<div>
+    <div class="widget_title">
+        <h3 style="font-size:13.5pt;">Обратная связь</h3>
     </div>
     <div class="media">
         <div class="media-left">

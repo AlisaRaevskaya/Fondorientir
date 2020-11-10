@@ -3,11 +3,6 @@
 <!-- Advertisement -->
 
 <section>
-<div class="widget hidden-xs m30">
-    <!-- <img class="img-responsive widget_img" src="assets/img/right_add5.jpg" alt="add_one"> -->
-
-</div>
-
 
 <div class="col-md-3">
 <div class="widget">
@@ -34,19 +29,14 @@
 </div>
 
 <div class="widget hidden-xs m30">
+<div class="widget_title">
 <h2>Проверить статус заявления </h2>
-<p style="text-decoration: underline"><a href="{{route('status')}}">Просмотреть статус заявления по входящему номеру</a></p>
 </div>
-<div class="widget hidden-xs m30">
-    <!-- <img class="img-responsive widget_img" src="assets/img/right_add5.jpg" alt="add_one"> -->
-    @include('blocks.feedback_block')
+<div style="padding-left:20pt;">
+<p style="text-decoration: underline;"><a href="{{route('status')}}">Просмотреть статус заявления по входящему номеру</a></p>
 </div>
-<!-- <div class="widget hidden-xs m30">
-    <img class="img-responsive adv_img" src="assets/img/right_add1.jpg" alt="add_one">
-    <img class="img-responsive adv_img" src="assets/img/right_add2.jpg" alt="add_one">
-    <img class="img-responsive adv_img" src="assets/img/right_add3.jpg" alt="add_one">
-    <img class="img-responsive adv_img" src="assets/img/right_add4.jpg" alt="add_one">
-</div> -->
+</div>
+
 
 
 <div class="widget reviews m30">

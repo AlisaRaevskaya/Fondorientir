@@ -103,4 +103,4 @@ Route::view('/500','admin.errors.500');
 Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
-// Route::view('/index','admin.main.index')->name('admin.main.index');
+// Route::view('/index','admin.main.index')->name('admin.main.ijhevdex');

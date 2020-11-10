@@ -61,10 +61,10 @@
                     </div>
 
                     <div class="col-md-3">
-                        <div class="side-block">
+                        <div>
                             @include('blocks.feedback_block')
                         </div>
-                        <div class="side-block">
+                        <div>
                             @include('blocks.status')
                         </div>
                     </div>
@@ -83,14 +83,14 @@
                                 <h2><a href="{{ route('news') }}">Новости</a></h2>
                             </div>
 
-                            <div class="category_article_wrapper">
+                            <div class="article_wrapper">
                                 <div class="row justify-content-between">
                                     @foreach ($news as $new)
 
                                         <div class="col-md-6">
-                                            <div class="category_article_body">
+                                            <div class="article_body">
 
-                                                <div class="top_article_img">
+                                                <div class="category_article_img">
                                                     <a href="{{route('news.category.id',
                                                      [$category->name, $new->id])}}" target="_self">
                                                         <img class="img-responsive"
@@ -106,12 +106,12 @@
                                                 </div>
 
 
-                                                <div class="category_article_date">
+                                                <div class="_article_date">
                                                     {{$new->dateline}}
                                                 </div>
 
-                                                @foreach($intros as $intro) @endforeach
-                                                <div class="category_article_content"style="margin-bottom:10pt;">
+
+                                                <div class="_article_content"style="margin-bottom:10pt;">
                                                     {!!$new->intro!!}
                                                 </div>
 
@@ -135,7 +135,7 @@
 
                             <div class="widget reviews">
                                 <div class="widget_title">
-                                    <h2><a href="{{ route('faq') }}">Вопрос-ответ</a></h2>
+                                    <h2 style="font-size:14pt;"><a href="{{ route('faq') }}">Вопрос-ответ</a></h2>
                                 </div>
 
                                 @foreach ($replies as $reply)
@@ -160,7 +160,7 @@
                 </div>
             </section>
 
-            @include('blocks.subscribe')
+            {{-- @include('blocks.subscribe') --}}
     </div>
     </div>
 

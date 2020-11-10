@@ -70,6 +70,9 @@ class News extends Model
         return htmlspecialchars_decode($value,ENT_HTML5);
     }
 
-
+    public function changeIntro($in){
+        $res = substr($in, 0, 150);
+        return $res;
+    }
 
 }

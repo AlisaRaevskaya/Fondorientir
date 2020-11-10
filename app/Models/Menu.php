@@ -61,4 +61,5 @@ $result= 'admin'.'.' . $val . '.' . '.index';
     return route($result);
 }
 
+
 }
