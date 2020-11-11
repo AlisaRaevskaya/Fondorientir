@@ -84,10 +84,10 @@
                         </div>
 
                         <div class="category_article_wrapper">
-                            <div class="row justify-content-between">
+                            <div class="row justify-content-between align-items-center d-flex">
                                 @foreach ($news as $new)
 
-                                    <div class="col-md-6 inline-block">
+                                    <div class="col-md-6" style="height:350pt;">
                                         <div class="category_article_body">
 
                                             <div class="category_article_img">

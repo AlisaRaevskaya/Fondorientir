@@ -51,8 +51,8 @@ Route::get('/feedback/fzakon', [FeedbackController::class, 'fzakon'])->name('fee
 Route::get('/press-news/interview', [NewsController::class, 'interview'])->name('interview');
 Route::get('/press-news/press', [NewsController::class, 'showPressNews'])->name('press');
 Route::get('/press-news/foto', [NewsController::class, 'showFoto'])->name('foto');
-Route::get('/press-news/for_press', [NewsController::class, 'forPress'])->name('for_press');
-Route::get('/press-news/not_for_press', [NewsController::class, 'notForPress'])->name('not_for_press');
+Route::get('/press-news/for-press', [NewsController::class, 'forPress'])->name('for-press');
+Route::get('/press-news/not-for-press', [NewsController::class, 'notForPress'])->name('not-for-press');
 
 Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
 
@@ -99,19 +99,19 @@ Route::resource('/structure', '\App\Http\Controllers\Admin\Main\StructureControl
 Route::resource('/projects', '\App\Http\Controllers\Admin\Main\ProjectsController');
 Route::resource('/partners', '\App\Http\Controllers\Admin\Main\PartnersController');
 Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankinfoController');
-Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
 
+Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
 Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');
 Route::resource('reminder', '\App\Http\Controllers\Admin\Info\RemindersController');
 Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialController');
-Route::resource('vacancy', '\App\Http\Controllers\Admin\Info\VacancyController');
-
+Route::resource('vacancies', '\App\Http\Controllers\Admin\Info\VacancyController');
+Route::resource('bankdocuments', '\App\Http\Controllers\Admin\Info\BankdocumentsController');
 
 Route::resource('/interview', '\App\Http\Controllers\Admin\Press\InterviewController');
 Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
 Route::resource('/foto', '\App\Http\Controllers\Admin\Press\FotoController');
-Route::resource('/for_press', '\App\Http\Controllers\Admin\Press\ForPressController');
-Route::resource('/not_for_press', '\App\Http\Controllers\Admin\Press\NotForPressController');
+Route::resource('/for-press', '\App\Http\Controllers\Admin\Press\ForPressController');
+Route::resource('/not-for-press', '\App\Http\Controllers\Admin\Press\NotForPressController');
 
 
 Route::resource('/lawyer', '\App\Http\Controllers\Admin\Reception\LawyerController');

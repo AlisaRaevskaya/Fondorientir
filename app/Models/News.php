@@ -68,7 +68,7 @@ class News extends Model
         $val= htmlspecialchars_decode($val, ENT_HTML5);
         if (strlen($val)>200) {
 
-            $val= Str::substr($val, 0, 60) . "...";
+            $val= Str::substr($val, 0, 70) . "...";
         }
         return $val;
     }
