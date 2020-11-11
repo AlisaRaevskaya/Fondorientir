@@ -10,7 +10,7 @@ class NewsController extends Controller
 {
     public function index(){
 
-    $news = News::orderBy('dateline', 'desc')->paginate(4);
+    $news = News::orderBy('dateline', 'desc')->paginate(7);
 
     $new = News::find(1)->first();
     $category= $new->category;
@@ -18,16 +18,16 @@ class NewsController extends Controller
 
     }
     public function interview(){
-        return view('info.interview');
+        return view('news.interview');
     }
     public function showFoto(){
-        return view('info.foto');
+        return view('news.foto');
     }
     public function forPress(){
-        return view('info.pressnews');
+        return view('press.forpress');
     }
     public function notForPress(){
-        return view('info.foto');
+        return view('press.notforpress');
     }
     public function pressnews(){
         return view('news.pressnews');

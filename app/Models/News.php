@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class News extends Model
 {
@@ -24,7 +25,7 @@ class News extends Model
     }
 
 
-        public function setDatelineAttribute($value)
+    public function setDatelineAttribute($value)
     {
         $this->attributes['dateline'] = Carbon::parse($value)->timestamp;
     }
@@ -39,40 +40,59 @@ class News extends Model
         return $this->updated_at->format('d F Y H:i');
     }
 
-    public function setBodyAttribute($value){
-        $this->attributes['body'] = htmlspecialchars($value,ENT_HTML5);
+    public function setBodyAttribute($value)
+    {
+        $this->attributes['body'] = htmlspecialchars($value, ENT_HTML5);
     }
 
-    public function getBodyAttribute($value){
+    public function getBodyAttribute($value)
+    {
         return htmlspecialchars_decode($value, ENT_HTML5);
     }
-    public function setTitleAttribute($value){
-        $this->attributes['title'] = htmlspecialchars($value,ENT_HTML5);
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = htmlspecialchars($value, ENT_HTML5);
     }
 
-    public function getTitleAttribute($value){
-        return htmlspecialchars_decode($value,ENT_HTML5);
-    }
-    public function setIntroAttribute($value){
-        $this->attributes['intro'] = htmlspecialchars($value,ENT_HTML5);
-    }
-
-    public function setSource_NameAttribute($value){
-        $this->attributes['source_name'] = htmlspecialchars($value,ENT_HTML5);
-    }
-    public function getSource_NameAttribute($value){
+    public function getTitleAttribute($value)
+    {
         return htmlspecialchars_decode($value, ENT_HTML5);
     }
-    public function setSource_linkAttribute($value){
-        $this->attributes['source_link'] = htmlspecialchars($value,ENT_HTML5);
-    }
-    public function getSource_linkAttribute($value){
-        return htmlspecialchars_decode($value,ENT_HTML5);
+    public function setIntroAttribute($value)
+    {
+        $this->attributes['intro'] = htmlspecialchars($value, ENT_HTML5);
     }
 
-    public function changeIntro($in){
-        $res = substr($in, 0, 150);
-        return $res;
+    public function getIntroAttribute($val)
+    {
+        $val= htmlspecialchars_decode($val, ENT_HTML5);
+        if (strlen($val)>200) {
+
+            $val= Str::substr($val, 0, 60) . "...";
+        }
+        return $val;
     }
 
+    public function setSource_NameAttribute($value)
+    {
+        $this->attributes['source_name'] = htmlspecialchars($value, ENT_HTML5);
+    }
+    public function getSource_NameAttribute($value)
+    {
+        return htmlspecialchars_decode($value, ENT_HTML5);
+    }
+    public function setSource_linkAttribute($value)
+    {
+        $this->attributes['source_link'] = htmlspecialchars($value, ENT_HTML5);
+    }
+
+
+    public function getImage()
+    {
+        if ($this->images == null) {
+            return '/images/support.png';
+        }
+
+        return '/storage/articles/' . $this->images;
+    }
 }

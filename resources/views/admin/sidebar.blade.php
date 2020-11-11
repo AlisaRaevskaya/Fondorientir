@@ -40,7 +40,7 @@
                                 Главная</a>
                              @foreach ($menuitems as $item)
                              @if(!$item->children)
-                             <a class="nav-link" href="{{$item->url}}">
+                             <a class="nav-link" href="{{ route('admin.' . \Str::slug($child->laravel_name) . '.index') }}">
                              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                              {{ $item->title }}</a>
                             @else
@@ -54,7 +54,7 @@
                                  <div class="collapse" id="page_{{$child1->parent_id}}">
                                     <nav class="sb-sidenav-menu-nested nav">
                                      @foreach ($item->children as $child)
-                                         <a class="nav-link collapse" href="{{$child->url}}">
+                                         <a class="nav-link collapse" href="{{ route('admin.' . \Str::slug($child->laravel_name) . '.index') }}">
                                              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                              {{ $child->title }}
                                          </a>

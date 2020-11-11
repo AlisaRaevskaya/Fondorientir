@@ -10,6 +10,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\Admin\UsersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,28 +40,28 @@ Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
 
-Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('feedback.lawyer');
-Route::get('/feedback/reception', [FeedbackController::class, 'feedback'])->name('feedback.reception');
-Route::get('/feedback/hotline', [FeedbackController::class, 'hotline'])->name('feedback.hotline');
-Route::get('/feedback/application', [FeedbackController::class, 'application'])->name('feedback.app');
-Route::get('/feedback/claim', [FeedbackController::class, 'claim'])->name('feedback.claim');
-Route::get('/feedback/problem', [FeedbackController::class, 'problem'])->name('feedback.problem');
+Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('lawyer');
+Route::get('/feedback/reception', [FeedbackController::class, 'feedback'])->name('reception');
+Route::get('/feedback/hotline', [FeedbackController::class, 'hotline'])->name('hotline');
+Route::get('/feedback/application', [FeedbackController::class, 'application'])->name('application');
+Route::get('/feedback/claim', [FeedbackController::class, 'claim'])->name('claim');
+Route::get('/feedback/problem', [FeedbackController::class, 'problem'])->name('problem');
 Route::get('/feedback/fzakon', [FeedbackController::class, 'fzakon'])->name('feedback.fzakon');
 
-Route::get('/press-news/interview', [NewsController::class, 'interview'])->name('press-news.interview');
-Route::get('/press-news/press', [NewsController::class, 'showPressNews'])->name('press-news.press');
-Route::get('/press-news/foto', [NewsController::class, 'showFoto'])->name('press-news.foto');
-Route::get('/press-news/for-press', [NewsController::class, 'forPress'])->name('press-news.for-press');
-Route::get('/press-news/not-for-press', [NewsController::class, 'notForPress'])->name('press-news.not-for-press');
+Route::get('/press-news/interview', [NewsController::class, 'interview'])->name('interview');
+Route::get('/press-news/press', [NewsController::class, 'showPressNews'])->name('press');
+Route::get('/press-news/foto', [NewsController::class, 'showFoto'])->name('foto');
+Route::get('/press-news/for_press', [NewsController::class, 'forPress'])->name('for_press');
+Route::get('/press-news/not_for_press', [NewsController::class, 'notForPress'])->name('not_for_press');
 
 Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
 
-Route::get('/info/vacancies', [InfoController::class, 'vacancies'])->name('info.vacancies');
-Route::get('/info/blanks', [InfoController::class, 'blanks'])->name('info.blanks');
-Route::get('/info/bankofdocuments', [InfoController::class, 'bank'])->name('info.bank');
-Route::get('/info/testmaterial',[InfoController::class, 'testmaterial'])->name('info.testmaterial');
-Route::get('/info/brochures', [InfoController::class, 'brochures'])->name('info.brochures');
-Route::get('/info/reminder', [InfoController::class, 'reminder'])->name('info.reminder');
+Route::get('/info/vacancies', [InfoController::class, 'vacancies'])->name('vacancies');
+Route::get('/info/blanks', [InfoController::class, 'blanks'])->name('blanks');
+Route::get('/info/bankofdocuments', [InfoController::class, 'bankofdocuments'])->name('bankdocuments');
+Route::get('/info/testmaterial',[InfoController::class, 'testmaterial'])->name('testmaterial');
+Route::get('/info/brochures', [InfoController::class, 'brochures'])->name('brochures');
+Route::get('/info/reminder', [InfoController::class, 'reminder'])->name('reminder');
 
 Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
 Route::get('/news/{category}/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')
@@ -83,17 +84,43 @@ Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 Route::view('/home', 'home');
 
 
-Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
 
 Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except' => ['create', 'show','save']]);
-Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactsController');
-Route::resource('/history', '\App\Http\Controllers\Admin\About\HistoryController');
-Route::resource('/reports', '\App\Http\Controllers\Admin\About\ReportsController');
-Route::resource('/structure', '\App\Http\Controllers\Admin\About\StructureController');
-Route::resource('/projects', '\App\Http\Controllers\Admin\About\ProjectsController');
-Route::resource('/partners', '\App\Http\Controllers\Admin\About\PartnersController');
-Route::resource('/bankinfo', '\App\Http\Controllers\Admin\About\BankinfoController');
 Route::resource('/', '\App\Http\Controllers\Admin\MainController');
+Route::resource('/news', '\App\Http\Controllers\Admin\NewsController');
+Route::resource('/faq', '\App\Http\Controllers\Admin\FaqController');
+
+Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactsController');
+Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
+Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
+Route::resource('/reports', '\App\Http\Controllers\Admin\Main\ReportsController');
+Route::resource('/structure', '\App\Http\Controllers\Admin\Main\StructureController');
+Route::resource('/projects', '\App\Http\Controllers\Admin\Main\ProjectsController');
+Route::resource('/partners', '\App\Http\Controllers\Admin\Main\PartnersController');
+Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankinfoController');
+Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
+
+Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');
+Route::resource('reminder', '\App\Http\Controllers\Admin\Info\RemindersController');
+Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialController');
+Route::resource('vacancy', '\App\Http\Controllers\Admin\Info\VacancyController');
+
+
+Route::resource('/interview', '\App\Http\Controllers\Admin\Press\InterviewController');
+Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
+Route::resource('/foto', '\App\Http\Controllers\Admin\Press\FotoController');
+Route::resource('/for_press', '\App\Http\Controllers\Admin\Press\ForPressController');
+Route::resource('/not_for_press', '\App\Http\Controllers\Admin\Press\NotForPressController');
+
+
+Route::resource('/lawyer', '\App\Http\Controllers\Admin\Reception\LawyerController');
+Route::resource('/problem', '\App\Http\Controllers\Admin\Reception\ProblemController');
+Route::resource('/claim', '\App\Http\Controllers\Admin\Reception\ClaimController');
+Route::resource('/application', '\App\Http\Controllers\Admin\Reception\ApplicationController');
+Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineController');
+Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
+
 });
 
 Route::view('/static','admin.layout-static');

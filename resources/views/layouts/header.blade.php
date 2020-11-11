@@ -11,7 +11,7 @@
                                 left:30%;float:right;" class="text-center">
                                     <p class="h5">Фонд поддержки</p>
                                     <p class="h5">добровольного переселения</p>
-                                    <p class="h5" >соотечественников «ОРИЕНТИР»</p>
+                                    <p class="h5">соотечественников «ОРИЕНТИР»</p>
                                 </div>
                             </div>
 
@@ -113,3 +113,4 @@
     <!-- .container -->
 </section>
 <!-- header_section_wrapper -->
+

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,10 +35,11 @@
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU" type="text/javascript">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU"
+        type="text/javascript">
     </script>
 
-<script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
 
 
 
@@ -51,45 +53,44 @@
 </head>
 
 <body id="page-top" data-spy="scroll" class="container" data-target=".navbar">
+    <div id="main-wrapper">
+    <div class="uc-mobile-menu-pusher">
+        <div class="content-wrapper">
 
+        @include('layouts.header')
 
-    @include('layouts.header')
-<div class="container">
-    @include('blocks.popup')
-</div>
+        <div class="container">
+            @include('blocks.popup')
+        </div>
 
+        @yield('content')
 
-@yield('content')
+        @include('blocks.call')
 
+        @include('layouts.footer')
+        @include('blocks.map')
+    </div>
+    </div>
+    </div>
 
-@include('blocks.call')
+    @include('layouts.mobile')
 
+    <script src="/assets/js/bootstrap.min.js"></script>
 
-@include('layouts.footer')
+    <!-- Theme Menu -->
+    <script src="/assets/js/mobile-menu.js"></script>
 
-
-<!-- #main-wrapper -->
-@include('blocks.map')
-<!-- jquery Core-->
-
-<script src="/assets/js/bootstrap.min.js"></script>
-
-<!-- Theme Menu -->
-<script src="/assets/js/mobile-menu.js"></script>
-
-<!-- Owl carousel -->
-<script src="/assets/js/owl.carousel.min.js"></script>
-
-<script src="/assets/js/bootstrap-datepicker.js"></script>
-<!-- Theme Script -->
-<script src="/assets/js/script.js"></script>
-<script src="/assets/js/index.js"></script>
-
-<script src="/assets/js/callajax.js"></script>
-<script src="/assets/js/sub-ajax.js"></script>
-<script src="/assets/js/web-ajax.js"></script>
-<script src="/assets/js/faajax.js"></script>
-
+    <!-- Owl carousel -->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/bootstrap-datepicker.js"></script>
+    <!-- Theme Script -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/callajax.js"></script>
+    <script src="/assets/js/sub-ajax.js"></script>
+    <script src="/assets/js/web-ajax.js"></script>
+    <script src="/assets/js/faajax.js"></script>
 
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\About;
+namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\PreProject;
+use App\Models\Projects;
 
-class HistoryController extends Controller
+class ProjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,14 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        //
+        $newProjects =Projects::all();
+        $projects=PreProject::all();
+        $pages=Pages::where('title', 'projects')->get();
+
+        foreach($pages as $page){
+            $content= $page->content;
+        }
+        return view('admin.about.projects', compact('projects' ,'newProjects', 'content'));
     }
 
     /**

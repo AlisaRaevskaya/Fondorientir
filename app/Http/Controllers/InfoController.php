@@ -14,11 +14,11 @@ class InfoController extends Controller
         return view('info.vacancies');
     }
 
-    public function blankinfo(){
-        return view('info.blankinfo');
+    public function blanks(){
+        return view('info.blanks');
     }
 
-    public function bank(){
+    public function bankofdocuments(){
         return view('info.bankofdocuments');
     }
 

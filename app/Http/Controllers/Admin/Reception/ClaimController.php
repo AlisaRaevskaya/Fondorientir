@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\About;
+namespace App\Http\Controllers\Admin\Reception;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ReportsController extends Controller
+class ClaimController extends Controller
 {
     /**
      * Display a listing of the resource.

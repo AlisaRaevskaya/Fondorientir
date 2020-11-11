@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\About;
+namespace App\Http\Controllers\Admin\Reception;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\PreProject;
-use App\Models\Projects;
 
-class ProjectsController extends Controller
+class LawyerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +14,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $newProjects =Projects::all();
-        $projects=PreProject::all();
-        $pages=Pages::where('title', 'projects')->get();
-
-        foreach($pages as $page){
-            $content= $page->content;
-        }
-        return view('admin.about.projects', compact('projects' ,'newProjects', 'content'));
+        //
     }
 
     /**

@@ -10,7 +10,7 @@ use App\Models\Topic;
 use App\Models\Image;
 use App\Models\PreProject;
 use App\Models\Projects;
-
+use Illuminate\Support\Str;
 
 
 class MainController extends Controller
@@ -26,9 +26,9 @@ class MainController extends Controller
         ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
         ->orderBy('dateline', 'desc')->paginate(5);
 
-    // $int = $news->pluck('intro');
-    // $intros= $this->changeIntro($int);
-
+    // $into = $news->pluck('intro')->toArray();
+    // $intros=$this->changeIntro($into);
+    // dd($intros);
     return view('main.index', compact('mainContent', 'images', 'news', 'category','replies'));
     }
 
@@ -42,8 +42,8 @@ class MainController extends Controller
     }
 
     public function structure(){
-        $history= Pages::where('title', 'structure')->get();
-        return view('main.structure', compact('structure') );
+        $structure= Pages::where('title', 'structure')->get();
+        return view('main.structure',compact('structure'));
     }
 
     public function projects(){
@@ -78,4 +78,11 @@ class MainController extends Controller
         return view('admin');
     }
 
+    // public function changeIntro($into){
+    // $intros=array();
+    // foreach($into as $in){
+    // $intros = array_push($intros, (substr($in, 0, 150). '...'));
+    // }
+    // return $intros;
+    // }
 }

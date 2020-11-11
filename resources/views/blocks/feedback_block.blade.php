@@ -10,10 +10,10 @@
         </div>
         <div class="media-body">
         <p>Ваше мнение имеет значение!</p>
-        <p><a class="popup_link" href="{{route('feedback.problem')}}" style="text-decoration:underline">Отправьте нам</a>
+        <p><a class="popup_link" href="{{route('problem')}}" style="text-decoration:underline">Отправьте нам</a>
         свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.</p>
             <h3 class="media-heading">
-            <a class="popup_link" style="color:blue" href="{{route('feedback.problem')}}">Отправить</a>
+            <a class="popup_link" style="color:blue" href="{{route('problem')}}">Отправить</a>
             </h3>
         </div>
     </div>
