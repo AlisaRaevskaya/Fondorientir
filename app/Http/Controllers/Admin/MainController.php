@@ -13,7 +13,7 @@ use App\Models\PreProject;
 use App\Models\Projects;
 
 
-class AdminMainController extends Controller
+class MainController extends Controller
 {
     /**
      * Display a listing of the resource.

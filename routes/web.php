@@ -81,7 +81,7 @@ Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
-Route::view('/home', 'home');
+Route::view('/admin', 'admin_home');
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
@@ -120,6 +120,7 @@ Route::resource('/claim', '\App\Http\Controllers\Admin\Reception\ClaimController
 Route::resource('/application', '\App\Http\Controllers\Admin\Reception\ApplicationController');
 Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineController');
 Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
+Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
 
 });
 
@@ -130,4 +131,4 @@ Route::view('/500','admin.errors.500');
 Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
-// Route::view('/index','admin.main.index')->name('admin.main.ijhevdex');
+

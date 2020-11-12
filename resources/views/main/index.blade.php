@@ -74,7 +74,7 @@
         </section>
 
 
-        <section id="category_section" class="category_section">
+        <section class="category_section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="category_article_wrapper">
-                            <div class="">
+                            <div class="category_article_body">
                                 @foreach ($news as $new)
 
                                     <div class="col-md-6 category_news_body">
@@ -98,9 +98,9 @@
                                             </div>
 
                                             <div class="category_article_title">
-                                                <h6><a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
+                                                <h5><a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
                                                         target="_self">
-                                                        {!! $new->title !!}</a></h6>
+                                                        {!! $new->title !!}</a></h5>
                                             </div>
 
 
@@ -125,10 +125,13 @@
 
                                 @endforeach
                                 <!-- col-md-6 -->
+
+                            </div>
+                        </div>
+                        <!-- Design News Section -->
+                              <div class="news_divider">
                                 <p class="divider"><a href="{{ route('news') }}"> Все новости</a></p>
                             </div>
-                            <!-- Design News Section -->
-                        </div>
                     </div>
 
 

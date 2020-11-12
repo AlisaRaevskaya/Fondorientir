@@ -93,5 +93,8 @@ hr {
     z-index: 1;
 }
 .category_news_body{
-    min-height: 450px;
+    min-height: 500px;
+}
+.news_divider{
+padding-bottom:20px;
 }

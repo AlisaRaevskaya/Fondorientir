@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pages extends Model
 {
+     public $timestamps = true;
     public function menus(){
         return $this->belongsTo('App\Models\Menu');
     }
@@ -19,4 +20,5 @@ class Pages extends Model
     public function getContentAttribute($value){
         return htmlspecialchars_decode($value,ENT_HTML5);
     }
+
 }

@@ -27,56 +27,26 @@
                      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                          aria-expanded="false" aria-controls="collapsePages">
                          <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                         Меню
+                         Категории
                          <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                      </a>
 
 
-                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
-                         data-parent="#sidenavAccordion">
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                          <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link" href="{{route('admin.index')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Главная</a>
-                             @foreach ($menuitems as $item)
-                             @if(!$item->children)
-                             <a class="nav-link" href="{{ route('admin.' . \Str::slug($child->laravel_name) . '.index') }}">
+                               @foreach($categories as $cat)
+                        <a class="nav-link" href="{{ route('admin.' . \Str::slug($cat->name) . '.index') }}">
                              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                             {{ $item->title }}</a>
-                            @else
-                             <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                             data-target="#page_{{$item->id}}" aria-expanded="false" aria-controls="page_{{$item->id}}">
-                                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                         {{ $item->title }}
-                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                             </a>
-                             @foreach ($item->children as $child1)@endforeach
-                                 <div class="collapse" id="page_{{$child1->parent_id}}">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                     @foreach ($item->children as $child)
-                                         <a class="nav-link collapse" href="{{ route('admin.' . \Str::slug($child->laravel_name) . '.index') }}">
-                                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                             {{ $child->title }}
-                                         </a>
-                                         @endforeach
-                                     </nav>
-                                 </div>
-                            @endif
-                        @endforeach
+                             {{ $cat->ru_name }}</a>
+                            @endforeach
                          </nav>
-                     </div>
+                        </div>
 
-                     {{-- <div class="collapse" id="pagesCollapseAuth"
-                         aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                         <nav class="sb-sidenav-menu-nested nav">
-                             <a class="nav-link" href="login.html"></a>
-                             <a class="nav-link" href="register.html">О Фонде</a>
-                             <a class="nav-link" href="password.html">Пресс-центр</a>
-                             <a class="nav-link" href="password.html">Вопрос-ответ</a>
-                             <a class="nav-link" href="password.html">Инфо центр</a>
-                             <a class="nav-link" href="password.html">Контакты</a>
-                         </nav>
-                     </div> --}}
+
+                 <a class="nav-link" href="{{route('admin.pages.index')}}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-star"></i></div>
+                         Страницы
+                     </a>
 
 
                      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmail"
@@ -123,3 +93,38 @@
      </div>
 
  </div>
+
+{{--
+ <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                         data-parent="#sidenavAccordion">
+                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link" href="{{route('admin.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Главная</a>
+                             @foreach ($menuitems as $item)
+                             @if(!$item->children)
+                             <a class="nav-link" href="{{ route('admin.' . \Str::slug($child->laravel_name) . '.index') }}">
+                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                             {{ $item->title }}</a>
+                            @else
+                             <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                             data-target="#page_{{$item->id}}" aria-expanded="false" aria-controls="page_{{$item->id}}">
+                                         <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                         {{ $item->title }}
+                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                             </a>
+                             @foreach ($item->children as $child1)@endforeach
+                                 <div class="collapse" id="page_{{$child1->parent_id}}">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                     @foreach ($item->children as $child)
+                                         <a class="nav-link collapse" href="{{ route('admin.' . \Str::slug($child->laravel_name) . '.index') }}">
+                                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                             {{ $child->title }}
+                                         </a>
+                                         @endforeach
+                                     </nav>
+                                 </div>
+                            @endif
+                        @endforeach
+                         </nav>
+                     </div> --}}

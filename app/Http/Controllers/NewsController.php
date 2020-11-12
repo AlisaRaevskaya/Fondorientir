@@ -11,7 +11,6 @@ class NewsController extends Controller
     public function index(){
 
     $news = News::orderBy('dateline', 'desc')->paginate(7);
-
     $new = News::find(1)->first();
     $category= $new->category;
     return view('news', compact('news', 'category'));
@@ -34,7 +33,7 @@ class NewsController extends Controller
     }
 
     public function showPressNews(){
-        $category = Category::find(1)->where('name', 'press-news')->first();
+        $category = Category::find(1)->where('name', 'press')->first();
         $pressnews = $category->news()->paginate(5);
     return view('news.pressnews', compact('pressnews', 'category'));
     }

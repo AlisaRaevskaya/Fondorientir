@@ -3,6 +3,7 @@ namespace App\Http\ViewComposers;
 use App\Models\Menu;
 use App\Models\News;
 use App\Models\Contact;
+use App\Models\Category;
 use Illuminate\View\View;
 
 
@@ -18,10 +19,11 @@ class NavigationComposer
         $contacts= Contact::all();
         $new = News::find(1)->first();
         $category= $new->category;
+        $categories= Category::all();
 
         $menuitems = $this->buildTree($menuitems);
 
-        return $view->with(compact('menuitems', 'newsitems', 'contacts','category'));
+        return $view->with(compact('menuitems', 'newsitems', 'contacts','category', 'categories'));
     }
 
     public function buildTree($items)
