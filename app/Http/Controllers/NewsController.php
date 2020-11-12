@@ -36,9 +36,7 @@ class NewsController extends Controller
     public function showPressNews(){
         $category = Category::find(1)->where('name', 'press-news')->first();
         $pressnews = $category->news()->paginate(5);
-        $chosen_category=Category::find(1)->where('name', 'chosen')->first();
-        $chosen = $chosen_category->news;
-    return view('news.pressnews', compact('pressnews', 'category','chosen', 'chosen_category'));
+    return view('news.pressnews', compact('pressnews', 'category'));
     }
 
 
