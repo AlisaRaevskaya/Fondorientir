@@ -52,7 +52,7 @@
 
                         <div class="row justify-content-between margin-top">
 
-                            <div class="partner_item_2 col-md-5 margin-top d-flex flex-column justify-content-between">
+                            <div class="partner_item_2 col-md-5  d-flex flex-column justify-content-between">
                                 <div>
                                     <p>Федеральное агентство по делам национальностей</p>
                                 </div>
@@ -81,7 +81,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="footer_widget_title">
-                    <h3><a href="/about" target="_self">О Фонде</a></h3>
+                    <h3><a href="/" target="_self">О Фонде</a></h3>
                 </div>
                 <div class="logo footer-logo">
                     @foreach ($contacts as $contact)
@@ -105,7 +105,7 @@
             <div class="col-md-3">
 
                 <div class="footer_widget_title">
-                    <h3><a href="#" target="_self">Карта сайта</a></h3>
+                    <h3 target="_self"style="color:black;">Карта сайта</h3>
                 </div>
 
                 <div class="row">
@@ -113,8 +113,8 @@
                     <div class="col-xs-5">
                         <ul class="list-unstyled left">
                             @foreach ($menuitems as $item)
-                                <li><a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">
-                                        {{ $item->title }}</a></li>
+                                <li><p><a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">
+                                        {{ $item->title }}</a></p></li>
                             @endforeach
                         </ul>
                     </div>
@@ -124,8 +124,7 @@
                             @foreach ($menuitems as $item)
                                 @if (isset($item->children))
                                     @foreach ($item->children as $i)
-                                        <li><a
-                                                href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $i->title }}</a>
+                                        <li><a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $i->title }}</a>
                                         </li>
                                     @endforeach
                                 @endif
@@ -139,25 +138,25 @@
             <div class="col-md-3">
 
                 <div class="footer_widget_title">
-                    <h3><a href="#" target="_self">Новости</a></h3>
+                    <h3><a href="{{route('news')}}" target="_self">Новости</a></h3>
                 </div>
 
                 <div class="row">
-                    <div class="">
-                        @foreach ($newsitems as $new)
-                            <li><a
-                                    href="{{ route('news.category.id', [$category->name, $new->id]) }}">{{ $new->title }}</a>
-                                </ul>
-                        @endforeach
+                     @foreach ($newsitems as $new)
+                    <div style="line-height:1.8">
+                            <li><a href="{{ route('news.category.id', [$category->name, $new->id]) }}">
+                                {{ $new->title }}</a>
+                            </li>
                     </div>
+                      @endforeach
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="footer_widget_title">
-                    <h3><a href="/contacts" target="_self">Контакты</a></h3>
+                    <h3><a href="{{route('contacts')}}" target="_self">Контакты</a></h3>
                 </div>
-                <div class="widget_photos">
+                <div class="footer_contacts">
                     @foreach ($contacts as $contact)
                         <p>{{ $contact->name }}</p>
                         <p> {{ $contact->inn }}</p>

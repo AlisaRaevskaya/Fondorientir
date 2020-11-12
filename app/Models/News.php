@@ -65,12 +65,7 @@ class News extends Model
 
     public function getIntroAttribute($val)
     {
-        $val= htmlspecialchars_decode($val, ENT_HTML5);
-        if (strlen($val)>200) {
-
-            $val= Str::substr($val, 0, 70) . "...";
-        }
-        return $val;
+        return htmlspecialchars_decode($val, ENT_HTML5);
     }
 
     public function setSource_NameAttribute($value)
@@ -94,5 +89,10 @@ class News extends Model
         }
 
         return '/storage/articles/' . $this->images;
+    }
+
+    public function getMiniIntro()
+    {
+        return Str::substr($this->intro, 0, 80) . "...";
     }
 }

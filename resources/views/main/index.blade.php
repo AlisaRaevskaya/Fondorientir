@@ -84,11 +84,11 @@
                         </div>
 
                         <div class="category_article_wrapper">
-                            <div class="row justify-content-between align-items-center d-flex">
+                            <div class="">
                                 @foreach ($news as $new)
 
-                                    <div class="col-md-6" style="height:350pt;">
-                                        <div class="category_article_body">
+                                    <div class="col-md-6 category_news_body">
+                                        <div>
 
                                             <div class="category_article_img">
                                                 <a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
@@ -111,7 +111,7 @@
 
                                             @if ($new->intro)
                                                 <div class="category_article_content">
-                                                    {!!$new->intro!!}
+                                                    {!!$new->getMiniIntro()!!}
                                                 </div>
                                             @endif
 
@@ -131,6 +131,7 @@
                         </div>
                     </div>
 
+
                     <div class="col-md-3">
                         <div class="widget reviews">
                             <div class="widget_title">
@@ -138,22 +139,21 @@
                             </div>
 
                             @foreach ($replies as $reply)
-                                <div class="media row float-right">
+                                <div class="media">
 
-                                    <div class="media-left col-md-1 ">
+                                    <div class="media-left">
                                         <a href="{{ route('faq.id', $reply->id) }}">
-                                            <img class="media-object" src="/assets/images/faq3.png" alt="Generic placeholder image"></a>
+                                            <img class="media-object" src="/assets/images/faq4.png" alt="Generic placeholder image"></a>
                                     </div>
-                                    <div class="col-md-11" style="overflow:auto;">
-                                        <h6 class="">
+                                    <div class="media-body" style="padding-right:10pt">
+                                        <h3 class="media-heading"style="word-wrap:break-word">
                                             <a href="{{ route('faq.id', $reply->id)}}">{!!$reply->title!!}</a>
-                                        </h6>
+                                        </h3>
                                     </div>
-
                                 </div>
                             @endforeach
-                            <p class="widget_divider"><a href="{{ route('faq') }}" target="_self">Все
-                                    вопросы</a></p>
+                            <p class="widget_divider" style="padding-right:10pt">
+                                <a href="{{ route('faq') }}" target="_self">Все вопросы</a></p>
                         </div>
 
                     </div>
