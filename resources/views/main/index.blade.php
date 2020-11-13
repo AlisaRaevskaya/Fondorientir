@@ -7,8 +7,8 @@
                     <div class="col-md-9">
                         <div class="feature_article_wrapper">
                             <div class="feature_article_img">
-                                <img class="img-responsive top_static_article_img" src="/assets/images/immigrants.jpg"
-                                    alt="feature-top">
+                                <img class="img-responsive top_static_article_img" src="/assets/images/main.jpeg"
+                                    alt="main">
 
                             </div>
                         </div>

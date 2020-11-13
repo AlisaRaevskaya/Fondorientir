@@ -1,5 +1,5 @@
 
-<div class="uc-mobile-menu uc-mobile-menu-effect">
+<div class="uc-mobile-menu uc-mobile-menu-effect hidden">
     <button type="button" class="close" aria-hidden="true" data-toggle="offcanvas"
         id="uc-mobile-menu-close-btn">&times;</button>
     <div>

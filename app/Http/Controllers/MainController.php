@@ -17,7 +17,7 @@ class MainController extends Controller
 {
     public function index(){
 
-    $mainContent= Pages::where('laravel_name', 'main')->get();
+    $mainContent= Pages::where('title', 'Главная')->get();
     $images= Image::find(1)->where('page_id', '1')->get();
     $news = News::orderBy('dateline', 'desc')->paginate(6);
     $new = News::find(1)->first();
