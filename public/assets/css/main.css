@@ -1,3 +1,7 @@
+
+.modal-backdrop {
+    z-index: 1000;
+}
 .partner_item img {
     width: 100px;
     height: 100px;
@@ -81,7 +85,6 @@ hr {
     overflow: hidden;
     max-width: 300px;
 }
-
 .widget_t ::after {
     position: relative;
     display: inline-block;
@@ -98,3 +101,4 @@ hr {
 .news_divider{
 padding-bottom:20px;
 }
+

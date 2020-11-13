@@ -52,11 +52,13 @@
     <![endif]-->
 </head>
 
+@include('blocks.map')
+@include('blocks.call')
+
 <body id="page-top" data-spy="scroll" class="container" data-target=".navbar">
     <div id="main-wrapper">
     <div class="uc-mobile-menu-pusher">
         <div class="content-wrapper">
-
         @include('layouts.header')
 
         <div class="container">
@@ -65,10 +67,9 @@
 
         @yield('content')
 
-        @include('blocks.call')
+
 
         @include('layouts.footer')
-        @include('blocks.map')
     </div>
     </div>
     </div>
@@ -84,8 +85,8 @@
     <script src="/assets/js/owl.carousel.min.js"></script>
     <script src="/assets/js/bootstrap-datepicker.js"></script>
     <!-- Theme Script -->
-    <script src="/assets/js/script.js"></script>
     <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/script.js"></script>
     <script src="/assets/js/callajax.js"></script>
     <script src="/assets/js/sub-ajax.js"></script>
     <script src="/assets/js/web-ajax.js"></script>
