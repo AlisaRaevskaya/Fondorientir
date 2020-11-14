@@ -83,13 +83,20 @@
                 <div class="footer_widget_title">
                     <h3><a href="/" target="_self">О Фонде</a></h3>
                 </div>
-                <div class="logo footer-logo">
+                <div class="logo">
                     @foreach ($contacts as $contact)
-                        <a title="fontanero" href="/">
-                            <img src="/assets/images/{{ $contact->logo }}" alt="technews" width:="95pt" height="95pt">
-                        </a>
-                        <div class="entity_content">
-                            <h1>Фонд "ОРИЕНТИР"</h1>
+                        <div>
+                            <div class="row justify-content-between footer-logo">
+                                <a title="fontanero" href="{{ route('main') }}">
+                                    <img src="/assets/images/{{ $contact->logo }}" alt="technews" width:="95pt"
+                                        height="95pt">
+                                    <div class="footer_main text-center">
+                                        <h5>Фонд<br>"ОРИЕНТИР"</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-justify">
                             <p>Интернет-приемная по вопросам миграции и трудовым спорам реализована в рамках
                                 социально-значимого проекта «Цивилизованная миграция - Санкт-Петербург и
                                 Ленинградская область»</p>
@@ -105,7 +112,7 @@
             <div class="col-md-3">
 
                 <div class="footer_widget_title">
-                    <h3 target="_self"style="color:black;">Карта сайта</h3>
+                    <h3 target="_self" style="color:black;">Карта сайта</h3>
                 </div>
 
                 <div class="row">
@@ -113,21 +120,22 @@
                     <div class="col-xs-5">
                         <ul class="list-unstyled left">
                             @foreach ($menuitems as $item)
-                                <li><p><a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">
-                                        {{ $item->title }}</a></p></li>
+                                <li>
+                                    <p><a href="{{$item->laravel_name ? route($item->laravel_name) : $item->url }}">
+                                            {{ $item->title }}</a></p>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
 
                     <div class="col-xs-7">
                         <ul class="list-unstyled">
-                            @foreach ($menuitems as $item)
-                                @if (isset($item->children))
-                                    @foreach ($item->children as $i)
-                                        <li><a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $i->title }}</a>
-                                        </li>
-                                    @endforeach
-                                @endif
+                            @foreach ($footermenu as $s_item)
+                                <li>
+                                    <p><a
+                                            href="{{ $s_item->laravel_name ? route($s_item->laravel_name) : $s_item->url }}">{{ $s_item->title }}</a>
+                                    </p>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -138,23 +146,23 @@
             <div class="col-md-3">
 
                 <div class="footer_widget_title">
-                    <h3><a href="{{route('news')}}" target="_self">Новости</a></h3>
+                    <h3><a href="{{ route('news') }}" target="_self">Новости</a></h3>
                 </div>
 
                 <div class="row">
-                     @foreach ($newsitems as $new)
-                    <div style="line-height:1.8">
+                    @foreach ($newsitems as $new)
+                        <div style="line-height:1.8" class="text-justify">
                             <li><a href="{{ route('news.category.id', [$category->name, $new->id]) }}">
-                                {{ $new->title }}</a>
+                                    {{ $new->title }}</a>
                             </li>
-                    </div>
-                      @endforeach
+                        </div>
+                    @endforeach
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="footer_widget_title">
-                    <h3><a href="{{route('contacts')}}" target="_self">Контакты</a></h3>
+                    <h3><a href="{{ route('contacts') }}" target="_self">Контакты</a></h3>
                 </div>
                 <div class="footer_contacts">
                     @foreach ($contacts as $contact)
@@ -184,7 +192,7 @@
                         <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
                         <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                     </div>
-{{--
+                    {{--
                     <div class="row">
                         <form action="/subscribe" method="post" class="subForm">
                             @csrf

@@ -4,6 +4,13 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\News;
+use App\Models\Reply;
+use App\Models\Topic;
+use App\Models\Image;
+use App\Models\PreProject;
+use App\Models\Projects;
 
 class HistoryController extends Controller
 {
@@ -57,7 +64,9 @@ class HistoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pages= Pages::where('id', $id)->get();
+        $images= Image::find(1)->where('page_id', '1')->get();
+        return view('admin.main.history_edit', compact('pages', 'images'));
     }
 
     /**

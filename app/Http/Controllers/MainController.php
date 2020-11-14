@@ -78,11 +78,11 @@ class MainController extends Controller
         return view('admin');
     }
 
-    // public function changeIntro($into){
-    // $intros=array();
-    // foreach($into as $in){
-    // $intros = array_push($intros, (substr($in, 0, 150). '...'));
-    // }
-    // return $intros;
-    // }
+    public function second_index(){
+        return view('secondsite.index');
+    }
+    public function fond(){
+        $content= Pages::where('laravel_name', 'fond')->get();
+        return view('main.fond', compact('content'));
+    }
 }

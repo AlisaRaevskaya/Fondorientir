@@ -9,8 +9,8 @@ use App\Models\Projects;
 class AboutController extends Controller
 {
     public function index(){
-        $newProjects =Projects::all();
-        return view('about', compact('newProjects'));
+        $mission= Pages::where('title', 'fond')->get();
+        return view('main.about', compact('content'));
     }
 
     public function projects(){

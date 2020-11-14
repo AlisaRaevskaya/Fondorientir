@@ -95,4 +95,8 @@ class News extends Model
     {
         return Str::substr($this->intro, 0, 80) . "...";
     }
+
+    public function sizeImage(){
+
+    }
 }

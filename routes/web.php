@@ -39,6 +39,7 @@ Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
+Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('lawyer');
 Route::get('/feedback/reception', [FeedbackController::class, 'feedback'])->name('reception');
@@ -82,6 +83,8 @@ Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
 Route::view('/admin', 'admin_home');
+
+Route::get('/second', [MainController::class, 'second_index'])->name('second_main');
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
@@ -132,3 +135,5 @@ Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
 
+Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
+Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');

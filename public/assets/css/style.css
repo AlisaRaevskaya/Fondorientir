@@ -1440,11 +1440,31 @@ section {
     display: inline-block;
     vertical-align: baseline;
     zoom: 1;
-    width: 98%;
+    width: 90%;
     position: relative;
     text-align: right;
     text-transform: uppercase;
     font-size: 11px;
+}
+.widget_faq_divider {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    width: 90%;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+.widget_faq_divider::after {
+     content: '';
+    display: block;
+    width: 45%;
+    left: 0;
+    text-align: right;
+    position: absolute;
+    top: 12px;
+    border-top: 1px solid #f1f1f1;
 }
 
 .widget_divider::after {

@@ -15,7 +15,7 @@
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
     <!-- web-fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
+    <link href='/assets/fonts/google/fontRoboto.css' rel='stylesheet'>
 
     <!-- Bootstrap -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -34,15 +34,12 @@
     <link href="/assets/css/style.css" rel="stylesheet">
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU"
         type="text/javascript">
     </script>
-
-    {{-- <script
-        src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
-    --}}
+{{--
+    <script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script> --}}
 
 
 
@@ -55,27 +52,28 @@
     <![endif]-->
 </head>
 
+@include('blocks.map')
+@include('blocks.call')
 
 <body id="page-top" data-spy="scroll" class="container" data-target=".navbar">
     <div id="main-wrapper">
-        <div class="uc-mobile-menu-pusher">
-            <div class="content-wrapper">
-                @include('layouts.header')
+    <div class="uc-mobile-menu-pusher">
+        <div class="content-wrapper">
+        @include('secondsite.layouts.header')
 
-                @yield('content')
 
-                @include('layouts.footer')
+        @yield('content')
 
-            </div>
-        </div>
 
-        <div class="uc-mobile-menu uc-mobile-menu-effect">
-            @include('layouts.mobile')
-        </div>
-        @include('blocks.map')
-        @include('blocks.call')
 
+        @include('layouts.footer')
     </div>
+    </div>
+    </div>
+
+    @include('layouts.mobile')
+
+    <script src="/assets/js/bootstrap.min.js"></script>
 
     <!-- Theme Menu -->
     <script src="/assets/js/mobile-menu.js"></script>

@@ -8,10 +8,13 @@
                 <div class="col-md-1"></div>
 
                 <div class="col-md-10">
-                    <div class="entity-wrapper">
 
+                    <div class="entity-wrapper container">
                         @foreach ($contacts as $item)
-                            {!! $item->content !!}
+
+                                <h1>{{$item->title}}</h1>
+
+                            <div>{!!$item->content!!}</div>
                         @endforeach
                         @foreach ($info as $contact)
                             <div class="container">
@@ -37,7 +40,8 @@
                     <div class="col-md-1"></div>
                 </div>
             </div>
-
+        </div>
+        </section>
             <script>
                 ymaps.ready(function() {
                     var myMap = new ymaps.Map('map2', {

@@ -1,4 +1,9 @@
-
+.logo_color{
+    color:#00aa97 !important;
+}
+#hotline_phone{
+    font-weight:900 !important;
+}
 .modal-backdrop {
     z-index: 1000;
 }
@@ -96,9 +101,20 @@ hr {
     z-index: 1;
 }
 .category_news_body{
-    min-height: 500px;
+    min-height: 465px;
+    max-height: 500px;
 }
 .news_divider{
 padding-bottom:20px;
+}
+.footer_main{
+position:absolute;
+top:10%;
+left:40%;
+top:12%;
+float:right;
+}
+.footer-logo{
+    padding-left:10px;
 }
 

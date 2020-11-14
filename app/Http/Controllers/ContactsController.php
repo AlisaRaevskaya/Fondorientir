@@ -9,7 +9,7 @@ use App\Models\Contact;
 class ContactsController extends Controller
 {
     public function index(){
-        $contacts= Pages::where('title', 'contacts')->get();
+        $contacts= Pages::where('laravel_name', 'contacts')->get();
         $info=Contact::all();
         return view('contacts', compact('contacts', 'info'));
     }

@@ -17,10 +17,10 @@ class NewsController extends Controller
 
     }
     public function interview(){
-        return view('news.interview');
+        return view('press.interview');
     }
     public function showFoto(){
-        return view('news.foto');
+        return view('press.foto');
     }
     public function forPress(){
         return view('press.forpress');
@@ -29,13 +29,13 @@ class NewsController extends Controller
         return view('press.notforpress');
     }
     public function pressnews(){
-        return view('news.pressnews');
+        return view('press.index');
     }
 
     public function showPressNews(){
         $category = Category::find(1)->where('name', 'press')->first();
         $pressnews = $category->news()->paginate(5);
-    return view('news.pressnews', compact('pressnews', 'category'));
+    return view('press.pressnews', compact('pressnews', 'category'));
     }
 
 

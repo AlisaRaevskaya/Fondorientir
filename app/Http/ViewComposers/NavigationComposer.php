@@ -4,6 +4,7 @@ use App\Models\Menu;
 use App\Models\News;
 use App\Models\Contact;
 use App\Models\Category;
+use App\Models\SecondMenu;
 use Illuminate\View\View;
 
 
@@ -20,10 +21,16 @@ class NavigationComposer
         $new = News::find(1)->first();
         $category= $new->category;
         $categories= Category::all();
+        $secondmenu=SecondMenu::orderBy('parent_id', 'asc')->get();
+        // $secondmenu = Menu::IsPublished()->where('parent_id', 2)->where('id', '>', 15)->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
+        $footermenu = Menu::IsPublished()->where('parent_id', 2)->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
 
+
+        $secondmenu=$this->buildTree($secondmenu);
         $menuitems = $this->buildTree($menuitems);
 
-        return $view->with(compact('menuitems', 'newsitems', 'contacts','category', 'categories'));
+
+        return $view->with(compact('menuitems', 'newsitems', 'contacts','category', 'categories','secondmenu','footermenu'));
     }
 
     public function buildTree($items)

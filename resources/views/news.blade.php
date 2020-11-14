@@ -28,6 +28,9 @@
         <p>{{$item->dateline}}</p>
     </div>
     <!-- entity_meta -->
+    <div class="entity_img">
+        <img src="/assets/images/news/{!!$item->image!!}" alt="{{$item->title}}">
+    </div>
 
     <div class="">
         <p>{!!$item->intro!!}</p>

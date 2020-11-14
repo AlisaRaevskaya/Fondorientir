@@ -3,15 +3,16 @@
         <div class="header-section">
             <div class="row">
                 @foreach ($contacts as $contact)
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="left_section">
 
                             <div class="row justify-content-between">
-                                <a href="/" class="logo"><img src="/assets/images/logo.png" alt="Logo"></a>
+                                <a href="{{route('second_main')}}" class="logo"><img src="/assets/images/logo-center.png" alt="Logo"></a>
                                 <div style="position:absolute;top:0%;
-                                left:40%;float:right;">
-                                    <h5>Фонд поддержки добровольного переселения соотечественников «ОРИЕНТИР»
-                                </h5>
+                                left:30%;float:right;" class="text-center m25" >
+                                    <h2 style="color:#00aa97;">"Центр правовой поддержки<br>
+                                    и образования<br>
+                                    трудовых мигрантов"</h2>
                             </div>
                             </div>
 
@@ -31,10 +32,10 @@
                         <!-- Left Header Section -->
                     </div>
 
-                    <div class="col-md-4">
-                        <div>
-                            <a href="/feedback/reception"><img src="/assets/images/banner.jpg" alt="receipt"></a>
-                        </div>
+                    <div class="col-md-2">
+                        {{-- <div>
+                            <a href="/feedback/reception"><img src="/assets/images/rec.jpg" alt="receipt"></a>
+                        </div> --}}
                     </div>
 
                     <div class="col-md-4">
@@ -44,14 +45,14 @@
                                 <li><a>Е-mail:{{ $contact->email }}</a></li>
                                 <li><a>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</a></li>
                                 <li><a>Схема проезда (интерактивная карта)</a></li>
-                                <li><a href='#'>Миграционные новости</a></li>
+                                <li><a href='#'>Миграционные вопросы</a></li>
                                 <li><a href='#'>Трудовые споры</a></li>
                                 <li><a href='#'>Гражданские споры</a></li>
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#exampleModalLong">
-                                    Заказать обратный звонок</button>
                             </ul>
                             <!-- Language Section -->
+                             <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalLong">
+                                    Заказать обратный звонок</button></li>
                         </div>
                         <!-- Right Header Section -->
                     </div>
@@ -63,7 +64,7 @@
 
         <div class="navigation-section">
             <nav class="navbar m-menu navbar-default">
-                <div class="container">
+                <div class="container align-content-center">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -74,8 +75,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="#navbar-collapse-1">
                         <ul class="nav navbar-nav main-nav container">
-                            @foreach ($menuitems as $item)
-                                @if (!!$item->children)
+                            @foreach ($secondmenu as $item)
+                                @if ($item->children)
                                     <li class="dropdown m-menu-fw">
                                         <a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}"
                                             data-toggle="dropdown" class="dropdown-toggle">
@@ -87,8 +88,7 @@
                                                 <div class="m-menu-content">
                                                     <ul class="col-sm-3">
                                                         @foreach ($item->children as $children)
-                                                            <a
-                                                                href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}">{{ $children->title }}</a>
+                                                            <a href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}">{{ $children->title }}</a>
                                                         @endforeach
                                                     </ul>
                                                 </div>

@@ -7,7 +7,7 @@
                     <div class="col-md-9">
                         <div class="feature_article_wrapper">
                             <div class="feature_article_img">
-                                <img class="img-responsive top_static_article_img" src="/assets/images/main.jpeg"
+                                <img class="img-responsive top_static_article_img" src="/assets/images/main1.png"
                                     alt="main">
 
                             </div>
@@ -20,8 +20,8 @@
                     <div class="col-md-3">
                         <div class="feature_static_wrapper">
                             <div class="feature_article_img">
-                                <a href="{{ route('reception') }}"><img class="img-responsive"
-                                        src="/assets/images/banner.png" alt="banner"></a>
+                                <a href="{{ route('second_main') }}"><img class="img-responsive"
+                                        src="/assets/images/banner4.png" alt="banner"></a>
                             </div>
 
                         </div>
@@ -93,7 +93,7 @@
                                             <div class="category_article_img">
                                                 <a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
                                                     target="_self">
-                                                    <img class="img-responsive" src="/assets/images/news.jpg" alt="news">
+                                                    <img class="img-responsive" src="/assets/images/news/{{$new->image}}" alt="news">
                                                 </a>
                                             </div>
 
@@ -130,7 +130,7 @@
                         </div>
                         <!-- Design News Section -->
                               <div class="news_divider">
-                                <p class="divider"><a href="{{ route('news') }}"> Все новости</a></p>
+                                <p class="divider"><a href="{{ route('news') }}"> Все новости>>></a></p>
                             </div>
                     </div>
 
@@ -155,8 +155,8 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <p class="widget_divider" style="padding-right:10pt">
-                                <a href="{{ route('faq') }}" target="_self">Все вопросы</a></p>
+                            <p class="widget_faq_divider" style="padding-right:10pt">
+                                <a href="{{ route('faq') }}" target="_self">Посмотреть все>>></a></p>
                         </div>
 
                     </div>
@@ -164,7 +164,6 @@
             </div>
         </section>
 
-        {{-- @include('blocks.subscribe') --}}
     </div>
 
 @endsection
