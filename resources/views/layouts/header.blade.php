@@ -9,7 +9,7 @@
                                 <a href="{{route('main')}}" class="logo">
                                 <img src="/assets/images/logo.png" alt="Logo"></a>
                                 <div style="position:absolute;top:5%;
-                                left:30%;float:right;" class="text-center" class="logo-name">
+                                left:30%;float:right;" class="text-center" id="logo-name">
                                     <h5>Фонд поддержки</h5>
                                     <h5>добровольного переселения</h5>
                                     <h5>соотечественников «ОРИЕНТИР»</h5>
@@ -38,7 +38,7 @@
                     <div class="col-md-4">
                         <div class="right_section">
                             <ul class="nav navbar-nav">
-                                <li><a>Часы работы:{{ $contact->hours }}</a></li>
+                                <li><h6><a>Часы работы:{{ $contact->hours }}</a></h6></li>
                                 <li><a>Е-mail:{{ $contact->email }}</a></li>
                                 <li><a>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</a></li>
                                 <li><a href="#" class="pop_map_link" data-toggle="modal"

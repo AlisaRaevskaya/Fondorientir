@@ -51,23 +51,23 @@ class MainController extends Controller
         $projects=PreProject::all();
         $pages=Pages::where('title', 'projects')->get();
 
-        foreach($pages as $page){
-            $content= $page->content;
-        }
-        return view('main.projects', compact('projects' ,'newProjects', 'content'));
+        // foreach($pages as $page){
+        //     $content= $page->content;
+        // }
+        return view('main.projects', compact('projects' ,'newProjects', 'pages'));
     }
 
     public function partners(){
-        $partners= Pages::where('title', 'partners')->get();
+        $partners= Pages::where('laravel_name', 'partners')->get();
         return view('main.partners', compact('partners'));
     }
 
     public function bankinfo(){
-        $bankinfo= Pages::where('title', 'bankinfo')->get();
+        $bankinfo= Pages::where('laravel_name', 'bankinfo')->get();
         return view('main.bankinfo', compact('bankinfo'));
     }
     public function reports(){
-        $reports=Pages::where('title', 'reports')->get();
+        $reports=Pages::where('laravel_name', 'reports')->get();
         return view('main.reports', compact('reports'));
     }
     public function map(){
@@ -78,9 +78,7 @@ class MainController extends Controller
         return view('admin');
     }
 
-    public function second_index(){
-        return view('secondsite.index');
-    }
+
     public function fond(){
         $content= Pages::where('laravel_name', 'fond')->get();
         return view('main.fond', compact('content'));

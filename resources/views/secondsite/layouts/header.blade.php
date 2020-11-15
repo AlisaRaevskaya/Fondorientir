@@ -9,7 +9,7 @@
                             <div class="row justify-content-between">
                                 <a href="{{route('second_main')}}" class="logo"><img src="/assets/images/logo-center.png" alt="Logo"></a>
                                 <div style="position:absolute;top:0%;
-                                left:30%;float:right;" class="text-center m25" >
+                                left:30%;float:right;" class="text-center m25" id="logo-name">
                                     <h2 style="color:#00aa97;">"Центр правовой поддержки<br>
                                     и образования<br>
                                     трудовых мигрантов"</h2>
@@ -48,11 +48,11 @@
                                 <li><a href='#'>Миграционные вопросы</a></li>
                                 <li><a href='#'>Трудовые споры</a></li>
                                 <li><a href='#'>Гражданские споры</a></li>
-                            </ul>
-                            <!-- Language Section -->
-                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#exampleModalLong">
-                                    Заказать обратный звонок</button></li>
+
+                            <div class="btn btn-primary"
+                                data-toggle="modal" data-target="#exampleModalLong">
+                                    Заказать обратный звонок</div>
+                                    </ul>
                         </div>
                         <!-- Right Header Section -->
                     </div>

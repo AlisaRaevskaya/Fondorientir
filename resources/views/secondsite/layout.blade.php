@@ -52,26 +52,26 @@
     <![endif]-->
 </head>
 
-@include('blocks.map')
-@include('blocks.call')
-
 <body id="page-top" data-spy="scroll" class="container" data-target=".navbar">
     <div id="main-wrapper">
-    <div class="uc-mobile-menu-pusher">
-        <div class="content-wrapper">
-        @include('secondsite.layouts.header')
+        <div class="uc-mobile-menu-pusher">
+            <div class="content-wrapper">
+                @include('secondsite.layouts.header')
 
+                @yield('content')
 
-        @yield('content')
+                @include('layouts.footer')
 
+            </div>
+        </div>
 
+        <div class="uc-mobile-menu uc-mobile-menu-effect">
+            @include('layouts.mobile')
+        </div>
+        @include('blocks.map')
+        @include('blocks.call')
 
-        @include('layouts.footer')
     </div>
-    </div>
-    </div>
-
-    @include('layouts.mobile')
 
     <script src="/assets/js/bootstrap.min.js"></script>
 

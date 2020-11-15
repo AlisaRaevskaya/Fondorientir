@@ -10,6 +10,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\SecondSiteController;
 use App\Http\Controllers\Admin\UsersController;
 
 /*
@@ -40,6 +41,7 @@ Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
+
 Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('lawyer');
@@ -49,6 +51,7 @@ Route::get('/feedback/application', [FeedbackController::class, 'application'])-
 Route::get('/feedback/claim', [FeedbackController::class, 'claim'])->name('claim');
 Route::get('/feedback/problem', [FeedbackController::class, 'problem'])->name('problem');
 Route::get('/feedback/fzakon', [FeedbackController::class, 'fzakon'])->name('feedback.fzakon');
+
 
 Route::get('/press-news/interview', [NewsController::class, 'interview'])->name('interview');
 Route::get('/press-news/press', [NewsController::class, 'showPressNews'])->name('press');
@@ -85,8 +88,12 @@ Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
 Route::view('/admin', 'admin_home');
 
-Route::get('/second', [MainController::class, 'second_index'])->name('second_main');
-
+Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
+Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second-reception');
+Route::get('/center-podderzhki/claim', [SecondSiteController::class, 'claim'])->name('second-claim');
+Route::get('/center-podderzhki/applictaion', [SecondSiteController::class, 'problem'])->name('second-application');
+Route::get('/center-podderzhki/problem', [SecondSiteController::class, 'problem'])->name('second-problem');
+Route::get('/center-podderzhki/hotline', [SecondSiteController::class, 'hotline'])->name('second-hotline');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
 
@@ -136,5 +143,6 @@ Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
 
-Route::get('/upload', [ UploadController::class, 'imageUpload' ])->name('image.upload');
+Route::get('/news-add', [ UploadController::class, 'newsadd' ])->name('newsadd');
+Route::get('/upload/{id}', [ UploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('/upload', [ UploadController::class, 'imageUploadPost' ])->name('image.upload.post');

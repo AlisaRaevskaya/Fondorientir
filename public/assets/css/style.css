@@ -1523,6 +1523,9 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+    #logo-name{
+        display:none;
+    }
     .tag_lg {
         font-size: 12px;
         padding: 3px 8px;

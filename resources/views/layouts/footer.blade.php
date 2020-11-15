@@ -1,7 +1,6 @@
 <section id="footer_section" class="footer_section">
     <div class="container">
 
-
         <div class="container footer_bottom_Section">
             <div class="row">
 
@@ -52,21 +51,29 @@
 
                         <div class="row justify-content-between margin-top">
 
-                            <div class="partner_item_2 col-md-5  d-flex flex-column justify-content-between">
-                                <div>
-                                    <p>Федеральное агентство по делам национальностей</p>
+                            <div class="partner_item_2 col-md-6 text-left">
+                                <div class="text-center">
+                                  <p> Федеральное агентство по делам национальностей</p>
                                 </div>
-                                <div><img src="/assets/images/footer/fadn.jpg" alt="nation_agency"></div>
+                                <div>
+                                    <img src="/assets/images/footer/fadn.jpg"
+                                    alt="nation_agency"class="img-responsive"
+                                    style="display: block;
+      margin: 0 auto; "></div>
                             </div>
 
-                            <div class="partner_item_3 col-md-7 margin-top d-flex flex-column justify-content-between">
-                                <div>
-                                    <p>Федеральная служба по экологическому, технологическому и атомному надзору
-                                        (Ростехнадзор)
-                                    </p>
-                                </div>
-                                <div><img src="/assets/images/footer/rosteh.jpg" alt="rostehnadzor"></div>
+                            <div class="partner_item_3 col-md-6 margin-top">
+                                <div class="text-center">
+                                    <p>Федеральная служба по экологическому,
+                                    технологическому и атомному надзору</p>
+                                    </div>
+                                    <div>
+                                <img src="/assets/images/footer/rosteh.jpg"
+                                alt="rostehnadzor" class="img-responsive" style="display: block;
+      margin: 0 auto; ">
                             </div>
+                            </div>
+
 
                         </div>
 
@@ -189,32 +196,7 @@
                         <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
                         <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                     </div>
-                    {{--
-                    <div class="row">
-                        <form action="/subscribe" method="post" class="subForm">
-                            @csrf
-                            <div class="form-group ">
 
-                                <label class="control-label">
-                                    <h2><span class="red-color">Подпишитесь </span> на наши новости<h2>
-                                </label>
-
-                                <div class="form-group">
-                                    <input type="email" name="email" class="form-control input-lg"
-                                        placeholder="Ваш email">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="submit" value="Подписаться"
-                                        class="btn btn-large blue subscription_btn">
-                                </div>
-
-                                <div class="sub_success"></div>
-
-                                <div class="col-sm-2"></div>
-                            </div>
-                        </form>
-                    </div> --}}
 
                 </div>
 

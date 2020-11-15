@@ -1,9 +1,30 @@
+@import url('style.css');
+.main_content{
+    padding:0 11px;
+}
+.reply-title{
+    word-wrap:break-word;
+}
+.banner{
+    float:right;
+}
 .logo_color{
     color:#00aa97 !important;
 }
 #hotline_phone{
     font-weight:900 !important;
 }
+.btn_news{
+    padding:1rem;
+}
+.phone-text{
+font-weight:900;
+color:#090950;
+}
+.hotline_img{
+   padding-left:15px !important;
+}
+
 .modal-backdrop {
     z-index: 1000;
 }
@@ -31,28 +52,6 @@
     padding-left: 0.8rem;
 }
 
-/* .popup_map{
-position:fixed;
-border-radius: 5px;
-background: #fff;
-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-font-size: 14px;
-top:10%;
-left:40%;
-padding:20px;
-/* background-color:lightblue; */
-/*
-.popup_map .close{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    color: #434343;
-    padding: 10px;
-    font-size: 20px;
-} */
 
 #btn-web-feedback {
     margin-top: 10px;
@@ -117,4 +116,18 @@ float:right;
 .footer-logo{
     padding-left:10px;
 }
+.doc_style{
+    font-family: arial, helvetica, sans-serif;
+    font-size: medium;}
 
+.documents_body li{
+text-decoration:underline;
+font-weight:bold;
+}
+.report_link{
+  text-decoration:underline;
+  line-height:1.5;
+}
+.picture_padding{
+padding-left:27px;
+}

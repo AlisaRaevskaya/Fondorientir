@@ -23,7 +23,6 @@
         </div>
     </div>
 
-    <div class="form-group">
         <div class="form-group">
             <label class="control-label col-xs-3" for="address">Почтовый адрес*:</label>
             <div class="col-xs-9">
@@ -31,6 +30,7 @@
                     placeholder="Почтовый адрес">
             </div>
         </div>
+
         <div class="form-group">
             <label class="control-label col-xs-3" for="job">Место работы или учебы :</label>
             <div class="col-xs-9">
@@ -74,13 +74,12 @@
             <div class="form-group">
 
                 <div class="col-xs-offset-3 col-xs-9">
-                    <input type="submit" class="btn btn-primary g-recaptcha" id="btn-messages"
-                     value="Отправить" data-sitekey="6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"
-                     data-callback='onSubmit' data-action='submit'>
+                    <input type="submit" class="btn btn-primary g-recaptcha" id="btn-messages" value="Отправить"
+                        data-sitekey="6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg" data-callback='onSubmit'
+                        data-action='submit'>
                 </div>
             </div>
 
             <div id="success_messages"></div>
 
 </form>
-

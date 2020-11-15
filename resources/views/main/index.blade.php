@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <div class="wrapper">
+    <div class="wrapper main_content">
         <section id="feature_news_section" class="feature_news_section">
             <div class="container">
                 <div class="row">
@@ -18,14 +18,12 @@
                     <!-- col-md-7 -->
 
                     <div class="col-md-3">
-                        <div class="feature_static_wrapper">
-                            <div class="feature_article_img">
-                                <a href="{{ route('second_main') }}"><img class="img-responsive"
+                            <div class="feature_article_img media-right">
+                                <a href="{{ route('second_main')}}"><img class="img-responsive "
                                         src="/assets/images/banner4.png" alt="banner"></a>
                             </div>
 
-                        </div>
-                        <!-- feature_static_wrapper -->
+
 
                     </div>
                     <!-- col-md-5 -->
@@ -148,14 +146,14 @@
                                         <a href="{{ route('faq.id', $reply->id) }}">
                                             <img class="media-object" src="/assets/images/faq4.png" alt="Generic placeholder image"></a>
                                     </div>
-                                    <div class="media-body" style="padding-right:10pt">
-                                        <h3 class="media-heading"style="word-wrap:break-word">
+                                    <div class="media-body">
+                                        <h6 class="reply-title text-left">
                                             <a href="{{ route('faq.id', $reply->id)}}">{!!$reply->title!!}</a>
-                                        </h3>
+                                        </h6>
                                     </div>
                                 </div>
                             @endforeach
-                            <p class="widget_faq_divider" style="padding-right:10pt">
+                            <p class="widget_faq_divider">
                                 <a href="{{ route('faq') }}" target="_self">Посмотреть все>>></a></p>
                         </div>
 

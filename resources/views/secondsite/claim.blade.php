@@ -1,7 +1,6 @@
-@extends('layout')
-
+@extends('secondsite.layout')
 @section('content')
-    <section id="entity_section" class="entity_section">
+ <section id="entity_section" class="entity_section">
         <div class="container">
             <div class="row">
 
