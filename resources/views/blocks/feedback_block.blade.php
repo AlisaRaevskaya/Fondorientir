@@ -7,7 +7,7 @@
     <div class="col">
 
         <div class="media-left">
-        <img class="media-object" src="/assets/images/feed.jpg" alt="Generic placeholder image">
+        <img class="media-object" src="/assets/images/feed1.jpeg" alt="Generic placeholder image">
         </div>
 
         <div class="media-body"style="padding-right:10pt;overflow:hidden">

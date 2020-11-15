@@ -9,6 +9,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\Admin\UsersController;
 
 /*
@@ -135,5 +136,5 @@ Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
 
-Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
-Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+Route::get('/upload', [ UploadController::class, 'imageUpload' ])->name('image.upload');
+Route::post('/upload', [ UploadController::class, 'imageUploadPost' ])->name('image.upload.post');

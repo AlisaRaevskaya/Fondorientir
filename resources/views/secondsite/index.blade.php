@@ -39,7 +39,7 @@
                             <h6>патент, РВП, ВНЖ, гражданство, регистрация, запрет, выдворение, депортация и др.</h6>
                         </li>
                         <div class="d-flex flex-row justify-content-between">
-                            <h6><img src="/assets/images/phone.png" alt=""><a href="tel:88123856989"> 8(812)385-69-89</a>
+                            <h6><img src="/assets/images/phone.png" alt=""><a href="tel:+78126124812"> +7 (812 ) 612-48-12</a>
                             </h6>
                         </div>
 
@@ -50,7 +50,7 @@
                             <h6>обманули, не заплатили, договор не дают и др.</h6>
                         </li>
                         <div class="d-flex flex-row justify-content-between">
-                            <h6><img src="/assets/images/phone.png" alt=""><a href="tel:88123856989"> 8(812)385-69-89</a>
+                            <h6><img src="/assets/images/phone.png" alt=""><a href="tel:+78126124817"> +7 (812 ) 612-48-17</a>
                             </h6>
                         </div>
                         <h6 class="widget_divider"></h6>
@@ -61,7 +61,7 @@
                                 (жильё, семья, квартира, дом, земля, наследство, пенсия и др.)</h6>
                         </li>
                         <div class="d-flex flex-row justify-content-between">
-                            <h6><img src="/assets/images/phone.png" alt=""><a href="tel:88123856989"> 8(812)385-69-89</a>
+                            <h6><img src="/assets/images/phone.png" alt=""><a href="tel:+78123856989">+7 (812) 385-69-89</a>
                             </h6>
                         </div>
 
