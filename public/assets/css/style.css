@@ -336,8 +336,6 @@ section {
 }
 
 
-
-
 @media screen and (max-width: 768px) {
     .header-section {
         text-align: center;
@@ -1536,6 +1534,7 @@ section {
         padding: 1px 5px;
         display: inline-table;
     }
+
 }
 
 .red-color {

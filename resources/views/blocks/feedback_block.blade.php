@@ -4,13 +4,12 @@
     <div class="widget_title">
         <h3 style="font-size:13.5pt;">Обратная связь</h3>
     </div>
-    <div class="col">
-
+    <div>
         <div class="media-left">
-        <img class="media-object" src="/assets/images/feed1.jpeg" alt="Generic placeholder image">
+        <img class="media-object"src="/assets/images/feed1.jpeg" alt="feedback">
         </div>
 
-        <div class="media-body"style="padding-right:10pt;overflow:hidden">
+        <div class="media-body">
         <p>Ваше мнение имеет значение!</p>
         <p><a class="popup_link" href="{{route('problem')}}" style="text-decoration:underline">Отправьте нам</a>
         свое мнение по поводу работы нашего сайта и мы обязательно его рассмотрим.</p>

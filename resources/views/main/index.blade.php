@@ -18,8 +18,8 @@
                     <!-- col-md-7 -->
 
                     <div class="col-md-3">
-                            <div class="feature_article_img media-right">
-                                <a href="{{ route('second_main')}}"><img class="img-responsive "
+                            <div style="padding-left:5px">
+                                <a href="{{ route('second_main')}}"><img class="img-responsive"
                                         src="/assets/images/banner4.png" alt="banner"></a>
                             </div>
 
