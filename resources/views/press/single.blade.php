@@ -22,7 +22,7 @@
 
                             @if (isset($item->image))
                                 <div class="entity_thumb">
-                                    <img class="img-responsive" src="/assets/images/news/{{$item->image}}" alt="{{$item->image}}">
+                                    <img class="img-responsive" src="/assets/images/{{$item->image}}" alt="feature-top">
                                 </div>
                             @endif
 

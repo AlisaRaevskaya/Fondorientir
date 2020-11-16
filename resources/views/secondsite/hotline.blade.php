@@ -64,17 +64,7 @@
 
                         <h6 class="widget_divider"></h6>
 
-                           <li>
-                            <h2>Гражданско-правовые споры</h2>
-                            <h6>Есть проблема, сложная ситуация
-                                (жильё, семья, квартира, дом, земля, наследство, пенсия и др.)</h6>
-                        </li>
-                        <div class="d-flex">
-                            <h1 class="phone-text"><img src="/assets/images/phone.png" alt=""><a href="tel:+78123856989">+7 (812) 385-69-89</a>
-                            </h1>
-                        </div>
 
-                        <h6 class="widget_divider"></h6>
                     </ul>
                     @endforeach
                 </div>

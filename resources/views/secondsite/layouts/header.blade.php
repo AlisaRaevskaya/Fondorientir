@@ -44,10 +44,10 @@
                                 <li><a>Часы работы:{{ $contact->hours }}</a></li>
                                 <li><a>Е-mail:{{ $contact->email }}</a></li>
                                 <li><a>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</a></li>
-                                <li><a>Схема проезда (интерактивная карта)</a></li>
-                                <li><a href='#'>Миграционные вопросы</a></li>
-                                <li><a href='#'>Трудовые споры</a></li>
-                                <li><a href='#'>Гражданские споры</a></li>
+                                <li><a style="font-weight:bold;">Схема проезда (интерактивная карта)</a></li>
+                                <li><h3><a href='tel:+78126124812'>Миграционные вопросы</a></h3></li>
+                                <li><h3><a href='tel:+78126124817'>Трудовые споры</a></h3></li>
+                                <li><h3><a href='tel:+78123856989'>Гражданские споры</a></h3></li>
 
                             <div class="btn btn-primary"
                                 data-toggle="modal" data-target="#exampleModalLong">

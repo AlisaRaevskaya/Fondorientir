@@ -146,7 +146,7 @@
                                         <a href="{{ route('faq.id', $reply->id) }}">
                                             <img class="media-object" src="/assets/images/faq4.png" alt="Generic placeholder image"></a>
                                     </div>
-                                    <div class="media-body">
+                                    <div class="media-body" style="padding-right:15px;">
                                         <h6 class="reply-title text-left">
                                             <a href="{{ route('faq.id', $reply->id)}}">{!!$reply->title!!}</a>
                                         </h6>

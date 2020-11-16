@@ -43,7 +43,7 @@
                                 <li><a>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</a></li>
                                 <li><a href="#" class="pop_map_link" data-toggle="modal"
                                         data-target=".bd-example-modal-lg">Схема проезда (интерактивная карта)</a></li>
-                                <li><a href='#'>{{ $contact->phone }}</a></li>
+                                <li><h3><a href='#'>{{ $contact->phone }}</a></h3></li>
                                 <button type="button"class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModalLong">
                                     Заказать обратный звонок</button>

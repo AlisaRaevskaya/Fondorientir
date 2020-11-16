@@ -4,6 +4,7 @@
 }
 .reply-title{
     word-wrap:break-word;
+
 }
 .banner{
     float:right;
@@ -100,8 +101,8 @@ hr {
     z-index: 1;
 }
 .category_news_body{
-    min-height: 465px;
-    max-height: 500px;
+    min-height: 485px;
+    max-height: 600px;
 }
 .news_divider{
 padding-bottom:20px;

@@ -18,15 +18,15 @@
                         @foreach ($pressnews as $item)
 
                             <div class="entity_title">
-                                <h4><a href="{{ route('news.category.id', [$category->name, $item->id]) }}" target="_self">
-                                        {{ $item->title }}</a>
-                                </h4>
+                                <h3><a href="{{ route('news.category.id', [$category->name, $item->id]) }}" target="_self">
+                                        {!!$item->title!!}</a>
+                                </h3>
                             </div>
                             <!-- entity_title -->
 
-                            <div class="entity_meta">
-                                {{ $item->dateline }}
-                            </div>
+                            {{-- <div class="entity_meta">
+                               <h1> {{ $item->dateline }}</h1>
+                            </div> --}}
                             <!-- entity_meta -->
                             @if($item->image)
 

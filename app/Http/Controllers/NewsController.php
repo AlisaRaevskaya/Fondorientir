@@ -34,10 +34,9 @@ class NewsController extends Controller
 
     public function showPressNews(){
         $category = Category::find(1)->where('name', 'press')->first();
-        $pressnews = $category->news()->paginate(5);
+        $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
     return view('press.pressnews', compact('pressnews', 'category'));
     }
-
 
     public function showByCategory($category, $subcategory=false){
         $category = Category::find(1)->where('name', $category)->first();
@@ -47,7 +46,6 @@ class NewsController extends Controller
     }
 
     public function showByCategoryId($category, $id=false){
-
         $category = Category::find(1)->where('name', $category)->first();
         $newsby = $category->news->where('id', $id);
         return view('news.news_single', compact('newsby', 'category'));

@@ -78,6 +78,7 @@ Route::get('/news/{category}/{subcategory}/{id}', [NewsController::class, 'showB
 name('news.subcategory.id');
 
 
+
 Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
 Route::post('/submit', [AjaxController::class, 'saveMessages']);
 Route::post('/website-feedback', [AjaxController::class, 'saveWebsiteFeedback']);
