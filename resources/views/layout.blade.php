@@ -55,8 +55,7 @@
     <![endif]-->
 </head>
 
-
-<body id="page-top" data-spy="scroll" class="container" data-target=".navbar">
+<body id="page-top" data-spy="scroll"data-target=".navbar">
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
