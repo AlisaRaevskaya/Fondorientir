@@ -96,7 +96,24 @@ class News extends Model
         return Str::substr($this->intro, 0, 80) . "...";
     }
 
-    public function sizeImage(){
+    // /**
+    //  * Загружаем новое изоюражение
+    //  * @param $image
+    //  * @return mixed|void
+    //  */
+    // public function uploadImage($images)
+    // {
+    //     if ($image == null) {
+    //         return;
+    //     }
 
-    }
+    //     if ($this->image !== null) {
+    //         Storage::delete($this->image);
+    //     }
+    //     $fileName = $image->store('articles');
+    //     $newName = explode('/', $fileName);
+    //     $this->images = $newName[1];
+    //     $this->save();
+    //     return $newName[1];
+    // }
 }

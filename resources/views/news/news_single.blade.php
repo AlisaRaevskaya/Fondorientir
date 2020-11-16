@@ -22,9 +22,10 @@
 
                             @if (isset($item->image))
                                 <div class="entity_thumb">
-                                    <img class="img-responsive" src="/assets/images/news/{{$item->image}}" alt="{{$item->image}}">
+                                    <img class="img-responsive" src="{{ asset('storage/news/'.$item->image) }}" alt="{{$item->image}}">
                                 </div>
                             @endif
+
 
                             <div class="entity_content">
                                 <p>
@@ -42,7 +43,7 @@
 
                             </div>
                             <!-- entity_footer -->
-
+                            <div class="m30"><a href="{{ url()->previous()}}" class="btn btn-default"><<<Назад</a></div>
                     </div>
                     <!-- entity_wrapper -->
 

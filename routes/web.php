@@ -144,6 +144,6 @@ Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
 
-Route::get('/news-add', [ UploadController::class, 'newsadd' ])->name('newsadd');
+Route::get('/add-news', [ UploadController::class, 'newsadd' ])->name('newsadd');
 Route::get('/upload/{id}', [ UploadController::class, 'imageUpload' ])->name('image.upload');
-Route::post('/upload', [ UploadController::class, 'imageUploadPost' ])->name('image.upload.post');
+Route::post('/store/{id}', [ UploadController::class, 'imageStorePost' ])->name('image.store.post');

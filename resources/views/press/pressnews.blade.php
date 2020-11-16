@@ -29,9 +29,8 @@
                             </div> --}}
                             <!-- entity_meta -->
                             @if($item->image)
-
                                 <div class="entity_thumb">
-                                    <img class="img-responsive" src="/assets/images/{{ $item->image }}" alt="feature-top">
+                                    <img class="img-responsive" src="{{ asset('storage/news/'.$item->image) }}"  alt="{{$item->image}}">
                                 </div>
                                 <!-- entity_thumb -->
                             @endif
