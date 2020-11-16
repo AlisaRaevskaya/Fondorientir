@@ -38,20 +38,20 @@
                     <div class="col-md-4">
                         <div class="right_section">
                             <ul class="nav navbar-nav">
-                                <li><h6><a>Часы работы:{{ $contact->hours }}</a></h6></li>
                                 <li><a>Е-mail:{{ $contact->email }}</a></li>
                                 <li><a>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</a></li>
                                 <li><a href="#" class="pop_map_link" data-toggle="modal"
-                                        data-target=".bd-example-modal-lg">Схема проезда (интерактивная карта)</a></li>
-                                <li><h3><a href='#'>{{ $contact->phone }}</a></h3></li>
-
+                                        data-target=".bd-example-modal-lg"><i class="fa fa-map-o">
+                                            Схема проезда (интерактивная карта)</i></a></li>
+                                <li><a>Часы работы:<span style="font-weight: bold; font-size:15px;">{{ $contact->hours }}</span></a></li>
+                                <li style="border-bottom:none;"><h5><a href='#'>{{ $contact->phone }}</a></h5></li>
                             </ul>
                             <!-- Language Section -->
                         </div>
                         <!-- Right Header Section -->
-                         <div style="margin: 0 auto;"><button type="button"class="btn btn-primary" data-toggle="modal"
+                         <button type="button" class="btn btn-primary btn_call" data-toggle="modal"
                                     data-target="#exampleModalLong">
-                                    Заказать обратный звонок</button></div>
+                                    Заказать обратный звонок</button>
                     </div>
                 @endforeach
             </div>
@@ -65,7 +65,7 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
+                            data-target="#navbar-collapse-1"><span class="sr-only"></span> <span
                                 class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                         </button>
                     </div>

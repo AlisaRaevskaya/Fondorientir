@@ -41,20 +41,21 @@
                     <div class="col-md-4">
                         <div class="right_section">
                             <ul class="nav navbar-nav">
-                                <li><a>Часы работы:{{ $contact->hours }}</a></li>
                                 <li><a>Е-mail:{{ $contact->email }}</a></li>
                                 <li><a>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</a></li>
-                                <li><a style="font-weight:bold;">Схема проезда (интерактивная карта)</a></li>
-                                <li><h3><a href='tel:+78126124812'>Миграционные вопросы</a></h3></li>
-                                <li><h3><a href='tel:+78126124817'>Трудовые споры</a></h3></li>
-                                <li><h3><a href='tel:+78123856989'>Гражданские споры</a></h3></li>
-
-                            <div class="btn btn-primary"
-                                data-toggle="modal" data-target="#exampleModalLong">
-                                    Заказать обратный звонок</div>
+                                <li><a href="#" class="pop_map_link" data-toggle="modal"
+                                        data-target=".bd-example-modal-lg"><i class="fa fa-map-o">
+                                            Схема проезда (интерактивная карта)</i></a></li>
+                                <li><a>Часы работы:<span style="font-weight: bold; font-size:15px;">{{ $contact->hours }}</span></a></li>
+                                <li><a href='tel:+78126124812'><i class="fa fa-phone">Миграционные вопросы</i></a></li>
+                                <li><a href='tel:+78126124817'><i class="fa fa-phone">Трудовые споры</i></a></li>
+                                <li style="border-bottom:none; margin:0 16%;font-weight: bold;"><a href='tel:+78123856989'><i class="fa fa-phone">Гражданские споры</a></i></li>
                                     </ul>
                         </div>
                         <!-- Right Header Section -->
+                        <button type="button" class="btn btn-primary btn_call" data-toggle="modal"
+                                    data-target="#exampleModalLong">
+                                    Заказать обратный звонок</button>
                     </div>
                 @endforeach
             </div>
