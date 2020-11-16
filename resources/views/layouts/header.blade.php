@@ -44,13 +44,14 @@
                                 <li><a href="#" class="pop_map_link" data-toggle="modal"
                                         data-target=".bd-example-modal-lg">Схема проезда (интерактивная карта)</a></li>
                                 <li><h3><a href='#'>{{ $contact->phone }}</a></h3></li>
-                                <button type="button"class="btn btn-primary" data-toggle="modal"
-                                    data-target="#exampleModalLong">
-                                    Заказать обратный звонок</button>
+
                             </ul>
                             <!-- Language Section -->
                         </div>
                         <!-- Right Header Section -->
+                         <div style="margin: 0 auto;"><button type="button"class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalLong">
+                                    Заказать обратный звонок</button></div>
                     </div>
                 @endforeach
             </div>
@@ -58,7 +59,7 @@
         <!-- Header Section -->
 
 
-        <div class="navigation-section container">
+        <div class="navigation-section">
             <nav class="navbar m-menu navbar-default">
                 <div>
                     <!-- Brand and toggle get grouped for better mobile display -->

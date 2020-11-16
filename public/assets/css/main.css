@@ -1,10 +1,10 @@
 @import url('style.css');
+
 .main_content{
-    padding:0 11px;
+    margin-left:0 1%;
 }
 .reply-title{
     word-wrap:break-word;
-
 }
 .banner{
     float:right;
