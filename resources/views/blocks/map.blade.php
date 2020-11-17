@@ -22,7 +22,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
     ymaps.ready(function() {
         var myMap = new ymaps.Map('map', {
                 center: [59.92345506419597, 30.298018499999987],
-                zoom: 9
+                zoom: 15
             }, {
                 searchControlProvider: 'yandex#search'
             }),
