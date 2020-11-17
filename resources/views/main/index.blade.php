@@ -3,28 +3,22 @@
     <div class="wrapper main_content">
         <section id="feature_news_section" class="feature_news_section">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="feature_article_wrapper">
+                <div class="feature_article_wrapper">
+                    <div class="feature_column_9">
                             <div class="feature_article_img">
-                                <img class="img-responsive top_static_article_img" src="/assets/images/main1.png"
+                                <img class="img-responsive top_static_article_img" src="/assets/images/img3.jpg"
                                     alt="main">
 
                             </div>
-                        </div>
-                        <!-- feature_article_wrapper -->
 
                     </div>
                     <!-- col-md-7 -->
 
-                    <div class="col-md-3">
-                            <div style="padding-left:5px">
+                    <div class="feature_column_3">
+                            <div class="float-right">
                                 <a href="{{ route('second_main')}}"><img class="img-responsive"
-                                        src="/assets/images/banner4.png" alt="banner"></a>
+                                        src="/assets/images/banner.jpg" alt="banner"></a>
                             </div>
-
-
-
                     </div>
                     <!-- col-md-5 -->
 

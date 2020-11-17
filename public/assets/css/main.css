@@ -6,6 +6,19 @@
 .reply-title{
     word-wrap:break-word;
 }
+.feature_article_wrapper{
+display:flex;
+flex-wrap:nowrap;
+justify-content: space-between;
+padding-left:15px;
+}
+.feature_column_9{
+flex:75%;
+}
+.feature_column_3{
+    padding-left:15px;
+flex: 25%;
+}
 .btn_call{
 margin:3% 13%;
 }
