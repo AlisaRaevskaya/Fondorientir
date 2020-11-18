@@ -13,7 +13,7 @@ class NewsController extends Controller
     $news = News::orderBy('dateline', 'desc')->paginate(7);
     $new = News::find(1)->first();
     $category= $new->category;
-    return view('news', compact('news', 'category'));
+    return view('news.news', compact('news', 'category'));
 
     }
     public function interview(){

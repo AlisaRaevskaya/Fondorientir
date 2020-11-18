@@ -59,25 +59,25 @@
 
     <div class="brochure-item col-md-4">
         <h5>Брошюра на таджикском </h5>
-        <a href="#"><img src="/assets/images/broch1.jpg"></a>
-        <div>
-        <a href="#" type="button" class="btn btn-primary">Посмотреть</a>
+        <a href="http://fondorientir.ru/filemanager/i/9593f002/брошюра на таджикском языке_1.pdf"><img src="/assets/images/broch1.jpg"class=" img-responsive"></a>
+        <div class="text-center brochure-button">
+        <a href="http://fondorientir.ru/filemanager/i/9593f002/брошюра на таджикском языке_1.pdf" type="button" class="btn btn-primary">Посмотреть</a>
         </div>
     </div>
 
     <div class="brochure-item col-md-4 ">
-    <h5>Брошюра на таджикском </h5>
-    <a href="#" > <img src="/assets/images/broch2.jpg"></a>
-     <div>
-        <a href="#" type="button" class="btn btn-primary">Посмотреть</a>
+    <h5>Брошюра на узбекском </h5>
+    <a href="http://fondorientir.ru/filemanager/i/a1a33ff3/брошюра на узбекском языке_1.pdf" > <img src="/assets/images/broch2.jpg" class="img-responsive"></a>
+     <div class="text-center brochure-button">
+        <a href="http://fondorientir.ru/filemanager/i/a1a33ff3/брошюра на узбекском языке_1.pdf" type="button" class="btn btn-primary">Посмотреть</a>
         </div>
     </div>
 
     <div class="brochure-item col-md-4">
-        <h5>Брошюра на таджикском </h5>
-        <a href="#"><img src="/assets/images/broch3.jpg"></a>
-        <div>
-            <a href="#" type="button" class="btn btn-primary">Посмотреть</a>
+        <h5>Брошюра на русском</h5>
+        <a href="http://fondorientir.ru/filemanager/i/0d0dd14e/Брошюра на русском языке_1.pdf"><img src="/assets/images/broch3.jpg" class="img-responsive"></a>
+        <div class="text-center brochure-button">
+            <a href="http://fondorientir.ru/filemanager/i/0d0dd14e/Брошюра на русском языке_1.pdf" type="button" class="btn btn-primary" >Посмотреть</a>
         </div>
     </div>
 

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\News;
+use App\Models\Category;
 
 class NewsController extends Controller
 {
@@ -14,7 +15,11 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('admin.main.edit');
+    $news = News::orderBy('id', 'desc')->paginate(7);
+    $new = News::find(1)->first();
+    $category= $new->category;
+    return view('admin.news.index', compact('news', 'category'));
+
     }
 
     /**
@@ -57,7 +62,8 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+    $news= News::where('id', $id)->get();
+    return view('admin.news.single_edit', compact('news'));
     }
 
     /**

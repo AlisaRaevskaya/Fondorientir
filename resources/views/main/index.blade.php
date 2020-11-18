@@ -6,8 +6,8 @@
                 <div class="feature_article_wrapper">
                     <div class="feature_column_9">
                             <div class="feature_article_img">
-                                <img class="img-responsive top_static_article_img" src="/assets/images/img3.jpg"
-                                    alt="main">
+                                <img class="img-responsive top_static_article_img" src="/assets/images/{{$main_image}}"
+                                    alt="{{$main_image}}">
 
                             </div>
 
@@ -17,7 +17,7 @@
                     <div class="feature_column_3">
                             <div class="float-right">
                                 <a href="{{ route('second_main')}}"><img class="img-responsive"
-                                        src="/assets/images/banner.jpg" alt="banner"></a>
+                                        src="/assets/images/{{$banner}}" alt="{{$banner}}"></a>
                             </div>
                     </div>
                     <!-- col-md-5 -->
@@ -85,7 +85,7 @@
                                             <div class="category_article_img">
                                                 <a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
                                                     target="_self">
-                                                    <img class="img-responsive" src="/assets/images/news/{{$new->image}}" alt="news">
+                                                    <img class="img-responsive" src="{{ asset('storage/news/'.$new->image) }}">
                                                 </a>
                                             </div>
 

@@ -81,7 +81,10 @@
 
     <!-- Owl carousel -->
     <script src="/assets/js/owl.carousel.min.js"></script>
-    <script src="/assets/js/bootstrap-datepicker.js"></script>
+    <script src="/assets/js/summernote.js"></script>
+
+
+
     <!-- Theme Script -->
     <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>

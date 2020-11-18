@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Press;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\News;
+use App\Models\Image;
 
 class PressController extends Controller
 {
@@ -14,7 +16,9 @@ class PressController extends Controller
      */
     public function index()
     {
-        //
+    $category = Category::find(1)->where('name', 'press')->first();
+    $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
+    return view('press.pressnews', compact('pressnews', 'category'));
     }
 
     /**
@@ -57,7 +61,9 @@ class PressController extends Controller
      */
     public function edit($id)
     {
-        //
+    $pages= Pages::where('id', $id)->get();
+    $images= Image::find(1)->where('page_id', $id)->get();
+    return view('admin.main.mission_edit', compact('pages', 'images'));
     }
 
     /**

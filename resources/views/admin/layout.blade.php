@@ -18,7 +18,9 @@
  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
-
+    <link href="/assets/summernote/summernote.min.css" rel="stylesheet">
+   <script src="/assets/summernote/summernote.min.js"></script>
+<script src="/assets/summernote/lang/summernote-ru-RU.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -44,6 +46,8 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     {{-- <script src="/assets/demo/js/datatables-demo.js"></script> --}}
+
+<script src="/assets/js/summernote.js"></script>
 </body>
 
 </html>

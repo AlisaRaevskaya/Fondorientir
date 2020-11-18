@@ -13,7 +13,7 @@ class UploadController extends Controller
     $news = News::orderBy('id', 'desc')->paginate(7);
     $new = News::find(1)->first();
     $category= $new->category;
-    return view('admin.news.edit', compact('news', 'category'));
+    return view('admin.news.news_edit', compact('news', 'category'));
     }
 
     public function imageUpload($id){

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\Image;
 
 class ReportsController extends Controller
 {
@@ -46,7 +48,8 @@ class ReportsController extends Controller
      */
     public function show($id)
     {
-        //
+          $page = Pages::where('id', $id)->get();
+        return view('admin.main.partners.show', compact('page'));
     }
 
     /**
@@ -57,7 +60,9 @@ class ReportsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pages= Pages::where('id', $id)->get();
+        $images= Image::find(1)->where('page_id', $id)->get();
+        return view('admin.main.partners.edit', compact('pages', 'images'));
     }
 
     /**

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PreProject;
 use App\Models\Projects;
+use App\Models\Image;
+use App\Models\Pages;
 
 class ProjectsController extends Controller
 {
@@ -66,7 +68,9 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pages= Pages::where('id', $id)->get();
+        $images= Image::find(1)->where('page_id', $id)->get();
+        return view('admin.main.projects.edit', compact('pages', 'images'));
     }
 
     /**

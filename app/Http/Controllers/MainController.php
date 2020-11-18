@@ -16,9 +16,9 @@ use Illuminate\Support\Str;
 class MainController extends Controller
 {
     public function index(){
-
     $mainContent= Pages::where('title', 'Главная')->get();
-    $images= Image::find(1)->where('page_id', '1')->get();
+    $main_image= Image::where('mode','main')->pluck('name')->first();
+    $banner=Image::where('mode','banner')->pluck('name')->first();
     $news = News::orderBy('dateline', 'desc')->paginate(6);
     $new = News::find(1)->first();
     $category= $new->category;
@@ -26,10 +26,7 @@ class MainController extends Controller
         ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
         ->orderBy('dateline', 'desc')->paginate(5);
 
-    // $into = $news->pluck('intro')->toArray();
-    // $intros=$this->changeIntro($into);
-    // dd($intros);
-    return view('main.index', compact('mainContent', 'images', 'news', 'category','replies'));
+    return view('main.index', compact('mainContent', 'main_image', 'news', 'category','replies','banner'));
     }
 
     public function history(){
@@ -48,13 +45,13 @@ class MainController extends Controller
 
     public function projects(){
         $newProjects =Projects::all();
-        $projects=PreProject::all();
+
         $pages=Pages::where('title', 'projects')->get();
 
         // foreach($pages as $page){
         //     $content= $page->content;
         // }
-        return view('main.projects', compact('projects' ,'newProjects', 'pages'));
+        return view('main.projects', compact('newProjects', 'pages'));
     }
 
     public function partners(){
@@ -74,13 +71,13 @@ class MainController extends Controller
         return view('blocks.map');
     }
 
-    public function home(){
+    public function admin(){
         return view('admin');
     }
 
-
     public function fond(){
         $content= Pages::where('laravel_name', 'fond')->get();
-        return view('main.fond', compact('content'));
+        $projects=PreProject::all();
+        return view('main.fond', compact('content','projects' ));
     }
 }

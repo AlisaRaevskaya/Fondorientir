@@ -22,7 +22,7 @@ class MainController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -54,11 +54,10 @@ class MainController extends Controller
      */
     public function show($id)
     {
-        $pages= Pages::where('id', $id)->get();
-        $slider_images=Image::find('name')->where('module', 'slider')->all();
-        $banner=Image::find(1)->where('module', 'banner')->get();
-
-        return view('admin.main.show', compact('pages', 'slider_images', 'banner'));
+    $page= Pages::where('title', 'Главная')->get();
+    $main_image= Image::where('mode','main')->pluck('name')->first();
+    $banner=Image::where('mode','banner')->pluck('name')->first();
+    return view('admin.main.show', compact('page', 'main_image','banner'));
     }
 
     /**
@@ -70,8 +69,9 @@ class MainController extends Controller
     public function edit($id)
     {
         $pages= Pages::where('id', $id)->get();
-        $images= Image::find(1)->where('page_id', '1')->get();
-        return view('admin.editor', compact('pages', 'images'));
+       $main_image= Image::where('mode','main')->pluck('name')->first();
+    $banner=Image::where('mode','banner')->pluck('name')->first();
+        return view('contacts', compact('pages',  'main_image','banner'));
     }
 
     /**
@@ -96,12 +96,6 @@ class MainController extends Controller
     {
         //
     }
-    public function changeIntro($arr){
-        $result = [];
-        foreach($arr as $in){
-        array_push($result, substr($in, 0, 150) . '...');
-        }
-        return $result;
-    }
+
 
 }

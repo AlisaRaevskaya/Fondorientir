@@ -126,7 +126,7 @@ padding-bottom:20px;
 .footer_main{
 position:absolute;
 top:10%;
-left:40%;
+left:50%;
 top:12%;
 float:right;
 }
@@ -147,4 +147,7 @@ font-weight:bold;
 }
 .picture_padding{
 padding-left:27px;
+}
+.brochure-button{
+  margin-top:1.5rem;
 }

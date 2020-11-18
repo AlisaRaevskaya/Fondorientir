@@ -5,12 +5,8 @@ namespace App\Http\Controllers\Admin\Main;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
-use App\Models\News;
-use App\Models\Reply;
-use App\Models\Topic;
 use App\Models\Image;
-use App\Models\PreProject;
-use App\Models\Projects;
+
 
 class HistoryController extends Controller
 {
@@ -53,7 +49,9 @@ class HistoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $page = Pages::where('id', $id)->get();
+
+        return view('admin.main.history.show', compact('page'));
     }
 
     /**
@@ -66,7 +64,7 @@ class HistoryController extends Controller
     {
         $pages= Pages::where('id', $id)->get();
         $images= Image::find(1)->where('page_id', '1')->get();
-        return view('admin.main.history_edit', compact('pages', 'images'));
+        return view('admin.main.history.edit', compact('pages', 'images'));
     }
 
     /**

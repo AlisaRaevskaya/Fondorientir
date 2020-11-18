@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin\Press;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\Image;
+use App\Models\Category;
+use App\Models\News;
 
 class InterviewController extends Controller
 {
@@ -14,7 +18,10 @@ class InterviewController extends Controller
      */
     public function index()
     {
-        //
+    $category = Category::find(1)->where('name', 'interview')->first();
+    $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
+    return view('press.pressnews', compact('pressnews', 'category'));
+
     }
 
     /**

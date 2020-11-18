@@ -16,6 +16,7 @@
         "laravel/fortify": "^1.6",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
+        "laravelcollective/html": "^6.2",
         "nesbot/carbon": "^2.41"
     },
     "require-dev": {

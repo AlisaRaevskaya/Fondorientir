@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\Image;
 
 class StructureController extends Controller
 {
@@ -57,7 +59,9 @@ class StructureController extends Controller
      */
     public function edit($id)
     {
-        //
+         $pages= Pages::where('id', $id)->get();
+        $images= Image::find(1)->where('page_id', $id)->get();
+        return view('admin.main.structure.edit', compact('pages', 'images'));
     }
 
     /**

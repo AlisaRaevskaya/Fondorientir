@@ -87,7 +87,8 @@ Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
-Route::view('/admin', 'admin_home');
+Route::view('/home', 'admin_home');
+
 
 Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
 Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second-reception');
@@ -105,6 +106,7 @@ Route::resource('/faq', '\App\Http\Controllers\Admin\FaqController');
 
 Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactsController');
 Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
+Route::resource('/fond', '\App\Http\Controllers\Admin\Main\FondController');
 Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
 Route::resource('/reports', '\App\Http\Controllers\Admin\Main\ReportsController');
 Route::resource('/structure', '\App\Http\Controllers\Admin\Main\StructureController');
@@ -133,7 +135,6 @@ Route::resource('/application', '\App\Http\Controllers\Admin\Reception\Applicati
 Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineController');
 Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
 Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
-
 });
 
 Route::view('/static','admin.layout-static');
