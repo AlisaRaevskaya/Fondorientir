@@ -9,7 +9,7 @@
                         <div class="col-sm-12">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Новости</li>
+                                <li class="breadcrumb-item active">{{$category->ru_name}}</li>
                             </ol>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         {{ Form::close()}}
                     </div>
                 <div class="text-center">
-                <a href="{{ route('admin.news.create') }}" class="btn btn-primary pull-right">Добавить новость</a>
+                <a href="{{ route('admin.interview.create') }}" class="btn btn-primary pull-right">Добавить интервью</a>
                 </div>
                 </div>
 
@@ -61,23 +61,23 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                @foreach ($news as $new)
+                                @foreach ($interviews as $interview)
                                     <tr>
-                                        <td>{{ $new->id }}</td>
-                                        <td>{{ $new->title }}</td>
-                                        <td>{{ $new->intro }}</td>
-                                        <td>{{ $new->dateline }}</td>
-                                        <td>{{ $new->updated_at }}</td>
+                                        <td>{{ $interview->id }}</td>
+                                        <td>{{ $interview->title }}</td>
+                                        <td>{{ $interview->intro }}</td>
+                                        <td>{{ $interview->dateline }}</td>
+                                        <td>{{ $interview->updated_at }}</td>
                                         <td>
                                             {{-- <a
-                                                href="{{ route('image.upload', $new->id) }}"
+                                                href="{{ route('image.upload', $interview->id) }}"
                                                 class="btn btn-primary">Добавить
                                                 картинку</a> --}}
-                                            <a href="{{ route('admin.news.edit', $new->id) }}"
+                                            <a href="{{ route('admin.interview.edit', $interview->id) }}"
                                                 class="btn btn-primary">Редактировать</a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.news.destroy', $new->id) }}"
+                                            <a href="{{ route('admin.interview.destroy', $interview->id) }}"
                                                 class="btn btn-warning">Удалить</a>
                                         </td>
 
@@ -91,7 +91,7 @@
 
                 <nav aria-label="Page navigation" class="pagination_section">
                     <ul class="pagination">
-                        <li>{{ $news->links() }}</li>
+                        <li>{{ $interviews->links() }}</li>
                     </ul>
                 </nav>
             </div>

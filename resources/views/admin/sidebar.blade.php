@@ -20,7 +20,7 @@
                          data-parent="#sidenavAccordion">
                          <nav class="sb-sidenav-menu-nested nav">
                              <a class="nav-link" href="/static">Менеджер меню</a>
-                             <a class="nav-link" href="/inbox">Менеджер пользователей</a>
+                             <a class="nav-link" href="{{route('admin.user.index')}}">Менеджер пользователей</a>
                          </nav>
                      </div>
 

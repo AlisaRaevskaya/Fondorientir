@@ -19,8 +19,8 @@ class InterviewController extends Controller
     public function index()
     {
     $category = Category::find(1)->where('name', 'interview')->first();
-    $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
-    return view('press.pressnews', compact('pressnews', 'category'));
+    $interviews = $category->news()->orderBy('id', 'desc')->paginate(5);
+    return view('admin.press.interview.index', compact('interviews', 'category'));
 
     }
 

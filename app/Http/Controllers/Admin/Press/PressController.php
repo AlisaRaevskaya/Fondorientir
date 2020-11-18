@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Image;
+use App\Models\Category;
 
 class PressController extends Controller
 {
@@ -18,7 +19,7 @@ class PressController extends Controller
     {
     $category = Category::find(1)->where('name', 'press')->first();
     $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
-    return view('press.pressnews', compact('pressnews', 'category'));
+    return view('admin.press.press.index', compact('pressnews', 'category'));
     }
 
     /**

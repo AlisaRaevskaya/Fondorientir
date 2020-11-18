@@ -57,7 +57,7 @@
 
                                              <div class="form-group">
                                                 {{ Form::label('text_center', 'Intro') }}
-                                                {{ Form::textArea('intro', $page->intro, ['class' => 'form-control', 'id' => 'summernote']) }}
+                                                {{ Form::textArea('intro', $page->intro, ['class' => 'form-control']) }}
                                             </div>
 
                                             <div class="form-group">
@@ -73,6 +73,10 @@
                                                 @endif
                                             </div>
                                              <div class="form-group">
+                                                {{ Form::label('text_center', 'Текст 2') }}
+                                                {{ Form::textArea('body', $page->body, ['class' => 'form-control summernote']) }}
+                                            </div>
+                                             <div class="form-group">
                                                 {{ Form::label('source_name', 'Источник') }}
                                                 {{ Form::text('source_name', $page->source_name, ['class' => 'form-control required']) }}
                                             </div>
@@ -80,18 +84,12 @@
                                                 {{ Form::label('source_link', 'Ссылка') }}
                                                 {{ Form::text('source_link', $page->source_link, ['class' => 'form-control required']) }}
                                             </div>
-                                              <div class="form-group">
-                                                {{ Form::label('quote', 'Дата создания') }}
-                                                {{ Form::text('created_at', $page->created_at, ['class' => 'form-control required']) }}
-                                            </div>
+
                                                 <div class="form-group">
-                                                {{ Form::label('quote', 'Дата публикации') }}
+                                                {{ Form::label('dateline', 'Дата публикации') }}
                                                 {{ Form::text('dateline', $page->dateline, ['class' => 'form-control required']) }}
                                             </div>
-                                            <div class="form-group">
-                                                {{ Form::label('text_center', 'Текст 2') }}
-                                                {{ Form::textArea('body', $page->body, ['class' => 'form-control', 'id' => 'summernote']) }}
-                                            </div>
+
 
                                             {{-- <div class="form-group">
                                                 {{ Form::label('text_top', 'Текст 1') }}
@@ -112,9 +110,13 @@
                                                 {{ Form::text('sort', $page->sort, ['class' => 'form-control']) }}
                                             </div> --}}
 
+
                                             <div class="box-footer">
-                                            <a class="btn btn-default" href="{{url()->previous()}}">Назад</a>
-                                                <button class="btn btn-warning pull-right">Изменить</button>
+                        <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
+<div class="" > <a href="{{route('admin.news.update', $page->id)}}"class="btn btn-primary pull-right">Сохранить</a></div>
+<div class=""><a href="{{route('admin.news.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</a></div>
+
+
                                             </div>
                                             {{ Form::close() }}
                                         </div>

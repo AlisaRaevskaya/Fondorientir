@@ -44,7 +44,7 @@
                                     <div class="box-body">
 
                                         <div class="col-md-10">
-                                            {{Form::open(['route'=>['admin.history.update',$page->id], 'method'=>'post', 'files' => true])}}
+                                            {{Form::open(['route'=>['admin.history.update',$page->id], 'method'=>'PUT', 'files' => true])}}
                                             <div class="form-group">
                                                 {{ Form::label('name', 'Название') }}
                                                 {{ Form::text('name', $page->title, ['class' => 'form-control required']) }}
@@ -64,14 +64,7 @@
                                             <div class="form-group">
                                                 {{ Form::label('images', 'Картинка') }}
                                                 {{ Form::file('images') }}
-                                                @if (isset($page->desc))
-                                                    <p>
-                                                        <img class="image" src="{{ $page->desc }}"
-                                                        {{-- <img class="image" src="{{ $page->getImageMini() }}" --}}
-                                                            alt="{{ $page->laravel_name }}" title="{{ $page->title }}"
-                                                            style="width: 200px">
-                                                    </p>
-                                                @endif
+
                                             </div>
                                             {{-- <div class="form-group">
                                                 {{ Form::label('text_top', 'Текст 1') }}
@@ -79,8 +72,8 @@
                                             </div> --}}
 
                                             <div class="form-group">
-                                                {{ Form::label('text_center', 'Текст 2') }}
-                                                {{ Form::textArea('text_center', $page->content, ['class' => 'form-control', 'id' => 'summernote']) }}
+                                                {{ Form::label('text_center', 'Текст') }}
+                                                {{ Form::textArea('text_center', $page->content, ['class' => 'form-control summernote']) }}
                                             </div>
                                             {{-- <div class="form-group">
                                                 {{ Form::label('activ', 'Опубликован') }}
@@ -102,7 +95,7 @@
                                             </div>
                                             <div class="box-footer">
                         <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
-<div class="" > <a href="{{route('admin.history.update', $page->id)}}"class="btn btn-primary pull-right">Сохранить</a></div>
+<div class="" ><button class="btn btn-primary pull-right">Сохранить</button></div>
 <div class=""><a href="{{route('admin.history.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</a></div>
 
                                             </div>

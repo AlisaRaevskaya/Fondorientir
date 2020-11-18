@@ -80,7 +80,7 @@
 
                                             <div class="form-group">
                                                 {{ Form::label('text_center', 'Текст 2') }}
-                                                {{ Form::textArea('text_center', $page->content, ['class' => 'form-control', 'id' => 'summernote']) }}
+                                                {{ Form::textArea('text_center', $page->content, ['class' => 'form-control summernote']) }}
                                             </div>
                                             {{-- <div class="form-group">
                                                 {{ Form::label('activ', 'Опубликован') }}
