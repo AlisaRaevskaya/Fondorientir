@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 
