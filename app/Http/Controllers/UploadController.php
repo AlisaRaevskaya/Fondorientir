@@ -32,12 +32,13 @@ class UploadController extends Controller
         // time().'.'.$request->image->extension();
 
         $request->image->move(public_path('/storage/news'), $imageName);
+
         // $news=new News();
         $news=News::where('id', $id)->first();
         $news->image= $imageName;
         $news->save();
         $message='Картинка загружена';
-        return redirect()->back()->with('message', $message);
+        return redirect()->route('newsadd')->with('message', $message);
 
     }
 }
