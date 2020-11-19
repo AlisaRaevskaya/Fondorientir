@@ -125,15 +125,14 @@
                                                 <div class="form-group">
                                                     {{ Form::label('images', 'Картинка') }}
                                                     {{ Form::file('name') }}
-
-                                                    <p>
-                                                        <img class="image" src="{{ $page->desc }}"
-                                                            {{-- <img class="image"
-                                                            src="{{ $page->getImageMini() }}"
-                                                            --}} alt="{{ $page->laravel_name }}"
-                                                            title="{{ $page->title }}" style="width: 200px">
-                                                    </p>
                                                 </div>
+             <div class="box-footer">
+                        <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
+<div class="" > <button type="submit"class="btn btn-primary pull-right">Сохранить</button></div>
+<div class=""><a href="{{route('admin.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</button></div>
+
+                                            </div>
+
                                                 {{ Form::close() }}
                                             </div>
 

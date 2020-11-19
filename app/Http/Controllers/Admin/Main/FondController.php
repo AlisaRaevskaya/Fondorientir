@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\Image;
+use App\Models\PreProject;
 
 class FondController extends Controller
 {
@@ -46,7 +49,9 @@ class FondController extends Controller
      */
     public function show($id)
     {
-        //
+       $page = Pages::where('id', $id)->get();
+
+        return view('admin.main.fond.show', compact('page'));
     }
 
     /**
@@ -57,7 +62,10 @@ class FondController extends Controller
      */
     public function edit($id)
     {
-        //
+    $pages= Pages::where('id', $id)->get();
+    $images= Image::find(1)->where('page_id', $id)->get();
+    $projects=PreProject::all();
+    return view('admin.main.fond.edit', compact('pages', 'images', 'projects'));
     }
 
     /**

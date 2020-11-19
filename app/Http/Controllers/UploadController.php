@@ -28,10 +28,10 @@ class UploadController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName =$request->image->getClientOriginalName();
+        $imageName = time().'.'.$request->image->extension();
         // time().'.'.$request->image->extension();
 
-        $request->image->move(public_path('/storage/news'), $imageName);
+        $request->image->move(storage_path('/app/public/news'), $imageName);
 
         // $news=new News();
         $news=News::where('id', $id)->first();

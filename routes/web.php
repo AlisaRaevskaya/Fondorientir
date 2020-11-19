@@ -33,6 +33,8 @@ Route::get('/info', [InfoController::class, 'index'])->name('info');
 Route::get('/press-news', [NewsController::class, 'pressnews'])->name('press-news');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/status', [StatusController::class, 'index'])->name('status');
+Route::get('/fond', [MainController::class, 'fond'])->name('fond');
+
 
 Route::get('/history', [MainController::class, 'history'])->name('history');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
@@ -41,8 +43,6 @@ Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
-
-Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('lawyer');
 Route::get('/feedback/reception', [FeedbackController::class, 'feedback'])->name('reception');

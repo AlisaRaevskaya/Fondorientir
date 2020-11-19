@@ -6,37 +6,41 @@
 
                 <div class="col-md-1"></div>
 
-                <div class="col-md-11">
+                <div class="col-md-10">
 
                     <h2 class="text-center">Опыт Фонда "ОРИЕНТИР" в реализации социально-значимых проектов:</h2>
-                    <table class="table table-bordered ">
-                        <thead class="thead-light">
+                    <table class="table table-bordered table-responsive">
+
+                        <thead>
                             <tr style="color:black;font-weight:bold;">
-                                <th scope="col"># </th>
-                                <th scope="col">Период выполнения </th>
-                                <th scope="col">Название проекта</th>
-                                <th scope="col">Основные результаты (аннотация)</th>
+                                <th scope="col">№ п/п</th>
+                                <th scope="col">№ и дата заключения контракта (договора)</th>
+                                <th scope="col">Наименование и адрес заказчика</th>
+                                <th scope="col">Наименование услуг или работ, предмет контракта (договора)</th>
+                                <th scope="col"> Сроки оказания услуг или выполнения работ</th>
+                                <th scope="col">Цена контракта (договора),руб.</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($newProjects as $nproject)
+                            @foreach ($projects as $project)
                                 <tr style="color:black;">
-                                    <th scope="row">{{ $nproject->id }}</th>
-                                    <td>{!! $nproject->term !!}</td>
-                                    <td>{!! $nproject->name !!}</td>
-                                    <td>{!! $nproject->results !!}</td>
+                                    <th scope="row">{{ $project->id }}</th>
+                                    <td>{!! $project->contrator !!}</td>
+                                    <td>{!! $project->contract !!}</td>
+                                    <td>{!! $project->subject !!}</td>
+                                    <td>{!! $project->terms !!}</td>
+                                    <td>{!! $project->price !!}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
 
+                    <div class="col-md-1"></div>
+                    <!-- entity_content -->
+                </div>
 
             </div>
-            <!-- entity_content -->
-</div>
-
-        </div>
-        <!-- row -->
+            <!-- row -->
 
         </div>
         <!-- container -->

@@ -44,14 +44,14 @@ class MainController extends Controller
     }
 
     public function projects(){
-        $newProjects =Projects::all();
+        $projects =Preproject::all();
 
         $pages=Pages::where('title', 'projects')->get();
 
         // foreach($pages as $page){
         //     $content= $page->content;
         // }
-        return view('main.projects', compact('newProjects', 'pages'));
+        return view('main.projects', compact('projects', 'pages'));
     }
 
     public function partners(){
@@ -77,7 +77,7 @@ class MainController extends Controller
 
     public function fond(){
         $content= Pages::where('laravel_name', 'fond')->get();
-        $projects=PreProject::all();
+        $projects=Projects::all();
         return view('main.fond', compact('content','projects' ));
     }
 }

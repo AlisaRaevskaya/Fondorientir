@@ -102,8 +102,8 @@
                                             </div>
                                             <div class="box-footer">
                         <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
-<div class="" > <a href="{{route('admin.history.update', $page->id)}}"class="btn btn-primary pull-right">Сохранить</a></div>
-<div class=""><a href="{{route('admin.history.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</a></div>
+<div class=""> <button type="submit" class="btn btn-primary pull-right">Сохранить</button></div>
+<div class=""><a href="{{route('admin.mission.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</a></div>
 
                                             </div>
                                             {{ Form::close() }}

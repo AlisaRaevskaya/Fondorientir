@@ -41,74 +41,81 @@
                                         --}}
                                     </div>
 
-                                    <div class="box-body">
 
-                                        <div class="col-md-10">
-                                            {{Form::open(['route'=>['admin.history.update',$page->id], 'method'=>'post', 'files' => true])}}
-                                            <div class="form-group">
-                                                {{ Form::label('name', 'Название') }}
-                                                {{ Form::text('name', $page->title, ['class' => 'form-control required']) }}
-                                            </div>
-                                            {{-- <div class="form-group">
-                                                {{ Form::label('preview', 'Превью') }}
-                                                {{ Form::text('preview', $articles->preview, ['class' => 'form-control']) }}
-                                            </div> --}}
-                                            <div class="form-group">
-                                                {{ Form::label('quote', 'Metakeys') }}
-                                                {{ Form::text('quote', $page->metakey, ['class' => 'form-control required']) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ Form::label('metadesc', 'Metadesc') }}
-                                                {{ Form::text('metadesc', $page->metadesc, ['class' => 'form-control required']) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ Form::label('images', 'Картинка') }}
-                                                {{ Form::file('images') }}
-                                                @if (isset($page->desc))
-                                                    <p>
-                                                        <img class="image" src="{{ $page->desc }}"
-                                                        {{-- <img class="image" src="{{ $page->getImageMini() }}" --}}
-                                                            alt="{{ $page->laravel_name }}" title="{{ $page->title }}"
-                                                            style="width: 200px">
-                                                    </p>
-                                                @endif
-                                            </div>
-                                            {{-- <div class="form-group">
-                                                {{ Form::label('text_top', 'Текст 1') }}
-                                                {{ Form::textArea('text_top', htmlspecialchars_decode($articles->text_top), ['class' => 'form-control']) }}
-                                            </div> --}}
+<div class="box-body m30">
 
-                                            <div class="form-group">
-                                                {{ Form::label('text_center', 'Текст 2') }}
-                                                {{ Form::textArea('text_center', $page->content, ['class' => 'form-control summernote']) }}
-                                            </div>
-                                            {{-- <div class="form-group">
-                                                {{ Form::label('activ', 'Опубликован') }}
-                                                {{ Form::select('activ', [0 => 'No', 1 => 'Yes'], $page->published) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ Form::label('sort', 'Сортировка') }}
-                                                {{ Form::text('sort', $page->sort, ['class' => 'form-control']) }}
-                                            </div> --}}
-                                            <div class="form-group">
-                                                <p style="color: tomato;">В URL могут присутствовать только буквы и цифры
-                                                    латинского алфавита пробелы замените на "_" нижнее подчеркивание или "-"
-                                                    тире.
-                                                    <br>Знаки припенания должны отсутствовать.
-                                                    <br>пример: while-we-put-off-life-it-passes
-                                                </p>
-                                                {{ Form::label('url', 'URL') }}
-                                                {{ Form::text('url', $page->url, ['class' => 'form-control']) }}
-                                            </div>
-                                            <div class="box-footer">
-                                                <button class="btn btn-default">Назад</button>
-                                                <button class="btn btn-warning pull-right">Изменить</button>
-                                            </div>
-                                            {{ Form::close() }}
-                                        </div>
+    <div class="col-md-12">
 
-                                    </div>
+        <table class="table table-bordered table-responsive">
+            <caption>Наши прошлые проекты</caption>
 
+            <thead>
+                <tr style="color:black;font-weight:bold;">
+                    <th scope="col">№ п/п</th>
+                    <th scope="col">№ и дата заключения контракта (договора)</th>
+                    <th scope="col">Наименование и адрес заказчика</th>
+                    <th scope="col">Наименование услуг или работ, предмет контракта
+                        (договора)</th>
+                    <th scope="col">Сроки оказания услуг или выполнения работ</th>
+                    <th scope="col">Цена контракта (договора),руб.</th>
+                </tr>
+            </thead>
+
+            {{ Form::open(['route' => ['admin.fond.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
+            <tbody>
+
+                @foreach ($projects as $project)
+                    <tr style="color:black;">
+                        <th scope="row">{{ $project->id }}</th>
+                        <td>
+                            <div class="form-group">
+
+                                {{ Form::text('name', $project->contrator, ['class' => 'form-control required']) }}
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="form-group">
+
+                                {{ Form::text('name', $project->contract, ['class' => 'form-control required']) }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+
+                                {{ Form::textArea('text_center', $project->subject, ['class' => 'form-control summernote']) }}
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="form-group">
+
+                                {{ Form::text('name', $project->terms, ['class' => 'form-control required']) }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+
+                                {{ Form::text('name', $project->price, ['class' => 'form-control required']) }}
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+
+            </tbody>
+
+            <div class="box-footer">
+                <div class=""><button class="btn btn-primary pull-right">Сохранить</button>
+                </div>
+                 <div class=""><button class="btn btn-primary pull-right">Добавить</button>
+                </div>
+            </div>
+
+            {{ Form::close() }}
+        </table>
+
+    </div>
+</div>
 
                                 </div>
                             </div>

@@ -76,8 +76,9 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <button class="btn btn-default">Назад</button>
-          <button class="btn btn-warning pull-right">Изменить</button>
+          <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
+          <button type="submit"class="btn btn-warning pull-right">Сохранить</button>
+          <div class=""><a href="{{route('admin.press.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</button></div>
         </div>
         <!-- /.box-footer-->
         {{Form::close()}}

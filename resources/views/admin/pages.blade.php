@@ -25,13 +25,14 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Название</th>
-                                    <th>Meta-key</th>
-                                    <th>Meta-description</th>
-                                    <th>Дата создания</th>
-                                    <th>Дата изменения</th>
-                                    <th>Действия</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>ID</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Название</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Meta-key</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Meta-description</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Дата создания</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Дата изменения</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Редактировать</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Удалить</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -58,9 +59,16 @@
                                         <a href= "{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.edit', $page->id)
                                  : route('admin.edit', $page->id)}}"
                                             class="btn btn-primary">Редактировать</a>
-                                        <a href="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.destroy', $page->id)
+
+                                       </td>
+                                       <td>
+                                          <form action="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.destroy', $page->id)
                                  : route('admin.destroy', $page->id)}}"
-                                            class="btn btn-warning">Удалить</a>
+                                                            method="post" class="text-center">
+                                                            @csrf
+                                                            {{ method_field('DELETE') }}
+                                        <button type="submit" class="btn btn-warning ">Удалить</button>
+                                                        </form>
                                     </td>
 
                                 </tr>

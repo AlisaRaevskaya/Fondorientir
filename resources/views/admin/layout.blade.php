@@ -9,12 +9,11 @@
     <meta name="author" content="" />
      <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dashboard - SB Admin</title>
-{{--
-    <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet"> --}}
+
     <link href="/assets/css/admin-styles.css" rel="stylesheet" />
 <link href="/assets/summernote/summernote.min.css" rel="stylesheet">
-    {{-- <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-        crossorigin="anonymous" /> --}}
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
 
  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

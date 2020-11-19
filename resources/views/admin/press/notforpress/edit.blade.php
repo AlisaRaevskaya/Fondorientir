@@ -44,7 +44,7 @@
                                     <div class="box-body">
 
                                         <div class="col-md-10">
-                                            {{Form::open(['route'=>['admin.history.update',$page->id], 'method'=>'post', 'files' => true])}}
+                                            {{Form::open(['route'=>['admin.notforpress.update',$page->id], 'method'=>'post', 'files' => true])}}
                                             <div class="form-group">
                                                 {{ Form::label('name', 'Название') }}
                                                 {{ Form::text('name', $page->title, ['class' => 'form-control required']) }}

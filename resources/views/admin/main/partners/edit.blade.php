@@ -102,7 +102,7 @@
                                             </div>
                                             <div class="box-footer">
                         <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
-<div class="" > <a href="{{route('admin.partners.update', $page->id)}}"class="btn btn-primary pull-right">Сохранить</a></div>
+<div class="" > <button class="btn btn-primary pull-right">Сохранить</button></div>
 <div class=""><a href="{{route('admin.partners.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</a></div>
 
                                             </div>
