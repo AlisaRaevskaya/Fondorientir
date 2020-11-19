@@ -85,7 +85,7 @@
                                             <div class="category_article_img">
                                                 <a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
                                                     target="_self">
-                                                    <img class="img-responsive" src="{{asset('public/storage/news/'.$new->image)}}" alt="{{$new->image}}">
+                                                    <img class="img-responsive" src="{{asset('storage/news/'.$new->image)}}" alt="{{$new->image}}">
                                                 </a>
                                             </div>
 
