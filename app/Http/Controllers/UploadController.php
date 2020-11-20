@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Category;
+use App\Models\Image;
+use App\Models\Pages;
+
 use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
@@ -41,7 +44,36 @@ class UploadController extends Controller
         return redirect()->route('newsadd')->with('message', $message);
 
     }
+
+public function summerUpload(Request $request, $id){
+
+    $file= $request->file('image');
+
+    $filename=$file->getClientOriginalName();
+    $imageName = time().'.'. $filename;
+
+    // $path=storage_path('/app/public/news');
+
+    $path= public_path('/storage/pages');
+    $store=$file->store('pages');
+
+  $image=new Image();
+    $mode=Pages::where('id', $id)->pluck('laravel_name');
+    $image->name=$store;
+    $image->page_id=$id;
+    $image->mode=$mode;
+    $image->save();
+
+    $url='/storage/' . $store;
+    return response($url);
+
 }
+
+
+}
+
+
+
 
 //    $path=$request->file('image')->store('uploads', 'public');
 //    return view('upload', compact('path'));
@@ -62,3 +94,12 @@ class UploadController extends Controller
         // abort(500, 'Could not upload image :(');
 
 
+
+
+// resize the file, optional (intervention/image package)
+            // $image = Image::make(public_path('storage/pages' . $store));
+            // if($image->width() > 600) {
+            //     $image->resize(600, null, function ($constraint) {
+            //         $constraint->aspectRatio();
+            //     });
+            // }

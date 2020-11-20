@@ -15,7 +15,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-    $news = News::orderBy('id', 'desc')->paginate(7);
+    $news = News::where('category_id', 1)->orderBy('id', 'desc')->paginate(7);
     $new = News::find(1)->first();
     $category= $new->category;
     return view('admin.news.index', compact('news', 'category'));

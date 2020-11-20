@@ -96,8 +96,8 @@
                                             </div>
 
 
-                                            <div class="article_date">
-                                                {!! $new->dateline !!}
+                                            <div>
+                                                {!!$new->cutDateline()!!}
                                             </div>
 
 

@@ -45,51 +45,32 @@
 
                                         <div class="col-md-10">
                                             {{Form::open(['route'=>['admin.history.update',$page->id], 'method'=>'post', 'files' => true])}}
-                                            <div class="form-group">
-                                                {{ Form::label('name', 'Название') }}
-                                                {{ Form::text('name', $page->title, ['class' => 'form-control required']) }}
+                                              <div class="form-group">
+                                                {{ Form::label('title', 'Название') }}
+                                                {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
                                             </div>
-                                            {{-- <div class="form-group">
-                                                {{ Form::label('preview', 'Превью') }}
-                                                {{ Form::text('preview', $articles->preview, ['class' => 'form-control']) }}
-                                            </div> --}}
+                                            {{ Form::hidden('laraval_name', $page->laravel_name) }}
                                             <div class="form-group">
-                                                {{ Form::label('quote', 'Metakeys') }}
-                                                {{ Form::text('quote', $page->metakey, ['class' => 'form-control required']) }}
+                                                {{ Form::label('metakey', 'Metakeys') }}
+                                                {{ Form::text('metakey', $page->metakey, ['class' => 'form-control required']) }}
                                             </div>
                                             <div class="form-group">
                                                 {{ Form::label('metadesc', 'Metadesc') }}
                                                 {{ Form::text('metadesc', $page->metadesc, ['class' => 'form-control required']) }}
                                             </div>
                                             <div class="form-group">
-                                                {{ Form::label('images', 'Картинка') }}
-                                                {{ Form::file('images') }}
-                                                @if (isset($page->desc))
-                                                    <p>
-                                                        <img class="image" src="{{ $page->desc }}"
-                                                        {{-- <img class="image" src="{{ $page->getImageMini() }}" --}}
-                                                            alt="{{ $page->laravel_name }}" title="{{ $page->title }}"
-                                                            style="width: 200px">
-                                                    </p>
-                                                @endif
+                                                {{ Form::label('image', 'Картинка') }}
+                                                {{ Form::file('image') }}
                                             </div>
-                                            {{-- <div class="form-group">
-                                                {{ Form::label('text_top', 'Текст 1') }}
-                                                {{ Form::textArea('text_top', htmlspecialchars_decode($articles->text_top), ['class' => 'form-control']) }}
-                                            </div> --}}
+                                            <div class="form-group">
+                                                {{ Form::label('content', 'Текст') }}
+                                                {{ Form::textArea('content', $page->content, ['class' => 'form-control summernote']) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ Form::label('published', 'Опубликована') }}
+                                                {{ Form::select('published', [0 => 'Нет', 1 => 'Да'], $page->published) }}
+                                            </div>
 
-                                            <div class="form-group">
-                                                {{ Form::label('text_center', 'Текст 2') }}
-                                                {{ Form::textArea('text_center', $page->content, ['class' => 'form-control summernote']) }}
-                                            </div>
-                                            {{-- <div class="form-group">
-                                                {{ Form::label('activ', 'Опубликован') }}
-                                                {{ Form::select('activ', [0 => 'No', 1 => 'Yes'], $page->published) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ Form::label('sort', 'Сортировка') }}
-                                                {{ Form::text('sort', $page->sort, ['class' => 'form-control']) }}
-                                            </div> --}}
                                             <div class="form-group">
                                                 <p style="color: tomato;">В URL могут присутствовать только буквы и цифры
                                                     латинского алфавита пробелы замените на "_" нижнее подчеркивание или "-"

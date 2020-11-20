@@ -148,3 +148,5 @@ Route::view('/compose','admin.mail.compose');
 Route::get('/add-news', [ UploadController::class, 'newsadd' ])->name('newsadd');
 Route::get('/upload/{id}', [ UploadController::class, 'imageUpload' ])->name('image.upload');
 Route::post('/store/{id}', [ UploadController::class, 'imageStorePost' ])->name('image.store.post');
+
+Route::put('/uploadImage/{id}', [ UploadController::class, 'summerUpload' ])->name('summer_upload');

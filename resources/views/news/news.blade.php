@@ -25,7 +25,7 @@
                             <!-- entity_title -->
 
                             <div class="entity_meta">
-                                <p>{{ $item->dateline }}</p>
+                                <p>{{$item->dateline}}</p>
                             </div>
                             <!-- entity_meta -->
                             <div class="entity_img">

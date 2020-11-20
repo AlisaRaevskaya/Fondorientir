@@ -24,20 +24,25 @@ class News extends Model
         return $date;
     }
 
-
     public function setDatelineAttribute($value)
     {
         $this->attributes['dateline'] = Carbon::parse($value)->timestamp;
     }
+    //->format('d-m-y H:i:s');
+
+    public function cutDateline(){
+    $result=$this->dateline;
+    return Str::substr($result, 0, 10);
+    }
 
     public function getFormatDateCreate()
     {
-        return $this->created_at->format('d F Y H:i');
+        return $this->created_at->format('Y-m-d');
     }
 
     public function getFormatDateUpdate()
     {
-        return $this->updated_at->format('d F Y H:i');
+        return $this->updated_at->format('Y-m-d');
     }
 
     public function setBodyAttribute($value)
@@ -68,14 +73,7 @@ class News extends Model
         return htmlspecialchars_decode($val, ENT_HTML5);
     }
 
-    public function setSource_NameAttribute($value)
-    {
-        $this->attributes['source_name'] = htmlspecialchars($value, ENT_HTML5);
-    }
-    public function getSource_NameAttribute($value)
-    {
-        return htmlspecialchars_decode($value, ENT_HTML5);
-    }
+
     public function setSource_linkAttribute($value)
     {
         $this->attributes['source_link'] = htmlspecialchars($value, ENT_HTML5);

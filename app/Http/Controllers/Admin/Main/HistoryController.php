@@ -76,8 +76,18 @@ class HistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->all());
+    $pages = Pages::findOrFail($id);
+    $pages->title=$request->title;
+    $pages->metakey=$request->metakey;
+    $pages->metadesc=$request->metadesc;
+    $pages->content=$request->content;
+    $pages->url=$request->url;
+
+    $pages->save();
+
     }
+
+
 
     /**
      * Remove the specified resource from storage.

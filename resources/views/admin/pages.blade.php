@@ -6,8 +6,8 @@
         <div class="container-fluid container">
             <h1 class="mt-4">Страницы сайта</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <li class="breadcrumb-item active">Tables</li>
+                <li class="breadcrumb-item">Meню</a>
+                <li class="breadcrumb-item active">Страницы</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-body">
@@ -21,8 +21,8 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <div class="col-md-12">
+                        <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th><i class="fa fa-fw fa-sort"></i>ID</th>
@@ -43,7 +43,8 @@
                                     <th>Meta-description</th>
                                     <th>Дата создания</th>
                                     <th>Дата изменения</th>
-                                    <th>Действия</th>
+                                    <th>Редактировать</th>
+                                    <th>Удалить</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -75,8 +76,14 @@
  @endforeach
                             </tbody>
                         </table>
+
                     </div>
                 </div>
+     {{-- <nav aria-label="Page navigation" class="pagination_section">
+                    <ul class="pagination">
+                        <li>{{$pages->links()}}</li>
+                    </ul>
+                </nav> --}}
             </div>
         </div>
     </main>

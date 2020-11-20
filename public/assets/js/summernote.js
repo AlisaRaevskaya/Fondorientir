@@ -1,5 +1,4 @@
 
-$(document).ready(function() {
 
 $('.summernote').summernote({
 lang:'ru-RU',
@@ -11,20 +10,25 @@ placeholder:'Введите данные',
 fontNames:['Arial','Times New Roman','Helvetica'],
 disableDragAndDrop:true,
 callbacks: {
-        onImageUpload: function(image) {
-            uploadImage(image[0]);
+        onImageUpload: function (file) {
+uploadFile(file[0],this);
         }
     }
 });
 
-function uploadImage(image) {
-    var data = new FormData();
-    data.append("image", image);
+// Upload file on the server.
+function uploadFile(file,editor){
+
+let data = new FormData();
+ data.append("image", file);
+// // Add all files from form to array.
+// for (let i = 0; i < filesForm.length; i++) {
+// data.append("files[]", filesForm[i]);
+// }
     data.append("_method", "PUT");
 
-console.log(11);
     $.ajax({
-        url: '/admin/history/3',
+        url:'/uploadImage/3',
         cache: false,
         contentType: false,
         processData: false,
@@ -33,13 +37,12 @@ console.log(11);
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
         },
-        success: function(url) {
-            var image = $('<img>').attr('src', 'http://' + url);
-            $('.summernote').summernote("insertNode", image[0]);
+          success: function(url) {
+            $(editor).summernote('editor.insertImage', url);
         },
         error: function(data) {
             console.log(data);
         }
-    });
-}
-});
+         });
+
+        }
