@@ -103,6 +103,7 @@ Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except
 Route::resource('/', '\App\Http\Controllers\Admin\MainController');
 Route::resource('/news', '\App\Http\Controllers\Admin\NewsController');
 Route::resource('/faq', '\App\Http\Controllers\Admin\FaqController');
+Route::resource('/seo', '\App\Http\Controllers\Admin\SeoController');
 
 Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactsController');
 Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
@@ -113,6 +114,8 @@ Route::resource('/structure', '\App\Http\Controllers\Admin\Main\StructureControl
 Route::resource('/projects', '\App\Http\Controllers\Admin\Main\ProjectsController');
 Route::resource('/partners', '\App\Http\Controllers\Admin\Main\PartnersController');
 Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankinfoController');
+Route::resource('/forprojects', '\App\Http\Controllers\Admin\Main\ForProjectsController');
+
 
 Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
 Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');

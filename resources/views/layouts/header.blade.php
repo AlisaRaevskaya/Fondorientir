@@ -7,7 +7,7 @@
                         <div class="left_section">
                             <div class="row justify-content-between">
                                 <a href="{{route('main')}}" class="logo">
-                                <img src="/assets/images/logo.png" alt="Logo"></a>
+                                <img src="/assets/images/{{$contact->logo}}" alt="Logo"></a>
                                 <div style="position:absolute;top:5%;
                                 left:30%;float:right;" class="text-center" id="logo-name">
                                     <h5>Фонд поддержки</h5>

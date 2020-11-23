@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Press;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
-use App\Models\Image;
+use App\Models\Seo;
 use App\Models\Category;
 use App\Models\News;
 
@@ -53,7 +53,8 @@ class InterviewController extends Controller
      */
     public function show($id)
     {
-        //
+    $news= News::where('id', $id)->get();
+    return view('admin.press.interview.show', compact('news'));
     }
 
     /**
@@ -64,7 +65,11 @@ class InterviewController extends Controller
      */
     public function edit($id)
     {
-        //
+    $page= Pages::where('laravel_name', 'interview')->get();
+    $seo=Seo::where('page_id', 2);
+    $category = Category::find(1)->where('name', 'interview')->first();
+    $news = $category->news->where('id', $id);
+    return view('admin.press.interview.edit', compact('news', 'category', 'page'));
     }
 
     /**
@@ -76,7 +81,10 @@ class InterviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $news = News::findOrFail($id);
+$news->edit($request->all());
+ $message="Данные сохранены";
+    return redirect()->route('admin.interview.edit', $id)->with('message', $message);
     }
 
     /**

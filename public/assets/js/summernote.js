@@ -21,14 +21,14 @@ function uploadFile(file,editor){
 
 let data = new FormData();
  data.append("image", file);
-// // Add all files from form to array.
-// for (let i = 0; i < filesForm.length; i++) {
-// data.append("files[]", filesForm[i]);
-// }
+
+let base_url = window.location.href.split('/');
+let id=base_url[5];
+
     data.append("_method", "PUT");
 
     $.ajax({
-        url:'/uploadImage/3',
+        url:`/uploadImage/${id}`,
         cache: false,
         contentType: false,
         processData: false,

@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Storage;
 
 class Pages extends Model
 {
-//  protected $fillable = [
-//         'name','page_id','mode'
-//     ];
+ protected $fillable = [
+        'title','content','url','content', 'is_menu', 'published'];
     protected $table = 'pages';
 
     //Все поля разрешено менять
@@ -24,9 +23,33 @@ class Pages extends Model
     public function menus(){
         return $this->belongsTo('App\Models\Menu');
     }
-    public function images(){
-        return $this->HasMany('App\Models\Image');
+       public function seo(){
+        return $this->HasOne('App\Models\Seo');
     }
+    public function files(){
+        return $this->HasMany('App\Models\File');
+    }
+
+
+  public function scopeIsPublished($query)
+    {
+        return $query->where('published', true);
+    }
+
+    public function scopeOfSort($query, $sort)
+    {
+        foreach ($sort as $column => $direction) {
+            $query->orderBy($column, $direction);
+        }
+
+        return $query;
+    }
+
+   public function scopeIsMenu($query)
+    {
+       return $query->where('is_menu', true);
+    }
+
     public function setContentAttribute($value){
         $this->attributes['content'] = htmlspecialchars($value,ENT_HTML5);
     }
@@ -95,5 +118,7 @@ class Pages extends Model
         $this->save($fields);
 
     }
+
+
 
 }

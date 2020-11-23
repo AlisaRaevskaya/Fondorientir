@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\Contact;
 
 class ContactsController extends Controller
 {
@@ -14,7 +16,8 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        //
+        $contacts=Contact::all();
+        return view('admin.contacts.index', compact('contacts'));
     }
 
     /**
@@ -57,7 +60,8 @@ class ContactsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contacts=Contact::all();
+        return view('admin.contacts.edit', $id, compact('contacts'));
     }
 
     /**

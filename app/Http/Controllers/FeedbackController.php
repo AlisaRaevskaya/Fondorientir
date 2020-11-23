@@ -16,7 +16,8 @@ class FeedbackController extends Controller
     }
 
     public function lawyer(){
-        return view('reception.lawyer');
+        $pages= Pages::where('laravel_name', 'lawyer')->get();
+        return view('reception.lawyer', compact('pages'));
     }
 
     public function hotline(){
@@ -24,13 +25,16 @@ class FeedbackController extends Controller
         return view('reception.hotline', compact('page'));
     }
     public function application(){
-        return view('reception.application');
+         $page= Pages::where('laravel_name', 'application')->get();
+        return view('reception.application',compact('page'));
     }
     public function claim(){
-        return view('reception.claim');
+         $page= Pages::where('laravel_name', 'claim')->get();
+        return view('reception.claim', compact('page'));
     }
     public function problem(){
-        return view('reception.problem');
+         $page= Pages::where('laravel_name', 'problem')->get();
+        return view('reception.problem', compact('page'));
     }
     public function fzakon(){
         return view('blocks.fzakon59-f3');

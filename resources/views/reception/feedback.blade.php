@@ -1,31 +1,20 @@
 @extends('layout')
-
 @section('content')
-
-
     <section id="entity_section" class="entity_section">
         <div class="container">
             <div class="row">
                 <div class="col-md-1"></div>
 
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <div class="entity_wrapper">
                         <div class="entity_title">
-                            <h1><a href="#">Интернет-приемная</a></h1>
+
                         </div>
-                        <!-- entity_title -->
-
-
-                        <!-- entity_social -->
-
                         <div class="entity_thumb">
-                            <img class="img-responsive" src="/assets/images/priemnaya.jpg" alt="feature-top">
+                            <img class="img-responsive" src="/assets/images/priemnaya2.jpg" alt="feature-top">
                         </div>
-                        <!-- entity_thumb -->
-
-
-
                         <div class="entity_content">
+                            <h1>Интернет-приемная</h1>
                             <p>
                                 Уважаемые посетители!
                             </p>
@@ -55,13 +44,12 @@
                                     Вы сразу найдете информацию на интересующую Вас тему.
                                 </strong>
                             </p>
-
                             <div class="feedback-law">
                                 ВНИМАНИЕ! В случае, если в письменном обращении не указаны фамилия гражданина,
                                 направившего обращение, и почтовый адрес, по которому должен быть направлен ответ,
                                 ответ на обращение не дается.
                                 (<a title="Федеральный закон РФ от 2 мая 2006г. № 59-ФЗ 'О порядке рассмотрения
-         обращений граждан Российской Федерации'" href="{{ route('feedback.fzakon') }}">Федеральный закон РФ от 2 мая
+             обращений граждан Российской Федерации'" href="{{ route('feedback.fzakon') }}">Федеральный закон РФ от 2 мая
                                     2006г. №
                                     59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации"</a>)
                             </div>
@@ -72,21 +60,15 @@
                             <div>
                                 @include('forms.feedbackForm')
                             </div>
-
-
                         </div>
-                        <!-- entity_content -->
                     </div>
-
-
                 </div>
-                <!-- row -->
                 <div class="col-md-1"></div>
             </div>
-            <!-- container -->
 
+        </div>
     </section>
-    <!-- Entity Section Wrapper -->
+
     <script src="/assets/js/faajax.js"></script>
 
 

@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\PreProject;
 use App\Models\Projects;
-use App\Models\Image;
+use App\Models\File;
 use App\Models\Pages;
+use App\Models\Seo;
 
 class ProjectsController extends Controller
 {
@@ -35,7 +35,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.main.projects.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $promos = Projects::add($request->all());
     }
 
     /**
@@ -55,9 +55,10 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id){
+    $page = Pages::where('id', $id)->get();
+    $projects=Projects::all();
+    return view('admin.main.projects.show', compact('projects','page'));
     }
 
     /**
@@ -68,9 +69,11 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
+        $seo=Seo::where('page_id', $id)->first();
         $pages= Pages::where('id', $id)->get();
-        $images= Image::find(1)->where('page_id', $id)->get();
-        return view('admin.main.projects.edit', compact('pages', 'images'));
+        $projects=Projects::all();
+        $images= File::find(1)->where('page_id', $id)->get();
+        return view('admin.main.projects.edit', compact('pages', 'images','projects','seo'));
     }
 
     /**
@@ -82,7 +85,15 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    $pages = Pages::findOrFail($id);
+
+    $pages->name= $request->name;
+    $pages->content=$request->content;
+    $pages->url=$request->url;
+
+    $message="Текст сохранен";
+
+    return redirect()->route('admin.reports.edit',$id)->with('message', $message);
     }
 
     /**
@@ -96,3 +107,4 @@ class ProjectsController extends Controller
         //
     }
 }
+

@@ -33,37 +33,6 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
- <section id="feature_news_section" class="feature_news_section">
-            <div class="container">
-                <div class="feature_article_wrapper">
-                    <div class="feature_column_9">
-                            <div class="feature_article_img">
-                                <img class="img-responsive top_static_article_img" src="/assets/images/{{$main_image}}"
-                                    alt="{{$main_image}}">
-
-                            </div>
-
-                    </div>
-                    <!-- col-md-7 -->
-
-                    <div class="feature_column_3">
-                            <div class="float-right">
-                                <a href="{{ route('second_main')}}"><img class="img-responsive"
-                                        src="/assets/images/{{$banner}}" alt="{{$banner}}"></a>
-                            </div>
-                    </div>
-                    <!-- col-md-5 -->
-
-
-                </div>
-                <!-- Row -->
-
-            </div>
-            <!-- container -->
-
-        </section>
-        <!-- Feature News Section -->
-
                                 <div class="box">
 
 

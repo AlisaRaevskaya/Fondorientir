@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
+use App\Models\Seo;
 
 class PageController extends Controller
 {
@@ -14,7 +15,10 @@ class PageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $pages = Pages::all();
+    {
+  $pages= Seo::Join('pages', 'pages.id', '=', 'seos.page_id')
+        ->select('seos.description','seos.keywords', 'pages.content', 'pages.title',
+        'pages.id','pages.url', 'pages.created_at', 'pages.updated_at','pages.laravel_name')->orderBy('pages.id', 'asc')->get();
         return view('admin.pages', compact('pages'));
     }
 

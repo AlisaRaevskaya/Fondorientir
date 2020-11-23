@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Category;
-use App\Models\Image;
+use App\Models\File;
 use App\Models\Pages;
 
 use Illuminate\Support\Facades\Storage;
@@ -57,7 +57,7 @@ public function summerUpload(Request $request, $id){
     $path= public_path('/storage/pages');
     $store=$file->store('pages');
 
-  $image=new Image();
+  $image=new File();
     $mode=Pages::where('id', $id)->pluck('laravel_name');
     $image->name=$store;
     $image->page_id=$id;

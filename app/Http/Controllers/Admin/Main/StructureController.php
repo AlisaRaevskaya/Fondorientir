@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin\Main;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
-use App\Models\Image;
+use App\Models\File;
+use App\Models\Seo;
 
 class StructureController extends Controller
 {
@@ -48,7 +49,9 @@ class StructureController extends Controller
      */
     public function show($id)
     {
-        //
+       $page = Pages::where('id', $id)->get();
+
+        return view('admin.main.structure.show', compact('page'));
     }
 
     /**
@@ -59,9 +62,9 @@ class StructureController extends Controller
      */
     public function edit($id)
     {
-         $pages= Pages::where('id', $id)->get();
-        $images= Image::find(1)->where('page_id', $id)->get();
-        return view('admin.main.structure.edit', compact('pages', 'images'));
+        $pages= Pages::where('id', $id)->get();
+        $seo=Seo::where('page_id', $id)->first();
+        return view('admin.main.structure.edit', compact('pages', 'seo'));
     }
 
     /**
@@ -73,7 +76,12 @@ class StructureController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pages = Pages::findOrFail($id);
+
+    $pages->edit($request->all());
+$message="Текст сохранен";
+    return redirect()->route('admin.structure.edit', $id)->with('message', $message);
+
     }
 
     /**

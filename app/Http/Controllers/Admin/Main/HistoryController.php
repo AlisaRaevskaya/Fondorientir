@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin\Main;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
-use App\Models\Image;
+use App\Models\File;
+use App\Models\Seo;
 
 
 class HistoryController extends Controller
@@ -63,8 +64,8 @@ class HistoryController extends Controller
     public function edit($id)
     {
         $pages= Pages::where('id', $id)->get();
-        $images= Image::find(1)->where('page_id', '1')->get();
-        return view('admin.main.history.edit', compact('pages', 'images'));
+    $seo=Seo::where('page_id', $id)->first();
+        return view('admin.main.history.edit', compact('pages','seo'));
     }
 
     /**
@@ -76,14 +77,12 @@ class HistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-    $pages = Pages::findOrFail($id);
-    $pages->title=$request->title;
-    $pages->metakey=$request->metakey;
-    $pages->metadesc=$request->metadesc;
-    $pages->content=$request->content;
-    $pages->url=$request->url;
 
-    $pages->save();
+    $pages = Pages::findOrFail($id);
+
+    $pages->edit($request->all());
+    $message="Текст сохранен";
+    return redirect()->route('admin.history.edit', $id)->with('message', $message);
 
     }
 

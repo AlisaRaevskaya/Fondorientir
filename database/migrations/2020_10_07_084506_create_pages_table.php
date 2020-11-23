@@ -22,7 +22,7 @@ class CreatePagesTable extends Migration
             $table->string('h1')->nullable();;//заголовок страницы (VARCHAR, 255);
             $table->longText('content');//основной текст страницы, который будет выводиться в центральную колонку сайта (TEXT);
             $table->integer('desc')->default(0);
-            $table->foreignId('menu_id')->nullable();;
+            $table->foreignId('menu_id')->nullable();
             $table->timestamps();
         });
     }

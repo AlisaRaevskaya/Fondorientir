@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin\Main;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
-use App\Models\Image;
+use App\Models\File;
+use App\Models\Seo;
 
 class MissionController extends Controller
 {
@@ -61,9 +62,10 @@ class MissionController extends Controller
      */
     public function edit($id)
     {
+    $seo=Seo::where('page_id', $id)->first();
     $pages= Pages::where('id', $id)->get();
-    $images= Image::find(1)->where('page_id', $id)->get();
-    return view('admin.main.mission.edit', compact('pages', 'images'));
+    $images= File::find(1)->where('page_id', $id)->get();
+    return view('admin.main.mission.edit', compact('pages', 'images', 'seo'));
     }
 
     /**
@@ -75,7 +77,11 @@ class MissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    $pages = Pages::findOrFail($id);
+
+    $pages->edit($request->all());
+    $message="Текст сохранен";
+    return redirect()->route('admin.mission.edit', $id)->with('message', $message);
     }
 
     /**

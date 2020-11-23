@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\ViewComposers;
-use App\Models\Menu;
+use App\Models\Pages;
 use App\Models\News;
 use App\Models\Contact;
 use App\Models\Category;
@@ -15,7 +15,7 @@ class NavigationComposer
 {
     public function compose(View $view)
     {
-        $menuitems = Menu::IsPublished()->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
+        $menuitems = Pages::IsPublished()->IsMenu()->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
         $newsitems = News::orderBy('dateline', 'desc')->limit(7)->get();
         $contacts= Contact::all();
         $new = News::find(1)->first();
@@ -23,8 +23,7 @@ class NavigationComposer
         $categories= Category::all();
         $secondmenu=SecondMenu::where('published',1)->orderBy('id', 'asc')->get();
         // $secondmenu = Menu::IsPublished()->where('parent_id', 2)->where('id', '>', 15)->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
-        $footermenu = Menu::IsPublished()->where('parent_id', 2)->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
-
+        $footermenu = Pages::IsPublished()->IsMenu()->where('parent_id', 2)->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
 
 
         $menuitems = $this->buildTree($menuitems);

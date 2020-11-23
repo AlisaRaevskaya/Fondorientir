@@ -30,9 +30,10 @@ class News extends Model
     }
     //->format('d-m-y H:i:s');
 
-    public function cutDateline(){
-    $result=$this->dateline;
-    return Str::substr($result, 0, 10);
+    public function cutDateline()
+    {
+        $result=$this->dateline;
+        return Str::substr($result, 0, 10);
     }
 
     public function getFormatDateCreate()
@@ -94,24 +95,18 @@ class News extends Model
         return Str::substr($this->intro, 0, 80) . "...";
     }
 
-    // /**
-    //  * Загружаем новое изоюражение
-    //  * @param $image
-    //  * @return mixed|void
-    //  */
-    // public function uploadImage($images)
-    // {
-    //     if ($image == null) {
-    //         return;
-    //     }
+     public static function add($fields)
+    {
+        $pages= new static;
+        $pages->fill($fields);
+        $pages->save();
 
-    //     if ($this->image !== null) {
-    //         Storage::delete($this->image);
-    //     }
-    //     $fileName = $image->store('articles');
-    //     $newName = explode('/', $fileName);
-    //     $this->images = $newName[1];
-    //     $this->save();
-    //     return $newName[1];
-    // }
+        return $pages;
+    }
+
+    public function edit($fields)
+    {
+        $this->fill($fields);
+        $this->save($fields);
+    }
 }

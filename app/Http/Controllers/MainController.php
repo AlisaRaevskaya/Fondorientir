@@ -7,7 +7,7 @@ use App\Models\Pages;
 use App\Models\News;
 use App\Models\Reply;
 use App\Models\Topic;
-use App\Models\Image;
+use App\Models\File;
 use App\Models\PreProject;
 use App\Models\Projects;
 use Illuminate\Support\Str;
@@ -17,8 +17,8 @@ class MainController extends Controller
 {
     public function index(){
     $mainContent= Pages::where('title', 'Главная')->get();
-    $main_image= Image::where('mode','main')->pluck('name')->first();
-    $banner=Image::where('mode','banner')->pluck('name')->first();
+    $main_image= File::where('mode','main')->pluck('name')->first();
+    $banner=File::where('mode','banner')->pluck('name')->first();
     $news = News::orderBy('dateline', 'desc')->paginate(6);
     $new = News::find(1)->first();
     $category= $new->category;

@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin\Main;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
-use App\Models\Image;
-use App\Models\PreProject;
+use App\Models\File;
+use App\Models\Seo;
 
 class FondController extends Controller
 {
@@ -63,9 +63,9 @@ class FondController extends Controller
     public function edit($id)
     {
     $pages= Pages::where('id', $id)->get();
-    $images= Image::find(1)->where('page_id', $id)->get();
-    $projects=PreProject::all();
-    return view('admin.main.fond.edit', compact('pages', 'images', 'projects'));
+    $seo=Seo::where('page_id', $id)->first();
+    $images= File::find(1)->where('page_id', $id)->get();
+    return view('admin.main.fond.edit', compact('pages', 'images','seo'));
     }
 
     /**
@@ -77,7 +77,11 @@ class FondController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $pages = Pages::findOrFail($id);
+
+        $pages->edit($request->all());
+        $message="Текст сохранен";
+    return redirect()->route('admin.fond.edit', $id)->with('message', $message);
     }
 
     /**

@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin\Main;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pages;
-use App\Models\Image;
+use App\Models\File;
+use App\Models\Seo;
 
 class PartnersController extends Controller
 {
@@ -61,8 +62,8 @@ class PartnersController extends Controller
     public function edit($id)
     {
         $pages= Pages::where('id', $id)->get();
-        $images= Image::find(1)->where('page_id', $id)->get();
-        return view('admin.main.partners.edit', compact('pages', 'images'));
+        $seo=Seo::where('page_id', $id)->first();
+        return view('admin.main.partners.edit', compact('pages', 'seo'));
     }
 
     /**
@@ -74,7 +75,12 @@ class PartnersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $pages = Pages::findOrFail($id);
+
+    $pages->edit($request->all());
+$message="Текст сохранен";
+    return redirect()->route('admin.partners.edit', $id)->with('message', $message);
+
     }
 
     /**

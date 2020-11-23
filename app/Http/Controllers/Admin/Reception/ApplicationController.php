@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin\Reception;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\File;
+use App\Models\Seo;
+
 
 class ApplicationController extends Controller
 {
@@ -44,9 +48,11 @@ class ApplicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+     public function show($id)
     {
-        //
+        $page = Pages::where('id', $id)->get();
+
+        return view('admin.reception.application.show', compact('page'));
     }
 
     /**
@@ -57,7 +63,9 @@ class ApplicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pages= Pages::where('id', $id)->get();
+    $seo=Seo::where('page_id', $id)->first();
+        return view('admin.reception.application.edit', compact('pages','seo'));
     }
 
     /**
@@ -69,7 +77,13 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+    $pages = Pages::findOrFail($id);
+
+    $pages->edit($request->all());
+    $message="Текст сохранен";
+    return redirect()->route('admin.application.edit', $id)->with('message', $message);
+
     }
 
     /**

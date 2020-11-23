@@ -44,22 +44,11 @@ class Menu extends Model
         return $query;
     }
 
-    public function createLink($obj){
-    if ($obj->laravel_name){
-            return '$obj->laravel_name';
-        }
-    if ($obj->param){
-        return 'news.subcategory';
-    }else
+   public function scopeisMenu($query)
     {
-        return '$obj->url';
+       return $query->where('is_menu', true);
     }
-}
 
-public function larName($val){
-$result= 'admin'.'.' . $val . '.' . '.index';
-    return route($result);
-}
 
 
 }

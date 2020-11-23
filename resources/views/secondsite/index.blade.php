@@ -68,4 +68,81 @@
             </div>
         </div>
     </section>
+    <div class="container footer_bottom_Section">
+    <div class="row">
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10">
+
+            <div class="entity_title">
+                <h1> Взаимодействуем:</h1>
+            </div>
+
+            <div class="d-flex flex-row justify-content-between align-items-center">
+
+                <div class="partner_item col-md-2 ">
+                    <p>Кадастровая палата</p><br>
+                    <div class="part_img">
+                        <img src="/assets/images/footer/kadastr.jpg" alt="kadastrovaya_palata">
+                    </div>
+                </div>
+
+                <div class="partner_item col-md-2">
+                    <p>Федеральная налоговая служба</p>
+                    <div class="part_img">
+                        <img src="/assets/images/footer/nalogovaya.jpg" alt="nalogovaya" class="rounded-circle">
+                    </div>
+                </div>
+
+                <div class="partner_item col-md-2">
+                    <p>Служба судебных приставов</p>
+                    <div class="part_img">
+                        <img src="/assets/images/footer/pristavy.jpg" alt="pristavy">
+                    </div>
+                </div>
+
+                <div class="partner_item col-md-3">
+                    <p> Федеральная служба защиты прав потребителей</p>
+                    <div class="part_img">
+                        <img src="/assets/images/footer/potrebitel.jpg" alt="potrebitel_service">
+                    </div>
+                </div>
+
+                <div class="partner_item col-md-2">
+                    <p>Россотрудничество</p><br>
+                    <div>
+                        <img src="/assets/images/footer/rossotrudnichestvo.png" alt="rossotrudnichestvo">
+                    </div>
+                </div>
+
+                <div class="row justify-content-between margin-top">
+
+                    <div class="partner_item_2 col-md-6 text-left">
+                        <div class="text-center">
+                            <p> Федеральное агентство по делам национальностей</p>
+                        </div>
+                        <div>
+                            <img src="/assets/images/footer/fadn.jpg" alt="nation_agency" class="img-responsive" style="display: block;
+      margin: 0 auto; ">
+                        </div>
+                    </div>
+
+                    <div class="partner_item_3 col-md-6 margin-top">
+                        <div class="text-center">
+                            <p>Федеральная служба по экологическому,
+                                технологическому и атомному надзору</p>
+                        </div>
+                        <div>
+                            <img src="/assets/images/footer/rosteh.jpg" alt="rostehnadzor" class="img-responsive" style="display: block;
+      margin: 0 auto; ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
 @endsection

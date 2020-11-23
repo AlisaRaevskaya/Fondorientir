@@ -8,22 +8,23 @@
 
                 <div class="col-md-10">
                     <div class="entity_wrapper">
-                        <div class="entity_title">
-                            <h1><a href="#">Интернет-приемная</a></h1>
-                        </div>
+
                         <!-- entity_title -->
 
 
                         <!-- entity_social -->
 
                         <div class="entity_thumb">
-                            <img class="img-responsive" src="/assets/images/priemnaya.jpg" alt="feature-top">
+                            <img class="img-responsive" src="/assets/images/priemnaya2.jpg" alt="feature-top">
                         </div>
                         <!-- entity_thumb -->
 
 
 
                         <div class="entity_content">
+                            <div class="entity_title">
+                            <h1><a href="#">Интернет-приемная</a></h1>
+                        </div>
                             <p>
                                 Уважаемые посетители!
                             </p>

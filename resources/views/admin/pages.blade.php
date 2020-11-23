@@ -19,16 +19,16 @@
                     <i class="fas fa-table mr-1"></i>
                    Cтраницы
                 </div>
-
                 <div class="card-body">
-                    <div class="col-md-12">
+                    <div class="col-md-12 justify-content-center">
                         <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th><i class="fa fa-fw fa-sort"></i>ID</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>№</th>
                                     <th><i class="fa fa-fw fa-sort"></i>Название</th>
-                                    <th><i class="fa fa-fw fa-sort"></i>Meta-key</th>
-                                    <th><i class="fa fa-fw fa-sort"></i>Meta-description</th>
+                                    <th><i class="fa fa-fw fa-sort"></i>Ссылка</th>
+                                      <th><i class="fa fa-fw fa-sort"></i>Meta описание</th>
+                                      <th><i class="fa fa-fw fa-sort"></i>Meta ключи</th>
                                     <th><i class="fa fa-fw fa-sort"></i>Дата создания</th>
                                     <th><i class="fa fa-fw fa-sort"></i>Дата изменения</th>
                                     <th><i class="fa fa-fw fa-sort"></i>Редактировать</th>
@@ -37,23 +37,28 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                      <th>ID</th>
+                                    <th>№</th>
                                     <th>Название</th>
-                                    <th>Meta-key</th>
-                                    <th>Meta-description</th>
+                                    <th>Сcылка</th>
+                                    <th>Meta описание</th>
+                                    <th>Meta ключи</th>
                                     <th>Дата создания</th>
                                     <th>Дата изменения</th>
                                     <th>Редактировать</th>
                                     <th>Удалить</th>
                                 </tr>
                             </tfoot>
+
                             <tbody>
                                 @foreach ($pages as $page)
                                 <tr>
                                     <td>{{$page->id}}</td>
                                     <td>{{$page->title}}</td>
-                                    <td>{{$page->metakey}}</td>
-                                    <td>{{$page->metadesc}}</td>
+                                    <td>{{$page->url}}</td>
+
+                                    <td>{{$page->keywords}}</td>
+                                     <td>{{$page->description}}</td>
+
                                     <td>{{$page->created_at}}</td>
                                     <td>{{$page->updated_at}}</td>
                                     <td>
@@ -73,7 +78,9 @@
                                     </td>
 
                                 </tr>
- @endforeach
+@endforeach
+
+
                             </tbody>
                         </table>
 

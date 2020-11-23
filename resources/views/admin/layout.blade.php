@@ -28,7 +28,7 @@
 
 @include('admin.header')
 
-<div style="margin-top:100pt";>
+<div style="margin-top:50pt";>
 @yield('content')
 </div>
 

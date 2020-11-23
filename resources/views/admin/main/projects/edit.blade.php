@@ -1,7 +1,6 @@
 @extends('admin.layout')
 @section('content')
 
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper container">
         <!-- Content Header (Page header) -->
         @foreach ($pages as $page)
@@ -11,14 +10,13 @@
 
                         <div class="col-sm-12">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/home">Home</a></li>
                                 <li class="breadcrumb-item active">{{ $page->title }}</li>
                             </ol>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-
 
             <!-- Main content -->
             <section class="content">
@@ -34,97 +32,231 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <div class="box">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#content">Контент</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#seo">SEO</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#projects">Проекты</a>
+                                    </li>
+                                </ul>
+
+                                <div class="box tab-content">
 
                                     <div class="box-header with-border">
                                         {{-- @include('admin.errors')
                                         --}}
                                     </div>
 
+                                    <div class="box-body tab-pane active" id="content">
+                                        <div class="" style="margin-top:15px;">
+                                            <div class="col-md-12">
+                                                {{ Form::open(['route' => ['admin.projects.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
+                                                <div class="form-group">
+                                                    {{ Form::label('title', 'Название') }}
+                                                    {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
+                                                </div>
 
-<div class="box-body m30">
+                                                <div class="form-group">
+                                                    {{ Form::label('content', 'Текст') }}
+                                                    {{ Form::textArea('content', $page->content, ['class' => 'form-control summernote']) }}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('published', 'Опубликован') }}
+                                                    {{ Form::select('published', [0 => 'No', 1 => 'Yes'], $page->published) }}
+                                                </div>
 
-    <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <p style="color: tomato;">В URL могут присутствовать только буквы и
+                                                        цифры
+                                                        латинского алфавита пробелы замените на "_" нижнее подчеркивание или
+                                                        "-"
+                                                        тире.
+                                                        <br>Знаки препинания должны отсутствовать.Пример:
+                                                        while-we-put-off-life-it-passes
+                                                    </p>
+                                                    {{ Form::label('url', 'URL') }}
+                                                    {{ Form::text('url', $page->url, ['class' => 'form-control']) }}
+                                                </div>
+                                                @if (session()->has('message'))
+                                                    <div class="alert alert-success">
+                                                        {{ session()->get('message') }}
+                                                    </div>
+                                                @endif
+                                                <div class="box-footer">
+                                                    <div class="">
+                                                        <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
 
-        <table class="table table-bordered table-responsive">
-            <caption>Наши прошлые проекты</caption>
+                                                        <button class="btn btn-primary pull-right"
+                                                            style="margin-left:20px;">Сохранить</button>
 
-            <thead>
-                <tr style="color:black;font-weight:bold;">
-                    <th scope="col">№ п/п</th>
-                    <th scope="col">№ и дата заключения контракта (договора)</th>
-                    <th scope="col">Наименование и адрес заказчика</th>
-                    <th scope="col">Наименование услуг или работ, предмет контракта
-                        (договора)</th>
-                    <th scope="col">Сроки оказания услуг или выполнения работ</th>
-                    <th scope="col">Цена контракта (договора),руб.</th>
-                </tr>
-            </thead>
+                                                        <a href="{{ route('admin.projects.show', $page->id) }}"
+                                                            class="btn btn-warning pull-right">Просмотр</a>
+                                                    </div>
+                                                </div>
+                                                {{ Form::close() }}
 
-            {{ Form::open(['route' => ['admin.fond.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
-            <tbody>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                @foreach ($projects as $project)
-                    <tr style="color:black;">
-                        <th scope="row">{{ $project->id }}</th>
-                        <td>
-                            <div class="form-group">
 
-                                {{ Form::text('name', $project->contrator, ['class' => 'form-control required']) }}
-                            </div>
-                        </td>
+                                    <div class="box-body tab-pane" id="seo">
+                                        <div class="" style="margin-top:15px;">
+                                            <div class="col-md-12">
+                                                {{ Form::open(['route' => ['admin.seo.update', $page->id], 'method' => 'put', 'files' => true]) }}
+                                                <div class="form-group">
+                                                    {{ Form::label('name', 'Название (для для админки)') }}
+                                                    {{ Form::text('name', $seo->name, ['class' => 'form-control required m30']) }}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('title', 'Title') }}
+                                                    {{ Form::text('title', $seo->title, ['class' => 'form-control required']) }}
+                                                    <i>Заголовок конкретной страницы</i>
+                                                </div>
+                                                <div class="form-group required">
+                                                    {{ Form::label('description', 'Description') }}
+                                                    {{ Form::textArea('description', htmlspecialchars_decode($seo->description, ENT_QUOTES), ['class' => 'form-control']) }}
+                                                    <i>Описание конкретной страницы</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('keywords', 'Keywords') }}
+                                                    {{ Form::textArea('keywords', htmlspecialchars_decode($seo->keywords, ENT_QUOTES), ['class' => 'form-control required']) }}
+                                                    <i>Ключевые слова</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('og_title', 'og:Title') }}
+                                                    {{ Form::text('og_title', $seo->og_title, ['class' => 'form-control']) }}
+                                                    <i>заголовок страницы. Для него есть ограничение в 65 символов. Напишите
+                                                        что-то длиннее – текст будет обрезан.</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('og_description', 'og:Description') }}
+                                                    {{ Form::textArea('og_description', htmlspecialchars_decode($seo->og_description, ENT_QUOTES), ['class' => 'form-control']) }}
+                                                    <i>краткое описание страницы длиной не более 300 символов.</i>
+                                                    <i></i>
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('og_type', 'og:Type') }}
+                                                    {{ Form::text('og_type', $seo->og_type, ['class' => 'form-control']) }}
+                                                    <i>описывает тип объекта на странице (веб-сайт, блог, книга, фильм и
+                                                        т.д.).</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('og_url', 'og:Url') }}
+                                                    {{ Form::text('og_url', $seo->og_url, ['class' => 'form-control']) }}
+                                                    <i>Uri страницы , без доменного имени пример:
+                                                        "services/bukhgalterskiye-konsultatsii" без первого слеша / просто
+                                                        слеш актуален только для главной страницы</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('og_site_name', 'og:Site_name') }}
+                                                    {{ Form::text('og_site_name', $seo->og_site_name, ['class' => 'form-control']) }}
+                                                    <i>название сайта.</i>
+                                                </div>
+                                                @if (session()->has('seo_message'))
+                                                    <div class="alert alert-success">
+                                                        {{ session()->get('seo_message') }}
+                                                    </div>
+                                                @endif
+                                                <div class="box-footer">
+                                                    <div>
+                                                        <button class="btn btn-primary pull-right">Сохранить</button>
+                                                    </div>
+                                                </div>
+                                                {{ Form::close() }}
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <td>
-                            <div class="form-group">
 
-                                {{ Form::text('name', $project->contract, ['class' => 'form-control required']) }}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
+                                    <div class="box-body tab-pane" id="projects">
+                                        <div class="" style="margin-top:15px;">
+                                            <div class="col-md-12">
 
-                                {{ Form::textArea('text_center', $project->subject, ['class' => 'form-control summernote']) }}
-                            </div>
-                        </td>
+                                                    <table class="table table-bordered border-top">
+                                                        <thead>
+                                                            <tr style="color:black;font-weight:bold;">
+                                                                <th scope="col">№</th>
+                                                                <th scope="col">Сроки оказания услуг или выполнения работ
+                                                                </th>
+                                                                <th scope="col">Наименование и адрес заказчика</th>
+                                                                <th scope="col">Наименование услуг или работ, предмет
+                                                                    контракта
+                                                                    (договора)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
 
-                        <td>
-                            <div class="form-group">
+                                                            @foreach ($projects as $project)
+                                            {{ Form::open(['route' => ['admin.forprojects.update', $project->id], 'method' => 'PUT', 'files' => true]) }}
+                                                                <tr style="color:black;">
 
-                                {{ Form::text('name', $project->terms, ['class' => 'form-control required']) }}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
+                                                                    <th scope="row">{{ $project->id }}</th>
 
-                                {{ Form::text('name', $project->price, ['class' => 'form-control required']) }}
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
+                                                                    <td class="col-md-3">
+                                                                        <div class="form-group">
+                                                                            {{ Form::text('term', $project->term, ['class' => 'form-control required']) }}
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            {{ Form::textArea('name', $project->name, ['class' => 'form-control required summernote']) }}
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="col-md-5">
+                                                                        <div class="form-group">
+                                                                            {{ Form::textArea('results', $project->results, ['class' => 'form-control summernote']) }}
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+</tbody>
+</table>
+@if (session()->has('message'))
+                                                                <div class="alert alert-success">
+                                                                    {{ session()->get('message') }}
+                                                                </div>
+                                                            @endif
 
-            </tbody>
+                                                            <div class="box-footer">
+                                                                <div class="">
+                                                                    <a href="{{ url()->previous() }}"
+                                                                        class="btn btn-default">Назад</a>
 
-            <div class="box-footer">
-                <div class=""><button class="btn btn-primary pull-right">Сохранить</button>
-                </div>
-                 <div class=""><button class="btn btn-primary pull-right">Добавить</button>
-                </div>
-            </div>
+  <button class="btn btn-primary pull-right" style="margin-left:20px;">Сохранить</button>
+                                                                    <a href="{{ route('admin.forprojects.create') }}"
+                                                                        class="btn btn-info pull-right">Добавить</a>
 
-            {{ Form::close() }}
-        </table>
+                                                                    <a href="{{ route('admin.forprojects.show', $project->id) }}"
+                                                                        class="btn btn-warning pull-right">Просмотр</a>
+                                                                </div>
+                                                            </div>
 
-    </div>
-</div>
+
+
+  {{ Form::close() }}
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
+                                <!-- /.col-->
                             </div>
-                            <!-- /.col-->
                         </div>
+                    </div>
+                </div>
             </section>
             <!-- /.content -->
         @endforeach
     </div>
+
     <!-- /.content-wrapper -->
 
 @endsection

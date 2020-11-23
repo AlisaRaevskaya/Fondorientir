@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('content')
 
-  <div class="content-wrapper container">
+    <div class="content-wrapper container">
         <!-- Content Header (Page header) -->
         @foreach ($page as $item)
             <section class="content-header">
@@ -35,20 +35,58 @@
                             <div class="card-body">
                                 <div class="box">
 
+                                    {!! $item->content !!}
+                                    <table class="table table-bordered">
 
-    {!!$item->content!!}
 
-</div>
-<div class="box-footer">
-                        <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
+                                        <thead>
+                                            <tr style="color:black;font-weight:bold;">
+                                                <th scope="col-1">№ п/п</th>
+                                                <th scope="col-2">Сроки оказания услуг или выполнения работ</th>
+                                                <th scope="col-3">Наименование и адрес заказчика</th>
+                                                <th scope="col-6">Наименование услуг или работ, предмет контракта
+                                                    (договора)</th>
+                                            </tr>
+                                        </thead>
 
-                                            </div>
+
+                                        <tbody>
+                                            @foreach ($projects as $project)
+                                                <tr style="color:black;">
+                                                    <th scope="row">{{ $project->id }}</th>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            {{ Form::text('name', $project->term, ['class' => 'form-control required']) }}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            {{ Form::text('name', $project->name, ['class' => 'form-control required']) }}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            {{ Form::textArea('results', $project->results, ['class' => 'form-control summernote']) }}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="box-footer">
+                                    <div class=""><a href="{{ url()->previous() }}" class="btn btn-default">Назад</a></div>
+
+                                </div>
                             </div>
                             <!-- /.col-->
 
                         </div>
+                    </div>
+                </div>
             </section>
-            @endforeach
-</div>
+        @endforeach
+    </div>
 
 @endsection
