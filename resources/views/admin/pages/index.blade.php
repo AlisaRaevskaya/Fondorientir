@@ -1,24 +1,26 @@
 @extends('admin.layout')
 @section('content')
+
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid container">
+                <h1 class="mt-4">Страницы сайта</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item">Meню</a>
-                    <li class="breadcrumb-item active">Новости</li>
+                    <li class="breadcrumb-item active">Страницы</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-body">
-                        В данном разделе Вы можете редактировать статьи из раздела "Новости".
+                        В данном разделе Вы можете редактировать страницы.
                     </div>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        Новости
+                        Страницы
                         <div class="text-center">
-                            <a href="{{ route('admin.news.create') }}" class="btn btn-default pull-right">Добавить
-                                новость</a>
+                            <a href="{{ route('admin.pages.create') }}" class="btn btn-default pull-right">Добавить
+                                страницу</a>
                         </div>
                     </div>
 
@@ -29,9 +31,11 @@
                                     cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th><i class="fa fa-fw fa-sort"></i>ID</th>
+                                            <th><i class="fa fa-fw fa-sort"></i>№</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Название</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Intro</th>
+                                            <th><i class="fa fa-fw fa-sort"></i>Ссылка</th>
+                                            <th><i class="fa fa-fw fa-sort"></i>Meta описание</th>
+                                            <th><i class="fa fa-fw fa-sort"></i>Meta ключи</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Дата создания</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Дата изменения</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Редактировать</th>
@@ -40,29 +44,36 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>№</th>
                                             <th>Название</th>
-                                            <th>Intro</th>
+                                            <th>Сcылка</th>
+                                            <th>Meta описание</th>
+                                            <th>Meta ключи</th>
                                             <th>Дата создания</th>
                                             <th>Дата изменения</th>
                                             <th>Редактировать</th>
                                             <th>Удалить</th>
                                         </tr>
                                     </tfoot>
+
                                     <tbody>
-                                        @foreach ($pressnews as $new)
+                                        @foreach ($pages as $page)
                                             <tr>
-                                                <td>{{ $new->id }}</td>
-                                                <td>{!! $new->title !!}</td>
-                                                <td>{!! $new->intro !!}</td>
-                                                <td>{!! $new->dateline !!}</td>
-                                                <td>{!! $new->updated_at !!}</td>
+                                                <td>{{ $page->id }}</td>
+                                                <td>{{ $page->title }}</td>
+                                                <td>{{ $page->url }}</td>
+
+                                                <td>{{ $page->keywords }}</td>
+                                                <td>{{ $page->description }}</td>
+
+                                                <td>{{ $page->created_at }}</td>
+                                                <td>{{ $page->updated_at }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.press.edit', $new->id) }}"
+                                                    <a href="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.edit', $page->id) : route('admin.edit', $page->id) }}"
                                                         class="btn btn-primary">Редактировать</a>
                                                 </td>
                                                 <td>
-                                                      <form action="{{ route('admin.press.destroy', $new->id) }}"
+                                                    <form action="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.destroy', $page->id) : route('admin.destroy', $page->id) }}"
                                                         method="post" class="text-center">
                                                         @csrf
                                                         {{ method_field('DELETE') }}
@@ -70,6 +81,7 @@
                                                     </form>
                                                 </td>
                                             </tr>
+
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -77,13 +89,14 @@
                         </div>
                     </div>
                 </div>
-                <nav aria-label="Page navigation" class="pagination_section">
-                    <ul class="pagination">
-                        <li>{{ $pressnews->links() }}</li>
-                    </ul>
-                </nav>
+<nav aria-label="Page navigation" class="pagination_section">
+                                <ul class="pagination">
+                                    <li>{{ $pages->links()}}</li>
+                                </ul>
+                            </nav>
             </div>
         </main>
     </div>
 @endsection
 
+{{-- --}}

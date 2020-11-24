@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Press;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
-use App\Models\Image;
+use App\Models\File;
 use App\Models\Category;
 
 class PressController extends Controller
@@ -62,9 +62,9 @@ class PressController extends Controller
      */
     public function edit($id)
     {
-    $pages= Pages::where('id', $id)->get();
-    $images= Image::find(1)->where('page_id', $id)->get();
-    return view('admin.main.mission_edit', compact('pages', 'images'));
+    $news= News::where('id', $id)->get();
+    $images= File::find(1)->where('page_id', $id)->get();
+    return view('admin.press.press.edit', compact('news', 'images'));
     }
 
     /**
@@ -76,7 +76,10 @@ class PressController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $news = News::findOrFail($id);
+$news->edit($request->all());
+ $message="Данные сохранены";
+    return redirect()->route('admin.press.press.edit', $id)->with('message', $message);
     }
 
     /**

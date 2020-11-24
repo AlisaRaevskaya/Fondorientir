@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameMenu extends Migration
+class ChangeColumnStaticTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class RenameMenu extends Migration
      */
     public function up()
     {
-        Schema::table('menus', function (Blueprint $table) {
-            Schema::rename('menus', 'pages');
+        Schema::table('pages', function (Blueprint $table){
+            $table->boolean('dynamic')->default(0);
+            $table->dropColumn('static');
         });
-
     }
 
     /**
@@ -26,6 +26,10 @@ class RenameMenu extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::table('pages', function (Blueprint $table) {
+            $table->boolean('dynamic');
+            $table->string('static');
+        });
+
     }
 }

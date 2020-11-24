@@ -18,8 +18,9 @@ class PageController extends Controller
     {
   $pages= Seo::Join('pages', 'pages.id', '=', 'seos.page_id')
         ->select('seos.description','seos.keywords', 'pages.content', 'pages.title',
-        'pages.id','pages.url', 'pages.created_at', 'pages.updated_at','pages.laravel_name')->orderBy('pages.id', 'asc')->get();
-        return view('admin.pages', compact('pages'));
+        'pages.id','pages.url','pages.dynamic', 'pages.created_at', 'pages.updated_at','pages.laravel_name')->where('dynamic', false)->
+    orderBy('pages.id', 'asc')->paginate(15);
+        return view('admin.pages.index', compact('pages'));
     }
 
     /**
@@ -29,7 +30,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.create');
     }
 
     /**

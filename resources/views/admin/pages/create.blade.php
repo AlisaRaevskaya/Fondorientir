@@ -44,27 +44,34 @@
                                     <div class="col-md-11 justify-content-center">
 
                                         <div class="form-group">
-                                            {{ Form::label('name', 'Название') }}
-                                            {{ Form::text('name', '', ['class' => 'form-control required']) }}
+                                            {{ Form::label('title', 'Название') }}
+                                            {{ Form::text('title', '', ['class' => 'form-control required']) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::label('intro', 'Intro') }}
-                                            {{ Form::text('intro', '', ['class' => 'form-control required']) }}
+                                            {{ Form::label('text_top', 'Текст 1') }}
+                                            {{ Form::textArea('text_top', '', ['class' => 'form-control summernote']) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::label('images', 'Картинка') }}
-                                            {{ Form::file('images') }}
+                                            {{ Form::label('text_center', 'Текст 2') }}
+                                            {{ Form::textArea('text_center', '', ['class' => 'form-control summernote']) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::label('text_botton', 'Текст 3') }}
-                                            {{ Form::textArea('body', '', ['class' => 'form-control summernote']) }}
+                                            {{ Form::label('content', 'Текст') }}
+                                            {{ Form::textArea('content', '', ['class' => 'form-control summernote']) }}
                                         </div>
 
-                                        {{-- <div class="form-group">
-                                            {{ Form::label('category_id', 'Категория') }}
-                                            {{ Form::select('category_id', ['2' => 'Фонд', '3' => 'Центр Поддержки', '4' => 'Новости', '5' => 'Пресса', '6' => 'Инфоцентр'], null, ['placeholder' => 'Выберите категорию']) }}
-                                        </div> --}}
-
+                                        <div class="form-group">
+                                            {{ Form::label('published', 'Опубликована') }}
+                                            {{ Form::select('published', [0 => 'No', 1 => 'Yes'], 1) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('is_menu', 'Добавить в меню') }}
+                                            {{ Form::select('is_menu', [0 => 'No', 1 => 'Yes'], 1) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('parent_id', 'Категрия меню') }}
+                                            {{ Form::select('parent_id', ['2' => 'Фонд', '3' => 'Центр Поддержки', '4' => 'Новости', '5' => 'Пресса', '6' => 'Инфоцентр'], null, ['placeholder' => 'Выберите категорию']) }}
+                                        </div>
                                         @if (session()->has('message'))
                                             <div class="alert alert-success">
                                                 {{ session()->get('message') }}

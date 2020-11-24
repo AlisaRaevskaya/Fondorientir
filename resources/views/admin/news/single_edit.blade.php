@@ -12,14 +12,12 @@
                         <div class="col-sm-12">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Новости/{{ $item->id }}</li>
+                                <li class="breadcrumb-item active">Интервью/{{ $item->id }}</li>
                             </ol>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-
-
             <!-- Main content -->
             <section class="content">
                 <div class="row">
@@ -35,14 +33,12 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="box">
-
                                     <div class="box-header with-border">
-                                        {{-- @include('admin.errors')
-                                        --}}
+                                        {{--
+                                        @include('admin.errors')--}}
                                     </div>
 
                                     <div class="box-body">
-
                                         <div class="col-md-11">
                                             {{ Form::open(['route' => ['admin.news.update', $item->id], 'method' => 'PUT', 'files' => true]) }}
                                             <div class="form-group">
@@ -52,7 +48,7 @@
 
                                             <div class="form-group">
                                                 {{ Form::label('intro', 'Intro') }}
-                                                {{ Form::text('intro', $item->intro, ['class' => 'form-control']) }}
+                                                {{ Form::text('intro', $item->intro, ['class' => 'form-control summernote ']) }}
                                             </div>
 
                                             <div class="form-group">
@@ -61,9 +57,7 @@
                                                 @if (isset($item->image))
                                                     <p>
                                                         <img src="/storage/news/{{ $item->image }}"
-                                                            {{-- <img class="image"
-                                                            src="{{ $item->getImageMini() }}"
-                                                            --}} alt="{{ $item->laravel_name }}"
+                                                            alt="{{ $item->laravel_name }}"
                                                             title="{{ $item->title }}" style="width: 200px">
                                                     </p>
                                                 @endif
@@ -102,9 +96,7 @@
                                             </div>
                                             {{ Form::close() }}
                                         </div>
-
                                     </div>
-
                                 </div>
                             </div>
                             <!-- /.col-->
@@ -112,9 +104,6 @@
                     </div>
                 </div>
             </section>
-            <!-- /.content -->
         @endforeach
     </div>
-    <!-- /.content-wrapper -->
-
 @endsection

@@ -69,26 +69,60 @@ class News extends Model
         $this->attributes['intro'] = htmlspecialchars($value, ENT_HTML5);
     }
 
-    public function getIntroAttribute($val)
+
+
+ /**
+     * Удаляем оригинал
+     * @param $name
+     * @return mixed
+     */
+    public function deleteImages($name)
     {
-        return htmlspecialchars_decode($val, ENT_HTML5);
+        $path = '/news/';
+
+        return Storage::delete($path . $name);
     }
 
+    // /**
+    //  * Удаляем мини картинку
+    //  * @param $name
+    //  * @return mixed
+    //  */
+    // public function deleteMiniImages($name)
+    // {
+    //     $path = '/articles/mini/';
 
-    public function setSource_linkAttribute($value)
+    //     return Storage::delete($path . $name);
+    // }
+
+    /**
+     * Загружаем новое изоюражение
+     * @param $image
+     * @return mixed|void
+     */
+    public function uploadImage($images)
     {
-        $this->attributes['source_link'] = htmlspecialchars($value, ENT_HTML5);
-    }
+        if ($images == null) { return;}
 
-
-    public function getImage()
-    {
-        if ($this->images == null) {
-            return '/images/support.png';
+        if($this->images !== null) {
+            Storage::delete($this->images);
         }
+        $fileName = $images->store('articles');
+        $newName = explode('/',$fileName);
+        $this->images = $newName[1];
+        $this->save();
+        return $newName[1];
 
-        return '/storage/articles/' . $this->images;
     }
+
+    // public function getImage()
+    // {
+    //     if ($this->images == null) {
+    //         return '/images/support.png';
+    //     }
+
+    //     return '/storage/articles/' . $this->images;
+    // }
 
     public function getMiniIntro()
     {

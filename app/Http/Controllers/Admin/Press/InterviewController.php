@@ -84,7 +84,7 @@ class InterviewController extends Controller
       $news = News::findOrFail($id);
 $news->edit($request->all());
  $message="Данные сохранены";
-    return redirect()->route('admin.interview.edit', $id)->with('message', $message);
+    return redirect()->route('admin.press.interview.edit', $id)->with('message', $message);
     }
 
     /**

@@ -60,8 +60,8 @@ class ContactsController extends Controller
      */
     public function edit($id)
     {
-        $contacts=Contact::all();
-        return view('admin.contacts.edit', $id, compact('contacts'));
+        $contact=Contact::where('id', $id)->get();
+        return view('admin.contacts.edit', compact('contact'));
     }
 
     /**
@@ -73,7 +73,12 @@ class ContactsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $contact = Contact::findOrFail($id);
+
+        $contact->edit($request->all());
+        $message="Данные сохранены";
+
+        return redirect()->route('admin.contacts.edit', $id)->with('message', $message);
     }
 
     /**

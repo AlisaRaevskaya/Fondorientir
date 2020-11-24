@@ -22,35 +22,26 @@
                         <div class="box-body m30">
                             <div class="col-md-12">
                                 @foreach ($contacts as $contact)
-                                    {{ Form::open(['route' => ['admin.projects.update', $contact->id], 'method' => 'PUT', 'files' => true]) }}
                                     <table class="table table-bordered">
-
                                         <tbody>
-
                                             <tr>
                                                 <td scope="col">Название</td>
                                                 <th>
                                                     <p>{{ $contact->name }}</p>
                                                 </th>
                                             </tr>
-
                                             <tr>
                                                 <td scope="col">Название на английском</td>
                                                 <th>
                                                     <p>{{ $contact->eng_name }}</p>
                                                 </th>
                                             </tr>
-
-
                                             <tr>
                                                 <td scope="col">ИНН</td>
                                                 <th>
                                                     <p>{{ $contact->inn }}</p>
                                                 </th>
                                             </tr>
-
-
-
 
                                             <tr>
                                                 <td scope="col">Адрес</td>
@@ -59,7 +50,6 @@
                                                     </p>
                                                 </th>
                                             </tr>
-
                                             <tr>
                                                 <td scope="col">Остановка</td>
                                                 <th>{{ $contact->station }}</th>
@@ -112,16 +102,16 @@
                                                 <td scope="col">Лого</td>
                                                 <th><img src="/assets/images/{{ $contact->logo }}" alt="Logo"></th>
                                             </tr>
-
-                                            {{ Form::close() }}
                                         </tbody>
                                     </table>
-                                @endforeach
+
                                 <div class="pull-left"><a href="{{ url()->previous() }}"
                                         class="btn btn-default pull-left">Назад</a></div>
-
-                                <a href="{{ route('admin.contacts.edit', $contact->id) }}"
-                                    class="btn btn-primary pull-right">Редактировать</a>
+                                <div class="">
+                                    <a href="{{ route('admin.contacts.edit', $contact->id) }}"
+                                        class="btn btn-primary pull-right">Редактировать</a>
+                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
