@@ -95,11 +95,9 @@
                                                     </div>
                                                 </div>
                                                 {{ Form::close() }}
-
                                             </div>
                                         </div>
                                     </div>
-
 
                                     <div class="box-body tab-pane" id="seo">
                                         <div class="" style="margin-top:15px;">

@@ -42,46 +42,59 @@
                                 <div class="box-body">
                                     {{ Form::open(['route' => 'admin.news.store', 'files' => true]) }}
                                     <div class="col-md-11 justify-content-center">
-
                                         <div class="form-group">
-                                            {{ Form::label('name', 'Название') }}
-                                            {{ Form::text('name', '', ['class' => 'form-control required']) }}
+                                            {{ Form::label('title', 'Название') }}
+                                            {{ Form::text('title', '', ['class' => 'form-control required']) }}
                                         </div>
                                         <div class="form-group">
                                             {{ Form::label('intro', 'Intro') }}
-                                            {{ Form::text('intro', '', ['class' => 'form-control required']) }}
+                                            {{ Form::text('intro', '', ['class' => 'form-control']) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::label('images', 'Картинка') }}
-                                            {{ Form::file('images') }}
+                                            {{ Form::label('image', '') }}
+                                            {{ Form::file('image') }}
+                                            @if (isset($item->image))
+                                                <p>
+                                                    <img src="/storage/news/{{ $item->image }}"
+                                                        alt="{{ $item->laravel_name }}" title="{{ $item->title }}"
+                                                        style="width: 200px">
+                                                </p>
+                                            @endif
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::label('text_botton', 'Текст 3') }}
-                                            {{ Form::textArea('body', '', ['class' => 'form-control summernote']) }}
+                                            {{ Form::label('body', 'Текст') }}
+                                            {{ Form::textArea('body', '', ['class' => 'form-control summernote_news']) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('source_name', 'Источник') }}
+                                            {{ Form::text('source_name', '', ['class' => 'form-control required']) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('source_link', 'Ссылка') }}
+                                            {{ Form::text('source_link', '', ['class' => 'form-control required']) }}
                                         </div>
 
-                                        {{-- <div class="form-group">
-                                            {{ Form::label('category_id', 'Категория') }}
-                                            {{ Form::select('category_id', ['2' => 'Фонд', '3' => 'Центр Поддержки', '4' => 'Новости', '5' => 'Пресса', '6' => 'Инфоцентр'], null, ['placeholder' => 'Выберите категорию']) }}
-                                        </div> --}}
+                                        <div class="form-group">
+                                            {{ Form::label('dateline', 'Дата публикации') }}
+                                            {{ Form::date('dateline', '', ['class' => 'form-control required']) }}
+                                        </div>
 
                                         @if (session()->has('message'))
                                             <div class="alert alert-success">
                                                 {{ session()->get('message') }}
                                             </div>
                                         @endif
+
                                         <div class="box-footer">
                                             <div class="">
                                                 <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
-
                                                 <button class="btn btn-primary pull-right"
                                                     style="margin-left:20px;">Сохранить</button>
                                             </div>
                                         </div>
                                     </div>
+                                    {{ Form::close() }}
                                 </div>
-
-                                {{ Form::close() }}
                             </div>
                             <!-- /.box -->
                         </div>

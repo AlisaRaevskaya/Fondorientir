@@ -153,3 +153,4 @@ Route::get('/upload/{id}', [ UploadController::class, 'imageUpload' ])->name('im
 Route::post('/store/{id}', [ UploadController::class, 'imageStorePost' ])->name('image.store.post');
 
 Route::put('/uploadImage/{id}', [ UploadController::class, 'summerUpload' ])->name('summer_upload');
+Route::put('/uploadNewsImage', [ UploadController::class, 'imageNewsStore' ])->name('image.news.store');

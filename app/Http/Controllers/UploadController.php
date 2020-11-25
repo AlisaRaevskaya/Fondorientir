@@ -11,22 +11,23 @@ use App\Models\Pages;
 use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
-
 {
-    public function newsadd(){
-    $news = News::orderBy('id', 'desc')->paginate(7);
-    $new = News::find(1)->first();
-    $category= $new->category;
-    return view('admin.news.news_edit', compact('news', 'category'));
+    public function newsadd()
+    {
+        $news = News::orderBy('id', 'desc')->paginate(7);
+        $new = News::find(1)->first();
+        $category= $new->category;
+        return view('admin.news.news_edit', compact('news', 'category'));
     }
 
-    public function imageUpload($id){
-    $news_id=$id;
-    return view('upload', compact('news_id'));
+    public function imageUpload($id)
+    {
+        $news_id=$id;
+        return view('upload', compact('news_id'));
     }
 
-    public function imageStorePost(Request $request, $id){
-
+    public function imageStorePost(Request $request, $id)
+    {
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -42,34 +43,55 @@ class UploadController extends Controller
         $news->save();
         $message='Картинка загружена';
         return redirect()->route('newsadd')->with('message', $message);
-
     }
 
-public function summerUpload(Request $request, $id){
+    public function summerUpload(Request $request, $id)
+    {
+        $file= $request->file('image');
 
-    $file= $request->file('image');
+        $filename=$file->getClientOriginalName();
+        $imageName = time().'.'. $filename;
 
-    $filename=$file->getClientOriginalName();
-    $imageName = time().'.'. $filename;
+        // $path=storage_path('/app/public/news');
 
-    // $path=storage_path('/app/public/news');
+        $path= public_path('/storage/pages');
+        $store=$file->store('pages');
 
-    $path= public_path('/storage/pages');
-    $store=$file->store('pages');
+        $image=new File();
+        $mode=Pages::where('id', $id)->pluck('laravel_name');
+        $image->name=$store;
+        $image->page_id=$id;
+        $image->mode=$mode;
+        $image->save();
 
-  $image=new File();
-    $mode=Pages::where('id', $id)->pluck('laravel_name');
-    $image->name=$store;
-    $image->page_id=$id;
-    $image->mode=$mode;
-    $image->save();
+        $url='/storage/' . $store;
+        return response($url);
+    }
+    public function imageNewsStore(Request $request)
+    {
+        // $request->validate([
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
 
-    $url='/storage/' . $store;
-    return response($url);
+        $file= $request->file('img');
 
-}
+        $filename=$file->getClientOriginalName();
+        $imageName = time().'.'. $filename;
 
+        // $path=storage_path('/app/public/news');
 
+        $path= public_path('/storage/news');
+        $store=$file->store('news');
+
+        $image=new File();
+        $image->name=$store;
+        $image->page_id=1;
+        $image->mode='news';
+        $image->save();
+
+        $url='/storage/' . $store;
+        return response($url);
+    }
 }
 
 

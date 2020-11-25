@@ -6,10 +6,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class News extends Model
 {
+ protected $fillable = [
+        'title','intro','body','dateline', 'source_link', 'source_name'];
+        
+    protected $table = 'news';
 
+    //Все поля разрешено менять
+    protected $guarded = [];
+
+    //включает выключает метку времени в таблицах
+
+     public $timestamps = true;
 /**
      * Определяем категорию которой принадлежит новость .
      */
@@ -19,13 +30,14 @@ class News extends Model
     }
 
     public function getDatelineAttribute($value)
-    {
-        $date = Carbon::createFromTimestamp($value)->toDateTimeString();
-        return $date;
+  {
+    $date = Carbon::createFromTimestamp($value)->toDateTimeString();
+    return $date;
     }
 
-    public function setDatelineAttribute($value)
-    {
+    public function setDatelineAttribute($value){
+    // {
+    //     if(!$value){$this->attributes['dateline']=Carbon::today();}
         $this->attributes['dateline'] = Carbon::parse($value)->timestamp;
     }
     //->format('d-m-y H:i:s');
@@ -38,12 +50,12 @@ class News extends Model
 
     public function getFormatDateCreate()
     {
-        return $this->created_at->format('Y-m-d');
+        return $this->created_at->format('d F Y H:i');
     }
 
     public function getFormatDateUpdate()
     {
-        return $this->updated_at->format('Y-m-d');
+        return $this->updated_at->format('d F Y H:i');
     }
 
     public function setBodyAttribute($value)
@@ -55,20 +67,19 @@ class News extends Model
     {
         return htmlspecialchars_decode($value, ENT_HTML5);
     }
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = htmlspecialchars($value, ENT_HTML5);
-    }
+    // public function setTitleAttribute($value)
+    // {
+    //     $this->attributes['title'] = htmlspecialchars($value, ENT_HTML5);
+    // }
 
-    public function getTitleAttribute($value)
-    {
-        return htmlspecialchars_decode($value, ENT_HTML5);
-    }
-    public function setIntroAttribute($value)
-    {
-        $this->attributes['intro'] = htmlspecialchars($value, ENT_HTML5);
-    }
-
+    // public function getTitleAttribute($value)
+    // {
+    //     return htmlspecialchars_decode($value, ENT_HTML5);
+    // }
+    // public function setIntroAttribute($value)
+    // {
+    //     $this->attributes['intro'] = htmlspecialchars($value, ENT_HTML5);
+    // }
 
 
  /**
@@ -76,9 +87,9 @@ class News extends Model
      * @param $name
      * @return mixed
      */
-    public function deleteImages($name)
+    public function deleteImage($name)
     {
-        $path = '/news/';
+        $path = storage_path('/app/public/news');
 
         return Storage::delete($path . $name);
     }
@@ -131,11 +142,11 @@ class News extends Model
 
      public static function add($fields)
     {
-        $pages= new static;
-        $pages->fill($fields);
-        $pages->save();
+        $news= new static;
+        $news->fill($fields);
+        $news->save();
 
-        return $pages;
+        return $news;
     }
 
     public function edit($fields)
