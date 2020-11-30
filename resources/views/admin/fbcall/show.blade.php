@@ -36,10 +36,7 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="box">
-
-
                                     {!! $item->content !!}
-
                                 </div>
                                 <div class="box-footer">
                                     <div class=""><a href="{{ url()->previous() }}" class="btn btn-default">Назад</a></div>

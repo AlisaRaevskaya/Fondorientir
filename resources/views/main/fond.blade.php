@@ -8,11 +8,8 @@
 
                 <div class="col-md-10">
                     <div class="entity_wrapper">
-                        @foreach ($content as $item)
-                            {!! $item->content !!}
-                        @endforeach
+                            {!! $page->content !!}
                     </div>
-
                 </div>
                 <div class="col-md-1"></div>
             </div>

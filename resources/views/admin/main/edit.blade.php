@@ -1,152 +1,182 @@
 @extends('admin.layout')
 @section('content')
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper container">
-        <!-- Content Header (Page header) -->
-        @foreach ($pages as $page)
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-
-                        <div class="col-sm-12">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">{{ $page->title }}</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
-
-
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-11 container">
-                        <div class="card card-outline card-info">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Редактировать статью
-                                </h3>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="content-wrapper admin-container" style="margin-bottom:50px;">
+                <!-- Content Header (Page header) -->
+                <section class="content-header" style="padding-top:10px;">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div>
+                                <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="{{route('admin.pages.index')}}">Страницы</a></li>
+                                    <li class="breadcrumb-item active">{{ $page->title }}</li>
+                                </ol>
                             </div>
 
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="box">
+                        </div>
+                    </div><!-- /.container-fluid -->
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="card card-outline card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Редактировать статью
+                                    </h3>
+                                </div>
 
-                                    <div class="box-header with-border">
-                                        {{-- @include('admin.errors')
-                                        --}}
-                                    </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#content">Содержание</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#seo">SEO</a>
+                                        </li>
+                                    </ul>
 
-                                    <div class="box-body">
+                                    <div class="box tab-content">
 
-                                        <div class="col-md-6">
-                                            {{ Form::open(['route' => ['admin.history.update', $page->id], 'method' => 'post', 'files' => true]) }}
-                                            <div class="form-group">
-                                                {{ Form::label('name', 'Название') }}
-                                                {{ Form::text('name', $page->title, ['class' => 'form-control required']) }}
-                                            </div>
-                                            {{-- <div class="form-group">
-                                                {{ Form::label('preview', 'Превью') }}
-                                                {{ Form::text('preview', $articles->preview, ['class' => 'form-control']) }}
-                                            </div> --}}
-                                            <div class="form-group">
-                                                {{ Form::label('quote', 'Metakeys') }}
-                                                {{ Form::text('quote', $page->metakey, ['class' => 'form-control required']) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ Form::label('metadesc', 'Metadesc') }}
-                                                {{ Form::text('metadesc', $page->metadesc, ['class' => 'form-control required']) }}
-                                            </div>
-                                            <div class="form-group">
-                                                {{ Form::label('images', 'Картинка') }}
-                                                {{ Form::file('images') }}
-                                                @if (isset($page->desc))
-                                                    <p>
-                                                        <img class="image" src="{{ $page->desc }}"
-                                                            {{-- <img class="image"
-                                                            src="{{ $page->getImageMini() }}"
-                                                            --}} alt="{{ $page->laravel_name }}"
-                                                            title="{{ $page->title }}" style="width: 200px">
-                                                    </p>
-                                                @endif
-                                            </div>
-
-                                            <div class="form-group">
-                                                {{ Form::label('text_center', 'Текст 2') }}
-                                                {{ Form::textArea('text_center', $page->content, ['class' => 'form-control', 'id' => 'summernote']) }}
-                                            </div>
-
-                                            <div class="form-group">
-                                                <p style="color: tomato;">В URL могут присутствовать только буквы и цифры
-                                                    латинского алфавита пробелы замените на "_" нижнее подчеркивание или "-"
-                                                    тире.
-                                                    <br>Знаки припенания должны отсутствовать.
-                                                    <br>пример: while-we-put-off-life-it-passes
-                                                </p>
-                                                {{ Form::label('url', 'URL') }}
-                                                {{ Form::text('url', $page->url, ['class' => 'form-control']) }}
-                                            </div>
-
-
-                                            <div class="box-footer">
-                                                <div class=""><a href="{{ url()->previous() }}"
-                                                        class="btn btn-default">Назад</a></div>
-                                                <div class=""> <a href="{{ route('admin.history.update', $page->id) }}"
-                                                        class="btn btn-primary pull-right">Сохранить</a></div>
-                                                <div class=""><a href="{{ route('admin.history.show', $page->id) }}"
-                                                        class="btn btn-warning pull-right">Просмотр</a></div>
-
-                                            </div>
-                                            {{ Form::close() }}
+                                        <div class="box-header with-border">
+                                            {{-- @include('admin.errors')
+                                            --}}
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="box-body tab-pane active" id="content">
+                                            <div class="" style="margin-top:15px;">
+                                                <div class="col-md-11">
+                                                    {{ Form::open(['route' => ['admin.structure.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
+                                                    <div class="form-group">
+                                                        {{ Form::label('title', 'Название') }}
+                                                        {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
+                                                    </div>
 
-                                                {{ Form::open(['route' => ['admin.images.update', $page->id], 'method' => 'post', 'files' => true]) }}
+                                                    <div class="form-group">
+                                                        {{ Form::label('content', 'Текст') }}
+                                                        {{ Form::textArea('content', $page->content, ['class' => 'form-control summernote']) }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('published', 'Опубликована') }}
+                                                        {{ Form::select('published', [0 => 'Нет', 1 => 'Да'], $page->published) }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('is_menu', 'Добавить в меню') }}
+                                                        {{ Form::select('is_menu', [0 => 'Нет', 1 => 'Да'], $page->is_menu) }}
+                                                    </div>
 
-                                                <div class="form-group">
-                                                    {{ Form::label('images', 'Картинка') }}
-                                                    {{ Form::file('name') }}
+                                                    <div class="form-group">
+                                                        <p style="color: tomato;">В URL могут присутствовать только буквы и
+                                                            цифры
+                                                            латинского алфавита пробелы замените на "_" нижнее подчеркивание
+                                                            или
+                                                            "-"
+                                                            тире.
+                                                            <br>Знаки препинания должны отсутствовать.Пример:
+                                                            while-we-put-off-life-it-passes
+                                                        </p>
+                                                        {{ Form::label('url', 'URL') }}
+                                                        {{ Form::text('url', $page->url, ['class' => 'form-control']) }}
+                                                    </div>
+                                                    @if (session()->has('message'))
+                                                        <div class="alert alert-success">
+                                                            {{ session()->get('message') }}
+                                                        </div>
+                                                    @endif
+                                                    <div class="box-footer">
+                                                        <div class="">
+                                                            <a href="{{ url()->previous() }}"
+                                                                class="btn btn-secondary">Назад</a>
 
-                                                    <p>
-                                                        <img class="image" src="{{ $page->desc }}"
-                                                            {{-- <img class="image"
-                                                            src="{{ $page->getImageMini() }}"
-                                                            --}} alt="{{ $page->laravel_name }}"
-                                                            title="{{ $page->title }}" style="width: 200px">
-                                                    </p>
+                                                            <button class="btn btn-primary pull-right"
+                                                                style="margin-left:20px;">Сохранить</button>
 
+                                                            <a href="{{ route('admin.structure.show', $page->id) }}"
+                                                                class="btn btn-warning pull-right">Просмотр</a>
+                                                        </div>
+                                                    </div>
+                                                    {{-- {{ Form::close() }}
+                                                    --}}
                                                 </div>
+                                            </div>
+                                        </div>
 
-                                                <div class="form-group">
-                                                    {{ Form::label('images', 'Картинка') }}
-                                                    {{ Form::file('name') }}
+                                        <div class="box-body tab-pane" id="seo">
+                                            <div class="" style="margin-top:15px;">
+                                                <div class="col-md-11">
+                                                    <div class="form-group">
+                                                        {{ Form::label('name', 'Название (для для админки)') }}
+                                                        {{ Form::text('name', $seo->name, ['class' => 'form-control required m30']) }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('title', 'Title') }}
+                                                        {{ Form::text('title', $seo->seo_title, ['class' => 'form-control required']) }}
+                                                        <i>Заголовок конкретной страницы</i>
+                                                    </div>
+                                                    <div class="form-group required">
+                                                        {{ Form::label('description', 'Description') }}
+                                                        {{ Form::textArea('description', htmlspecialchars_decode($seo->description, ENT_QUOTES), ['class' => 'form-control']) }}
+                                                        <i>Описание конкретной страницы</i>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('keywords', 'Keywords') }}
+                                                        {{ Form::textArea('keywords', htmlspecialchars_decode($seo->keywords, ENT_QUOTES), ['class' => 'form-control required']) }}
+                                                        <i>Ключевые слова</i>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('og_title', 'og:Title') }}
+                                                        {{ Form::text('og_title', $seo->og_title, ['class' => 'form-control']) }}
+                                                        <i>заголовок страницы. Для него есть ограничение в 65 символов.
+                                                            Напишите
+                                                            что-то длиннее – текст будет обрезан.</i>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('og_description', 'og:Description') }}
+                                                        {{ Form::textArea('og_description', htmlspecialchars_decode($seo->og_description, ENT_QUOTES), ['class' => 'form-control']) }}
+                                                        <i>краткое описание страницы длиной не более 300 символов.</i>
+                                                        <i></i>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('og_type', 'og:Type') }}
+                                                        {{ Form::text('og_type', $seo->og_type, ['class' => 'form-control']) }}
+                                                        <i>описывает тип объекта на странице (веб-сайт, блог, книга, фильм и
+                                                            т.д.).</i>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('og_url', 'og:Url') }}
+                                                        {{ Form::text('og_url', $seo->og_url, ['class' => 'form-control']) }}
+                                                        <i>Uri страницы , без доменного имени пример:
+                                                            "services/bukhgalterskiye-konsultatsii" без первого слеша /
+                                                            просто
+                                                            слеш актуален только для главной страницы</i>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('og_site_name', 'og:Site_name') }}
+                                                        {{ Form::text('og_site_name', $seo->og_site_name, ['class' => 'form-control']) }}
+                                                        <i>название сайта.</i>
+                                                    </div>
+                                                    @if (session()->has('seo_message'))
+                                                        <div class="alert alert-success">
+                                                            {{ session()->get('seo_message') }}
+                                                        </div>
+                                                    @endif
+                                                    <div><a href="{{ url()->previous() }}"
+                                                                class="btn btn-secondary">Назад</a></div>
+                                                    {{ Form::close() }}
                                                 </div>
-             <div class="box-footer">
-                        <div class=""><a href="{{url()->previous()}}" class="btn btn-default">Назад</a></div>
-<div class="" > <button type="submit"class="btn btn-primary pull-right">Сохранить</button></div>
-<div class=""><a href="{{route('admin.show',$page->id)}}"class="btn btn-warning pull-right">Просмотр</button></div>
-
                                             </div>
-
-                                                {{ Form::close() }}
-                                            </div>
-
+                                        </div>
                                     </div>
-
-
                                 </div>
                             </div>
-                            <!-- /.col-->
                         </div>
-            </section>
-            <!-- /.content -->
-        @endforeach
+                    </div>
+                </section>
+            </div>
+        </main>
     </div>
-    <!-- /.content-wrapper -->
-
 @endsection

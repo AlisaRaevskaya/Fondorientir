@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\File;
 use App\Models\Seo;
 
@@ -72,7 +72,6 @@ class SeoController extends Controller
     public function update(Request $request, $id)
     {
     $seo = Seo::where('page_id', $id)->first();
-
     $seo->edit($request->all());
     $seo_message="Текст сохранен";
     return redirect()->back()->with('seo_message', $seo_message);

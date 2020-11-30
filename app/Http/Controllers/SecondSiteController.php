@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 class SecondSiteController extends Controller
 {
      public function index(){
@@ -11,7 +11,7 @@ class SecondSiteController extends Controller
     }
 
   public function hotline(){
-        $page= Pages::where('laravel_name', 'hotline')->get();
+        $page= Page::where('laravel_name', 'hotline')->get();
         return view('secondsite.hotline', compact('page'));
     }
 

@@ -1,37 +1,28 @@
 @extends('admin.layout')
 @section('content')
-
-    <section>
-        <div class="container">
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-
-                        <div class="col-sm-12">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Менеджер пользователей</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
-
-            <div class="card card-outline card-info">
-
-                <div class="card-header">
-                    <div class="">
-                        <h2 class="card-title">
-                            Менеджер пользователей</h2>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid admin-container" style="margin-top:30px;">
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item">Meню</a>
+                    <li class="breadcrumb-item active">Менеджер пользователей</li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        В данном разделе Вы можете редактировать информацию о пользователях"
                     </div>
                 </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table mr-1"></i>
+                        Менеджер пользователей
 
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <div class="">
+                    </div>
 
-                                <div class="card-body">
+                    <div class="card card-outline card-info">
+                        <div class="card-body">
+                            <div class="col-md-11">
+                                <div>
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -51,13 +42,13 @@
                                                     <td>{{ $user->email }}</td>
 
                                                     <td>{{ implode(
-                                                    ',',
-                                                    $user->roles()->get()->pluck('name')->toArray(),
-                                                ) }}
+                                                            ',',
+                                                            $user->roles()->get()->pluck('name')->toArray(),
+                                                        ) }}
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('admin.user.edit', $user->id) }}"
-                                                               class="btn btn-primary">Редактировать</a>
+                                                            class="btn btn-primary">Редактировать</a>
                                                     </td>
                                                     <td>
                                                         <form action="{{ route('admin.user.destroy', $user) }}"
@@ -71,12 +62,12 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        @endsection
+        </main>
+    </div>
+@endsection

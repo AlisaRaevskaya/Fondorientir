@@ -1,4 +1,6 @@
-<form class="form-horizontal" action="/submit" method="POST" name="feedbackForm">
+
+<div>
+    <form class="form-horizontal" action="/submit" method="POST" name="feedbackForm">
     @csrf
     <div class="form-group">
         <label class="control-label col-xs-3" for="lastName">Фамилия*:</label>
@@ -23,63 +25,59 @@
         </div>
     </div>
 
-        <div class="form-group">
-            <label class="control-label col-xs-3" for="address">Почтовый адрес*:</label>
-            <div class="col-xs-9">
-                <input type="text" required class="form-control" id="address" name="address"
-                    placeholder="Почтовый адрес">
-            </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3" for="address">Почтовый адрес*:</label>
+        <div class="col-xs-9">
+            <input type="text" required class="form-control" id="address" name="address" placeholder="Почтовый адрес">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label class="control-label col-xs-3" for="job">Место работы или учебы :</label>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" id="inputPasswordjob" name="job"
-                    placeholder="Место работы или учебы">
-            </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3" for="job">Место работы или учебы :</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="inputPasswordjob" name="job"
+                placeholder="Место работы или учебы">
         </div>
+    </div>
 
-        <div class="form-group">
-            <label class="control-label col-xs-3" for="phoneNumber">Контактный телефон*:</label>
-            <div class="col-xs-9">
-                <input type="tel" required class="form-control" id="phoneNumber" name="phone"
-                    placeholder="Введите номер телефона">
-            </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3" for="phoneNumber">Контактный телефон*:</label>
+        <div class="col-xs-9">
+            <input type="tel" required class="form-control" id="phoneNumber" name="phone"
+                placeholder="Введите номер телефона">
         </div>
-        <div class="form-group">
-            <label class="control-label col-xs-3" for="inputEmail">Электронная почта:</label>
-            <div class="col-xs-9">
-                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
-            </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3" for="inputEmail">Электронная почта:</label>
+        <div class="col-xs-9">
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
         </div>
-        <div class="form-group">
-            <label class="control-label col-xs-3" for="yourMessage">Ваш вопрос*:</label>
-            <div class="col-xs-9">
-                <textarea rows="9" required class="form-control" id="yourMessage" name="message"
-                    placeholder="Ваш вопрос"></textarea>
-            </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3" for="yourMessage">Ваш вопрос*:</label>
+        <div class="col-xs-9">
+            <textarea rows="9" required class="form-control" id="yourMessage" name="message"
+                placeholder="Ваш вопрос"></textarea>
         </div>
+    </div>
 
+    <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+            <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
+            <label for="rules_ok">Ознакомлен(-а) и согласен
+                <a href="/assets/dw/soglasie.pdf" target="_blank" class="consent"> на
+                    обработку моих данных
+                </a></label>
+        </div>
+    </div>
+    <br />
 
-        <div class="form-group">
-            <div class="col-xs-offset-3 col-xs-9">
-                <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
-                <label for="rules_ok">Ознакомлен(-а) и согласен
-                    <a href="/assets/dw/soglasie.pdf" target="_blank" class="consent"> на обработку моих данных
-                    </a></label>
-            </div>
-
-            <br />
-
-            <div class="form-group">
-
-                <div class="col-xs-offset-3 col-xs-9">
-                    <input type="submit" class="btn btn-primary g-recaptcha" id="btn-messages" value="Отправить"
-                        data-sitekey="6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg" data-callback='onSubmit'
-                        data-action='submit'>
-                </div>
-            </div>
-
-            <div id="success_messages"></div>
-
+    <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+            <input type="submit" class="btn btn-primary g-recaptcha" id="btn-messages" value="Отправить"
+                data-sitekey="6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg" data-callback='onSubmit' data-action='submit'>
+        </div>
+    </div>
 </form>
+<div class="text-center" id="success_messages" style="padding-left:30px;"></div>
+</div>

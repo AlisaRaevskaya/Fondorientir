@@ -12,7 +12,7 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SecondSiteController;
 use App\Http\Controllers\Admin\UsersController;
-
+use App\Http\Controllers\Admin\NotificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,7 +45,7 @@ Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
 
 Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('lawyer');
-Route::get('/feedback/reception', [FeedbackController::class, 'feedback'])->name('reception');
+Route::get('/feedback/reception', [FeedbackController::class, 'reception'])->name('reception');
 Route::get('/feedback/hotline', [FeedbackController::class, 'hotline'])->name('hotline');
 Route::get('/feedback/application', [FeedbackController::class, 'application'])->name('application');
 Route::get('/feedback/claim', [FeedbackController::class, 'claim'])->name('claim');
@@ -80,14 +80,14 @@ name('news.subcategory.id');
 
 
 Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
-Route::post('/submit', [AjaxController::class, 'saveMessages']);
+Route::post('/submit', [AjaxController::class, 'saveReceptionMessage']);
 Route::post('/website-feedback', [AjaxController::class, 'saveWebsiteFeedback']);
-Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion']);
+Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion'])->name("lawyer.question");
 Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
 
-Route::view('/home', 'admin_home');
+Route::view('/home', 'admin.admin_home');
 
 
 Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
@@ -102,10 +102,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
 Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except' => ['create', 'show','save']]);
 Route::resource('/', '\App\Http\Controllers\Admin\MainController');
 Route::resource('/news', '\App\Http\Controllers\Admin\NewsController');
-Route::resource('/faq', '\App\Http\Controllers\Admin\FaqController');
+Route::resource('/faq', '\App\Http\Controllers\Admin\FAQ\AdminFaqController');
+Route::resource('/fq', '\App\Http\Controllers\Admin\FAQ\ForFaqController');
 Route::resource('/seo', '\App\Http\Controllers\Admin\SeoController');
 
-Route::resource('/contacts', '\App\Http\Controllers\Admin\ContactsController');
+Route::resource('/contacts', '\App\Http\Controllers\Admin\Contacts\ContactsController');
+Route::resource('/company-info', '\App\Http\Controllers\Admin\Contacts\CompanyInfoController');
 Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
 Route::resource('/fond', '\App\Http\Controllers\Admin\Main\FondController');
 Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
@@ -138,6 +140,12 @@ Route::resource('/application', '\App\Http\Controllers\Admin\Reception\Applicati
 Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineController');
 Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
 Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
+Route::resource('/feedback-call', '\App\Http\Controllers\Admin\FeedbackCallController');
+
+Route::get('/notifications/{category}', [NotificationController::class, 'index'])->where('category', '[a-z]+')->name('notice');
+
+Route::get('/notifications/{category}/{id}',[NotificationController::class, 'show'])->name('notice.show');
+Route::get('/notifications/all',[NotificationController::class, 'showAll'])->name('notices.all');
 });
 
 Route::view('/static','admin.layout-static');
@@ -154,3 +162,4 @@ Route::post('/store/{id}', [ UploadController::class, 'imageStorePost' ])->name(
 
 Route::put('/uploadImage/{id}', [ UploadController::class, 'summerUpload' ])->name('summer_upload');
 Route::put('/uploadNewsImage', [ UploadController::class, 'imageNewsStore' ])->name('image.news.store');
+

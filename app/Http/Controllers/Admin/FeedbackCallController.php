@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\FeedBackCall;
 
-class FaqController extends Controller
+class FeedbackCallController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class FaqController extends Controller
      */
     public function index()
     {
-        //
+        $calls= FeedBackCall::all();
+        return view('admin.fbcall.index', compact('calls'));
     }
 
     /**

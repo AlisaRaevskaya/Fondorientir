@@ -11,7 +11,7 @@
 
                         <div class="col-sm-12">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Главная</a></li>
                                 <li class="breadcrumb-item active">Интервью/{{ $item->id }}</li>
                             </ol>
                         </div>
@@ -40,7 +40,7 @@
 
                                     <div class="box-body">
                                         <div class="col-md-11">
-                                            {{ Form::open(['route' => ['admin.news.update', $item->id], 'method' => 'PUT', 'files' => true]) }}
+                                            {{ Form::open(['route' => ['admin.interview.update', $item->id], 'method' => 'PUT', 'files' => true]) }}
                                             <div class="form-group">
                                                 {{ Form::label('title', 'Название') }}
                                                 {{ Form::text('title', $item->title, ['class' => 'form-control required']) }}
@@ -90,10 +90,10 @@
                                                 <div class="">
                                                     <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
                                                     <button class="btn btn-primary pull-right"
-                                                        style="margin-left:20px;">Сохранить</button>
+                                                        style="margin-left:20px;"><i class='fa fa-save'> </i> Сохранить</button>
 
-                                                    <a href="{{ route('admin.news.show', $item->id) }}"
-                                                        class="btn btn-warning pull-right">Просмотр</a>
+                                                    <a href="{{ route('admin.interview.show', $item->id) }}"
+                                                        class="btn btn-warning pull-right"><i class="far fa-eye"></i> Просмотр</a>
                                                 </div>
                                             </div>
                                             {{ Form::close() }}

@@ -11,7 +11,7 @@
 
                         <div class="col-sm-12">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.contacts.index')}}">Меню</a></li>
                                 <li class="breadcrumb-item active">Инфо о компании</li>
                             </ol>
                         </div>
@@ -118,10 +118,10 @@
                                                 </div>
 <div class="box-footer">
                                                     <div class="">
-                                                        <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
+                                                        <a href="{{ url()->previous() }}" class="btn btn-secondary">Назад</a>
 
                                                         <button class="btn btn-primary pull-right"
-                                                            style="margin-left:20px;">Сохранить</button>
+                                                            style="margin-left:20px;"><i class='fa fa-save'></i> Сохранить</button>
                                                     </div>
                                                 </div>
 

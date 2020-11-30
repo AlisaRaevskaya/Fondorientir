@@ -44,9 +44,6 @@
         src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
     --}}
 
-
-
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -91,8 +88,8 @@
     <script src="/assets/js/callajax.js"></script>
     <script src="/assets/js/sub-ajax.js"></script>
     <script src="/assets/js/web-ajax.js"></script>
-    <script src="/assets/js/faajax.js"></script>
-
+    <script src="/assets/js/reception-form.js"></script>
+<script src="/assets/js/lawyer-form.js"></script>
 </body>
 
 </html>

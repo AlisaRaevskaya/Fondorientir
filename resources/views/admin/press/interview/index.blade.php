@@ -2,23 +2,24 @@
 @section('content')
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid container">
+              <div class="container-fluid admin-container" style="margin-top:30px;">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item">Meню</a>
-                    <li class="breadcrumb-item active">Новости</li>
+                    <li class="breadcrumb-item active">Интервью</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-body">
-                        В данном разделе Вы можете редактировать статьи из раздела "Новости".
+                        В данном разделе Вы можете редактировать статьи из раздела "Интервью".
                     </div>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        Новости
+                        Пресс-центр
                         <div class="text-center">
-                            <a href="{{ route('admin.news.create') }}" class="btn btn-default pull-right">Добавить
-                                новость</a>
+                            <a href="{{ route('admin.interview.create') }}" class="btn btn-default pull-right"><i
+                                    class="fa fa-plus"></i>
+                                Добавить новость</a>
                         </div>
                     </div>
 
@@ -34,8 +35,8 @@
                                             <th><i class="fa fa-fw fa-sort"></i>Intro</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Дата создания</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Дата изменения</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Редактировать</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Удалить</th>
+                                            <th>Редактировать</th>
+                                            <th>Удалить</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -58,19 +59,15 @@
                                                 <td>{!! $new->dateline !!}</td>
                                                 <td>{!! $new->updated_at !!}</td>
                                                 <td>
-                                                    {{-- <a
-                                                        href="{{ route('image.upload', $new->id) }}"
-                                                        class="btn btn-primary">Добавить
-                                                        картинку</a> --}}
-                                                    <a href="{{ route('admin.interviews.edit', $new->id) }}"
-                                                        class="btn btn-primary">Редактировать</a>
+                                                    <a href="{{ route('admin.interview.edit', $new->id) }}"
+                                                        class="btn btn-primary"><i class="far fa-edit"></i>Редактировать</a>
                                                 </td>
                                                 <td>
-                                                    <form action="{{ route('admin.interviews.destroy', $new->id) }}"
+                                                    <form action="{{ route('admin.interview.destroy', $new->id) }}"
                                                         method="post" class="text-center">
                                                         @csrf
                                                         {{ method_field('DELETE') }}
-                                                        <button type="submit" class="btn btn-warning ">Удалить</button>
+                                                        <button type="submit" class="btn btn-warning"><i class="fa fa-trash"></i> Удалить</button>
                                                     </form>
                                                 </td>
                                             </tr>

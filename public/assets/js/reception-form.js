@@ -20,7 +20,7 @@ $("#btn-messages").on("click", function (event) {
     data: form_data,
     success: function (response) {
       if (response) {
-        $(".success_messages").html(response.success);
+        $("#success_messages").html(response.success);
         setTimeout(() => {
           $('form[name="feedbackForm"]').trigger("reset");
         }, 2000);

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\News;
 use App\Models\Reply;
 use App\Models\Topic;
@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 class MainController extends Controller
 {
     public function index(){
-    $mainContent= Pages::where('title', 'Главная')->get();
+    $mainContent= Page::where('title', 'Главная')->get();
     $main_image= File::where('mode','main')->pluck('name')->first();
     $banner=File::where('mode','banner')->pluck('name')->first();
     $news = News::orderBy('dateline', 'desc')->paginate(6);
@@ -30,23 +30,23 @@ class MainController extends Controller
     }
 
     public function history(){
-        $history= Pages::where('title', 'history')->get();
-        return view('main.history', compact('history'));
+        $page= Page::where('title', 'history')->first();
+        return view('main.history', compact('page'));
     }
     public function mission(){
-        $mission= Pages::where('title', 'mission')->get();
+        $mission= Page::where('title', 'mission')->first();
         return view('main.mission',compact('mission') );
     }
 
     public function structure(){
-        $structure= Pages::where('title', 'structure')->get();
+        $structure= Page::where('title', 'structure')->first();
         return view('main.structure',compact('structure'));
     }
 
     public function projects(){
         $projects =Preproject::all();
 
-        $pages=Pages::where('title', 'projects')->get();
+        $pages=Page::where('title', 'projects')->first();
 
         // foreach($pages as $page){
         //     $content= $page->content;
@@ -55,17 +55,17 @@ class MainController extends Controller
     }
 
     public function partners(){
-        $partners= Pages::where('laravel_name', 'partners')->get();
-        return view('main.partners', compact('partners'));
+        $page= Page::where('laravel_name', 'partners')->first();
+        return view('main.partners', compact('page'));
     }
 
     public function bankinfo(){
-        $bankinfo= Pages::where('laravel_name', 'bankinfo')->get();
+        $bankinfo= Page::where('laravel_name', 'bankinfo')->first();
         return view('main.bankinfo', compact('bankinfo'));
     }
     public function reports(){
-        $reports=Pages::where('laravel_name', 'reports')->get();
-        return view('main.reports', compact('reports'));
+        $page=Page::where('laravel_name', 'reports')->first();
+        return view('main.reports', compact('page'));
     }
     public function map(){
         return view('blocks.map');
@@ -76,7 +76,7 @@ class MainController extends Controller
     }
 
     public function fond(){
-        $content= Pages::where('laravel_name', 'fond')->get();
+        $content= Page::where('laravel_name', 'fond')->first();
         $projects=Projects::all();
         return view('main.fond', compact('content','projects' ));
     }

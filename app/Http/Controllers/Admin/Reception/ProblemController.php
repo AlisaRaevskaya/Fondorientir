@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Admin\Reception;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\File;
 use App\Models\Seo;
-
 
 class ProblemController extends Controller
 {
@@ -50,7 +49,7 @@ class ProblemController extends Controller
      */
     public function show($id)
     {
-        $page = Pages::where('id', $id)->get();
+        $page = Page::find($id);
 
         return view('admin.reception.problem.show', compact('page'));
     }
@@ -63,9 +62,11 @@ class ProblemController extends Controller
      */
     public function edit($id)
     {
-        $pages= Pages::where('id', $id)->get();
-    $seo=Seo::where('page_id', $id)->first();
-        return view('admin.reception.problem.edit', compact('pages','seo'));
+
+    $page= Page::find($id);
+    $seo = $page->seo;
+
+    return view('admin.main.problem.edit', compact('page', 'seo'));
     }
 
     /**
@@ -76,15 +77,31 @@ class ProblemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   $page = Page::findOrFail($id);
 
-    $pages = Pages::findOrFail($id);
+        $page->title=$request->title;
+        $page->content=$request->content;
+        $page->url=$request->url;
+        $page->published=$request->published;
+        $page->is_menu=$request->is_menu;
+        $page->save();
 
-    $pages->edit($request->all());
-    $message="Текст сохранен";
-    return redirect()->route('admin.problem.edit', $id)->with('message', $message);
-
+        $seo = $page->seo;
+        $seo->seo_title =$request->seo_title;
+        $seo->name=$request->name;
+        $seo->description=$request->description;
+        $seo->keywords=$request->keywords;
+        $seo->og_title=$request->og_title;
+        $seo->og_description=$request->og_description;
+        $seo->og_url=$request->og_url;
+        $seo->og_type=$request->og_type;
+        $seo->og_site_name=$request->og_site_name;
+        $seo->save();
+        $message="Данные сохранены";
+        return redirect()->route('admin.problem.edit', $id)->with('message', $message);
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -94,6 +111,10 @@ class ProblemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $page = Page::findOrFail($id);
+
+        $page->delete();
+
+        return redirect()->route('admin.pages.index');
     }
 }

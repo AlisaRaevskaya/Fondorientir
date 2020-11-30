@@ -6,32 +6,34 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-
-class Pages extends Model
+class Page extends Model
 {
- protected $fillable = [
+    protected $fillable = [
         'title','content','url','content', 'is_menu', 'published'];
     protected $table = 'pages';
+
 
     //Все поля разрешено менять
     protected $guarded = [];
 
     //включает выключает метку времени в таблицах
 
-     public $timestamps = true;
+    public $timestamps = true;
 
-    public function menus(){
+    public function menus()
+    {
         return $this->belongsTo('App\Models\Menu');
     }
-       public function seo(){
+    public function seo()
+    {
         return $this->HasOne('App\Models\Seo');
     }
-    public function files(){
+    public function files()
+    {
         return $this->HasMany('App\Models\File');
     }
 
-
-  public function scopeIsPublished($query)
+    public function scopeIsPublished($query)
     {
         return $query->where('published', true);
     }
@@ -44,31 +46,30 @@ class Pages extends Model
 
         return $query;
     }
-
-   public function scopeIsMenu($query)
+    public function scopeIsMenu($query)
     {
-       return $query->where('is_menu', true);
+        return $query->where('is_menu', true);
     }
 
-    public function setContentAttribute($value){
-        $this->attributes['content'] = htmlspecialchars($value,ENT_HTML5);
+    public function setContentAttribute($value)
+    {
+        $this->attributes['content'] = htmlspecialchars($value, ENT_HTML5);
     }
-    public function getContentAttribute($value){
-        return htmlspecialchars_decode($value,ENT_HTML5);
+    public function getContentAttribute($value)
+    {
+        return htmlspecialchars_decode($value, ENT_HTML5);
     }
-
-/**
-     * Удаляем оригинал
-     * @param $name
-     * @return mixed
-     */
+    /**
+         * Удаляем оригинал
+         * @param $name
+         * @return mixed
+         */
     public function deleteImages($name)
     {
         $path = '/articles/';
 
         return Storage::delete($path . $name);
     }
-
     /**
      * Удаляем мини картинку
      * @param $name
@@ -81,30 +82,28 @@ class Pages extends Model
         return Storage::delete($path . $name);
     }
 
-
-
-     /**
-     * Загружаем новое изоюражение
-     * @param $image
-     * @return mixed|void
-     */
+    /**
+    * Загружаем новое изоюражение
+    * @param $image
+    * @return mixed|void
+    */
     public function uploadImage($images)
     {
-        if ($images == null) { return;}
+        if ($images == null) {
+            return;
+        }
 
-        if($this->images !== null) {
+        if ($this->images !== null) {
             Storage::delete($this->images);
         }
         $fileName = $images->store('articles');
-        $newName = explode('/',$fileName);
+        $newName = explode('/', $fileName);
         $this->images = $newName[1];
         $this->save();
         return $newName[1];
-
     }
- public static function add($fields)
+    public static function add($fields)
     {
-
         $pages= new static;
         $pages->fill($fields);
         $pages->save();
@@ -116,9 +115,5 @@ class Pages extends Model
     {
         $this->fill($fields);
         $this->save($fields);
-
     }
-
-
-
 }

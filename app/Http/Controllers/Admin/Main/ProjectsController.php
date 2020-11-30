@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Projects;
 use App\Models\File;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\Seo;
 
 class ProjectsController extends Controller
@@ -20,12 +20,12 @@ class ProjectsController extends Controller
     {
         $newProjects =Projects::all();
         $projects=PreProject::all();
-        $pages=Pages::where('title', 'projects')->get();
+        $pages=Page::where('title', 'projects')->get();
 
-        foreach($pages as $page){
+        foreach ($pages as $page) {
             $content= $page->content;
         }
-        return view('admin.about.projects', compact('projects' ,'newProjects', 'content'));
+        return view('admin.about.projects', compact('projects', 'newProjects', 'content'));
     }
 
     /**
@@ -55,10 +55,11 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
-    $page = Pages::where('id', $id)->get();
-    $projects=Projects::all();
-    return view('admin.main.projects.show', compact('projects','page'));
+    public function show($id)
+    {
+        $page = Page::find($id);
+        $projects=Projects::all();
+        return view('admin.main.projects.show', compact('projects', 'page'));
     }
 
     /**
@@ -69,11 +70,10 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        $seo=Seo::where('page_id', $id)->first();
-        $pages= Pages::where('id', $id)->get();
+        $page= Page::find($id);
+        $seo = $page->seo;
         $projects=Projects::all();
-        $images= File::find(1)->where('page_id', $id)->get();
-        return view('admin.main.projects.edit', compact('pages', 'images','projects','seo'));
+        return view('admin.main.projects.edit', compact('page', 'projects', 'seo'));
     }
 
     /**
@@ -85,15 +85,28 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-    $pages = Pages::findOrFail($id);
+        $page = Page::findOrFail($id);
 
-    $pages->name= $request->name;
-    $pages->content=$request->content;
-    $pages->url=$request->url;
+        $page->title=$request->title;
+        $page->content=$request->content;
+        $page->url=$request->url;
+        $page->published=$request->published;
+        $page->is_menu=$request->is_menu;
+        $page->save();
 
-    $message="Текст сохранен";
-
-    return redirect()->route('admin.reports.edit',$id)->with('message', $message);
+        $seo = Seo::where('page_id', $id)->first();
+        $seo->seo_title =$request->seo_title;
+        $seo->name=$request->name;
+        $seo->description=$request->description;
+        $seo->keywords=$request->keywords;
+        $seo->og_title=$request->og_title;
+        $seo->og_description=$request->og_description;
+        $seo->og_url=$request->og_url;
+        $seo->og_type=$request->og_type;
+        $seo->og_site_name=$request->og_site_name;
+        $seo->save();
+        $message="Данные сохранены";
+        return redirect()->route('admin.mission.edit', $id)->with('message', $message);
     }
 
     /**
@@ -104,7 +117,10 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $page = Page::findOrFail($id);
+
+        $page->delete();
+
+        return redirect()->route('admin.pages.index');
     }
 }
-
