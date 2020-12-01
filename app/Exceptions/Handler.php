@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Exceptions;
-
+use Illuminate\Validation\ValidationException as ValidationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -34,4 +35,20 @@ class Handler extends ExceptionHandler
     {
         //
     }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Throwable  $exception
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @throws \Throwable
+     */
+    public function render($request, Throwable $exception){
+    if ($exception instanceof ValidationException) {
+
+    return response()->json(['message' => 'YOUR CUSTOM MESSAGE HERE', 'errors' => $exception->validator->errors()], 422);
+}
+}
 }

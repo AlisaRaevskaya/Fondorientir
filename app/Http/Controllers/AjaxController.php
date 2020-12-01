@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReceptionMessageRequest;
+
 use Illuminate\Http\Request;
 use App\Models\Subscription;
 use App\Models\Comment;
@@ -28,9 +30,38 @@ class AjaxController extends Controller
     return response()->json(['success'=>'Данные успешно отправлены']);
     }
 
-  public function saveReceptionMessage(Request $req)
+/**
+ *
+ *
+ * @param  ReceptionMessageRequest  $req
+ * @return Response
+ */
+
+  public function saveReceptionMessage(ReceptionMessageRequest $req)
     {
+
+    //     $rules=[
+    //     'lastName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}$/i',
+    //     'firstName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}$/i',
+    //     'fatherName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}$/i',
+    //     'message' => 'required|string|min:8|max:500',
+    //     'email' => 'required|min:2|max:255|regex:/^.+@.+$/i',
+    //     'phone' => 'required|min:2|max:255|regex:/^.+\d.+$/i',
+    //     'consent' => 'required|boolean|accepted',
+    //     'job' => 'min:5|max:255|nullable',
+    //     'address' => 'required|min:2|max:255'];
+
+    //     $v = Validator::make($req->all(), $rules);
+
+    // if ($v->fails())
+    // {
+    //     return redirect()->back()->withErrors($v->errors());
+    // }
+
+        $validatedData = $req->validated();
+        // dd($validatedData);
         $data = new Message();
+
 
         $fullname= $req->input('lastName') . ' ' .$req->input('firstName') . ' ' . $req->input('fatherName');
 

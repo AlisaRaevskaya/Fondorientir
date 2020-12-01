@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Contacts;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pages;
+use App\Models\Contact;
 
 class CompanyInfoController extends Controller
 {
@@ -14,7 +16,8 @@ class CompanyInfoController extends Controller
      */
     public function index()
     {
-        //
+       $contacts=Contact::all();
+        return view('admin.contacts.index', compact('contacts'));
     }
 
     /**
@@ -57,7 +60,8 @@ class CompanyInfoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact=Contact::where('id', $id)->get();
+        return view('admin.contacts.edit', compact('contact'));
     }
 
     /**
@@ -69,7 +73,12 @@ class CompanyInfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $contact = Contact::findOrFail($id);
+
+        $contact->edit($request->all());
+        $message="Данные сохранены";
+
+        return redirect()->route('admin.contacts.edit', $id)->with('message', $message);
     }
 
     /**

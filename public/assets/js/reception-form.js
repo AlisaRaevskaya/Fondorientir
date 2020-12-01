@@ -19,12 +19,20 @@ $("#btn-messages").on("click", function (event) {
     method: "POST",
     data: form_data,
     success: function (response) {
-      if (response) {
+      if (response.success) {
         $("#success_messages").html(response.success);
         setTimeout(() => {
           $('form[name="feedbackForm"]').trigger("reset");
         }, 2000);
       }
     },
+     error: function(response){
+         if(status = 422){
+        $('#lastnameError').text(response.responseJSON.errors.lastName);
+          $('#emailError').text(response.responseJSON.errors.email);
+          $('#jobError').text(response.responseJSON.errors.job);
+          $('#phoneError').text(response.responseJSON.errors.phone);
+          $('#messageError').text(response.responseJSON.errors.message);
+        }}
+       });
   });
-});

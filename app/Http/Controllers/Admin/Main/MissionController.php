@@ -108,7 +108,7 @@ class MissionController extends Controller
      */
     public function destroy($id)
     {
-         $page = Page::findOrFail($id);
+        $page = Page::findOrFail($id);
 
         $page->delete();
 

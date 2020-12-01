@@ -111,7 +111,7 @@
                                         <div class="pull-left"><a href="{{ url()->previous() }}"
                                                 class="btn btn-secondary pull-left">Назад</a></div>
                                         <div class="">
-                                            <a href="{{ route('admin.contacts.edit', $contact->id) }}"
+                                            <a href="{{ route('admin.company-info.edit', $contact->id) }}"
                                                 class="btn btn-primary pull-right">Редактировать</a>
                                         </div>
                                     @endforeach
