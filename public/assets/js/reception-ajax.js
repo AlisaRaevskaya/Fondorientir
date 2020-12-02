@@ -12,7 +12,7 @@ $("#btn-messages").on("click", function (event) {
   });
 
   let form_data = $('form[name="feedbackForm"]').serialize(); // Собираем все данные из формы
-  console.log($(".success_messages"));
+
 
   $.ajax({
     url: "/submit",
@@ -24,15 +24,19 @@ $("#btn-messages").on("click", function (event) {
         setTimeout(() => {
           $('form[name="feedbackForm"]').trigger("reset");
         }, 2000);
+      } else{
+        $("#lastNameError").text(response.errors.lastName);
+        $("#firstNameError").text(response.errors.firstName);
+        $("#fatherNameError").text(response.errors.fatherName);
+        $("#emailError").text(response.errors.email);
+        $("#jobError").text(response.errors.job);
+        $("#phoneError").text(response.errors.phone);
+        $("#addressError").text(response.errors.address);
+        $("#messageError").text(response.errors.message);
       }
-    },
-     error: function(response){
-         if(status = 422){
-        $('#lastnameError').text(response.responseJSON.errors.lastName);
-          $('#emailError').text(response.responseJSON.errors.email);
-          $('#jobError').text(response.responseJSON.errors.job);
-          $('#phoneError').text(response.responseJSON.errors.phone);
-          $('#messageError').text(response.responseJSON.errors.message);
-        }}
-       });
+    }
+    //  error: function(response){
+
+    // }
   });
+});

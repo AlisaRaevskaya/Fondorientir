@@ -16,15 +16,23 @@ class SecondSiteController extends Controller
     }
 
     public function application(){
-        return view('secondsite.application');
+           $page= Page::where('laravel_name', 'application')->first();
+        return view('secondsite.application',compact('page'));
+
     }
     public function claim(){
-        return view('secondsite.claim');
+        $page= Page::where('laravel_name', 'claim')->first();
+        return view('secondsite.claim', compact('page'));
     }
     public function problem(){
-        return view('secondsite.problem');
+         $page= Page::where('laravel_name', 'problem')->first();
+        return view('secondsite.problem', compact('page'));
     }
      public function reception(){
-        return view('secondsite.reception');
+        $page= Page::where('laravel_name', 'reception')->first();
+        return view('secondsite.reception', compact('page'));
+    }
+     public function migration(){
+        return view('secondsite.migration');
     }
 }

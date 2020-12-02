@@ -2,9 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ReceptionMessageRequest;
-
 use Illuminate\Http\Request;
+
+use App\Http\Requests\ReceptionMessageRequest;
+use App\Http\Requests\CallRequest;
+use App\Http\Requests\LawQuestionRequest;
+use App\Http\Requests\ClaimRequest;
+use App\Http\Requests\ApplicationRequest;
+use App\Http\Requests\ProblemMessageRequest;
+
+
 use App\Models\Subscription;
 use App\Models\Comment;
 use App\Models\Message;
@@ -18,46 +25,32 @@ use Illuminate\Support\Facades\Validator;
 
 class AjaxController extends Controller
 {
-    public function saveLawQuestion(Request $req)
+    /**
+     *
+     *
+     * @param  LawQuestionRequest  $req
+     * @return Response
+     */
+    public function saveLawQuestion(LawQuestionRequest $req)
     {
-
-    $data = new Message;
-    $data->name=$req->input('name');
-    $data->email = $req->input('email');
-    $data->message = $req->input('message');
-    $data->message_category_id = 1;
-    $data->save();
-    return response()->json(['success'=>'Данные успешно отправлены']);
+        $data = new Message;
+        $data->name=$req->input('name');
+        $data->email = $req->input('email');
+        $data->message = $req->input('message');
+        $data->message_category_id = 1;
+        $data->save();
+        return response()->json(['success'=>'Данные успешно отправлены']);
     }
 
-/**
- *
- *
- * @param  ReceptionMessageRequest  $req
- * @return Response
- */
+    /**
+     *
+     *
+     * @param  ReceptionMessageRequest  $req
+     * @return Response
+     */
 
-  public function saveReceptionMessage(ReceptionMessageRequest $req)
+    public function saveReceptionMessage(ReceptionMessageRequest $req)
     {
-
-    //     $rules=[
-    //     'lastName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}$/i',
-    //     'firstName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}$/i',
-    //     'fatherName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}$/i',
-    //     'message' => 'required|string|min:8|max:500',
-    //     'email' => 'required|min:2|max:255|regex:/^.+@.+$/i',
-    //     'phone' => 'required|min:2|max:255|regex:/^.+\d.+$/i',
-    //     'consent' => 'required|boolean|accepted',
-    //     'job' => 'min:5|max:255|nullable',
-    //     'address' => 'required|min:2|max:255'];
-
-    //     $v = Validator::make($req->all(), $rules);
-
-    // if ($v->fails())
-    // {
-    //     return redirect()->back()->withErrors($v->errors());
-    // }
-
         $validatedData = $req->validated();
         // dd($validatedData);
         $data = new Message();
@@ -78,30 +71,50 @@ class AjaxController extends Controller
 
         return response()->json(['success'=>'Ваша заявка отправлена, В ближайшее время с вами свяжется наш специалист']);
     }
-
-    public function saveApplication(Request $req)
-    { $data = new Message();
-      $data->message_category_id = 3;
-      $data->request->all();
-      $data->fill();
-      $data->save();
-
-    return response()->json(['success'=>'Данные успешно отправлены']);
-    }
-
-     public function saveClaim(Request $req)
-    { $data = new Message();
-      $data->message_category_id = 4;
-      $data->request->all();
-      $data->fill();
-      $data->save();
-
-    return response()->json(['success'=>'Данные успешно отправлены']);
-    }
-
-
-    public function saveWebsiteFeedback(Request $req)
+    /**
+     *
+     *
+     * @param  ApplicationRequest  $req
+     * @return Response
+     */
+    public function saveApplication(ApplicationRequest $req)
     {
+        $validatedData = $req->validated();
+        $data = new Message();
+        $data->message_category_id = 3;
+        $data->request->all();
+
+        $data->save();
+
+        return response()->json(['success'=>'Данные успешно отправлены']);
+    }
+    /**
+     *
+     *
+     * @param  ClaimRequest  $req
+     * @return Response
+     */
+    public function saveClaim(ClaimRequest $req)
+    {
+        $validatedData = $req->validated();
+        $data = new Message();
+        $data->message_category_id = 4;
+        $data->request->all();
+
+        $data->save();
+
+        return response()->json(['success'=>'Ваша заявка принята!Юрист свяжется с вами в ближайшее время.']);
+    }
+
+    /**
+     *
+     *
+     * @param  ProblemRequest  $req
+     * @return Response
+     */
+    public function saveProblemMessage(ProblemRequest $req)
+    {
+        $validatedData = $req->validated();
         $data = new Message();
 
         $data->name = $req->input('name');
@@ -113,23 +126,28 @@ class AjaxController extends Controller
         $data->save();
 
 
-        return response()->json(['success'=>"Ваша заявка отправлена."]);
+        return response()->json(['success'=>"Ваша заявка принята!"]);
     }
-
-    public function saveCallInfo(Request $req)
+   /**
+     *
+     *
+     * @param  CallRequest  $req
+     * @return Response
+     */
+    public function saveCallInfo(CallRequest $req)
     {
+        $validatedData = $req->validated();
         $data = new Message();
 
         $data->name = $req->input('name');
         $data->phone = $req->input('phone');
         $data->message_category_id = 6;
-        $data->fill();
         $data->save();
 
         return response()->json(['success'=>"Ваша заявка принята.Ждите звонка"]);
     }
 
-// public function saveSubscription(Request $req)
+    // public function saveSubscription(Request $req)
     // {
     //     $data = new Subscription();
 
@@ -141,5 +159,4 @@ class AjaxController extends Controller
 
     //     return response()->json(['success'=>'Данные успешно отправлены']);
     // }
-
 }

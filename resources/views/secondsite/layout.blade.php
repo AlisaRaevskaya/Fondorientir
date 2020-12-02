@@ -82,12 +82,14 @@
     <script src="/assets/js/owl.carousel.min.js"></script>
     <script src="/assets/js/bootstrap-datepicker.js"></script>
     <!-- Theme Script -->
-    <script src="/assets/js/index.js"></script>
+   <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/callajax.js"></script>
-    <script src="/assets/js/sub-ajax.js"></script>
-    <script src="/assets/js/web-ajax.js"></script>
-    <script src="/assets/js/faajax.js"></script>
+    <script src="/assets/js/call-ajax.js"></script>
+    <script src="/assets/js/problem-ajax.js"></script>
+    <script src="/assets/js/reception-ajax.js"></script>
+    <script src="/assets/js/claim-ajax.js"></script>
+    <script src="/assets/js/application-ajax.js"></script>
+<script src="/assets/js/law-ajax.js"></script>
 
 </body>
 

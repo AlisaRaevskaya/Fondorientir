@@ -10,7 +10,7 @@ $(".btn-web-feedback").on("click", function (event) {
   });
 
   $.ajax({
-    url: "/website-feedback",
+    url: "/problem",
     method: "POST",
     data: f_data,
     success: function (response) {

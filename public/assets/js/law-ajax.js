@@ -12,13 +12,19 @@ let l_data = $(this).serialize();
     $.ajax({
       url: "/lawyer-question",
       method:"POST",
-      dataType: "json",
       data:l_data,
-      success:function(response){
-        console.log(response);
-        if(response){
-          $('#law_success').html(response.success);
-        }
+      success: function (response) {
+      if (response.success) {
+         $('#law_success').html(response.success);
+        setTimeout(() => {
+          $('form[name="lawyer-form"]').trigger("reset");
+        }, 2000);
+      }else{
+        $("#nameError").text(response.errors.name);
+        $("#emailError").text(response.errors.email);
+        $("#phoneError").text(response.errors.phone);
+        $("#messageError").text(response.errors.message);
+      }
     },
    });
 });

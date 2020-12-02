@@ -79,23 +79,26 @@ name('news.subcategory.id');
 
 
 
-Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
-Route::post('/submit', [AjaxController::class, 'saveReceptionMessage']);
-Route::post('/website-feedback', [AjaxController::class, 'saveWebsiteFeedback']);
-Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion'])->name("lawyer.question");
-Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 
+Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion'])->name("lawyer.question");
+Route::post('/submit', [AjaxController::class, 'saveReceptionMessage'])->name("reception-message");
+Route::post('/problem', [AjaxController::class, 'saveProblemMessage']);
+Route::post('/application-form', [AjaxController::class, 'saveApplication']);
 Route::post('/call', [AjaxController::class, 'saveCallInfo']);
+Route::post('/claim', [AjaxController::class, 'saveClaim'])->name("lawyer.question");
 
 Route::view('/home', 'admin.admin_home');
 
+// Route::post('/commentForm', [AjaxController::class, 'saveComment']);
+// Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
 
 Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
 Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second-reception');
 Route::get('/center-podderzhki/claim', [SecondSiteController::class, 'claim'])->name('second-claim');
-Route::get('/center-podderzhki/applictaion', [SecondSiteController::class, 'problem'])->name('second-application');
+Route::get('/center-podderzhki/applictaion', [SecondSiteController::class, 'application'])->name('second-application');
 Route::get('/center-podderzhki/problem', [SecondSiteController::class, 'problem'])->name('second-problem');
 Route::get('/center-podderzhki/hotline', [SecondSiteController::class, 'hotline'])->name('second-hotline');
+Route::get('/center-podderzhki/migration-questions', [SecondSiteController::class, 'migration'])->name('second.migration');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
 

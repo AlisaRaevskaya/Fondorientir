@@ -32,8 +32,8 @@ class ReceptionMessageRequest extends FormRequest
         'firstName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}/',
         'fatherName' => 'required|min:2|max:255|regex:/^[a-zA-Z]{2,}/',
         'message' => 'required|string|min:8|max:500',
-        'email' => 'required|min:2|max:255|regex:/^.+@.+$/i',
-        'phone' => 'required|min:2|max:255|regex:/^.+\d.+$/i',
+        'email' => 'required|min:2|max:255|email',
+        'phone' => 'required|min:2|max:255|regex:/^(?:\+|\d)[\d\-\(\) ]{9,}\d$/',
         'consent' => 'required|boolean|accepted',
         'job' => 'min:5|max:255|nullable',
         'address' => 'required|min:2|max:255'
@@ -41,37 +41,22 @@ class ReceptionMessageRequest extends FormRequest
     }
 
 
-    /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-        'title.required' => 'A title is required',
-        'body.required'  => 'A message is required',
-    ];
-    }
+    // /**
+    //  * Get the error messages for the defined validation rules.
+    //  *
+    //  * @return array
+    //  */
+    // public function messages()
+    // {
+    //     return [
+    //     'name.required' => 'A title is required',
+    //     'content.required'  => 'A message is required',
+    // ];
+    // }
 
     protected function failedValidation(Validator $validator)
     {
-    throw new HttpResponseException(response()->json(['errors'=>$validator->errors()], 422));
+    throw new HttpResponseException(response()->json(['errors'=>$validator->errors()], 200));
     }
 
-//     /**
-//      * Convert a validation exception into a JSON response.
-//      *
-//      * @param  \Illuminate\Http\Request  $request
-//      * @param  \Illuminate\Validation\ValidationException  $exception
-//      * @return \Illuminate\Http\JsonResponse
-//      */
-//     protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
-//     {
-//     $response = response()->json([
-//     'status' => false,
-//     'errors' => $validator->errors(),
-//   ], 422);
-
-// throw new \Illuminate\Validation\ValidationException($validator, $response);}
 }
