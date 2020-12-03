@@ -79,13 +79,12 @@ name('news.subcategory.id');
 
 
 
-
-Route::post('/lawyer-question', [AjaxController::class, 'saveLawQuestion'])->name("lawyer.question");
-Route::post('/submit', [AjaxController::class, 'saveReceptionMessage'])->name("reception-message");
-Route::post('/problem', [AjaxController::class, 'saveProblemMessage']);
-Route::post('/application-form', [AjaxController::class, 'saveApplication']);
-Route::post('/call', [AjaxController::class, 'saveCallInfo']);
-Route::post('/claim', [AjaxController::class, 'saveClaim'])->name("lawyer.question");
+Route::post('/lawyer-form', [AjaxController::class, 'saveLawQuestion'])->name("lawyer-question");
+Route::post('/reception-form', [AjaxController::class, 'saveReceptionMessage'])->name("reception-form");
+Route::post('/problem-form', [AjaxController::class, 'saveProblemMessage'])->name("problem-form");;
+Route::post('/application-form', [AjaxController::class, 'saveApplication'])->name("application-form");;
+Route::post('/call-form', [AjaxController::class, 'saveCallInfo'])->name("call-form");;
+Route::post('/claim-form', [AjaxController::class, 'saveClaim'])->name("claim-form");
 
 Route::view('/home', 'admin.admin_home');
 

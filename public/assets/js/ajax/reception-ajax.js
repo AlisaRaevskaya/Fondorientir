@@ -15,7 +15,7 @@ $("#btn-messages").on("click", function (event) {
 
 
   $.ajax({
-    url: "/submit",
+    url: "/reception-form",
     method: "POST",
     data: form_data,
     success: function (response) {

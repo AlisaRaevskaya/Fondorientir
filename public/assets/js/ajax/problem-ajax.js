@@ -1,4 +1,4 @@
-$(".btn-web-feedback").on("click", function (event) {
+$(".btn-problem").on("click", function (event) {
   event.preventDefault();
 
   let f_data = $('form[name="problemForm"]').serialize();
@@ -10,7 +10,7 @@ $(".btn-web-feedback").on("click", function (event) {
   });
 
   $.ajax({
-    url: "/problem",
+    url: "/problem-form",
     method: "POST",
     data: f_data,
     success: function (response) {
@@ -19,6 +19,11 @@ $(".btn-web-feedback").on("click", function (event) {
         setTimeout(() => {
           $('form[name="problemForm"]').trigger("reset");
         }, 2000);
+      } else{
+        $("#nameError").text(response.errors.name);
+        $("#emailError").text(response.errors.email);
+        $("#phoneError").text(response.errors.phone);
+        $("#messageError").text(response.errors.message);
       }
     },
   });

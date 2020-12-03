@@ -11,7 +11,7 @@ $("#btn_call").on("click", function () {
   });
 
   $.ajax({
-    url: "/call", // куда отправляем
+    url: "/call-form", // куда отправляем
     type: "post", // метод передачи
     headers: {
       "X-CSRF-TOKEN": $('meta[name="csrf_token"]').attr("content"),
@@ -26,7 +26,10 @@ $("#btn_call").on("click", function () {
               $('form[name="callForm"]').trigger("reset");
               $("#exampleModalLong").addClass('hidden');
             }, 2000);
-          }
+          }else{
+               $("#nameError").text(response.errors.name);
+               $("#phoneError").text(response.errors.phone);
+              }
     },
   });
 });

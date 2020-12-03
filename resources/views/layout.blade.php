@@ -52,7 +52,7 @@
     <![endif]-->
 </head>
 
-<body id="page-top" data-spy="scroll"data-target=".navbar">
+<body id="page-top" data-spy="scroll" data-target=".navbar">
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
@@ -85,12 +85,12 @@
     <!-- Theme Script -->
     <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/call-ajax.js"></script>
-    <script src="/assets/js/problem-ajax.js"></script>
-    <script src="/assets/js/reception-ajax.js"></script>
-    <script src="/assets/js/claim-ajax.js"></script>
-    <script src="/assets/js/application-ajax.js"></script>
-<script src="/assets/js/law-ajax.js"></script>
+    <script src="/assets/js/ajax/call-ajax.js"></script>
+    <script src="/assets/js/ajax/problem-ajax.js"></script>
+    <script src="/assets/js/ajax/reception-ajax.js"></script>
+    <script src="/assets/js/ajax/claim-ajax.js"></script>
+    <script src="/assets/js/ajax/application-ajax.js"></script>
+    <script src="/assets/js/ajax/lawyer-ajax.js"></script>
 </body>
 
 </html>

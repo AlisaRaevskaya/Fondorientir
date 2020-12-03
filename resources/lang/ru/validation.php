@@ -139,8 +139,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'consent' => [
+            'accepted' => 'Необходимо согласие на обработку данных',
         ],
     ],
 
@@ -195,5 +195,7 @@ return [
         'available'             => 'Доступно',
         'size'                  => 'Размер',
         'job'                  => 'Место работы или учебы',
+        'consent'               => 'Cогласие на обработку данных',
+        'message'               => 'Cообщение',
     ],
 ];

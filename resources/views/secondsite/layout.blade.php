@@ -38,8 +38,9 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU"
         type="text/javascript">
     </script>
-{{--
-    <script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script> --}}
+    {{--
+    <script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
+    --}}
 
 
 
@@ -82,14 +83,14 @@
     <script src="/assets/js/owl.carousel.min.js"></script>
     <script src="/assets/js/bootstrap-datepicker.js"></script>
     <!-- Theme Script -->
-   <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/call-ajax.js"></script>
-    <script src="/assets/js/problem-ajax.js"></script>
-    <script src="/assets/js/reception-ajax.js"></script>
-    <script src="/assets/js/claim-ajax.js"></script>
-    <script src="/assets/js/application-ajax.js"></script>
-<script src="/assets/js/law-ajax.js"></script>
+    <script src="/assets/js/ajax/call-ajax.js"></script>
+    <script src="/assets/js/ajax/problem-ajax.js"></script>
+    <script src="/assets/js/ajax/reception-ajax.js"></script>
+    <script src="/assets/js/ajax/claim-ajax.js"></script>
+    <script src="/assets/js/ajax/application-ajax.js"></script>
+    <script src="/assets/js/ajax/lawyer-ajax.js"></script>
 
 </body>
 

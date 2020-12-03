@@ -1,4 +1,4 @@
-     <form action="{{ route('lawyer.question') }}" method="post" id="lawyer-form">
+     <form action="/lawyer-form" method="POST" name="lawyerForm">
          @csrf
          <div class="form-group">
              <input type="text" class="form-control" name="name" placeholder="Контактное лицо">
@@ -18,6 +18,8 @@
                  placeholder="Задайте свой вопрос" name="message"></textarea>
                   <span class="text-danger" id="messageError"></span>
          </div>
-         <div id="law_success"></div>
-         <input type="submit" class="form-group btn btn-primary lawyer-btn" value="Отправить">
+         <div id="law-success"></div>
+         <input type="submit" class="form-group btn btn-primary" id="lawyer-btn" value="Отправить">
      </form>
+
+        <script src="/assets/js/ajax/lawyer-ajax.js"></script>

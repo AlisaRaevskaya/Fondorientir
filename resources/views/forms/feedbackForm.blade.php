@@ -1,5 +1,5 @@
 <div>
-    <form class="form-horizontal" action="/submit" method="POST" name="feedbackForm">
+    <form class="form-horizontal" action="{{route('reception-form')}}" method="POST" name="feedbackForm">
         @csrf
 
         <div class="form-group">
@@ -7,7 +7,7 @@
             <div class="col-xs-9">
                 <input type="text" required class="form-control" id="lastName" name="lastName"
                     placeholder="Введите фамилию">
-                <span class="text-danger" id="firstNameError"></span>
+                <span class="text-danger" id="lastNameError"></span>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
             <div class="col-xs-9">
                 <input type="text" required class="form-control" id="firstName" name="firstName"
                     placeholder="Введите имя">
-                <span class="text-danger" id="lastNameError"></span>
+                <span class="text-danger" id="firstNameError"></span>
             </div>
         </div>
 

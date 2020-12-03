@@ -1,7 +1,7 @@
 <div class="for_form">
 
     <h5>Отправить сообщение администрации сайта</h5>
-    <form action="/website-feedback" method="POST" name="problemForm">
+    <form action="{{ route('problem-form') }}" method="POST" name="problemForm">
         @csrf
         <div class="form-group">
             <label for="contactName">Контактное лицо:</label>
@@ -32,7 +32,7 @@
         <div id="w_success"></div>
 
         <div>
-            <input type="submit" class="btn btn-primary btn-web-feedback" value="Отправить">
+            <input type="submit" class="btn btn-primary" id="btn-problem" value="Отправить">
         </div>
     </form>
 </div>

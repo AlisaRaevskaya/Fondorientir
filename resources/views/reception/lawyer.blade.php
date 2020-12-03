@@ -20,7 +20,7 @@
                                         Задать вопрос юристу бесплатно
                                     </h1>
                                 </div>
-                           @include('forms.lawyer-form')
+                           @include('forms.lawyerForm')
                             </div>
                             <div class="col-md-1"></div>
                         </div>
