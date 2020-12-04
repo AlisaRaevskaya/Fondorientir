@@ -78,12 +78,10 @@
                                                 </td>
                                                 <td class="mailbox-date">{{ $item->dateline }}</td>
                                                 <td class="mailbox-name">
-                                                    @if ($item->is_read == false)
-                                                        <p>Не прочтено</p>
+                                                    @if ($item->is_read == true)
+                                                        <p>Прочитано</p>
                                                     @else
-                                                        <p>Прочтено</p>
-                                                        {{-- <label for="check1"></label>
-                                                        --}}
+                                                        <p>Не прочитано</p>
                                                     @endif
                                                 </td>
                                             </tr>

@@ -1,12 +1,12 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Brand Logo -->
     <span class="brand-text font-weight-light"></span>
-    <p class="navbar-brand"> <a href="/home" class="brand-link">
+    <p class="navbar-brand"><a href="/home" class="brand-link">
             <img src="/assets/images/logo.png" alt="Logo" class="brand-image img-circle elevation-3"
-                style="opacity: .8;width:20pt"></a>Фонд "Ориентир"</p>
-
+                style="opacity: .8;width:20pt"></a>  Фонд "Ориентир"</p>
+{{--
     <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
-            class="fas fa-bars"></i></button>
+            class="fas fa-bars"></i></button> --}}
 
     <div class="card-body">
         @if (session('status'))

@@ -10,7 +10,7 @@
                     <div class="entity_wrapper">
 
                         {!! $page->content !!}
-                        <div style="padding:10pt 0;">Поля отмеченные * обязательны для заполнения</div>
+                        <div style="padding:8pt 0;">Поля отмеченные * обязательны для заполнения</div>
 
                         @include('forms.feedbackForm')
                     </div>

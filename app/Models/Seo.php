@@ -74,5 +74,9 @@ class Seo extends Model
         return $this->belongsTo('App\Models\Page');
     }
 
+ public function getSeo()
+    {
+      //
+    }
 
 }

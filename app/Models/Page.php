@@ -116,4 +116,5 @@ class Page extends Model
         $this->fill($fields);
         $this->save($fields);
     }
+
 }

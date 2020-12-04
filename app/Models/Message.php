@@ -16,7 +16,6 @@ class Message extends Model
 
     public $timestamps = true;
 
-    //1:1
 
     public function replies(){
         return $this->belongsTo('App\Models\Reply');
@@ -32,14 +31,14 @@ class Message extends Model
 
     public function setDatelineAttribute($value)
     {
-        $this->attributes['dateline'] = Carbon::parse($value)->timestamp;
+        $this->attributes['dateline'] = $this->timestamp;
     }
 
     public function setMessageAttribute($value){
         $this->attributes['message'] = htmlspecialchars($value,ENT_HTML5);
     }
 
-    public function getFioAttribute($value){
+    public function getNameAttribute($value){
         return htmlspecialchars_decode($value,ENT_HTML5);
     }
 
@@ -48,7 +47,10 @@ class Message extends Model
     $date = Carbon::createFromTimestamp($value)->toDateTimeString();
     return $date;
     }
-
+  public function getFormatDateCreate()
+    {
+        return $this->created_at->format('d F Y H:i');
+    }
     public function getFormatDateUpdate()
     {
         return $this->updated_at->format('d F Y H:i');
@@ -61,10 +63,6 @@ class Message extends Model
         return Str::substr($this->message, 0, 80) . "...";
     }
 
-    //+ where(is_read)//count();
-    //  public function countMessage($id){
-    //    return $this->category->where('id', $id)->where('is_read', false)->count();
-    // }
      public static function add($fields)
     {
         $pages= new static;

@@ -12,7 +12,7 @@ class News extends Model
 {
  protected $fillable = [
         'title','intro','body','dateline', 'source_link', 'source_name'];
-        
+
     protected $table = 'news';
 
     //Все поля разрешено менять
@@ -72,14 +72,14 @@ class News extends Model
     //     $this->attributes['title'] = htmlspecialchars($value, ENT_HTML5);
     // }
 
-    // public function getTitleAttribute($value)
-    // {
-    //     return htmlspecialchars_decode($value, ENT_HTML5);
-    // }
-    // public function setIntroAttribute($value)
-    // {
-    //     $this->attributes['intro'] = htmlspecialchars($value, ENT_HTML5);
-    // }
+    public function getTitleAttribute($value)
+    {
+        return htmlspecialchars_decode($value, ENT_HTML5);
+    }
+    public function setIntroAttribute($value)
+    {
+        $this->attributes['intro'] = htmlspecialchars($value, ENT_HTML5);
+    }
 
 
  /**
