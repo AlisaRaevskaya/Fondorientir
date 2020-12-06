@@ -29,24 +29,26 @@ class MainController extends Controller
     return view('main.index', compact('mainContent', 'main_image', 'news', 'category','replies','banner'));
     }
 
-    public function history(){
-        $page= Page::where('title', 'history')->first();
-        return view('main.history', compact('page'));
+    public function about(){
+        $projects=Projects::all();
+        $page= Page::where('laravel_name', 'about')->first();
+        return view('main.about', compact('page', 'projects'));
     }
+
     public function mission(){
-        $mission= Page::where('title', 'mission')->first();
-        return view('main.mission',compact('mission') );
+        $page= Page::where('laravel_name', 'mission')->first();
+        return view('main.mission',compact('page') );
     }
 
     public function structure(){
-        $structure= Page::where('title', 'structure')->first();
-        return view('main.structure',compact('structure'));
+        $page= Page::where('laravel_name', 'structure')->first();
+        return view('main.structure',compact('page'));
     }
 
     public function projects(){
         $projects =Preproject::all();
 
-        $pages=Page::where('title', 'projects')->first();
+        $pages=Page::where('laravel_name', 'projects')->first();
 
         // foreach($pages as $page){
         //     $content= $page->content;

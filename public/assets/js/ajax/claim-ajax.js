@@ -8,8 +8,8 @@ $('#btn-claim').on("click",function(){
         type: "POST", // метод передачи
         data: user_data,
         // после получения ответа сервера
-        success: function(response){
-             if (response.success) {
+          success: function (response) {
+      if (response.success) {
             $('#claim-success').html(response.success); // выводим ответ сервера
             setTimeout(() => {
                 $('form[name="claimForm"]').trigger("reset");

@@ -97,22 +97,22 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+    {  $news=News::where('id', $id)->first();
 
-        $imageName = time().'.'.$request->image->extension();
-        // time().'.'.$request->image->extension();
+        // $request->validate([
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+  if ($request->hasFile('image')) {
+      $imageName = time().'.'.$request->image->extension();
+      // time().'.'.$request->image->extension();
+      $request->image->move(public_path('/storage/news'), $imageName);
 
-        $request->image->move(storage_path('/app/public/news'), $imageName);
-
-        // $news=new News();
-        $news=News::where('id', $id)->first();
+      // storage_path('/app/public/news'
         $news->image= $imageName;
+  }
         $news->edit($request->all());
         $message='Данные загружены';
-        return redirect()->route('admin.news.single_edit')->with('message', $message);
+        return redirect()->route('admin.news.edit', $id)->with('message', $message);
     }
 
     /**

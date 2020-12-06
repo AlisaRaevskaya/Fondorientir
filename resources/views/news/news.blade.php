@@ -17,54 +17,51 @@
                         </div>
 
                         @foreach ($news as $item)
-                            <div class="entity_title">
-                                <h1><a href="{{ route('news.category.id', [$category->name, $item->id]) }}" target="_self">
-                                        {{ $item->title }}</a>
-                                </h1>
-                            </div>
-                            <!-- entity_title -->
+                            <div class="row justify-content-md-center m30">
+                                <div class="col-md-6">
+                                    <div class="entity_img">
+                                        <img class="img-responsive"src="/storage/news/{{ $item->image }}" alt="{{ $item->title }}">
+                                    </div>
+                                </div>
 
-                            <div class="entity_meta">
-                                <p>{{$item->dateline}}</p>
-                            </div>
-                            <!-- entity_meta -->
-                            <div class="entity_img">
-                                <img src="/storage/news/{{$item->image}}" alt="{{ $item->title }}">
-                            </div>
+                                <div class="col-md-6">
 
-                            <div class="">
-                                <p>{!! $item->intro !!}</p>
-                            </div>
+                                    <div class="entity_title">
+                                        <h1><a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
+                                                target="_self">
+                                                {{ $item->title }}</a>
+                                        </h1>
+                                    </div>
 
-                            <div>
-                            <a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
-                                    class="btn btn-outline-primary btn-lg active btn_news" role="button" aria-pressed="true">
-                            Подробнее>>></a>
+                                    <div class="entity_meta">
+                                        <p>{{ $item->dateline }}</p>
+                                    </div>
+
+                                    <div class="entity_intro">
+                                        {!!$item->intro!!}
+                                    </div>
+
+                                    <div>
+                                        <a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
+                                            class="btn btn-outline-primary btn-lg active btn_news" role="button"
+                                            aria-pressed="true">
+                                            Подробнее>>></a>
+                                    </div>
+                                </div>
                             </div>
                             <hr>
                         @endforeach
-
 
                         <nav aria-label="Page navigation" class="pagination_section">
                             <ul class="pagination">
                                 <li>{{ $news->links() }}</li>
                             </ul>
                         </nav>
-
                     </div>
-                    <!-- entity_wrapper -->
-                    <!--Advertisement-->
                 </div>
-                <!-- col-md-4 -->
                 <div class="col-md-1"></div>
             </div>
-            <!-- row -->
         </div>
-        <!-- container -->
     </section>
-    <!-- entity_section -->
-
-
-
 @endsection
 <!-- Popular News -->

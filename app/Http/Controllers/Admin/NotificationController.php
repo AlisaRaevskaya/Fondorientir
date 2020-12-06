@@ -12,9 +12,12 @@ class NotificationController extends Controller
     public function index($category){
     $cat=MessageCategory::where('category', $category);
     $id=$cat->pluck('id')->first();
+    // $previous = Post::where('id', '<', $post->id)->max('id');
+    // $next = Post::where('id', '>', $post->id)->min('id');
     $messages=Message::where('message_category_id', $id)->get();
     return view('admin.messages.index', compact('messages','category'));
     }
+
 
     public function show($category, $id){;
 
@@ -26,7 +29,8 @@ class NotificationController extends Controller
     return view('admin.messages.show', compact('message','cat'));
     }
 
-    //метод для отображения всех непрочитанных в верху страницы
+
+    //метод для отображения всех непрочитанных страниц
 
     public function showAll(){;
 

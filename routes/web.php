@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\StatusController;
@@ -36,7 +38,7 @@ Route::get('/status', [StatusController::class, 'index'])->name('status');
 Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
 
-Route::get('/history', [MainController::class, 'history'])->name('history');
+Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
 Route::get('/structure', [MainController::class, 'structure'])->name('structure');
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
@@ -78,7 +80,6 @@ Route::get('/news/{category}/{subcategory}/{id}', [NewsController::class, 'showB
 name('news.subcategory.id');
 
 
-
 Route::post('/lawyer-form', [AjaxController::class, 'saveLawQuestion'])->name("lawyer-question");
 Route::post('/reception-form', [AjaxController::class, 'saveReceptionMessage'])->name("reception-form");
 Route::post('/problem-form', [AjaxController::class, 'saveProblemMessage'])->name("problem-form");;
@@ -86,7 +87,8 @@ Route::post('/application-form', [AjaxController::class, 'saveApplication'])->na
 Route::post('/call-form', [AjaxController::class, 'saveCallInfo'])->name("call-form");;
 Route::post('/claim-form', [AjaxController::class, 'saveClaim'])->name("claim-form");
 
-Route::view('/home', 'admin.admin_home');
+Route::view('/admin-panel', 'admin.admin_home')->middleware('auth');
+
 
 // Route::post('/commentForm', [AjaxController::class, 'saveComment']);
 // Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
@@ -110,7 +112,7 @@ Route::resource('/seo', '\App\Http\Controllers\Admin\SeoController');
 
 Route::resource('/contacts', '\App\Http\Controllers\Admin\Contacts\ContactsController');
 Route::resource('/company-info', '\App\Http\Controllers\Admin\Contacts\CompanyInfoController');
-Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
+Route::resource('/about', '\App\Http\Controllers\Admin\Main\AboutController');
 Route::resource('/fond', '\App\Http\Controllers\Admin\Main\FondController');
 Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
 Route::resource('/reports', '\App\Http\Controllers\Admin\Main\ReportsController');

@@ -48,7 +48,7 @@
 
                                             <div class="form-group">
                                                 {{ Form::label('intro', 'Intro') }}
-                                                {{ Form::text('intro', $item->intro, ['class' => 'form-control summernote ']) }}
+                                                {{ Form::textArea('intro', $item->intro, ['class' => 'form-control']) }}
                                             </div>
 
                                             <div class="form-group">
@@ -56,15 +56,14 @@
                                                 {{ Form::file('image') }}
                                                 @if (isset($item->image))
                                                     <p>
-                                                        <img src="/storage/news/{{ $item->image }}"
-                                                            alt="{{ $item->laravel_name }}"
+                                                         <img src="{{ asset('storage/news/' . $item->image)}}"
                                                             title="{{ $item->title }}" style="width: 200px">
                                                     </p>
                                                 @endif
                                             </div>
                                             <div class="form-group">
                                                 {{ Form::label('body', 'Текст 2') }}
-                                                {{ Form::textArea('body', $item->body, ['class' => 'form-control summernote']) }}
+                                                {{ Form::textArea('body', $item->body, ['class' => 'form-control summernote_news']) }}
                                             </div>
                                             <div class="form-group">
                                                 {{ Form::label('source_name', 'Источник') }}
@@ -77,7 +76,7 @@
 
                                             <div class="form-group">
                                                 {{ Form::label('dateline', 'Дата публикации') }}
-                                                {{ Form::date('dateline', $item->dateline, ['class' => 'form-control required']) }}
+                                                {{ Form::text('dateline',  $item->dateline, ['class' => 'form-control required']) }}
                                             </div>
                                             @if (session()->has('message'))
                                                 <div class="alert alert-success">

@@ -6,10 +6,10 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header m30"><h5>Авторизация</h5></div>
 
-                <div class="card-body">
-                    <form method="POST" action="/login">
+                <div class="card-body m30">
+                    <form method="POST" action="{{route('login')}}">
                         @csrf
 
                         <div class="form-group row">
@@ -51,23 +51,25 @@
                                     id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Запомнить меня') }}
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                             @if (Route::has('password.request'))
+                                    <a class="btn btn-link block" href="{{route('password.request')}}">
+                                        {{ __('Забыли пароль?') }}
                                     </a>
                                 @endif
+
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Войти') }}
+                                </button>
+
+
                             </div>
                         </div>
                     </form>

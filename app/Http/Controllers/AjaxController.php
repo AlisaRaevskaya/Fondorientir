@@ -50,11 +50,10 @@ class AjaxController extends Controller
      */
 
     public function saveReceptionMessage(ReceptionMessageRequest $req)
-    {dd($req->all());
+    {
         $validatedData = $req->validated();
-        // dd($validatedData);
-        $data = new Message();
 
+        $data = new Message();
 
         $fullname= $req->input('lastName') . ' ' .$req->input('firstName') . ' ' . $req->input('fatherName');
 

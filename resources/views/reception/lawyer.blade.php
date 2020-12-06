@@ -13,7 +13,7 @@
                         <div class="shadow-textarea">
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
-                                <div class="row" style="padding:5pt 20pt">
+                                <div class="row justify-content-center" style="padding:5pt 10pt">
                                     <h1>
                                         <img class="d-flex img-circle avatar z-depth-1-half mr-3"
                                             src="/assets/images/avatar-5.jpg" alt="Avatar">
