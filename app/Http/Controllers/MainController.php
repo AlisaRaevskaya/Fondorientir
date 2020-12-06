@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\News;
 use App\Models\Reply;
 use App\Models\Topic;
@@ -16,7 +16,7 @@ use Illuminate\Support\Str;
 class MainController extends Controller
 {
     public function index(){
-    $mainContent= Pages::where('title', 'Главная')->get();
+    $mainContent= Page::where('title', 'Главная')->get();
     $main_image= File::where('mode','main')->pluck('name')->first();
     $banner=File::where('mode','banner')->pluck('name')->first();
     $news = News::orderBy('dateline', 'desc')->paginate(6);
