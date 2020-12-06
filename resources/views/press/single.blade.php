@@ -27,9 +27,7 @@
                             @endif
 
                             <div class="entity_content">
-                                <p>
                                     {!! $item->body !!}
-                                </p>
                             </div>
 
                             <!-- entity_content -->

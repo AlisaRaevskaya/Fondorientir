@@ -110,10 +110,10 @@
                                                     {{ Form::text('name', $seo->name, ['class' => 'form-control required m30']) }}
                                                 </div>
                                                 <div class="form-group">
-                                                    {{ Form::label('title', 'Title') }}
-                                                    {{ Form::text('title', $seo->title, ['class' => 'form-control required']) }}
-                                                    <i>Заголовок конкретной страницы</i>
-                                                </div>
+                                                        {{ Form::label('seo_title', 'Title') }}
+                                                        {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control']) }}
+                                                        <i>Заголовок конкретной страницы</i>
+                                                    </div>
                                                 <div class="form-group required">
                                                     {{ Form::label('description', 'Description') }}
                                                     {{ Form::textArea('description', htmlspecialchars_decode($seo->description, ENT_QUOTES), ['class' => 'form-control']) }}
@@ -136,24 +136,7 @@
                                                     <i>краткое описание страницы длиной не более 300 символов.</i>
                                                     <i></i>
                                                 </div>
-                                                <div class="form-group">
-                                                    {{ Form::label('og_type', 'og:Type') }}
-                                                    {{ Form::text('og_type', $seo->og_type, ['class' => 'form-control']) }}
-                                                    <i>описывает тип объекта на странице (веб-сайт, блог, книга, фильм и
-                                                        т.д.).</i>
-                                                </div>
-                                                <div class="form-group">
-                                                    {{ Form::label('og_url', 'og:Url') }}
-                                                    {{ Form::text('og_url', $seo->og_url, ['class' => 'form-control']) }}
-                                                    <i>Uri страницы , без доменного имени пример:
-                                                        "services/bukhgalterskiye-konsultatsii" без первого слеша / просто
-                                                        слеш актуален только для главной страницы</i>
-                                                </div>
-                                                <div class="form-group">
-                                                    {{ Form::label('og_site_name', 'og:Site_name') }}
-                                                    {{ Form::text('og_site_name', $seo->og_site_name, ['class' => 'form-control']) }}
-                                                    <i>название сайта.</i>
-                                                </div>
+
                                                 @if (session()->has('seo_message'))
                                                     <div class="alert alert-success">
                                                         {{ session()->get('seo_message') }}

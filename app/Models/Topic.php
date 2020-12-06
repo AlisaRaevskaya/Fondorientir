@@ -8,6 +8,8 @@ use Carbon\Carbon;
 
 class Topic extends Model
 {
+   protected $fillable = [ 'title','body','intro','dateline', 'image'];
+
     protected $table = 'topics';
 
     public function reply(){
@@ -38,4 +40,18 @@ class Topic extends Model
 {
     $this->attributes['dateline'] = Carbon::parse($value)->timestamp;
 }
+   public static function add($fields)
+    {
+        $pages= new static;
+        $pages->fill($fields);
+        $pages->save();
+
+        return $pages;
+    }
+
+    public function edit($fields)
+    {
+        $this->fill($fields);
+        $this->save($fields);
+    }
 }

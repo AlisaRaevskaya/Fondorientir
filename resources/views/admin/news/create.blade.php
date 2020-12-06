@@ -11,8 +11,8 @@
 
                     <div class="col-sm-12">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active">Страницы</li>
+                            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                            <li class="breadcrumb-item active">Новости</li>
                         </ol>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <div class="card card-outline card-info">
                         <div class="card-header">
                             <h3 class="card-title">
-                                Добавить страницу
+                                Добавить новость
                             </h3>
                         </div>
                         <!-- Main content -->

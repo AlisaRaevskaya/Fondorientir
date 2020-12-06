@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\Seo;
 
 class PageController extends Controller
@@ -75,7 +75,10 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $page = Pages::findOrFail($id);
+        // $page->edit($request->all());
+        // $message="Данные сохранены";
+        // return redirect()->route('admin.pages.edit', $id)->with('message', $message);
     }
 
     /**
@@ -86,6 +89,6 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        //
+       //
     }
 }

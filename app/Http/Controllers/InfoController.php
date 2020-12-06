@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class InfoController extends Controller
@@ -23,7 +23,8 @@ class InfoController extends Controller
     }
 
     public function testmaterial(){
-        return view('info.testmaterial');
+        $page= Page::where('laravel_name', 'testmaterial')->first();
+        return view('info.testmaterial', compact('page'));
     }
     public function brochures(){
         return view('info.brochures');

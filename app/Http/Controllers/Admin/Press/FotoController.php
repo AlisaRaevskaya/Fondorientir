@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin\Press;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\Image;
 
 class FotoController extends Controller
@@ -49,7 +48,7 @@ class FotoController extends Controller
      */
     public function show($id)
     {
-    $pages= Pages::where('id', $id)->get();
+    $pages= Page::where('id', $id)->get();
     $images= Image::find(1)->where('page_id', $id)->get();
     return view('admin.main.foto.edit', compact('pages', 'images'));
     }

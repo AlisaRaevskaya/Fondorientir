@@ -9,7 +9,7 @@ class Seo extends Model
 {
      protected $fillable=[
         'name',
-        'title',
+        'seo_title',
         'description',
         'keywords',
         // 'og_title',
@@ -23,7 +23,7 @@ class Seo extends Model
     protected $guarded = [];
 
     //включает выключает метку времени в таблицах
-    public $timestamps = true;
+    public $timestamps = false;
 
     public function setDescriptionAttribute($value){
         $this->attributes['description'] = htmlspecialchars($value, ENT_HTML5);
@@ -46,11 +46,11 @@ class Seo extends Model
     }
     public static function add($fields)
     {
-        $usugi = new static;
-        $usugi->fill($fields);
-        $usugi->save();
+        $page = new static;
+        $page->fill($fields);
+        $page->save();
 
-        return $usugi;
+        return $page;
     }
 
     public function edit($fields)
@@ -71,8 +71,12 @@ class Seo extends Model
     }
 
    public function page(){
-        return $this->belongsTo('App\Models\Pages');
+        return $this->belongsTo('App\Models\Page');
     }
 
+ public function getSeo()
+    {
+      //
+    }
 
 }

@@ -44,9 +44,6 @@
         src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
     --}}
 
-
-
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -55,7 +52,7 @@
     <![endif]-->
 </head>
 
-<body id="page-top" data-spy="scroll"data-target=".navbar">
+<body id="page-top" data-spy="scroll" data-target=".navbar">
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
@@ -88,11 +85,12 @@
     <!-- Theme Script -->
     <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/callajax.js"></script>
-    <script src="/assets/js/sub-ajax.js"></script>
-    <script src="/assets/js/web-ajax.js"></script>
-    <script src="/assets/js/faajax.js"></script>
-
+    <script src="/assets/js/ajax/call-ajax.js"></script>
+    <script src="/assets/js/ajax/problem-ajax.js"></script>
+    <script src="/assets/js/ajax/reception-ajax.js"></script>
+    <script src="/assets/js/ajax/claim-ajax.js"></script>
+    <script src="/assets/js/ajax/application-ajax.js"></script>
+    <script src="/assets/js/ajax/lawyer-ajax.js"></script>
 </body>
 
 </html>

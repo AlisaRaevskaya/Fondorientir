@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Press;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\Image;
 
 class ForPressController extends Controller
@@ -59,7 +59,7 @@ class ForPressController extends Controller
      */
     public function edit($id)
     {
-    $pages= Pages::where('id', $id)->get();
+    $pages= Page::where('id', $id)->get();
     $images= Image::find(1)->where('page_id', $id)->get();
     return view('admin.main.forpess.edit', compact('pages', 'images'));
     }

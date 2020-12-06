@@ -9,5 +9,5 @@ class FeedbackCall extends Model
 {
     protected $table='feedback_calls';
 
-    public $timestamps = false;
+    public $timestamps = true;
 }

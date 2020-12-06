@@ -78,7 +78,6 @@ class UploadController extends Controller
         $filename=$file->getClientOriginalName();
         $imageName = time().'.'. $filename;
 
-        // $path=storage_path('/app/public/news');
 
         $path= public_path('/storage/news');
         $store=$file->store('news');

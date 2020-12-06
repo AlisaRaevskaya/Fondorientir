@@ -25,7 +25,7 @@ class ForProjectsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.main.projects.create');
     }
 
     /**
@@ -36,7 +36,9 @@ class ForProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $promos = Projects::add($request->all());
+       $message="Проект добавлен";
+       return redirect()->route('admin.forprojects.edit', $id)->with('message', $message);
     }
 
     /**
@@ -47,7 +49,8 @@ class ForProjectsController extends Controller
      */
     public function show($id)
     {
-        //
+        $project=Projects::find($id);
+        return view('admin.main.projects.show_projects', compact('project'));
     }
 
     /**
@@ -58,7 +61,9 @@ class ForProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $projects=Projects::all();
+
+        return view('admin.main.projects.edit', compact('projects'));
     }
 
     /**
@@ -70,8 +75,10 @@ class ForProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $projects=Projects::all();
-        return view('admin.main.projects.edit', compact('pages', 'images','projects','seo'));
+        $projects=Projects::find($id);
+        $projects->add($request->all());
+        $message="Данные сохранены";
+        return redirect()->route('admin.forprojects.edit', $id)->with('message', $message);
     }
 
     /**
@@ -82,6 +89,10 @@ class ForProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $page = Projects::findOrFail($id);
+
+        $page->delete();
+
+        return redirect()->route('admin.forprojects.edit');
     }
 }

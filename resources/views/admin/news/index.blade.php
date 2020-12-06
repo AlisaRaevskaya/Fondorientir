@@ -1,8 +1,9 @@
 @extends('admin.layout')
 @section('content')
+
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid container">
+            <div class="container-fluid admin-container" style="margin-top:30px;">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item">Meню</a>
                     <li class="breadcrumb-item active">Новости</li>
@@ -17,8 +18,9 @@
                         <i class="fas fa-table mr-1"></i>
                         Новости
                         <div class="text-center">
-                            <a href="{{ route('admin.news.create') }}" class="btn btn-default pull-right">Добавить
-                                новость</a>
+                            <a href="{{ route('admin.news.create') }}" class="btn btn-default pull-right"><i
+                                    class="fa fa-plus"></i>
+                                Добавить новость</a>
                         </div>
                     </div>
 
@@ -34,8 +36,9 @@
                                             <th><i class="fa fa-fw fa-sort"></i>Intro</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Дата создания</th>
                                             <th><i class="fa fa-fw fa-sort"></i>Дата изменения</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Редактировать</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Удалить</th>
+                                            <th>Редактировать</th>
+                                            <th>Удалить</th>
+
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -47,6 +50,7 @@
                                             <th>Дата изменения</th>
                                             <th>Редактировать</th>
                                             <th>Удалить</th>
+
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -58,19 +62,18 @@
                                                 <td>{!! $new->dateline !!}</td>
                                                 <td>{!! $new->updated_at !!}</td>
                                                 <td>
-                                                    {{-- <a
-                                                        href="{{ route('image.upload', $new->id) }}"
-                                                        class="btn btn-primary">Добавить
-                                                        картинку</a> --}}
                                                     <a href="{{ route('admin.news.edit', $new->id) }}"
-                                                        class="btn btn-primary">Редактировать</a>
+                                                        class="btn btn-primary"><i class="far fa-edit"></i>
+                                                        Редактировать</a>
                                                 </td>
                                                 <td>
+
                                                     <form action="{{ route('admin.news.destroy', $new->id) }}" method="post"
                                                         class="text-center">
                                                         @csrf
                                                         {{ method_field('DELETE') }}
-                                                        <button type="submit" class="btn btn-warning ">Удалить</button>
+                                                        <button type="submit" class="btn btn-warning "><i
+                                                                class="fa fa-trash"></i> Удалить</button>
                                                     </form>
                                                 </td>
                                             </tr>

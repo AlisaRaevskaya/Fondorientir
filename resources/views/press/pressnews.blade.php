@@ -16,50 +16,56 @@
                         </div>
 
                         @foreach ($pressnews as $item)
-
-                            <div class="entity_title">
-                                <h3><a href="{{ route('news.category.id', [$category->name, $item->id]) }}" target="_self">
-                                        {!!$item->title!!}</a>
-                                </h3>
-                            </div>
-                            <!-- entity_title -->
-
-                            {{-- <div class="entity_meta">
-                               <h1> {{ $item->dateline }}</h1>
-                            </div> --}}
-                            <!-- entity_meta -->
-                            @if($item->image)
-                                <div class="entity_thumb">
-                                    <img class="img-responsive" src="{{ asset('storage/news/'.$item->image) }}"  alt="{{$item->image}}">
+                            <div class="row justify-content-md-center m30">
+                                <div class="col-md-6">
+                                    @if ($item->image)
+                                        <div class="entity_thumb">
+                                            <img class="img-responsive" src="{{ asset('storage/news/' . $item->image) }}"
+                                                alt="{{ $item->image }}">
+                                        </div>
+                                        <!-- entity_thumb -->
+                                    @endif
                                 </div>
-                                <!-- entity_thumb -->
-                            @endif
+                                <div class="col-md-6">
+                                    <div class="entity_title">
+                                        <h3><a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
+                                                target="_self">
+                                                {!! $item->title !!}</a>
+                                        </h3>
+                                    </div>
+                                    <!-- entity_title -->
 
-                            <div class="entity_content">
-                                <p>{!! $item->intro !!}</p>
-                            </div>
+                                    {{-- <div class="entity_meta">
+                                        <h1> {{ $item->dateline }}</h1>
+                                    </div> --}}
+                                    <!-- entity_meta -->
 
-                                <div class="">
-                                    <a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
-                                        class="btn btn-outline-primary btn-lg active">
-                                        Подробнее>>></a>
+                                    <div class="entity_content">
+                                        <p>{!! $item->intro !!}</p>
+                                    </div>
+
+                                    <div class="">
+                                        <a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
+                                            class="btn btn-outline-primary btn-lg active">
+                                            Подробнее>>></a>
+                                    </div>
                                 </div>
-                                <div class="divider"></div>
+                            </div>
+                             <hr>
                         @endforeach
-
                     </div>
 
- <nav aria-label="Page navigation" class="pagination_section">
-                            <ul class="pagination">
-                                <li>{{ $pressnews->links() }}</li>
-                            </ul>
-                        </nav>
+                    <nav aria-label="Page navigation" class="pagination_section">
+                        <ul class="pagination">
+                            <li>{{ $pressnews->links() }}</li>
+                        </ul>
+                    </nav>
 
                     <!-- container -->
                     <!-- entity_section -->
                 </div>
                 <!-- entity_wrapper -->
-<div class="col-md-1"></div>
+                <div class="col-md-1"></div>
             </div>
             <!-- col-md-4 -->
 

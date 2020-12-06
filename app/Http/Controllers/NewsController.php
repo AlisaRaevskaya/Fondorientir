@@ -47,8 +47,8 @@ class NewsController extends Controller
 
     public function showByCategoryId($category, $id=false){
         $category = Category::find(1)->where('name', $category)->first();
-        $newsby = $category->news->where('id', $id);
-        return view('news.news_single', compact('newsby', 'category'));
+        $item = $category->news->where('id', $id)->first();
+        return view('news.news_single', compact('item', 'category'));
     }
 
     public function showBySubCategory($category, $subcategory){

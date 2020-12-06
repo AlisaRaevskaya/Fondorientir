@@ -1,5 +1,4 @@
 @import url('style.css');
-
 .main_content{
     margin-left:0 1%;
 }
@@ -150,4 +149,23 @@ padding-left:27px;
 }
 .brochure-button{
   margin-top:1.5rem;
+}
+
+
+.password {
+	position: relative;
+}
+.password-control{
+	position: absolute;
+	top: 11px;
+	right: 6px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+    background: url("../assets/images/view.svg") 0 0 no-repeat;
+ /* background: url("https://snipp.ru/demo/495/view.svg") 0 0 no-repeat; */
+}
+
+.password-control.view {
+	background: url("../assets/images/no-view.svg") 0 0 no-repeat;
 }

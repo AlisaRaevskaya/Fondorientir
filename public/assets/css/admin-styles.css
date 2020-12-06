@@ -10247,3 +10247,7 @@ body {
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
 }
+.admin-container{
+max-width:1300px;
+margin:0 auto;
+}

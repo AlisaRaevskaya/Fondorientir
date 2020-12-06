@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pages;
+use App\Models\Page;
 use App\Models\News;
 use App\Models\Reply;
 use App\Models\Topic;
@@ -54,7 +54,7 @@ class MainController extends Controller
      */
     public function show($id)
     {
-    $page= Pages::where('title', 'Главная')->get();
+    $page= Page::where('title', 'Главная')->get();
     $main_image= Image::where('mode','main')->pluck('name')->first();
     $banner=Image::where('mode','banner')->pluck('name')->first();
     return view('admin.main.show', compact('page', 'main_image','banner'));
@@ -63,12 +63,12 @@ class MainController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Page $id)
     {
-        $pages= Pages::where('id', $id)->get();
+        $pages= Page::where('id', $id)->get();
        $main_image= Image::where('mode','main')->pluck('name')->first();
     $banner=Image::where('mode','banner')->pluck('name')->first();
         return view('contacts', compact('pages',  'main_image','banner'));

@@ -5,7 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
-    <meta name="keywords" content="№" />
+    <meta name="description" content="Вся информация о попкорне и сладкой вате. Воздушная кукуруза и сахарная вата.">
+    <meta name="keywords"
+        content="/">
+    <meta property="og:description"
+        content="/">
+    <meta property="og:title"
+        content="/" />
+    <meta property="og:image" content="/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/l" />
+    <meta property="og:site_name" content="/" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Фонд поддержки добровольного переселения соотечественников</title>
 
@@ -38,8 +48,9 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU"
         type="text/javascript">
     </script>
-{{--
-    <script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script> --}}
+    {{--
+    <script src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
+    --}}
 
 
 
@@ -84,10 +95,12 @@
     <!-- Theme Script -->
     <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/callajax.js"></script>
-    <script src="/assets/js/sub-ajax.js"></script>
-    <script src="/assets/js/web-ajax.js"></script>
-    <script src="/assets/js/faajax.js"></script>
+    <script src="/assets/js/ajax/call-ajax.js"></script>
+    <script src="/assets/js/ajax/problem-ajax.js"></script>
+    <script src="/assets/js/ajax/reception-ajax.js"></script>
+    <script src="/assets/js/ajax/claim-ajax.js"></script>
+    <script src="/assets/js/ajax/application-ajax.js"></script>
+    <script src="/assets/js/ajax/lawyer-ajax.js"></script>
 
 </body>
 
