@@ -12,6 +12,15 @@ $("#btn-messages").on("click", function (event) {
   });
 
   let form_data = $('form[name="feedbackForm"]').serialize(); // Собираем все данные из формы
+    let lastNameError= $("#lastNameError");
+    let firstNameError=$("#firstNameError");
+    let fatherNameError=$("#fatherNameError");
+    let emailError= $("#emailError");
+    let jobError= $("#jobError");
+    let phoneError = $("#phoneError");
+   let addressError= $("#addressError");
+   let messageError= $("#messageError");
+   let consentError= $("#consentError");
 
 
   $.ajax({
@@ -25,14 +34,15 @@ $("#btn-messages").on("click", function (event) {
           $('form[name="feedbackForm"]').trigger("reset");
         }, 2000);
       } else{
-        $("#lastNameError").text(response.errors.lastName);
-        $("#firstNameError").text(response.errors.firstName);
-        $("#fatherNameError").text(response.errors.fatherName);
-        $("#emailError").text(response.errors.email);
-        $("#jobError").text(response.errors.job);
-        $("#phoneError").text(response.errors.phone);
-        $("#addressError").text(response.errors.address);
-        $("#messageError").text(response.errors.message);
+        lastNameError.text(response.errors.lastName);
+        firstNameError.text(response.errors.firstName);
+       fatherNameError.text(response.errors.fatherName);
+       emailError.text(response.errors.email);
+       jobError.text(response.errors.job);
+    phoneError.text(response.errors.phone);
+        addressError.text(response.errors.address);
+       messageError.text(response.errors.message);
+    consentError.text(response.errors.consent);
       }
     }
     //  error: function(response){
@@ -40,3 +50,14 @@ $("#btn-messages").on("click", function (event) {
     // }
   });
 });
+
+// let arr = [];
+// arr.push(lastNameError,
+//     firstNameError,
+//     fatherNameError,
+//    emailError,
+//     jobError,
+//     phoneError,
+//    addressError,
+//     messageError,
+//   consentError)

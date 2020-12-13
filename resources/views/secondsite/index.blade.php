@@ -1,4 +1,4 @@
-@extends('secondsite.layout')
+@extends('secondsite.layout',['seo' => $page->getSeo()])
 @section('content')
 
     <section class="main_info">

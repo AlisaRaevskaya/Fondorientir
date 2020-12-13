@@ -1,5 +1,5 @@
 <!-- Left Section -->
-@extends('layout')
+@extends('layout',['seo' => $page->getSeo()])
 
 @section('content')
 
@@ -7,9 +7,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-1"></div>
-
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <div class="entity-wrapper">
 
                         <div class="row justify-content-center">
@@ -20,7 +18,8 @@
                             <div class="row justify-content-md-center m30">
                                 <div class="col-md-6">
                                     <div class="entity_img">
-                                        <img class="img-responsive"src="/storage/news/{{ $item->image }}" alt="{{ $item->title }}">
+                                        <img class="img-responsive" src="/storage/news/{{ $item->image }}"
+                                            alt="{{ $item->title }}">
                                     </div>
                                 </div>
 
@@ -38,7 +37,7 @@
                                     </div>
 
                                     <div class="entity_intro">
-                                        {!!$item->intro!!}
+                                        {!! $item->intro !!}
                                     </div>
 
                                     <div>
@@ -59,7 +58,7 @@
                         </nav>
                     </div>
                 </div>
-                <div class="col-md-1"></div>
+                @include('layouts.sidebar')
             </div>
         </div>
     </section>

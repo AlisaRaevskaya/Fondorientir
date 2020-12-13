@@ -5,19 +5,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
-    <meta name="description" content="Вся информация о попкорне и сладкой вате. Воздушная кукуруза и сахарная вата.">
-    <meta name="keywords"
-        content="/">
-    <meta property="og:description"
-        content="/">
-    <meta property="og:title"
-        content="/" />
-    <meta property="og:image" content="/" />
+    @if (is_object($seo))
+    <meta name="description" content="{{$seo->description ? $seo->description : '__(E-Mail Address)'}}">
+    <meta name="keywords" content="{{$seo->keywords}}/">
+    <meta property="og:title"content="{{$seo->seo_title}}/" />
+    <meta property="og:description"content="{{$seo->description}}/">
+    <meta property="og:image" content="{{asset('storage/logo.png')}}"/>
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="/l" />
-    <meta property="og:site_name" content="/" />
+    {{-- <meta property="og:url" content="{{config('app.url')}}/" />
+    <meta property="og:site_name" content="{{config('app.name')}}/" />  --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Фонд поддержки добровольного переселения соотечественников</title>
+    <title>{{$seo->seo_title}}</title>
+    @else
+     <meta name="description" content="Фонд поддержки мигрантов 'Ориентир'">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+     <meta name="keywords" content="мигранты/">
+     <title>Фонд "Ориентир"</title>
+    @endif
+
+
 
     <!-- favicon -->
     <!-- <link href="/assets/images/favicon.ico" rel=icon> -->
@@ -25,7 +31,7 @@
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
     <!-- web-fonts -->
-    <link href='/assets/fonts/google/fontRoboto.css' rel='stylesheet'>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">

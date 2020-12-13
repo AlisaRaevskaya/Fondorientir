@@ -49,8 +49,9 @@
                 <textarea class="form-control" cols="4" rows="7" placeholder="Введите сообщение" name="message"></textarea>
                 <span class="text-danger" id="messageError"></span>
             </div>
-             <div id="law-success"></div>
+
          <input type="submit" class="form-group btn btn-primary" id="lawyer-btn" value="Отправить">
+          <div id="law-success" class="success-btn"></div>
      </form>
 
         <script src="/assets/js/ajax/lawyer-ajax.js"></script>

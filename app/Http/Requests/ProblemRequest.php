@@ -25,9 +25,9 @@ class ProblemRequest extends FormRequest
     public function rules()
     {
         return [
-        'name' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я]+(?:[\-\s.]+[a-zA-Zа-яА-Я]+)*$/'],
+        'name' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я].*$/'],
         'message' => ['required','string','min:8','max:500'],
-        'email' => ['required','min:2','max:255','email','unique:messages'],
+        'email' => ['required','min:2','max:255','email'],
         'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
     ];
     }

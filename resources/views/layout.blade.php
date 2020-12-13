@@ -5,27 +5,38 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
-    <meta name="keywords" content="№" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Фонд поддержки добровольного переселения соотечественников</title>
+    @if (is_object($seo))
+        <meta name="description" content="{{ $seo->description ? $seo->description : '__(E-Mail Address)' }}">
+        <meta name="keywords" content="{{ $seo->keywords }}/">
+        <meta property="og:title" content="{{ $seo->seo_title }}/" />
+        <meta property="og:description" content="{{ $seo->description }}/">
+        <meta property="og:image" content="{{ asset('storage/logo.png') }}" />
+        <meta property="og:type" content="article" />
+        {{--
+        <meta property="og:url" content="{{ config('app.url') }}/" />
+        <meta property="og:site_name" content="{{ config('app.name') }}/" /> --}}
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>{{ $seo->seo_title }}</title>
+    @else
+        <meta name="description" content="Фонд Ориентир">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="keywords" content="мигранты/">
+        <title>Фонд "Ориентир"</title>
+    @endif
 
-    <!-- favicon -->
-    <!-- <link href="/assets/images/favicon.ico" rel=icon> -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
-    <!-- web-fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
-
-    <!-- font-awesome -->
     <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
     <!-- Mobile Menu Style -->
     <link href="/assets/css/mobile-menu.css" rel="stylesheet">
-    <link href="/assets/css/main.css" rel="stylesheet">
+
 
     <!-- Owl carousel -->
     <link href="/assets/css/owl.carousel.css" rel="stylesheet">
@@ -60,16 +71,24 @@
 
                 @yield('content')
 
-                @include('layouts.footer')
+                {{-- @if (url()->current() !== 'http://fondorientir')
 
+                    @include('layouts.sidebar')
             </div>
         </div>
+        </section>
+        @endif --}}
 
-        <div class="uc-mobile-menu uc-mobile-menu-effect">
-            @include('layouts.mobile')
-        </div>
-        @include('blocks.map')
-        @include('blocks.call')
+        @include('blocks.pre_footer')
+        @include('layouts.footer')
+    </div>
+    </div>
+
+    <div class="uc-mobile-menu uc-mobile-menu-effect">
+        @include('layouts.mobile')
+    </div>
+    @include('blocks.map')
+    @include('blocks.call')
 
     </div>
 

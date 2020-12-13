@@ -8,20 +8,20 @@
                 <section class="content-header" style="padding-top:10px;">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div>
-                                <ol class="breadcrumb float-sm-right">
+                            <div class="col-sm-12 col-md-12">
+                                <ol class="breadcrumb float-sm-right ">
                                 <li class="breadcrumb-item"><a href="{{route('admin.pages.index')}}">Страницы</a></li>
                                     <li class="breadcrumb-item active">{{ $page->title }}</li>
                                 </ol>
                             </div>
-
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
+
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-11">
+                        <div class="col-md-12">
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -31,6 +31,7 @@
 
                                 <!-- /.card-header -->
                                 <div class="card-body">
+
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item">
                                             <a class="nav-link active" data-toggle="tab" href="#content">Содержание</a>
@@ -55,8 +56,7 @@
                                                         {{ Form::label('title', 'Название') }}
                                                         {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
                                                     </div>
-
-                                                    <div class="form-group">
+                                                       <div class="form-group">
                                                         {{ Form::label('content', 'Текст') }}
                                                         {{ Form::textArea('content', $page->content, ['class' => 'form-control summernote']) }}
                                                     </div>
@@ -88,15 +88,17 @@
                                                         </div>
                                                     @endif
                                                     <div class="box-footer">
-                                                        <div class="">
+                                                        <div class="buttons">
                                                             <a href="{{ url()->previous() }}"
-                                                                class="btn btn-secondary">Назад</a>
+                                                                class="btn btn-default "><i class="fas fa-caret-left"></i> Назад</a>
 
                                                             <button class="btn btn-primary pull-right"
-                                                                style="margin-left:20px;">Сохранить</button>
+                                                                style="margin-left:20px;"><i class="fas fa-save"></i> Сохранить</button>
 
                                                             <a href="{{ route('admin.mission.show', $page->id) }}"
-                                                                class="btn btn-warning pull-right">Просмотр</a>
+                                                                class="btn btn-warning pull-right">
+                              <i class="fas fa-folder">
+                              </i> Просмотр</a>
                                                         </div>
                                                     </div>
                                                     {{-- {{ Form::close() }}
@@ -109,12 +111,12 @@
                                             <div class="" style="margin-top:15px;">
                                                 <div class="col-md-11">
                                                     <div class="form-group">
-                                                        {{ Form::label('name', 'Название (для для админки)') }}
+                                                        {{ Form::label('name', 'Название (для админки)') }}
                                                         {{ Form::text('name', $seo->name, ['class' => 'form-control required m30']) }}
                                                     </div>
-                                                   <div class="form-group">
-                                                        {{ Form::label('seo_title', 'Title') }}
-                                                        {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control']) }}
+                                                    <div class="form-group">
+                                                        {{ Form::label('title', 'Title') }}
+                                                        {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control required']) }}
                                                         <i>Заголовок конкретной страницы</i>
                                                     </div>
                                                     <div class="form-group required">
@@ -141,13 +143,9 @@
                                                         <i></i>
                                                     </div>
 
-                                                    @if (session()->has('seo_message'))
-                                                        <div class="alert alert-success">
-                                                            {{ session()->get('seo_message') }}
-                                                        </div>
-                                                    @endif
+
                                                     <div><a href="{{ url()->previous() }}"
-                                                                class="btn btn-secondary">Назад</a></div>
+                                                                class="btn btn-default "><i class="fas fa-caret-left"></i> Назад</a></div>
                                                     {{ Form::close() }}
                                                 </div>
                                             </div>
@@ -162,3 +160,4 @@
         </main>
     </div>
 @endsection
+

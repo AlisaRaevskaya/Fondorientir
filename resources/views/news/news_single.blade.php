@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout',['seo' => $page->getSeo()])
 @section('content')
     <section id="entity_section" class="entity_section">
         <div class="container">
@@ -27,18 +27,19 @@
                         @endif
 
                         <div class="entity_content">
-                                {!! $item->body !!}
+                            {!! $item->body !!}
                         </div>
 
-                        @if ($item->source_name && $item->source_link)
+                        @if ($item->source_name)
                             <div class="entity_thumb">
                                 <span>
                                     <h6>Источник:{{ $item->source_name }}:</h6>
-                                    <h6>Ccылка:{!! $item->source_link !!}</h6>
+                                    @if ($item->source_link)
+                                        <h6>Ccылка:<a href="{!!  $item->source_link !!}"></a></h6>
+                                    @endif
                                 </span>
                             </div>
                         @endif
-
                         <div class="m30"><a href="{{ url()->previous() }}" class="btn btn-default">
                                 Назад </a>
                         </div>

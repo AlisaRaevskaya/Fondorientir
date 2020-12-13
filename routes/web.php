@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\PressController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\StatusController;
@@ -15,6 +14,8 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SecondSiteController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,7 @@ use App\Http\Controllers\Admin\NotificationController;
 //Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 
 Route::get('/', [MainController::class, 'index'])->name('main');
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::get('/feedback', [MessageController::class, 'index'])->name('feedback');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/info', [InfoController::class, 'index'])->name('info');
@@ -37,8 +38,8 @@ Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/status', [StatusController::class, 'index'])->name('status');
 Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
-
-Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/history', [MainController::class, 'history'])->name('history');
+// Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
 Route::get('/structure', [MainController::class, 'structure'])->name('structure');
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
@@ -46,27 +47,27 @@ Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
 
-Route::get('/feedback/lawyer', [FeedbackController::class, 'lawyer'])->name('lawyer');
-Route::get('/feedback/reception', [FeedbackController::class, 'reception'])->name('reception');
-Route::get('/feedback/hotline', [FeedbackController::class, 'hotline'])->name('hotline');
-Route::get('/feedback/application', [FeedbackController::class, 'application'])->name('application');
-Route::get('/feedback/claim', [FeedbackController::class, 'claim'])->name('claim');
-Route::get('/feedback/problem', [FeedbackController::class, 'problem'])->name('problem');
-Route::get('/feedback/fzakon', [FeedbackController::class, 'fzakon'])->name('feedback.fzakon');
+Route::get('/feedback/lawyer', [MessageController::class, 'lawyer'])->name('lawyer');
+Route::get('/feedback/reception', [MessageController::class, 'reception'])->name('reception');
+Route::get('/feedback/hotline', [MessageController::class, 'hotline'])->name('hotline');
+Route::get('/feedback/application', [MessageController::class, 'application'])->name('application');
+Route::get('/feedback/claim', [MessageController::class, 'claim'])->name('claim');
+Route::get('/feedback/problem', [MessageController::class, 'problem'])->name('problem');
+Route::get('/feedback/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
 
 
-Route::get('/press-news/interview', [NewsController::class, 'interview'])->name('interview');
-Route::get('/press-news/press', [NewsController::class, 'showPressNews'])->name('press');
-Route::get('/press-news/foto', [NewsController::class, 'showFoto'])->name('foto');
-Route::get('/press-news/for-press', [NewsController::class, 'forPress'])->name('for-press');
-Route::get('/press-news/not-for-press', [NewsController::class, 'notForPress'])->name('not-for-press');
+Route::get('/press-news/interview', [PressController::class, 'interview'])->name('interview');
+Route::get('/press-news/press', [PressController::class, 'showPressNews'])->name('press');
+Route::get('/press-news/foto', [PressController::class, 'showFoto'])->name('foto');
+Route::get('/press-news/for-press', [PressController::class, 'forPress'])->name('for-press');
+Route::get('/press-news/not-for-press', [PressController::class, 'notForPress'])->name('not-for-press');
 
 Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
 
 Route::get('/info/vacancies', [InfoController::class, 'vacancies'])->name('vacancies');
 Route::get('/info/blanks', [InfoController::class, 'blanks'])->name('blanks');
 Route::get('/info/bankofdocuments', [InfoController::class, 'bankofdocuments'])->name('bankdocuments');
-Route::get('/info/testmaterial',[InfoController::class, 'testmaterial'])->name('testmaterial');
+Route::get('/info/testirovanie-trudovyh-migrantov',[InfoController::class, 'testmaterial'])->name('testmaterial');
 Route::get('/info/brochures', [InfoController::class, 'brochures'])->name('brochures');
 Route::get('/info/reminder', [InfoController::class, 'reminder'])->name('reminder');
 
@@ -90,9 +91,6 @@ Route::post('/claim-form', [AjaxController::class, 'saveClaim'])->name("claim-fo
 Route::view('/admin-panel', 'admin.admin_home')->middleware('auth');
 
 
-// Route::post('/commentForm', [AjaxController::class, 'saveComment']);
-// Route::post('/subscribe', [AjaxController::class, 'saveSubscription']);
-
 Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
 Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second-reception');
 Route::get('/center-podderzhki/claim', [SecondSiteController::class, 'claim'])->name('second-claim');
@@ -109,9 +107,10 @@ Route::resource('/news', '\App\Http\Controllers\Admin\NewsController');
 Route::resource('/faq', '\App\Http\Controllers\Admin\FAQ\AdminFaqController');
 Route::resource('/fq', '\App\Http\Controllers\Admin\FAQ\ForFaqController');
 Route::resource('/seo', '\App\Http\Controllers\Admin\SeoController');
-
 Route::resource('/contacts', '\App\Http\Controllers\Admin\Contacts\ContactsController');
 Route::resource('/company-info', '\App\Http\Controllers\Admin\Contacts\CompanyInfoController');
+
+Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
 Route::resource('/about', '\App\Http\Controllers\Admin\Main\AboutController');
 Route::resource('/fond', '\App\Http\Controllers\Admin\Main\FondController');
 Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
@@ -119,7 +118,7 @@ Route::resource('/reports', '\App\Http\Controllers\Admin\Main\ReportsController'
 Route::resource('/structure', '\App\Http\Controllers\Admin\Main\StructureController');
 Route::resource('/projects', '\App\Http\Controllers\Admin\Main\ProjectsController');
 Route::resource('/partners', '\App\Http\Controllers\Admin\Main\PartnersController');
-Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankinfoController');
+Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankInfoController');
 Route::resource('/forprojects', '\App\Http\Controllers\Admin\Main\ForProjectsController');
 
 
@@ -130,11 +129,7 @@ Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialCo
 Route::resource('vacancies', '\App\Http\Controllers\Admin\Info\VacancyController');
 Route::resource('bankdocuments', '\App\Http\Controllers\Admin\Info\BankdocumentsController');
 
-Route::resource('/interview', '\App\Http\Controllers\Admin\Press\InterviewController');
 Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
-Route::resource('/foto', '\App\Http\Controllers\Admin\Press\FotoController');
-Route::resource('/for-press', '\App\Http\Controllers\Admin\Press\ForPressController');
-Route::resource('/not-for-press', '\App\Http\Controllers\Admin\Press\NotForPressController');
 
 
 Route::resource('/lawyer', '\App\Http\Controllers\Admin\Reception\LawyerController');

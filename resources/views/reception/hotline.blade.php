@@ -1,7 +1,8 @@
-@extends('layout')
+@extends('layout',['seo' => $page->getSeo()])
 
 @section('content')
-    @foreach ($page as $item)
-        {!! $item->content !!}
-    @endforeach
+
+    {{-- {!! $page->content !!} --}}
+
+
 @endsection

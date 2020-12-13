@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-xs-3" for="inputEmail">Электронная почта:</label>
+            <label class="control-label col-xs-3" for="inputEmail">Электронная почта*:</label>
             <div class="col-xs-9">
                 <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
                 <span class="text-danger" id="emailError"></span>
@@ -77,7 +77,9 @@
                     <a href="/assets/dw/soglasie.pdf" target="_blank" class="consent"> на
                         обработку моих данных
                     </a></label>
+                     <div> <span class="text-danger" id="consentError"></span></div>
             </div>
+
         </div>
         <br />
         <div class="form-group">

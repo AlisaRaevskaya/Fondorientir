@@ -1,12 +1,10 @@
-@extends('layout')
+@extends('layout',['seo' => $page->getSeo()])
 @section('content')
     <section id="entity_section" class="entity_section">
         <div class="container">
             <div class="row">
 
-                <div class="col-md-1"></div>
-
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <div class="entity-wrapper">
 
                         @foreach ($newsby as $item)
@@ -22,12 +20,12 @@
 
                             @if (isset($item->image))
                                 <div class="entity_thumb">
-                                    <img class="img-responsive" src="/assets/images/{{$item->image}}" alt="feature-top">
+                                    <img class="img-responsive" src="/assets/images/{{ $item->image }}" alt="feature-top">
                                 </div>
                             @endif
 
                             <div class="entity_content">
-                                    {!! $item->body !!}
+                                {!! $item->body !!}
                             </div>
 
                             <!-- entity_content -->
@@ -54,7 +52,7 @@
             <!--Right Section-->
 
             <!-- row -->
-            <div class="col-md-1"></div>
+            @include('layouts.sidebar')
 
 
         </div>

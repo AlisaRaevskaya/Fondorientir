@@ -8,20 +8,20 @@
                 <section class="content-header" style="padding-top:10px;">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div>
-                                <ol class="breadcrumb float-sm-right">
+                            <div class="col-sm-12 col-md-12">
+                                <ol class="breadcrumb float-sm-right ">
                                 <li class="breadcrumb-item"><a href="{{route('admin.pages.index')}}">Страницы</a></li>
                                     <li class="breadcrumb-item active">{{ $page->title }}</li>
                                 </ol>
                             </div>
-
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
+
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-11">
+                        <div class="col-md-12">
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -88,19 +88,20 @@
                                                         </div>
                                                     @endif
                                                     <div class="box-footer">
-                                                        <div class="">
+                                                        <div class="buttons">
                                                             <a href="{{ url()->previous() }}"
-                                                                class="btn btn-secondary">Назад</a>
+                                                                class="btn btn-default "><i class="fas fa-caret-left"></i> Назад</a>
 
                                                             <button class="btn btn-primary pull-right"
                                                                 style="margin-left:20px;">Сохранить</button>
 
                                                             <a href="{{ route('admin.partners.show', $page->id) }}"
-                                                                class="btn btn-warning pull-right">Просмотр</a>
+                                                                class="btn btn-warning pull-right">
+                              <i class="fas fa-folder">
+                              </i> Просмотр</a>
                                                         </div>
                                                     </div>
-                                                    {{-- {{ Form::close() }}
-                                                    --}}
+
                                                 </div>
                                             </div>
                                         </div>
@@ -143,7 +144,7 @@
 
 
                                                     <div><a href="{{ url()->previous() }}"
-                                                                class="btn btn-secondary">Назад</a></div>
+                                                                class="btn btn-default "><i class="fas fa-caret-left"></i> Назад</a></div>
                                                     {{ Form::close() }}
                                                 </div>
                                             </div>
@@ -152,9 +153,11 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
             </div>
         </main>
     </div>
 @endsection
+

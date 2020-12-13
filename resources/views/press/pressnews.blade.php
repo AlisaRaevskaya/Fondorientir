@@ -1,14 +1,11 @@
-@extends('layout')
+@extends('layout',['seo' => $page->getSeo()])
 
 @section('content')
 
     <section id="entity_section" class="entity_section">
         <div class="container">
             <div class="row">
-                <div class="col-md-1"></div>
-
-                <div class="col-md-10">
-
+                <div class="col-md-9">
                     <div class="entity_wrapper">
 
                         <div class="row justify-content-center">
@@ -51,7 +48,7 @@
                                     </div>
                                 </div>
                             </div>
-                             <hr>
+                            <hr>
                         @endforeach
                     </div>
 
@@ -60,12 +57,8 @@
                             <li>{{ $pressnews->links() }}</li>
                         </ul>
                     </nav>
-
-                    <!-- container -->
-                    <!-- entity_section -->
                 </div>
-                <!-- entity_wrapper -->
-                <div class="col-md-1"></div>
+                @include('layouts.sidebar')
             </div>
             <!-- col-md-4 -->
 

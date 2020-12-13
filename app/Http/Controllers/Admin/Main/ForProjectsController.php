@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Projects;
+use App\Models\Project;
 
 class ForProjectsController extends Controller
 {
@@ -36,9 +36,10 @@ class ForProjectsController extends Controller
      */
     public function store(Request $request)
     {
-       $promos = Projects::add($request->all());
+       $project = Project::add($request->all());
+       $id=$project->id;
        $message="Проект добавлен";
-       return redirect()->route('admin.forprojects.edit', $id)->with('message', $message);
+       return redirect()->route('admin.projects.edit', 13)->with('project_message', $message);
     }
 
     /**
@@ -49,8 +50,8 @@ class ForProjectsController extends Controller
      */
     public function show($id)
     {
-        $project=Projects::find($id);
-        return view('admin.main.projects.show_projects', compact('project'));
+        $projects=Project::all();
+        return view('admin.main.projects.show_projects', compact('projects'));
     }
 
     /**
@@ -61,9 +62,9 @@ class ForProjectsController extends Controller
      */
     public function edit($id)
     {
-        $projects=Projects::all();
+        $project=Project::findOrFail($id);
 
-        return view('admin.main.projects.edit', compact('projects'));
+        return view('admin.main.projects.single_edit', compact('project'));
     }
 
     /**
@@ -75,10 +76,11 @@ class ForProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $projects=Projects::find($id);
-        $projects->add($request->all());
+        $project=Project::findOrFail($id);
+        $project->fill($request->all());
+        $project->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.forprojects.edit', $id)->with('message', $message);
+        return redirect()->route('admin.forprojects.edit', $id)->with('project_message', $message);
     }
 
     /**
@@ -89,10 +91,10 @@ class ForProjectsController extends Controller
      */
     public function destroy($id)
     {
-         $page = Projects::findOrFail($id);
+        $project = Project::findOrFail($id);
 
-        $page->delete();
+        $project->delete();
 
-        return redirect()->route('admin.forprojects.edit');
+        return redirect()->route('admin.projects.edit', $id);
     }
 }

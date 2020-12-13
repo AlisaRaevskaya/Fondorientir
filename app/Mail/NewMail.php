@@ -27,6 +27,7 @@ class NewMail extends Mailable
      * @return $this
      */
     public function build()
-    {return ->view('emails.submail');
+    {
+        return $this->view('email.message_mail');
     }
 }

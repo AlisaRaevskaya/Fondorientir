@@ -28,6 +28,6 @@ class SubMail extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')->markdown('emails.subscribed');
+        return $this->markdown('email.subscribed');
     }
 }

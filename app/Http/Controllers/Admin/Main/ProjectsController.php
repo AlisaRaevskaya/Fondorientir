@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Projects;
+use App\Models\Project;
 use App\Models\File;
 use App\Models\Page;
 use App\Models\Seo;
@@ -18,14 +18,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $newProjects =Projects::all();
-        $projects=PreProject::all();
-        $pages=Page::where('title', 'projects')->get();
-
-        foreach ($pages as $page) {
-            $content= $page->content;
-        }
-        return view('admin.about.projects', compact('projects', 'newProjects', 'content'));
+       //
     }
 
     /**
@@ -46,7 +39,7 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        $promos = Projects::add($request->all());
+        $promos = Project::add($request->all());
     }
 
     /**
@@ -58,7 +51,7 @@ class ProjectsController extends Controller
     public function show($id)
     {
         $page = Page::find($id);
-        $projects=Projects::all();
+        $projects=Project::all();
         return view('admin.main.projects.show', compact('projects', 'page'));
     }
 
@@ -72,7 +65,7 @@ class ProjectsController extends Controller
     {
         $page= Page::find($id);
         $seo = $page->seo;
-        $projects=Projects::all();
+        $projects=Project::all();
         return view('admin.main.projects.edit', compact('page', 'projects', 'seo'));
     }
 
@@ -101,12 +94,9 @@ class ProjectsController extends Controller
         $seo->keywords=$request->keywords;
         $seo->og_title=$request->og_title;
         $seo->og_description=$request->og_description;
-        $seo->og_url=$request->og_url;
-        $seo->og_type=$request->og_type;
-        $seo->og_site_name=$request->og_site_name;
         $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.mission.edit', $id)->with('message', $message);
+        return redirect()->route('admin.projects.edit', $id)->with('message', $message);
     }
 
     /**
@@ -118,8 +108,11 @@ class ProjectsController extends Controller
     public function destroy($id)
     {
         $page = Page::findOrFail($id);
+        $seo=Seo::where('page_id', $id)->first();
 
+        $seo->delete();
         $page->delete();
+
 
         return redirect()->route('admin.pages.index');
     }

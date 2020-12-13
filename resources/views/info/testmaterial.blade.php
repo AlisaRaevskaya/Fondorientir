@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout',['seo' => $page->getSeo()])
 @section('content')
 
     <section id="entity_section" class="entity_section">
@@ -10,7 +10,7 @@
                 <div class="col-md-10">
                     <h1>Материалы по тестированию</h1>
                     <div class="entity_wrapper">
-                        {!!$page->content!!}
+                        {!! $page->content !!}
                     </div>
                     <!-- entity_content -->
                 </div>

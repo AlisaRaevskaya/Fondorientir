@@ -5,53 +5,47 @@
                 @foreach ($contacts as $contact)
                     <div class="col-md-5">
                         <div class="left_section">
-                            <div class="row justify-content-between">
-                                <a href="{{route('main')}}" class="logo">
-                                <img src="/assets/images/{{$contact->logo}}" alt="Logo"></a>
-                                <div style="position:absolute;top:5%;
-                                left:30%;float:right;" class="text-center" id="logo-name">
-                                    <h5>Фонд поддержки</h5>
-                                    <h5>добровольного переселения</h5>
-                                    <h5>соотечественников «ОРИЕНТИР»</h5>
-                                </div>
-                            </div>
-
-
-                            <div class="social">
-                                <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                                <!--Twitter-->
-                                <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                                <!--Google +-->
-                                <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                                <!--Linkedin-->
-                                <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
-                                <!--Pinterest-->
-                                <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
+                            <div class="">
+                                <a href="{{ route('main') }}" class="logo">
+                                    <img src="/assets/images/{{ $contact->logo }}" alt="Logo"
+                                        class="img-responsive"></a>
                             </div>
                             <!-- Top Social Section -->
                         </div>
                         <!-- Left Header Section -->
                     </div>
 
-                    <div class="col-md-3"></div>
-
-                    <div class="col-md-4">
-                        <div class="right_section">
-                            <ul class="nav navbar-nav">
-                                <li><a>Е-mail:{{ $contact->email }}</a></li>
-                                <li><a>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</a></li>
-                                <li><a href="#" class="pop_map_link" data-toggle="modal"
-                                        data-target=".bd-example-modal-lg"><i class="fa fa-map-o">
-                                            Схема проезда (интерактивная карта)</i></a></li>
-                                <li><a>Часы работы:<span style="font-weight: bold; font-size:15px;">{{ $contact->hours }}</span></a></li>
-                                <li style="border-bottom:none;"><h5><a href='#'>{{ $contact->phone }}</a></h5></li>
-                            </ul>
-                            <!-- Language Section -->
+                    <div class="col-md-2">
+                        <div class="social">
+                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+                            <!--Twitter-->
+                            <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+                            <!--Google +-->
+                            <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
+                            <!--Linkedin-->
+                            <a class="icons-sm tmb-ic"><i class="fa fa-vk"> </i></a>
                         </div>
-                        <!-- Right Header Section -->
-                         <button type="button" class="btn btn-primary btn_call" data-toggle="modal"
+                        <div class="">
+                            <p>{{ $contact->email }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="col-md-6">
+                            <h6>Правовая приемная</h6>
+                            <p>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</p>
+                            <a href="#" class="pop_map_link" data-toggle="modal" data-target=".bd-example-modal-lg"><i
+                                    class="fa fa-map-o">
+                                    Схема проезда (интерактивная карта)</i></a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="right_section text-center">
+                                <h6><i class="fa fa-phone"></i><a href='tel:+78123856989'>+7(812)-385-69-89</a></h6>
+                                <!-- Right Header Section -->
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
                                     data-target="#exampleModalLong">
                                     Заказать обратный звонок</button>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -85,9 +79,9 @@
                                                 <div class="m-menu-content">
                                                     <ul class="col-sm-3">
                                                         @foreach ($item->children as $children)
-                                                        <li><a href="{{ $children->laravel_name ?
-                                                        route($children->laravel_name) : $children->url }}">
-                                                        {{ $children->title }}</a></li>
+                                                            <li><a
+                                                                    href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}">
+                                                                    {{ $children->title }}</a></li>
                                                         @endforeach
                                                     </ul>
                                                 </div>
@@ -101,6 +95,19 @@
                                     </li>
                                 @endif
                             @endforeach
+                            <li style="width:350px;">
+                                <form>
+                                    <!-- Input Group -->
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Поиск"> <span
+                                            class="input-group-btn">
+                                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </li>
+                            <!-- Navbar-->
                         </ul>
                     </div>
 
@@ -116,4 +123,3 @@
     <!-- .container -->
 </section>
 <!-- header_section_wrapper -->
-

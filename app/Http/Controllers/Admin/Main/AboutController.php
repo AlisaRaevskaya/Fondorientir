@@ -52,7 +52,7 @@ class AboutController extends Controller
     {
         $page = Page::find($id);
 
-        return view('admin.main.history.show', compact('page'));
+        return view('admin.main.about.show', compact('page'));
     }
 
     /**
@@ -67,7 +67,7 @@ class AboutController extends Controller
     $page= Page::find($id);
     $seo = $page->seo;
 
-    return view('admin.main.history.edit', compact('page', 'seo'));
+    return view('admin.main.about.edit', compact('page', 'seo'));
     }
 
     /**
@@ -94,12 +94,10 @@ class AboutController extends Controller
         $seo->keywords=$request->keywords;
         $seo->og_title=$request->og_title;
         $seo->og_description=$request->og_description;
-        $seo->og_url=$request->og_url;
-        $seo->og_type=$request->og_type;
-        $seo->og_site_name=$request->og_site_name;
+
         $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.history.edit', $id)->with('message', $message);
+        return redirect()->route('admin.about.edit', $id)->with('message', $message);
     }
 
 

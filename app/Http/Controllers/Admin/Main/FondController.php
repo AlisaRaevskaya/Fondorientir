@@ -108,9 +108,12 @@ class FondController extends Controller
      */
     public function destroy($id)
     {
-        $page = Page::findOrFail($id);
+         $page = Page::findOrFail($id);
+        $seo=Seo::where('page_id', $id)->first();
 
+        $seo->delete();
         $page->delete();
+
 
         return redirect()->route('admin.pages.index');
     }

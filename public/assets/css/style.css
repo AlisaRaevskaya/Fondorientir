@@ -42,10 +42,9 @@ Author: uiCookies.com
 # -------------------------------------------------------------------*/
 
 body {
-    font-family: 'Roboto', serif;
+    font-family: 'Open Sans', serif;
     font-size: 13px;
     line-height: 21px;
-    color: #7d7d7d;
     background: #ffffff;
 }
 
@@ -60,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Roboto', serif;
+    font-family: 'Open Sans', serif;
     color: #000;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -81,7 +80,7 @@ h2 {
 h3 {
     font-size: 14px;
     line-height: 18px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 h4 {
@@ -99,10 +98,13 @@ h5 {
 h6 {
     font-size: 15px;
     line-height: 17px;
-    font-weight: normal;
+ font-weight:bold
 }
 
 
+p{
+  color: #000;
+}
 /* --------------------------------------
  * LINK STYLE
  *------------------------------------------*/
@@ -130,12 +132,13 @@ a:focus {
     text-decoration: none;
 }
 
+.nav ul{
+    list-style: none;
+}
 ul {
     margin: 0;
     padding: 0;
-    list-style: none;
 }
-
 
 /* --------------------
    Section Background
@@ -196,8 +199,8 @@ section {
 .header_section_wrapper{
     margin: 0 !important;
     padding-top: 30px;
-}
 
+}
 .header-section .logo {
     text-align: center;
     margin: 0 auto;
@@ -264,6 +267,7 @@ section {
     color: #7d7d7d;
     font-size: 12px;
     border-bottom: 1px solid #eee;
+    list-style: none;
 }
 
 .right_section .nav-cta {
@@ -334,7 +338,10 @@ section {
 .search-menu .input-group .form-control {
     width: 90%;
 }
-
+.summernote,
+.summernote_news{
+font-family:'Open Sans', sans-serif;
+}
 
 @media screen and (max-width: 768px) {
     .header-section {
@@ -1703,13 +1710,11 @@ section {
 .footer_bottom_Section {
     border-top: 2px solid #000;
     padding: 30px 0;
-    text-transform: uppercase;
     text-align: center;
     margin-top: 30px;
 }
 
 .footer_bottom_Section p {
-    font-weight: bold;
     text-shadow: #000;
     color: #000;
 }

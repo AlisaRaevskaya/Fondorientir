@@ -61,9 +61,9 @@ class ReportsController extends Controller
      */
     public function edit($id)
     {
-        $pages= Page::where('id', $id)->get();
+        $page= Page::where('id', $id)->first();
         $seo=Seo::where('page_id', $id)->first();
-        return view('admin.main.reports.edit', compact('pages', 'seo'));
+        return view('admin.main.reports.edit', compact('page', 'seo'));
     }
 
     /**
@@ -108,7 +108,9 @@ class ReportsController extends Controller
     public function destroy($id)
     {
         $page = Page::findOrFail($id);
+        $seo=Seo::where('page_id', $id)->first();
 
+        $seo->delete();
         $page->delete();
 
         return redirect()->route('admin.pages.index');

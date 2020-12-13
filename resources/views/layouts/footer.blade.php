@@ -4,18 +4,14 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="footer_widget_title">
-                    <h3><a href="/" target="_self">О Фонде</a></h3>
+                    <h3><a href="{{ route('main') }}" target="_self">О Фонде</a></h3>
                 </div>
                 <div class="logo">
                     @foreach ($contacts as $contact)
                         <div>
                             <div class="row justify-content-between footer-logo">
                                 <a title="fontanero" href="{{ route('main') }}">
-                                    <img src="/assets/images/{{ $contact->logo }}" alt="technews" width:="95pt"
-                                        height="95pt">
-                                    <div class="footer_main text-center">
-                                        <h5>Фонд<br>"ОРИЕНТИР"</h5>
-                                    </div>
+                                    <img src="/assets/images/{{ $contact->logo }}" class="img-responsive" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -87,13 +83,15 @@
                 </div>
                 <div class="footer_contacts">
                     @foreach ($contacts as $contact)
-                        <p>{{ $contact->name }}</p>
-                        <p> {{ $contact->inn }}</p>
-                        <p> {{ $contact->eng_name }}</p>
-                        <p>{{ $contact->index }}, {{ $contact->city }},{{ $contact->street }}</p>
-                        <p> {{ $contact->email }}</p>
-                        <p> {{ $contact->phone }}</p>
-                        <p> {{ $contact->web }}</p>
+                       <p><strong>Инн: </strong>{{ $contact->inn}}</p>
+                                <p><strong>Адрес: </strong>{{ $contact->index }}, {{ $contact->city }}{{ $contact->street }}</p>
+                                <p><strong>Остановка:</strong> {{ $contact->station }}</p>
+                                <p><strong>Автобусы:</strong> {{ $contact->bus }}</p>
+                                <p><strong>Маршрутки:</strong> {{ $contact->routes }}</p>
+                                <p><strong>Метро:</strong> {{ $contact->metro }}</p>
+                                <p><strong>Электроный адрес: </strong>{{ $contact->email }}</p>
+                                <p><strong>Cайт: </strong>{{ $contact->web }}</p>
+                                <p><strong>Телефоны:<strong> {{ $contact->phone }}</p>
                     @endforeach
                     {{--
                     <div>
@@ -134,12 +132,10 @@
                                 <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
                                 <!--Linkedin-->
                                 <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
-                                <!--Pinterest-->
-                                <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <p>&copy;2016 "ОРИЕНТИР"</a> </p>
+                            <p>&copy;2016 "ОРИЕНТИР"</a></p>
                         </div>
 
                     </div>

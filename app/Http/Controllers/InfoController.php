@@ -11,15 +11,18 @@ class InfoController extends Controller
     }
 
     public function vacancies(){
-        return view('info.vacancies');
+        $page= Page::where('laravel_name', 'vacancies')->first();
+        return view('info.vacancies', compact('page'));
     }
 
     public function blanks(){
-        return view('info.blanks');
+        $page= Page::where('laravel_name', 'blanks')->first();
+        return view('info.blanks', compact('page'));
     }
 
     public function bankofdocuments(){
-        return view('info.bankofdocuments');
+        $page= Page::where('laravel_name', 'bankofdocuments')->first();
+        return view('info.bankofdocuments', compact('page'));
     }
 
     public function testmaterial(){
@@ -27,9 +30,11 @@ class InfoController extends Controller
         return view('info.testmaterial', compact('page'));
     }
     public function brochures(){
-        return view('info.brochures');
+        $page= Page::where('laravel_name', 'brochures')->first();
+        return view('info.brochures', compact('page'));
     }
     public function reminder(){
-        return view('info.reminder');
+        $page= Page::where('laravel_name', 'reminder')->first();
+        return view('info.reminder', compact('page'));
     }
 }

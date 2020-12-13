@@ -4,11 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use App\Notifications\MessageSent;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 
 class Message extends Model
 {
+    use Notifiable;
+    
      protected $fillable = [
     'name','email','phone','address', 'message', 'status', 'consent','job', 'message_category_id'];
 

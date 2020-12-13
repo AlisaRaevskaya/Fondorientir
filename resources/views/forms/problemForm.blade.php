@@ -29,7 +29,7 @@
             <span class="text-danger" id="messageError"></span>
         </div>
 
-        <div id="w_success"></div>
+        <div id="w_success" class="success-btn"></div>
 
         <div>
             <input type="submit" class="btn btn-primary" id="btn-problem" value="Отправить">

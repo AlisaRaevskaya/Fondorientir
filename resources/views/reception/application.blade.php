@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout',['seo' => $page->getSeo()])
 @section('content')
 
 <section id="feature_news_section" class="feature_news_section">

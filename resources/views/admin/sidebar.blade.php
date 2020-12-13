@@ -28,24 +28,21 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        @foreach ($categories as $cat)
-                            <a class="nav-link" href="{{ route('admin.' . \Str::slug($cat->name) . '.index') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                {{ $cat->ru_name }}
-                            </a>
-                        @endforeach
+
+                        <a class="nav-link" href="{{ route('admin.news.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Новости
+                        </a>
+                        <a class="nav-link" href="{{ route('admin.press.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            СМИ о нас
+                        </a>
                     </nav>
-
                 </div>
-                <a class="nav-link" href="{{ route('admin.fq.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                    Вопросы-ответы
-                </a>
-
 
 
                 <a class="nav-link" href="{{ route('admin.pages.index') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-star"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Страницы
                 </a>
 

@@ -7,11 +7,12 @@ use App\Models\Page;
 class SecondSiteController extends Controller
 {
      public function index(){
-        return view('secondsite.index');
+        $page= Page::where('laravel_name', 'reception')->first();
+        return view('secondsite.index', compact('page'));
     }
 
   public function hotline(){
-        $page= Page::where('laravel_name', 'hotline')->get();
+        $page= Page::where('laravel_name', 'hotline')->first();
         return view('secondsite.hotline', compact('page'));
     }
 

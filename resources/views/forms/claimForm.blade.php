@@ -23,7 +23,7 @@
         <div>
             <input type="submit"class="btn btn-primary" id="btn-claim" value="Отправить">
         </div>
-        <div class="text-bold" id="claim-success"></div>
+        <div class="success-btn" id="claim-success"></div>
     </form>
 </div>
 

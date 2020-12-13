@@ -12,12 +12,14 @@ use App\Http\Requests\ApplicationRequest;
 use App\Http\Requests\ProblemRequest;
 
 
+// use App\Models\Notification;
+// use App\Notifications\MessageSent;
 
 use App\Models\Message;
-use App\Mail\Submail;
-use App\Models\Notification;
 
+use App\Mail\Submail;
 use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Support\Facades\Validator;
 
 class AjaxController extends Controller
@@ -39,6 +41,9 @@ class AjaxController extends Controller
         $data->message = $req->input('message');
         $data->message_category_id = 1;
         $data->save();
+
+        Mail::to($req->input('email'))->send(new SubMail());
+
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
 
@@ -68,6 +73,8 @@ class AjaxController extends Controller
 
         $data->save();
 
+        Mail::to($req->input('email'))->send(new SubMail());
+
         return response()->json(['success'=>'Ваша заявка отправлена, В ближайшее время с Вами свяжется наш специалист.']);
     }
     /**
@@ -84,6 +91,8 @@ class AjaxController extends Controller
         $data->request->all();
 
         $data->save();
+
+         Mail::to($req->input('email'))->send(new SubMail());
 
         return response()->json(['success'=>'Данные успешно отправлены']);
     }
@@ -106,7 +115,7 @@ class AjaxController extends Controller
         $data->message = $req->input('message');
 
         $data->save();
-
+        Mail::to($req->input('email'))->send(new SubMail());
         return response()->json(['success'=>'Ваша заявка принята!Наш специалист свяжется с вами в ближайшее время.']);
     }
 
@@ -128,6 +137,7 @@ class AjaxController extends Controller
         $data->message_category_id = 5;
         $data->save();
 
+        Mail::to($req->input('email'))->send(new SubMail());
         return response()->json(['success'=>"Ваша заявка принята!"]);
     }
    /**
@@ -145,7 +155,6 @@ class AjaxController extends Controller
         $data->phone = $req->input('phone');
         $data->message_category_id = 6;
         $data->save();
-
         return response()->json(['success'=>"Ваша заявка принята.Ждите звонка."]);
     }
 

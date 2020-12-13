@@ -6,7 +6,8 @@ minHeight:200,
 maxHeight:400,
 focus:true,
 placeholder:'Введите данные',
-fontNames:['Arial','Times New Roman','Helvetica'],
+lineHeights: ['0.2', '0.3', '0.4', '0.5', '0.6', '0.8', '1.0', '1.2', '1.4', '1.5', '2.0', '3.0'],
+fontNames:['Arial','Times New Roman','Helvetica','Roboto','Roboto Light', 'Open Sans'],
 disableDragAndDrop:true,
 callbacks: {
         onImageUpload: function (file) {
@@ -53,7 +54,7 @@ minHeight:200,
 maxHeight:400,
 focus:true,
 placeholder:'Введите данные',
-fontNames:['Arial','Times New Roman','Helvetica'],
+fontNames:['Arial','Times New Roman','Helvetica', 'Open Sans'],
 disableDragAndDrop:true,
 callbacks: {
         onImageUpload: function (file) {

@@ -117,4 +117,8 @@ class Page extends Model
         $this->save($fields);
     }
 
+    public function getSeo(){
+    return $this->seo()->first();
+    }
+
 }
