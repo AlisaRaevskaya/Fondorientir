@@ -9,6 +9,8 @@ use App\Models\Reply;
 use App\Models\Topic;
 use App\Models\File;
 use App\Models\Project;
+use App\Models\Category;
+
 use Illuminate\Support\Str;
 
 
@@ -77,9 +79,23 @@ class MainController extends Controller
         return view('admin');
     }
 
-    public function fond(){
-        $page= Page::where('laravel_name', 'fond')->first();
-        $projects=Project::all();
-        return view('main.fond', compact('page','projects' ));
+  public function pressnews(){
+         $page=Page::where('laravel_name', 'press')->first();
+        return view('press.index', compact('page'));
     }
+
+ public function showPressNews(){
+    $page=Page::where('laravel_name', 'press')->first();
+    $category = Category::find(1)->where('name', 'press')->first();
+    $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
+    return view('press.pressnews', compact('pressnews', 'category','page'));
+    }
+
+    public function showByCategoryId($id){
+        $category = Category::where('name', 'press')->first();
+        $item = $category->news->where('id', $id)->first();
+        $page=Page::where('laravel_name', 'news')->first();
+        return view('press.single', compact('item', 'category', 'page'));
+    }
+
 }

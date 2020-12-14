@@ -4,9 +4,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-1"></div>
-
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <div class="entity-wrapper">
 
                         <div class="entity_title">
@@ -33,19 +31,21 @@
                         @if ($item->source_name)
                             <div class="entity_thumb">
                                 <span>
-                                    <h6>Источник:{{ $item->source_name }}:</h6>
+                                    <h6>Источник:{{ $item->source_name }}</h6>
                                     @if ($item->source_link)
-                                        <h6>Ccылка:<a href="{!!  $item->source_link !!}"></a></h6>
+                                        <p><a href="{{ $item->source_link }}">Ccылка</a></p>
                                     @endif
                                 </span>
                             </div>
                         @endif
-                        <div class="m30"><a href="{{ url()->previous() }}" class="btn btn-default">
-                                Назад </a>
+                        <div class="m30">
+                            <h6><a href="{{ url()->previous() }}" class="btn btn-default btn-sm" style="padding:10px;">
+                                    <<< Назад </a>
+                            </h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-1"></div>
+                @include('layouts.sidebar')
             </div>
         </div>
     </section>

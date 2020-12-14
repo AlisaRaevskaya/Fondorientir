@@ -7,8 +7,7 @@
                 <div class="col-md-9">
 
                     <div class="entity-wrapper">
-
-                        <div class="entity_title text-center">
+                        <div class="text-center">
                             <h2>
                                 ПАРТНЁРЫ ФОНДА "ОРИЕНТИР"</h2>
                             <p> (организации с которыми Фонд "ОРИЕНТИР" имеет соглашение о сотрудничестве,
@@ -50,7 +49,7 @@
                                 <h6><a href="https://78.мвд.рф/ ">Управление по вопросам миграции ГУ МВД России по
                                         г.Санкт-Петербургу и Ленинградской области </a></h6>
 
-                                <p>
+                                <p style="font-weight:bold;">
                                     Представительство МВД России в Латвийской Республике (по вопросам миграции)
                                     Представительство МВД России в Киргизской Республике (по вопросам миграции)
                                     (по вопросам миграции)
@@ -102,7 +101,7 @@
                                     <p>Некоммерческое партнерство "Центр социально-консервативной политики</p>
                                 </div>
                                 <div class="partner_block">
-                                    <a href="https://www.spbgik.ru/"><img src="{{ asset('storage/partners/spbgik.jpg') }}"
+                                    <a href="https://www.spbgik.ru/"><img src="{{ asset('storage/partners/spbgik.png') }}"
                                             alt="spbgik.jpg"></a>
                                     <p>Санкт-Петербургский государственный институт культуры</p>
                                 </div>
@@ -118,7 +117,7 @@
                                 </div>
                                 <div class="partner_block">
                                     <a href="https://spb.hse.ru/ "><img
-                                            src="{{ asset('storage/partners/skola_ekonomiki.jpg') }}"
+                                            src="{{ asset('storage/partners/skola_ekonomiki1.jpg') }}"
                                             alt="rskola_ekonomik.jpg"></a>
                                     <p>Национальный исследовательский университет «Высшая школа экономики»</p>
                                 </div>

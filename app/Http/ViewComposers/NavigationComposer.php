@@ -19,7 +19,7 @@ class NavigationComposer
     {
         $menuitems = Page::IsPublished()->IsMenu()->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
         $newsitems = News::orderBy('dateline', 'desc')->limit(7)->get();
-        $contacts= Contact::all();
+        $contact= Contact::find(1);
         $new = News::find(1)->first();
         $category= $new->category;
         $secondmenu=SecondMenu::where('published',1)->orderBy('id', 'asc')->get();
@@ -32,7 +32,7 @@ class NavigationComposer
         $menuitems = $this->buildTree($menuitems);
 
 
-        return $view->with(compact('menuitems', 'newsitems', 'contacts','category','secondmenu','footermenu','not_read_message'));
+        return $view->with(compact('menuitems', 'newsitems', 'contact','category','secondmenu','footermenu','not_read_message'));
     }
 
     public function buildTree($items)

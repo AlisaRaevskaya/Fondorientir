@@ -7,7 +7,7 @@
                     <h3><a href="{{ route('main') }}" target="_self">О Фонде</a></h3>
                 </div>
                 <div class="logo">
-                    @foreach ($contacts as $contact)
+
                         <div>
                             <div class="row justify-content-between footer-logo">
                                 <a title="fontanero" href="{{ route('main') }}">
@@ -23,7 +23,7 @@
                                 связанными с юридической, социальной поддержкой, натурализацией и адаптацией в
                                 российское общество.</p>
                         </div>
-                    @endforeach
+
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
                 <div class="row">
                     @foreach ($newsitems as $new)
                         <div style="line-height:1.8" class="text-justify">
-                            <li><a href="{{ route('news.category.id', [$category->name, $new->id]) }}">
+                            <li><a href="{{ route('news_category.id', $new->id) }}">
                                     {{ $new->title }}</a>
                             </li>
                         </div>
@@ -82,8 +82,7 @@
                     <h3><a href="{{ route('contacts') }}" target="_self">Контакты</a></h3>
                 </div>
                 <div class="footer_contacts">
-                    @foreach ($contacts as $contact)
-                       <p><strong>Инн: </strong>{{ $contact->inn}}</p>
+                       <p><strong> {{ $contact->name}}</strong></p>
                                 <p><strong>Адрес: </strong>{{ $contact->index }}, {{ $contact->city }}{{ $contact->street }}</p>
                                 <p><strong>Остановка:</strong> {{ $contact->station }}</p>
                                 <p><strong>Автобусы:</strong> {{ $contact->bus }}</p>
@@ -92,13 +91,6 @@
                                 <p><strong>Электроный адрес: </strong>{{ $contact->email }}</p>
                                 <p><strong>Cайт: </strong>{{ $contact->web }}</p>
                                 <p><strong>Телефоны:<strong> {{ $contact->phone }}</p>
-                    @endforeach
-                    {{--
-                    <div>
-                        <p>Часы работы: с 9.00 до 18.00(кроме субботы и воскресенья)</p>
-                        <p>Тел.: +7(812) 385 -69-89, +7(911)253-85-01</p>
-                        <p>Е-mail: inlo®fondorientir.ru</p>
-                    </div> --}}
                     <div>
                         <h3>Мы в социальных сетях:</h3>
                         <!--Twitter-->
@@ -123,7 +115,7 @@
             <div class="container">
                 <div class="row">
                     <div class="footer">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="social">
                                 <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                                 <!--Twitter-->
@@ -134,10 +126,9 @@
                                 <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <p>&copy;2016 "ОРИЕНТИР"</a></p>
                         </div>
-
                     </div>
                 </div>
             </div>

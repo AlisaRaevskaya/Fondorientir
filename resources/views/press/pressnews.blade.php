@@ -14,7 +14,7 @@
 
                         @foreach ($pressnews as $item)
                             <div class="row justify-content-md-center m30">
-                                <div class="col-md-6">
+                                <div class="col-md-6 press_img">
                                     @if ($item->image)
                                         <div class="entity_thumb">
                                             <img class="img-responsive" src="{{ asset('storage/news/' . $item->image) }}"
@@ -25,8 +25,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="entity_title">
-                                        <h3><a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
-                                                target="_self">
+                                        <h3><a href="{{ route('press_category.id', $item->id) }}" target="_self">
                                                 {!! $item->title !!}</a>
                                         </h3>
                                     </div>
@@ -42,7 +41,7 @@
                                     </div>
 
                                     <div class="">
-                                        <a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
+                                        <a href="{{ route('press_category.id', $item->id) }}"
                                             class="btn btn-outline-primary btn-lg active">
                                             Подробнее>>></a>
                                     </div>

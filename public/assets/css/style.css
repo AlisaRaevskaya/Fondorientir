@@ -42,7 +42,7 @@ Author: uiCookies.com
 # -------------------------------------------------------------------*/
 
 body {
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans';
     font-size: 13px;
     line-height: 21px;
     background: #ffffff;
@@ -59,7 +59,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans', serif;
     color: #000;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -246,7 +245,6 @@ section {
 
 .right_section .btn {
     border: none;
-    text-transform: uppercase;
     font-size: 12px;
     padding: 3px 10px 15px;
 }
@@ -340,7 +338,7 @@ section {
 }
 .summernote,
 .summernote_news{
-font-family:'Open Sans', sans-serif;
+font-family:'Open Sans';
 }
 
 @media screen and (max-width: 768px) {
@@ -559,7 +557,6 @@ font-family:'Open Sans', sans-serif;
     left: auto;
 }
 
-.m-menu .m-menu-content {}
 
 .m-menu .dropdown.m-menu-fw .dropdown-menu {
     left: 0;
@@ -615,7 +612,6 @@ font-family:'Open Sans', sans-serif;
 
 /*uc-mobile-menu*/
 
-.uc-mobile-menu {}
 
 .uc-mobile-menu-container > div {
     visibility: hidden;
@@ -1766,3 +1762,5 @@ font-family:'Open Sans', sans-serif;
     cursor: pointer;
     z-index: 333;
 }
+
+

@@ -26,7 +26,7 @@
                                 <div class="col-md-6">
 
                                     <div class="entity_title">
-                                        <h1><a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
+                                        <h1><a href="{{ route('news_category.id', [$category->name, $item->id]) }}"
                                                 target="_self">
                                                 {{ $item->title }}</a>
                                         </h1>
@@ -41,7 +41,7 @@
                                     </div>
 
                                     <div>
-                                        <a href="{{ route('news.category.id', [$category->name, $item->id]) }}"
+                                        <a href="{{ route('news_category.id', $item->id) }}"
                                             class="btn btn-outline-primary btn-lg active btn_news" role="button"
                                             aria-pressed="true">
                                             Подробнее>>></a>

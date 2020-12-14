@@ -1,13 +1,16 @@
 <div class="col-md-3">
-    <div class="">
-        <img class="img-responsive top_static_article_img" src="{{ asset('storage/banner.jpg') }}" alt="main.jpg">
+
+    <div class="text-center item_center">
+        <img class="img-responsive" src="{{ asset('storage/banner.jpg') }}" alt="main.jpg">
     </div>
 
     <div class="text-center">
-        <img src="{{ asset('storage/fond-1.jpg') }}" alt="president-fond.jpg" class="img-responsive">
+        <img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg" class="img-responsive">
         <h2>Решение трудовых споров</h2>
         <h4><a href="tel:+78126124817" class="link_color">+7 (812 ) 612-48-17</a></h4>
-        <button class="btn btn-info btn-sm">Спросить юриста бесплатно</button>
+        <button class="btn btn-info btn-sm" id="btn_popup" data-toggle="modal" data-target="#modalLawyer">Спросить
+            юриста
+            бесплатно</button>
     </div>
 
     <div class="text-center m30">

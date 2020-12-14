@@ -30,16 +30,16 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/feedback', [MessageController::class, 'index'])->name('feedback');
-Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/migration-news', [NewsController::class, 'index'])->name('news');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/info', [InfoController::class, 'index'])->name('info');
-Route::get('/press-news', [NewsController::class, 'pressnews'])->name('press-news');
+
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/status', [StatusController::class, 'index'])->name('status');
 Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
 Route::get('/history', [MainController::class, 'history'])->name('history');
-// Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/press-news', [MainController::class, 'pressnews'])->name('press-news');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
 Route::get('/structure', [MainController::class, 'structure'])->name('structure');
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
@@ -56,29 +56,23 @@ Route::get('/feedback/problem', [MessageController::class, 'problem'])->name('pr
 Route::get('/feedback/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
 
 
-Route::get('/press-news/interview', [PressController::class, 'interview'])->name('interview');
-Route::get('/press-news/press', [PressController::class, 'showPressNews'])->name('press');
-Route::get('/press-news/foto', [PressController::class, 'showFoto'])->name('foto');
-Route::get('/press-news/for-press', [PressController::class, 'forPress'])->name('for-press');
-Route::get('/press-news/not-for-press', [PressController::class, 'notForPress'])->name('not-for-press');
-
 Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
 
-Route::get('/info/vacancies', [InfoController::class, 'vacancies'])->name('vacancies');
-Route::get('/info/blanks', [InfoController::class, 'blanks'])->name('blanks');
-Route::get('/info/bankofdocuments', [InfoController::class, 'bankofdocuments'])->name('bankdocuments');
-Route::get('/info/testirovanie-trudovyh-migrantov',[InfoController::class, 'testmaterial'])->name('testmaterial');
-Route::get('/info/brochures', [InfoController::class, 'brochures'])->name('brochures');
-Route::get('/info/reminder', [InfoController::class, 'reminder'])->name('reminder');
+Route::get('/info-center/useful-info', [InfoController::class, 'usefulInfo'])->name('useful-info');
+Route::get('/info-center/blanks', [InfoController::class, 'blanks'])->name('blanks');
+Route::get('/info-center/bankofdocuments', [InfoController::class, 'bankofdocuments'])->name('bankdocuments');
+Route::get('/info-center/testirovanie-trudovyh-migrantov',[InfoController::class, 'testmaterial'])->name('testmaterial');
+Route::get('/info-center/brochures', [InfoController::class, 'brochures'])->name('brochures');
+Route::get('/info-center/reminder', [InfoController::class, 'reminder'])->name('reminder');
 
-Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
-Route::get('/news/{category}/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')
-->name('news.category.id');
-Route::get('/news/{category}/{subcategory}', [NewsController::class, 'showBySubCategory'])
-->where('subcategory', '[A-Za-z]+')
-->name('news.subcategory');
-Route::get('/news/{category}/{subcategory}/{id}', [NewsController::class, 'showBySubCategoryId'])->
-name('news.subcategory.id');
+
+Route::get('/press-news', [MainController::class, 'showPressNews'])->name('press');
+// Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
+Route::get('/migration-news/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')
+->name('news_category.id');
+Route::get('/press-news/{id}', [MainController::class, 'showByCategoryId'])->where('id', '[0-9]+')
+->name('press_category.id');
+
 
 
 Route::post('/lawyer-form', [AjaxController::class, 'saveLawQuestion'])->name("lawyer-question");
@@ -126,7 +120,7 @@ Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
 Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');
 Route::resource('reminder', '\App\Http\Controllers\Admin\Info\RemindersController');
 Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialController');
-Route::resource('vacancies', '\App\Http\Controllers\Admin\Info\VacancyController');
+Route::resource('useful-info', '\App\Http\Controllers\Admin\Info\InfoController');
 Route::resource('bankdocuments', '\App\Http\Controllers\Admin\Info\BankdocumentsController');
 
 Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');

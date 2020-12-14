@@ -17,7 +17,7 @@ class PressController extends Controller
      */
     public function index()
     {
-        $category = Category::find(1)->where('name', 'press')->first();
+        $category = Category::where('name', 'press')->first();
         $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
         return view('admin.press.press.index', compact('pressnews', 'category'));
     }

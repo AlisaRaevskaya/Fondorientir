@@ -29,7 +29,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-
                         <div class="main_entity-wrapper">
 
                             <div class="main_entity_content">
@@ -59,53 +58,57 @@
                             </div>
                         </div>
 
-                        <div class="widget_title widget_black">
-                            <h2><a href="{{ route('news') }}">Новости</a></h2>
-                        </div>
+                        <div class="category_article">
+                            <div class="widget_title widget_black">
+                                <h2><a href="{{ route('news') }}">Новости</a></h2>
+                            </div>
 
-                        <div class="category_article_wrapper">
-                            <div class="category_article_body">
-                                @foreach ($news as $new)
-                                    <div class="col-md-6 category_news_body">
-                                        <div>
-                                            <div class="category_article_img">
-                                                <a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
-                                                    target="_self">
-                                                    <img class="img-responsive"
-                                                        src="{{ asset('storage/news/' . $new->image) }}"
-                                                        alt="{{ $new->image }}">
-                                                </a>
-                                            </div>
-                                            <div class="category_article_title">
-                                                <h5><a href="{{ route('news.category.id', [$category->name, $new->id]) }}"
+                            <div class="category_article_wrapper">
+                                <div class="category_article_body">
+                                    @foreach ($news as $new)
+                                        <div class="col-md-6 category_news_body">
+                                            <div>
+                                                <div class="category_article_img">
+                                                    <a href="{{ route('news_category.id', [$category->name, $new->id]) }}"
                                                         target="_self">
-                                                        {!! $new->title !!}</a></h5>
-                                            </div>
-                                            <div>
-                                                {!! $new->cutDateline() !!}
-                                            </div>
-
-                                            @if ($new->intro)
-                                                <div class="category_article_content">
-                                                    {!! $new->getMiniIntro() !!}
+                                                        <img class="img-responsive"
+                                                            src="{{ asset('storage/news/' . $new->image) }}"
+                                                            alt="{{ $new->image }}"></a>
                                                 </div>
-                                            @endif
-                                            <!-- media_social -->
-                                            <div>
-                                                <h6><a
-                                                        href="{{ route('news.category.id', [$category->name, $new->id]) }}">Подробнее>></a>
-                                                </h6>
+                                                <div class="category_article_title">
+                                                    <h5>
+                                                        <a href="{{ route('news_category.id', [$category->name, $new->id]) }}"
+                                                            target="_self">
+                                                            {!! $new->title !!}</a>
+                                                    </h5>
+                                                </div>
+
+                                                <div>
+                                                    {!! $new->cutDateline() !!}
+                                                </div>
+
+                                                @if ($new->intro)
+                                                    <div class="">
+                                                        {!! $new->getMiniIntro() !!}
+                                                    </div>
+                                                @endif
+
+                                                <div>
+                                                    <h6><a
+                                                            href="{{ route('news_category.id', [$category->name, $new->id]) }}">Подробнее>></a>
+                                                    </h6>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- category_article_body -->
-                                    </div>
-                                @endforeach
-                                <!-- col-md-6 -->
+                                    @endforeach
+                                    <!-- col-md-6 -->
+                                </div>
                             </div>
-                        </div>
-                        <!-- Design News Section -->
-                        <div class="news_divider">
-                            <p class="divider"><a href="{{ route('news') }}"> Все новости>>></a></p>
+
+                            <!-- Design News Section -->
+                            <div class="news_divider">
+                                <p class="divider"><a href="{{ route('news') }}"> Все новости>>></a></p>
+                            </div>
                         </div>
                     </div>
                     @include('layouts.main_sidebar')

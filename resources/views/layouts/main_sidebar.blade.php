@@ -1,7 +1,7 @@
 <div class="col-md-3">
 
-    <div class="text-center">
-        <img src="{{ asset('storage/fond-1.jpg') }}" alt="president-fond.jpg" class="img-responsive">
+    <div class="text-center item_center">
+        <img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg" class="img-responsive">
         <h2>Решение трудовых споров</h2>
         <h4><a href="tel:+78126124817" class="link_color">+7 (812 ) 612-48-17</a></h4>
         <button class="btn btn-info btn-sm">Спросить юриста бесплатно</button>

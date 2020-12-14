@@ -10,9 +10,9 @@ class InfoController extends Controller
         return view('info.index');
     }
 
-    public function vacancies(){
-        $page= Page::where('laravel_name', 'vacancies')->first();
-        return view('info.vacancies', compact('page'));
+    public function usefulInfo(){
+        $page= Page::where('laravel_name', 'useful-info')->first();
+        return view('info.info', compact('page'));
     }
 
     public function blanks(){
@@ -21,7 +21,7 @@ class InfoController extends Controller
     }
 
     public function bankofdocuments(){
-        $page= Page::where('laravel_name', 'bankofdocuments')->first();
+        $page= Page::where('laravel_name', 'bankdocuments')->first();
         return view('info.bankofdocuments', compact('page'));
     }
 

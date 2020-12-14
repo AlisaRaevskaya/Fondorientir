@@ -2,52 +2,52 @@
     <div class="container">
         <div class="header-section">
             <div class="row">
-                @foreach ($contacts as $contact)
-                    <div class="col-md-5">
-                        <div class="left_section">
-                            <div class="">
-                                <a href="{{ route('main') }}" class="logo">
-                                    <img src="/assets/images/{{ $contact->logo }}" alt="Logo"
-                                        class="img-responsive"></a>
-                            </div>
-                            <!-- Top Social Section -->
-                        </div>
-                        <!-- Left Header Section -->
+                <div class="left_section col-md-5">
+                    <div class="text-center">
+                        <a href="{{ route('main') }}" class="logo">
+                            <img src="/assets/images/{{ $contact->logo }}" alt="Logo" class="img-responsive"></a>
                     </div>
+                    <!-- Top Social Section -->
 
-                    <div class="col-md-2">
-                        <div class="social">
-                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                            <!--Twitter-->
-                            <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                            <!--Google +-->
-                            <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                            <!--Linkedin-->
-                            <a class="icons-sm tmb-ic"><i class="fa fa-vk"> </i></a>
-                        </div>
+                    <!-- Left Header Section -->
+                </div>
+
+                <div class="col-md-2 text-center">
+                    <div class="social">
+                        <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+                        <!--Twitter-->
+                        <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
+                        <!--Linkedin-->
+                        <a class="icons-sm tmb-ic"><i class="fa fa-vk"> </i></a>
+                    </div>
+                    <div>
+                        <p class="link_color">{{ $contact->email }}</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h6>Правовая приемная</h6>
+                    <p>{{ $contact->city }},</p>
+                    <p>{{ $contact->street }}</p>
+                    <a href="#" class="pop_map_link schema" data-toggle="modal" data-target=".bd-example-modal-lg"><i
+                            class="fa fa-map-o">
+                        </i> Схема проезда (интерактивная карта)</a>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="right_section text-center">
                         <div class="">
-                            <p>{{ $contact->email }}</p>
+                            <h6><i class="fa fa-phone"></i><a href='tel:+78123856989'>+7(812)-385-69-89</a></h6>
                         </div>
+
+                        <!-- Right Header Section -->
+                        <button type="button" class="btn btn-sm btn-primary text-center" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Заказать обратный звонок</button>
                     </div>
-                    <div class="col-md-5">
-                        <div class="col-md-6">
-                            <h6>Правовая приемная</h6>
-                            <p>Адрес:{{ $contact->index }} {{ $contact->city }} {{ $contact->street }}</p>
-                            <a href="#" class="pop_map_link" data-toggle="modal" data-target=".bd-example-modal-lg"><i
-                                    class="fa fa-map-o">
-                                    Схема проезда (интерактивная карта)</i></a>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="right_section text-center">
-                                <h6><i class="fa fa-phone"></i><a href='tel:+78123856989'>+7(812)-385-69-89</a></h6>
-                                <!-- Right Header Section -->
-                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                    data-target="#exampleModalLong">
-                                    Заказать обратный звонок</button>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+                </div>
             </div>
         </div>
         <!-- Header Section -->
@@ -95,7 +95,7 @@
                                     </li>
                                 @endif
                             @endforeach
-                            <li style="width:350px;">
+                            <li class="search">
                                 <form>
                                     <!-- Input Group -->
                                     <div class="input-group">

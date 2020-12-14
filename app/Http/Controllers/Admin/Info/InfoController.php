@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin\Info;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Page;
+use App\Models\File;
+use App\Models\Seo;
 
-class VacancyController extends Controller
+class InfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,7 +49,9 @@ class VacancyController extends Controller
      */
     public function show($id)
     {
-        //
+       $page = Page::find($id);
+
+        return view('admin.info.info.show', compact('page'));
     }
 
     /**
@@ -57,7 +62,10 @@ class VacancyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page= Page::find($id);
+    $seo = $page->seo;
+
+    return view('admin.info.info.edit', compact('page', 'seo'));
     }
 
     /**
@@ -69,7 +77,25 @@ class VacancyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $page = Page::findOrFail($id);
+
+        $page->title=$request->title;
+        $page->content=$request->content;
+        $page->url=$request->url;
+        $page->published=$request->published;
+        $page->is_menu=$request->is_menu;
+        $page->save();
+
+        $seo = $page->seo;
+        $seo->seo_title =$request->seo_title;
+        $seo->name=$request->name;
+        $seo->description=$request->description;
+        $seo->keywords=$request->keywords;
+        $seo->og_title=$request->og_title;
+        $seo->og_description=$request->og_description;
+        $seo->save();
+        $message="Данные сохранены";
+        return redirect()->route('admin.info.edit', $id)->with('message', $message);
     }
 
     /**
@@ -84,7 +110,7 @@ class VacancyController extends Controller
         $seo=Seo::where('page_id', $id)->first();
 
         $seo->delete();
-        $page->delete()
+        $page->delete();
         return redirect()->route('admin.pages.index');
     }
 }

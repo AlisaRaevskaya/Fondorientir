@@ -2,7 +2,7 @@
 @section('content')
     <div id="layoutSidenav_content">
         <main>
-              <div class="container-fluid admin-container" style="margin-top:30px;">
+            <div class="container-fluid admin-container" style="margin-top:30px;">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item">Meню</a>
                     <li class="breadcrumb-item active">СМИ о нас</li>
@@ -10,14 +10,14 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         В данном разделе Вы можете редактировать статьи из раздела "СМИ о нас"
-                                        </div>
+                    </div>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
                         Пресс-центр
                         <div class="text-center">
-                            <a href="{{ route('admin.interview.create') }}" class="btn btn-default pull-right"><i
+                            <a href="{{ route('admin.press.create') }}" class="btn btn-default pull-right"><i
                                     class="fa fa-plus"></i>
                                 Добавить новость</a>
                         </div>
@@ -67,7 +67,8 @@
                                                         method="post" class="text-center">
                                                         @csrf
                                                         {{ method_field('DELETE') }}
-                                                        <button type="submit" class="btn btn-warning"><i class="fa fa-trash"></i> Удалить</button>
+                                                        <button type="submit" class="btn btn-warning"><i
+                                                                class="fa fa-trash"></i> Удалить</button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -87,4 +88,3 @@
         </main>
     </div>
 @endsection
-

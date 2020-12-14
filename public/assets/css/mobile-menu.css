@@ -157,3 +157,7 @@
 .slide-along .uc-offcanvas-container::after {
     display : none;
     }
+
+.uc-offcanvas-html-open, .uc-offcanvas-body-open li{
+    list-style-type:none;
+    }

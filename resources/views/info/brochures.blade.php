@@ -4,11 +4,11 @@
     <section id="entity_section" class="entity_section">
         <div class="container">
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                  {!!$page->content!!}
+                <div class="col-md-9">
+                    {!! $page->content !!}
+
                 </div>
-                <div class="col-md-1"></div>
+                @include('layouts.sidebar')
             </div>
         </div>
     </section>

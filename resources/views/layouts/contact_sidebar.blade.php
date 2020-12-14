@@ -1,5 +1,5 @@
 <div class="col-md-3">
-    <div class="">
+    <div class="text-center item_center">
         <img class="img-responsive top_static_article_img" src="{{ asset('storage/banner.jpg') }}" alt="main.jpg">
     </div>
 

@@ -6,12 +6,12 @@
 
                 <div class="col-md-9">
 
-                    <h2 class="text-center">Опыт Фонда "ОРИЕНТИР" в реализации социально-значимых проектов:</h2>
+                    <h2 class="text-center">Успешно реализованные проекты:</h2>
                     <table class="table table-bordered table-responsive">
 
                         <thead>
                             <tr style="color:black;font-weight:bold;">
-                                <th scope="col">№ п/п</th>
+
                                 <th scope="col">Период выполнения</th>
                                 <th scope="col">Наименование проекта</th>
                             </tr>
@@ -19,7 +19,6 @@
                         <tbody>
                             @foreach ($projects as $project)
                                 <tr>
-                                    <th scope="row">{{ $project->id }}</th>
                                     <td>{!! $project->term !!}</td>
                                     <td>{!! $project->name !!}</td>
                                 </tr>

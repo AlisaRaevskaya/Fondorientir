@@ -79,7 +79,7 @@
 
                                             <div class="form-group">
                                                 {{ Form::label('dateline', 'Дата публикации') }}
-                                                {{ Form::date('dateline', $item->dateline, ['class' => 'form-control required']) }}
+                                                {{ Form::text('dateline', $item->dateline, ['class' => 'form-control required']) }}
                                             </div>
                                             @if (session()->has('message'))
                                                 <div class="alert alert-success">

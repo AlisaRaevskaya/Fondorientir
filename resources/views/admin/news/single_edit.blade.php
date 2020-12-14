@@ -11,7 +11,7 @@
 
                         <div class="col-sm-12">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('admin.news.index') }}">Новости</a></li>
                                 <li class="breadcrumb-item active">Новости/{{ $item->id }}</li>
                             </ol>
                         </div>
@@ -56,7 +56,7 @@
                                                 {{ Form::file('image') }}
                                                 @if (isset($item->image))
                                                     <p>
-                                                         <img src="{{ asset('storage/news/' . $item->image)}}"
+                                                        <img src="{{ asset('storage/news/' . $item->image) }}"
                                                             title="{{ $item->title }}" style="width: 200px">
                                                     </p>
                                                 @endif
@@ -76,7 +76,7 @@
 
                                             <div class="form-group">
                                                 {{ Form::label('dateline', 'Дата публикации') }}
-                                                {{ Form::text('dateline',  $item->dateline, ['class' => 'form-control required']) }}
+                                                {{ Form::text('dateline', $item->dateline, ['class' => 'form-control required']) }}
                                             </div>
                                             @if (session()->has('message'))
                                                 <div class="alert alert-success">
@@ -85,7 +85,8 @@
                                             @endif
                                             <div class="box-footer">
                                                 <div class="">
-                                                    <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
+                                                    <a href="{{ route('admin.news.index') }}"
+                                                        class="btn btn-default">Назад</a>
                                                     <button class="btn btn-primary pull-right"
                                                         style="margin-left:20px;">Сохранить</button>
 

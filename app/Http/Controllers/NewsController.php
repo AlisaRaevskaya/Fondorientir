@@ -19,28 +19,12 @@ class NewsController extends Controller
 
     }
 
-    public function showByCategory($category, $subcategory=false){
-        $category = Category::find(1)->where('name', $category)->first();
-        $newsby = $category->news()->paginate(5);
-        $subcategory = Category::where('parent_id', 2)->get();
-        return view('news.newsbycategory', compact('newsby', 'category', 'subcategory'));
-    }
-
-    public function showPressNews(){
-    $category = Category::find(1)->where('name', 'press')->first();
-    $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
-    return view('press.pressnews', compact('pressnews', 'category'));
-    }
-
-    public function showByCategoryId($category, $id=false){
-        $category = Category::find(1)->where('name', $category)->first();
+    public function showByCategoryId($id){
+        $category = Category::where('name', 'migration-news')->first();
         $item = $category->news->where('id', $id)->first();
         $page=Page::where('laravel_name', 'news')->first();
         return view('news.news_single', compact('item', 'category', 'page'));
     }
-
-
-
 
 
 }

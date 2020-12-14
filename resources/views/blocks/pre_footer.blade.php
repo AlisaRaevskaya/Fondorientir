@@ -1,8 +1,8 @@
 <div class="container footer_bottom_Section">
     <div class="row">
-        <h1>Взаимодействуем:</h1>
-        <div class="col-md-12">
 
+        <div class="col-md-9 text-center">
+            <h1>Взаимодействуем:</h1>
             <div class="d-flex flex-row justify-content-between align-items-center m30">
                 <div class="row">
 
@@ -46,33 +46,36 @@
                     </div>
                 </div>
 
-                <div class="row margin-top">
+                <div class="row m30 text-center">
 
                     <div class="col-md-1"></div>
-                    <div class="partner_item_2 col-md-4 text-left">
+
+                    <div class="col-md-4">
                         <div>
-                            <img src="{{ asset('storage/footer/fadn.jpg') }}" alt="nation_agency" class="img-responsive"
-                                style="display: block;margin: 0 auto; ">
+                            <img src="{{ asset('storage/footer/fadn2.png') }}" alt="fadn.png" class="img-responsive">
                         </div>
                         <div class="text-center">
                             <p> Федеральное агентство по делам национальностей</p>
                         </div>
                     </div>
+
                     <div class="col-md-1"></div>
-                    <div class="partner_item_3 col-md-4 margin-top">
+
+                    <div class="col-md-4">
                         <div>
                             <img src="{{ asset('storage/footer/rosteh.jpg') }}" alt="rostehnadzor"
-                                class="img-responsive" style="display: block; margin: 0 auto; ">
-                            <div class="text-center">
-                                <p>Федеральная служба по экологическому, технологическому и атомному надзору
-                                    (Ростехнадзор)</p>
-                            </div>
+                                class="img-responsive">
+                        </div>
+                        <div class="text-center">
+                            <p>Федеральная служба по экологическому, технологическому и атомному надзору
+                                (Ростехнадзор)</p>
                         </div>
                     </div>
+
                     <div class="col-md-1"></div>
                 </div>
             </div>
-            <div class="col-md-3"></div>
         </div>
+
     </div>
 </div>
