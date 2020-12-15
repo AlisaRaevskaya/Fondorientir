@@ -68,7 +68,7 @@
                             <div>
                                 <div class="row justify-content-center" style="padding:5pt 10pt">
                                     <h1>
-                                        <img class="d-flex img-circle avatar z-depth-1-half mr-3"
+                                        <img class="d-flex img-circle avatar z-depth-1-half mr-3 img-responsive"
                                             src="/assets/images/avatar-5.jpg" alt="Avatar">
                                         Задать вопрос юристу бесплатно
                                     </h1>

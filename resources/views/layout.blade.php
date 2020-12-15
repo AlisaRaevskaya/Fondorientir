@@ -84,6 +84,8 @@
         </div>
         @include('blocks.map')
         @include('blocks.call')
+        @include('forms.popup')
+
 
     </div>
 

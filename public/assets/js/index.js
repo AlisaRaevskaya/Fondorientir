@@ -16,9 +16,3 @@ $('#myModal').on('shown.bs.modal', function () {
   })
 
 
-
-$("#btn-popup").onclick(function(e) {
-    e.preventDefault();
-    $("#modalLawyer").removeClass('hidden');
-});
-

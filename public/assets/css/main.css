@@ -41,6 +41,9 @@ color:#4287B2;
 .btn_news{
     padding:1rem;
 }
+.pop_modal{
+margin:12px 0;
+}
 .phone-text{
 font-weight:900;
 color:#090950;
@@ -193,6 +196,9 @@ padding:0 10px;
     justify-content:center;
     align-items:center;
 }
+#btn_popup{
+background-color:#1bead9 !important;
+}
 .search{
     max-width:23rem;
 }
@@ -201,7 +207,5 @@ padding:0 10px;
         max-width:170px;
     }
     }
-
-
 
 

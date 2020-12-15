@@ -50,7 +50,8 @@
                                     <div class="">
                                         <h4><a href="tel">+7(812)-385-69-89</a></h4>
                                     </div>
-                                    <button class="btn btn-info">Спросить юриста
+                                    <button class="btn btn-sm" id="btn_popup" data-toggle="modal"
+                                        data-target="#lawyerQuestion" data-category="trud">Спросить юриста
                                         бесплатно</button>
                                     <div class=""><img class="img-responsive" src="{{ asset('storage/fond-2.png') }}"
                                             alt="fond-2.jpg"></div>
