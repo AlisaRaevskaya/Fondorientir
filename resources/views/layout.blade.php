@@ -26,7 +26,9 @@
 
     <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/fonts.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css" />
+    <script type="text/javascript" async="" src="//www.cincopa.com/media-platform/runtime/libasync.js"></script>
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
@@ -40,11 +42,6 @@
     <!-- Mobile Menu Style -->
     <link href="/assets/css/mobile-menu.css" rel="stylesheet">
 
-
-    <!-- Owl carousel -->
-    <link href="/assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="/assets/css/owl.theme.default.min.css" rel="stylesheet">
-    <!-- Theme Style -->
     <link href="/assets/css/style.css" rel="stylesheet">
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
@@ -58,12 +55,6 @@
         src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
     --}}
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
@@ -104,9 +95,13 @@
     <script src="/assets/js/ajax/call-ajax.js"></script>
     <script src="/assets/js/ajax/problem-ajax.js"></script>
     <script src="/assets/js/ajax/reception-ajax.js"></script>
+    <script src="/assets/js/ajax/sidebar-ajax.js"></script>
     <script src="/assets/js/ajax/claim-ajax.js"></script>
     <script src="/assets/js/ajax/application-ajax.js"></script>
     <script src="/assets/js/ajax/lawyer-ajax.js"></script>
+    <script type="text/javascript" async="" src="//www.cincopa.com/media-platform/runtime/libasync.js"></script>
+    <script src="/assets/slick/slick.min.js"></script>
+    <script src="/assets/js/slider.js"></script>
 </body>
 
 </html>

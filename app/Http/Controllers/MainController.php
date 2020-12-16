@@ -80,8 +80,8 @@ class MainController extends Controller
     }
 
   public function pressnews(){
-         $page=Page::where('laravel_name', 'press')->first();
-        return view('press.index', compact('page'));
+    $page=Page::where('laravel_name', 'press')->first();
+    return view('press.index', compact('page'));
     }
 
  public function showPressNews(){

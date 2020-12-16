@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\ReceptionMessageRequest;
 use App\Http\Requests\CallRequest;
+use App\Http\Requests\LawQuestionSidebarRequest;
 use App\Http\Requests\LawQuestionRequest;
 use App\Http\Requests\ClaimRequest;
 use App\Http\Requests\ApplicationRequest;
@@ -18,6 +19,7 @@ use App\Http\Requests\ProblemRequest;
 use App\Models\Message;
 
 use App\Mail\Submail;
+use App\Mail\FormMail;
 use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Support\Facades\Validator;
@@ -47,6 +49,31 @@ class AjaxController extends Controller
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
 
+    /**
+     *
+     *
+     * @param  LawQuestionSidebarRequest $req
+     * @return Response
+     */
+
+    public function saveLawQuestionSidebar(LawQuestionSidebarRequest $req)
+    {
+        $validatedData = $req->validated();
+
+        $data = new Message;
+
+        $category=$req->input('category');
+        $data->name=$req->input('name');
+        $data->email = $req->input('email');
+        $data->phone = $req->input('phone');
+        $data->category= $category;
+        $data->message_category_id = 1;
+        $data->save();
+
+        Mail::to($req->input('email'))->send(new FormMail($category));
+
+        return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
+    }
     /**
      *
      *

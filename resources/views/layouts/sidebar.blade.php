@@ -8,7 +8,7 @@
         <h2>Решение трудовых споров</h2>
         <h4><a href="tel:+78126124817" class="link_color">+7 (812 ) 612-48-17</a></h4>
         <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
-            data-category="trud">Спросить юриста
+            data-category="Решение трудовых споров">Спросить юриста
             бесплатно</button>
     </div>
 
@@ -16,7 +16,7 @@
         <h2>Миграционные вопросы</h2>
         <h4><a href="tel:+78123856989" class="link_color">+7(812) 385-69-89</a></h4>
         <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
-            data-category="migration">Спросить юриста
+            data-category="Миграционные вопросы">Спросить юриста
             бесплатно</button>
     </div>
 
@@ -42,13 +42,13 @@
                 и др.</strong>
         </p>
         <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
-            data-category="pomosch">Спросить юриста
+            data-category="Помощь в трудных ситуациях">Спросить юриста
             бесплатно</button>
     </div>
-    <div class="text-center m30" style="padding:10px; border:1px solid black;">
+
+    <div class="text-center m30">
         <p>Свежие новости </p>
-        <p>
-            по мигарционным вопросам
+        <p>по миграционным вопросам
         </p>
         <h6><a href="{{ route('news') }}">Новости</a></h6>
     </div>

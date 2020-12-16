@@ -12,7 +12,7 @@ use Carbon\Carbon;
 class Message extends Model
 {
     use Notifiable;
-    
+
      protected $fillable = [
     'name','email','phone','address', 'message', 'status', 'consent','job', 'message_category_id'];
 
@@ -29,13 +29,13 @@ class Message extends Model
         return $this->hasOne('App\Models\Page');
     }
 
-    public function category(){
-        return $this->hasOne('App\Models\MessageCategory');
+    public function messageCategory(){
+        return $this->hasOne('App\Models\MessageCategory', 'id', 'message_category_id');
     }
 
     public function setDatelineAttribute($value)
     {
-        $this->attributes['dateline'] = $this->timestamp;
+        $this->attributes['dateline'] = $this->created_at->format('d F Y H:i');
     }
 
     public function setMessageAttribute($value){
@@ -80,5 +80,9 @@ class Message extends Model
     {
         $this->fill($fields);
         $this->save($fields);
+    }
+
+    public function getCategory(){
+        return $this->messageCategory;
     }
 }

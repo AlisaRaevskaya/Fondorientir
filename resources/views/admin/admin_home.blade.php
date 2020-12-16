@@ -4,48 +4,50 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
-                <h1 class="mt-4">Dashboard</h1>
+                <h1 class="mt-4">Административный кабинет</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">Главная</li>
                 </ol>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-
-                            <div class="content-wrapper">
-                                <!-- Content Header (Page header) -->
-                                <section class="content-header">
-
-                                    <h1>
-                                        <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown">
-                                            Dear, {{ Auth::user()->name }}
-                                        </a>
-                                    </h1>
-                                    <h2>{{ __('You are logged in!') }}</h2>
-                                </section>
-
-
-                                <!-- Main content -->
-                                <section class="content">
-                                    <!-- Default box -->
-                                    <div class="box">
-                                        <div class="box-header with-border">
-                                            <h3 class="box-title">Главная страница</h3>
-                                        </div>
-                                        <div class="box-body">
-                                            Текст инструкции по пользованию админкой
-                                        </div>
-                                        <!-- /.box-body -->
-                                        <div class="box-footer">
-                                            и здесь есть место для какого-нибудь текста
-                                        </div>
-                                        <!-- /.box-footer-->
-                                    </div>
-                                    <!-- /.box -->
-                                </section>
-                                <!-- /.content -->
+                <div>
+                    <h4>Уважаемый, {{ Auth::user()->name }}, {{ __('Вы авторизованы!') }}
+                    </h4>
+                </div>
+                <div class="row m30">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-primary text-white mb-4">
+                            <div class="card-body">Страницы</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link"
+                                    href="{{ route('admin.pages.index') }}">Просмотреть Страницы</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">Сообщения</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href='#'>Просмотреть новые сообщения</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-success text-white mb-4">
+                            <div class="card-body">Новости</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="#">Посмотреть новости</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-danger text-white mb-4">
+                            <div class="card-body">Danger Card</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="#">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
                         </div>
                     </div>
                 </div>

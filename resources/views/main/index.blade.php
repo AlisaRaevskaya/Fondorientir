@@ -4,24 +4,24 @@
         <section id="feature_news_section" class="feature_news_section">
             <div class="container">
                 <div class="feature_article_wrapper">
-                    <div class="feature_column_9">
-                        <div class="feature_article_img">
-                            <img class="img-responsive top_static_article_img" src="{{ asset('storage/main.jpg') }}"
-                                alt="main.jpg">
+                    <div class="col-md-12">
+                        <div class="sl">
+                            <div class="slider">
+                                <a href="{{ route('second_main') }}"><img class="img-responsive top_static_article_img"
+                                        src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
+                            </div>
+                            <div class="slider">
+                                <a href="{{ route('second_main') }}"><img class="img-responsive top_static_article_img"
+                                        src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
+                            </div>
+                            <div class="slider">
+                                <a href="{{ route('second_main') }}"> <img class="img-responsive top_static_article_img"
+                                        src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
+                            </div>
                         </div>
                     </div>
-                    <!-- col-md-7 -->
-                    <div class="feature_column_3">
-                        <div class="float-right">
-                            <a href="{{ route('second_main') }}"><img class="img-responsive"
-                                    src="{{ asset('storage/banner.jpg') }}" alt="banner.jpg"></a>
-                        </div>
-                    </div>
-                    <!-- col-md-5 -->
                 </div>
-                <!-- Row -->
             </div>
-            <!-- container -->
         </section>
 
         <!-- Feature News Section -->

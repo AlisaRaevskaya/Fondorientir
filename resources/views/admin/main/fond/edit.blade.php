@@ -10,7 +10,7 @@
                         <div class="row mb-2">
                             <div class="col-sm-12 col-md-12">
                                 <ol class="breadcrumb float-sm-right ">
-                                <li class="breadcrumb-item"><a href="{{route('admin.pages.index')}}">Страницы</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
                                     <li class="breadcrumb-item active">{{ $page->title }}</li>
                                 </ol>
                             </div>
@@ -85,16 +85,17 @@
                                                     @endif
                                                     <div class="box-footer">
                                                         <div class="buttons">
-                                                            <a href="{{ url()->previous() }}"
-                                                                class="btn btn-default "><i class="fas fa-caret-left"></i> Назад</a>
+                                                            <a href="{{ url()->previous() }}" class="btn btn-default "><i
+                                                                    class="fas fa-caret-left"></i> Назад</a>
 
                                                             <button class="btn btn-primary pull-right"
-                                                                style="margin-left:20px;"><i class="fas fa-save"></i> Сохранить</button>
+                                                                style="margin-left:20px;"><i class="fas fa-save"></i>
+                                                                Сохранить</button>
 
                                                             <a href="{{ route('admin.fond.show', $page->id) }}"
                                                                 class="btn btn-warning pull-right">
-                              <i class="fas fa-folder">
-                              </i> Просмотр</a>
+                                                                <i class="fas fa-folder">
+                                                                </i> Просмотр</a>
                                                         </div>
                                                     </div>
                                                     {{-- {{ Form::close() }}
@@ -140,8 +141,11 @@
                                                     </div>
 
 
-                                                    <div><a href="{{ url()->previous() }}"
-                                                                class="btn btn-default "><i class="fas fa-caret-left"></i> Назад</a>
+                                                    <div>
+                                                        <a href="{{ url()->previous() }}" class="btn btn-default "><i
+                                                                class="fas fa-caret-left">
+                                                            </i> Назад</a>
+                                                    </div>
                                                     {{ Form::close() }}
                                                 </div>
                                             </div>
@@ -156,4 +160,3 @@
         </main>
     </div>
 @endsection
-

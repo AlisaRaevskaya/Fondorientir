@@ -50,6 +50,10 @@ class Page extends Model
     {
         return $query->where('is_menu', true);
     }
+  public function scopeIsSecondMenu($query)
+    {
+        return $query->where('is_second_menu', true);
+    }
 
     public function setContentAttribute($value)
     {

@@ -31,15 +31,14 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/feedback', [MessageController::class, 'index'])->name('feedback');
 Route::get('/migration-news', [NewsController::class, 'index'])->name('news');
-Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 Route::get('/info', [InfoController::class, 'index'])->name('info');
-
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
-Route::get('/status', [StatusController::class, 'index'])->name('status');
+
+// Route::get('/status', [StatusController::class, 'index'])->name('status');
 Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
 Route::get('/history', [MainController::class, 'history'])->name('history');
-Route::get('/press-news', [MainController::class, 'pressnews'])->name('press-news');
+Route::get('/smi_o_nas', [MainController::class, 'pressnews'])->name('press-news');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
 Route::get('/structure', [MainController::class, 'structure'])->name('structure');
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
@@ -47,13 +46,14 @@ Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
 
-Route::get('/feedback/lawyer', [MessageController::class, 'lawyer'])->name('lawyer');
-Route::get('/feedback/reception', [MessageController::class, 'reception'])->name('reception');
-Route::get('/feedback/hotline', [MessageController::class, 'hotline'])->name('hotline');
-Route::get('/feedback/application', [MessageController::class, 'application'])->name('application');
-Route::get('/feedback/claim', [MessageController::class, 'claim'])->name('claim');
-Route::get('/feedback/problem', [MessageController::class, 'problem'])->name('problem');
-Route::get('/feedback/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
+Route::get('/online_priemnaya/lawyer', [MessageController::class, 'lawyer'])->name('lawyer');
+Route::get('/online_priemnaya/reception', [MessageController::class, 'reception'])->name('reception');
+Route::get('/online_priemnaya/hotline', [MessageController::class, 'hotline'])->name('hotline');
+Route::get('/online_priemnaya/application', [MessageController::class, 'application'])->name('application');
+Route::get('/online_priemnaya/claim', [MessageController::class, 'claim'])->name('claim');
+Route::get('/online_priemnaya/problem', [MessageController::class, 'problem'])->name('problem');
+Route::get('/online_priemnaya/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
+Route::get('/online_priemnaya/faq', [FaqController::class, 'index'])->name('faq');
 
 
 Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
@@ -65,8 +65,8 @@ Route::get('/info-center/testirovanie-trudovyh-migrantov',[InfoController::class
 Route::get('/info-center/brochures', [InfoController::class, 'brochures'])->name('brochures');
 Route::get('/info-center/reminder', [InfoController::class, 'reminder'])->name('reminder');
 
-
-Route::get('/press-news', [MainController::class, 'showPressNews'])->name('press');
+// Route::get('/smi_o_nas', [MainController::class, 'pressnews'])->name('press-news');
+Route::get('/smi_o_nas', [MainController::class, 'showPressNews'])->name('press');
 // Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
 Route::get('/migration-news/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')
 ->name('news_category.id');
@@ -74,8 +74,8 @@ Route::get('/press-news/{id}', [MainController::class, 'showByCategoryId'])->whe
 ->name('press_category.id');
 
 
-
 Route::post('/lawyer-form', [AjaxController::class, 'saveLawQuestion'])->name("lawyer-question");
+Route::post('/lawyer-form-sidebar', [AjaxController::class, 'saveLawQuestionSidebar'])->name("lawyer-sidebar");
 Route::post('/reception-form', [AjaxController::class, 'saveReceptionMessage'])->name("reception-form");
 Route::post('/problem-form', [AjaxController::class, 'saveProblemMessage'])->name("problem-form");;
 Route::post('/application-form', [AjaxController::class, 'saveApplication'])->name("application-form");;
@@ -88,7 +88,7 @@ Route::view('/admin-panel', 'admin.admin_home')->middleware('auth');
 Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
 Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second-reception');
 Route::get('/center-podderzhki/claim', [SecondSiteController::class, 'claim'])->name('second-claim');
-Route::get('/center-podderzhki/applictaion', [SecondSiteController::class, 'application'])->name('second-application');
+Route::get('/center-podderzhki/lawyer', [SecondSiteController::class, 'lawyer'])->name('second-lawyer');
 Route::get('/center-podderzhki/problem', [SecondSiteController::class, 'problem'])->name('second-problem');
 Route::get('/center-podderzhki/hotline', [SecondSiteController::class, 'hotline'])->name('second-hotline');
 Route::get('/center-podderzhki/migration-questions', [SecondSiteController::class, 'migration'])->name('second.migration');
@@ -136,9 +136,8 @@ Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
 Route::resource('/feedback-call', '\App\Http\Controllers\Admin\FeedbackCallController');
 
 Route::get('/notifications/{category}', [NotificationController::class, 'index'])->where('category', '[a-z]+')->name('notice');
-
 Route::get('/notifications/{category}/{id}',[NotificationController::class, 'show'])->name('notice.show');
-Route::get('/notifications/all',[NotificationController::class, 'showAll'])->name('notices.all');
+Route::get('/messages/all',[NotificationController::class, 'showAll'])->name('notices.all');
 });
 
 Route::view('/static','admin.layout-static');

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SecondMenu;
 use App\Models\Page;
+
 class SecondSiteController extends Controller
 {
      public function index(){
-        $page= Page::where('laravel_name', 'reception')->first();
+        $page= Page::where('id', 3)->first();
         return view('secondsite.index', compact('page'));
     }
 
@@ -16,9 +18,9 @@ class SecondSiteController extends Controller
         return view('secondsite.hotline', compact('page'));
     }
 
-    public function application(){
-           $page= Page::where('laravel_name', 'application')->first();
-        return view('secondsite.application',compact('page'));
+    public function lawyer(){
+        $page= Page::where('laravel_name', 'lawyer')->first();
+        return view('secondsite.lawyer',compact('page'));
 
     }
     public function claim(){
@@ -26,7 +28,7 @@ class SecondSiteController extends Controller
         return view('secondsite.claim', compact('page'));
     }
     public function problem(){
-         $page= Page::where('laravel_name', 'problem')->first();
+        $page= SecondMenu::where('laravel_name', 'second_problem')->first();
         return view('secondsite.problem', compact('page'));
     }
      public function reception(){
