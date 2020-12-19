@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout',['seo' => 'Фонд Ориентир', 'page'=>'2'])
 
 @section('content')
     <div class="container">

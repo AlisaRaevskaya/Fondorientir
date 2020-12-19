@@ -14,9 +14,9 @@
                                 <h4>ПРАВОВАЯ ПРИЁМНАЯ</h4>
                                 <p>для мигрантов</p>
                                 <p>Санкт-Петербург, пр. Римского-Корсакова 39 (во дворе)</p>
-                                <p><a href="#" class="pop_map_link" data-toggle="modal"
+                                <h6><a href="#" class="pop_map_link" data-toggle="modal"
                                         data-target=".bd-example-modal-lg"><i class="fa fa-map-o">
-                                            Схема проезда (интерактивная карта)</i></a></p>
+                                            Схема проезда (интерактивная карта)</i></a></h6>
                                 <p>Телефон: +7 (911) 253-85-01; +7 (812) 385 -69-89</p>
                                 <p>Пн-Пт: 10:00 -18:00 СБ,ВС – выходной</p>
                                 <div class="social">
@@ -39,7 +39,7 @@
                                 </p>
                                 <p>
                                     Мессенджеры:</p>
-                                <div class="social">
+                                <div class="contacts_social">
                                     <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                                     <!--Twitter-->
                                     <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
@@ -52,7 +52,7 @@
 
                         </div>
                         <div class="m30">
-                            <h4>Время работы специалистов по миграционным и трудовым вопросам:</h4>
+                            <h2>Время работы специалистов по миграционным и трудовым вопросам:</h2>
 
                             <div class="">
                                 <table class="table border-none">

@@ -11,8 +11,9 @@
                                 alt="blank.png">Уведомление о прибытии иностранного гражданина</a>
                     </div>
                     <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-2') }}"> <img src="/storage/blank.png"
-                                alt="blank.png">Заявление иностранного гражданина или лица без гражданства о регистрации по
+                        <a href="{{ asset('/storage/blanks/blank-2') }}">
+                            <img src="/storage/blank.png" alt="blank.png">Заявление иностранного гражданина или лица без
+                            гражданства о регистрации по
                             месту
                             жительства</a>
                     </div>

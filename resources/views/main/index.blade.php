@@ -1,11 +1,11 @@
 @extends('layout', ['seo' => $page->getSeo()])
 @section('content')
-    <div class="wrapper main_content">
+    <div class="wrapper">
         <section id="feature_news_section" class="feature_news_section">
             <div class="container">
-                <div class="feature_article_wrapper">
+                <div class="">
                     <div class="col-md-12">
-                        <div class="sl text-center">
+                        <div class="sl">
                             <div class="slider">
                                 <a href="{{ route('second_main') }}"><img class="img-responsive"
                                         src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
@@ -25,7 +25,7 @@
         </section>
 
         <!-- Feature News Section -->
-        <section class="main_info">
+        <section class="main">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">

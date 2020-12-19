@@ -34,7 +34,7 @@
                                                 {{ $item->getMiniContent() }}</a>
                                             </td>
                                             </td>
-                                            <td class="mailbox-date col-md-2">{{ $item->dateline }}</td>
+                                            <td class="mailbox-date col-md-2">{{ $item->created_at }}</td>
                                             <td class="mailbox-name col-md-2">
                                                 @if ($item->is_read == true)
                                                     <p>Прочитано</p>

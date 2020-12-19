@@ -2,20 +2,20 @@
     <div class="container">
         <div class="header-section">
             <div class="row">
-                <div class="left_section col-md-5">
+                <div class="left_section col-md-5" style="padding:0;">
                     <div class="row">
                         <div class="text-center logo" style="position:relative;">
                             <a href="{{ route('main') }}">
-                                <img src="/storage/logo.png" alt="Logo" class="img-responsive"></a>
+                                <img src="/storage/logo3.png" alt="Logo" class="img-responsive"></a>
                         </div>
-                        <div class="text-center" id="logo_name">
+                        {{-- <div class="text-center" id="logo_name">
                             <p>Фонд поддержки<br>
                                 добровольного переселения<br>
                                 соотечественников «ОРИЕНТИР»</p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
-                <div class="col-md-2 text-center" style="margin-top:1.5rem;">
+                <div class="col-md-2 text-center" style="margin-top:1.7rem;">
                     <div>
                         <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                         <!--Twitter-->
@@ -29,8 +29,8 @@
                         <h6 class="link_color">{{ $contact->email }}</h6>
                     </div>
                 </div>
-                <div class="col-md-3 text-center" style="margin-top:1.5rem;">
-                    <p><strong>Правовая приемная</strong></p>
+                <div class="col-md-3 text-center" style="margin-top:1.2rem;">
+                    <h6><strong>Правовая приемная</strong></h6>
                     <p>{{ $contact->city }},</p>
                     <p>{{ $contact->street }}</p>
                     <a href="#" class="pop_map_link schema" data-toggle="modal" data-target=".bd-example-modal-lg"><i
@@ -39,14 +39,14 @@
                 </div>
 
 
-                <div class="col-md-2 text-center" style="margin-top:1.5rem;">
+                <div class="col-md-2 text-center" style="margin-top:1.7rem;padding-right:10px;">
                     <div>
                         <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
                     </div>
                     <div>
                         <button type="button" class="btn btn-primary btn-feedback-call text-center" data-toggle="modal"
                             data-target="#exampleModalLong">
-                            <strong> Заказать обратный звонок</strong></button>
+                            <strong>Заказать обратный звонок</strong></button>
                     </div>
                 </div>
             </div>

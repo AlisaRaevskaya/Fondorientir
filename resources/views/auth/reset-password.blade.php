@@ -1,4 +1,5 @@
-@extends('layout')
+@extends('layout',['seo' => 'Фонд Ориентир', 'page'=>'2'])
+
 
 @section('content')
     <div class="container">
@@ -33,11 +34,11 @@
 
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label
-                                text-md-right">{{ __('Пароль') }}</label>
+                                    text-md-right">{{ __('Пароль') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password" class="form-control
-                                    @error('password') is-invalid @enderror" name="password" required
+                                        @error('password') is-invalid @enderror" name="password" required
                                         autocomplete="new-password">
 
                                     <a href="#" class="password-control"></a>
@@ -77,15 +78,15 @@
 @endsection
 
 <script>
+    $('.password-control').on('click', function() {
+        if ($('#password').attr('type') == 'password') {
+            $(this).addClass('view');
+            $('#password').attr('type', 'text');
+        } else {
+            $(this).removeClass('view');
+            $('#password').attr('type', 'password');
+        }
+        return false;
+    });
 
-$('.password-control').on('click', function(){
-	if ($('#password').attr('type') == 'password'){
-		$(this).addClass('view');
-		$('#password').attr('type', 'text');
-	} else {
-		$(this).removeClass('view');
-		$('#password').attr('type', 'password');
-	}
-	return false;
-});
-    </script>
+</script>

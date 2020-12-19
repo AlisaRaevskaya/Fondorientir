@@ -73,7 +73,9 @@
                 <a href="/assets/dw/soglasie.pdf" target="_blank" class="consent"> на
                     обработку моих данных
                 </a></label>
-            <div> <span class="text-danger" id="consentError"></span></div>
+            <div>
+                <span class="text-danger" id="consentError"></span>
+            </div>
         </div>
     </div>
 
@@ -84,13 +86,17 @@
                 &#x21bb;
             </button>
         </div>
+
     </div>
+
     <span class="text-danger" id="captchaError"></span>
-    <div class="form-group">
-        <div class="col-xs-offset-3 col-xs-9 col-md-3">
+
+    <div class="form-group mt-4 mb-4">
+        <div class="col-xs-offset-3 col-xs-9">
             <input id="captcha" type="text" class="form-control" placeholder="Введите код" name="captcha">
         </div>
     </div>
+
     <br />
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
@@ -98,6 +104,7 @@
         </div>
     </div>
 </form>
+
 <div class="text-center" id="success_messages" style="padding-left:30px;"></div>
 
 <script type="text/javascript">
