@@ -51,7 +51,7 @@ class BankInfoController extends Controller
     {
          $page = Page::find($id);
 
-        return view('admin.main.bankinfo.show', compact('page'));
+        return view('admin.fond.bankinfo.show', compact('page'));
     }
 
 
@@ -65,7 +65,7 @@ class BankInfoController extends Controller
     {
         $page= Page::find($id);
         $seo = $page->seo;
-        return view('admin.main.bankinfo.edit', compact('page', 'seo'));
+        return view('admin.fond.bankinfo.edit', compact('page', 'seo'));
     }
 
     /**
@@ -93,9 +93,7 @@ class BankInfoController extends Controller
         $seo->keywords=$request->keywords;
         $seo->og_title=$request->og_title;
         $seo->og_description=$request->og_description;
-        $seo->og_url=$request->og_url;
-        $seo->og_type=$request->og_type;
-        $seo->og_site_name=$request->og_site_name;
+
         $seo->save();
         $message="Данные сохранены";
         return redirect()->route('admin.bankinfo.edit', $id)->with('message', $message);

@@ -48,7 +48,7 @@ class ClaimController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function show($id)
+    public function show($id)
     {
         $page = Page::find($id);
 
@@ -63,11 +63,10 @@ class ClaimController extends Controller
      */
     public function edit($id)
     {
+        $page= Page::find($id);
+        $seo = $page->seo;
 
-    $page= Page::find($id);
-    $seo = $page->seo;
-
-    return view('admin.reception.claim.edit', compact('page', 'seo'));
+        return view('admin.reception.claim.edit', compact('page', 'seo'));
     }
 
     /**
@@ -78,7 +77,8 @@ class ClaimController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   $page = Page::findOrFail($id);
+    {
+        $page = Page::findOrFail($id);
 
         $page->title=$request->title;
         $page->content=$request->content;
@@ -94,9 +94,6 @@ class ClaimController extends Controller
         $seo->keywords=$request->keywords;
         $seo->og_title=$request->og_title;
         $seo->og_description=$request->og_description;
-        $seo->og_url=$request->og_url;
-        $seo->og_type=$request->og_type;
-        $seo->og_site_name=$request->og_site_name;
         $seo->save();
         $message="Данные сохранены";
         return redirect()->route('admin.claim.edit', $id)->with('message', $message);
@@ -117,5 +114,6 @@ class ClaimController extends Controller
 
         $seo->delete();
         $page->delete();
-return redirect()->route('admin.pages.index');
+        return redirect()->route('admin.pages.index');
+    }
 }

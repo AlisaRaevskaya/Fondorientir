@@ -9,7 +9,7 @@
                 </ol>
                 <div class="card mb-4">
                     <div class="card-body">
-                        В данном разделе Вы можете редактировать информацию о пользователях"
+                        В данном разделе Вы можете редактировать информацию о пользователях.
                     </div>
                 </div>
                 <div class="card mb-4">
@@ -48,14 +48,17 @@
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('admin.user.edit', $user->id) }}"
-                                                            class="btn btn-primary">Редактировать</a>
+                                                            class="btn btn-primary"><i class="fas fa-edit">
+                                                            </i> Редактировать</a>
                                                     </td>
                                                     <td>
                                                         <form action="{{ route('admin.user.destroy', $user) }}"
                                                             method="post" class="text-center">
                                                             @csrf
                                                             {{ method_field('DELETE') }}
-                                                            <button type="submit" class="btn btn-warning ">Удалить</button>
+                                                            <button type="submit" class="btn btn-danger"><i
+                                                                    class="fas fa-trash">
+                                                                </i> Удалить</button>
                                                         </form>
                                                     </td>
                                                 </tr>

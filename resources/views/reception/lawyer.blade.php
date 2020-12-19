@@ -6,9 +6,7 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="entity_wrapper">
-                        <div class="entity_thumb">
-                            <img class="img-responsive" src="/assets/images/pravo.jpg" alt="feature-top">
-                        </div>
+
                         <div class="entity_title text-center">
                             <h1>Правовая приемная</h1>
                         </div>
@@ -66,13 +64,14 @@
 
                         <div class="shadow-textarea">
                             <div>
-                                <div class="row justify-content-center" style="padding:5pt 10pt">
+                                <div class="row" style="padding:5pt 20pt">
                                     <h1>
-                                        <img class="d-flex img-circle avatar z-depth-1-half mr-3 img-responsive"
+                                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
                                             src="/assets/images/avatar-5.jpg" alt="Avatar">
                                         Задать вопрос юристу бесплатно
                                     </h1>
                                 </div>
+
                                 @include('forms.lawyerForm')
                             </div>
                         </div>

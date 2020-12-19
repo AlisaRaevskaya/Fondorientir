@@ -6,10 +6,7 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="entity-wrapper">
-
-
                         <div class="m30 text-center">
-
                             <p>Некоммерческая организация</p>
                             <h3><strong>ФОНД ПОДДЕРЖКИ ДОБРОВОЛЬНОГО ПЕРЕСЕЛЕНИЯ СООТЕЧЕСТВЕННИКОВ "ОРИЕНТИР"</strong></h3>
 
@@ -120,87 +117,33 @@
                     <div class="">
                         <div class="text-center m30">
                             <h2 class="link_color">+7(812) 385 -69-89</h2>
-                            <button class="btn btn-info btn-sm">Спросить юриста бесплатно</button>
+                            <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
+                                data-category="Решение трудовых споров">Спросить юриста
+                                бесплатно</button>
                         </div>
+                    </div>
 
-                        <div class="text-center m30">
-                            <h2>Решение трудовых споров<a href="tel" class="link_color"> +7 (812 ) 612-48-17</a></h2>
+                    <div class="text-center m30">
+                        <h2>Решение трудовых споров<a href="tel:+78126124817" class="link_color"> +7 (812 ) 612-48-17</a>
+                        </h2>
+                    </div>
 
-                        </div>
+                    <div class="text-center m30">
+                        <h2>Миграционные вопросы <a href="tel:+78123856989" class="link_color">+7(812) 385 -69-89</a></h2>
+                    </div>
 
-                        <div class="text-center m30">
-                            <h2>Миграционные вопросы <a href="tel" class="link_color">+7(812) 385 -69-89</a></h2>
-
-                        </div>
-
-                        <div class="text-center m30">
-                            <h2>Помощь в сложных жизненных ситуациях <a href="tel" class="link_color">+7(812) 385 -69-89</a>
-                            </h2>
-                            <button class="btn btn-info btn-sm">Спросить юриста бесплатно</button>
-                        </div>
+                    <div class="text-center m30">
+                        <h2>Помощь в сложных жизненных ситуациях <a href="tel:+78123856989" class="link_color">+7(812) 385
+                                -69-89</a>
+                        </h2>
+                        <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
+                            data-category="Решение трудовых споров">Спросить юриста
+                            бесплатно
+                        </button>
                     </div>
                 </div>
                 @include('layouts.contact_sidebar')
             </div>
         </div>
     </section>
-
-
-    {{-- <script>
-        ymaps.ready(function() {
-            var myMap = new ymaps.Map('map2', {
-                    center: [59.92345506419597, 30.298018499999987],
-                    zoom: 14
-                }, {
-                    searchControlProvider: 'yandex#search'
-                }),
-
-                // Создаём макет содержимого.
-                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                ),
-
-                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                    hintContent: 'Фонд "Ориентир"',
-                }, {
-                    // Опции.
-                    // Необходимо указать данный тип макета.
-                    iconLayout: 'default#image',
-                    // Своё изображение иконки метки.
-                    iconImageHref: 'assets/images/maps.svg',
-                    // Размеры метки.
-                    iconImageSize: [30, 42],
-                    // Смещение левого верхнего угла иконки относительно
-                    // её "ножки" (точки привязки).
-                    iconImageOffset: [-5, -38]
-                }),
-
-                myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-                    hintContent: 'Собственный значок метки с контентом',
-                    balloonContent: 'А эта — новогодняя',
-                    iconContent: '12'
-                }, {
-                    // Опции.
-                    // Необходимо указать данный тип макета.
-                    iconLayout: 'default#imageWithContent',
-                    // Своё изображение иконки метки.
-                    iconImageHref: 'images/ball.png',
-                    // Размеры метки.
-                    iconImageSize: [48, 48],
-                    // Смещение левого верхнего угла иконки относительно
-                    // её "ножки" (точки привязки).
-                    iconImageOffset: [-24, -24],
-                    // Смещение слоя с содержимым относительно слоя с картинкой.
-                    iconContentOffset: [15, 15],
-                    // Макет содержимого.
-                    iconContentLayout: MyIconContentLayout
-                });
-
-            myMap.geoObjects
-                .add(myPlacemark)
-                .add(myPlacemarkWithContent);
-        });
-
-    </script> --}}
-
 @endsection

@@ -68,19 +68,19 @@
 
                                         <td class="project-actions text-right ">
 
-                                            <a href="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.edit', $page->id) : route('admin.edit', $page->id) }}"
-                                                class="btn btn-info btn-sm">
-                                                <i class="fas fa-pencil-alt"></i></i>Редактировать</a>
+                                            <a href="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.edit', $page->id) : route('admin.main.edit', $page->id) }}"
+                                                class="btn btn-primary btn-sm">
+                                                <i class="fas fa-pencil-alt"></i> Редактировать</a>
                                         </td>
                                         <td>
                                             <form
-                                                action="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.destroy', $page->id) : route('admin.destroy', $page->id) }}"
+                                                action="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.destroy', $page->id) : route('admin.main.destroy', $page->id) }}"
                                                 method="post" class="text-center">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
                                                 <button class="btn btn-danger btn-sm pull-right">
                                                     <i class="fas fa-trash">
-                                                    </i></i>Удалить</button>
+                                                    </i> Удалить</button>
                                             </form>
 
                                         </td>

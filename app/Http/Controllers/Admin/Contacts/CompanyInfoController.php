@@ -60,7 +60,7 @@ class CompanyInfoController extends Controller
      */
     public function edit($id)
     {
-        $contact=Contact::where('id', $id)->get();
+        $contact=Contact::where('id', $id)->first();
         return view('admin.contacts.edit', compact('contact'));
     }
 
@@ -75,10 +75,11 @@ class CompanyInfoController extends Controller
     {
        $contact = Contact::findOrFail($id);
 
-        $contact->edit($request->all());
-        $message="Данные сохранены";
+    $contact->edit($request->all());
 
-        return redirect()->route('admin.contacts.edit', $id)->with('message', $message);
+    $message="Данные сохранены";
+
+        return redirect()->route('admin.company-info.edit', $id)->with('message', $message);
     }
 
     /**

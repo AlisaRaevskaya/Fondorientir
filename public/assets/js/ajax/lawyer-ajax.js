@@ -25,6 +25,7 @@ $("#lawyer-btn").on("click", function(event) {
         $("#emailError").text(response.errors.email);
         $("#phoneError").text(response.errors.phone);
         $("#messageError").text(response.errors.message);
+        $("#captchaError").text(response.errors.captcha);
       }
     },
 });

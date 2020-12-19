@@ -15,7 +15,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        Пресс-центр
+                        CМИ о нас
                         <div class="text-center">
                             <a href="{{ route('admin.press.create') }}" class="btn btn-default pull-right"><i
                                     class="fa fa-plus"></i>
@@ -60,14 +60,15 @@
                                                 <td>{!! $new->updated_at !!}</td>
                                                 <td>
                                                     <a href="{{ route('admin.press.edit', $new->id) }}"
-                                                        class="btn btn-primary"> <i class="fa fa-edit"></i>Редактировать</a>
+                                                        class="btn btn-primary"> <i class="fa fa-edit"></i>
+                                                        Редактировать</a>
                                                 </td>
                                                 <td>
                                                     <form action="{{ route('admin.press.destroy', $new->id) }}"
                                                         method="post" class="text-center">
                                                         @csrf
                                                         {{ method_field('DELETE') }}
-                                                        <button type="submit" class="btn btn-warning"><i
+                                                        <button type="submit" class="btn btn-danger"><i
                                                                 class="fa fa-trash"></i> Удалить</button>
                                                     </form>
                                                 </td>

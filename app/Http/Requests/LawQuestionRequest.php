@@ -30,6 +30,7 @@ class LawQuestionRequest extends FormRequest
         'message' => ['required','string','min:8','max:500'],
         'email' => ['required','min:2','max:255','email'],
         'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
+        'captcha' => ['required','captcha'],
         ];
     }
     protected function failedValidation(Validator $validator)

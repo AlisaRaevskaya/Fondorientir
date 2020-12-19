@@ -66,7 +66,7 @@ class ProblemController extends Controller
     $page= Page::find($id);
     $seo = $page->seo;
 
-    return view('admin.main.problem.edit', compact('page', 'seo'));
+    return view('admin.reception.problem.edit', compact('page', 'seo'));
     }
 
     /**

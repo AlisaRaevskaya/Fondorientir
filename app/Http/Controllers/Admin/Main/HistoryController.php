@@ -52,7 +52,7 @@ class HistoryController extends Controller
     {
         $page = Page::find($id);
 
-        return view('admin.main.history.show', compact('page'));
+        return view('admin.fond.history.show', compact('page'));
     }
 
     /**
@@ -67,7 +67,7 @@ class HistoryController extends Controller
     $page= Page::find($id);
     $seo = $page->seo;
 
-    return view('admin.main.history.edit', compact('page', 'seo'));
+    return view('admin.fond.history.edit', compact('page', 'seo'));
     }
 
     /**

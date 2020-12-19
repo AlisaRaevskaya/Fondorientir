@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,14 +17,11 @@ class PageController extends Controller
      */
     public function index()
     {
-  $pages= Seo::Join('pages', 'pages.id', '=', 'seos.page_id')
-        ->select('seos.description','seos.keywords', 'pages.content', 'pages.title',
-        'pages.id','pages.url','pages.dynamic', 'pages.created_at', 'pages.updated_at','pages.laravel_name')->where('dynamic', false)->
-    orderBy('pages.id', 'asc')->paginate(15);
+        $pages= Seo::Join('pages', 'pages.id', '=', 'seos.page_id')->select('seos.description', 'seos.keywords', 'pages.content', 'pages.title', 'pages.id', 'pages.url', 'pages.created_at', 'pages.updated_at', 'pages.laravel_name')
+        ->orderBy('pages.id', 'asc')->paginate(15);
         return view('admin.pages.index', compact('pages'));
     }
-
-    /**
+   /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -41,7 +39,9 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $page = Page::add($request->all());
+        $message="Данные сохранены";
+        return redirect()->route('admin.pages.create', $id)->with('message', $message);//
     }
 
     /**
@@ -89,6 +89,9 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-       //
+        //
+    }
+    public function choosePage(){
+        return view('admin.pages.choice');
     }
 }

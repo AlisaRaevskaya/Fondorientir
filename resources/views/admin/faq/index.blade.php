@@ -27,11 +27,11 @@
                                     <h3 class="card-title">
                                         Редактировать статью
                                     </h3>
-                                       <div class="text-center">
-                            <a href="{{ route('admin.fq.create') }}" class="btn btn-default pull-right"><i
-                                    class="fa fa-plus"></i>
-                                Добавить</a>
-                        </div>
+                                    <div class="text-center">
+                                        <a href="{{ route('admin.fq.create') }}" class="btn btn-default pull-right"><i
+                                                class="fa fa-plus"></i>
+                                            Добавить</a>
+                                    </div>
                                 </div>
 
 
@@ -98,7 +98,7 @@
                             <!-- entity_wrapper -->
                             <nav aria-label="Page navigation" class="pagination_section">
                                 <ul class="pagination">
-                                    <li>{{$topics->links() }}</li>
+                                    <li>{{ $topics->links() }}</li>
                                 </ul>
                             </nav>
                             <div class="col-md-1"></div>

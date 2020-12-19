@@ -3,20 +3,35 @@
         <div class="header-section">
             <div class="row">
                 <div class="left_section col-md-5">
-                    <div class="row justify-content-between">
-                        <a href="{{ route('second_main') }}" class="logo"><img src="/assets/images/logo-center.png"
-                                alt="Logo" class="img-responsive"></a>
-                        <div style="position:absolute;top:5%;
-                                left:30%;float:right; color:#00aa97;" class="text-center" id="logo-name">
-                            <h2>"Центр правовой поддержки<br>
+                    <div class="row">
+                        <div class="text-center logo" style="position:relative;">
+                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/logo-center.png') }}"
+                                    alt="Logo" class="img-responsive"></a>
+                        </div>
+                        <div class="text-center" id="second_logo_name">
+                            <p class="turquoise">Центр правовой поддержки<br>
                                 и образования<br>
-                                трудовых мигрантов"</h2>
+                                трудовых мигрантов</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3 text-center">
-                    <h6>Правовая приемная</h6>
+                <div class="col-md-2 text-center" style="margin-top:1.5rem;">
+                    <div>
+                        <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
+                        <!--Twitter-->
+                        <a class="icons-sm tw-ic" style='padding-left:22px;'><i class="fa fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a class="icons-sm inst-ic" style='padding-left:22px;'><i class="fa fa-instagram"> </i></a>
+                        <!--Linkedin-->
+                        <a class="icons-sm tmb-ic" style='padding-left:22px;'><i class="fa fa-vk"> </i></a>
+                    </div>
+                    <div>
+                        <h6 class="link_color">{{ $contact->email }}</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center" style="margin-top:1.5rem;">
+                    <p><strong>Правовая приемная</strong></p>
                     <p>{{ $contact->city }},</p>
                     <p>{{ $contact->street }}</p>
                     <a href="#" class="pop_map_link schema" data-toggle="modal" data-target=".bd-example-modal-lg"><i
@@ -24,27 +39,17 @@
                         </i> Схема проезда (интерактивная карта)</a>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="right_section text-center">
-                        <div class="">
-                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                            <!--Twitter-->
-                            <a class="icons-sm tw-ic" style='padding-left:17px;'><i class="fa fa-twitter"></i></a>
-                            <!--Google +-->
-                            <a class="icons-sm inst-ic" style='padding-left:17px;'><i class="fa fa-instagram"> </i></a>
-                            <!--Linkedin-->
-                            <a class="icons-sm tmb-ic" style='padding-left:17px;'><i class="fa fa-vk"> </i></a>
-                        </div>
-                        <div>
-                            <p class="link_color">{{ $contact->email }}</p>
-                        </div>
-                        <div class="">
-                            <h6><i class="fa fa-phone"></i><a href='tel:+78123856989'>+7(812)-385-69-89</a></h6>
-                        </div>
 
-                        <button type="button" class="btn btn-sm btn-primary text-center" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Заказать обратный звонок</button>
+                <div class="col-md-2 text-center" style="margin-top:1.5rem;">
+                    <div>
+                        <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
+                        <p class="header_phone"><a href='tel:+78126124817'> +7(812)-612-48-17</a></p>
+                    </div>
+                    <div>
+
+                        <button type="button" class="btn btn-feedback-call text-center turquoise-back"
+                            data-toggle="modal" data-target="#exampleModalLong">
+                            <strong> Заказать обратный звонок</strong></button>
                     </div>
                 </div>
             </div>
@@ -65,11 +70,11 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="#navbar-collapse-1"
-                        style="display:flex;justify-content:space-between;align-items:center;">
-                        <ul class="nav navbar-nav main-nav">
+                        style="display:flex;justify-content:space-around;align-items:center">
+                        <ul class="nav navbar-nav main-nav" style="display:flex;justify-content:space-around;">
                             @foreach ($secondmenu as $item)
                                 @if (!!$item->children)
-                                    <li class="dropdown m-menu-fw" style="padding:0 2rem;">
+                                    <li class="dropdown m-menu-fw menu_item">
                                         <a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}"
                                             data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">
                                             {{ $item->title }}
@@ -90,7 +95,7 @@
                                         </ul>
                                     </li>
                                 @else
-                                    <li class="dropdown m-menu-fw" style="padding:0 2rem;">
+                                    <li class="dropdown m-menu-fw menu_item">
                                         <a
                                             href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $item->title }}</a>
                                     </li>

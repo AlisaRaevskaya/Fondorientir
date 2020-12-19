@@ -6,11 +6,11 @@
             <div class="container-fluid" style="margin-top:30px;">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item">Meню</a>
-                    <li class="breadcrumb-item active">Контакты</li>
+                    <li class="breadcrumb-item active">Информация о компании</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-body">
-                        В данном разделе Вы можете редактировать статьи из раздела "Контакты".
+                        В данном разделе Вы можете редактировать "Информацию о компании".
                     </div>
                 </div>
                 <div class="card mb-4">
@@ -109,10 +109,13 @@
                                         </table>
 
                                         <div class="pull-left"><a href="{{ url()->previous() }}"
-                                                class="btn btn-secondary pull-left">Назад</a></div>
+                                                class="btn btn-default pull-left"><i class="fas fa-caret-left"></i>
+                                                Назад</a>
+                                        </div>
                                         <div class="">
                                             <a href="{{ route('admin.company-info.edit', $contact->id) }}"
-                                                class="btn btn-primary pull-right">Редактировать</a>
+                                                class="btn btn-primary pull-right"><i class="far fa-edit"></i>
+                                                Редактировать</a>
                                         </div>
                                     @endforeach
                                 </div>

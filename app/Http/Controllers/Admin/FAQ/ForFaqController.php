@@ -17,7 +17,7 @@ class ForFaqController extends Controller
      */
     public function index()
     {
-          $topics = Topic::paginate(5);
+        $topics = Topic::paginate(5);
 
         return view('admin.faq.index', compact('topics'));
     }
@@ -51,9 +51,10 @@ class ForFaqController extends Controller
      */
     public function show($id)
     {
-        $topic=Topic::find($id);
+        $reply=Reply::find($id);
+        $topic=$reply->topic;
 
-        return view('admin.faq.show' , compact('topic'));
+        return view('admin.faq.reply_show' , compact('reply', 'topic'));
     }
 
     /**
@@ -64,11 +65,10 @@ class ForFaqController extends Controller
      */
     public function edit($id)
     {
-        $topic=Topic::find($id);
+        $reply=Reply::find($id);
+        $topic=$reply->topic;
 
-        $seo = Seo::where('page_id', 6)->first();
-
-        return view('admin.faq.reply_edit', compact('topic', 'seo'));
+        return view('admin.faq.reply_edit', compact('topic','reply'));
     }
 
     /**
@@ -80,20 +80,13 @@ class ForFaqController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $topic =Topic::find($id);
+        $reply = Reply::find($id);
+        $topic= $reply->topic;
+
+        $reply->edit($request->body);
         $topic->edit($request->all());
 
-        // $seo = Seo::where('page_id', $id)->first();
-        // $seo->seo_title =$request->seo_title;
-        // $seo->name=$request->name;
-        // $seo->description=$request->description;
-        // $seo->keywords=$request->keywords;
-        // $seo->og_title=$request->og_title;
-        // $seo->og_description=$request->og_description;
-        // $seo->og_url=$request->og_url;
-        // $seo->og_type=$request->og_type;
-        // $seo->og_site_name=$request->og_site_name;
-        // $seo->save();
+
        $message="Данные сохранены";
        return view('admin.faq.reply_edit')->with('message', $message);
     }
@@ -106,9 +99,10 @@ class ForFaqController extends Controller
      */
     public function destroy($id)
     {
-        $topic=Topic::find($id);
-
+          $reply = Reply::find($id);
+        $topic= $reply->topic;
+$reply->delete();
        $topic->delete();
-    return redirect()->route('admin.fq.edit');
+        return redirect()->route('admin.faq-page.edit');
     }
 }

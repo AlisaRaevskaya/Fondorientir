@@ -1,4 +1,5 @@
 @extends('secondsite.layout',['seo' => $page->getSeo()])
+
 @section('content')
     <section id="entity_section" class="entity_section">
         <div class="container">

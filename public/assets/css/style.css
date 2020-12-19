@@ -42,10 +42,14 @@ Author: uiCookies.com
 # -------------------------------------------------------------------*/
 
 body {
+    background: url(/../storage/flag.jpg) no-repeat cover fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     font-family: 'Open Sans';
     font-size: 13px;
     line-height: 21px;
-    background: #ffffff;
 }
 
 
@@ -240,12 +244,6 @@ section {
 
 .right_section .lang i {
     margin-left: 5px;
-}
-
-.right_section .btn {
-    border: none;
-    font-size: 12px;
-    padding: 3px 10px 15px;
 }
 
 .right_section .navbar-nav > li:first-child a:after {
@@ -1523,9 +1521,7 @@ font-family:'Open Sans';
 }
 
 @media screen and (max-width: 768px) {
-    #logo-name{
-        display:none;
-    }
+
     .tag_lg {
         font-size: 12px;
         padding: 3px 8px;

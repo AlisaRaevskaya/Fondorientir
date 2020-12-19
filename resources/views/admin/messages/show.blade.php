@@ -100,11 +100,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /.col-->
-
                     </div>
+                </div>
+            </div>
         </section>
-
     </div>
-
 @endsection

@@ -4,12 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class Reply extends Model
 {
     protected $table="replies";
 
-
+  public function getMiniContent(){
+        return Str::substr($this->body, 0, 80) . "...";
+    }
     // public function comments(){
     //     return $this->belongsToMany('App\Models\Comment');
     // }

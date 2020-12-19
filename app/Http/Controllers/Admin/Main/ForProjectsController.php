@@ -25,7 +25,7 @@ class ForProjectsController extends Controller
      */
     public function create()
     {
-        return view('admin.main.projects.create');
+        return view('admin.fond.projects.create');
     }
 
     /**
@@ -51,7 +51,7 @@ class ForProjectsController extends Controller
     public function show($id)
     {
         $projects=Project::all();
-        return view('admin.main.projects.show_projects', compact('projects'));
+        return view('admin.fond.projects.show_projects', compact('projects'));
     }
 
     /**
@@ -64,7 +64,7 @@ class ForProjectsController extends Controller
     {
         $project=Project::findOrFail($id);
 
-        return view('admin.main.projects.single_edit', compact('project'));
+        return view('admin.fond.projects.single_edit', compact('project'));
     }
 
     /**

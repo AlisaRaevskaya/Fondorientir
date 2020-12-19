@@ -20,7 +20,6 @@ class NotificationController extends Controller
         return view('admin.messages.index', compact('messages', 'category'));
     }
 
-
     public function show($category, $id)
     {
         $message=Message::where('id', $id)->first();
@@ -35,5 +34,12 @@ class NotificationController extends Controller
     {
         $messages=Message::where('is_read', false)->paginate(10);
         return view('admin.messages.showAll', compact('messages'));
+    }
+     public function call()
+    {
+        $cat=MessageCategory::where('category', 'feedback-call');
+        $id = $cat->pluck('id')->first();
+        $messages=Message::where('message_category_id', $id)->paginate(10);
+        return view('admin.messages.index', compact('messages', 'cat'));
     }
 }

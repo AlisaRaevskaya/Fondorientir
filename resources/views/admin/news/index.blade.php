@@ -72,7 +72,7 @@
                                                         class="text-center">
                                                         @csrf
                                                         {{ method_field('DELETE') }}
-                                                        <button type="submit" class="btn btn-warning "><i
+                                                        <button type="submit" class="btn btn-danger "><i
                                                                 class="fa fa-trash"></i> Удалить</button>
                                                     </form>
                                                 </td>

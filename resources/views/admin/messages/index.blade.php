@@ -13,7 +13,7 @@
                         <!-- /.card-header -->
 
                         <div class="table-responsive mailbox-messages">
-                            <table class="table table-hover table-striped">
+                            <table class="table table-hover table-striped table-responsive">
                                 <thead>
                                     <tr>
                                         <th><i class="fa fa-fw fa-sort"></i>№</th>
@@ -21,34 +21,30 @@
                                         <th>Сообщение</th>
                                         <th><i class="fa fa-fw fa-sort"></i>Дата</th>
                                         <th><i class="fa fa-fw fa-sort"></i>Статус</th>
+                                        <th>Посмотреть</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($messages as $item)
                                         <tr>
-                                            {{-- <td>
-                                                <div class="icheck-primary">
-                                                    <input type="checkbox" value="" id="check1">
-                                                    <label for="check1"></label>
-                                                </div>
-                                            </td> --}}
-                                            {{-- <td class="mailbox-star"><a href="#"><i
-                                                        class="fas fa-star text-warning"></i></a></td>
-                                            --}}
-                                            <td class="mailbox-name"><a href="/read">{{ $item->id }}</a></td>
-                                            <td class="mailbox-subject"><b>{{ $item->name }}</b>
-                                            <td class="mailbox-name">
-                                                <a
-                                                    href="{{ route('admin.notice.show', ['category' => $category, 'id' => $item->id]) }}">{{ $item->getMiniContent() }}</a>
+                                            <td class="mailbox-name col-md-1">{{ $item->id }}</td>
+
+                                            <td class="mailbox-subject col-md-2"><b>{{ $item->name }}</b>
+                                            <td class="mailbox-name col-md-2">
+                                                {{ $item->getMiniContent() }}</a>
                                             </td>
                                             </td>
-                                            <td class="mailbox-date">{{ $item->dateline }}</td>
-                                            <td class="mailbox-name">
+                                            <td class="mailbox-date col-md-2">{{ $item->dateline }}</td>
+                                            <td class="mailbox-name col-md-2">
                                                 @if ($item->is_read == true)
                                                     <p>Прочитано</p>
                                                 @else
                                                     <p>Не прочитано</p>
                                                 @endif
+                                            </td>
+                                            <td class="col-md-1">
+                                                <a href="{{ route('admin.notice.show', ['category' => $item->getCategory()->category, 'id' => $item->id]) }}"
+                                                    class="btn btn-primary">Посмотреть</a>
                                             </td>
                                         </tr>
                                     @endforeach

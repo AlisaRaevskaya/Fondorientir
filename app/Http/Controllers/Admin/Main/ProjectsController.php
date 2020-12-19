@@ -28,7 +28,7 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        return view('admin.main.projects.create');
+        return view('admin.fond.projects.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class ProjectsController extends Controller
     {
         $page = Page::find($id);
         $projects=Project::all();
-        return view('admin.main.projects.show', compact('projects', 'page'));
+        return view('admin.fond.projects.show', compact('projects', 'page'));
     }
 
     /**
@@ -66,7 +66,7 @@ class ProjectsController extends Controller
         $page= Page::find($id);
         $seo = $page->seo;
         $projects=Project::all();
-        return view('admin.main.projects.edit', compact('page', 'projects', 'seo'));
+        return view('admin.fond.projects.edit', compact('page', 'projects', 'seo'));
     }
 
     /**

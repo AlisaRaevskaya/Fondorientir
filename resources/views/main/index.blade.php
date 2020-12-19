@@ -5,17 +5,17 @@
             <div class="container">
                 <div class="feature_article_wrapper">
                     <div class="col-md-12">
-                        <div class="sl">
+                        <div class="sl text-center">
                             <div class="slider">
-                                <a href="{{ route('second_main') }}"><img class="img-responsive top_static_article_img"
+                                <a href="{{ route('second_main') }}"><img class="img-responsive"
                                         src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
                             </div>
                             <div class="slider">
-                                <a href="{{ route('second_main') }}"><img class="img-responsive top_static_article_img"
+                                <a href="{{ route('second_main') }}"><img class="img-responsive"
                                         src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
                             </div>
                             <div class="slider">
-                                <a href="{{ route('second_main') }}"> <img class="img-responsive top_static_article_img"
+                                <a href="{{ route('second_main') }}"> <img class="img-responsive"
                                         src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
                             </div>
                         </div>
@@ -51,9 +51,10 @@
                                         <h4><a href="tel">+7(812)-385-69-89</a></h4>
                                     </div>
                                     <button class="btn btn-sm" id="btn_popup" data-toggle="modal"
-                                        data-target="#lawyerQuestion" data-category="trud">Спросить юриста
+                                        data-target="#lawyerQuestion" data-category="Решение трудовых споров">Спросить
+                                        юриста
                                         бесплатно</button>
-                                    <div class=""><img class="img-responsive" src="{{ asset('storage/fond-2.png') }}"
+                                    <div><img class="img-responsive" src="{{ asset('storage/fond-2.png') }}"
                                             alt="fond-2.jpg"></div>
                                 </div>
                             </div>
@@ -67,7 +68,7 @@
                             <div class="category_article_wrapper">
                                 <div class="category_article_body">
                                     @foreach ($news as $new)
-                                        <div class="col-md-6 category_news_body">
+                                        <div class="col-md-6 col-sm-6 category_news_body">
                                             <div>
                                                 <div class="category_article_img">
                                                     <a href="{{ route('news_category.id', [$category->name, $new->id]) }}"

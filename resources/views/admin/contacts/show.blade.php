@@ -1,8 +1,6 @@
 @extends('admin.layout')
 @section('content')
 
-
-
     <div class="content-wrapper container">
         <!-- Content Header (Page header) -->
         @foreach ($page as $item)
@@ -39,15 +37,15 @@
                                     {!! $item->content !!}
                                 </div>
                                 <div class="box-footer">
-                                    <div class=""><a href="{{ url()->previous() }}" class="btn btn-default">Назад</a></div>
-
+                                    <a href="{{ url()->previous() }}" class="btn btn-default">
+                                        <i class="fas fa-caret-left"></i>
+                                        Назад</a>
                                 </div>
                             </div>
-                            <!-- /.col-->
-
                         </div>
+                     </div>
+                </div>
             </section>
         @endforeach
     </div>
-
 @endsection

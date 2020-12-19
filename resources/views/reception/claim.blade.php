@@ -16,7 +16,7 @@
                         <h6>Вы можете подать электронную жалобу на нарушение порядка предоставления любой из услуг,
                             оказываемых нашим Фондом.</h6>
 
-                      @include('forms.claimForm')
+                        @include('forms.claimForm')
                         <!-- chunk form_under_article \\-->
                     </div>
                     <div class="col-md-1"></div>

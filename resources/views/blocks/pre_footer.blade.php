@@ -1,9 +1,9 @@
 <div class="container footer_bottom_Section">
     <div class="row">
-
-        <div class="col-md-9 text-center">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
             <h1>Взаимодействуем:</h1>
-            <div class="d-flex flex-row justify-content-between align-items-center m30">
+            <div class="m30">
                 <div class="row">
 
                     <div class="partner_item col-md-2 ">
@@ -46,28 +46,29 @@
                     </div>
                 </div>
 
-                <div class="row m30 text-center">
+                <div class="footer_partners_2 row m30">
 
                     <div class="col-md-1"></div>
 
-                    <div class="col-md-4">
-                        <div>
+                    <div class="col-md-4 col-sm-6 footer_partners_2_item">
+                        <div class="" style="max-width:270px;">
                             <img src="{{ asset('storage/footer/fadn2.png') }}" alt="fadn.png" class="img-responsive">
-                        </div>
-                        <div class="text-center">
-                            <p> Федеральное агентство по делам национальностей</p>
+                            <p>
+                                Федеральное агентство по делам национальностей
+                            </p>
                         </div>
                     </div>
 
                     <div class="col-md-1"></div>
 
-                    <div class="col-md-4">
-                        <div>
+                    <div class="col-md-4 col-sm-6 footer_partners_2_item">
+                        <div class="" style="max-width:270px;">
                             <img src="{{ asset('storage/footer/rosteh.jpg') }}" alt="rostehnadzor"
                                 class="img-responsive">
-                        </div>
-                        <div class="text-center">
-                            <p>Федеральная служба по экологическому, технологическому и атомному надзору
+                            <p>
+                                Федеральная служба по экологическому,
+                                технологическому и атомному
+                                надзору
                                 (Ростехнадзор)</p>
                         </div>
                     </div>
@@ -76,6 +77,6 @@
                 </div>
             </div>
         </div>
-
+        <div class="col-md-1"></div>
     </div>
 </div>

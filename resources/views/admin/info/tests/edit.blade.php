@@ -8,19 +8,22 @@
                 <section class="content-header" style="padding-top:10px;">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div>
-                                <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{route('admin.pages.index')}}">Страницы</a></li>
+                            <div class="col-md-1"></div>
+                            <div class="col-sm-12 col-md-10">
+                                <ol class="breadcrumb float-sm-right ">
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
                                     <li class="breadcrumb-item active">{{ $page->title }}</li>
                                 </ol>
                             </div>
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
+
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-11">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -30,6 +33,7 @@
 
                                 <!-- /.card-header -->
                                 <div class="card-body">
+
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item">
                                             <a class="nav-link active" data-toggle="tab" href="#content">Содержание</a>
@@ -48,13 +52,12 @@
 
                                         <div class="box-body tab-pane active" id="content">
                                             <div class="" style="margin-top:15px;">
-                                                <div class="col-md-11">
+                                                <div class="col-md-10">
                                                     {{ Form::open(['route' => ['admin.testmaterial.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
                                                     <div class="form-group">
                                                         {{ Form::label('title', 'Название') }}
                                                         {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
                                                     </div>
-
                                                     <div class="form-group">
                                                         {{ Form::label('content', 'Текст') }}
                                                         {{ Form::textArea('content', $page->content, ['class' => 'form-control summernote']) }}
@@ -70,13 +73,9 @@
 
                                                     <div class="form-group">
                                                         <p style="color: tomato;">В URL могут присутствовать только буквы и
-                                                            цифры
-                                                            латинского алфавита пробелы замените на "_" нижнее подчеркивание
-                                                            или
-                                                            "-"
-                                                            тире.
-                                                            <br>Знаки препинания должны отсутствовать.Пример:
-                                                            while-we-put-off-life-it-passes
+                                                            цифры латинского алфавита.Пробелы заменяются на "_" или "-"
+                                                            тире. Знаки препинания должны отсутствовать.
+                                                            Пример:while-we-put-off-life-it-passes
                                                         </p>
                                                         {{ Form::label('url', 'URL') }}
                                                         {{ Form::text('url', $page->url, ['class' => 'form-control']) }}
@@ -87,15 +86,18 @@
                                                         </div>
                                                     @endif
                                                     <div class="box-footer">
-                                                        <div class="">
-                                                            <a href="{{ url()->previous() }}"
-                                                                class="btn btn-secondary">Назад</a>
+                                                        <div class="buttons">
+                                                            <a href="{{ url()->previous() }}" class="btn btn-default "><i
+                                                                    class="fas fa-caret-left"></i> Назад</a>
 
                                                             <button class="btn btn-primary pull-right"
-                                                                style="margin-left:20px;">Сохранить</button>
+                                                                style="margin-left:20px;"><i class="fas fa-save"></i>
+                                                                Сохранить</button>
 
                                                             <a href="{{ route('admin.testmaterial.show', $page->id) }}"
-                                                                class="btn btn-warning pull-right">Просмотр</a>
+                                                                class="btn btn-warning pull-right">
+                                                                <i class="fas fa-folder">
+                                                                </i> Просмотр</a>
                                                         </div>
                                                     </div>
                                                     {{-- {{ Form::close() }}
@@ -106,14 +108,14 @@
 
                                         <div class="box-body tab-pane" id="seo">
                                             <div class="" style="margin-top:15px;">
-                                                <div class="col-md-11">
+                                                <div class="col-md-10">
                                                     <div class="form-group">
-                                                        {{ Form::label('name', 'Название (для для админки)') }}
+                                                        {{ Form::label('name', 'Название (для админки)') }}
                                                         {{ Form::text('name', $seo->name, ['class' => 'form-control required m30']) }}
                                                     </div>
-                                                     <div class="form-group">
-                                                        {{ Form::label('seo_title', 'Title') }}
-                                                        {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control']) }}
+                                                    <div class="form-group">
+                                                        {{ Form::label('title', 'Title') }}
+                                                        {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control required']) }}
                                                         <i>Заголовок конкретной страницы</i>
                                                     </div>
                                                     <div class="form-group required">
@@ -139,27 +141,12 @@
                                                         <i>краткое описание страницы длиной не более 300 символов.</i>
                                                         <i></i>
                                                     </div>
-                                                    <div class="form-group">
-                                                        {{ Form::label('og_type', 'og:Type') }}
-                                                        {{ Form::text('og_type', $seo->og_type, ['class' => 'form-control']) }}
-                                                        <i>описывает тип объекта на странице (веб-сайт, блог, книга, фильм и
-                                                            т.д.).</i>
+
+
+                                                    <div><a href="{{ route('admin.pages.index') }}"
+                                                            class="btn btn-default "><i class="fas fa-caret-left"></i>К
+                                                            страницам</a>
                                                     </div>
-                                                    <div class="form-group">
-                                                        {{ Form::label('og_url', 'og:Url') }}
-                                                        {{ Form::text('og_url', $seo->og_url, ['class' => 'form-control']) }}
-                                                        <i>Uri страницы , без доменного имени пример:
-                                                            "services/bukhgalterskiye-konsultatsii" без первого слеша /
-                                                            просто
-                                                            слеш актуален только для главной страницы</i>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        {{ Form::label('og_site_name', 'og:Site_name') }}
-                                                        {{ Form::text('og_site_name', $seo->og_site_name, ['class' => 'form-control']) }}
-                                                        <i>название сайта.</i>
-                                                    </div>
-                                                    <div><a href="{{ url()->previous() }}"
-                                                                class="btn btn-secondary">Назад</a></div>
                                                     {{ Form::close() }}
                                                 </div>
                                             </div>
@@ -168,7 +155,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
         </main>

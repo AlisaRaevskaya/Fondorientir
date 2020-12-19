@@ -50,7 +50,7 @@ class PartnersController extends Controller
     public function show($id)
     {
        $page = Page::find($id);
-        return view('admin.main.partners.show', compact('page'));
+        return view('admin.fond.partners.show', compact('page'));
     }
 
     /**
@@ -63,7 +63,7 @@ class PartnersController extends Controller
     {
          $page= Page::find($id);
         $seo = $page->seo;
-        return view('admin.main.partners.edit', compact('page', 'seo'));
+        return view('admin.fond.partners.edit', compact('page', 'seo'));
     }
 
     /**
@@ -91,9 +91,6 @@ class PartnersController extends Controller
         $seo->keywords=$request->keywords;
         $seo->og_title=$request->og_title;
         $seo->og_description=$request->og_description;
-        $seo->og_url=$request->og_url;
-        $seo->og_type=$request->og_type;
-        $seo->og_site_name=$request->og_site_name;
         $seo->save();
         $message="Данные сохранены";
         return redirect()->route('admin.partners.edit', $id)->with('message', $message);
