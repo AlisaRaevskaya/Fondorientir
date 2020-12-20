@@ -5,9 +5,7 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="entity_wrapper">
-                        <div class="entity_thumb">
-                            <img class="img-responsive" src="/assets/images/pravo.jpg" alt="feature-top">
-                        </div>
+
                         <div class="entity_title text-center">
                             <h1>Правовая приемная</h1>
                         </div>

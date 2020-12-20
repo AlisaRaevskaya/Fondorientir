@@ -3,6 +3,7 @@ autoplay:true,
 autoplaySpeed:2000,
 dots:true,
 slidesToScroll: 1,
+variableWidth: true,
 responsive: [
     {
       breakpoint: 768,

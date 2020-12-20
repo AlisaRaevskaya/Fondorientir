@@ -1,7 +1,7 @@
 <form class="form-horizontal" action="{{ route('reception-form') }}" method="POST" name="feedbackForm">
     @csrf
     <div class="form-group">
-        <label class="control-label col-xs-3" for="lastName">Фамилия*:</label>
+        <label class="control-label col-xs-3" for="lastName">Фамилия <span class="color_red">*</span>:</label>
         <div class="col-xs-9">
             <input type="text" required class="form-control" id="lastName" name="lastName"
                 placeholder="Введите фамилию">
@@ -10,7 +10,7 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-xs-3" for="firstName">Имя*:</label>
+        <label class="control-label col-xs-3" for="firstName">Имя <span class="color_red">*</span>:</label>
         <div class="col-xs-9">
             <input type="text" required class="form-control" id="firstName" name="firstName" placeholder="Введите имя">
             <span class="text-danger" id="firstNameError"></span>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-xs-3" for="fatherName">Отчество*:</label>
+        <label class="control-label col-xs-3" for="fatherName">Отчество <span class="color_red">*</span>:</label>
         <div class="col-xs-9">
             <input type="text" required class="form-control" id="fatherName" name="fatherName"
                 placeholder="Введите отчество">
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3" for="address">Почтовый адрес*:</label>
+        <label class="control-label col-xs-3" for="address">Почтовый адрес <span class="color_red">*</span>:</label>
         <div class="col-xs-9">
             <input type="text" required class="form-control" id="address" name="address" placeholder="Почтовый адрес">
             <span class="text-danger" id="addressError"></span>
@@ -42,7 +42,8 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3" for="phoneNumber">Контактный телефон*:</label>
+        <label class="control-label col-xs-3" for="phoneNumber">Контактный телефон<span
+                class="color_red">*</span>:</label>
         <div class="col-xs-9">
             <input type="tel" required class="form-control" id="phoneNumber" name="phone"
                 placeholder="Введите номер телефона">
@@ -50,14 +51,15 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3" for="inputEmail">Электронная почта*:</label>
+        <label class="control-label col-xs-3" for="inputEmail">Электронная почта <span
+                class="color_red">*</span>:</label>
         <div class="col-xs-9">
             <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
             <span class="text-danger" id="emailError"></span>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3" for="yourMessage">Ваш вопрос*:</label>
+        <label class="control-label col-xs-3" for="yourMessage">Ваш вопрос <span class="color_red">*</span>:</label>
         <div class="col-xs-9">
             <textarea rows="9" required class="form-control" id="yourMessage" name="message"
                 placeholder="Ваш вопрос"></textarea>

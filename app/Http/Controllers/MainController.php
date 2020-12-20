@@ -52,9 +52,6 @@ class MainController extends Controller
         $projects =Project::all();
         $page=Page::where('laravel_name', 'projects')->first();
 
-        // foreach($pages as $page){
-        //     $content= $page->content;
-        // }
         return view('main.projects', compact('projects', 'page'));
     }
 

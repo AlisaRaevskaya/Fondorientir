@@ -39,13 +39,13 @@
                 </div>
 
 
-                <div class="col-md-2 text-center" style="margin-top:1.7rem;padding-right:10px;">
+                <div class="right_section col-md-2 text-center" style="margin-top:1.7rem;padding-right:10px;">
                     <div>
                         <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
                     </div>
                     <div>
                         <button type="button" class="btn btn-primary btn-feedback-call text-center" data-toggle="modal"
-                            data-target="#exampleModalLong">
+                            data-target="#callModalLong">
                             <strong>Заказать обратный звонок</strong></button>
                     </div>
                 </div>

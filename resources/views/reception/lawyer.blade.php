@@ -1,5 +1,4 @@
 @extends('layout',['seo' => $page->getSeo()])
-
 @section('content')
     <section id="entity_section" class="entity_section">
         <div class="container">
@@ -7,7 +6,7 @@
                 <div class="col-md-9">
                     <div class="entity_wrapper">
 
-                        <div class="entity_title text-center">
+                        <div class="entity_title">
                             <h1>Правовая приемная</h1>
                         </div>
 
@@ -20,7 +19,7 @@
                                 организована и открыта приемная правовой поддержки в устной и письменной форме для оказания
                                 юридической
                                 помощи на безвозмездной основе трудящимся-мигрантам.</p>
-                            <div class="text-center m30">
+                            <div class=" m30">
                                 <h3>
                                     Информационно-консультативная и юридическая помощь предоставляется по следующим
                                     направлениям:
@@ -64,14 +63,13 @@
 
                         <div class="shadow-textarea">
                             <div>
-                                <div class="row" style="padding:5pt 20pt">
+                                <div class="row justify-content-center" style="padding:5pt 10pt">
                                     <h1>
-                                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
+                                        <img class="d-flex img-circle avatar z-depth-1-half mr-3 img-responsive"
                                             src="/assets/images/avatar-5.jpg" alt="Avatar">
                                         Задать вопрос юристу бесплатно
                                     </h1>
                                 </div>
-
                                 @include('forms.lawyerForm')
                             </div>
                         </div>

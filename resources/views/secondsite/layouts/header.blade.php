@@ -48,7 +48,7 @@
                     <div>
 
                         <button type="button" class="btn btn-feedback-call text-center turquoise-back"
-                            data-toggle="modal" data-target="#exampleModalLong">
+                            data-toggle="modal" data-target="#callModalLong">
                             <strong> Заказать обратный звонок</strong></button>
                     </div>
                 </div>

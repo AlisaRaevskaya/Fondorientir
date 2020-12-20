@@ -30,7 +30,7 @@ class FaqController extends Controller
             $body= htmlspecialchars_decode($top->body, ENT_HTML5);
          }
 
-        return view('replies', compact('topics', 'body', 'page'));
+        return view('faq_single', compact('topics', 'body', 'page'));
     }
 
 

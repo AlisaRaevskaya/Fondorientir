@@ -7,7 +7,7 @@
     <div class="text-center">
         <h6>Решение трудовых споров</h6>
         <h4><a href="tel:+78126124817" class="link_color">+7 (812 ) 612-48-17</a></h4>
-        <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
+        <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
             data-category="Решение трудовых споров">Спросить юриста
             бесплатно</button>
     </div>
@@ -15,7 +15,7 @@
     <div class="text-center m30">
         <h6>Миграционные вопросы</h6>
         <h4><a href="tel:+78123856989" class="link_color">+7(812) 385-69-89</a></h4>
-        <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
+        <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
             data-category="Миграционные вопросы">Спросить юриста
             бесплатно</button>
 
@@ -42,22 +42,8 @@
                 необоснованное изъятие документов
                 и др.</strong>
         </p>
-        <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
+        <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
             data-category="Помощь в трудных ситуациях">Спросить юриста
             бесплатно</button>
     </div>
-    <section>
-        <div>
-            <div class="background-img">
-                <div class="box">
-                    <div class="content">
-                        <p>Свежие новости </p>
-                        <p>по миграционным вопросам</p>
-                        <h1><a href="{{ route('news') }}" style="color:#00ffe9;" target="_blank">Новости</a>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>

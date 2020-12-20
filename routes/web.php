@@ -90,12 +90,12 @@ Route::get('/online_priemnaya/reload-captcha',[CaptchaServiceController::class, 
 Route::view('/admin-panel', 'admin.admin_home')->middleware('auth');
 
 Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
-Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second-reception');
-Route::get('/center-podderzhki/claim', [SecondSiteController::class, 'claim'])->name('second-claim');
-Route::get('/center-podderzhki/lawyer', [SecondSiteController::class, 'lawyer'])->name('second-lawyer');
-Route::get('/center-podderzhki/problem', [SecondSiteController::class, 'problem'])->name('second-problem');
-Route::get('/center-podderzhki/hotline', [SecondSiteController::class, 'hotline'])->name('second-hotline');
-Route::get('/center-podderzhki/migration-questions', [SecondSiteController::class, 'migration'])->name('second.migration');
+Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second.reception');
+Route::get('/center-podderzhki/faq', [SecondSiteController::class, 'faq'])->name('second.faq');
+Route::get('/center-podderzhki/faq/{id}', [SecondSiteController::class, 'faqSingle'])->name('second.faq.single');
+Route::get('/center-podderzhki/lawyer', [SecondSiteController::class, 'lawyer'])->name('second.lawyer');
+Route::get('/center-podderzhki/problem', [SecondSiteController::class, 'problem'])->name('second.problem');
+Route::get('/center-podderzhki/hotline', [SecondSiteController::class, 'hotline'])->name('second.hotline');
 
 
 Route::view('/static','admin.layout-static');

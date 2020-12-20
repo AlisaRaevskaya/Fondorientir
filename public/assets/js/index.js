@@ -20,3 +20,9 @@ $("#btn_popup").on("click", function(e){
 let value = $( e.target ).data("category");
 $('#hidden_input').val(value);
 });
+
+
+$(".pop_call_link").on("click", function (e) {
+    e.preventDefault();
+    $(".popup_call").removeClass('hidden');
+})

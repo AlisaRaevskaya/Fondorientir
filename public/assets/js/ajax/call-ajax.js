@@ -24,8 +24,8 @@ $("#btn_call").on("click", function () {
             $(".success_call").html(response.success);
             setTimeout(() => {
               $('form[name="callForm"]').trigger("reset");
-              $("#exampleModalLong").modal('hide');
-            }, 2000);
+            //   $("#callModalLong").modal('fadeOut');
+            }, 1000);
 
           }else{
                $("#nameError").text(response.errors.name);

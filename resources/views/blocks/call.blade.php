@@ -1,7 +1,7 @@
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
+<div class="modal fade" id="callModalLong" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
     aria-hidden="true">
 
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalLongTitle">Заказать звонок менеджера</h5>
@@ -10,21 +10,27 @@
                 </button>
             </div>
 
+
             <form action="/call" method="POST" name="callForm">
                 @csrf
                 <div class="modal-body">
-
-                    <span>Вашe имя</span>
-                    <input type="text" required id="user_name" name="name" placeholder="Ваше Имя">
-                    <span class="text-danger" id="nameError"></span>
-
-                    <span>Ваш телефон</span>
-                    <input id="user_phone" required type="text" name="phone" placeholder="+7">
-                    <span class="text-danger" id="phoneError"></span>
-                    <p class="success_call text-center"></p>
+                    {{-- <div class="form-group"> --}}
+                        <label class="control-label" for="user_name">Вашe имя</label>
+                        <input type="text" class="form-control" required id="user_name" name="name"
+                            placeholder="Ваше Имя">
+                        <span class="text-danger" id="nameError"></span>
+                        {{--
+                    </div> --}}
+                    {{--
+                    <div class="form-group"> --}}
+                        <label class="control-label" for="user_phone">Ваш телефон</label>
+                        <input id="user_phone" class="form-control" required type="text" name="phone" placeholder="+7">
+                        <span class="text-danger" id="phoneError"></span>
+                        {{--
+                    </div> --}}
                 </div>
-
                 <div class="modal-footer">
+                    <p class="success_call text-center"></p>
                     <input type="button" value="Отправить" id="btn_call">
                 </div>
             </form>
