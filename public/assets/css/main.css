@@ -136,6 +136,9 @@ margin:0 auto;
      margin: 0 auto;
     align-items: center;
  }
+ .sidebar{
+    margin:0 auto;
+}
  .footer_partners_2{
 display:grid;
 grid-template:column;
@@ -146,7 +149,7 @@ justify-items:center;
 padding:0 !important;
 }
   .footer_partners_2_item img
-  .footer_partners_2_item{
+  .footer_partners_2_item {
 margin:0 auto;
  }
 

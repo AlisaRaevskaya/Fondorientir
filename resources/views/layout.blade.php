@@ -55,6 +55,8 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
     @include('blocks.call')
+
+    @include('forms.popup')
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
@@ -71,7 +73,6 @@
             @include('layouts.mobile')
         </div>
         @include('blocks.map')
-        @include('forms.popup')
 
     </div>
 

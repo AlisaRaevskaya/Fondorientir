@@ -1,4 +1,4 @@
-<div class="shadow-textarea blue">
+<div class="shadow-textarea blue law_popup">
 
     <div class="row" style="padding:5pt 20pt">
         <h1>
