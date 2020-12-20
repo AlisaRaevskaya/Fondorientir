@@ -2,13 +2,13 @@
     <div class="container">
         <div class="header-section">
             <div class="row">
-                <div class="left_section col-md-5">
-                    <div class="row">
+                <div class="left_section col-md-5" style="padding:0;">
+                    <div style="display:flex;justify-content:center">
                         <div class="text-center logo" style="position:relative;">
                             <a href="{{ route('second_main') }}"><img src="{{ asset('storage/logo-center.png') }}"
                                     alt="Logo" class="img-responsive"></a>
                         </div>
-                        <div class="text-center" id="second_logo_name">
+                        <div class="text-center" id="second_logo_name" style="margin-top:1.7rem;">
                             <p class="turquoise">Центр правовой поддержки<br>
                                 и образования<br>
                                 трудовых мигрантов</p>
@@ -16,7 +16,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 text-center" style="margin-top:1.5rem;">
+                <div class="col-md-2 text-center" style="margin-top:1.7rem;">
                     <div>
                         <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                         <!--Twitter-->
@@ -39,17 +39,15 @@
                         </i> Схема проезда (интерактивная карта)</a>
                 </div>
 
-
                 <div class="col-md-2 text-center" style="margin-top:1.5rem;">
                     <div>
                         <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
                         <p class="header_phone"><a href='tel:+78126124817'> +7(812)-612-48-17</a></p>
                     </div>
                     <div>
-
-                        <button type="button" class="btn btn-feedback-call text-center turquoise-back"
+                        <a href="#" type="button" class="btn btn-feedback-call text-center turquoise-back"
                             data-toggle="modal" data-target="#callModalLong">
-                            <strong> Заказать обратный звонок</strong></button>
+                            <strong> Заказать обратный звонок</strong></a>
                     </div>
                 </div>
             </div>

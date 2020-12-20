@@ -1,4 +1,4 @@
-<div class="col-md-3 sidebar">
+<div class="col-md-3 col-sm-3 sidebar">
     <div class="text-center item_center">
         <a href="{{ route('second_main') }}"><img class="img-responsive" src="{{ asset('storage/banner.jpg') }}"
                 title="Онлайн Приемная" alt="main.jpg"></a>

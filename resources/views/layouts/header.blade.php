@@ -3,16 +3,16 @@
         <div class="header-section">
             <div class="row">
                 <div class="left_section col-md-5" style="padding:0;">
-                    <div class="row">
-                        <div class="text-center logo" style="position:relative;">
+                    <div style="display:flex;justify-content:center;">
+                        <div class="text-center logo">
                             <a href="{{ route('main') }}">
-                                <img src="/storage/logo3.png" alt="Logo" class="img-responsive"></a>
+                                <img src="/storage/logo.png" alt="Logo" class="img-responsive"></a>
                         </div>
-                        {{-- <div class="text-center" id="logo_name">
+                        <div class="text-center" id="logo_name" style="margin-top:1.7rem;padding-left:10px;">
                             <p>Фонд поддержки<br>
                                 добровольного переселения<br>
                                 соотечественников «ОРИЕНТИР»</p>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-2 text-center" style="margin-top:1.7rem;">
@@ -29,8 +29,9 @@
                         <h6 class="link_color">{{ $contact->email }}</h6>
                     </div>
                 </div>
-                <div class="col-md-3 text-center" style="margin-top:1.2rem;">
-                    <h6><strong>Правовая приемная</strong></h6>
+
+                <div class="col-md-3 text-center" style="margin-top:1.7rem;">
+                    <p style="font-size:15px;"><strong>Правовая приемная</strong></p>
                     <p>{{ $contact->city }},</p>
                     <p>{{ $contact->street }}</p>
                     <a href="#" class="pop_map_link schema" data-toggle="modal" data-target=".bd-example-modal-lg"><i
@@ -39,14 +40,14 @@
                 </div>
 
 
-                <div class="right_section col-md-2 text-center" style="margin-top:1.7rem;padding-right:10px;">
+                <div class="col-md-2 text-center" style="margin-top:1.7rem;">
                     <div>
                         <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary btn-feedback-call text-center" data-toggle="modal"
-                            data-target="#callModalLong">
-                            <strong>Заказать обратный звонок</strong></button>
+                        <a href="#" type="button" class="btn btn-feedback-call text-center btn-primary "
+                            data-toggle="modal" data-target="#callModalLong">
+                            <strong> Заказать обратный звонок</strong></a>
                     </div>
                 </div>
             </div>
@@ -72,9 +73,9 @@
                         <ul class="nav navbar-nav main-nav" style="display:flex;justify-content:space-around;">
                             @foreach ($menuitems as $item)
                                 @if (!!$item->children)
-                                    <li class="dropdown m-menu-fw menu_item">
+                                    <li class="dropdown m-menu-fw menu_item ">
                                         <a href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}"
-                                            data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">
+                                            data-toggle="dropdown" class="dropdown-toggle">
                                             {{ $item->title }}
                                             <span><i class="fa fa-angle-down"></i></span>
                                         </a>

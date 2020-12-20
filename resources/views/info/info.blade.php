@@ -46,8 +46,8 @@
                         нарушителя
                         за
                         пределы Российской Федерации сроком на 5 лет.</p>
-                    <a href="tel:+78126124812"><img src="{{ asset('storage/button.jpg') }}" alt="
-                                                                                consulation-button.jpg"
+                    <a href="tel:+78126124812"><img src="{{ asset('storage/button2.png') }}" alt="
+                                                                                    consulation-button.jpg"
                             class="green_btn img-responsive" title="Бесплатная консультация"></a>
                     <p><u>Список необходимых документов : </u></p>
                     <p>Каждый иностранный гражданин, выезжающий из Санкт-Петербурга или Ленинградской области на границу для
@@ -82,7 +82,7 @@
                         должна
                         уведомить миграционную службу о прибытии гражданина другой страны.</p>
                     <a href="tel:+78126124812"><img src="{{ asset('storage/button.jpg') }}" alt="
-                                                                                consulation-button.jpg"
+                                                                                    consulation-button.jpg"
                             class="green_btn img-responsive" title="Бесплатная консультация"></a>
                     <p>Для граждан некоторых государств установлены иные сроки, в течение которых нужно встать на
                         миграционный

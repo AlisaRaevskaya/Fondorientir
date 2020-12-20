@@ -41,16 +41,19 @@ Author: uiCookies.com
 # Mid grey (sub header) #666666
 # -------------------------------------------------------------------*/
 
-body {
-    background: url(/../storage/flag.jpg) no-repeat cover fixed;
+/* body {
+    background-image: url(/../storage/flag.jpg)!important;
+    background-attachment:fixed !important;
+    background-repeat: no-repeat;
+    background-position: top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover !important;
     font-family: 'Open Sans';
     font-size: 13px;
     line-height: 21px;
-}
+} */
 
 
 /* --------------------------------------
@@ -205,8 +208,8 @@ section {
 
 }
 .header-section .logo {
-    text-align: center;
-    margin: 0 auto;
+    /* text-align: center; */
+    /* margin: 0 auto; */
 }
 
 .header-section .left_section {
@@ -309,7 +312,7 @@ section {
 .right_section .navbar-nav > li > a:hover,
 .right_section .btn:hover {
     color: #3a71b4;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 .right_section .lang .dropdown-menu {
@@ -411,7 +414,7 @@ font-family:'Open Sans';
         margin: 0 2%;
     }
     .navbar-default {
-        background-color: #fff;
+        /* background-color: #fff; */
         padding: 5px 0;
         border-color: transparent;
         -webkit-transition: all .5s ease-in-out;
@@ -470,7 +473,7 @@ font-family:'Open Sans';
     opacity: 0;
     visibility: hidden;
     border-radius: 0;
-    box-shadow: 0px 0px 0px #fff;
+    /* box-shadow: 0px 0px 0px #fff; */
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -561,7 +564,7 @@ font-family:'Open Sans';
 }
 
 .m-menu-content ul {
-    border-right: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5 !important;
     padding: 20px;
 }
 
@@ -634,7 +637,7 @@ font-family:'Open Sans';
 #menu li a {
     display: block;
     text-decoration: none;
-    color: #777777;
+    color: #777777 !important;
     padding: 10px 0;
     font-size: 16px;
     border-bottom: 1px dotted #444;
@@ -697,7 +700,7 @@ font-family:'Open Sans';
 }
 
 .feature_article_inner {
-    background: #fff;
+    /* background: #fff; */
     position: absolute;
     bottom: 0;
     padding: 15px 30px;
@@ -1105,7 +1108,7 @@ font-family:'Open Sans';
 }
 
 .entity_inner__title {
-    background-color: #fff;
+    /* background-color: #fff; */
     z-index         : 3;
 }
 
@@ -1313,7 +1316,7 @@ font-family:'Open Sans';
 }
 
 .widget_title {
-    background-color: #fff;
+    /* background-color: #fff; */
     z-index: 3;
 }
 
@@ -1718,7 +1721,7 @@ font-family:'Open Sans';
     color: #000;
 }
 .footer_widget_title {
-    background-color: #fff;
+    /* background-color: #fff; */
     z-index: 3;
 }
 

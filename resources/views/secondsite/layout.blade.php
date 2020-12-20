@@ -29,7 +29,6 @@
     <link href="/assets/css/fonts.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css" />
-    <script type="text/javascript" async="" src="//www.cincopa.com/media-platform/runtime/libasync.js"></script>
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
@@ -38,9 +37,10 @@
 
     <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
     <!-- Mobile Menu Style -->
+    <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/mobile-menu.css" rel="stylesheet">
 
-    <link href="/assets/css/style.css" rel="stylesheet">
+
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
@@ -51,6 +51,7 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
+    @include('blocks.call')
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
@@ -67,9 +68,7 @@
             @include('layouts.mobile')
         </div>
         @include('blocks.map')
-        @include('blocks.call')
         @include('forms.popup')
-
 
     </div>
 

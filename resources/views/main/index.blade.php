@@ -3,21 +3,19 @@
     <div class="wrapper">
         <section id="feature_news_section" class="feature_news_section">
             <div class="container">
-                <div class="">
-                    <div class="col-md-12">
-                        <div class="sl">
-                            <div class="slider">
-                                <a href="{{ route('second_main') }}"><img class="img-responsive"
-                                        src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
-                            </div>
-                            <div class="slider">
-                                <a href="{{ route('second_main') }}"><img class="img-responsive"
-                                        src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
-                            </div>
-                            <div class="slider">
-                                <a href="{{ route('second_main') }}"> <img class="img-responsive"
-                                        src="{{ asset('storage/ban.png') }}" alt="main.jpg"></a>
-                            </div>
+                <div class="col-md-12">
+                    <div class="sl">
+                        <div class="slider">
+                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/ban3.png') }}"
+                                    alt="main.jpg"></a>
+                        </div>
+                        <div class="slider">
+                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/ban3.png') }}"
+                                    alt="main.jpg"></a>
+                        </div>
+                        <div class="slider">
+                            <a href="{{ route('second_main') }}"> <img src="{{ asset('storage/ban3.png') }}"
+                                    alt="main.jpg"></a>
                         </div>
                     </div>
                 </div>
@@ -46,19 +44,21 @@
 
                                 <h4 class="text-right">تقديم المساعدة إلى المهاجرين</h4>
 
-                                <div style="display:flex; flex-direction:column;justify-content:center;align-items:center;">
+                                <div style="display:flex; justify-content:space-between;align-items:center;">
                                     <div class="">
                                         <h4><a href="tel">+7(812)-385-69-89</a></h4>
+
+                                        <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal"
+                                            data-target="#lawyerQuestion" data-category="Решение трудовых споров">Спросить
+                                            юриста
+                                        </button>
                                     </div>
-                                    <button class="btn btn-sm" id="btn_popup" data-toggle="modal"
-                                        data-target="#lawyerQuestion" data-category="Решение трудовых споров">Спросить
-                                        юриста
-                                        бесплатно</button>
-                                    <div><img class="img-responsive" src="{{ asset('storage/fond-2.png') }}"
-                                            alt="fond-2.jpg"></div>
+                                    <div><img class="img-responsive" src="{{ asset('storage/fond-2.png') }}" alt="fond.jpg"
+                                            title="Фонд президентских грантов"></div>
                                 </div>
                             </div>
                         </div>
+
 
                         <div class="category_article">
                             <div class="widget_title widget_black">

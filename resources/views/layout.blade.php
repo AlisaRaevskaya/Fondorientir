@@ -24,36 +24,37 @@
         <title>Фонд "Ориентир"</title>
     @endif
 
+
     <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css" />
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
+    <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css" />
 
 
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
     <!-- Mobile Menu Style -->
-    <link href="/assets/css/mobile-menu.css" rel="stylesheet">
 
+
+    <link href="/assets/css/mobile-menu.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&width=100%&lang=ru_RU"
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU"
         type="text/javascript">
     </script>
-    {{-- <script
-        src="https://www.google.com/recaptcha/api.js?render=6LedE94ZAAAAAOf6iuTtMNxzWxMKX18zub2NWPUg"></script>
-    --}}
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
+    @include('blocks.call')
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
@@ -70,8 +71,8 @@
             @include('layouts.mobile')
         </div>
         @include('blocks.map')
-        @include('blocks.call')
         @include('forms.popup')
+
     </div>
 
     <!-- Theme Menu -->

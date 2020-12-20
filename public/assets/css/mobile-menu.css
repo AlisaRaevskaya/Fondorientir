@@ -6,8 +6,8 @@
     }
 
 .uc-offcanvas-contents {
-    /* overflow-y : scroll;
- background : #f3efe0; */
+    /* overflow-y : scroll; */
+ /* background : #f3efe0; */
     }
 
 .uc-offcanvas-open .uc-offcanvas-contents,
@@ -56,7 +56,14 @@
     }
 
 .slide-along .uc-offcanvas-pusher {
-    background-color   : #FFFFFF;
+    background-image: url(/../storage/flag.jpg);
+    background-attachment:fixed ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     position           : relative;
     left               : 0;
     z-index            : 1;

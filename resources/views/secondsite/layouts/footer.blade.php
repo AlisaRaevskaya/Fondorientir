@@ -9,7 +9,7 @@
                  <div class="row">
                     <div class="text-center logo">
                         <a href="{{ route('second_main') }}">
-                            <img src="/storage/footer-logo.jpg" alt="Logo" class="img-responsive"></a>
+                            <img src="/storage/logo-center.png" alt="Logo" class="img-responsive"></a>
                     </div>
                 </div>
                 <div class="text-justify">
