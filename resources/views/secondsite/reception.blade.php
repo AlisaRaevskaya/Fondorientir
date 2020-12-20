@@ -1,4 +1,4 @@
-@extends('layout',['seo' => $page->getSeo()])
+@extends('secondsite.layout',['seo' => $page->getSeo()])
 @section('content')
 
     <section id="entity_section" class="entity_section">
@@ -43,7 +43,7 @@
                             направившего обращение, и почтовый адрес, по которому должен быть направлен ответ,
                             ответ на обращение не дается.
                             (<a title="Федеральный закон РФ от 2 мая 2006г. № 59-ФЗ 'О порядке рассмотрения
-                                                                                                         обращений граждан Российской Федерации'"
+                                                                                                             обращений граждан Российской Федерации'"
                                 href="http://fondorientir/feedback/fzakon">Федеральный
                                 закон
                                 РФ

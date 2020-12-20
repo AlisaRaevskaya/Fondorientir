@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 footer_padding">
                 <div class="footer_widget_title">
                     <h3 target="_self" style="color:black;">Карта сайта</h3>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="footer_widget_title">
                     <h3><a href="{{ route('contacts') }}" target="_self">Контакты</a></h3>
                 </div>
-                <div class="footer_contacts">
+                <div class="footer_contacts footer_padding">
                     <p><strong>{{ $contact->name }}</strong></p>
                     <p><strong>Адрес: </strong>{{ $contact->index }}, {{ $contact->city }},{{ $contact->street }}</p>
                     <p><strong>Остановка:</strong> {{ $contact->station }}</p>

@@ -5,10 +5,10 @@
                 <div class="left_section col-md-5" style="padding:0;">
                     <div style="display:flex;justify-content:center">
                         <div class="text-center logo" style="position:relative;">
-                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/logo-center.png') }}"
-                                    alt="Logo" class="img-responsive"></a>
+                            <a href="{{ route('second_main') }}"><img src="{{ asset('/storage/logo2.png') }}" alt="Logo"
+                                    class="img-responsive"></a>
                         </div>
-                        <div class="text-center" id="second_logo_name" style="margin-top:1.7rem;">
+                        <div class="text-center" id="second_logo_name">
                             <p class="turquoise">Центр правовой поддержки<br>
                                 и образования<br>
                                 трудовых мигрантов</p>
@@ -30,8 +30,8 @@
                         <h6 class="link_color">{{ $contact->email }}</h6>
                     </div>
                 </div>
-                <div class="col-md-3 text-center" style="margin-top:1.5rem;">
-                    <p><strong>Правовая приемная</strong></p>
+                <div class="col-md-3 text-center" style="margin-top:1.7rem;">
+                    <p style="font-size:15px;"><strong>Правовая приемная</strong></p>
                     <p>{{ $contact->city }},</p>
                     <p>{{ $contact->street }}</p>
                     <a href="#" class="pop_map_link schema" data-toggle="modal" data-target=".bd-example-modal-lg"><i
@@ -39,7 +39,7 @@
                         </i> Схема проезда (интерактивная карта)</a>
                 </div>
 
-                <div class="col-md-2 text-center" style="margin-top:1.5rem;">
+                <div class="col-md-2 text-center" style="margin-top:1.7rem;">
                     <div>
                         <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
                         <p class="header_phone"><a href='tel:+78126124817'> +7(812)-612-48-17</a></p>

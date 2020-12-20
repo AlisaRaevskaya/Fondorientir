@@ -46,33 +46,27 @@
                     </div>
                 </div>
 
-                <div class="footer_partners_2 row m30">
-
+                <div class="footer_partners_2 flex-row m30">
                     <div class="col-md-1"></div>
-
-                    <div class="col-md-4 col-sm-6 footer_partners_2_item">
-                        <div class="" style="max-width:270px;">
-                            <img src="{{ asset('storage/footer/fadn2.png') }}" alt="fadn.png" class="img-responsive">
-                            <p>
-                                Федеральное агентство по делам национальностей
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-1"></div>
-
-                    <div class="col-md-4 col-sm-6 footer_partners_2_item">
-                        <div class="" style="max-width:270px;">
-                            <img src="{{ asset('storage/footer/rosteh.jpg') }}" alt="rostehnadzor"
+                    <div class="col-md-4 footer_partners_2_item">
+                        <div>
+                            <img style="margin:0 auto" src="{{ asset('storage/footer/fadn2.png') }}" alt="fadn.png"
                                 class="img-responsive">
-                            <p>
-                                Федеральная служба по экологическому,
-                                технологическому и атомному
-                                надзору
-                                (Ростехнадзор)</p>
                         </div>
+                        <p> Федеральное агентство по делам национальностей</p>
                     </div>
 
+                    <div class="col-md-4 footer_partners_2_item">
+                        <div>
+                            <img style="margin:0 auto" src="{{ asset('storage/footer/rosteh.jpg') }}" alt="rostehnadzor"
+                                class="img-responsive">
+                        </div>
+                        <p>
+                            Федеральная служба по экологическому,<br>
+                            технологическому и атомному
+                            надзору
+                            (Ростехнадзор)</p>
+                    </div>
                     <div class="col-md-1"></div>
                 </div>
             </div>

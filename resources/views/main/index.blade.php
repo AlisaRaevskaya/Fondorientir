@@ -46,15 +46,15 @@
 
                                 <div style="display:flex; justify-content:space-between;align-items:center;">
                                     <div class="">
-                                        <h4><a href="tel">+7(812)-385-69-89</a></h4>
+                                        <p class="text-tel"><a href="tel:78123856969">+7(812)-385-69-89</a></p>
 
                                         <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal"
                                             data-target="#lawyerQuestion" data-category="Решение трудовых споров">Спросить
                                             юриста
                                         </button>
                                     </div>
-                                    <div><img class="img-responsive" src="{{ asset('storage/fond-2.png') }}" alt="fond.jpg"
-                                            title="Фонд президентских грантов"></div>
+                                    <div><img class="img-responsive img-fond" src="{{ asset('storage/fond-2.png') }}"
+                                            alt="fond.jpg" title="Фонд президентских грантов"></div>
                                 </div>
                             </div>
                         </div>
@@ -64,49 +64,45 @@
                             <div class="widget_title widget_black">
                                 <h2><a href="{{ route('news') }}">Новости</a></h2>
                             </div>
+                            <div class="flex-row">
+                                @foreach ($news as $new)
+                                    <div class="category_news_body" style="padding-left:10px;">
+                                        <div>
+                                            <div class="category_article_img">
+                                                <a href="{{ route('news_category.id', [$category->name, $new->id]) }}"
+                                                    target="_self">
+                                                    <img class="img-responsive"
+                                                        src="{{ asset('storage/news/' . $new->image) }}"
+                                                        alt="{{ $new->image }}"></a>
+                                            </div>
 
-                            <div class="category_article_wrapper">
-                                <div class="category_article_body">
-                                    @foreach ($news as $new)
-                                        <div class="col-md-6 col-sm-6 category_news_body">
-                                            <div>
-                                                <div class="category_article_img">
+                                            <div class="category_article_title">
+                                                <h3>
                                                     <a href="{{ route('news_category.id', [$category->name, $new->id]) }}"
                                                         target="_self">
-                                                        <img class="img-responsive"
-                                                            src="{{ asset('storage/news/' . $new->image) }}"
-                                                            alt="{{ $new->image }}"></a>
-                                                </div>
-                                                <div class="category_article_title">
-                                                    <h5>
-                                                        <a href="{{ route('news_category.id', [$category->name, $new->id]) }}"
-                                                            target="_self">
-                                                            {!! $new->title !!}</a>
-                                                    </h5>
-                                                </div>
+                                                        {!! $new->title !!}</a>
+                                                </h3>
+                                            </div>
 
-                                                <div>
-                                                    {!! $new->cutDateline() !!}
-                                                </div>
+                                            <div>
+                                                {!! $new->cutDateline() !!}
+                                            </div>
 
-                                                @if ($new->intro)
-                                                    <div class="">
-                                                        {!! $new->getMiniIntro() !!}
-                                                    </div>
-                                                @endif
-
-                                                <div>
-                                                    <h6><a
-                                                            href="{{ route('news_category.id', [$category->name, $new->id]) }}">Подробнее>></a>
-                                                    </h6>
+                                            @if ($new->intro)
+                                                <div class="">
+                                                    {!! $new->getMiniIntro() !!}
                                                 </div>
+                                            @endif
+
+                                            <div>
+                                                <h6><a
+                                                        href="{{ route('news_category.id', [$category->name, $new->id]) }}">Подробнее>></a>
+                                                </h6>
                                             </div>
                                         </div>
-                                    @endforeach
-                                    <!-- col-md-6 -->
-                                </div>
+                                    </div>
+                                @endforeach
                             </div>
-
                             <!-- Design News Section -->
                             <div class="news_divider">
                                 <p class="divider"><a href="{{ route('news') }}"> Все новости>>></a></p>
@@ -119,3 +115,46 @@
         </section>
     </div>
 @endsection
+
+{{-- <div class="category_article">
+    <div class="widget_title widget_black">
+        <h2><a href="{{ route('news') }}">Новости</a></h2>
+    </div>
+
+    <div class="category_article_wrapper">
+        <div class="category_article_body">
+            @foreach ($news as $new)
+                <div class="col-md-6 col-sm-6 category_news_body">
+                    <div>
+                        <div class="category_article_img">
+                            <a href="{{ route('news_category.id', [$category->name, $new->id]) }}" target="_self">
+                                <img class="img-responsive" src="{{ asset('storage/news/' . $new->image) }}"
+                                    alt="{{ $new->image }}"></a>
+                        </div>
+                        <div class="category_article_title">
+                            <h3>
+                                <a href="{{ route('news_category.id', [$category->name, $new->id]) }}" target="_self">
+                                    {!! $new->title !!}</a>
+                            </h3>
+                        </div>
+
+                        <div>
+                            {!! $new->cutDateline() !!}
+                        </div>
+
+                        @if ($new->intro)
+                            <div class="">
+                                {!! $new->getMiniIntro() !!}
+                            </div>
+                        @endif
+
+                        <div>
+                            <h6><a href="{{ route('news_category.id', [$category->name, $new->id]) }}">Подробнее>></a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <!-- col-md-6 -->
+        </div>
+    </div> --}}

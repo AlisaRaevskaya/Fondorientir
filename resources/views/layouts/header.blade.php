@@ -8,7 +8,7 @@
                             <a href="{{ route('main') }}">
                                 <img src="/storage/logo.png" alt="Logo" class="img-responsive"></a>
                         </div>
-                        <div class="text-center" id="logo_name" style="margin-top:1.7rem;padding-left:10px;">
+                        <div class="text-center" id="logo_name">
                             <p>Фонд поддержки<br>
                                 добровольного переселения<br>
                                 соотечественников «ОРИЕНТИР»</p>

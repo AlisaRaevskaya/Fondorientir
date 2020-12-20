@@ -9,7 +9,7 @@
                  <div class="row">
                     <div class="text-center logo">
                         <a href="{{ route('second_main') }}">
-                            <img src="/storage/logo-center.png" alt="Logo" class="img-responsive"></a>
+                            <img src="/storage/logo2.png" alt="Logo" class="img-responsive"></a>
                     </div>
                 </div>
                 <div class="text-justify">
@@ -23,7 +23,7 @@
             </div>
 
 
-            <div class="col-md-3">
+            <div class="col-md-3 footer_padding">
                 <div class="footer_widget_title">
                     <h3 target="_self" style="color:black;">Карта сайта</h3>
                 </div>
@@ -72,11 +72,11 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3" >
                 <div class="footer_widget_title">
                     <h3><a href="{{ route('contacts') }}" target="_self">Контакты</a></h3>
                 </div>
-                <div class="footer_contacts">
+                <div class="footer_contacts" style="padding-left:10px;">
                        <p><strong> {{ $contact->name}}</strong></p>
                                 <p><strong>Адрес: </strong>{{ $contact->index }}, {{ $contact->city }}{{ $contact->street }}</p>
                                 <p><strong>Остановка:</strong> {{ $contact->station }}</p>
