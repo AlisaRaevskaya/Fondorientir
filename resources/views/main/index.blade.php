@@ -7,15 +7,15 @@
                     <div class="sl">
                         <div class="slider">
                             <a href="{{ route('second_main') }}"><img src="{{ asset('storage/ban3.png') }}"
-                                    alt="main.jpg"></a>
+                                    class="img-responsive" alt="main.jpg"></a>
                         </div>
                         <div class="slider">
                             <a href="{{ route('second_main') }}"><img src="{{ asset('storage/ban3.png') }}"
-                                    alt="main.jpg"></a>
+                                    class="img-responsive" alt="main.jpg"></a>
                         </div>
                         <div class="slider">
                             <a href="{{ route('second_main') }}"> <img src="{{ asset('storage/ban3.png') }}"
-                                    alt="main.jpg"></a>
+                                    class="img-responsive" alt="main.jpg"></a>
                         </div>
                     </div>
                 </div>
