@@ -99,7 +99,7 @@ font-size:20px;
     padding-left:10px;
 }
 .category_news_body {
-  min-height: 485px;
+  min-height: 430px;
   max-height: 750px;
   flex:50%;
 }
