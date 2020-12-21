@@ -1,23 +1,31 @@
 @import url("style.css");
-
-body {
-  background-image: url(/../storage/flag.jpg) !important;
+ body {
+  /* background-image: url(/../storage/flag.jpg) !important;
   background-attachment: fixed !important;
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover !important;
+  background-size: cover !important; */
   font-family: "Open Sans";
   font-size: 13px;
   line-height: 21px;
+}
+
+@media (min-width: 1200px) {
+    .main_container{
+        width: 1200px;
+        margin:0 auto;
+    }
+}
+.main_container{
+background-color:#fff;
 }
 .m-menu-content ul {
   border-right: 1px solid #f5f5f5 !important;
   padding: 20px;
 }
-
 #menu li a {
   display: block;
   text-decoration: none;

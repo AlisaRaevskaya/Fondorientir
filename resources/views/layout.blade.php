@@ -39,7 +39,6 @@
     <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
     <!-- Mobile Menu Style -->
 
-
     <link href="/assets/css/mobile-menu.css" rel="stylesheet">
     <link href="assets/css/owl.carousel.css" rel="stylesheet">
     <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
@@ -60,12 +59,14 @@
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
-                @include('layouts.header')
+                <div class="main_container">
+                    @include('layouts.header')
 
-                @yield('content')
+                    @yield('content')
 
-                @include('blocks.pre_footer')
-                @include('layouts.footer')
+                    @include('blocks.pre_footer')
+                    @include('layouts.footer')
+                </div>
             </div>
         </div>
 

@@ -55,12 +55,14 @@
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
-                @include('secondsite.layouts.header')
+                <div class="main_container">
+                    @include('secondsite.layouts.header')
 
-                @yield('content')
+                    @yield('content')
 
-                @include('blocks.pre_footer')
-                @include('secondsite.layouts.footer')
+                    @include('blocks.pre_footer')
+                    @include('secondsite.layouts.footer')
+                </div>
             </div>
         </div>
 

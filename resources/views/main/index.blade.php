@@ -10,11 +10,11 @@
                                     class="img-responsive" alt="main.jpg"></a>
                         </div>
                         <div class="slider">
-                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/ban3.png') }}"
+                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/banner2.png') }}"
                                     class="img-responsive" alt="main.jpg"></a>
                         </div>
                         <div class="slider">
-                            <a href="{{ route('second_main') }}"> <img src="{{ asset('storage/ban3.png') }}"
+                            <a href="{{ route('second_main') }}"> <img src="{{ asset('storage/banner3.png') }}"
                                     class="img-responsive" alt="main.jpg"></a>
                         </div>
                     </div>

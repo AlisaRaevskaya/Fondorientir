@@ -56,7 +56,7 @@
     }
 
 .slide-along .uc-offcanvas-pusher {
-    background-image: url(/../storage/flag.jpg);
+ background-image: url(/../storage/flag.jpg);
     background-attachment:fixed ;
     background-repeat: no-repeat;
     background-position: center center;
@@ -64,6 +64,8 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  /* /* .slide-along .uc-offcanvas-pusher {
+    background-color   : #FFFFFF; */
     position           : relative;
     left               : 0;
     z-index            : 1;
