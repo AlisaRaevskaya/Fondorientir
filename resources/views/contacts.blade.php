@@ -142,7 +142,7 @@
                         </button>
                     </div>
                 </div>
-                @include('layouts.contact_sidebar')
+                @include('layouts.sidebar')
             </div>
         </div>
     </section>
