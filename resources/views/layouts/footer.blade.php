@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="text-justify">
-                    <p>Интернет-приемная по вопросам миграции и трудовым спорам реализована в рамках
+                    <p>Онлайн-приемная по вопросам миграции и трудовым спорам реализована в рамках
                         социально-значимого проекта «Цивилизованная миграция - Санкт-Петербург и
                         Ленинградская область».Фонд осуществляет прием иностранных граждан и лиц без гражданства
                         с обращениями, заявлениями и просьбами,
@@ -75,7 +75,7 @@
                     <h3><a href="{{ route('contacts') }}" target="_self">Контакты</a></h3>
                 </div>
                 <div class="footer_contacts footer_padding">
-                    <p><strong>{{ $contact->name }}</strong></p>
+                    <p class="text-left" style="font-size:15px;"><strong>{{ $contact->name }}</strong></p>
                     <p><strong>Адрес: </strong>{{ $contact->index }}, {{ $contact->city }},{{ $contact->street }}</p>
                     <p><strong>Остановка:</strong> {{ $contact->station }}</p>
                     <p><strong>Автобусы:</strong> {{ $contact->bus }}</p>
