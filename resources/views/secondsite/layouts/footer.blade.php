@@ -30,7 +30,7 @@
 
                 <div class="row">
 
-                    <div class="col-xs-5">
+                    <div class="col-xs-7">
                         <ul class="list-unstyled left">
                             @foreach ($secondmenu as $item)
                                 <li>
@@ -41,7 +41,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-xs-7">
+                    <div class="col-xs-5">
                         <ul class="list-unstyled">
                             @foreach ($footermenu as $s_item)
                                 <li>
