@@ -471,11 +471,11 @@ padding-left:10px;
 }
 @media screen and (max-width: 480px) {
   .sl {
-    width: 350px;
+    max-width: 480px;
     margin: 0 auto;
   }
   .slider {
-    max-width: 350px;
+    max-width: 480px;
   }
   .category_news_body {
  min-height: 380px;
@@ -498,13 +498,13 @@ align-items: center;
 }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 360px) {
   .sl {
-    width: 300px;
+    max-width: 350px;
     margin: 0 auto;
   }
   .slider {
-    max-width: 300px;
+    max-width: 350px;
   }
   /* .category_news_body {
  min-height: 380px;
