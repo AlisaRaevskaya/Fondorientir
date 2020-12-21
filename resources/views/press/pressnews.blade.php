@@ -1,46 +1,44 @@
+<!-- Left Section -->
 @extends('layout',['seo' => $page->getSeo()])
 
 @section('content')
-
     <section id="entity_section" class="entity_section">
         <div class="container">
             <div class="row">
+
                 <div class="col-md-9">
-                    <div class="entity_wrapper">
+                    <div class="entity-wrapper">
 
                         <div class="row justify-content-center">
                             <h1 style="text-decoration:underline">{{ $category->ru_name }}</h1>
                         </div>
 
                         @foreach ($pressnews as $item)
+
                             <div class="row justify-content-md-center m30">
-                                <div class="col-md-6 press_img">
-                                    @if ($item->image)
-                                        <div class="entity_thumb">
-                                            <img class="img-responsive" src="{{ asset('storage/news/' . $item->image) }}"
-                                                alt="{{ $item->image }}">
-                                        </div>
-                                        <!-- entity_thumb -->
-                                    @endif
+                                <div class="col-md-6">
+                                    <div class="entity_img" style="max-width:370px;">
+                                        <img class="img-responsive" src="/storage/news/{{ $item->image }}"
+                                            alt="{{ $item->title }}">
+                                    </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="entity_title">
-                                        <h3><a href="{{ route('press_category.id', $item->id) }}" target="_self">
+                                        <h1><a href="{{ route('press_category.id', $item->id) }}" target="_self">
                                                 {!! $item->title !!}</a>
-                                        </h3>
-                                    </div>
-                                    <!-- entity_title -->
-
-                                    {{-- <div class="entity_meta">
-                                        <h1> {{ $item->dateline }}</h1>
-                                    </div> --}}
-                                    <!-- entity_meta -->
-
-                                    <div class="entity_content">
-                                        <p>{!! $item->intro !!}</p>
+                                        </h1>
                                     </div>
 
-                                    <div class="">
+                                    <div class="entity_meta">
+                                        <p>{{ $item->cutDateline() }}</p>
+                                    </div>
+
+                                    <div class="entity_intro">
+                                        {!! $item->intro !!}
+                                    </div>
+
+                                    <div style="margin-top:10px">
                                         <a href="{{ route('press_category.id', $item->id) }}"
                                             class="btn btn-outline-primary btn-lg active">
                                             Подробнее>>></a>
@@ -49,19 +47,17 @@
                             </div>
                             <hr>
                         @endforeach
-                    </div>
 
-                    <nav aria-label="Page navigation" class="pagination_section">
-                        <ul class="pagination">
-                            <li>{{ $pressnews->links() }}</li>
-                        </ul>
-                    </nav>
+                        <nav aria-label="Page navigation" class="pagination_section">
+                            <ul class="pagination">
+                                <li>{{ $pressnews->links() }}</li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
                 @include('layouts.sidebar')
             </div>
-            <!-- col-md-4 -->
-
         </div>
     </section>
-
 @endsection
+<!-- Left Section -->

@@ -366,6 +366,7 @@ flex-wrap: wrap;
   }
   .sidebar {
     margin: 0 auto;
+    padding-top:20px;
   }
     .sidebar_fond_img {
     max-width: 300px;

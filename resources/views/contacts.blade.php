@@ -113,33 +113,10 @@
                             </p>
                         </div>
                     </div>
-
-                    <div class="">
-                        <div class="text-center m30">
-                            <h2 class="link_color">+7(812) 385 -69-89</h2>
-                            <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
-                                data-category="Решение трудовых споров">Спросить юриста
-                                бесплатно</button>
-                        </div>
-                    </div>
-
                     <div class="text-center m30">
-                        <h2>Решение трудовых споров<a href="tel:+78126124817" class="link_color"> +7 (812 ) 612-48-17</a>
-                        </h2>
-                    </div>
-
-                    <div class="text-center m30">
-                        <h2>Миграционные вопросы <a href="tel:+78123856989" class="link_color">+7(812) 385 -69-89</a></h2>
-                    </div>
-
-                    <div class="text-center m30">
-                        <h2>Помощь в сложных жизненных ситуациях <a href="tel:+78123856989" class="link_color">+7(812) 385
-                                -69-89</a>
-                        </h2>
-                        <button class="btn btn-sm" id="btn_popup" data-toggle="modal" data-target="#lawyerQuestion"
-                            data-category="Решение трудовых споров">Спросить юриста
-                            бесплатно
-                        </button>
+                        <h4><a href="tel:+78123856989" class="link_color">+7(812) 385-69-89</a></h4>
+                        <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal"
+                            data-target="#lawyerQuestion" data-category="Миграционные вопросы">Спросить юриста</button>
                     </div>
                 </div>
                 @include('layouts.sidebar')

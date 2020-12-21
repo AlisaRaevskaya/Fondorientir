@@ -17,7 +17,7 @@
                         @foreach ($news as $item)
                             <div class="row justify-content-md-center m30">
                                 <div class="col-md-6">
-                                    <div class="entity_img">
+                                    <div class="entity_img" style="max-width:370px;">
                                         <img class="img-responsive" src="/storage/news/{{ $item->image }}"
                                             alt="{{ $item->title }}">
                                     </div>
@@ -40,7 +40,7 @@
                                         {!! $item->intro !!}
                                     </div>
 
-                                    <div>
+                                    <div style="margin-top:10px">
                                         <a href="{{ route('news_category.id', $item->id) }}"
                                             class="btn btn-outline-primary btn-lg active btn_news" role="button"
                                             aria-pressed="true">
