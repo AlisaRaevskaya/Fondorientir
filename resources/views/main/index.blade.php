@@ -44,17 +44,18 @@
 
                                 <h4 class="text-right">تقديم المساعدة إلى المهاجرين</h4>
 
-                                <div style="display:flex; justify-content:space-between;align-items:center;">
-                                    <div class="">
+                                <div class="main_fond_item">
+                                    <div>
                                         <p class="text-tel"><a href="tel:78123856969">+7(812)-385-69-89</a></p>
-
                                         <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal"
                                             data-target="#lawyerQuestion" data-category="Решение трудовых споров">Спросить
                                             юриста
                                         </button>
                                     </div>
-                                    <div><img class="img-responsive img-fond" src="{{ asset('storage/fond-2.png') }}"
-                                            alt="fond.jpg" title="Фонд президентских грантов"></div>
+                                    <div>
+                                        <img class="img-responsive main_fond_img" src="{{ asset('storage/fond-2.png') }}"
+                                            alt="fond.jpg" title="Фонд президентских грантов">
+                                    </div>
                                 </div>
                             </div>
                         </div>

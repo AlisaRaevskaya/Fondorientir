@@ -55,7 +55,11 @@ class SecondSiteController extends Controller
         $page= Page::where('laravel_name', 'reception')->first();
         return view('secondsite.reception', compact('page'));
     }
+
+
      public function migration(){
         return view('secondsite.migration');
     }
+
+
 }

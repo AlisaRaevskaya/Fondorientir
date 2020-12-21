@@ -9,10 +9,9 @@
                     <h1>Материалы по тестированию</h1>
                     <div class="entity_wrapper">
                         {!! $page->content !!}
+
                     </div>
-
                 </div>
-
                 @include('layouts.sidebar')
             </div>
         </div>
