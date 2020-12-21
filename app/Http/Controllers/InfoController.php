@@ -47,7 +47,7 @@ class InfoController extends Controller
  $page= Page::where('laravel_name', 'useful-info')->first();
         return view('useful.info-2', compact('page'));
      }
-public function useful_prodleniye(){
+public function daktiloskopiya(){
  $page= Page::where('laravel_name', 'useful-info')->first();
         return view('useful.info-3', compact('page'));
 }
@@ -55,38 +55,31 @@ public function patent(){
  $page= Page::where('laravel_name', 'useful-info')->first();
         return view('useful.info-4', compact('page'));
 }
-public function pprodlenye(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-5', compact('page'));
-}
- public function testirovaniye(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-6', compact('page'));
- }
+
  public function medpatent(){
  $page= Page::where('laravel_name', 'useful-info')->first();
         return view('useful.info-14', compact('page'));
  }
-public function invitation(){
+public function rvp(){
  $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-8', compact('page'));
+        return view('useful.info-7', compact('page'));
 }
- public function visaProdleniye(){
+ public function visaInvitation(){
  $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-9', compact('page'));
+        return view('useful.info-3', compact('page'));
  }
 
  public function razreshenie(){
      $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-11', compact('page'));
+        return view('useful.info-5', compact('page'));
     }
- public function vks(){
+ public function grazhdanstvo(){
      $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-12', compact('page'));
+        return view('useful.info-8', compact('page'));
 }
- public function testirovaniyePatent(){
+ public function snyatiye(){
       $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-10', compact('page'));
+        return view('useful.info-6', compact('page'));
 }
  public function snyatie(){
       $page= Page::where('laravel_name', 'useful-info')->first();

@@ -72,20 +72,12 @@ Route::get('/info-center/reminder', [InfoController::class, 'reminder'])->name('
 
 Route::get('/info-center/useful-info/migrationnaya-karta', [InfoController::class, 'useful_info'])->name('info-1');
 Route::get('/info-center/useful-info/migrationnyi-uchet', [InfoController::class, 'useful_uchet'])->name('info-2');
-Route::get('/info-center/useful-info/migrationnyi-uchet-prodleniye', [InfoController::class, 'useful_prodleniye'])->name('info-3');
-Route::get('/info-center/useful-info/snyatie-s-ucheta', [InfoController::class, 'snyatie'])->name('info-13');
-
 Route::get('/info-center/useful-info/trudovoy-patent', [InfoController::class, 'patent'])->name('info-4');
-Route::get('/info-center/useful-info/trudovoy-patent-prodleniye', [InfoController::class, 'pprodlenye'])->name('info-5');
-Route::get('/info-center/useful-info/testirovaniye-russkiy-yazyk', [InfoController::class, 'testirovaniye'])->name('info-6');
-Route::get('/info-center/useful-info/medizinckiy-patent', [InfoController::class, 'medpatent'])->name('info-7');
-Route::get('/info-center/useful-info/visa-invitation', [InfoController::class, 'invitation'])->name('info-8');
-Route::get('/info-center/useful-info/visa-invitation-prodlevaniye', [InfoController::class, 'visaProdleniye'])->name('info-9');
-Route::get('/info-center/useful-info/testirovaniye-patent', [InfoController::class, 'testirovaniyePatent'])->name('info-10');
-Route::get('/info-center/useful-info/razreshenie-na-raboty', [InfoController::class, 'razreshenie'])->name('info-11');
-Route::get('/info-center/useful-info/razresheniye-vks', [InfoController::class, 'vks'])->name('info-12');
-
-
+Route::get('/info-center/useful-info/visa-invitation', [InfoController::class, 'visaInvitation'])->name('info-3');
+Route::get('/info-center/useful-info/razreshenie-na-raboty', [InfoController::class, 'razreshenie'])->name('info-5');
+Route::get('/info-center/useful-info/razresheniye-rvp', [InfoController::class, 'rvp'])->name('info-7');
+Route::get('/info-center/useful-info/grazhdanstvo', [InfoController::class, 'grazhdanstvo'])->name('info-8');
+Route::get('/info-center/useful-info/snyatiye_zapreta_na_vyiezd', [InfoController::class, 'snyatiye'])->name('info-6');
 
 // Route::get('/smi_o_nas', [MainController::class, 'pressnews'])->name('press-news');
 Route::get('/smi_o_nas', [MainController::class, 'showPressNews'])->name('press');

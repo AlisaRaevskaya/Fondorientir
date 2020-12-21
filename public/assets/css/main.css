@@ -125,6 +125,11 @@ margin:10px;
 border:1px solid black;
 }
 
+.useful_contacts_links_item{
+justify-content:center;
+align-content: center;
+align-items:center;
+}
 .t-indent-30 {
   text-indent: 2rem !important;
 }
@@ -135,7 +140,9 @@ border:1px solid black;
   font-style: bold;
   color: #4287b2;
 }
-
+.table-wrap{
+	overflow-x:auto;
+}
 #hotline_phone {
   font-weight: 900 !important;
 }
@@ -289,10 +296,11 @@ flex-wrap: wrap;
   text-decoration: underline;
 }
 .partner_block {
-  margin: 0 15px !important;
+  margin: 0 15px;
 }
-.partner_block p {
+.partner_block p{
   padding: 0 10px;
+  margin-top:10px;
 }
 .item_center {
   display: flex;
@@ -405,6 +413,10 @@ flex-direction: column;
 .divider:after{
    width: 78% !important;
 }
+.useful_contacts_links_item a{
+    font-size:9px;
+}
+
 }
 
 @media screen and (max-width: 648px) {
@@ -421,6 +433,9 @@ flex-direction: column;
 }
 .text-tel{
 font-size:16px;
+}
+.useful_contacts_links{
+    display:none;
 }
 }
 
