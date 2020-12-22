@@ -7,16 +7,16 @@
                 <div class="row">
                     <div class="owl-carousel owl-theme">
                         <div class="slide">
-                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/ban3.png') }}"
-                                    class="img-responsive" alt="main.jpg"></a>
+                            <a href="{{ route('second_main') }}"><img src="/storage/ban3.png" class="img-responsive"
+                                    alt="main.jpg"></a>
                         </div>
                         <div class="slide">
-                            <a href="{{ route('second_main') }}"><img src="{{ asset('storage/banner2.png') }}"
-                                    class="img-responsive" alt="main.jpg"></a>
+                            <a href="{{ route('second_main') }}"><img src="/storage/banner2.png" class="img-responsive"
+                                    alt="main.jpg"></a>
                         </div>
                         <div class="slide">
-                            <a href="{{ route('second_main') }}"> <img src="{{ asset('storage/banner3.png') }}"
-                                    class="img-responsive" alt="main.jpg"></a>
+                            <a href="{{ route('second_main') }}"> <img src="/storage/banner3.png" class="img-responsive"
+                                    alt="main.jpg"></a>
                         </div>
                     </div>
                 </div>
