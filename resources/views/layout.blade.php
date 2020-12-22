@@ -81,7 +81,7 @@
 
     <!-- Theme Menu -->
     <script src="/assets/js/mobile-menu.js"></script>
-    <script src="/assets/js/summernote.js"></script>
+    {{-- <script src="/assets/js/summernote.js"></script> --}}
 
     <!-- Theme Script -->
     <script src="/assets/js/index.js"></script>

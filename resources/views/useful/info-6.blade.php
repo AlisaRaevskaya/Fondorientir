@@ -4,6 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
+                    <div class=""></div>
                     Снятие запрета на въезд</u></strong></li>
                     </ul>
                     <p>&nbsp;</p>
@@ -82,6 +83,7 @@
                 </div>
                 @include('layouts.main_sidebar')
             </div>
+        </div>
     </section>
     </div>
 @endsection
