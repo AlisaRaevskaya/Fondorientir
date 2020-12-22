@@ -3,9 +3,7 @@
     <section id="entity_section" class="entity_section">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-9">
-
                     <h2 class="text-center">Успешно реализованные проекты:</h2>
                     <table class="table table-bordered table-responsive">
 
@@ -28,10 +26,6 @@
                 </div>
                 @include('layouts.sidebar')
             </div>
-            <!-- row -->
-
         </div>
-        <!-- container -->
     </section>
-
 @endsection

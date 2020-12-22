@@ -97,7 +97,7 @@ class BrochuresController extends Controller
 
         $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.info.brochures.edit', $id)->with('message', $message);
+        return redirect()->route('admin.brochures.edit', $id)->with('message', $message);
     }
 
 

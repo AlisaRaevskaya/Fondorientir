@@ -7,7 +7,8 @@
                 <div class="col-md-9">
                     <div class="entity_wrapper">
                         {!! $page->content !!}
-                        <div style="padding:3px 0;">Поля отмеченные * обязательны для заполнения</div>
+                        <div style="margin:7px 0;">Поля отмеченные <span class="color_red">*</span> обязательны для
+                            заполнения</div>
                         <div class="text-center">
                             <div class="col-md-1"></div>
                             <div class="col-md-10">

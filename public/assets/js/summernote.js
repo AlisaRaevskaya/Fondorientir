@@ -7,7 +7,7 @@ maxHeight:400,
 focus:true,
 placeholder:'Введите данные',
 lineHeights: ['0.2', '0.3', '0.4', '0.5', '0.6', '0.8', '1.0', '1.2', '1.4', '1.5', '2.0', '3.0'],
-fontNames:['Arial','Times New Roman','Helvetica','Roboto','Roboto Light', 'Open Sans'],
+fontNames:['Arial','Times New Roman','Open Sans'],
 disableDragAndDrop:true,
 callbacks: {
         onImageUpload: function (file) {
@@ -44,7 +44,6 @@ console.log(id);
             console.log(data);
         }
          });
-
         }
 
 $('.summernote_news').summernote({
@@ -54,7 +53,7 @@ minHeight:200,
 maxHeight:400,
 focus:true,
 placeholder:'Введите данные',
-fontNames:['Arial','Times New Roman','Helvetica', 'Open Sans'],
+fontNames:['Arial','Times New Roman', 'Open Sans'],
 disableDragAndDrop:true,
 callbacks: {
         onImageUpload: function (file) {
@@ -88,6 +87,5 @@ let data = new FormData();
             console.log(data);
         }
          });
-
         }
 

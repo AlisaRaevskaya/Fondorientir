@@ -95,7 +95,7 @@ class InfoController extends Controller
         $seo->og_description=$request->og_description;
         $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.info.edit', $id)->with('message', $message);
+        return redirect()->route('admin.useful-info.edit', $id)->with('message', $message);
     }
 
     /**

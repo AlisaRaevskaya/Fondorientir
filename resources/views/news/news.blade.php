@@ -26,8 +26,7 @@
                                 <div class="col-md-6">
 
                                     <div class="entity_title">
-                                        <h1><a href="{{ route('news_category.id', [$category->name, $item->id]) }}"
-                                                target="_self">
+                                        <h1><a href="{{ route('news_category.id', $item->id) }}">
                                                 {{ $item->title }}</a>
                                         </h1>
                                     </div>

@@ -23,7 +23,7 @@ class NewsController extends Controller
         $category = Category::where('name', 'migration-news')->first();
         $item = $category->news->where('id', $id)->first();
         $page=Page::where('laravel_name', 'news')->first();
-        return view('news.news_single', compact('item', 'category', 'page'));
+        return view('news.news_single', compact('item','category','page'));
     }
 
 

@@ -6,10 +6,9 @@
             <div class="row">
 
                 <div class="col-md-9">
-                    <h1>Материалы по тестированию</h1>
+                    <h1 class="text-center">Материалы по тестированию</h1>
                     <div class="entity_wrapper">
                         {!! $page->content !!}
-
                     </div>
                 </div>
                 @include('layouts.sidebar')

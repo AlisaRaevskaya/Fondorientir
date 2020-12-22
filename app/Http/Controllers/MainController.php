@@ -91,7 +91,7 @@ class MainController extends Controller
     public function showByCategoryId($id){
         $category = Category::where('name', 'press')->first();
         $item = $category->news->where('id', $id)->first();
-        $page=Page::where('laravel_name', 'news')->first();
+        $page=Page::where('laravel_name', 'press')->first();
         return view('press.single', compact('item', 'category', 'page'));
     }
 

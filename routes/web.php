@@ -79,9 +79,7 @@ Route::get('/info-center/useful-info/razresheniye-rvp', [InfoController::class, 
 Route::get('/info-center/useful-info/grazhdanstvo', [InfoController::class, 'grazhdanstvo'])->name('info-8');
 Route::get('/info-center/useful-info/snyatiye_zapreta_na_vyiezd', [InfoController::class, 'snyatiye'])->name('info-6');
 
-// Route::get('/smi_o_nas', [MainController::class, 'pressnews'])->name('press-news');
 Route::get('/smi_o_nas', [MainController::class, 'showPressNews'])->name('press');
-// Route::get('/news/{category}', [NewsController::class, 'showByCategory'])->name('news.category');
 Route::get('/migration-news/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')
 ->name('news_category.id');
 Route::get('/press-news/{id}', [MainController::class, 'showByCategoryId'])->where('id', '[0-9]+')

@@ -56,7 +56,7 @@ class MainController extends Controller
     {
     $page = Page::find($id);
 
-    return view('admin.main.main.show', compact('page'));
+    return view('admin.fond.main.show', compact('page'));
     }
 
     /**
@@ -68,7 +68,7 @@ class MainController extends Controller
     public function edit( $id)
     {   $page= Page::find($id);
         $seo = $page->seo;
-        return view('admin.main.main.edit', compact('page', 'seo'));
+        return view('admin.fond.main.edit', compact('page', 'seo'));
     }
 
     /**
@@ -98,7 +98,7 @@ class MainController extends Controller
         $seo->og_description=$request->og_description;
         $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.mission.edit', $id)->with('message', $message);
+        return redirect()->route('admin.main.edit', $id)->with('message', $message);
     }
 
     /**
