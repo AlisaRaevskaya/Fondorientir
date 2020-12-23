@@ -80,6 +80,9 @@ body {
 .text-tel {
   font-size: 20px;
 }
+.ul_padding{
+padding-left:2em;
+}
 .li_padding {
   padding-left: 10px;
 }
@@ -117,19 +120,37 @@ body {
   border-radius: 50px !important;
   font-size: 12px !important;
 }
-
-.info_item {
+.blanks_item{
+    display:flex;
+    align-items: center;
+}
+.mb15{
+margin-bottom:15px;
+}
+.useful_info_item {
   padding: 10px;
-  background-color: #fff;
+  background-color:lightgray;
   margin: 10px;
   border: 1px solid black;
+  border-radius:1px;
 }
-
+.useful_info_item a{
+    font-weight:bold;
+}
 .useful_contacts_links_item {
   justify-content: center;
   align-content: center;
   align-items: center;
 }
+.info_item_content{
+margin-top:1em;
+}
+.info_breadcrumb{
+padding:8px 0 !important;
+}
+.info_breadcrumb a{
+    color:black !important;}
+
 .t-indent-30 {
   text-indent: 2rem !important;
 }

@@ -5,43 +5,91 @@
             <div class="row">
 
                 <div class="col-md-9">
-                    <h1>Бланки и образцы</h1>
-                    <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-1') }}"> <img src="/storage/blank.png"
-                                alt="blank.png">Уведомление о прибытии иностранного гражданина</a>
+                    <div class="blanks_title">
+                        <h1>Бланки и образцы</h1>
                     </div>
-                    <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-2') }}">
-                            <img src="/storage/blank.png" alt="blank.png">Заявление иностранного гражданина или лица без
-                            гражданства о регистрации по
-                            месту
-                            жительства</a>
+                    <div class="blanks_content">
+
+                        <div class="m30 blanks_item">
+                            <div class="blanks_item_img">
+                                <img src="/storage/blank.png" alt="blank.png" title="Бланк">
+                            </div>
+                            <div class="blanks_item_link underline">
+                                <a href="{{ asset('/storage/blanks/blank-1.xls') }}">
+                                    Уведомление о прибытии иностранного гражданина</a>
+                            </div>
+                        </div>
+
+
+                        <div class="m30 blanks_item">
+                            <div class="blanks_item_img">
+                                <img src="/storage/blank.png" alt="blank.png" title="Бланк">
+                            </div>
+                            <div class="blanks_item_link underline">
+                                <a href="{{ asset('/storage/blanks/blank-2.doc') }}">
+                                    Заявление иностранного гражданина или лица без
+                                    гражданства о регистрации по
+                                    месту
+                                    жительства</a>
+                            </div>
+                        </div>
+
+
+                        <div class="m30 blanks_item">
+                            <div class="blanks_item_img">
+                                <img src="/storage/blank.png" alt="blank.png" title="Бланк">
+                            </div>
+                            <div class="blanks_item_link underline">
+                                <a href="{{ asset('/storage/blanks/blank-3.doc') }}">Заявление о выдаче разрешения на
+                                    временное проживание
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="m30 blanks_item">
+                            <div class="blanks_item_img">
+                                <img src="/storage/blank.png" alt="blank.png" title="Бланк">
+                            </div>
+                            <div class="blanks_item_link underline">
+                                <a href="{{ asset('/storage/blanks/blank-4.docx') }}">
+                                    Форма уведомления о подтверждении проживания иностранного гражданина или
+                                    лица без гражданства в РФ
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-3') }}"><img src="/storage/blank.png"
-                                alt="blank.png">Заявление о выдаче разрешения на временное проживание
-                        </a>
+                    <div class="m30 blanks_item">
+                        <div class="blanks_item_img">
+                            <img src="/storage/blank.png" alt="blank.png" title="Бланк">
+                        </div>
+                        <div class="blanks_item_link underline">
+                            <a href="{{ asset('/storage/blanks/blank-5.doc') }}">
+                                Заявление о выдаче вида на жительство</a>
+                        </div>
                     </div>
-                    <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-4') }}"><img src="/storage/blank.png" alt="blank.png">
-                            Форма уведомления о подтверждении проживания иностранного гражданина или
-                            лица без гражданства в РФ
-                        </a>
+
+                    <div class="m30 blanks_item">
+                        <div class="blanks_item_img">
+                            <img src="/storage/blank.png" alt="blank.png" title="Бланк">
+                        </div>
+                        <div class="blanks_item_link underline">
+                            <a href="{{ asset('/storage/blanks/blank-6.rtf') }}">
+                                Форма
+                                уведомления о подтверждении проживания иностранного гражданина или
+                                лица без гражданства в РФ
+                            </a>
+                        </div>
                     </div>
-                    <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-5') }}"><img src="/storage/blank.png" alt="blank.png">
-                            Заявление о выдаче вида на жительство</a>
-                    </div>
-                    <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-6') }}"><img src="/storage/blank.png" alt="blank.png">
-                            Форма
-                            уведомления о подтверждении проживания иностранного гражданина или
-                            лица без гражданства в РФ
-                        </a>
-                    </div>
-                    <div class="m30">
-                        <a href="{{ asset('/storage/blanks/blank-7') }}"><img src="/storage/blank.png"
-                                alt="blank.png">Заявление о признании носителем языка</a>
+
+                    <div class="m30 blanks_item">
+                        <div class="blanks_item_img">
+                            <img src="/storage/blank.png" alt="blank.png" title="Бланк">
+                        </div>
+                        <div class="blanks_item_link underline">
+                            <a href="{{ asset('/storage/blanks/blank-7.doc') }}">Заявление о признании носителем языка</a>
+                        </div>
                     </div>
                 </div>
                 @include('layouts.sidebar')
