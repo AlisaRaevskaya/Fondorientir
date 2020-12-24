@@ -500,6 +500,11 @@ flex-direction: column;
   .divider:after {
     width: 68% !important;
   }
+ form.feedbackForm label{
+font-size:9px !important;
+padding-right:3px;
+ }
+
 }
 
 @media screen and (max-width: 360px) {
