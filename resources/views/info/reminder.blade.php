@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
+                    <h5>Ссылки на сайты органов государственной власти:</h5>
                     <div class="useful_contacts_links m30">
-                        <h5>Ссылки на сайты органов государственной власти:</h5>
                         <div class="useful_contacts_links_row text-center">
                             <div class="useful_contacts_links_item ">
                                 <a href="https://дгск.мвд.рф/" target="_blank"><img src="/storage/partners/dgsk.jpg"
