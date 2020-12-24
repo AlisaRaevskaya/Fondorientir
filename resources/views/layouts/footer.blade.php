@@ -64,9 +64,9 @@
                     <p><strong>Электроный адрес: </strong>{{ $contact->email }}</p>
                     <p><strong>Cайт: </strong>{{ $contact->web }}</p>
                     <p><strong>Телефоны:<strong> {{ $contact->phone }}</p>
-                    <div>
+                    {{-- <div>
                         <h3>Мы в социальных сетях:</h3>
-                        <div class="social">
+                        {{-- <div class="social">
                             <!--Twitter-->
                             <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
                             <!--Google +-->
@@ -77,7 +77,7 @@
                             <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
                             <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

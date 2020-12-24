@@ -12,7 +12,8 @@
                             <div class="col-sm-12 col-md-11 container">
                                 <ol class="breadcrumb float-sm-right ">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
-                                    <li class="breadcrumb-item active"></li>
+                                    <li class="breadcrumb-item active"><a href="{{ route('admin.faq.edit', 13) }}">К
+                                            вопросам</a></li>
                                 </ol>
                             </div>
                         </div>

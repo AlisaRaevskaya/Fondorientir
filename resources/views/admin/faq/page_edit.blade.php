@@ -8,11 +8,11 @@
                 <section class="content-header" style="padding-top:10px;">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div class="col-md-1"></div>
-                            <div class="col-sm-12 col-md-10">
+
+                            <div class="col-sm-12 col-md-11" style="margin-left:2rem;">
                                 <ol class="breadcrumb float-sm-right ">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
-                                    <li class="breadcrumb-item active">{{ $page->title }}</li>
+                                    <li class="breadcrumb-item active">Вопросы и ответы</li>
                                 </ol>
                             </div>
                         </div>
@@ -22,8 +22,7 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-10">
+                        <div class="col-md-11" style="margin-left:2rem;">
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -57,14 +56,10 @@
                                             <div class="" style="margin-top:15px;">
                                                 <div class="col-md-10">
                                                     @csrf
-                                                    {{ Form::open(['route' => ['admin.faq-page.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
+                                                    {{ Form::open(['route' => ['admin.faq.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
                                                     <div class="form-group">
                                                         {{ Form::label('title', 'Название') }}
                                                         {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
-                                                    </div>
-                                                    <div class="form-group">
-                                                        {{ Form::label('content', 'Текст') }}
-                                                        {{ Form::textArea('content', $page->content, ['class' => 'form-control summernote']) }}
                                                     </div>
                                                     <div class="form-group">
                                                         {{ Form::label('published', 'Опубликована') }}
@@ -100,7 +95,7 @@
                                                                 style="margin-left:20px;"><i class="fas fa-save"></i>
                                                                 Сохранить</button>
 
-                                                            <a href="{{ route('admin.faq-page.show', $page->id) }}"
+                                                            <a href="{{ route('admin.faq.show', $page->id) }}"
                                                                 class="btn btn-warning pull-right">
                                                                 <i class="fas fa-folder">
                                                                 </i> Просмотр</a>

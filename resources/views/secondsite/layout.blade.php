@@ -27,11 +27,8 @@
 
     <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/fonts.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css" />
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-
 
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,8 +36,6 @@
     <!-- Mobile Menu Style -->
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/mobile-menu.css" rel="stylesheet">
-
-
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
@@ -76,8 +71,6 @@
 
     <!-- Theme Menu -->
     <script src="/assets/js/mobile-menu.js"></script>
-    <!-- Owl carousel -->
-    <script src="/assets/js/summernote.js"></script>
 
     <!-- Theme Script -->
     <script src="/assets/js/index.js"></script>
@@ -89,9 +82,7 @@
     <script src="/assets/js/ajax/claim-ajax.js"></script>
     <script src="/assets/js/ajax/application-ajax.js"></script>
     <script src="/assets/js/ajax/lawyer-ajax.js"></script>
-    <script type="text/javascript" async="" src="//www.cincopa.com/media-platform/runtime/libasync.js"></script>
-    <script src="/assets/slick/slick.min.js"></script>
-    <script src="/assets/js/slider.js"></script>
+
 </body>
 
 </html>

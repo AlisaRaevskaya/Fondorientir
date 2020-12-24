@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="col-md-2 text-center" style="margin-top:1.7rem;">
-                    <div>
+                    {{-- <div>
                         <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                         <!--Twitter-->
                         <a class="icons-sm tw-ic" style='padding-left:22px;'><i class="fa fa-twitter"></i></a>
@@ -25,7 +25,7 @@
                         <a class="icons-sm inst-ic" style='padding-left:22px;'><i class="fa fa-instagram"> </i></a>
                         <!--Linkedin-->
                         <a class="icons-sm tmb-ic" style='padding-left:22px;'><i class="fa fa-vk"> </i></a>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-md-3 text-center" style="margin-top:1.7rem;">
                     <p style="font-size:15px;"><strong>Правовая приемная</strong></p>

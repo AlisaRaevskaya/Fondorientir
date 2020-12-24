@@ -30,11 +30,6 @@
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
-    {{--
-    <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css" /> --}}
-
-
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
@@ -81,7 +76,6 @@
 
     <!-- Theme Menu -->
     <script src="/assets/js/mobile-menu.js"></script>
-    {{-- <script src="/assets/js/summernote.js"></script> --}}
 
     <!-- Theme Script -->
     <script src="/assets/js/index.js"></script>

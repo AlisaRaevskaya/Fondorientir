@@ -28,7 +28,7 @@
                                         Редактировать статью
                                     </h3>
                                     <div class="text-center">
-                                        <a href="{{ route('admin.fq.create') }}" class="btn btn-default pull-right"><i
+                                        <a href="{{ route('admin.faq.create') }}" class="btn btn-default pull-right"><i
                                                 class="fa fa-plus"></i>
                                             Добавить</a>
                                     </div>

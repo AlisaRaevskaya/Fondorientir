@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Category;
 use App\Models\File;
-use App\Models\Pages;
+use App\Models\Page;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -58,7 +58,7 @@ class UploadController extends Controller
         $store=$file->store('pages');
 
         $image=new File();
-        $mode=Pages::where('id', $id)->pluck('laravel_name');
+        $mode=Page::where('id', $id)->pluck('laravel_name');
         $image->name=$store;
         $image->page_id=$id;
         $image->mode=$mode;

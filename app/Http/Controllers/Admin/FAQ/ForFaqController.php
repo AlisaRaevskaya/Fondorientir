@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin\FAQ;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Reply;
+use App\Http\Requests\FaqRequest;
 use App\Models\Topic;
 use App\Models\Seo;
+use App\Models\Page;
 
 class ForFaqController extends Controller
 {
@@ -29,7 +30,7 @@ class ForFaqController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.faq.create');
     }
 
     /**
@@ -38,9 +39,12 @@ class ForFaqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(FaqRequest $request)
+    {   $validatedData = $request->validated();
+        $reply_id= 33;
+        $topic =Topic::add($request->all());
+        $message="Новый ответ создан";
+        return redirect()->route('admin.faq.edit', 13)->with('message', $message);//
     }
 
     /**
@@ -51,8 +55,7 @@ class ForFaqController extends Controller
      */
     public function show($id)
     {
-        $reply=Reply::find($id);
-        $topic=$reply->topic;
+        $reply=Topic::find($id);
 
         return view('admin.faq.reply_show' , compact('reply', 'topic'));
     }
@@ -65,9 +68,7 @@ class ForFaqController extends Controller
      */
     public function edit($id)
     {
-        $reply=Reply::find($id);
-        $topic=$reply->topic;
-
+        $reply=Topic::find($id);
         return view('admin.faq.reply_edit', compact('topic','reply'));
     }
 
@@ -80,15 +81,11 @@ class ForFaqController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $reply = Reply::find($id);
-        $topic= $reply->topic;
+        $topic= Topic::find($id);
 
-        $reply->edit($request->body);
         $topic->edit($request->all());
-
-
-       $message="Данные сохранены";
-       return view('admin.faq.reply_edit')->with('message', $message);
+       $message="Данные успешно сохранены";
+       return redirect()->route('admin.faq-page.edit', $topic->id)->with('message', $message);
     }
 
     /**
@@ -99,10 +96,8 @@ class ForFaqController extends Controller
      */
     public function destroy($id)
     {
-          $reply = Reply::find($id);
-        $topic= $reply->topic;
-$reply->delete();
-       $topic->delete();
-        return redirect()->route('admin.faq-page.edit');
+    $topic = Topic::find($id);
+    $topic->delete();
+    return redirect()->route('admin.faq.edit');
     }
 }

@@ -28,7 +28,7 @@
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
-                                        Редактировать проект
+                                        Редактировать вопрос
                                     </h3>
                                 </div>
 
@@ -47,7 +47,7 @@
                                         </div>
                                         <div class="form-group">
                                             {{ Form::label('intro', 'Intro') }}
-                                            {{ Form::text('intro', $topic->intro, ['class' => 'form-control']) }}
+                                            {{ Form::textArea('intro', $topic->intro, ['class' => 'form-control summernote']) }}
                                         </div>
 
                                         <div class="form-group">
@@ -55,10 +55,8 @@
                                             {{ Form::textArea('body', $topic->body, ['class' => 'form-control required summernote']) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::label('dateline', 'Опубликована') }}
-
-                                            {{ Form::text('dateline', $topic->dateline, ['class' => 'form-control']) }}
-
+                                            {{ Form::label('text', 'Опубликована') }}
+                                            {{ Form::text('text', $topic->dateline, ['class' => 'form-control']) }}
                                         </div>
                                         @if (session()->has('message'))
                                             <div class="alert alert-success">

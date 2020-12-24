@@ -72,4 +72,23 @@ public function getBodyAttribute($value){
 public function getTitleAttribute($value){
     return htmlspecialchars_decode($value,ENT_HTML5);
 }
+   public static function add($fields)
+    {
+        $pages= new static;
+        $pages->fill($fields);
+        $pages->save();
+
+        return $pages;
+    }
+
+    public function edit($fields)
+    {
+        $this->fill($fields);
+        $this->save($fields);
+    }
+
+    public function getSeo(){
+    return $this->seo()->first();
+    }
+
 }

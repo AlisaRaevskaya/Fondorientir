@@ -64,9 +64,7 @@ class AdminFaqController extends Controller
     {
         $page= Page::find($id);
         $seo = $page->seo;
-        $replies = Reply::rightJoin('topics', 'topics.reply_id', '=', 'replies.id')
-        ->select('topics.title','topics.dateline','replies.id', 'topics.intro', 'replies.body')
-        ->orderBy('dateline', 'asc')->paginate(5);
+        $replies=Topic::orderBy('dateline', 'asc')->paginate(5);
 
         return view('admin.faq.page_edit', compact('page', 'seo', 'replies'));
 
@@ -80,7 +78,7 @@ class AdminFaqController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {$page = Page::findOrFail($id);
+    { $page = Page::findOrFail($id);
 
         $page->title=$request->title;
         $page->content=$request->content;
@@ -98,7 +96,7 @@ class AdminFaqController extends Controller
         $seo->og_description=$request->og_description;
         $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.faq-page.edit', $id)->with('message', $message);
+        return redirect()->route('admin.faq.edit', $id)->with('message', $message);
     }
 
     /**
