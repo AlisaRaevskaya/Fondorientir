@@ -7,7 +7,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PressController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\FaqController;
-use App\Http\Controllers\StatusController;
+use App\Http\Controllers\UsefulInfoController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\UploadController;
@@ -70,14 +70,38 @@ Route::get('/info-center/brochures', [InfoController::class, 'brochures'])->name
 Route::get('/info-center/reminder', [InfoController::class, 'reminder'])->name('reminder');
 
 
-Route::get('/info-center/useful-info/migrationnaya-karta', [InfoController::class, 'useful_info'])->name('info-1');
-Route::get('/info-center/useful-info/migrationnyi-uchet', [InfoController::class, 'useful_uchet'])->name('info-2');
-Route::get('/info-center/useful-info/trudovoy-patent', [InfoController::class, 'patent'])->name('info-4');
-Route::get('/info-center/useful-info/visa-invitation', [InfoController::class, 'visaInvitation'])->name('info-3');
-Route::get('/info-center/useful-info/razreshenie-na-raboty', [InfoController::class, 'razreshenie'])->name('info-5');
-Route::get('/info-center/useful-info/razresheniye-rvp', [InfoController::class, 'rvp'])->name('info-7');
-Route::get('/info-center/useful-info/grazhdanstvo', [InfoController::class, 'grazhdanstvo'])->name('info-8');
-Route::get('/info-center/useful-info/snyatiye_zapreta_na_vyiezd', [InfoController::class, 'snyatiye'])->name('info-6');
+Route::get('/info-center/useful-info/migrationnaya-karta', [UsefulInfoController::class, 'migrationCart'])->name('info-1');
+Route::get('/info-center/useful-info/migrationnyi-uchet', [UsefulInfoController::class, 'migrationUchet'])->name('info-2');
+Route::get('/info-center/useful-info/migratia-prodleniye', [UsefulInfoController::class, 'migrationProlongation'])->name('info-2-1');
+Route::get('/info-center/useful-info/migratia-snyatiye-s-ucheta', [UsefulInfoController::class, 'migrationSnyatiye'])->name('info-2-2');
+Route::get('/info-center/useful-info/visa-invitation', [UsefulInfoController::class, 'visaInvitation'])->name('info-3');
+Route::get('/info-center/useful-info/visa-invitation-change', [UsefulInfoController::class, 'changeInvitation'])->name('info-3-1');
+Route::get('/info-center/useful-info/trudovoy-patent', [UsefulInfoController::class, 'patent'])->name('info-4');
+Route::get('/info-center/useful-info/trudovoy-patent-prodleniye', [UsefulInfoController::class, 'patentProlongation'])->name('info-4-1');
+Route::get('/info-center/useful-info/trudovoy-patent-testirovaniye', [UsefulInfoController::class, 'patentTest'])->name('info-4-2');
+Route::get('/info-center/useful-info/trudovoy-patent-medical-commission', [UsefulInfoController::class, 'patentComission'])->name('info-4-3');
+Route::get('/info-center/useful-info/razreshenie-na-raboty', [UsefulInfoController::class, 'razreshenie'])->name('info-5');
+Route::get('/info-center/useful-info/razreshenie-na-raboty-vks', [UsefulInfoController::class, 'vksRabota'])->name('info-5-1');
+Route::get('/info-center/useful-info/razreshenie-na-zhitelstvo-vks', [UsefulInfoController::class, 'vksZhitelstvo'])->name('info-5-2');
+Route::get('/info-center/useful-info/razreshenie-comission', [UsefulInfoController::class, 'commission'])->name('info-5-3');
+
+Route::get('/info-center/useful-info/razresheniye-na-rabotu-testirovaniye', [UsefulInfoController::class, 'rabotaTest'])->name('info-7-5');
+Route::get('/info-center/useful-info/razresheniye-comissiya', [UsefulInfoController::class, 'razreshenieComission'])->name('info-7-6');
+Route::get('/info-center/useful-info/razresheniye-rvp_podtverzhdeniye', [UsefulInfoController::class, 'rvpConfirm'])->name('info-7-1');
+Route::get('/info-center/useful-info/vid-na-zhitelstvo', [UsefulInfoController::class, 'vid'])->name('info-7-2');
+Route::get('/info-center/useful-info/vid-na-zhitelstvo-podtverzhdenie', [UsefulInfoController::class, 'vidConfirm'])->name('info-7-3');
+Route::get('/info-center/useful-info/razresheniye-rvp', [UsefulInfoController::class, 'rvp'])->name('info-7');
+Route::get('/info-center/useful-info/grazhdanstvo', [UsefulInfoController::class, 'grazhdanstvo'])->name('info-8-1');
+Route::get('/info-center/useful-info/grazhdanstvo-comission', [UsefulInfoController::class, 'grazhdanstvoCommission'])->name('info-8-2');
+Route::get('/info-center/useful-info/status-nositelya', [UsefulInfoController::class, 'status'])->name('info-8-3');
+Route::get('/info-center/useful-info/grazhdanstvo-test', [UsefulInfoController::class, 'grazhdanstvoTest'])->name('info-8');
+Route::get('/info-center/useful-info/polis-dms', [UsefulInfoController::class, 'polis'])->name('info-9');
+Route::get('/info-center/useful-info/snils', [UsefulInfoController::class, 'snils'])->name('info-8-4');
+Route::get('/info-center/useful-info/daktiloskopiya', [UsefulInfoController::class, 'daktiloskopiya'])->name('info-9-2');
+Route::get('/info-center/useful-info/inn', [UsefulInfoController::class, 'inn'])->name('info-9-1');
+Route::get('/info-center/useful-info/snyatiye-zapreta-na-vyezd', [UsefulInfoController::class, 'snyatiye'])->name('info-6');
+
+
 
 Route::get('/smi_o_nas', [MainController::class, 'showPressNews'])->name('press');
 Route::get('/migration-news/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')

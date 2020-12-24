@@ -37,11 +37,6 @@
                  <span class="text-danger" id="phoneError"></span>
              </div>
 
-             <div class="form-group">
-                 <label for="email-input">Ваш email</label>
-                 <input type="email" class="form-control" placeholder="Введите email" name="email" id="email-input">
-                 <span class="text-danger" id="emailError"></span>
-             </div>
 
              <div class="form-group">
                  <label for="textarea">Ваше сообщение</label>

@@ -38,7 +38,6 @@ class AjaxController extends Controller
     {   $validatedData = $req->validated();
         $data = new Message;
         $data->name=$req->input('name');
-        $data->email = $req->input('email');
         $data->phone = $req->input('phone');
         $data->message = $req->input('message');
         $data->message_category_id = 1;
@@ -70,7 +69,7 @@ class AjaxController extends Controller
         $data->message_category_id = 1;
         $data->save();
 
-        Mail::to($req->input('email'))->send(new FormMail($category));
+        Mail::to('vindicta90@mail.ru')->send(new FormMail($category));
 
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
@@ -93,7 +92,6 @@ class AjaxController extends Controller
         $data->job = $req->input('job');
         $data->phone = $req->input('phone');
         $data->email = $req->input('email');
-        $data->address= $req->input('address');
         $data->message = $req->input('message');
         $data->consent = $req->input('consent');
         $data->message_category_id = 2;

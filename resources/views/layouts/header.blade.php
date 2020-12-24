@@ -25,9 +25,6 @@
                         <!--Linkedin-->
                         <a class="icons-sm tmb-ic" style='padding-left:22px;'><i class="fa fa-vk"> </i></a>
                     </div>
-                    <div>
-                        <h6 class="link_color">{{ $contact->email }}</h6>
-                    </div>
                 </div>
 
                 <div class="col-md-3 text-center" style="margin-top:1.7rem;">

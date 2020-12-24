@@ -4,8 +4,8 @@
                 title="Онлайн Приемная" alt="main.jpg"></a>
     </div>
     <div class="text-center item_center sidebar_fond_img">
-        <img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg" title="Фонд президентских грантов"
-            class="img-responsive">
+   <a href="https://президентскиегранты.рф/"><img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg" title="Фонд президентских грантов"
+            class="img-responsive"></a>
     </div>
 
     <div class="text-center item_center">

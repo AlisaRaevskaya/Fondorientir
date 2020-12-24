@@ -38,52 +38,6 @@ class InfoController extends Controller
         return view('info.reminder', compact('page'));
     }
 
-    public function useful_info(){
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-1', compact('page'));
-    }
 
-     public function useful_uchet(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-2', compact('page'));
-     }
-public function daktiloskopiya(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-3', compact('page'));
-}
-public function patent(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-4', compact('page'));
-}
-
- public function medpatent(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-14', compact('page'));
- }
-public function rvp(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-7', compact('page'));
-}
- public function visaInvitation(){
- $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-3', compact('page'));
- }
-
- public function razreshenie(){
-     $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-5', compact('page'));
-    }
- public function grazhdanstvo(){
-     $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-8', compact('page'));
-}
- public function snyatiye(){
-      $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-6', compact('page'));
-}
- public function snyatie(){
-      $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-13', compact('page'));
-}
 
 }

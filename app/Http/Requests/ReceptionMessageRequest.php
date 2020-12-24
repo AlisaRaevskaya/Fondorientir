@@ -31,11 +31,10 @@ class ReceptionMessageRequest extends FormRequest
         'firstName' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я].*$/'],
         'fatherName' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я].*$/'],
         'message' => [ 'required','string','min:8','max:500'],
-        'email' => [ 'required','min:2','max:255','email'],
+        'email' => [ 'min:2','max:255','email'],
         'phone' => [ 'required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
         'consent' => ['required','accepted'],
         'job' => [ 'min:5','max:255','nullable'],
-        'address' => [ 'required','min:2','max:255']
         ];
     }
 

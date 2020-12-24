@@ -90,8 +90,10 @@
                                 тонкости миграционного законодательства РФ, может помочь обжаловать то или иное решение
                                 представителей
                                 госучреждений.&nbsp;</p>
-                            <img src="{{ asset('storage/button3.png') }}" alt="consulation-button.jpg"
-                                class="green_btn img-responsive" title="Бесплатная консультация">
+                            <a href="tel:+78126124812"><img src="{{ asset('storage/button3.png') }}"
+                                    alt=" consulation-button.jpg" class="green_btn img-responsive"
+                                    title="Бесплатная консультация"></a>
+
                             <h3 class="underline">Перечень оснований для постановки запрета на въезд</h3>
                             <p><strong>Основания для постановки запрета на въезд:</strong></p>
                             <p>Согласно ст. 26 и 27 ФЗ 114 от 15 августа 1996 года &laquo;О порядке выезда из Российской

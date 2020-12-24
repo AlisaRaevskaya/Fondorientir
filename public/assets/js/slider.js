@@ -39,5 +39,10 @@ $(function() {
   '<span class="arrow-owl arrow-left"></span>',
   '<span class="arrow-owl arrow-right"></span>'
 ],
+ responsive:{
+        350:{
+            dots: false,
+        }
+    }
   });
 });

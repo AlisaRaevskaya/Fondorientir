@@ -65,12 +65,14 @@
                                     РФ.
                                 </li>
                             </ul>
-                            <p><strong>ВАЖНО:</strong> Рабочее приглашение всегда оформляется одновременно с
+                            <p><span class="color_red"><strong>ВАЖНО:</strong> </span>Рабочее приглашение всегда оформляется
+                                одновременно с
                                 разрешением на
                                 работу.
                             </p>
-                            <img src="{{ asset('storage/button3.png') }}" alt="consulation-button.jpg"
-                                class="green_btn img-responsive" title="Бесплатная консультация">
+                            <a href="tel:+78126124812"><img src="{{ asset('storage/button3.png') }}"
+                                    alt=" consulation-button.jpg" class="green_btn img-responsive"
+                                    title="Бесплатная консультация"></a>
                             <p>Приглашения на въезд в Россию оформляется в течение 20 календарных дней со дня предоставления
                                 документов.
                                 Данное
@@ -115,38 +117,6 @@
                                     </ul>
                                 </li>
                                 <li class="li_padding">Подать собранные документы в главное управление МВД.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="info_item">
-                        <div class="info_item_title">
-                            <h5 class="underline">Внесение изменения в приглашение</h5>
-                        </div>
-                        <div class="info_item_content">
-                            <p>Бывают ситуации, когда Вы приглашаете иностранного гражданина на
-                                переговоры/встречу/обслуживание
-                                оборудования, но
-                                ситуация изменяется. Получается, что приглашение уже оформлено, но нужно внести изменения.
-                                Возможно
-                                ли
-                                это?</p>
-                            <p>Сделать это можно только, если приглашение выдано на формализованном бланке МВД (не
-                                электронное).
-                            </p>
-                            <img src="{{ asset('storage/button3.png') }}" alt="consulation-button.jpg"
-                                class=" img-responsive" title="Бесплатная консультация">
-                            <p>Какие данные можно изменить?</p>
-                            <ul class="ul_padding">
-                                <li class="li_padding">Данные паспорта иностранного гражданина.</li>
-                                <li class="li_padding">Срок приглашения иностранного гражданина.&nbsp;</li>
-                            </ul>
-                            <h3>Cписок необходимых документов:</h3>
-                            <ul class="ul_padding">
-                                <li class="li_padding">Копия паспорта иностранного гражданина;</li>
-                                <li class="li_padding">Копия и оригинал полученного приглашения;</li>
-                                <li class="li_padding">Учредительные документы на компанию;</li>
-                                <li class="li_padding">Чек об оплате госпошлины;</li>
-                                <li class="li_padding">Заявление о внесении изменений.</li>
                             </ul>
                         </div>
                     </div>

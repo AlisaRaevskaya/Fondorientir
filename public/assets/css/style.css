@@ -1671,7 +1671,11 @@ font-family:'Open Sans';
     color: #2c9eb0;
     font-weight: 600;
 }
-
+.second_footer_widget_title h3{
+text-transform: uppercase;
+    color: #2c9eb0;
+    font-weight: 600;
+}
 .footer_widget_title:after {
     position: relative;
     display: inline-block;
@@ -1682,7 +1686,28 @@ font-family:'Open Sans';
     border-top: 2px solid #eee;
     z-index: 1;
 }
-
+.second_footer_widget_title:after{
+    position: relative;
+    display: inline-block;
+    bottom: 35px;
+    left: 68%;
+    content: " ";
+    width: 30%;
+    border-top: 2px solid #eee;
+    z-index: 1;
+}
+.second_footer_widget_title h3:after{
+    display: table;
+    position: relative;
+    left: 150px;
+    bottom: 10px;
+    height: 2px;
+    content: " ";
+    text-shadow: none;
+    width: 15%;
+    background-color: #2c9eb0;
+    z-index: 2;
+}
 .footer_widget_title h3:after {
     display: table;
     position: relative;

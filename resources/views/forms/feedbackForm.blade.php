@@ -25,13 +25,6 @@
             <span class="text-danger" id="fatherNameError"></span>
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="address">Почтовый адрес <span class="color_red"> * </span></label>
-        <div class="col-xs-9">
-            <input type="text" required class="form-control" id="address" name="address" placeholder="Почтовый адрес">
-            <span class="text-danger" id="addressError"></span>
-        </div>
-    </div>
 
     <div class="form-group">
         <label class="control-label col-xs-3" for="job" style="padding-right:2px;">Место работы или учебы </label>
@@ -51,7 +44,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-3" for="inputEmail">Электронная почта <span class="color_red"> * </span>
+        <label class="control-label col-xs-3" for="inputEmail">Электронная почта
         </label>
         <div class="col-xs-9">
             <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">

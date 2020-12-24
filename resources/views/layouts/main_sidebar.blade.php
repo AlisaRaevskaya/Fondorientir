@@ -1,8 +1,8 @@
 <div class="col-md-3 sidebar">
 
     <div class="text-center sidebar_fond_img">
-        <img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg" title="Фонд президентских грантов"
-            class="img-responsive">
+        <a href="https://президентскиегранты.рф/"><img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg"
+                title="Фонд президентских грантов" class="img-responsive"></a>
     </div>
     <div class="text-center">
         <h6>Решение трудовых споров</h6>
