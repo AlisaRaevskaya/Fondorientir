@@ -14,7 +14,7 @@
                         </div>
 
                         <div class="entity_title">
-                            <h1>{!! $item->title !!}</h1>
+                            <h1 class="text-justify">{!! $item->title !!}</h1>
                         </div>
                         <!-- entity_title -->
 
