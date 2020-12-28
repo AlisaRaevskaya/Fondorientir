@@ -10,7 +10,7 @@
                     <div class="footer_row_logo flex-row">
                         <div class="text-center logo">
                             <a href="{{ route('main') }}">
-                                <img src="/storage/logo.png" alt="Logo" class="img-responsive"></a>
+                                <img src="/storage/{{ $contact->logo }}" alt="Logo" class="img-responsive"></a>
                         </div>
                         <div class="text-center">
                             <h3>

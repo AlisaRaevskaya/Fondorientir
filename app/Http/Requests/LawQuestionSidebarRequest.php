@@ -28,9 +28,8 @@ class LawQuestionSidebarRequest extends FormRequest
     {
         return [
         'name' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я].*$/'],
-        'email' => ['required','min:2','max:255','email'],
+        'email' => ['min:2','max:255','email'],
         'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
-        'captcha' => ['required','captcha'],
         ];
     }
     protected function failedValidation(Validator $validator)

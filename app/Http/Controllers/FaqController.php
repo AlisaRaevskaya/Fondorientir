@@ -10,21 +10,15 @@ use Illuminate\Http\Request;
 class FaqController extends Controller
 {
     public function index(){
-        $page=Page::where('laravel_name', 'faq')->first();
-        $replies = Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
-        ->select('topics.title','topics.dateline','replies.id', 'topics.intro')
-        ->orderBy('dateline', 'desc')->paginate(5);
-
+        $page=Page::where('laravel_name', 'faq')->IsPublished()->first();
+        $replies =Topic::orderBy('dateline', 'asc')->paginate(5);
         return view('faq', compact('replies', 'page'));
     }
 
-     //http://fondorientir/faq/25
 
     public function replyByid($id){
-        $page=Page::where('laravel_name', 'faq')->first();
-        $topics=Topic::rightJoin('replies', 'topics.reply_id', '=', 'replies.id')
-        ->select('replies.body','topics.title','topics.dateline','replies.id', 'topics.image')
-        ->where('replies.id', $id)->get();
+        $page=Page::where('laravel_name', 'faq')->IsPublished()->first();
+        $topics=Topic::where('id', $id)->get();
 
         foreach($topics as $top){
             $body= htmlspecialchars_decode($top->body, ENT_HTML5);

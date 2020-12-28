@@ -31,7 +31,10 @@
 
                                             <td class="mailbox-subject col-md-2"><b>{{ $item->name }}</b>
                                             <td class="mailbox-name col-md-2">
-                                                {{ $item->getMiniContent() }}</a>
+                                                <a
+                                                    href="{{ route('admin.notice.show', ['category' => $item->getCategory()->category, 'id' => $item->id]) }}">
+                                                    {{ $item->getMiniContent() }}</a>
+
                                             </td>
                                             </td>
                                             <td class="mailbox-date col-md-2">{{ $item->created_at }}</td>
@@ -44,7 +47,7 @@
                                             </td>
                                             <td class="col-md-1">
                                                 <a href="{{ route('admin.notice.show', ['category' => $item->getCategory()->category, 'id' => $item->id]) }}"
-                                                    class="btn btn-primary">Посмотреть</a>
+                                                    class="btn btn-primary"><i class="fas fa-eye"></i> Посмотреть</a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -29,12 +29,13 @@
                         <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th><i class="fa fa-fw fa-sort"></i>№</th>
+                                    <th>№</th>
                                     <th>Название</th>
                                     <th>Ссылка</th>
-                                    <th>Опубликован</th>
-                                    <th>Meta ключи</th>
-                                    <th><i class="fa fa-fw fa-sort"></i>Дата изменения</th>
+                                    <th>Опубликована</th>
+                                    <th>Меню</th>
+                                    <th>Сортировка</th>
+                                    <th>Дата изменения</th>
                                     <th>Редактировать</th>
                                     <th>Удалить</th>
                                 </tr>
@@ -44,8 +45,9 @@
                                     <th>№</th>
                                     <th>Название</th>
                                     <th>Сcылка</th>
-                                    <th>Опубликан</th>
-                                    <th>Meta ключи</th>
+                                    <th>Опубликана</th>
+                                    <th>Меню</th>
+                                    <th>Сортировка</th>
                                     <th>Дата изменения</th>
                                     <th>Редактировать</th>
                                     <th>Удалить</th>
@@ -59,17 +61,26 @@
                                         <td>{{ $page->title }}</td>
                                         <td>{{ $page->url }}</td>
                                         <td>
-                                            @if ($page->published = true)да
+                                            @if ($page->published == 1) да
                                             @else нет
                                             @endif
                                         </td>
-                                        <td>{{ $page->keywords }}</td>
+                                        <td>
+                                            @if ($page->is_menu == 1) да
+                                            @else нет
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($page->sort_order == 1) да
+                                            @else нет
+                                            @endif
+                                        </td>
                                         <td>{{ $page->updated_at }}</td>
 
                                         <td class="project-actions text-right ">
 
                                             <a href="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.edit', $page->id) : route('admin.main.edit', $page->id) }}"
-                                                class="btn btn-primary btn-sm">
+                                                class="btn btn-primary ">
                                                 <i class="fas fa-pencil-alt"></i> Редактировать</a>
                                         </td>
                                         <td>
@@ -78,7 +89,7 @@
                                                 method="post" class="text-center">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
-                                                <button class="btn btn-danger btn-sm pull-right">
+                                                <button class="btn btn-danger pull-right">
                                                     <i class="fas fa-trash">
                                                     </i> Удалить</button>
                                             </form>

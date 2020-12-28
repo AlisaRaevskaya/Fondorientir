@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
@@ -36,14 +38,12 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+    *  @param  NewsRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+        $validatedData = $request->validated();
 
         $news=new News();
 
@@ -53,13 +53,11 @@ class NewsController extends Controller
         $request->image->move(storage_path('/app/public/news'), $imageName);
 
         $news->image=$imageName;
+
         $news->category_id=1;
-        $news->intro=$request->intro;
-        $news->body=$request->body;
-        $news->title=$request->title;
-        $news->dateline=$request->dateline;
-        $news->source_link=$request->source_link;
-        $news->source_name=$request->source_name;
+
+        $news=$request->all();
+
         $news->save();
         $message='Данные загружены';
         return redirect()->route('admin.news.create')->with('message', $message);
@@ -85,23 +83,21 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news= News::where('id', $id)->get();
+        $news= News::where('id', $id)->first();
         return view('admin.news.single_edit', compact('news'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  NewsRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {  $news=News::where('id', $id)->first();
+    public function update(NewsRequest $request, $id)
+    { $validatedData = $request->validated();
+         $news=News::where('id', $id)->first();
 
-        // $request->validate([
-        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        // ]);
   if ($request->hasFile('image')) {
       $imageName = time().'.'.$request->image->extension();
       // time().'.'.$request->image->extension();

@@ -13,7 +13,7 @@ class NewsController extends Controller
 
     $news = News::orderBy('dateline', 'desc')->paginate(7);
     $new = News::find(1)->first();
-    $page=Page::where('laravel_name', 'news')->first();
+    $page=Page::where('laravel_name', 'news')->IsPublished()->first();
     $category= $new->category;
     return view('news.news', compact('news', 'category', 'page'));
 
@@ -22,7 +22,7 @@ class NewsController extends Controller
     public function showByCategoryId($id){
         $category = Category::where('name', 'migration-news')->first();
         $item = $category->news->where('id', $id)->first();
-        $page=Page::where('laravel_name', 'news')->first();
+        $page=Page::where('laravel_name', 'news')->IsPublished()->first();
         return view('news.news_single', compact('item','category','page'));
     }
 

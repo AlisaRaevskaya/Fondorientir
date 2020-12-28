@@ -17,7 +17,7 @@
                         <i class="fas fa-table mr-1"></i>
                         CМИ о нас
                         <div class="text-center">
-                            <a href="{{ route('admin.press.create') }}" class="btn btn-default pull-right"><i
+                            <a href="{{ route('admin.press.create') }}" class="btn btn-outline-primary pull-right"><i
                                     class="fa fa-plus"></i>
                                 Добавить новость</a>
                         </div>

@@ -1,4 +1,4 @@
-@extends('layout',['seo' => 'Фонд Ориентир', 'page'=>'2'])
+{{-- @extends('layout',['seo' => 'Фонд Ориентир', 'page'=>'2'])
 
 @section('content')
     <div class="container">
@@ -82,4 +82,4 @@
             @include('layouts.sidebar')
         </div>
     </div>
-@endsection
+@endsection --}}

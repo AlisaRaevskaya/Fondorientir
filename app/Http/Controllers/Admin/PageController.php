@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\PageRequest;
+
 use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\Seo;
@@ -17,8 +20,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages= Seo::Join('pages', 'pages.id', '=', 'seos.page_id')->select('seos.description', 'seos.keywords', 'pages.content', 'pages.title', 'pages.id', 'pages.url', 'pages.created_at', 'pages.updated_at', 'pages.laravel_name')
-        ->orderBy('pages.id', 'asc')->paginate(15);
+        $pages=Page::orderBy('pages.id', 'asc')->paginate(15);
         return view('admin.pages.index', compact('pages'));
     }
    /**
@@ -34,14 +36,27 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     *  @param  PageRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PageRequest $request)
     {
+        $validatedData = $request->validated();
         $page = Page::add($request->all());
+        $id=$page->id;
+
+        $seo= new Seo;
+        $seo->seo_title =$request->seo_title;
+        $seo->name=$request->name;
+        $seo->description=$request->description;
+        $seo->keywords=$request->keywords;
+        $seo->og_title=$request->og_title;
+        $seo->og_description=$request->og_description;
+
+        $seo->page_id=$id;
+       $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.pages.create', $id)->with('message', $message);//
+        return redirect()->route('admin.pages.create', $id)->with('message', $message);
     }
 
     /**
@@ -90,8 +105,5 @@ class PageController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function choosePage(){
-        return view('admin.pages.choice');
     }
 }

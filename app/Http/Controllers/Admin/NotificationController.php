@@ -26,7 +26,6 @@ class NotificationController extends Controller
         $cat=MessageCategory::where('category', $category)->pluck('category_name')->first();
         $message->is_read=true;
         $message->save();
-
         return view('admin.messages.show', compact('message', 'cat'));
     }
 

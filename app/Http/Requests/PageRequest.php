@@ -26,13 +26,21 @@ class PageRequest extends FormRequest
     public function rules()
     {
         return [
-        'title' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я].*$/'],
-        'content' => ['required','min:2','max:255','email'],
-        'image' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
-        'published' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
-        'seo_title' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
-        'seo_name' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
-        '' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
+        'title' => ['required','min:2','max:255','string'],
+        'content' => ['required','min:2','max:65000'],
+        'published' => ['required','boolean'],
+        'parent_id' => ['nullable','numeric'],
+        'is_second_menu'=>['required','boolean'],
+        'is_menu'=>['required','boolean'],
+        'secondSort'=>['nullable','boolean'],
+        'sort_order'=>['nullable'],
+        'url'=>['unique:pages','required'],
+        'seo_title' => ['required','max:255'],
+        'seo_name' => ['nullable','max:255'],
+        'description' => ['nullable','max:255'],
+        'keywords'=> ['nullable','max:255'],
+        'og_title'=> ['nullable','max:255'],
+        'og_description'=> ['nullable','max:255'],
         ];
     }
 }

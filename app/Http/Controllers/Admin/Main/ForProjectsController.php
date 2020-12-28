@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Main;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 
 class ForProjectsController extends Controller
@@ -31,11 +33,11 @@ class ForProjectsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  ProjectRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(ProjectRequest $request)
+    { $validatedData = $request->validated();
        $project = Project::add($request->all());
        $id=$project->id;
        $message="Проект добавлен";

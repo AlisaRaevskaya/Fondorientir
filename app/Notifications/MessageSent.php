@@ -41,10 +41,6 @@ class MessageSent extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-         ->name($this->offerData['name'])
-            ->line($this->offerData['body'])
-            ->action($this->offerData['offerText'], $this->offerData['offerUrl'])
-            ->line($this->offerData['thanks']);
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');

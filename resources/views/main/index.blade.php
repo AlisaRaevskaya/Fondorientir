@@ -40,37 +40,34 @@
                             <div class="flex-row">
                                 @foreach ($news as $new)
                                     <div class="category_news_body" style="padding-left:10px;">
-                                        <div>
-                                            <div class="category_article_img">
-                                                <a href="{{ route('news_category.id', $new->id) }}" target="_self">
-                                                    <img class="img-responsive"
-                                                        src="{{ asset('storage/news/' . $new->image) }}"
-                                                        alt="{{ $new->image }}"></a>
-                                            </div>
-
-                                            <div class="category_article_title">
-                                                <h3>
-                                                    <a href="{{ route('news_category.id', $new->id) }}" target="_self">
-                                                        {!! $new->title !!}</a>
-                                                </h3>
-                                            </div>
-
-                                            <div>
-                                                {!! $new->cutDateline() !!}
-                                            </div>
-
-                                            @if ($new->intro)
-                                                <div class="">
-                                                    {!! $new->getMiniIntro() !!}
-                                                </div>
-                                            @endif
-
-                                            <div>
-                                                <h6><a
-                                                        href="{{ route('news_category.id', [$category->name, $new->id]) }}">Подробнее>></a>
-                                                </h6>
-                                            </div>
+                                        <div class="category_article_img">
+                                            <a href="{{ route('news_category.id', $new->id) }}" target="_self">
+                                                <img class="img-responsive" style="max-width:400px;max-height:250px;"
+                                                    src="{{ asset('storage/news/' . $new->image) }}"
+                                                    alt="{{ $new->image }}"></a>
                                         </div>
+                                        <div class="category_article_title">
+                                            <h3>
+                                                <a href="{{ route('news_category.id', $new->id) }}" target="_self">
+                                                    {!! $new->title !!}</a>
+                                            </h3>
+                                        </div>
+                                        <div>
+                                            {!! $new->cutDateline() !!}
+                                        </div>
+
+                                        @if ($new->intro)
+                                            <div class="">
+                                                {!! $new->getMiniIntro() !!}
+                                            </div>
+                                        @endif
+
+                                        <div>
+                                            <h6><a
+                                                    href="{{ route('news_category.id', [$category->name, $new->id]) }}">Подробнее>></a>
+                                            </h6>
+                                        </div>
+
                                     </div>
                                 @endforeach
                             </div>

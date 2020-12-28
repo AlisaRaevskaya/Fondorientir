@@ -17,7 +17,7 @@ use App\Http\Requests\ProblemRequest;
 // use App\Notifications\MessageSent;
 
 use App\Models\Message;
-
+use App\Models\MessageCategory;
 use App\Mail\Submail;
 use App\Mail\FormMail;
 use Illuminate\Support\Facades\Mail;
@@ -42,8 +42,11 @@ class AjaxController extends Controller
         $data->message = $req->input('message');
         $data->message_category_id = 1;
         $data->save();
+         $category=MessageCategory::where('id', 1)->pluck('category_name');
+    //     Mail::send('email.message_mail', ['category'=>$category[0]], function($message){
+    // $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');});
 
-        Mail::to($req->input('email'))->send(new SubMail());
+        // Mail::to($req->input('email'))->send(new SubMail());
 
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
@@ -58,9 +61,7 @@ class AjaxController extends Controller
     public function saveLawQuestionSidebar(LawQuestionSidebarRequest $req)
     {
         $validatedData = $req->validated();
-
         $data = new Message;
-
         $category=$req->input('category');
         $data->name=$req->input('name');
         $data->email = $req->input('email');
@@ -69,7 +70,9 @@ class AjaxController extends Controller
         $data->message_category_id = 1;
         $data->save();
 
-        Mail::to('vindicta90@mail.ru')->send(new FormMail($category));
+        // Mail::to('vindicta90@mail.ru')->send(new FormMail($category));
+        Mail::send('email.message_mail', ['category'=>$category], function($message){
+    $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');});
 
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
@@ -98,8 +101,10 @@ class AjaxController extends Controller
 
         $data->save();
 
-        Mail::to($req->input('email'))->send(new SubMail());
-
+        // Mail::to($req->input('email'))->send(new SubMail());
+ $category=MessageCategory::where('id', 2)->pluck('category_name');
+        Mail::send('email.message_mail', ['category'=>$category[0]], function($message){
+    $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');});
         return response()->json(['success'=>'Ваша заявка отправлена, В ближайшее время с Вами свяжется наш специалист.']);
     }
     /**
@@ -117,8 +122,10 @@ class AjaxController extends Controller
 
         $data->save();
 
-         Mail::to($req->input('email'))->send(new SubMail());
-
+        //  Mail::to($req->input('email'))->send(new SubMail());
+ $category=MessageCategory::where('id', 3)->pluck('category_name');
+        Mail::send('email.message_mail', ['category'=>$category[0]], function($message){
+    $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');});
         return response()->json(['success'=>'Данные успешно отправлены']);
     }
     /**
@@ -138,9 +145,12 @@ class AjaxController extends Controller
         $data->email = $req->input('email');
         $data->phone = $req->input('phone');
         $data->message = $req->input('message');
-
         $data->save();
-        Mail::to($req->input('email'))->send(new SubMail());
+
+         $category=MessageCategory::where('id', 4)->pluck('category_name');
+        Mail::send('email.message_mail', ['category'=>$category[0]], function($message){
+    $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');});
+        // Mail::to($req->input('email'))->send(new SubMail());
         return response()->json(['success'=>'Ваша заявка принята!Наш специалист свяжется с вами в ближайшее время.']);
     }
 
@@ -161,8 +171,9 @@ class AjaxController extends Controller
         $data->message = $req->input('message');
         $data->message_category_id = 5;
         $data->save();
-
-        Mail::to($req->input('email'))->send(new SubMail());
+ $category=MessageCategory::where('id', 5)->pluck('category_name');
+        Mail::send('email.message_mail', ['category'=>$category[0]], function($message){
+    $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');});
         return response()->json(['success'=>"Ваша заявка принята!"]);
     }
    /**
@@ -180,19 +191,10 @@ class AjaxController extends Controller
         $data->phone = $req->input('phone');
         $data->message_category_id = 6;
         $data->save();
+        $category=MessageCategory::where('id', 6)->pluck('category_name');
+        Mail::send('email.message_mail', ['category'=>$category[0]], function($message){
+    $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');});
         return response()->json(['success'=>"Ваша заявка принята.Ждите звонка."]);
     }
 
-    // public function saveSubscription(Request $req)
-    // {
-    //     $data = new Subscription();
-
-    //     $data->email = $req->input('email');
-
-    //     $data->save();
-
-    //     // Mail::to($data->email)->send(new SubMail);
-
-    //     return response()->json(['success'=>'Данные успешно отправлены']);
-    // }
 }

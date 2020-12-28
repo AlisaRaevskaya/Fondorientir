@@ -26,9 +26,9 @@
                                 <div class="col-md-6">
 
                                     <div class="entity_title">
-                                        <h1><a href="{{ route('news_category.id', $item->id) }}">
+                                        <h5><a href="{{ route('news_category.id', $item->id) }}">
                                                 {{ $item->title }}</a>
-                                        </h1>
+                                        </h5>
                                     </div>
 
                                     <div class="entity_meta">

@@ -41,7 +41,7 @@
                 </div>
 
 
-                <a class="nav-link" href="{{ route('admin.choose.page') }}">
+                <a class="nav-link" href="{{ route('admin.pages.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Страницы
                 </a>
@@ -72,25 +72,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-star"></i></div>
                     Информация о компании
                 </a>
-
-                <div class="sb-sidenav-menu-heading">Данные</div>
-                <a class="nav-link" href="charts.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Импорт данных
-                </a>
-                <a class="nav-link" href="charts.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Экспорт данных
-                </a>
-                <a class="nav-link" href="tables.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Статистика
-                </a>
             </div>
         </div>
-        {{-- <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
-        </div> --}}
     </nav>
 </div>

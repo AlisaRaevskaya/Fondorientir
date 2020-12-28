@@ -18,7 +18,7 @@
                         <i class="fas fa-table mr-1"></i>
                         Новости
                         <div class="text-center">
-                            <a href="{{ route('admin.news.create') }}" class="btn btn-default pull-right"><i
+                            <a href="{{ route('admin.news.create') }}" class="btn btn-outline-primary pull-right"><i
                                     class="fa fa-plus"></i>
                                 Добавить новость</a>
                         </div>
@@ -31,11 +31,12 @@
                                     cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th><i class="fa fa-fw fa-sort"></i>ID</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Название</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Intro</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Дата создания</th>
-                                            <th><i class="fa fa-fw fa-sort"></i>Дата изменения</th>
+                                            <th>ID</th>
+                                            <th>Название</th>
+                                            {{-- <th>Intro</th>
+                                            --}}
+                                            <th>Дата публикации</th>
+                                            <th>Дата изменения</th>
                                             <th>Редактировать</th>
                                             <th>Удалить</th>
 
@@ -45,9 +46,10 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Название</th>
-                                            <th>Intro</th>
+                                            {{-- <th>Intro</th>
+                                            --}}
                                             <th>Дата создания</th>
-                                            <th>Дата изменения</th>
+                                            <th>Дата публикации</th>
                                             <th>Редактировать</th>
                                             <th>Удалить</th>
 
@@ -58,7 +60,9 @@
                                             <tr>
                                                 <td>{{ $new->id }}</td>
                                                 <td>{!! $new->title !!}</td>
-                                                <td>{!! $new->intro !!}</td>
+                                                {{-- <td style="word-break:break-word;">{!!
+                                                    $new->intro !!}
+                                                </td> --}}
                                                 <td>{!! $new->dateline !!}</td>
                                                 <td>{!! $new->updated_at !!}</td>
                                                 <td>

@@ -8,7 +8,7 @@ use App\Models\Page;
 use App\Models\File;
 use App\Models\Seo;
 
-class RemindersController extends Controller
+class UsefulContactsController extends Controller
 {
     /**
      * Display a listing of the resource.

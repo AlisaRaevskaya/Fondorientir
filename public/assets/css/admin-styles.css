@@ -10251,3 +10251,12 @@ body {
 max-width:1300px;
 margin:0 auto;
 }
+.pt10{
+    padding-top:10px
+}
+.ml1{
+    margin-left:2rem;
+}
+.mb50{
+    margin-bottom:50px;
+}

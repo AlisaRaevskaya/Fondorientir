@@ -20,11 +20,10 @@ $("#btn_call").on("click", function () {
     data: user_data,
     // после получения ответа сервера
     success: function (response) {
-        if (response){
+        if (response.success) {
             $(".success_call").html(response.success);
             setTimeout(() => {
               $('form[name="callForm"]').trigger("reset");
-            //   $("#callModalLong").modal('fadeOut');
             }, 1000);
 
           }else{

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\FAQ;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 use App\Http\Requests\FaqRequest;
 use App\Models\Topic;
 use App\Models\Seo;
@@ -36,15 +38,15 @@ class ForFaqController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  FaqRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(FaqRequest $request)
+
     {   $validatedData = $request->validated();
-        $reply_id= 33;
         $topic =Topic::add($request->all());
         $message="Новый ответ создан";
-        return redirect()->route('admin.faq.edit', 13)->with('message', $message);//
+        return redirect()->route('admin.faq.edit', 13)->with('message', $message);
     }
 
     /**
@@ -55,9 +57,9 @@ class ForFaqController extends Controller
      */
     public function show($id)
     {
-        $reply=Topic::find($id);
+        $topic=Topic::find($id);
 
-        return view('admin.faq.reply_show' , compact('reply', 'topic'));
+        return view('admin.faq.reply_show' , compact('topic'));
     }
 
     /**
@@ -68,8 +70,8 @@ class ForFaqController extends Controller
      */
     public function edit($id)
     {
-        $reply=Topic::find($id);
-        return view('admin.faq.reply_edit', compact('topic','reply'));
+        $topic=Topic::find($id);
+        return view('admin.faq.reply_edit', compact('topic'));
     }
 
     /**
@@ -82,7 +84,6 @@ class ForFaqController extends Controller
     public function update(Request $request, $id)
     {
         $topic= Topic::find($id);
-
         $topic->edit($request->all());
        $message="Данные успешно сохранены";
        return redirect()->route('admin.faq-page.edit', $topic->id)->with('message', $message);
@@ -96,8 +97,9 @@ class ForFaqController extends Controller
      */
     public function destroy($id)
     {
-    $topic = Topic::find($id);
+    $topic = Topic::findOrFail($id);
     $topic->delete();
-    return redirect()->route('admin.faq.edit');
+    $message="Вопрос удален";
+    return redirect()->route('admin.faq.edit', 6)->with('message', $message);;
     }
 }

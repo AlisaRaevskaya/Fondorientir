@@ -6,10 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\News;
-use App\Models\Reply;
 use App\Models\Topic;
 use App\Models\Seo;
-use App\Models\PreProject;
 use App\Models\Projects;
 
 

@@ -66,7 +66,9 @@ class Message extends Model
     public function getMiniContent(){
         return Str::substr($this->message, 0, 80) . "...";
     }
-
+    public function setPhoneAttribute($value){
+        $this->attributes['phone'] = Str::of($value)->trim();
+    }
      public static function add($fields)
     {
         $pages= new static;

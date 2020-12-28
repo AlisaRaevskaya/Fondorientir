@@ -35,7 +35,6 @@
                         <input type="text" class="form-control" placeholder="Ваш номер телефона для связи" name="phone">
                         <span class="text-danger" id="phoneError"></span>
                     </div>
-
                     <div class="form-group">
                         <input type="hidden" name="category" id="hidden_input">
                     </div>

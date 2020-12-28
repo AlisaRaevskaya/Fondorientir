@@ -9,7 +9,7 @@ use App\Models\Contact;
 class ContactsController extends Controller
 {
     public function index(){
-        $page= Page::where('laravel_name', 'contacts')->first();
+        $page= Page::where('laravel_name', 'contacts')->IsPublished()->first();
         $info=Contact::all();
         return view('contacts', compact('page', 'info'));
     }

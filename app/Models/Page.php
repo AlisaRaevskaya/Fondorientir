@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class Page extends Model
 {
     protected $fillable = [
-        'title','content','url','content', 'is_menu', 'published'];
+        'title','content','url','content', 'is_menu', 'published','is_second_menu','secondSort'];
     protected $table = 'pages';
 
 
@@ -46,6 +46,8 @@ class Page extends Model
 
         return $query;
     }
+
+
     public function scopeIsMenu($query)
     {
         return $query->where('is_menu', true);
@@ -54,6 +56,14 @@ class Page extends Model
     {
         return $query->where('is_second_menu', true);
     }
+
+//  public function buildSecondMenu($query)
+//     { $arr =[];
+// $query->where('laravel_name', );
+
+//         return $items->where('parent_id', null);
+//     }
+
 
     public function setContentAttribute($value)
     {

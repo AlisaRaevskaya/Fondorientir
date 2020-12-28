@@ -78,9 +78,10 @@
                                                     </th>
                                                 </tr>
                                                 <tr>
-                                                    <td scope="col">Телефон</td>
+                                                    <td scope="col">Телефоны</td>
                                                     <th>
                                                         <p>{{ $contact->phone }}</p>
+                                                        <p>{{ $contact->phone2 }}</p>
                                                     </th>
                                                 </tr>
                                                 <tr>
@@ -103,15 +104,12 @@
                                                 </tr>
                                                 <tr>
                                                     <td scope="col">Лого</td>
-                                                    <th><img src="/assets/images/{{ $contact->logo }}" alt="Logo"></th>
+                                                    <th><img src="/storage/{{ $contact->logo }}" alt="Logo">
+                                                        <img src="/storage/{{ $contact->logo2 }}" alt="Logo2">
+                                                    </th>
                                                 </tr>
                                             </tbody>
                                         </table>
-
-                                        <div class="pull-left"><a href="{{ url()->previous() }}"
-                                                class="btn btn-default pull-left"><i class="fas fa-caret-left"></i>
-                                                Назад</a>
-                                        </div>
                                         <div class="">
                                             <a href="{{ route('admin.company-info.edit', $contact->id) }}"
                                                 class="btn btn-primary pull-right"><i class="far fa-edit"></i>

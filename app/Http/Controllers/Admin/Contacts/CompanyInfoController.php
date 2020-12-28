@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Contacts;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ContactsRequest;
 use App\Models\Pages;
 use App\Models\Contact;
 
@@ -67,13 +69,14 @@ class CompanyInfoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  ContactsRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ContactsRequest $request, $id)
     {
-       $contact = Contact::findOrFail($id);
+    $validatedData = $request->validated();
+    $contact = Contact::findOrFail($id);
 
     $contact->edit($request->all());
 

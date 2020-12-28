@@ -4,32 +4,30 @@
         <div class="col-md-12" style="margin:0 auto;">
 
             <div class="m30">
-                <div class="row">
-                    <div class="partner_item col-md-2">
-
+                <div class="partners_flex">
+                    <div class="partner_item flex-2">
                         <div class="part_img">
                             <img src="/assets/images/footer/kadastr.jpg" alt="kadastrovaya_palata">
                         </div>
                         <p style="padding-top:10px;">Кадастровая палата</p>
                     </div>
 
-                    <div class="partner_item col-md-2">
-
+                    <div class="partner_item flex-2">
                         <div class="part_img">
                             <img src="/assets/images/footer/nalogovaya.jpg" alt="nalogovaya" class="rounded-circle">
                         </div>
                         <p style="padding-top:10px;">Федеральная налоговая служба</p>
                     </div>
 
-                    <div class="partner_item col-md-2">
+                    <div class="partner_item flex-2">
 
-                        <div class="part_img">
+                        <div class="part_img flex-2">
                             <img src="/assets/images/footer/pristavy.jpg" alt="pristavy">
                         </div>
                         <p style="padding-top:10px;">Служба судебных приставов</p>
                     </div>
 
-                    <div class="partner_item col-md-3">
+                    <div class="partner_item flex-2">
 
                         <div class="part_img">
                             <img src="/assets/images/footer/potrebitel.jpg" alt="potrebitel_service">
@@ -37,7 +35,7 @@
                         <p style="padding-top:10px;"> Федеральная служба защиты прав потребителей</p>
                     </div>
 
-                    <div class="partner_item col-md-2">
+                    <div class="partner_item flex-2">
                         <div>
                             <img src="/assets/images/footer/rossotrudnichestvo.png" alt="rossotrudnichestvo">
                         </div>
@@ -45,20 +43,20 @@
                     </div>
                 </div>
 
-                <div class="footer_partners_2 flex-row m30">
+                <div class="footer_partners_2 m30">
                     <div class="col-md-1"></div>
-                    <div class="col-md-4 footer_partners_2_item">
+                    <div class="col-md-3 footer_partners_2_item">
                         <div>
-                            <img style="margin:0 auto" src="{{ asset('storage/footer/fadn2.png') }}" alt="fadn.png"
-                                class="img-responsive">
+                            <img src="{{ asset('storage/footer/fadn.jpg') }}" alt="fadn.png"
+                                class="img-responsive footer_partners_2_item_img">
                         </div>
                         <p style="padding-top:10px;"> Федеральное агентство по делам национальностей</p>
                     </div>
 
-                    <div class="col-md-4 footer_partners_2_item">
+                    <div class="col-md-3 footer_partners_2_item">
                         <div>
-                            <img style="margin:0 auto" src="{{ asset('storage/footer/rosteh.jpg') }}" alt="rostehnadzor"
-                                class="img-responsive">
+                            <img src="{{ asset('storage/footer/rosteh1.jpg') }}" alt="rostehnadzor"
+                                class="img-responsive footer_partners_2_item_img">
                         </div>
                         <p style="padding-top:10px;">
                             Федеральная служба по экологическому,<br>

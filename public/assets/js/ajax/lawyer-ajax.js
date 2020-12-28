@@ -19,6 +19,8 @@ $("#lawyer-btn").on("click", function(event) {
          $('#law-success').html(response.success);
         setTimeout(() => {
           $('form[name="lawyerForm"]').trigger("reset");
+           $('#law-success').html('');
+           $("span").html('');
         }, 2000);
       }else{
         $("#nameError").text(response.errors.name);

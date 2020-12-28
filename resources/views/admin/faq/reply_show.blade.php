@@ -46,7 +46,7 @@
                                         <tr>
                                             <td scope="col">Ответ</td>
                                             <th>
-                                                {!! $reply->body !!}
+                                                {!! $topic->body !!}
                                             </th>
                                         </tr>
                                     </tbody>

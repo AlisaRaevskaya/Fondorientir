@@ -5,7 +5,7 @@
                 <div class="left_section col-md-5" style="padding:0;">
                     <div style="display:flex;justify-content:center">
                         <div class="text-center logo" style="position:relative;">
-                            <a href="{{ route('second_main') }}"><img src="{{ asset('/storage/logo2.png') }}" alt="Logo"
+                            <a href="{{ route('second_main') }}"><img src="/storage/{{ $contact->logo2 }}" alt="Logo"
                                     class="img-responsive"></a>
                         </div>
                         <div class="text-center" id="second_logo_name">

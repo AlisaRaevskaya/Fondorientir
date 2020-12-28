@@ -67,7 +67,7 @@ Route::get('/info-center/blanks', [InfoController::class, 'blanks'])->name('blan
 Route::get('/info-center/bankofdocuments', [InfoController::class, 'bankofdocuments'])->name('bankdocuments');
 Route::get('/info-center/testirovanie-trudovyh-migrantov',[InfoController::class, 'testmaterial'])->name('testmaterial');
 Route::get('/info-center/brochures', [InfoController::class, 'brochures'])->name('brochures');
-Route::get('/info-center/reminder', [InfoController::class, 'reminder'])->name('reminder');
+Route::get('/info-center/useful_contacts', [InfoController::class, 'usefulContacts'])->name('useful_contacts');
 
 
 Route::get('/info-center/useful-info/migrationnaya-karta', [UsefulInfoController::class, 'migrationCart'])->name('info-1');
@@ -83,11 +83,10 @@ Route::get('/info-center/useful-info/trudovoy-patent-medical-commission', [Usefu
 Route::get('/info-center/useful-info/razreshenie-na-raboty', [UsefulInfoController::class, 'razreshenie'])->name('info-5');
 Route::get('/info-center/useful-info/razreshenie-na-raboty-vks', [UsefulInfoController::class, 'vksRabota'])->name('info-5-1');
 Route::get('/info-center/useful-info/razreshenie-na-zhitelstvo-vks', [UsefulInfoController::class, 'vksZhitelstvo'])->name('info-5-2');
-Route::get('/info-center/useful-info/razreshenie-comission', [UsefulInfoController::class, 'commission'])->name('info-5-3');
-
+Route::get('/info-center/useful-info/razreshenie-medical-comission', [UsefulInfoController::class, 'commission'])->name('info-5-3');
 Route::get('/info-center/useful-info/razresheniye-na-rabotu-testirovaniye', [UsefulInfoController::class, 'rabotaTest'])->name('info-7-5');
-Route::get('/info-center/useful-info/razresheniye-comissiya', [UsefulInfoController::class, 'razreshenieComission'])->name('info-7-6');
-Route::get('/info-center/useful-info/razresheniye-rvp_podtverzhdeniye', [UsefulInfoController::class, 'rvpConfirm'])->name('info-7-1');
+Route::get('/info-center/useful-info/razresheniye-na-raboty-medical-comission', [UsefulInfoController::class, 'razreshenieComission'])->name('info-7-6');
+Route::get('/info-center/useful-info/rvp-podtverzhdeniye', [UsefulInfoController::class, 'rvpConfirm'])->name('info-7-1');
 Route::get('/info-center/useful-info/vid-na-zhitelstvo', [UsefulInfoController::class, 'vid'])->name('info-7-2');
 Route::get('/info-center/useful-info/vid-na-zhitelstvo-podtverzhdenie', [UsefulInfoController::class, 'vidConfirm'])->name('info-7-3');
 Route::get('/info-center/useful-info/razresheniye-rvp', [UsefulInfoController::class, 'rvp'])->name('info-7');
@@ -126,7 +125,6 @@ Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'recept
 Route::get('/center-podderzhki/faq', [SecondSiteController::class, 'faq'])->name('second.faq');
 Route::get('/center-podderzhki/faq/{id}', [SecondSiteController::class, 'faqSingle'])->name('second.faq.single');
 Route::get('/center-podderzhki/lawyer', [SecondSiteController::class, 'lawyer'])->name('second.lawyer');
-Route::get('/center-podderzhki/problem', [SecondSiteController::class, 'problem'])->name('second.problem');
 Route::get('/center-podderzhki/hotline', [SecondSiteController::class, 'hotline'])->name('second.hotline');
 
 
@@ -138,10 +136,8 @@ Route::view('/inbox','admin.mail.mail');
 Route::view('/read','admin.mail.read_mail');
 Route::view('/compose','admin.mail.compose');
 
-Route::get('/add-news', [ UploadController::class, 'newsadd' ])->name('newsadd');
-Route::get('/upload/{id}', [ UploadController::class, 'imageUpload' ])->name('image.upload');
-Route::post('/store/{id}', [ UploadController::class, 'imageStorePost' ])->name('image.store.post');
-
+// Route::get('/upload/{id}', [ UploadController::class, 'imageUpload' ])->name('image.upload');
+// Route::post('/store/{id}', [ UploadController::class, 'imageStorePost' ])->name('image.store.post');
 Route::put('/uploadImage/{id}', [ UploadController::class, 'summerUpload' ])->name('summer_upload');
 Route::put('/uploadNewsImage', [ UploadController::class, 'imageNewsStore' ])->name('image.news.store');
 
@@ -176,14 +172,12 @@ Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankInfoControlle
 
 Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
 Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');
-Route::resource('reminder', '\App\Http\Controllers\Admin\Info\RemindersController');
+Route::resource('useful-contacts', '\App\Http\Controllers\Admin\Info\UsefulContactsController');
 Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialController');
 Route::resource('useful-info', '\App\Http\Controllers\Admin\Info\InfoController');
 Route::resource('bankdocuments', '\App\Http\Controllers\Admin\Info\BankdocumentsController');
 
 Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
-
-
 
 Route::resource('/lawyer', '\App\Http\Controllers\Admin\Reception\LawyerController');
 Route::resource('/problem', '\App\Http\Controllers\Admin\Reception\ProblemController');
@@ -193,8 +187,7 @@ Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineContro
 Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
 Route::resource('/feedback-call', '\App\Http\Controllers\Admin\FeedbackCallController');
 Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
-Route::resource('/secondmenu', '\App\Http\Controllers\Admin\SecondMenuController');
-Route::get('/pages-choice', [PageController::class, 'choosePage'])->name('choose.page');
+
 
 Route::get('/notifications/all',[NotificationController::class, 'showAll'])->name('notices.all');
 Route::get('/notifications/{category}', [NotificationController::class, 'index'])->where('category', '[a-z]+')->name('notice');

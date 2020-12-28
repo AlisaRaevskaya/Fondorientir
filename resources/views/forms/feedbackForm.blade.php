@@ -41,7 +41,7 @@
         <div class="col-xs-9">
             <input type="tel" required class="form-control" id="phoneNumber" name="phone"
                 placeholder="Введите номер телефона">
-            <span class="text-danger" id="phoneError"></span>
+            <span class="text-danger phoneError"></span>
         </div>
     </div>
     <div class="form-group">

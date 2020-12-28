@@ -10,7 +10,7 @@
                         <div class="row mb-2">
                             <div>
                                 <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{route('admin.pages.index')}}">Страницы</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
                                     <li class="breadcrumb-item active">{{ $page->title }}</li>
                                 </ol>
                             </div>
@@ -112,7 +112,7 @@
                                                         {{ Form::label('name', 'Название (для для админки)') }}
                                                         {{ Form::text('name', $seo->name, ['class' => 'form-control required m30']) }}
                                                     </div>
-                                                   <div class="form-group">
+                                                    <div class="form-group">
                                                         {{ Form::label('seo_title', 'Title') }}
                                                         {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control']) }}
                                                         <i>Заголовок конкретной страницы</i>
@@ -147,7 +147,7 @@
                                                         </div>
                                                     @endif
                                                     <div><a href="{{ url()->previous() }}"
-                                                                class="btn btn-secondary">Назад</a></div>
+                                                            class="btn btn-secondary">Назад</a></div>
                                                     {{ Form::close() }}
                                                 </div>
                                             </div>

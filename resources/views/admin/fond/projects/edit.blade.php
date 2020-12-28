@@ -3,13 +3,13 @@
 
     <div id="layoutSidenav_content">
         <main>
-            <div class="content-wrapper admin-container" style="margin-bottom:50px;">
+            <div class="content-wrapper admin-container mb50">
                 <!-- Content Header (Page header) -->
-                <section class="content-header" style="padding-top:10px;">
+                <section class="content-header pt10">
                     <div class="container-fluid">
                         <div class="row mb-2">
-                            <div class="col-md-1"></div>
-                            <div class="col-sm-12 col-md-10">
+
+                            <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right ">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
                                     <li class="breadcrumb-item active">{{ $page->title }}</li>
@@ -22,8 +22,7 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-10">
+                        <div class="col-md-11 ml1">
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -48,57 +47,90 @@
                                     <div class="box tab-content">
 
                                         <div class="box-header with-border">
-                                            {{-- @include('admin.errors')
-                                            --}}
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
                                         </div>
+
                                         <div class="box-body tab-pane" id="content">
-                                            <div class="" style="margin-top:15px;">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-10">
-                                                    {{ Form::open(['route' => ['admin.projects.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
+                                            <div class="pt10">
+                                                <div class="col-md-11">
+                                                    {{ Form::open(['route' => ['admin.partners.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
                                                     <div class="form-group">
                                                         {{ Form::label('title', 'Название') }}
                                                         {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('published', 'Опубликована') }}
-                                                        {{ Form::select('published', [0 => 'Нет', 1 => 'Да'], $page->published) }}
-                                                    </div>
-                                                    <div class="form-group">
-                                                        {{ Form::label('is_menu', 'Добавить в меню') }}
-                                                        {{ Form::select('is_menu', [0 => 'Нет', 1 => 'Да'], $page->is_menu) }}
+                                                        {{ Form::label('content', 'Текст') }}
+                                                        {{ Form::textArea('content', $page->content, ['class' => 'form-control summernote']) }}
                                                     </div>
 
                                                     <div class="form-group">
                                                         <p style="color: tomato;">В URL могут присутствовать только буквы и
-                                                            цифры
-                                                            латинского алфавита пробелы замените на "_" нижнее подчеркивание
-                                                            или
-                                                            "-"
-                                                            тире.
-                                                            <br>Знаки препинания должны отсутствовать.Пример:
+                                                            цифры латинского алфавита. Пробелы замените на "_" нижнее
+                                                            подчеркивание или
+                                                            "-" тире.Знаки препинания должны отсутствовать.Пример:
                                                             while-we-put-off-life-it-passes
                                                         </p>
                                                         {{ Form::label('url', 'URL') }}
                                                         {{ Form::text('url', $page->url, ['class' => 'form-control']) }}
                                                     </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                {{ Form::label('published', 'Опубликована') }}
+                                                                {{ Form::select('published', [0 => 'Нет', 1 => 'Да'], $page->published) }}
+                                                            </div>
+                                                            <div class="form-group">
+                                                                {{ Form::label('is_menu', 'Добавить в меню') }}
+                                                                {{ Form::select('is_menu', [0 => 'Нет', 1 => 'Да'], $page->is_menu) }}
+                                                            </div>
+                                                            <div class="form-group">
+                                                                {{ Form::label('parent_id', 'Добавить в категорию меню') }}
+                                                                {{ Form::select('parent_id', ['0' => '', '2' => 'Фонд', '3' => 'Центр Поддержки', '4' => 'Новости', '5' => 'Пресса', '6' => 'Инфоцентр'], $page->parent_id) }}
+                                                            </div>
+                                                            <div class="form-group">
+                                                                {{ Form::label('sort_order', 'Сортировка') }}
+                                                                {{ Form::text('sort_order', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:5px;'], $page->sort_order) }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                {{ Form::label('is_second_menu', 'Добавить в меню "Центр Поддежки"') }}
+                                                                {{ Form::select('is_second_menu', [0 => 'Нет', 1 => 'Да'], $page->is_second_menu) }}
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                {{ Form::label('SecondSort', 'Сортировка в меню "Центр Поддежки" ') }}
+                                                                {{ Form::text('SecondSort', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                     @if (session()->has('message'))
                                                         <div class="alert alert-success">
                                                             {{ session()->get('message') }}
                                                         </div>
                                                     @endif
                                                     <div class="box-footer">
-                                                        <div>
-                                                            <a href="{{ url()->previous() }}" class="btn btn-default "><i
-                                                                    class="fas fa-caret-left"></i> Назад</a>
+                                                        <div class="buttons">
+                                                            <a href="{{ route('admin.pages.index') }}"
+                                                                class="btn btn-outline-secondary"><i
+                                                                    class="fas fa-caret-left">
+                                                                </i>Назад</a>
 
-                                                            <button class="btn btn-primary pull-right ml20"><i
-                                                                    class="fas fa-save"></i>
+                                                            <button class="btn btn-primary pull-right"
+                                                                style="margin-left:20px;"><i class="fas fa-save"></i>
                                                                 Сохранить</button>
 
-                                                            <a href="{{ route('admin.projects.show', $page->id) }}"
-                                                                class="btn btn-warning pull-right"> <i
-                                                                    class="fas fa-folder">
+                                                            <a href="{{ route('admin.main.show', $page->id) }}"
+                                                                class="btn btn-warning pull-right">
+                                                                <i class="fas fa-folder">
                                                                 </i> Просмотр</a>
                                                         </div>
                                                     </div>
@@ -106,17 +138,16 @@
                                             </div>
                                         </div>
 
-                                        <div class="box-body tab-pane " id="seo">
-                                            <div style="margin-top:15px;">
-                                                <div class="col-md-1"></div>
-                                                <div class="col-md-10">
+                                        <div class="box-body tab-pane" id="seo">
+                                            <div class="pt10">
+                                                <div class="col-md-11">
                                                     <div class="form-group">
                                                         {{ Form::label('name', 'Название (для админки)') }}
                                                         {{ Form::text('name', $seo->name, ['class' => 'form-control required m30']) }}
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('seo_title', 'Title') }}
-                                                        {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control']) }}
+                                                        {{ Form::label('title', 'Title') }}
+                                                        {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control required']) }}
                                                         <i>Заголовок конкретной страницы</i>
                                                     </div>
                                                     <div class="form-group required">
@@ -141,15 +172,6 @@
                                                         {{ Form::textArea('og_description', htmlspecialchars_decode($seo->og_description, ENT_QUOTES), ['class' => 'form-control']) }}
                                                         <i>краткое описание страницы длиной не более 300 символов.</i>
                                                         <i></i>
-                                                    </div>
-
-                                                    @if (session()->has('seo_message'))
-                                                        <div class="alert alert-success">
-                                                            {{ session()->get('seo_message') }}
-                                                        </div>
-                                                    @endif
-                                                    <div><a href="{{ url()->previous() }}" class="btn btn-default "><i
-                                                                class="fas fa-caret-left"></i> Назад</a>
                                                     </div>
                                                     {{ Form::close() }}
                                                 </div>
@@ -184,14 +206,13 @@
                                                                         {!! $project->name !!}
                                                                     </td>
 
-                                                                    <td style="width:16.66%" ;>
+                                                                    <td style="width:10.66%;" class="text-center">
                                                                         <a href="{{ route('admin.forprojects.edit', $project->id) }}"
-                                                                            class="btn btn-info pull-right"
-                                                                            style="margin-left:20px;"><i
+                                                                            class="btn btn-primary pull-left"><i
                                                                                 class="fa fa-edit"></i>
                                                                             Редактировать</a>
                                                                     </td>
-                                                                    <td style="width:16.66%" ;>
+                                                                    <td style="width:10.66%">
                                                                         <form
                                                                             action="{{ route('admin.forprojects.destroy', $project->id) }}"
                                                                             method="post" class="text-center ull-right">
@@ -209,25 +230,24 @@
                                                         </tbody>
                                                     </table>
                                                     <div class="box-footer">
-                                                        <div class="">
-                                                            <a href="{{ url()->previous() }}" class="btn btn-default"><i
-                                                                    class="fas fa-caret-left"></i> Назад</a>
-                                                            <a href="{{ route('admin.forprojects.create') }}"
-                                                                class="btn btn-default pull-right"
-                                                                style="margin-left:20px;"><i class="fa fa-plus"></i>
-                                                                Добавить</a>
-                                                        </div>
+                                                        <a href="{{ route('admin.forprojects.create') }}"
+                                                            class="btn btn-default pull-right" style="margin-left:20px;"><i
+                                                                class="fa fa-plus"></i>
+                                                            Добавить</a>
+                                                        <a href="{{ url()->previous() }}" class="btn btn-default"><i
+                                                                class="fas fa-caret-left"></i> Назад</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> <!-- /.col-->
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
             </div>
-        </main>
+            </section>
+    </div>
+    </main>
     </div>
 @endsection

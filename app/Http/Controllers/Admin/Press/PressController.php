@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Press;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use App\Models\File;
 use App\Models\Category;
@@ -31,18 +33,15 @@ class PressController extends Controller
     {
         return view('admin.press.press.create');
     }
-
-    /**
+  /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+    *  @param  NewsRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
-       $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+       $validatedData = $request->validated();
 
         $news=new News();
 
@@ -52,17 +51,16 @@ class PressController extends Controller
         $request->image->move(storage_path('/app/public/news'), $imageName);
 
         $news->image=$imageName;
-        $news->category_id=3;
-        $news->intro=$request->intro;
-        $news->body=$request->body;
-        $news->title=$request->title;
-        $news->dateline=$request->dateline;
-        $news->source_link=$request->source_link;
-        $news->source_name=$request->source_name;
+
+        $news->category_id=1;
+
+        $news=$request->all();
         $news->save();
         $message='Данные загружены';
-        return redirect()->route('admin.news.create')->with('message', $message);
+        return redirect()->route('admin.press.create')->with('message', $message);
     }
+
+
 
     /**
      * Display the specified resource.
@@ -83,7 +81,7 @@ class PressController extends Controller
      */
     public function edit($id)
     {
-        $news= News::where('id', $id)->get();
+        $news= News::where('id', $id)->first();
         $images= File::find(1)->where('page_id', $id)->get();
         return view('admin.press.press.edit', compact('news', 'images'));
     }
@@ -97,10 +95,20 @@ class PressController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $news = News::findOrFail($id);
+
+        $news=News::where('id', $id)->first();
+
+  if ($request->hasFile('image')) {
+      $imageName = time().'.'.$request->image->extension();
+      // time().'.'.$request->image->extension();
+      $request->image->move(public_path('/storage/news'), $imageName);
+
+      // storage_path('/app/public/news'
+        $news->image= $imageName;
+  }
         $news->edit($request->all());
-        $message="Данные сохранены";
-        return redirect()->route('admin.press.press.edit', $id)->with('message', $message);
+        $message='Данные загружены';
+        return redirect()->route('admin.press.edit', $id)->with('message', $message);
     }
 
     /**

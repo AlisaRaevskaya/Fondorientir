@@ -12,7 +12,7 @@
                             <div class="col-sm-12 col-md-10">
                                 <ol class="breadcrumb float-sm-right ">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
-                                    <li class="breadcrumb-item active"><a href="{{ route('admin.faq.edit', 13) }}">К
+                                    <li class="breadcrumb-item active"><a href="{{ route('admin.faq.edit', 6) }}">К
                                             вопросам</a></li>
                                 </ol>
                             </div>
@@ -36,11 +36,19 @@
                                 <div class="card-body">
 
                                     <div class="box-header with-border">
-                                        {{-- @include('admin.errors')
-                                        --}}
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="box-body col-md-10">
                                         {{ Form::open(['route' => ['admin.faq-page.update', $topic->id], 'method' => 'PUT', 'files' => true]) }}
+                                        @csrf
                                         <div class="form-group">
                                             {{ Form::label('title', 'Название') }}
                                             {{ Form::text('title', $topic->title, ['class' => 'form-control required']) }}

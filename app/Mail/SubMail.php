@@ -10,6 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class SubMail extends Mailable
 {
     use Queueable, SerializesModels;
+    protected $category;
 
     /**
      * Create a new message instance.
@@ -18,7 +19,7 @@ class SubMail extends Mailable
      */
     public function __construct()
     {
-        //
+        $this->category = $category;
     }
 
     /**
@@ -28,6 +29,9 @@ class SubMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.subscribed');
+        return $this->markdown('email.subscribed')
+                    ->with([
+                        'category' => $this->category,
+                          ]);
     }
 }

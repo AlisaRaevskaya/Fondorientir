@@ -1,5 +1,6 @@
 @extends('admin.layout')
 @section('content')
+
     <div class="content-wrapper container">
         <!-- Content Header (Page header) -->
         @foreach ($news as $item)

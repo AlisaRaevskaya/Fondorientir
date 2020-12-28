@@ -67,10 +67,11 @@ class News extends Model
     {
         return htmlspecialchars_decode($value, ENT_HTML5);
     }
-    // public function setTitleAttribute($value)
-    // {
-    //     $this->attributes['title'] = htmlspecialchars($value, ENT_HTML5);
-    // }
+
+    public function getIntroAttribute($value)
+    {
+        return htmlspecialchars_decode($value, ENT_HTML5);
+    }
 
     public function getTitleAttribute($value)
     {

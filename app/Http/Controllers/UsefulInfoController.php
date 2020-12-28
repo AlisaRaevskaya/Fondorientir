@@ -6,166 +6,159 @@ use Illuminate\Http\Request;
 
 class UsefulInfoController extends Controller
 {
-
-    public function medpatent()
-    {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-14', compact('page'));
-    }
     public function rvp()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-7', compact('page'));
+        $page= Page::where('id', 52)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
-
 
     public function grazhdanstvo()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-8-1', compact('page'));
+        $page= Page::where('id', 53)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function snyatiye()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-6', compact('page'));
+        $page= Page::where('id', 61)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
-    public function snyatie()
-    {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-13', compact('page'));
-    }
+    // public function snyatie()
+    // {
+    //     $page= Page::where('id', 'Снятие запрета на въезд')->IsPublished()->first();
+    //     return view('useful.info', compact('page'));
+    // }
 
     public function migrationCart()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-1', compact('page'));
+        $page= Page::where('id', 33)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function migrationUchet()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-2', compact('page'));
+        $page= Page::where('id', 35)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
 
     public function migrationProlongation()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-2-1', compact('page'));
+        $page= page::where('id', 34)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function migrationSnyatiye()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-2-2', compact('page'));
+        $page= page::where('id', 36)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function visaInvitation()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-3', compact('page'));
+        $page= Page::where('id', 37)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function changeInvitation()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-3-1', compact('page'));
+        $page= page::where('id', 38)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function patent()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-4', compact('page'));
+        $page= Page::where('id', 39)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function patentProlongation()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-4-1', compact('page'));
+        $page= page::where('id', 40)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function patentTest()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-4-2', compact('page'));
+        $page= page::where('id', 41)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
 
     public function patentComission()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-4-3', compact('page'));
+        $page= page::where('id', 42)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
 
     public function razreshenie()
     {
-        $page= Page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-5', compact('page'));
+        $page= Page::where('id', 43)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function vksRabota()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-5-1', compact('page'));
+        $page= page::where('id', 44)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function vksZhitelstvo()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-5-2', compact('page'));
+        $page= page::where('id', 45)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function commission(){
-        $page=page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-5-3', compact('page'));
+        $page=page::where('id', 46)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function rabotaTest()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-7-5', compact('page'));
+        $page= page::where('id', 47)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function razreshenieComission()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-7-6', compact('page'));
+        $page= page::where('id', 48)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function rvpConfirm()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-7-1', compact('page'));
+        $page= page::where('id', 49)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function vid()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-7-2', compact('page'));
+        $page= page::where('id', 50)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function vidConfirm()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-7-3', compact('page'));
+        $page= page::where('id', 51)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function grazhdanstvoTest()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-8', compact('page'));
+        $page= page::where('id', 56)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
 
     public function grazhdanstvoCommission()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-8-2', compact('page'));
+        $page= page::where('id', 54)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function polis()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-9', compact('page'));
+        $page= page::where('id', 57)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function snils()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-8-4', compact('page'));
+        $page= page::where('id', 58)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function daktiloskopiya()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-9-2', compact('page'));
+        $page= page::where('id', 59)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
     public function inn()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-9-1', compact('page'));
+        $page= page::where('id', 60)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
        public function status()
     {
-        $page= page::where('laravel_name', 'useful-info')->first();
-        return view('useful.info-8-3', compact('page'));
+        $page= page::where('id', 55)->IsPublished()->first();
+        return view('useful.info', compact('page'));
     }
 }

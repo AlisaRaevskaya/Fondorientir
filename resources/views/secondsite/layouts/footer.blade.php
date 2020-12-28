@@ -10,7 +10,7 @@
                     <div class="footer_row_logo flex-row">
                         <div class="text-center logo">
                         <a href="{{ route('second_main') }}">
-                            <img src="/storage/logo2.png" alt="Logo" class="img-responsive"></a>
+                            <img src="/storage/{{ $contact->logo2 }}" alt="Logo" class="img-responsive"></a>
                     </div>
                     <div class="text-center">
                           <h3>Фонд "ОРИЕНТИР"</h3>

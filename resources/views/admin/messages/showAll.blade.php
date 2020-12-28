@@ -31,10 +31,12 @@
                                             </td>
                                             <td class="mailbox-subject col-md-2"><b>{{ $item->name }}</b>
                                             <td class="mailbox-name col-md-2">
-                                                {{ $item->getMiniContent() }}</a>
+                                                <a
+                                                    href="{{ route('admin.notice.show', ['category' => $item->getCategory()->category, 'id' => $item->id]) }}">
+                                                    {{ $item->getMiniContent() }}</a>
                                             </td>
                                             </td>
-                                            <td class="mailbox-date col-md-2">{{ $item->dateline }}</td>
+                                            <td class="mailbox-date col-md-2">{{ $item->created_at }}</td>
                                             <td class="mailbox-name col-md-2">
                                                 @if ($item->is_read == true)
                                                     <p>Прочитано</p>
@@ -50,11 +52,8 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <!-- /.table -->
                         </div>
-                        <!-- /.mail-box-messages -->
                     </div>
-                    <!-- /.card-body -->
                     <nav aria-label="Page navigation" class="pagination_section">
                         <ul class="pagination">
                             <li>{{ $messages->links() }}</li>

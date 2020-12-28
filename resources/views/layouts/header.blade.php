@@ -6,7 +6,7 @@
                     <div style="display:flex;justify-content:center;">
                         <div class="text-center logo">
                             <a href="{{ route('main') }}">
-                                <img src="/storage/logo.png" alt="Logo" class="img-responsive"></a>
+                                <img src="/storage/{{ $contact->logo }}" alt="Logo" class="img-responsive"></a>
                         </div>
                         <div class="text-center" id="logo_name">
                             <p>Фонд поддержки<br>
