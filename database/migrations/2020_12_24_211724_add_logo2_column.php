@@ -26,7 +26,7 @@ class AddLogo2Column extends Migration
     public function down()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->string('logo2')->nullable();
+            $table->dropIfExists();
         });
     }
 }

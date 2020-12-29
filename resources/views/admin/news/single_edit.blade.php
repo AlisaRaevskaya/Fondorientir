@@ -71,18 +71,9 @@
                                                     {{ Form::label('body', 'Текст') }}
                                                     {{ Form::textArea('body', $news->body, ['class' => 'form-control summernote_news']) }}
                                                 </div>
-                                                {{-- <div class="form-group">
-                                                    {{ Form::label('source_name', 'Источник') }}
-                                                    {{ Form::text('source_name', $news->source_name, ['class' => 'form-control required']) }}
-                                                </div>
                                                 <div class="form-group">
-                                                    {{ Form::label('source_link', 'Ссылка') }}
-                                                    {{ Form::text('source_link', $news->source_link, ['class' => 'form-control required']) }}
-                                                </div> --}}
-
-                                                <div class="form-group">
-                                                    {{ Form::label('dateline', 'Дата публикации') }}
-                                                    {{ Form::text('dateline', $news->dateline, ['class' => 'form-control required']) }}
+                                                    {{ Form::label('date_published', 'Дата публикации') }}
+                                                    {{ Form::datetime('date_published', $news->date_published, ['class' => 'form-control required']) }}
                                                 </div>
                                                 @if (session()->has('message'))
                                                     <div class="alert alert-success">

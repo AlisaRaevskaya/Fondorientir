@@ -32,7 +32,7 @@
                                     </div>
 
                                     <div class="entity_meta">
-                                        <p>{{ $item->dateline }}</p>
+                                        <p>{{ $item->cutDateline() }}</p>
                                     </div>
 
                                     <div class="entity_intro">

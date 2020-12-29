@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Jenssegers\Date\Date;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class News extends Model
 {
- protected $fillable = [
-        'title','intro','body','dateline', 'source_link', 'source_name'];
+    protected $fillable = [
+        'title','intro','body','date_published', 'image'];
 
     protected $table = 'news';
 
@@ -20,32 +21,28 @@ class News extends Model
 
     //включает выключает метку времени в таблицах
 
-     public $timestamps = true;
-/**
-     * Определяем категорию которой принадлежит новость .
-     */
+    public $timestamps = true;
+    /**
+         * Определяем категорию которой принадлежит новость .
+         */
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
     }
 
-    public function getDatelineAttribute($value)
-  {
-    $date = Carbon::createFromTimestamp($value)->toDateTimeString();
-    return $date;
+  public function getDatePublishedAttribute($value)
+    {
+        return Date::parse($value)->format('d-m-Y H:i:s');
     }
 
-    public function setDatelineAttribute($value){
-    // {
-    //     if(!$value){$this->attributes['dateline']=Carbon::today();}
-        $this->attributes['dateline'] = Carbon::parse($value)->timestamp;
+    public function setDatePublishedAttribute($value)
+    {
+        $this->attributes['date_published'] = Date::parse($value)->format("Y-m-d\TH:i:s");
     }
-    //->format('d-m-y H:i:s');
 
     public function cutDateline()
     {
-        $result=$this->dateline;
-        return Str::substr($result, 0, 10);
+        return Date::parse($this->date_published)->format('d F Y');
     }
 
     public function getFormatDateCreate()
@@ -61,6 +58,12 @@ class News extends Model
     public function setBodyAttribute($value)
     {
         $this->attributes['body'] = htmlspecialchars($value, ENT_HTML5);
+    }
+     public function setImageAttribute($value)
+    {
+        if (!$value){
+        $this->attributes['image'] = '1609187341.jpg';
+        }
     }
 
     public function getBodyAttribute($value)
@@ -83,11 +86,11 @@ class News extends Model
     }
 
 
- /**
-     * Удаляем оригинал
-     * @param $name
-     * @return mixed
-     */
+    /**
+        * Удаляем оригинал
+        * @param $name
+        * @return mixed
+        */
     public function deleteImage($name)
     {
         $path = storage_path('/app/public/news');
@@ -114,17 +117,18 @@ class News extends Model
      */
     public function uploadImage($images)
     {
-        if ($images == null) { return;}
+        if ($images == null) {
+            return;
+        }
 
-        if($this->images !== null) {
+        if ($this->images !== null) {
             Storage::delete($this->images);
         }
         $fileName = $images->store('articles');
-        $newName = explode('/',$fileName);
+        $newName = explode('/', $fileName);
         $this->images = $newName[1];
         $this->save();
         return $newName[1];
-
     }
 
     // public function getImage()
@@ -141,7 +145,9 @@ class News extends Model
         return Str::substr($this->intro, 0, 80) . "...";
     }
 
-     public static function add($fields)
+
+
+    public static function add($fields)
     {
         $news= new static;
         $news->fill($fields);

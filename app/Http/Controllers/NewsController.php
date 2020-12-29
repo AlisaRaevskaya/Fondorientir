@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
     public function index(){
 
-    $news = News::orderBy('dateline', 'desc')->paginate(7);
+    $news = News::where('category_id', 1)->orderBy('date_published', 'desc')->paginate(7);
     $new = News::find(1)->first();
     $page=Page::where('laravel_name', 'news')->IsPublished()->first();
     $category= $new->category;

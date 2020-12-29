@@ -36,19 +36,28 @@
 
                             <!-- Default box -->
                             <div class="box">
-                                {{-- <div class="box-header with-border">
-                                    @include('admin.errors')
-                                </div> --}}
+                                <div class="box-header with-border">
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="box-body">
                                     {{ Form::open(['route' => 'admin.press.store', 'files' => true]) }}
                                     <div class="col-md-11 justify-content-center">
+                                        @csrf
                                         <div class="form-group">
                                             {{ Form::label('title', 'Название') }}
                                             {{ Form::text('title', '', ['class' => 'form-control required']) }}
                                         </div>
                                         <div class="form-group">
                                             {{ Form::label('intro', 'Intro') }}
-                                            {{ Form::text('intro', '', ['class' => 'form-control']) }}
+                                            {{ Form::text('intro', '', ['class' => 'form-control summernote_news']) }}
                                         </div>
                                         <div class="form-group">
                                             {{ Form::label('image', '') }}
@@ -65,18 +74,11 @@
                                             {{ Form::label('body', 'Текст') }}
                                             {{ Form::textArea('body', '', ['class' => 'form-control summernote_news']) }}
                                         </div>
-                                        <div class="form-group">
-                                            {{ Form::label('source_name', 'Источник') }}
-                                            {{ Form::text('source_name', '', ['class' => 'form-control required']) }}
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('source_link', 'Ссылка') }}
-                                            {{ Form::text('source_link', '', ['class' => 'form-control required']) }}
-                                        </div>
+
 
                                         <div class="form-group">
-                                            {{ Form::label('dateline', 'Дата публикации') }}
-                                            {{ Form::date('dateline', '', ['class' => 'form-control required']) }}
+                                            {{ Form::label('date_published', 'Дата публикации') }}
+                                            {{ Form::datetimeLocal('date_published', '', ['class' => 'form-control required']) }}
                                         </div>
 
                                         @if (session()->has('message'))

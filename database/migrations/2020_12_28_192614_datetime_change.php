@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropTableReplies extends Migration
+class DatetimeChange extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class DropTableReplies extends Migration
      * @return void
      */
     public function up()
-    { Schema::table('contacts', function (Blueprint $table) {
-             $table->string('logo2')->nullable();
+    {
+        Schema::table('news', function (Blueprint $table) {
+            $table->dropColumn('dateline');
         });
-        Schema::dropIfExists('replies');
     }
 
     /**
@@ -25,6 +25,8 @@ class DropTableReplies extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('replies');
+        Schema::table('news', function (Blueprint $table) {
+             $table->dropColumn('dateline');
+        });
     }
 }

@@ -99,8 +99,8 @@ Route::get('/info-center/useful-info/snils', [UsefulInfoController::class, 'snil
 Route::get('/info-center/useful-info/daktiloskopiya', [UsefulInfoController::class, 'daktiloskopiya'])->name('info-9-2');
 Route::get('/info-center/useful-info/inn', [UsefulInfoController::class, 'inn'])->name('info-9-1');
 Route::get('/info-center/useful-info/snyatiye-zapreta-na-vyezd', [UsefulInfoController::class, 'snyatiye'])->name('info-6');
-
-
+Route::get('/info-center/useful-info/peresechenie_graniz', [UsefulInfoController::class, 'granizy'])->name('info-10');
+Route::get('/info-center/useful-info/pereseleniye_migrantov', [UsefulInfoController::class, 'pereseleniye'])->name('info-11');
 
 Route::get('/smi_o_nas', [MainController::class, 'showPressNews'])->name('press');
 Route::get('/migration-news/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')

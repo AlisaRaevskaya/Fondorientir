@@ -3,15 +3,13 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="content-wrapper admin-container mb50">
-
                 <!-- Content Header (Page header) -->
                 <section class="content-header pt10">
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right ">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.press.index') }}">Новости</a>
-                                    </li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.news.index') }}">Новости</a></li>
                                     <li class="breadcrumb-item active">СМИ о нас/{{ $news->id }}</li>
                                 </ol>
                             </div>
@@ -48,6 +46,7 @@
                                         <div class="box-body">
                                             <div class="col-md-11">
                                                 {{ Form::open(['route' => ['admin.press.update', $news->id], 'method' => 'PUT', 'files' => true]) }}
+                                                @csrf
                                                 <div class="form-group">
                                                     {{ Form::label('title', 'Название') }}
                                                     {{ Form::text('title', $news->title, ['class' => 'form-control required']) }}
@@ -55,7 +54,7 @@
 
                                                 <div class="form-group">
                                                     {{ Form::label('intro', 'Intro') }}
-                                                    {{ Form::text('intro', $news->intro, ['class' => 'form-control summernote_news']) }}
+                                                    {{ Form::textArea('intro', $news->intro, ['class' => 'form-control summernote_news']) }}
                                                 </div>
 
                                                 <div class="form-group">
@@ -63,31 +62,19 @@
                                                     {{ Form::file('image') }}
                                                     @if (isset($news->image))
                                                         <p>
-                                                            <img src="/storage/news/{{ $news->image }}"
-                                                                {{-- <img class="image"
-                                                                src="{{ $news->getImageMini() }}"
-                                                                --}}
-                                                                alt="{{ $news->laravel_name }}" title="{{ $news->title }}"
-                                                                style="width: 200px">
+                                                            <img src="{{ asset('storage/news/' . $news->image) }}"
+                                                                title="{{ $news->title }}" style="width: 200px">
                                                         </p>
                                                     @endif
                                                 </div>
-                                                <div class="form-group">
-                                                    {{ Form::label('body', 'Текст 2') }}
-                                                    {{ Form::textArea('body', $news->body, ['class' => 'form-control summernote_news']) }}
-                                                </div>
-                                                {{-- <div class="form-group">
-                                                    {{ Form::label('source_name', 'Источник') }}
-                                                    {{ Form::text('source_name', $news->source_name, ['class' => 'form-control required']) }}
-                                                </div>
-                                                <div class="form-group">
-                                                    {{ Form::label('source_link', 'Ссылка') }}
-                                                    {{ Form::text('source_link', $news->source_link, ['class' => 'form-control required']) }}
-                                                </div> --}}
 
                                                 <div class="form-group">
-                                                    {{ Form::label('dateline', 'Дата публикации') }}
-                                                    {{ Form::text('dateline', $news->dateline, ['class' => 'form-control required']) }}
+                                                    {{ Form::label('body', 'Текст') }}
+                                                    {{ Form::textArea('body', $news->body, ['class' => 'form-control summernote_news']) }}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{ Form::label('date_published', 'Дата публикации') }}
+                                                    {{ Form::datetime('date_published', $news->date_published, ['class' => 'form-control required']) }}
                                                 </div>
                                                 @if (session()->has('message'))
                                                     <div class="alert alert-success">
@@ -96,20 +83,25 @@
                                                 @endif
                                                 <div class="box-footer">
                                                     <div class="">
-                                                        <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
+                                                        <a href="{{ url()->previous() }}"
+                                                            class="btn btn-outline-secondary"><i class="fas fa-caret-left">
+                                                            </i> Назад</a>
+
                                                         <button class="btn btn-primary pull-right"
-                                                            style="margin-left:20px;">Сохранить</button>
+                                                            style="margin-left:20px;"><i class="fas fa-save"></i>
+                                                            Сохранить</button>
 
                                                         <a href="{{ route('admin.news.show', $news->id) }}"
-                                                            class="btn btn-warning pull-right">Просмотр</a>
+                                                            class="btn btn-warning pull-right"><i class="fas fa-folder">
+                                                            </i> Просмотр</a>
                                                     </div>
                                                 </div>
                                                 {{ Form::close() }}
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.col-->
                             </div>
                         </div>
                     </div>

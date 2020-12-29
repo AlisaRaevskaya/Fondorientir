@@ -13,7 +13,7 @@ class NewsRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,10 +25,10 @@ class NewsRequest extends FormRequest
     {
         return [
         'title' => ['required','min:2','max:255'],
-        'body' => ['required','string','min:8','max:500'],
-        'intro' => ['string','max:255'],
-        'dateline' => ['required'],
-        'image' => ['required','image|mimes:jpeg,png,jpg,gif,svg','max:2048'],
+        'body' => ['required','string','min:8','max:65000'],
+        'intro' => ['max:255'],
+        'date_published' => ['required','date'],
+        'image' => ['required'],
         ];
     }
 }

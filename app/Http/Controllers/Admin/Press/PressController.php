@@ -20,7 +20,7 @@ class PressController extends Controller
     public function index()
     {
         $category = Category::where('name', 'press')->first();
-        $pressnews = $category->news()->orderBy('id', 'desc')->paginate(5);
+        $pressnews = $category->news()->orderBy('date_published', 'desc')->paginate(5);
         return view('admin.press.press.index', compact('pressnews', 'category'));
     }
 
@@ -45,17 +45,19 @@ class PressController extends Controller
 
         $news=new News();
 
-        $imageName = time().'.'.$request->image->extension();
-        // time().'.'.$request->image->extension();
+        $news= new News();
 
+        if($request->hasFile('image')){
+            $imageName = time().'.'.$request->image->extension();
         $request->image->move(storage_path('/app/public/news'), $imageName);
+        }else{
+            $imageName='1609187341.jpg';
+        }
 
         $news->image=$imageName;
 
-        $news->category_id=1;
-
-        $news=$request->all();
-        $news->save();
+        $news->category_id=2;
+        $news=News::add($request->all());
         $message='Данные загружены';
         return redirect()->route('admin.press.create')->with('message', $message);
     }

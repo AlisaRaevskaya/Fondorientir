@@ -38,7 +38,7 @@
                                         <img src="/storage/news/{{ $item->image }}" alt="{{ $item->title }}">
                                     </div>
                                     <div class="">{!! $item->intro !!}</div>
-                                    <div class="">{!! $item->intro !!}</div>
+                                    <div class="">{!! $item->date_published !!}</div>
                                     <div class="">{!! $item->body !!}</div>
                                 </div>
                                 <div class="box-footer">

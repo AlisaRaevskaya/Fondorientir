@@ -56,7 +56,7 @@
                                                 <td>{{ $new->id }}</td>
                                                 <td>{!! $new->title !!}</td>
                                                 <td>{!! $new->intro !!}</td>
-                                                <td>{!! $new->dateline !!}</td>
+                                                <td>{!! $new->date_published !!}</td>
                                                 <td>{!! $new->updated_at !!}</td>
                                                 <td>
                                                     <a href="{{ route('admin.press.edit', $new->id) }}"

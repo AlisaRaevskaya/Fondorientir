@@ -63,7 +63,7 @@
                                                 {{-- <td style="word-break:break-word;">{!!
                                                     $new->intro !!}
                                                 </td> --}}
-                                                <td>{!! $new->dateline !!}</td>
+                                                <td>{!! $new->date_published!!}</td>
                                                 <td>{!! $new->updated_at !!}</td>
                                                 <td>
                                                     <a href="{{ route('admin.news.edit', $new->id) }}"

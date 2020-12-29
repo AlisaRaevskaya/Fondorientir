@@ -45,20 +45,15 @@ class NewsController extends Controller
     {
         $validatedData = $request->validated();
 
-        $news=new News();
+        $news= new News();
 
         $imageName = time().'.'.$request->image->extension();
-        // time().'.'.$request->image->extension();
-
         $request->image->move(storage_path('/app/public/news'), $imageName);
 
         $news->image=$imageName;
-
         $news->category_id=1;
 
-        $news=$request->all();
-
-        $news->save();
+        $news=News::add($request->all());
         $message='Данные загружены';
         return redirect()->route('admin.news.create')->with('message', $message);
     }
@@ -95,18 +90,23 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(NewsRequest $request, $id)
-    { $validatedData = $request->validated();
-         $news=News::where('id', $id)->first();
+    {
+        $validatedData = $request->validated();
 
-  if ($request->hasFile('image')) {
-      $imageName = time().'.'.$request->image->extension();
-      // time().'.'.$request->image->extension();
-      $request->image->move(public_path('/storage/news'), $imageName);
+        //   if ($request->hasFile('image')) {
+        $imageName = time().'.'.$request->image->extension();
 
-      // storage_path('/app/public/news'
-        $news->image= $imageName;
-  }
-        $news->edit($request->all());
+        $request->image->move(public_path('/storage/news'), $imageName);
+        // storage_path('/app/public/snews'
+        //   }
+        $news=News::where('id', $id)->first();
+
+        $news->image=$imageName;
+        $news->title=$request->title;
+        $news->date_published=$request->date_published;
+        $news->body=$request->body;
+        $news->intro=$request->intro;
+        $news->save();
         $message='Данные загружены';
         return redirect()->route('admin.news.edit', $id)->with('message', $message);
     }

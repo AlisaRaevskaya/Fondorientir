@@ -1,78 +1,109 @@
 @extends('admin.layout')
 
 @section('content')
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Добавление новой Статьи
-      </h1>
-    </section>
+    <!-- Content Wrapper. Contains page content -->
 
-    <!-- Main content -->
-    <section class="content">
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="content-wrapper container mb50">
+                <section class="content-header pt10">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-12 col-md-11" style="margin-left:1rem;">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.news.index') }}">Новости</a></li>
+                                    <li class="breadcrumb-item active">Добавить новость</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div><!-- /.container-fluid -->
+                </section>
 
-      <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-          @include('admin.errors')
-        </div>
-        <div class="box-body">
-          {{Form::open(['route'=>'articles.store', 'files' => true])}}
-          <div class="col-md-6">
-            {{Form::hidden ('user_id', Auth()->user()->id)}}
-            <div class="form-group">
-              {{Form::label('name', 'Название')}}
-              {{Form::text('name','', ['class'=>'form-control required'])}}
-            </div>
-            <div class="form-group">
-              {{Form::label('preview', 'Превью')}}
-              {{Form::text('preview','', ['class'=>'form-control'])}}
-            </div>
-            <div class="form-group">
-              {{Form::label('quote', 'Цитата')}}
-              {{Form::text('quote','', ['class'=>'form-control required'])}}
-            </div>
-            <div class="form-group">
-              {{Form::label('images', 'Картинка')}}
-              {{Form::file('images')}}
-            </div>
-            <div class="form-group">
-              {{Form::label('text_top', 'Текст 1')}}
-              {{Form::textArea('text_top','', ['class'=>'form-control'])}}
-            </div>
-            <div class="form-group">
-              {{Form::label('text_center', 'Текст 2')}}
-              {{Form::textArea('text_center','', ['class'=>'form-control'])}}
-            </div>
-            <div class="form-group">
-              {{Form::label('text_botton', 'Текст 3')}}
-              {{Form::textArea('text_botton','', ['class'=>'form-control'])}}
-            </div>
-            <div class="form-group">
-              {{Form::label('activ', 'Активен')}}
-              {{Form::select('activ', [0 => 'No', 1 =>'Yes'], 1 )}}
-            </div>
-            <div class="form-group">
-              {{Form::label('sort', 'Сортировка')}}
-              {{Form::text('sort',10, ['class'=>'form-control'])}}
-            </div>
-          </div>
+                <!-- Main content -->
 
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          <button class="btn btn-default">Назад</button>
-          <button class="btn btn-warning pull-right">Создать</button>
-        </div>
-        <!-- /.box-footer-->
-        {{Form::close()}}
-      </div>
-      <!-- /.box -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-11" style="margin-left:1rem;">
+                            <div class="card card-outline card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Добавить новость
+                                    </h3>
+                                </div>
+                                <!-- Main content -->
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+                                <div class="card-body">
+
+                                    <!-- Default box -->
+                                    <div class="box">
+                                        <div class="box-header with-border">
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
+                                        </div>
+
+                                    </div>
+                                    <div class="box-body">
+                                        {{ Form::open(['route' => 'admin.press.store', 'files' => true]) }}
+                                        <div class="col-md-11 justify-content-center">
+                                            @csrf
+                                            <div class="form-group">
+                                                {{ Form::label('title', 'Заголовок') }}
+                                                {{ Form::text('title', '', ['class' => 'form-control required']) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ Form::label('intro', 'Intro') }}
+                                                {{ Form::text('intro', '', ['class' => 'form-control summernote_news']) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ Form::label('image', '') }}
+                                                {{ Form::file('image') }}
+                                                @if (isset($item->image))
+                                                    <p>
+                                                        <img src="/storage/news/{{ $item->image }}"
+                                                            alt="{{ $item->laravel_name }}" title="{{ $item->title }}"
+                                                            style="width: 200px">
+                                                    </p>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                {{ Form::label('body', 'Текст') }}
+                                                {{ Form::textArea('body', '', ['class' => 'form-control summernote_news']) }}
+                                            </div>
+
+                                            <div class="form-group">
+                                                {{ Form::label('date_published', 'Дата публикации') }}
+                                                {{ Form::datetimeLocal('date_published', '', ['class' => 'form-control required']) }}
+                                            </div>
+
+                                            @if (session()->has('message'))
+                                                <div class="alert alert-success">
+                                                    {{ session()->get('message') }}
+                                                </div>
+                                            @endif
+
+                                            <div class="box-footer">
+                                                <div class="">
+                                                    <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
+                                                    <button class="btn btn-primary pull-right"
+                                                        style="margin-left:20px;">Сохранить</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{ Form::close() }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 @endsection

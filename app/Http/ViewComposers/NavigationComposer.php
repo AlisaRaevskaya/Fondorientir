@@ -17,7 +17,7 @@ class NavigationComposer
     public function compose(View $view)
     {
         $menuitems = Page::IsPublished()->IsMenu()->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
-        $newsitems = News::orderBy('dateline', 'desc')->limit(7)->get();
+        $newsitems = News::orderBy('date_published', 'desc')->limit(7)->get();
         $contact= Contact::find(1);
         $new = News::find(1)->first();
         $category= $new->category;

@@ -19,7 +19,7 @@
                         <!-- entity_title -->
 
                         <div class="entity_meta">
-                            {{ $item->dateline }}
+                            <p>{{ $item->date_published }}</p>
                         </div>
 
                         <div class="entity_content text-justify">

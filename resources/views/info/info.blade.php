@@ -9,6 +9,11 @@
                     <div class="m30">
                         <ul class="list-group" style="align-items:center;">
                             <li class="list-group-item">
+                                <a class="useful_info_item" href="{{ route('info-10') }}">
+                                    Пересечение границы Российской Федерации
+                                </a>
+                            </li>
+                            <li class="list-group-item">
                                 <a class="useful_info_item" href="{{ route('info-1') }}">
                                     Миграционная карта
                                 </a>
@@ -138,6 +143,13 @@
                             <li class="list-group-item">
                                 <a class="useful_info_item" href="{{ route('info-6') }}">Снятие запрета на въезд</a>
                             </li>
+                            <li class="list-group-item">
+                                <a class="useful_info_item" href="{{ route('info-11') }}"> Государственная программа по
+                                    оказанию содействия
+                                    добровольному переселению в Российскую Федерацию соотечественников, проживающих за
+                                    рубежом</a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

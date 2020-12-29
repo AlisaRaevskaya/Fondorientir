@@ -79,7 +79,7 @@
 
                                             <div class="form-group">
                                                 {{ Form::label('dateline', 'Дата публикации') }}
-                                                {{ Form::date('dateline', $item->dateline, ['class' => 'form-control required']) }}
+                                                {{ Form::datetime('dateline', $item->dateline, ['class' => 'form-control required']) }}
                                             </div>
                                             @if (session()->has('message'))
                                                 <div class="alert alert-success">
@@ -89,8 +89,8 @@
                                             <div class="box-footer">
                                                 <div class="">
                                                     <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
-                                                    <button class="btn btn-primary pull-right"
-                                                        style="margin-left:20px;"><i class='fa fa-save'></i> Сохранить</button>
+                                                    <button class="btn btn-primary pull-right" style="margin-left:20px;"><i
+                                                            class='fa fa-save'></i> Сохранить</button>
 
                                                     <a href="{{ route('admin.press.show', $item->id) }}"
                                                         class="btn btn-warning pull-right">Просмотр</a>
@@ -109,4 +109,3 @@
         @endforeach
     </div>
 @endsection
-

@@ -1,6 +1,6 @@
 <div class="col-md-3 sidebar">
     <div class="text-center item_center">
-        <a href="{{ route('second_main') }}"><img class="img-responsive" src="{{ asset('storage/banner.jpg') }}"
+        <a href="{{ route('second_main') }}"><img class="img-responsive" src="{{ asset('storage/banner1.png') }}"
                 title="Онлайн Приемная" alt="main.jpg"></a>
     </div>
     <div class="text-center item_center sidebar_fond_img">

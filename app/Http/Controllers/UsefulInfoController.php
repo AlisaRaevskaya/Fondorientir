@@ -161,4 +161,13 @@ class UsefulInfoController extends Controller
         $page= page::where('id', 55)->IsPublished()->first();
         return view('useful.info', compact('page'));
     }
+
+    public function granizy(){
+         $page= page::where('id', 62)->IsPublished()->first();
+         return view('useful.info', compact('page'));
+    }
+    public function pereseleniye(){
+         $page= page::where('id', 63)->IsPublished()->first();
+         return view('useful.info', compact('page'));
+    }
 }

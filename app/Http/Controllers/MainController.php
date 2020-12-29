@@ -18,7 +18,7 @@ class MainController extends Controller
 {
     public function index(){
     $page= Page::where('title', 'Главная')->IsPublished()->first();
-    $news = News::orderBy('dateline', 'desc')->paginate(6);
+    $news = News::orderBy('date_published', 'desc')->paginate(6);
     $new = News::find(1)->first();
     $category= $new->category;
     $replies = Topic::orderBy('dateline', 'desc')->paginate(5);

@@ -12,10 +12,9 @@
                         <!-- entity_title -->
 
                         <div class="entity_meta">
-                            {{ $item->dateline }}
+                            <p>{{ $item->cutDateline() }}</p>
                         </div>
                         <!-- entity_meta -->
-
 
                         <div class="entity_content">
                             {!! $item->body !!}

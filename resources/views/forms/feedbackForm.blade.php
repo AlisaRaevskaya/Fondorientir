@@ -18,10 +18,9 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-xs-3" for="fatherName">Отчество<span class="color_red">*</span> </label>
+        <label class="control-label col-xs-3" for="fatherName">Отчество</label>
         <div class="col-xs-9">
-            <input type="text" required class="form-control" id="fatherName" name="fatherName"
-                placeholder="Введите отчество">
+            <input type="text" class="form-control" id="fatherName" name="fatherName" placeholder="Введите отчество">
             <span class="text-danger" id="fatherNameError"></span>
         </div>
     </div>
