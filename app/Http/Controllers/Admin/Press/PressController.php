@@ -20,8 +20,8 @@ class PressController extends Controller
     public function index()
     {
         $category = Category::where('name', 'press')->first();
-        $pressnews = $category->news()->orderBy('date_published', 'desc')->paginate(5);
-        return view('admin.press.press.index', compact('pressnews', 'category'));
+        $pressnews = $category->news()->orderBy('date_published', 'desc')->paginate(7);
+        return view('admin.press.index', compact('pressnews', 'category'));
     }
 
     /**
@@ -31,7 +31,7 @@ class PressController extends Controller
      */
     public function create()
     {
-        return view('admin.press.press.create');
+        return view('admin.press.create');
     }
   /**
      * Store a newly created resource in storage.
@@ -41,25 +41,21 @@ class PressController extends Controller
      */
     public function store(NewsRequest $request)
     {
-       $validatedData = $request->validated();
-
-        $news=new News();
+      $validatedData = $request->validated();
 
         $news= new News();
 
-        if($request->hasFile('image')){
-            $imageName = time().'.'.$request->image->extension();
+        $imageName = $request->image->getClientOriginalName();
         $request->image->move(storage_path('/app/public/news'), $imageName);
-        }else{
-            $imageName='1609187341.jpg';
-        }
 
         $news->image=$imageName;
-
-        $news->category_id=2;
-        $news=News::add($request->all());
+        $news->title=$request->title;
+        $news->date_published=$request->date_published;
+        $news->body=$request->body;
+        $news->intro=$request->intro;
+        $news->save();
         $message='Данные загружены';
-        return redirect()->route('admin.press.create')->with('message', $message);
+        return redirect()->route('admin.press.index');
     }
 
 
@@ -85,31 +81,36 @@ class PressController extends Controller
     {
         $news= News::where('id', $id)->first();
         $images= File::find(1)->where('page_id', $id)->get();
-        return view('admin.press.press.edit', compact('news', 'images'));
+        return view('admin.press.edit', compact('news', 'images'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  NewsRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NewsRequest $request, $id)
     {
+$validatedData = $request->validated();
+        $news=News::findOrFail($id);
+        if($request->hasFile('image')) {
+            $oldFileName = $news->image;
+            if ($oldFileName !== null) {
+                $news->deleteImage($oldFileName);
+            }
 
-        $news=News::where('id', $id)->first();
-
-  if ($request->hasFile('image')) {
-      $imageName = time().'.'.$request->image->extension();
-      // time().'.'.$request->image->extension();
-      $request->image->move(public_path('/storage/news'), $imageName);
-
-      // storage_path('/app/public/news'
-        $news->image= $imageName;
-  }
-        $news->edit($request->all());
-        $message='Данные загружены';
+            $imageName = $request->image->getClientOriginalName();
+            $request->image->move(storage_path('/app/public/news'), $imageName);
+            $news->image=$imageName;
+        }
+        $news->title=$request->title;
+        $news->date_published=$request->date_published;
+        $news->body=$request->body;
+        $news->intro=$request->intro;
+        $news->save();
+        $message='Новость отредактирована';
         return redirect()->route('admin.press.edit', $id)->with('message', $message);
     }
 

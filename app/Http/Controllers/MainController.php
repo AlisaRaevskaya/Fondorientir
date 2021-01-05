@@ -21,7 +21,7 @@ class MainController extends Controller
     $news = News::orderBy('date_published', 'desc')->paginate(6);
     $new = News::find(1)->first();
     $category= $new->category;
-    $replies = Topic::orderBy('dateline', 'desc')->paginate(5);
+    $replies = Topic::orderBy('date_published', 'desc')->paginate(5);
     return view('main.index', compact('page', 'news', 'category','replies',));
     }
 

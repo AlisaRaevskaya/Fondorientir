@@ -17,13 +17,12 @@ $('#myModal').on('shown.bs.modal', function () {
   })
 
 
-
 $(".pop_call_link").on("click", function (e) {
     e.preventDefault();
     $(".popup_call").removeClass('hidden');
 })
 
-$(function() {
+$(function changeInputs() {
 let w = $(window).width(); // Получаем ширину окна
     if (w <= 480) {
 $("#job_label").html('');
@@ -34,3 +33,5 @@ $("#phone_label").html('');
 $("#phone_label").html('Телефон');
 }
 });
+
+$(changeInputs());

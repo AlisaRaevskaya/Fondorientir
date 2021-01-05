@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Page extends Model
 {
     protected $fillable = [
-        'title','content','url','content', 'is_menu', 'published','is_second_menu','secondSort'];
+        'title','content','url', 'is_menu', 'published','is_second_menu','parent_id','sort_order', 'second_sort_order'];
     protected $table = 'pages';
 
 
@@ -52,17 +53,10 @@ class Page extends Model
     {
         return $query->where('is_menu', true);
     }
-  public function scopeIsSecondMenu($query)
+    public function scopeIsSecondMenu($query)
     {
         return $query->where('is_second_menu', true);
     }
-
-//  public function buildSecondMenu($query)
-//     { $arr =[];
-// $query->where('laravel_name', );
-
-//         return $items->where('parent_id', null);
-//     }
 
 
     public function setContentAttribute($value)
@@ -131,8 +125,25 @@ class Page extends Model
         $this->save($fields);
     }
 
-    public function getSeo(){
-    return $this->seo()->first();
+    public function getSeo()
+    {
+        return $this->seo()->first();
     }
 
+    public function getAdminUrlEdit()
+    {
+        if ($this->is_dynamic == 1) {
+            return 'admin.' . \Str::slug($this->laravel_name) . '.edit';
+        } else {
+            return 'admin.pages.edit';
+        }
+    }
+    public function getAdminUrlDestroy()
+    {
+        if ($this->is_dynamic == 1) {
+            return 'admin.' . \Str::slug($this->laravel_name) . '.destroy';
+        } else {
+            return 'admin.pages.destroy';
+        }
+    }
 }

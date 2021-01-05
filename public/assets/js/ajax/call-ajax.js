@@ -2,7 +2,6 @@ $("#btn_call").on("click", function () {
   // собираем данные с формы
   let user_data = $('form[name="callForm"]').serialize();
 
-
   // отправляем данные
   $.ajaxSetup({
     headers: {
@@ -20,16 +19,17 @@ $("#btn_call").on("click", function () {
     data: user_data,
     // после получения ответа сервера
     success: function (response) {
-        if (response.success) {
-            $(".success_call").html(response.success);
-            setTimeout(() => {
-              $('form[name="callForm"]').trigger("reset");
-            }, 1000);
-
-          }else{
-               $("#nameError").text(response.errors.name);
-               $("#phoneError").text(response.errors.phone);
-              }
+      if (response.success) {
+        $(".success_call").html(response.success);
+        setTimeout(() => {
+          $('form[name="callForm"]').trigger("reset");
+          $(".success_call").html("");
+          $(".text-danger").html("");
+        }, 1000);
+      } else {
+        $("#nameError").text(response.errors.name);
+        $("#phoneError").text(response.errors.phone);
+      }
     },
   });
 });

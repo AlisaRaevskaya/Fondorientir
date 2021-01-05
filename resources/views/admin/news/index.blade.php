@@ -59,19 +59,16 @@
                                         @foreach ($news as $new)
                                             <tr>
                                                 <td>{{ $new->id }}</td>
-                                                <td>{!! $new->title !!}</td>
-                                                {{-- <td style="word-break:break-word;">{!!
-                                                    $new->intro !!}
-                                                </td> --}}
-                                                <td>{!! $new->date_published!!}</td>
-                                                <td>{!! $new->updated_at !!}</td>
-                                                <td>
+                                                <td class="col-md-7">{!! $new->title !!}</td>
+
+                                                <td class="col-md-1">{!! $new->date_published !!}</td>
+                                                <td class="col-md-1">{!! $new->updated_at !!}</td>
+                                                <td class="col-md-1">
                                                     <a href="{{ route('admin.news.edit', $new->id) }}"
                                                         class="btn btn-primary"><i class="far fa-edit"></i>
                                                         Редактировать</a>
                                                 </td>
-                                                <td>
-
+                                                <td class="col-md-1">
                                                     <form action="{{ route('admin.news.destroy', $new->id) }}" method="post"
                                                         class="text-center">
                                                         @csrf

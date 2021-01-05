@@ -20,14 +20,14 @@ $("#lawyer-btn").on("click", function(event) {
         setTimeout(() => {
           $('form[name="lawyerForm"]').trigger("reset");
            $('#law-success').html('');
-           $("span").html('');
+           $(".text-danger").html('');
         }, 2000);
       }else{
-        $("#nameError").text(response.errors.name);
-        $("#emailError").text(response.errors.email);
-        $("#phoneError").text(response.errors.phone);
-        $("#messageError").text(response.errors.message);
-        $("#captchaError").text(response.errors.captcha);
+        $('#reload').trigger("click");
+        $("#nameErrorLaw").text(response.errors.name);
+        $("#phoneErrorLaw").text(response.errors.phone);
+        $("#messageErrorLaw").text(response.errors.message);
+        $("#captchaErrorLaw").text(response.errors.captcha);
       }
     },
 });

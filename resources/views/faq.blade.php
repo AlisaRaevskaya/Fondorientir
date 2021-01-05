@@ -23,7 +23,9 @@
                                     </p>
                                 </div>
                                 <div class="entity_meta">
-                                    {{ $reply->dateline }}
+                                    {{-- {{ $reply->dateline }}
+                                    --}}
+                                    {{ $reply->date_published }}
                                 </div>
                                 <!-- entity_meta -->
                                 <div>

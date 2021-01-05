@@ -8,7 +8,7 @@ use App\Models\Reply;
 use App\Models\Topic;
 use App\Models\Page;
 use App\Models\Seo;
-
+use App\Http\Requests\PageRequest;
 
 class AdminFaqController extends Controller
 {
@@ -62,9 +62,9 @@ class AdminFaqController extends Controller
      */
     public function edit($id)
     {
-        $page= Page::find($id);
+        $page= Page::findOrFail($id);
         $seo = $page->seo;
-        $replies=Topic::orderBy('dateline', 'asc')->paginate(5);
+        $replies=Topic::orderBy('date_published', 'asc')->paginate(5);
 
         return view('admin.faq.page_edit', compact('page', 'seo', 'replies'));
 
@@ -73,19 +73,16 @@ class AdminFaqController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  PageRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    { $page = Page::findOrFail($id);
+    public function update(PageRequest $request, $id)
+    {
+  $validatedData = $request->validated();
+    $page = Page::findOrFail($id);
+       $page->edit($request->all());
 
-        $page->title=$request->title;
-        $page->content=$request->content;
-        $page->url=$request->url;
-        $page->published=$request->published;
-        $page->is_menu=$request->is_menu;
-        $page->save();
 
         $seo = Seo::where('page_id', $id)->first();
         $seo->seo_title =$request->seo_title;

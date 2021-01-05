@@ -11,8 +11,10 @@ class FaqController extends Controller
 {
     public function index(){
         $page=Page::where('laravel_name', 'faq')->IsPublished()->first();
-        $replies =Topic::orderBy('dateline', 'asc')->paginate(5);
+        $replies =Topic::orderBy('date_published', 'desc')->paginate(5);
+
         return view('faq', compact('replies', 'page'));
+
     }
 
 
@@ -26,6 +28,5 @@ class FaqController extends Controller
 
         return view('faq_single', compact('topics', 'body', 'page'));
     }
-
 
 }

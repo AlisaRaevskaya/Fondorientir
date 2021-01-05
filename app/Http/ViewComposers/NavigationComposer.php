@@ -22,8 +22,8 @@ class NavigationComposer
         $new = News::find(1)->first();
         $category= $new->category;
 
-       $secondmenu = Page::IsPublished()->IsSecondMenu()->OfSort(['secondSort' => 'asc'])->get();
-        $footermenu = Page::IsPublished()->IsMenu()->where('parent_id', 2)->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
+       $secondmenu = Page::IsPublished()->IsSecondMenu()->OfSort(['second_sort_order' => 'asc'])->get();
+       $footermenu = Page::IsPublished()->IsMenu()->where('parent_id', 2)->OfSort(['parent_id' => 'asc', 'sort_order' => 'asc'])->get();
 
         $not_read_message = Message::where('is_read', false)->get()->count();
 

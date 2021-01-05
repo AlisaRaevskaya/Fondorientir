@@ -70,7 +70,10 @@
                                                     {{ Form::label('dateline', 'Дата публикации') }}
                                                     {{ Form::date('dateline', '', ['class' => 'form-control required']) }}
                                                 </div>
-
+                                                <div class="form-group">
+                                                    {{ Form::label('date_published', 'Дата публикации') }}
+                                                    {{ Form::datetimeLocal('date_published', '', ['class' => 'form-control required']) }}
+                                                </div>
                                                 @if (session()->has('message'))
                                                     <div class="alert alert-success">
                                                         {{ session()->get('message') }}

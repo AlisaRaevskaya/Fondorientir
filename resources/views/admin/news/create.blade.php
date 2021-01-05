@@ -58,11 +58,11 @@
                                                 {{ Form::text('title', '', ['class' => 'form-control required']) }}
                                             </div>
                                             <div class="form-group">
-                                                {{ Form::label('intro', 'Intro') }}
+                                                {{ Form::label('intro', 'Intro(краткое содержание новости)') }}
                                                 {{ Form::text('intro', '', ['class' => 'form-control summernote_news']) }}
                                             </div>
                                             <div class="form-group">
-                                                {{ Form::label('image', '') }}
+                                                {{ Form::label('image', 'Добавить картинку (рекомендуемый размер:400x250px).') }}
                                                 {{ Form::file('image') }}
                                                 @if (isset($item->image))
                                                     <p>
@@ -81,6 +81,7 @@
                                                 {{ Form::label('date_published', 'Дата публикации') }}
                                                 {{ Form::datetimeLocal('date_published', '', ['class' => 'form-control required']) }}
                                             </div>
+                                            {{ Form::hidden('category_id', 1) }}
 
                                             @if (session()->has('message'))
                                                 <div class="alert alert-success">
@@ -91,8 +92,9 @@
                                             <div class="box-footer">
                                                 <div class="">
                                                     <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
-                                                    <button class="btn btn-primary pull-right"
-                                                        style="margin-left:20px;">Сохранить</button>
+                                                    <button class="btn btn-primary pull-right" style="margin-left:20px;"><i
+                                                            class="fas fa-save"></i>
+                                                        Сохранить</button>
                                                 </div>
                                             </div>
                                         </div>

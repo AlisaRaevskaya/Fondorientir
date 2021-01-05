@@ -11,7 +11,7 @@
 
                             <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item">Меню</li>
                                     <li class="breadcrumb-item active">Страницы</li>
                                 </ol>
                             </div>
@@ -68,10 +68,10 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <p style="color: tomato;">В URL могут присутствовать только
-                                                                буквы и
-                                                                цифры латинского алфавита.Пробелы заменяются на "_" или "-"
+                                                                буквы и цифры латинского алфавита.Пробелы заменяются на "_"
+                                                                или "-"
                                                                 тире. Знаки препинания должны отсутствовать.
-                                                                Пример:while-we-put-off-life-it-passes
+                                                                Пример:/fond-orientir
                                                             </p>
                                                             {{ Form::label('url', 'URL') }}
                                                             {{ Form::text('url', '', ['class' => 'form-control']) }}
@@ -88,7 +88,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     {{ Form::label('parent_id', 'Добавить в категорию меню') }}
-                                                                    {{ Form::select('parent_id', ['0' => '', '2' => 'Фонд', '3' => 'Центр Поддержки', '4' => 'Новости', '5' => 'Пресса', '6' => 'Инфоцентр'], null) }}
+                                                                    {{ Form::select('parent_id', [2 => 'Фонд', 3 => 'Центр Поддержки', 4 => 'Новости', 7 => 'Инфо-центр', 32 => 'Контакты'], null) }}
                                                                 </div>
                                                                 <div class="form-group">
                                                                     {{ Form::label('sort_order', 'Сортировка') }}
@@ -101,8 +101,8 @@
                                                                     {{ Form::select('is_second_menu', [0 => 'Нет', 1 => 'Да'], 0) }}
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    {{ Form::label('SecondSort', 'Сортировка в меню "Центр Поддежки"') }}
-                                                                    {{ Form::text('SecondSort', 10, ['class' => 'form-control', 'style' => 'width:200px;']) }}
+                                                                    {{ Form::label('second_sort_order', 'Сортировка в меню "Центр Поддежки"') }}
+                                                                    {{ Form::text('second_sort_order', 10, ['class' => 'form-control', 'style' => 'width:200px;']) }}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -116,7 +116,8 @@
                                                                     class="fas fa-caret-left"></i> Назад</a>
 
                                                             <button class="btn btn-primary pull-right"
-                                                                style="margin-left:20px;">Сохранить</button>
+                                                                style="margin-left:20px;"><i class="fas fa-save"></i>
+                                                                Сохранить</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -141,8 +142,8 @@
                                                         <i>Описание конкретной страницы</i>
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('keywords', 'Keywords') }}
-                                                        {{ Form::text('keywords', '', ['class' => 'form-control required']) }}
+                                                        {{ Form::label('keywords', 'Ключевые слова') }}
+                                                        {{ Form::textArea('keywords', '', ['class' => 'form-control required']) }}
                                                         <i>Ключевые слова</i>
                                                     </div>
                                                     <div class="form-group">

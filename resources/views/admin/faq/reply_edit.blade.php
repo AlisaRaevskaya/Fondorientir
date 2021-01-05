@@ -66,6 +66,10 @@
                                             {{ Form::label('text', 'Опубликована') }}
                                             {{ Form::text('text', $topic->dateline, ['class' => 'form-control']) }}
                                         </div>
+                                        <div class="form-group">
+                                            {{ Form::label('date_published', 'Дата публикации') }}
+                                            {{ Form::datetime('date_published', $topic->date_published, ['class' => 'form-control required']) }}
+                                        </div>
                                         @if (session()->has('message'))
                                             <div class="alert alert-success">
                                                 {{ session()->get('message') }}

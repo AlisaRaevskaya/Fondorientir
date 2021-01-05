@@ -118,7 +118,7 @@ Route::post('/call-form', [AjaxController::class, 'saveCallInfo'])->name("call-f
 Route::post('/claim-form', [AjaxController::class, 'saveClaim'])->name("claim-form");
 Route::get('/online_priemnaya/reload-captcha',[CaptchaServiceController::class, 'reloadCaptcha']);
 
-Route::view('/admin-panel', 'admin.admin_home')->middleware('auth');
+Route::view('/admin-panel', 'admin.admin_home')->middleware('auth')->name('admin');
 
 Route::get('/center-podderzhki', [SecondSiteController::class, 'index'])->name('second_main');
 Route::get('/center-podderzhki/reception', [SecondSiteController::class, 'reception'])->name('second.reception');
@@ -148,6 +148,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
 Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except' => ['create', 'show','save']]);
 Route::resource('/main', '\App\Http\Controllers\Admin\MainController');
 Route::resource('/news', '\App\Http\Controllers\Admin\NewsController');
+Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
+
 
 Route::resource('/faq-page', '\App\Http\Controllers\Admin\FAQ\ForFaqController');
 Route::resource('/faq', '\App\Http\Controllers\Admin\FAQ\AdminFaqController');
@@ -157,36 +159,35 @@ Route::resource('/seo', '\App\Http\Controllers\Admin\SeoController');
 Route::resource('/contacts', '\App\Http\Controllers\Admin\Contacts\ContactsController');
 Route::resource('/company-info', '\App\Http\Controllers\Admin\Contacts\CompanyInfoController');
 
-Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
-Route::resource('/about', '\App\Http\Controllers\Admin\Main\AboutController');
-Route::resource('/fond', '\App\Http\Controllers\Admin\Main\FondController');
-Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
-Route::resource('/reports', '\App\Http\Controllers\Admin\Main\ReportsController');
+// Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
+// Route::resource('/about', '\App\Http\Controllers\Admin\Main\AboutController');
+// Route::resource('/fond', '\App\Http\Controllers\Admin\Main\FondController');
+// Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
+// Route::resource('/reports', '\App\Http\Controllers\Admin\Main\ReportsController');
 
 Route::resource('/projects', '\App\Http\Controllers\Admin\Main\ProjectsController');
 Route::resource('/forprojects', '\App\Http\Controllers\Admin\Main\ForProjectsController');
 
-Route::resource('/partners', '\App\Http\Controllers\Admin\Main\PartnersController');
-Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankInfoController');
+// Route::resource('/partners', '\App\Http\Controllers\Admin\Main\PartnersController');
+// Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankInfoController');
 
 
-Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
-Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');
-Route::resource('useful-contacts', '\App\Http\Controllers\Admin\Info\UsefulContactsController');
-Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialController');
-Route::resource('useful-info', '\App\Http\Controllers\Admin\Info\InfoController');
-Route::resource('bankdocuments', '\App\Http\Controllers\Admin\Info\BankdocumentsController');
+// Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
+// Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');
+// Route::resource('useful-contacts', '\App\Http\Controllers\Admin\Info\UsefulContactsController');
+// Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialController');
+// Route::resource('useful-info', '\App\Http\Controllers\Admin\Info\InfoController');
+// Route::resource('bankdocuments', '\App\Http\Controllers\Admin\Info\BankdocumentsController');
 
 Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
 
-Route::resource('/lawyer', '\App\Http\Controllers\Admin\Reception\LawyerController');
-Route::resource('/problem', '\App\Http\Controllers\Admin\Reception\ProblemController');
-Route::resource('/claim', '\App\Http\Controllers\Admin\Reception\ClaimController');
-Route::resource('/application', '\App\Http\Controllers\Admin\Reception\ApplicationController');
-Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineController');
-Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
-Route::resource('/feedback-call', '\App\Http\Controllers\Admin\FeedbackCallController');
-Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
+// Route::resource('/lawyer', '\App\Http\Controllers\Admin\Reception\LawyerController');
+// Route::resource('/problem', '\App\Http\Controllers\Admin\Reception\ProblemController');
+// Route::resource('/claim', '\App\Http\Controllers\Admin\Reception\ClaimController');
+// Route::resource('/application', '\App\Http\Controllers\Admin\Reception\ApplicationController');
+// Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineController');
+// Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
+// Route::resource('/feedback-call', '\App\Http\Controllers\Admin\FeedbackCallController');
 
 
 Route::get('/notifications/all',[NotificationController::class, 'showAll'])->name('notices.all');
@@ -195,4 +196,4 @@ Route::get('/notifications/{category}/{id}',[NotificationController::class, 'sho
 Route::get('/notifications/feedback-call',[NotificationController::class, 'call'])->name('notices.call');
 });
 
-Route::post('/{}', [ DefaultController::class, 'index' ])->name('index');
+Route::get('/{page}', [ DefaultController::class, 'index' ])->name('index');

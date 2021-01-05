@@ -42,11 +42,11 @@ class ForFaqController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(FaqRequest $request)
-
-    {   $validatedData = $request->validated();
+    {
+        $validatedData = $request->validated();
         $topic =Topic::add($request->all());
         $message="Новый ответ создан";
-        return redirect()->route('admin.faq.edit', 13)->with('message', $message);
+        return redirect()->route('admin.faq.edit', 6)->with('message', $message);
     }
 
     /**
@@ -57,7 +57,7 @@ class ForFaqController extends Controller
      */
     public function show($id)
     {
-        $topic=Topic::find($id);
+        $topic=Topic::findOrFail($id);
 
         return view('admin.faq.reply_show' , compact('topic'));
     }
@@ -70,22 +70,23 @@ class ForFaqController extends Controller
      */
     public function edit($id)
     {
-        $topic=Topic::find($id);
+        $topic=Topic::findOrFail($id);
         return view('admin.faq.reply_edit', compact('topic'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  FaqRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FaqRequest $request, $id)
     {
-        $topic= Topic::find($id);
+        $validatedData = $request->validated();
+        $topic= Topic::findOrFail($id);
         $topic->edit($request->all());
-       $message="Данные успешно сохранены";
+        $message="Данные успешно сохранены";
        return redirect()->route('admin.faq-page.edit', $topic->id)->with('message', $message);
     }
 

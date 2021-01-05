@@ -72,15 +72,14 @@ class ForProjectsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  ProjectRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(ProjectRequest $request, $id)
+    {$validatedData = $request->validated();
         $project=Project::findOrFail($id);
-        $project->fill($request->all());
-        $project->save();
+        $project->edit($request->all());
         $message="Данные сохранены";
         return redirect()->route('admin.forprojects.edit', $id)->with('project_message', $message);
     }

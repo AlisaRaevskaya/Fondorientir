@@ -8,7 +8,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Главная</li>
                 </ol>
-                <div>
+                <div class="m30 ">
                     <h4>Уважаемый, {{ Auth::user()->name }}, {{ __('Вы авторизованы!') }}
                     </h4>
                 </div>
@@ -23,29 +23,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-3 col-md-6 ml1">
                         <div class="card bg-warning text-white mb-4">
                             <div class="card-body">Сообщения</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href='#'>Просмотреть новые сообщения</a>
+                                <a class="small text-white stretched-link"
+                                    href="{{ route('admin.notices.all') }}">Просмотреть новые сообщения</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
+                    <div class="col-xl-3 col-md-6 ml1">
                         <div class="card bg-success text-white mb-4">
                             <div class="card-body">Новости</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">Посмотреть новости</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-danger text-white mb-4">
-                            <div class="card-body">Danger Card</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="#">View Details</a>
+                                <a class="small text-white stretched-link" href="{{ route('admin.news.index') }}">Посмотреть
+                                    новости</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                             </div>
                         </div>

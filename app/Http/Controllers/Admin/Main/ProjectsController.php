@@ -8,7 +8,7 @@ use App\Models\Project;
 use App\Models\File;
 use App\Models\Page;
 use App\Models\Seo;
-
+use App\Http\Requests\PageRequest;
 class ProjectsController extends Controller
 {
     /**
@@ -50,7 +50,7 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        $page = Page::find($id);
+        $page = Page::findOrFail($id);
         $projects=Project::all();
         return view('admin.fond.projects.show', compact('projects', 'page'));
     }
@@ -63,29 +63,24 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        $page= Page::find($id);
+        $page= Page::findOrFail($id);
         $seo = $page->seo;
         $projects=Project::all();
         return view('admin.fond.projects.edit', compact('page', 'projects', 'seo'));
     }
 
-    /**
+   /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  PageRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PageRequest $request, $id)
     {
-        $page = Page::findOrFail($id);
-
-        $page->title=$request->title;
-        $page->content=$request->content;
-        $page->url=$request->url;
-        $page->published=$request->published;
-        $page->is_menu=$request->is_menu;
-        $page->save();
+       $validatedData = $request->validated();
+       $page = Page::findOrFail($id);
+       $page->edit($request->all());
 
         $seo = Seo::where('page_id', $id)->first();
         $seo->seo_title =$request->seo_title;

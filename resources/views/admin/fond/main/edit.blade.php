@@ -91,7 +91,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 {{ Form::label('parent_id', 'Добавить в категорию меню') }}
-                                                                {{ Form::select('parent_id', ['0' => '', '2' => 'Фонд', '3' => 'Центр Поддержки', '4' => 'Новости', '5' => 'Пресса', '6' => 'Инфоцентр'], $page->parent_id) }}
+                                                                {{ Form::select('parent_id', [2 => 'Фонд', 3 => 'Центр Поддержки', 4 => 'Новости', 7 => 'Инфо-центр', 32 => 'Контакты'], $page->parent_id) }}
                                                             </div>
                                                             <div class="form-group">
                                                                 {{ Form::label('sort_order', 'Сортировка') }}
@@ -104,8 +104,8 @@
                                                                 {{ Form::select('is_second_menu', [0 => 'Нет', 1 => 'Да'], $page->is_second_menu) }}
                                                             </div>
                                                             <div class="form-group row">
-                                                                {{ Form::label('SecondSort', 'Сортировка в меню "Центр Поддежки" ') }}
-                                                                {{ Form::text('SecondSort', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
+                                                                {{ Form::label('second_sort_order', 'Сортировка в меню "Центр Поддежки" ') }}
+                                                                {{ Form::text('second_sort_order', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
                                                             </div>
                                                         </div>
                                                     </div>

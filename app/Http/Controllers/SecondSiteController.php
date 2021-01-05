@@ -25,7 +25,7 @@ class SecondSiteController extends Controller
     }
     public function faq(){
       $page=Page::where('laravel_name', 'faq')->IsPublished()->first();
-        $replies = Topic::orderBy('dateline', 'desc')->paginate(5);
+        $replies = Topic::orderBy('date_published', 'desc')->paginate(5);
 
         return view('secondsite.faq', compact('replies', 'page'));
     }

@@ -8,6 +8,7 @@
                     <li class="breadcrumb-item">Meню</a>
                     <li class="breadcrumb-item active">Страницы</li>
                 </ol>
+
                 <div class="card mb-4">
                     <div class="card-body">
                         В данном разделе Вы можете редактировать статьи из раздела "Страницы".
@@ -18,7 +19,7 @@
                         <i class="fas fa-table mr-1"></i>
                         Страницы
                         <div class="text-center">
-                            <a href="{{ route('admin.pages.create') }}" class="btn btn-default pull-right"><i
+                            <a href="{{ route('admin.pages.create') }}" class="btn btn-outline-primary pull-right"><i
                                     class="fa fa-plus"></i> Добавить страницу</a>
                         </div>
                     </div>
@@ -34,7 +35,7 @@
                                     <th>Ссылка</th>
                                     <th>Опубликована</th>
                                     <th>Меню</th>
-                                    <th>Сортировка</th>
+
                                     <th>Дата изменения</th>
                                     <th>Редактировать</th>
                                     <th>Удалить</th>
@@ -47,7 +48,6 @@
                                     <th>Сcылка</th>
                                     <th>Опубликана</th>
                                     <th>Меню</th>
-                                    <th>Сортировка</th>
                                     <th>Дата изменения</th>
                                     <th>Редактировать</th>
                                     <th>Удалить</th>
@@ -57,43 +57,37 @@
                             <tbody>
                                 @foreach ($pages as $page)
                                     <tr>
-                                        <td>{{ $page->id }}</td>
-                                        <td>{{ $page->title }}</td>
-                                        <td>{{ $page->url }}</td>
-                                        <td>
+                                        <td class="col-md-1">{{ $page->id }}</td>
+                                        <td class="col-md-3">{{ $page->title }}</td>
+                                        <td class="col-md-3">{{ $page->url }}</td>
+                                        <td class="col-md-1">
                                             @if ($page->published == 1) да
                                             @else нет
                                             @endif
                                         </td>
-                                        <td>
+                                        <td class="col-md-1">
                                             @if ($page->is_menu == 1) да
                                             @else нет
                                             @endif
                                         </td>
-                                        <td>
-                                            @if ($page->sort_order == 1) да
-                                            @else нет
-                                            @endif
-                                        </td>
-                                        <td>{{ $page->updated_at }}</td>
 
-                                        <td class="project-actions text-right ">
+                                        <td class="col-md-1">{{ $page->updated_at }}</td>
 
-                                            <a href="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.edit', $page->id) : route('admin.main.edit', $page->id) }}"
-                                                class="btn btn-primary ">
-                                                <i class="fas fa-pencil-alt"></i> Редактировать</a>
+                                        <td class="project-actions text-left col-md-1">
+
+                                            <a href="{{ route($page->getAdminUrlEdit(), $page->id) }}"
+                                                class="btn btn-primary"><i class="fas fa-pencil-alt"></i>
+                                                Редактировать</a>
                                         </td>
-                                        <td>
-                                            <form
-                                                action="{{ $page->laravel_name ? route('admin.' . \Str::slug($page->laravel_name) . '.destroy', $page->id) : route('admin.main.destroy', $page->id) }}"
-                                                method="post" class="text-center">
+                                        <td class="col-md-1 text-left">
+                                            <form action="{{ route($page->getAdminUrlEdit(), $page->id) }}" method="post"
+                                                class="text-center deleteForm">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
-                                                <button class="btn btn-danger pull-right">
+                                                <button class="btn btn-danger pull-right" type="button">
                                                     <i class="fas fa-trash">
                                                     </i> Удалить</button>
                                             </form>
-
                                         </td>
                                     </tr>
                                 @endforeach
@@ -110,4 +104,5 @@
             </div>
         </main>
     </div>
+
 @endsection

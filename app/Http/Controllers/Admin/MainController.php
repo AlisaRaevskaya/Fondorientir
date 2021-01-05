@@ -9,6 +9,7 @@ use App\Models\News;
 use App\Models\Topic;
 use App\Models\Seo;
 use App\Models\Projects;
+use App\Http\Requests\PageRequest;
 
 
 class MainController extends Controller
@@ -52,7 +53,7 @@ class MainController extends Controller
      */
     public function show($id)
     {
-    $page = Page::find($id);
+   $page = Page::findOrFail($id);
 
     return view('admin.fond.main.show', compact('page'));
     }
@@ -64,7 +65,7 @@ class MainController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit( $id)
-    {   $page= Page::find($id);
+    {   $page = Page::findOrFail($id);
         $seo = $page->seo;
         return view('admin.fond.main.edit', compact('page', 'seo'));
     }
@@ -72,20 +73,14 @@ class MainController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  PageRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(PageRequest $request, $id)
+    { $validatedData = $request->validated();
         $page = Page::findOrFail($id);
-
-        $page->title=$request->title;
-        $page->content=$request->content;
-        $page->url=$request->url;
-        $page->published=$request->published;
-        $page->is_menu=$request->is_menu;
-        $page->save();
+        $page->edit($request->all());
 
         $seo = Seo::where('page_id', $id)->first();
         $seo->seo_title =$request->seo_title;

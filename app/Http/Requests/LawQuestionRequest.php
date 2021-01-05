@@ -26,8 +26,8 @@ class LawQuestionRequest extends FormRequest
     public function rules()
     {
         return [
-        'name' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я].*$/'],
-        'message' => ['required','string','min:8','max:500'],
+         'name' => ['required','min:2','max:15','regex:/^[a-zA-Zа-яА-Я\s\-]{2,15}$/'],
+        'message' => ['required','string','min:10','max:500'],
         'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
         'captcha' => ['required','captcha'],
         ];

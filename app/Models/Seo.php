@@ -12,11 +12,8 @@ class Seo extends Model
         'seo_title',
         'description',
         'keywords',
-        // 'og_title',
-        // 'og_description',
-        // 'og_type',
-        // 'og_url',
-        // 'og_site_name',
+        'og_title',
+        'og_description'
     ];
 
     //Все поля разрешено менять
@@ -24,6 +21,10 @@ class Seo extends Model
 
     //включает выключает метку времени в таблицах
     public $timestamps = false;
+
+      public function page(){
+        return $this->belongsTo('App\Models\Page');
+    }
 
     public function setDescriptionAttribute($value){
         $this->attributes['description'] = htmlspecialchars($value, ENT_HTML5);
@@ -70,13 +71,6 @@ class Seo extends Model
         return $this->updated_at->format('d F Y H:i');
     }
 
-   public function page(){
-        return $this->belongsTo('App\Models\Page');
-    }
 
- public function getSeo()
-    {
-      //
-    }
 
 }

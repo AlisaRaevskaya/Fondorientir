@@ -12,9 +12,9 @@
                             </div>
 
 
-                            {{-- <div class="entity_meta">
-                                {{ $top->dateline }}
-                            </div> --}}
+                            <div class="entity_meta">
+                                {{ $top->date_published }}
+                            </div>
                             <!-- entity_meta -->
 
                             @if (isset($top->image))

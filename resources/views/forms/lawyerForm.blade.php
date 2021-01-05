@@ -27,14 +27,14 @@
              <div class="form-group">
                  <label for="contactName">Контактное лицо:</label>
                  <input type="text" class="form-control form-control-small" placeholder="Ваше имя" name="name">
-                 <span class="text-danger" id="nameError"></span>
+                 <span class="text-danger" id="nameErrorLaw"></span>
              </div>
 
              <div class="form-group">
                  <label for="phone">Ваш телефон</label>
                  <input type="text" class="form-control" placeholder="Введите номер телефона для связи" name="phone"
                      id="phone">
-                 <span class="text-danger" id="phoneError"></span>
+                 <span class="text-danger" id="phoneErrorLaw"></span>
              </div>
 
 
@@ -42,7 +42,7 @@
                  <label for="textarea">Ваше сообщение</label>
                  <textarea class="form-control" cols="4" rows="7" placeholder="Введите сообщение"
                      name="message"></textarea>
-                 <span class="text-danger" id="messageError"></span>
+                 <span class="text-danger" id="messageErrorLaw"></span>
              </div>
 
              <div class="form-group mt-4 mb-4">
@@ -53,7 +53,7 @@
                      </button>
                  </div>
              </div>
-             <span class="text-danger" id="captchaError"></span>
+             <span class="text-danger" id="captchaErrorLaw"></span>
              <div class="form-group mb-4">
                  <input id="captcha" type="text" class="form-control" placeholder="Введите код" name="captcha">
              </div>

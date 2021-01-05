@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\PageRequest;
+use App\Http\Requests\PageStoreRequest;
 
 use Illuminate\Http\Request;
 use App\Models\Page;
@@ -36,10 +37,10 @@ class PageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     *  @param  PageRequest $request
+     *  @param  PageStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PageRequest $request)
+    public function store(PageStoreRequest $request)
     {
         $validatedData = $request->validated();
         $page = Page::add($request->all());
@@ -54,9 +55,9 @@ class PageController extends Controller
         $seo->og_description=$request->og_description;
 
         $seo->page_id=$id;
-       $seo->save();
+        $seo->save();
         $message="Данные сохранены";
-        return redirect()->route('admin.pages.create', $id)->with('message', $message);
+        return redirect()->route('admin.pages.create')->with('message', $message);
     }
 
     /**
@@ -67,33 +68,47 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        //
+   $page = Page::findOrFail($id);
+
+    return view('admin.fond.main.show', compact('page'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+        public function edit( $id)
+    {   $page = Page::find($id);
+        $seo = $page->seo;
+        return view('admin.pages.edit', compact('page', 'seo'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  PageRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PageRequest $request, $id)
     {
-        // $page = Pages::findOrFail($id);
-        // $page->edit($request->all());
-        // $message="Данные сохранены";
-        // return redirect()->route('admin.pages.edit', $id)->with('message', $message);
+      $validatedData = $request->validated();
+      $page = Page::findOrFail($id);
+       $page->edit($request->all());
+
+        $seo = Seo::where('page_id', $id)->first();
+        $seo->seo_title =$request->seo_title;
+        $seo->name=$request->name;
+        $seo->description=$request->description;
+        $seo->keywords=$request->keywords;
+        $seo->og_title=$request->og_title;
+        $seo->og_description=$request->og_description;
+        $seo->save();
+        $message="Данные сохранены";
+return redirect()->route('admin.pages.edit', $id)->with('message', $message);
     }
 
     /**
@@ -104,6 +119,10 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $page = Page::findOrFail($id);
+        // $seo=Seo::where('page_id', $id)->first();
+        // $seo->delete();
+        // $page->delete();
+        return redirect()->route('admin.news.index');
     }
 }

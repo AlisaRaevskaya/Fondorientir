@@ -1,7 +1,7 @@
 <div class="modal fade" id="lawyerQuestion" tabindex="-1" role="dialog" aria-labelledby="ModalTitle" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-avatar" role="document">
         <!--Content-->
-        <div class="modal-content " style="width:calc(80% - 2px);">
+        <div class="modal-content" style="width:calc(80% - 2px);">
             <!--Header-->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -22,18 +22,18 @@
                     <div class="form-group pop_modal">
                         <label for="contactName">Контактное лицо:</label>
                         <input type="text" class="form-control form-control-small" placeholder="Ваше имя" name="name">
-                        <span class="text-danger" id="nameError"></span>
+                        <span class="text-danger" id="nameErrorSidebar"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="email-input">Ваш email</label>
                         <input type="email" class="form-control" placeholder="Введите email" name="email">
-                        <span class="text-danger" id="emailError"></span>
+                        <span class="text-danger" id="emailErrorSidebar"></span>
                     </div>
                     <div class="form-group pop_modal">
                         <label for="phone">Ваш телефон</label>
                         <input type="text" class="form-control" placeholder="Ваш номер телефона для связи" name="phone">
-                        <span class="text-danger" id="phoneError"></span>
+                        <span class="text-danger" id="phoneErrorSidebar"></span>
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="category" id="hidden_input">

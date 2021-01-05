@@ -23,9 +23,9 @@ let form=$('form[name="lawyerFormSidebar"]');
         $("#lawyerQuestion").modal('hide');
         }, 2000);
       }else{
-        $("#nameError").text(response.errors.name);
-        $("#phoneError").text(response.errors.phone);
-        $("#emailError").text(response.errors.email);
+        $("#nameErrorSidebar").text(response.errors.name);
+        $("#phoneErrorSidebar").text(response.errors.phone);
+        $("#emailErrorSidebar").text(response.errors.email);
       }
     },
 });

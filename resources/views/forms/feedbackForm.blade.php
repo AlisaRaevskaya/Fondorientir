@@ -38,8 +38,7 @@
                 class="color_red">*</span>
         </label>
         <div class="col-xs-9">
-            <input type="tel" required class="form-control" id="phoneNumber" name="phone"
-                placeholder="Введите номер телефона">
+            <input type="tel" required class="form-control" id="phoneNumber" name="phone" placeholder="+79012345678">
             <span class="text-danger phoneError"></span>
         </div>
     </div>
@@ -98,9 +97,12 @@
         </div>
     </div>
 </form>
-
-<div class="text-center" id="success_messages" style="padding-left:30px;"></div>
-
+<div class="form-group">
+    <div class="col-xs-offset-3 col-xs-9">
+        <span class="text-center" id="success_messages">
+        </span>
+    </div>
+</div>
 <script type="text/javascript">
     $('#reload').on("click", function() {
         $.ajax({

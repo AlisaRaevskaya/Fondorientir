@@ -34,9 +34,10 @@ $("#btn-messages").on("click", function(event) {
                 setTimeout(() => {
                     form.trigger("reset");
                      $("#success_messages").html('');
-                     $("span").html('');
-                }, 2000);
+                     $(".text-danger").html('');
+                }, 3000);
             } else{
+            $('#reload').trigger("click");
                 lastNameError.text(response.errors.lastName);
                 firstNameError.text(response.errors.firstName);
                 fatherNameError.text(response.errors.fatherName);

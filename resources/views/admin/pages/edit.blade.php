@@ -26,7 +26,7 @@
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
-                                        Редактировать страницу
+                                        Редактировать статью
                                     </h3>
                                 </div>
 
@@ -59,7 +59,7 @@
                                         <div class="box-body tab-pane active" id="content">
                                             <div class="pt10">
                                                 <div class="col-md-11">
-                                                    {{ Form::open(['route' => ['admin.history.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
+                                                    {{ Form::open(['route' => ['admin.main.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
                                                     <div class="form-group">
                                                         {{ Form::label('title', 'Название') }}
                                                         {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
@@ -91,7 +91,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 {{ Form::label('parent_id', 'Добавить в категорию меню') }}
-                                                                {{ Form::select('parent_id', ['0' => '', '2' => 'Фонд', '3' => 'Центр Поддержки', '4' => 'Новости', '5' => 'Пресса', '6' => 'Инфоцентр'], $page->parent_id) }}
+                                                                {{ Form::select('parent_id', [0 => '', 2 => 'Фонд', 3 => 'Центр Поддержки', 4 => 'Новости', 7 => 'Инфо-центр', 32 => 'Контакты'], $page->parent_id) }}
                                                             </div>
                                                             <div class="form-group">
                                                                 {{ Form::label('sort_order', 'Сортировка') }}

@@ -33,17 +33,7 @@
                             @endif
                             {!! $item->body !!}
                         </div>
-                        {{--
-                        @if ($item->source_name)
-                            <div class="entity_thumb">
-                                <span>
-                                    <h6>Источник:{{ $item->source_name }}</h6>
-                                    @if ($item->source_link)
-                                        <p><a href="{{ $item->source_link }}">Ccылка</a></p>
-                                    @endif
-                                </span>
-                            </div>
-                        @endif --}}
+                    
                         <div class="m30">
                             <h6><a href="{{ url()->previous() }}" class="btn btn-default btn-sm" style="padding:10px;">
                                     <<< Назад </a>

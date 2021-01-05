@@ -53,12 +53,12 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    {{ Form::label('intro', 'Intro') }}
+                                                    {{ Form::label('intro', 'Intro(краткое содержание новости)') }}
                                                     {{ Form::textArea('intro', $news->intro, ['class' => 'form-control summernote_news']) }}
                                                 </div>
 
                                                 <div class="form-group">
-                                                    {{ Form::label('image', 'Картинка') }}
+                                                    {{ Form::label('image', 'Добавить картинку (рекомендуемый размер:400x250px).') }}
                                                     {{ Form::file('image') }}
                                                     @if (isset($news->image))
                                                         <p>

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class News extends Model
 {
     protected $fillable = [
-        'title','intro','body','date_published', 'image'];
+        'title','intro','body','image','date_published', 'category_id'];
 
     protected $table = 'news';
 
@@ -59,12 +59,6 @@ class News extends Model
     {
         $this->attributes['body'] = htmlspecialchars($value, ENT_HTML5);
     }
-     public function setImageAttribute($value)
-    {
-        if (!$value){
-        $this->attributes['image'] = '1609187341.jpg';
-        }
-    }
 
     public function getBodyAttribute($value)
     {
@@ -93,22 +87,10 @@ class News extends Model
         */
     public function deleteImage($name)
     {
-        $path = storage_path('/app/public/news');
+        $path = public_path('/storage/news');
 
         return Storage::delete($path . $name);
     }
-
-    // /**
-    //  * Удаляем мини картинку
-    //  * @param $name
-    //  * @return mixed
-    //  */
-    // public function deleteMiniImages($name)
-    // {
-    //     $path = '/articles/mini/';
-
-    //     return Storage::delete($path . $name);
-    // }
 
     /**
      * Загружаем новое изоюражение
@@ -131,14 +113,7 @@ class News extends Model
         return $newName[1];
     }
 
-    // public function getImage()
-    // {
-    //     if ($this->images == null) {
-    //         return '/images/support.png';
-    //     }
 
-    //     return '/storage/articles/' . $this->images;
-    // }
 
     public function getMiniIntro()
     {

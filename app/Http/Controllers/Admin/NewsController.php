@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\NewsRequest;
+use Intervention\Image\ImageManagerStatic as Image;
+
 use App\Models\News;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
@@ -19,7 +21,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::where('category_id', 1)->orderBy('id', 'desc')->paginate(7);
+        $news = News::where('category_id', 1)->orderBy('date_published', 'desc')->paginate(7);
         $new = News::find(1)->first();
         $category= $new->category;
         return view('admin.news.index', compact('news', 'category'));
@@ -47,15 +49,16 @@ class NewsController extends Controller
 
         $news= new News();
 
-        $imageName = time().'.'.$request->image->extension();
+        $imageName = $request->image->getClientOriginalName();
         $request->image->move(storage_path('/app/public/news'), $imageName);
 
         $news->image=$imageName;
-        $news->category_id=1;
-
-        $news=News::add($request->all());
-        $message='Данные загружены';
-        return redirect()->route('admin.news.create')->with('message', $message);
+        $news->title=$request->title;
+        $news->date_published=$request->date_published;
+        $news->body=$request->body;
+        $news->intro=$request->intro;
+        $news->save();
+        return redirect()->route('admin.news.index');
     }
 
     /**
@@ -85,29 +88,30 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  NewsRequest  $request
+     * @param NewsRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(NewsRequest $request, $id)
     {
         $validatedData = $request->validated();
+        $news=News::findOrFail($id);
+        if($request->hasFile('image')) {
+            $oldFileName = $news->image;
+            if ($oldFileName !== null) {
+                $news->deleteImage($oldFileName);
+            }
 
-        //   if ($request->hasFile('image')) {
-        $imageName = time().'.'.$request->image->extension();
-
-        $request->image->move(public_path('/storage/news'), $imageName);
-        // storage_path('/app/public/snews'
-        //   }
-        $news=News::where('id', $id)->first();
-
-        $news->image=$imageName;
+            $imageName = $request->image->getClientOriginalName();
+            $request->image->move(storage_path('/app/public/news'), $imageName);
+            $news->image=$imageName;
+        }
         $news->title=$request->title;
         $news->date_published=$request->date_published;
         $news->body=$request->body;
         $news->intro=$request->intro;
         $news->save();
-        $message='Данные загружены';
+        $message='Новость отредактирована';
         return redirect()->route('admin.news.edit', $id)->with('message', $message);
     }
 

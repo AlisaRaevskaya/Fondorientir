@@ -103,8 +103,8 @@
                                                                 {{ Form::select('is_second_menu', [0 => 'Нет', 1 => 'Да'], $page->is_second_menu) }}
                                                             </div>
                                                             <div class="form-group row">
-                                                                {{ Form::label('SecondSort', 'Сортировка в меню "Центр Поддежки" ') }}
-                                                                {{ Form::text('SecondSort', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
+                                                                {{ Form::label('second_sort_order', 'Сортировка в меню "Центр Поддежки" ') }}
+                                                                {{ Form::text('second_sort_order', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -175,6 +175,7 @@
                                             </div>
                                         </div>
                                         <div class="box-body tab-pane active" id="responses">
+
                                             <div class="" style="margin-top:15px;">
                                                 <div class="col-md-12">
                                                     <table class="table table-bordered table-responsive border-top">
@@ -193,24 +194,24 @@
                                                                 @csrf
                                                                 <tr style="color:black;">
                                                                     <th scope="row">{{ $reply->id }}</th>
-                                                                    <td>
+                                                                    <td class="col-md-4">
                                                                         {{ $reply->title }}
                                                                     </td>
 
-                                                                    <td>
+                                                                    <td class="col-md-4">
                                                                         {!! $reply->getMiniContent() !!}
                                                                     </td>
-                                                                    <td style="width:16.6667%;">
-                                                                        {!! $reply->dateline !!}
+                                                                    <td class="col-md-2">
+                                                                        {!! $reply->date_published !!}
                                                                     </td>
-                                                                    <td>
+                                                                    <td class="col-md-1">
                                                                         <a href="{{ route('admin.faq-page.edit', $reply->id) }}"
                                                                             class="btn btn-primary pull-right"
                                                                             style="margin-left:20px;"><i
                                                                                 class="fa fa-edit"></i>
                                                                             Редактировать</a>
                                                                     </td>
-                                                                    <td>
+                                                                    <td class="col-md-1">
                                                                         <form
                                                                             action="{{ route('admin.faq-page.destroy', $reply->id) }}"
                                                                             method="post" class="text-center pull-right">
@@ -231,15 +232,25 @@
                                                             {{ session()->get('message') }}
                                                         </div>
                                                     @endif
+
                                                     <div class="box-footer">
                                                         <div class="buttons">
+                                                            <div class="text-center">
+                                                                <a href="{{ route('admin.faq-page.create') }}"
+                                                                    class="btn btn-outline-primary pull-right"><i
+                                                                        class="fa fa-plus"></i>
+                                                                    Добавить вопрос-ответ</a>
+                                                            </div>
                                                             <nav aria-label="Page navigation" class="pagination_section">
                                                                 <ul class="pagination">
                                                                     <li>{{ $replies->links() }}</li>
                                                                 </ul>
                                                             </nav>
+
                                                             <a href="{{ url()->previous() }}" class="btn btn-default "><i
                                                                     class="fas fa-caret-left"></i> Назад</a>
+
+
                                                         </div>
                                                     </div>
                                                 </div>

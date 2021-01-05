@@ -27,11 +27,12 @@ class LawQuestionSidebarRequest extends FormRequest
     public function rules()
     {
         return [
-        'name' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я].*$/'],
-        'email' => ['min:2','max:255','email'],
-        'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
+       'name' => ['required','min:2','max:15','regex:/^[a-zA-Zа-яА-Я\s\-]{2,15}$/'],
+       'email' => ['min:2','max:255','email','nullable'],
+    'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
         ];
     }
+
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json(['errors'=>$validator->errors()], 200));

@@ -34,10 +34,12 @@
                                     <div class="entity_meta">
                                         <p>{{ $item->cutDateline() }}</p>
                                     </div>
-
+                                    
+                                    @if(isset($item->intro))
                                     <div class="entity_intro">
                                         {!! $item->intro !!}
                                     </div>
+                                    @endif
 
                                     <div style="margin-top:10px">
                                         <a href="{{ route('news_category.id', $item->id) }}"

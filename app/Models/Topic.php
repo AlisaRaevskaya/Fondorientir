@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Jenssegers\Date\Date;
 use Carbon\Carbon;
 
 class Topic extends Model
 {
-   protected $fillable = [ 'title','body','intro','dateline', 'image'];
+   protected $fillable = [ 'title','body','intro','date_published'];
 
     protected $table = 'topics';
 
@@ -37,6 +38,21 @@ class Topic extends Model
 {
     $this->attributes['dateline'] = Carbon::parse($value)->timestamp;
 }
+
+public function getDatePublishedAttribute($value)
+    {
+        return Date::parse($value)->format('d-m-Y H:i:s');
+    }
+
+    public function setDatePublishedAttribute($value)
+    {
+        $this->attributes['date_published'] = Date::parse($value)->format("Y-m-d\TH:i:s");
+    }
+     public function cutDateline()
+    {
+        return Date::parse($this->date_published)->format('d F Y');
+    }
+
    public static function add($fields)
     {
         $pages= new static;

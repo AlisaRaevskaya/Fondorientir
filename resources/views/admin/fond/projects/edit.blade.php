@@ -106,8 +106,8 @@
                                                                 {{ Form::select('is_second_menu', [0 => 'Нет', 1 => 'Да'], $page->is_second_menu) }}
                                                             </div>
                                                             <div class="form-group row">
-                                                                {{ Form::label('SecondSort', 'Сортировка в меню "Центр Поддежки" ') }}
-                                                                {{ Form::text('SecondSort', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
+                                                                {{ Form::label('second_sort_order', 'Сортировка в меню "Центр Поддежки" ') }}
+                                                                {{ Form::text('second_sort_order', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
                                                             </div>
                                                         </div>
                                                     </div>
