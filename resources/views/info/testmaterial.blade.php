@@ -6,7 +6,14 @@
             <div class="row">
 
                 <div class="col-md-9">
-                    <h1 class="text-center">Материалы по тестированию</h1>
+                    <div>
+                        <ol class="breadcrumb info_breadcrumb">
+                            <li class="breadcrumb-item">Инфо-центр</li>
+                            <li class="breadcrumb-item active">{{ $page->title }}
+                            </li>
+                        </ol>
+                    </div>
+                    <h1>Материалы по тестированию</h1>
                     <div class="entity_wrapper">
                         {!! $page->content !!}
                     </div>

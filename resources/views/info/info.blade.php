@@ -5,6 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
+                    <div>
+                        <ol class="breadcrumb info_breadcrumb">
+                            <li class="breadcrumb-item">Инфо-центр</li>
+                            <li class="breadcrumb-item active">{{ $page->title }}
+                            </li>
+                        </ol>
+                    </div>
                     <h1 class="text-center usefu_info_title"><strong>Полезная информация</strong></h1>
                     <div class="m30 ">
                         <div class="flex-row">

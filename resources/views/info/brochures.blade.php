@@ -5,6 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
+                    <div>
+                        <ol class="breadcrumb info_breadcrumb">
+                            <li class="breadcrumb-item">Инфо-центр</li>
+                            <li class="breadcrumb-item active">{{ $page->title }}
+                            </li>
+                        </ol>
+                    </div>
                     {{-- {!! $page->content !!} --}}
                     <div class="entity_wrapper">
 
@@ -56,7 +63,7 @@
                                 <div class="brochure-item_2 col-md-4 col-sm-12">
                                     <h6>Полезная информация для трудовых мигрантов на русском языке</h6>
                                     <a href="/storage/pdf/Брошюра-1.pdf">
-                                        <img src="/storage/broch1-1.jpg" class="img-responsive"
+                                        <img src="/storage/broch-1-1.jpeg" class="img-responsive"
                                             title="Информация для трудовых мигрантов на русском языке"></a>
                                     </a>
                                     <div class="text-center brochure-button">
@@ -67,7 +74,7 @@
                                 <div class="brochure-item_2 col-md-4 col-sm-12">
                                     <h6>Полезная информация для трудовых мигрантов на узбекском языке</h6>
                                     <a href="/storage/pdf/Брошюра-2.pdf">
-                                        <img src="/storage/broch3-3.jpg" class="img-responsive"
+                                        <img src="/storage/broch-3-3.jpeg" class="img-responsive"
                                             title="Информация для трудовых мигрантов на узбекском языке">
                                     </a>
 
@@ -79,7 +86,7 @@
                                 <div class="brochure-item_2 col-md-4 col-sm-12">
                                     <h6>Полезная информация для трудовых мигрантов на таджикском языке</h6>
                                     <a href="/storage/pdf/Брошюра-3.pdf">
-                                        <img src="/storage/broch2-2.jpg" class="img-responsive"
+                                        <img src="/storage/broch-2-2.jpeg" class="img-responsive"
                                             title="Информация для трудовых мигрантов на узбекском языке">
                                     </a>
 

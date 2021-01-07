@@ -4,7 +4,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <h2 class="text-center">Успешно реализованные проекты:</h2>
+                    <div>
+                        <ol class="breadcrumb info_breadcrumb">
+                            <li class="breadcrumb-item">Фонд</li>
+                            <li class="breadcrumb-item active">{{ $page->title }}
+                            </li>
+                        </ol>
+                    </div>
+                    <h1 class="text-center">Успешно реализованные проекты:</h1>
                     <table class="table table-bordered table-responsive">
 
                         <thead>

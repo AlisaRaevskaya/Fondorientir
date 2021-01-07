@@ -7,14 +7,15 @@
                 <div class="partners_flex">
                     <div class="partner_item flex-2">
                         <div class="part_img">
-                            <img src="/assets/images/footer/kadastr.jpg" alt="kadastrovaya_palata">
+                            <img src="{{ asset('storage/footer/kadastr.jpg') }}" alt="kadastrovaya_palata">
                         </div>
                         <p style="padding-top:10px;">Кадастровая палата</p>
                     </div>
 
                     <div class="partner_item flex-2">
                         <div class="part_img">
-                            <img src="/assets/images/footer/nalogovaya.jpg" alt="nalogovaya" class="rounded-circle">
+                            <img src="{{ asset('storage/footer/nalogovaya.jpg') }}" alt="nalogovaya"
+                                class="rounded-circle">
                         </div>
                         <p style="padding-top:10px;">Федеральная налоговая служба</p>
                     </div>
@@ -22,7 +23,7 @@
                     <div class="partner_item flex-2">
 
                         <div class="part_img flex-2">
-                            <img src="/assets/images/footer/pristavy.jpg" alt="pristavy">
+                            <img src="{{ asset('storage/footer/pristavy.jpg') }}" alt="pristavy">
                         </div>
                         <p style="padding-top:10px;">Служба судебных приставов</p>
                     </div>
@@ -30,14 +31,14 @@
                     <div class="partner_item flex-2">
 
                         <div class="part_img">
-                            <img src="/assets/images/footer/potrebitel.jpg" alt="potrebitel_service">
+                            <img src="{{ asset('storage/footer/potrebitel.jpg') }}" alt="potrebitel_service">
                         </div>
-                        <p style="padding-top:10px;"> Федеральная служба защиты прав потребителей</p>
+                        <div style="padding-top:10px;"> Федеральная служба защиты <br>прав потребителей</div>
                     </div>
 
                     <div class="partner_item flex-2">
                         <div>
-                            <img src="/assets/images/footer/rossotrudnichestvo.png" alt="rossotrudnichestvo">
+                            <img src="{{ asset('storage/footer/rossotrudnichestvo.png') }}" alt="rossotrudnichestvo">
                         </div>
                         <p style="padding-top:10px;">Россотрудничество</p>
                     </div>

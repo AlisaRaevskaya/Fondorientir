@@ -12,38 +12,6 @@ use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
-    // public function newsadd()
-    // {
-    //     $news = News::orderBy('id', 'desc')->paginate(7);
-    //     $new = News::find(1)->first();
-    //     $category= $new->category;
-    //     return view('admin.news.news_edit', compact('news', 'category'));
-    // }
-
-    // public function imageUpload($id)
-    // {
-    //     $news_id=$id;
-    //     return view('upload', compact('news_id'));
-    // }
-
-    // public function imageStorePost(Request $request, $id)
-    // {
-    //     $request->validate([
-    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    //     ]);
-
-    //     $imageName = time().'.'.$request->image->extension();
-    //     // time().'.'.$request->image->extension();
-
-    //     $request->image->move(storage_path('/app/public/news'), $imageName);
-
-    //     // $news=new News();
-    //     $news=News::where('id', $id)->first();
-    //     $news->image= $imageName;
-    //     $news->save();
-    //     $message='Картинка загружена';
-    //     return redirect()->route('newsadd')->with('message', $message);
-    // }
 
     public function summerUpload(Request $request, $id)
     {

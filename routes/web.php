@@ -33,7 +33,7 @@ use App\Http\Controllers\CaptchaServiceController;
 //Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 
 Route::get('/', [MainController::class, 'index'])->name('main');
-Route::get('/feedback', [MessageController::class, 'index'])->name('feedback');
+Route::get('/support', [MessageController::class, 'index'])->name('support');
 Route::get('/migration-news', [NewsController::class, 'index'])->name('news');
 Route::get('/info', [InfoController::class, 'index'])->name('info');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
@@ -42,22 +42,22 @@ Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/fond', [MainController::class, 'fond'])->name('fond');
 
 Route::get('/history', [MainController::class, 'history'])->name('history');
-Route::get('/smi_o_nas', [MainController::class, 'pressnews'])->name('press-news');
+Route::get('/smi-o-nas', [MainController::class, 'pressnews'])->name('press-news');
 Route::get('/mission', [MainController::class, 'mission'])->name('mission');
 Route::get('/structure', [MainController::class, 'structure'])->name('structure');
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
-Route::get('/bankinfo', [MainController::class, 'bankinfo'])->name('bankinfo');
+Route::get('/rekvizity', [MainController::class, 'bankinfo'])->name('bankinfo');
 
-Route::get('/online_priemnaya/lawyer', [MessageController::class, 'lawyer'])->name('lawyer');
-Route::get('/online_priemnaya/reception', [MessageController::class, 'reception'])->name('reception');
-Route::get('/online_priemnaya/hotline', [MessageController::class, 'hotline'])->name('hotline');
-Route::get('/online_priemnaya/application', [MessageController::class, 'application'])->name('application');
-Route::get('/online_priemnaya/claim', [MessageController::class, 'claim'])->name('claim');
-Route::get('/online_priemnaya/problem', [MessageController::class, 'problem'])->name('problem');
-Route::get('/online_priemnaya/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
-Route::get('/online_priemnaya/faq', [FaqController::class, 'index'])->name('faq');
+Route::get('/support/lawyer', [MessageController::class, 'lawyer'])->name('lawyer');
+Route::get('/support/reception', [MessageController::class, 'reception'])->name('reception');
+Route::get('/support/hotline', [MessageController::class, 'hotline'])->name('hotline');
+Route::get('/support/application', [MessageController::class, 'application'])->name('application');
+Route::get('/support/claim', [MessageController::class, 'claim'])->name('claim');
+Route::get('/support/problem', [MessageController::class, 'problem'])->name('problem');
+Route::get('/support/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
+Route::get('/support/faq', [FaqController::class, 'index'])->name('faq');
 
 
 Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');

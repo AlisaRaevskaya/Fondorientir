@@ -5,16 +5,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
+                    <div>
+                        <ol class="breadcrumb info_breadcrumb">
+                            <li class="breadcrumb-item">Центр поддержки</li>
+                            <li class="breadcrumb-item active">{{ $page->title }}
+                            </li>
+                        </ol>
+                    </div>
                     <div class="entity-wrapper">
                         <div class="row justify-contet-center">
-                            <h1 style="font-weight:700;">Вопросы и ответы</h1>
+                            <h1>Вопросы и ответы</h1>
                         </div>
                         <div class="entity_content">
                             @foreach ($replies as $reply)
                                 <div class="entity_title">
-                                    <h1> <a href="{{ route('faq.id', $reply->id) }}" target="_self"
+                                    <h2> <a href="{{ route('faq.id', $reply->id) }}" target="_self"
                                             style="text-decoration:underline">
-                                            {!! $reply->title !!}</a></h1>
+                                            {!! $reply->title !!}</a></h2>
                                 </div>
                                 <!-- entity_title -->
                                 <div class="entity_content">

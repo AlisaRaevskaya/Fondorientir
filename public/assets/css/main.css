@@ -191,8 +191,8 @@ margin: 0 5px;
   margin:0 10px;
 }
 .partner_item img {
-  width: 100px;
-  height: 100px;
+  width: 99px;
+  height: 99px;
   border-radius: 80%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -241,8 +241,6 @@ hr {
   width: 250px;
 }
 .brochure-item_2 img {
-  /* max-width: 250px;
-  max-height:400px; */
   margin:0 auto;
 }
 .side-block {

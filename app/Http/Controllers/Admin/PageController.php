@@ -70,7 +70,7 @@ class PageController extends Controller
     {
    $page = Page::findOrFail($id);
 
-    return view('admin.fond.main.show', compact('page'));
+    return view('admin.pages.show', compact('page'));
     }
 
 
@@ -119,11 +119,11 @@ return redirect()->route('admin.pages.edit', $id)->with('message', $message);
      */
     public function destroy($id)
     {
-        // $page = Page::findOrFail($id);
-        // $seo=Seo::where('page_id', $id)->first();
-        // $seo->delete();
-        // $page->delete();
-        return redirect()->route('admin.news.index');
+        $page = Page::findOrFail($id);
+        $seo=Seo::where('page_id', $id)->first();
+        $seo->delete();
+        $page->delete();
+        return redirect()->route('admin.pages.index');
     }
 
     /**

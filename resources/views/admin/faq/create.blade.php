@@ -28,10 +28,8 @@
                                         Добавить вопрос-ответ
                                     </h3>
                                 </div>
-                                <!-- Main content -->
 
                                 <div class="card-body">
-
                                     <div class="box tab-content">
                                         <div class="box-header with-border">
                                             @if ($errors->any())
@@ -45,7 +43,7 @@
                                             @endif
                                         </div>
 
-                                        <div class="box-body " id="content">
+                                        <div class="box-body" id="content">
                                             <div style="margin-top:15px;">
                                                 <div class="col-md-11">
                                                     {{ Form::open(['route' => 'admin.faq-page.store', 'files' => true]) }}

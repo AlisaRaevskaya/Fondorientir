@@ -64,7 +64,7 @@
                                                         {{ session()->get('project_message') }}
                                                     </div>
                                                 @endif
-                                                <div class="box-footer">
+                                                <div>
                                                     <a href="{{ url()->previous() }}" class="btn btn-default "><i
                                                             class="fas fa-caret-left"></i> Назад</a>
 

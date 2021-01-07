@@ -23,7 +23,6 @@
             }).then(function(token) {
 
             });
-
         });
 
     </script>

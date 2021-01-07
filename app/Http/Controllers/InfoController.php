@@ -11,7 +11,7 @@ class InfoController extends Controller
     }
 
     public function usefulInfo(){
-        $page= Page::where('laravel_name', 'useful-info')->IsPublished()->first();
+        $page= Page::where('id', '25')->IsPublished()->first();
         return view('info.info', compact('page'));
     }
 

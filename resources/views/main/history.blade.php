@@ -4,6 +4,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
+                    <div>
+                        <ol class="breadcrumb info_breadcrumb">
+                            <li class="breadcrumb-item">Фонд</li>
+                            <li class="breadcrumb-item active">{{ $page->title }}
+                            </li>
+                        </ol>
+                    </div>
                     <div class="entity_wrapper text-justify">
                         {!! $page->content !!}
                     </div>

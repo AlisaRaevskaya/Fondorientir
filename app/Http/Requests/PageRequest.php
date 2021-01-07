@@ -27,14 +27,14 @@ class PageRequest extends FormRequest
     {
         return [
         'title' => ['required','max:255','string'],
-        'content' => ['required','max:65000'],
+        'content' => ['max:65000'],
         'published' => ['required','boolean'],
         'parent_id' => ['nullable','numeric'],
         'is_second_menu'=>['required','boolean'],
         'is_menu'=>['required','boolean'],
         'second_sort_order'=>['nullable','numeric'],
         'sort_order'=>['nullable','numeric'],
-        'url'=>['required','max:2048','regex:/^\\/[^@"[\.\?!><)(,:]?+[a-zA-Z0-9]*?\/*?[a-zA-Z0-9]*?$/'],
+        'url'=>['required','max:2048','regex:/^\\/([a-zA-Z0-9]*?[-|_]*+[a-zA-Z0-9]*?[-|_]*+[^@"[\.\?!><)(,:])*+$/'],
         'seo_title' => ['required','max:255'],
         'seo_name' => ['nullable','max:255'],
         'description' => ['nullable','max:255'],

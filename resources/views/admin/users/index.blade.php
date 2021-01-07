@@ -21,7 +21,7 @@
 
                     <div class="card card-outline card-info">
                         <div class="card-body">
-                            <div class="col-md-11">
+                            <div class="col-md-10">
                                 <div>
                                     <table class="table table-bordered">
                                         <thead>
@@ -30,8 +30,8 @@
                                                 <th scope="col">Имя</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Роли</th>
-                                                <th scope="col">Редактировать</th>
-                                                <th scope="col">Удалить</th>
+                                                <th scope="col">Действия</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -47,19 +47,20 @@
                                                         ) }}
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('admin.user.edit', $user->id) }}"
-                                                            class="btn btn-primary"><i class="fas fa-edit">
-                                                            </i> Редактировать</a>
-                                                    </td>
-                                                    <td>
-                                                        <form action="{{ route('admin.user.destroy', $user) }}"
-                                                            method="post" class="text-center">
-                                                            @csrf
-                                                            {{ method_field('DELETE') }}
-                                                            <button type="submit" class="btn btn-danger"><i
-                                                                    class="fas fa-trash">
-                                                                </i> Удалить</button>
-                                                        </form>
+                                                        <div class="row justify-content-between">
+                                                            <a href="{{ route('admin.user.edit', $user->id) }}"
+                                                                class="btn btn-primary"><i class="fas fa-edit">
+                                                                </i> Редактировать</a>
+
+                                                            <form action="{{ route('admin.user.destroy', $user) }}"
+                                                                method="post" class="text-center">
+                                                                @csrf
+                                                                {{ method_field('DELETE') }}
+                                                                <button type="submit" class="btn btn-danger"><i
+                                                                        class="fas fa-trash">
+                                                                    </i> Удалить</button>
+                                                            </form>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -31,8 +31,6 @@
                                 </div>
 
                                 <div class="card-body">
-
-                                    <!-- Default box -->
                                     <div class="box">
                                         <div class="box-header with-border">
                                             @if ($errors->any())
@@ -86,7 +84,7 @@
                                                     </div>
                                                 @endif
 
-                                                <div class="box-footer">
+                                                <div>
                                                     <div class="">
                                                         <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
                                                         <button class="btn btn-primary pull-right"
@@ -98,15 +96,12 @@
                                             {{ Form::close() }}
                                         </div>
                                     </div>
-                                    <!-- /.box -->
                                 </div>
                             </div>
                         </div>
-                        <!-- /.content -->
                     </div>
                 </section>
             </div>
-            <!-- /.content-wrapper -->
         </main>
     </div>
 @endsection
