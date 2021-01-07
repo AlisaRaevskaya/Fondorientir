@@ -14,9 +14,6 @@ class Topic extends Model
 
     protected $table = 'topics';
 
-    // public function reply(){
-    //     return $this->belongsTo('App\Models\Reply');
-    // }
 
     public function getFormatDateCreate()
     {

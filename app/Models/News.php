@@ -114,12 +114,10 @@ class News extends Model
     }
 
 
-
     public function getMiniIntro()
     {
         return Str::substr($this->intro, 0, 80) . "...";
     }
-
 
 
     public static function add($fields)

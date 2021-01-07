@@ -50,21 +50,17 @@
                                         {{ Form::open(['route' => ['admin.faq-page.update', $topic->id], 'method' => 'PUT', 'files' => true]) }}
                                         @csrf
                                         <div class="form-group">
-                                            {{ Form::label('title', 'Название') }}
+                                            {{ Form::label('title', 'Вопрос') }}
                                             {{ Form::text('title', $topic->title, ['class' => 'form-control required']) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ Form::label('intro', 'Intro') }}
+                                            {{ Form::label('intro', 'Краткое описание') }}
                                             {{ Form::textArea('intro', $topic->intro, ['class' => 'form-control summernote']) }}
                                         </div>
 
                                         <div class="form-group">
-                                            {{ Form::label('body', 'Текст') }}
+                                            {{ Form::label('body', 'Ответ') }}
                                             {{ Form::textArea('body', $topic->body, ['class' => 'form-control required summernote']) }}
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('text', 'Опубликована') }}
-                                            {{ Form::text('text', $topic->dateline, ['class' => 'form-control']) }}
                                         </div>
                                         <div class="form-group">
                                             {{ Form::label('date_published', 'Дата публикации') }}
@@ -75,7 +71,7 @@
                                                 {{ session()->get('message') }}
                                             </div>
                                         @endif
-                                        <div class="box-footer">
+                                        <div>
                                             <div class="buttons">
                                                 <a href="{{ url()->previous() }}" class="btn btn-default "><i
                                                         class="fas fa-caret-left"></i> Назад</a>

@@ -20,7 +20,6 @@
                 </div>
                 @include('layouts.sidebar')
             </div>
-
         </div>
     </section>
 @endsection

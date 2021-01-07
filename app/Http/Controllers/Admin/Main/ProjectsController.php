@@ -65,7 +65,7 @@ class ProjectsController extends Controller
     {
         $page= Page::findOrFail($id);
         $seo = $page->seo;
-        $projects=Project::all();
+        $projects=Project::paginate(7);
         return view('admin.fond.projects.edit', compact('page', 'projects', 'seo'));
     }
 

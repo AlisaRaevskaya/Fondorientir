@@ -35,6 +35,13 @@ class Contact extends Model
         $this->save($fields);
 
     }
-
+ public function changePhoneForHref(){
+    $pattern ='/\(|\)|-/';
+   return preg_replace($pattern, '', $this->phone);
+}
+ public function changeSecondPhoneForHref(){
+    $pattern ='/\(|\)|-/';
+   return preg_replace($pattern, '', $this->phone2);
+}
 
 }

@@ -26,9 +26,10 @@
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
-                                        Редактировать статью
+                                        Редактировать страницу
                                     </h3>
                                 </div>
+
 
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -95,7 +96,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 {{ Form::label('sort_order', 'Сортировка') }}
-                                                                {{ Form::text('sort_order', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:5px;'], $page->sort_order) }}
+                                                                {{ Form::text('sort_order', $page->sort_order, ['class' => 'form-control', 'style' => 'width:50px;margin-left:5px;'], $page->sort_order) }}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -105,7 +106,7 @@
                                                             </div>
                                                             <div class="form-group row">
                                                                 {{ Form::label('second_sort_order', 'Сортировка в меню "Центр Поддежки" ') }}
-                                                                {{ Form::text('second_sort_order', 10, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
+                                                                {{ Form::text('second_sort_order', $page->second_sort_order, ['class' => 'form-control', 'style' => 'width:50px;margin-left:1px;'], $page->SecondSort) }}
                                                             </div>
                                                         </div>
                                                     </div>

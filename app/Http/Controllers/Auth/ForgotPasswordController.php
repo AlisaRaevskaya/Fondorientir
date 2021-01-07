@@ -25,7 +25,4 @@ class ForgotPasswordController extends Controller
         return redirect()->back()->with(['success'=>'Письмо отправлено на Вашу почту']);
     }
 
-    public function sendByEmail()
-    {
-    }
 }

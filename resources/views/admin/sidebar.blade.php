@@ -16,7 +16,6 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/static">Менеджер меню</a>
                         <a class="nav-link" href="{{ route('admin.user.index') }}">Менеджер пользователей</a>
                     </nav>
                 </div>
@@ -65,9 +64,7 @@
                             </a>
                         @endforeach
                     </nav>
-
                 </div>
-
                 <a class="nav-link" href="{{ route('admin.company-info.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-star"></i></div>
                     Информация о компании

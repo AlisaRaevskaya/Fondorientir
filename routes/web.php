@@ -127,20 +127,12 @@ Route::get('/center-podderzhki/faq/{id}', [SecondSiteController::class, 'faqSing
 Route::get('/center-podderzhki/lawyer', [SecondSiteController::class, 'lawyer'])->name('second.lawyer');
 Route::get('/center-podderzhki/hotline', [SecondSiteController::class, 'hotline'])->name('second.hotline');
 
-
-Route::view('/static','admin.layout-static');
 Route::view('/404','admin.errors.404');
 Route::view('/401','admin.errors.401');
 Route::view('/500','admin.errors.500');
-Route::view('/inbox','admin.mail.mail');
-Route::view('/read','admin.mail.read_mail');
-Route::view('/compose','admin.mail.compose');
 
-// Route::get('/upload/{id}', [ UploadController::class, 'imageUpload' ])->name('image.upload');
-// Route::post('/store/{id}', [ UploadController::class, 'imageStorePost' ])->name('image.store.post');
 Route::put('/uploadImage/{id}', [ UploadController::class, 'summerUpload' ])->name('summer_upload');
 Route::put('/uploadNewsImage', [ UploadController::class, 'imageNewsStore' ])->name('image.news.store');
-
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
@@ -150,45 +142,16 @@ Route::resource('/main', '\App\Http\Controllers\Admin\MainController');
 Route::resource('/news', '\App\Http\Controllers\Admin\NewsController');
 Route::resource('/pages', '\App\Http\Controllers\Admin\PageController');
 
-
 Route::resource('/faq-page', '\App\Http\Controllers\Admin\FAQ\ForFaqController');
 Route::resource('/faq', '\App\Http\Controllers\Admin\FAQ\AdminFaqController');
-
 Route::resource('/seo', '\App\Http\Controllers\Admin\SeoController');
-
 Route::resource('/contacts', '\App\Http\Controllers\Admin\Contacts\ContactsController');
 Route::resource('/company-info', '\App\Http\Controllers\Admin\Contacts\CompanyInfoController');
-
-// Route::resource('/history', '\App\Http\Controllers\Admin\Main\HistoryController');
-// Route::resource('/about', '\App\Http\Controllers\Admin\Main\AboutController');
-// Route::resource('/fond', '\App\Http\Controllers\Admin\Main\FondController');
-// Route::resource('/mission', '\App\Http\Controllers\Admin\Main\MissionController');
-// Route::resource('/reports', '\App\Http\Controllers\Admin\Main\ReportsController');
-
 Route::resource('/projects', '\App\Http\Controllers\Admin\Main\ProjectsController');
 Route::resource('/forprojects', '\App\Http\Controllers\Admin\Main\ForProjectsController');
-
-// Route::resource('/partners', '\App\Http\Controllers\Admin\Main\PartnersController');
-// Route::resource('/bankinfo', '\App\Http\Controllers\Admin\Main\BankInfoController');
-
-
-// Route::resource('blanks', '\App\Http\Controllers\Admin\Info\BlanksController');
-// Route::resource('brochures', '\App\Http\Controllers\Admin\Info\BrochuresController');
-// Route::resource('useful-contacts', '\App\Http\Controllers\Admin\Info\UsefulContactsController');
-// Route::resource('testmaterial', '\App\Http\Controllers\Admin\Info\TestMaterialController');
-// Route::resource('useful-info', '\App\Http\Controllers\Admin\Info\InfoController');
-// Route::resource('bankdocuments', '\App\Http\Controllers\Admin\Info\BankdocumentsController');
-
 Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
 
-// Route::resource('/lawyer', '\App\Http\Controllers\Admin\Reception\LawyerController');
-// Route::resource('/problem', '\App\Http\Controllers\Admin\Reception\ProblemController');
-// Route::resource('/claim', '\App\Http\Controllers\Admin\Reception\ClaimController');
-// Route::resource('/application', '\App\Http\Controllers\Admin\Reception\ApplicationController');
-// Route::resource('/hotline', '\App\Http\Controllers\Admin\Reception\HotlineController');
-// Route::resource('/reception', '\App\Http\Controllers\Admin\Reception\ReceptionController');
-// Route::resource('/feedback-call', '\App\Http\Controllers\Admin\FeedbackCallController');
-
+Route::get('/page-hide/{id}', [PageController::class, 'hide'])->name('page.hide');
 
 Route::get('/notifications/all',[NotificationController::class, 'showAll'])->name('notices.all');
 Route::get('/notifications/{category}', [NotificationController::class, 'index'])->where('category', '[a-z]+')->name('notice');

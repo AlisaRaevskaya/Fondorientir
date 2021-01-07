@@ -61,7 +61,7 @@
                                         <div class="box-body tab-pane" id="content">
                                             <div class="pt10">
                                                 <div class="col-md-11">
-                                                    {{ Form::open(['route' => ['admin.partners.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
+                                                    {{ Form::open(['route' => ['admin.projects.update', $page->id], 'method' => 'PUT', 'files' => true]) }}
                                                     <div class="form-group">
                                                         {{ Form::label('title', 'Название') }}
                                                         {{ Form::text('title', $page->title, ['class' => 'form-control required']) }}
@@ -229,7 +229,12 @@
                                                             @endforeach
                                                         </tbody>
                                                     </table>
-                                                    <div class="box-footer">
+                                                    <nav aria-label="Page navigation" class="pagination_section">
+                                                        <ul class="pagination">
+                                                            <li>{{ $projects->links() }}</li>
+                                                        </ul>
+                                                    </nav>
+                                                    <div>
                                                         <a href="{{ route('admin.forprojects.create') }}"
                                                             class="btn btn-default pull-right" style="margin-left:20px;"><i
                                                                 class="fa fa-plus"></i>

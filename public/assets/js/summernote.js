@@ -48,11 +48,12 @@ function uploadFile(file, editor) {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
     },
     success: function (response) {
-      if (response.type = "img"){
+      if (response.type ="img"){
         $(editor).summernote("editor.insertImage", response.url);
-      } else {
-        $("#summernote").summernote("createLink", {
-          text: "This is the Summernote's Official Site",
+      }
+      if(response.type ="no-img"){
+        $(editor).summernote("createLink", {
+          text: "Введите название файла",
           url: response.url,
           isNewWindow: true,
         });

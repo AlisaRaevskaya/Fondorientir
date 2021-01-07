@@ -32,34 +32,32 @@
                                 <tr>
                                     <th>№</th>
                                     <th>Название</th>
-                                    <th>Ссылка</th>
+                                    <th>Url</th>
                                     <th>Опубликована</th>
                                     <th>Меню</th>
+                                    <th>Изменена</th>
+                                    <th>Действия</th>
 
-                                    <th>Дата изменения</th>
-                                    <th>Редактировать</th>
-                                    <th>Удалить</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>№</th>
                                     <th>Название</th>
-                                    <th>Сcылка</th>
-                                    <th>Опубликана</th>
+                                    <th>Url</th>
+                                    <th>Опубликована</th>
                                     <th>Меню</th>
-                                    <th>Дата изменения</th>
-                                    <th>Редактировать</th>
-                                    <th>Удалить</th>
+                                    <th>Изменена</th>
+                                    <th>Действия</th>
                                 </tr>
                             </tfoot>
 
                             <tbody>
                                 @foreach ($pages as $page)
                                     <tr>
-                                        <td class="col-md-1">{{ $page->id }}</td>
+                                        <td>{{ $page->id }}</td>
                                         <td class="col-md-3">{{ $page->title }}</td>
-                                        <td class="col-md-3">{{ $page->url }}</td>
+                                        <td class="col-md-2">{{ $page->url }}</td>
                                         <td class="col-md-1">
                                             @if ($page->published == 1) да
                                             @else нет
@@ -73,21 +71,27 @@
 
                                         <td class="col-md-1">{{ $page->updated_at }}</td>
 
-                                        <td class="project-actions text-left col-md-1">
+                                        <td class="text-center col-md-4 pl10">
+                                            <div class="row justify-content-between">
+                                                <a href="{{ route($page->getAdminUrlEdit(), $page->id) }}"
+                                                    class="btn btn-primary"><i class="fas fa-pencil-alt"></i>
+                                                    Редактировать</a>
 
-                                            <a href="{{ route($page->getAdminUrlEdit(), $page->id) }}"
-                                                class="btn btn-primary"><i class="fas fa-pencil-alt"></i>
-                                                Редактировать</a>
-                                        </td>
-                                        <td class="col-md-1 text-left">
-                                            <form action="{{ route($page->getAdminUrlEdit(), $page->id) }}" method="post"
-                                                class="text-center deleteForm">
-                                                @csrf
-                                                {{ method_field('DELETE') }}
-                                                <button class="btn btn-danger pull-right" type="button">
-                                                    <i class="fas fa-trash">
-                                                    </i> Удалить</button>
-                                            </form>
+
+                                                <a href="{{ route('admin.page.hide', $page->id) }}"
+                                                    class="btn btn-info btn-page-hide" data-id={{ $page->id }}><i
+                                                        class="fas fa-eye-slash"></i>
+                                                    Скрыть</a>
+
+                                                <form action="{{ route($page->getAdminUrlEdit(), $page->id) }}"
+                                                    method="post" class="text-center deleteForm">
+                                                    @csrf
+                                                    {{ method_field('DELETE') }}
+                                                    <button class="btn btn-danger pull-right" type="button">
+                                                        <i class="fas fa-trash">
+                                                        </i></button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

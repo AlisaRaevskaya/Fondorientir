@@ -16,15 +16,6 @@
                     </div>
                 </div>
                 <div class="col-md-2 text-center" style="margin-top:1.7rem;">
-                    {{-- <div>
-                        <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                        <!--Twitter-->
-                        <a class="icons-sm tw-ic" style='padding-left:22px;'><i class="fa fa-twitter"></i></a>
-                        <!--Google +-->
-                        <a class="icons-sm inst-ic" style='padding-left:22px;'><i class="fa fa-instagram"> </i></a>
-                        <!--Linkedin-->
-                        <a class="icons-sm tmb-ic" style='padding-left:22px;'><i class="fa fa-vk"> </i></a>
-                    </div> --}}
                 </div>
 
                 <div class="col-md-3 text-center" style="margin-top:1.7rem;">
@@ -39,7 +30,9 @@
 
                 <div class="col-md-2 text-center" style="margin-top:1.7rem;">
                     <div>
-                        <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
+                        <p class="header_phone"><a
+                                href='tel:{{ $contact->changePhoneForHref() }}'>{{ $contact->phone }}</a>
+                        </p>
                     </div>
                     <div>
                         <a href="#" type="button" class="btn btn-feedback-call text-center btn-primary "
@@ -104,16 +97,3 @@
         </div>
     </div>
 </section>
-
-<!-- header_section_wrapper -->
-{{-- <div style="max-width:200px;display:flex;margin-left:70px">
-    <form>
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Поиск">
-            <span class="input-group-btn">
-                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>
-                </button>
-            </span>
-        </div>
-    </form>
-</div> --}}

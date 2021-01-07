@@ -34,11 +34,11 @@
 
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label
-                                    text-md-right">{{ __('Пароль') }}</label>
+                                                    text-md-right">{{ __('Пароль') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password" class="form-control
-                                        @error('password') is-invalid @enderror" name="password" required
+                                                        @error('password') is-invalid @enderror" name="password" required
                                         autocomplete="new-password">
 
                                     <a href="#" class="password-control"></a>
@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                                <div class="col-md-6 offset-md-4 pull-left">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Сохранить') }}
                                     </button>

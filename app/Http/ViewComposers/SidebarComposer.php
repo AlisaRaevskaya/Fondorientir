@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers;
 use Illuminate\View\View;
 use App\Models\Message;
+use App\Models\Contact;
 use App\Models\MessageCategory;
 
 //В этом классе будем доставать данные из базы и
@@ -13,7 +14,7 @@ class SidebarComposer
     public function compose(View $view){
 
     $messageCategories= MessageCategory::all();
-
-    return $view->with(compact('messageCategories'));
+    $contact= Contact::find(1);
+    return $view->with(compact('messageCategories', 'contact'));
     }
 }

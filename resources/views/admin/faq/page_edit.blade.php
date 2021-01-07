@@ -41,7 +41,7 @@
                                             <a class="nav-link" data-toggle="tab" href="#seo">SEO</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#responce">Вопросы</a>
+                                            <a class="nav-link active" data-toggle="tab" href="responses">Вопросы</a>
                                         </li>
                                     </ul>
 

@@ -47,7 +47,8 @@ class UploadController extends Controller
 
     public function summerUpload(Request $request, $id)
     {
-     $image=new File();
+        $image=new File();
+
         $mode=Page::where('id', $id)->pluck('laravel_name');
         $file= $request->file('image');
         $imageName=$file->getClientOriginalName();

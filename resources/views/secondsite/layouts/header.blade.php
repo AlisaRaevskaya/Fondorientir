@@ -17,15 +17,6 @@
                 </div>
 
                 <div class="col-md-2 text-center" style="margin-top:1.7rem;">
-                    {{-- <div>
-                        <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                        <!--Twitter-->
-                        <a class="icons-sm tw-ic" style='padding-left:22px;'><i class="fa fa-twitter"></i></a>
-                        <!--Google +-->
-                        <a class="icons-sm inst-ic" style='padding-left:22px;'><i class="fa fa-instagram"> </i></a>
-                        <!--Linkedin-->
-                        <a class="icons-sm tmb-ic" style='padding-left:22px;'><i class="fa fa-vk"> </i></a>
-                    </div> --}}
                 </div>
                 <div class="col-md-3 text-center" style="margin-top:1.7rem;">
                     <p style="font-size:15px;"><strong>Правовая приемная</strong></p>
@@ -38,8 +29,10 @@
 
                 <div class="col-md-2 text-center" style="margin-top:1.7rem;">
                     <div>
-                        <p class="header_phone"><a href='tel:+78123856989'>+7(812)-385-69-89</a></p>
-                        <p class="header_phone"><a href='tel:+78126124817'> +7(812)-612-48-17</a></p>
+                        <p class="header_phone"><a
+                                href='tel:{{ $contact->changePhoneForHref() }}'>{{ $contact->phone }}</a></p>
+                        <p class="header_phone"><a
+                                href='tel:{{ $contact->changeSecondPhoneForHref() }}'>{{ $contact->phone2 }}</a></p>
                     </div>
                     <div>
                         <a href="#" type="button" class="btn btn-feedback-call text-center turquoise-back"
@@ -81,7 +74,7 @@
                                                     <ul class="col-sm-3">
                                                         @foreach ($item->children as $children)
                                                             <li><a
-                                                                    href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}">
+                                                                    href="{{ 'second.' . $children->laravel_name ? route($children->laravel_name) : $children->url }}">
                                                                     {{ $children->title }}</a></li>
                                                         @endforeach
                                                     </ul>
@@ -92,7 +85,7 @@
                                 @else
                                     <li class="dropdown m-menu-fw menu_item">
                                         <a
-                                            href="{{ $item->laravel_name ? route($item->laravel_name) : $item->url }}">{{ $item->title }}</a>
+                                            href="{{ $item->laravel_name ? route('second.' . $item->laravel_name) : $item->url }}">{{ $item->title }}</a>
                                     </li>
                                 @endif
                             @endforeach

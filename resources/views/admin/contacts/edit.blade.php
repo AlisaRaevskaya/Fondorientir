@@ -95,11 +95,11 @@
                                                         {{ Form::text('email', $contact->email, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('phone', 'Телефон') }}
+                                                        {{ Form::label('phone', 'Телефон №1') }}
                                                         {{ Form::text('phone', $contact->phone, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('phone2', 'Телефон') }}
+                                                        {{ Form::label('phone2', 'Телефон №2') }}
                                                         {{ Form::text('phone2', $contact->phone2, ['class' => 'form-control required']) }}
                                                     </div>
 
@@ -112,7 +112,7 @@
                                                         {{ Form::text('hours', $contact->hours, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('logo', 'Лого') }}
+                                                        {{ Form::label('logo', 'Основной Лого') }}
                                                         {{ Form::file('logo') }}
                                                         @if (isset($contact->logo))
                                                             <br>
@@ -123,7 +123,7 @@
                                                         @endif
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('logo', 'Лого') }}
+                                                        {{ Form::label('logo', 'Лого "Центр поддержки"') }}
                                                         {{ Form::file('logo') }}
                                                         @if (isset($contact->logo2))
                                                             <br>
@@ -139,8 +139,7 @@
                                                         {{ session()->get('message') }}
                                                     </div>
                                                 @endif
-
-                                                <div class="box-footer">
+                                                <div>
                                                     <div class="buttons">
                                                         <a href="{{ route('admin.company-info.index') }}"
                                                             class="btn btn-default">

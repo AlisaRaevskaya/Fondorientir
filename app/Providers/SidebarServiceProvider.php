@@ -24,7 +24,7 @@ class SidebarServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer(['layout', 'admin.layout', 'layouts.mobile',], SidebarComposer::class);
+        view()->composer(['layout', 'admin.layout', 'layouts.mobile','layouts.sidebar'], SidebarComposer::class);
     }
 }
 

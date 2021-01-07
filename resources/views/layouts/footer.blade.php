@@ -61,23 +61,10 @@
                     <p class="text-left" style="font-size:15px;"><strong>{{ $contact->name }}</strong></p>
                     <p><strong>Адрес: </strong>{{ $contact->index }}, {{ $contact->city }},{{ $contact->street }}
                     </p>
-                    <p><strong>Электроный адрес: </strong>{{ $contact->email }}</p>
+                    <p><strong>Электронный адрес: </strong>{{ $contact->email }}</p>
                     <p><strong>Cайт: </strong>{{ $contact->web }}</p>
-                    <p><strong>Телефоны:<strong> {{ $contact->phone }}</p>
-                    {{-- <div>
-                        <h3>Мы в социальных сетях:</h3>
-                        {{-- <div class="social">
-                            <!--Twitter-->
-                            <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                            <!--Google +-->
-                            <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                            <!--Linkedin-->
-                            <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
-                            <!--Pinterest-->
-                            <a class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
-                            <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                        </div>
-                    </div> --}}
+                    <p><strong>Телефон:<strong><a href='tel:{{ $contact->changePhoneForHref() }}'
+                                    class="link_color">{{ $contact->phone }}</a></p>
                 </div>
             </div>
         </div>
@@ -88,17 +75,9 @@
                 <div class="row">
                     <div class="footer">
                         <div class="col-sm-4">
-                            <div class="social">
-                                <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                                <!--Twitter-->
-                                <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                                <!--Google +-->
-                                <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                                <!--Linkedin-->
-                                <a class="icons-sm tmb-ic"><i class="fa fa-tumblr"> </i></a>
-                            </div>
+
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-3">
                             <p>&copy;2016 "ОРИЕНТИР"</a></p>
                         </div>
                     </div>

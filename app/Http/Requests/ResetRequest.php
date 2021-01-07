@@ -13,7 +13,7 @@ class ResetRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,6 +26,7 @@ class ResetRequest extends FormRequest
         return [
             'email' => [ 'required','min:2','max:255','email','unique:users'],
             'password'=>['required','password'],
-            'confirm_password'=>['required', 'confirmed']        ];
+            'confirm_password'=>['required', 'confirmed']
+        ];
     }
 }

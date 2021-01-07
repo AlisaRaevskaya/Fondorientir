@@ -11,8 +11,12 @@
 
                             <div class="col-sm-12 col-md-11 container">
                                 <ol class="breadcrumb float-sm-right ">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
-                                    <li class="breadcrumb-item active">Наши проекты</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        <a href="{{ route('admin.forprojects.edit', $project->id) }}">Редактировать проект
+                                        </a>/ Просмотр
+                                    </li>
                                 </ol>
                             </div>
                         </div>
@@ -38,26 +42,21 @@
                                                     <th>№ п/п</th>
                                                     <th>Сроки оказания услуг или выполнения работ</th>
                                                     <th>Наименование и адрес заказчика</th>
-                                                    <th>Наименование услуг или работ, предмет контракта
-                                                        (договора)</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                @foreach ($projects as $project)
-                                                    <tr style="color:black;">
-                                                        <th scope="row">{{ $project->id }}</th>
-                                                        <td>
-                                                            {{ $project->term }}
-                                                        </td>
-                                                        <td>
-                                                            {!! $project->name !!}
-                                                        </td>
-                                                        <td>
-                                                            {!! $project->results !!}
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
+                                                <tr style="color:black;">
+                                                    <th scope="row">{{ $project->id }}</th>
+                                                    <td>
+                                                        {{ $project->term }}
+                                                    </td>
+                                                    <td>
+                                                        {!! $project->name !!}
+                                                    </td>
+
+                                                </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -70,6 +69,7 @@
                         </div>
                     </div>
                 </section>
+
             </div>
         </main>
     </div>

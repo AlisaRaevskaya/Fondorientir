@@ -125,4 +125,19 @@ return redirect()->route('admin.pages.edit', $id)->with('message', $message);
         // $page->delete();
         return redirect()->route('admin.news.index');
     }
+
+    /**
+     *
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function hide($id)
+    {
+         $page = Page::findOrFail($id);
+         $page->published = 0;
+         $page->save();
+        return redirect()->route('admin.pages.index');
+    }
+
 }
