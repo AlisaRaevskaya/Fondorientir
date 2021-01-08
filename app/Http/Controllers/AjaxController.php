@@ -74,7 +74,7 @@ class AjaxController extends Controller
 
         $name=$req->input('name');
         $phone=$req->input('phone');
-       $message_category=$req->input('category');
+        $message_category=$req->input('category');
         Mail::send('email.message_mail', ['message_category'=>$message_category, 'name'=>$name,'phone'=>$phone], function ($message) {
             $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
         });
@@ -105,11 +105,11 @@ class AjaxController extends Controller
 
         $data->save();
 
-        $name=$req->input('name');
+        // $name=$req->input('name');
         $phone=$req->input('phone');
         $message_category=MessageCategory::where('id', 2)->pluck('category_name');
 
-        Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
+        Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$fullname,'phone'=>$phone], function ($message) {
             $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
         });
 
@@ -186,7 +186,7 @@ class AjaxController extends Controller
         $data->message_category_id = 5;
         $data->save();
 
-       $message_category=MessageCategory::where('id', 5)->pluck('category_name');
+        $message_category=MessageCategory::where('id', 5)->pluck('category_name');
         $name=$req->input('name');
         $phone=$req->input('phone');
 

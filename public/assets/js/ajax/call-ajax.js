@@ -25,6 +25,7 @@ $("#btn_call").on("click", function () {
           $('form[name="callForm"]').trigger("reset");
           $(".success_call").html("");
           $(".text-danger").html("");
+          $("#callModalLong").modal('hide');
         }, 1000);
       } else {
         $("#nameError").text(response.errors.name);

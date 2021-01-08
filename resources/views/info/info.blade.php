@@ -166,7 +166,8 @@
                                     </a>
                                 </div>
                                 <div class="useful_info_item">
-                                    <a class="btn btn-sm btn-primary" href="{{ route('info-8-4') }}">СНИЛС
+                                    <a class="btn btn-sm btn-primary" href="{{ route('info-8-4') }}">СНИЛС(страховое
+                                        пенсионное свидетельство)
                                     </a>
                                 </div>
                                 <div class="useful_info_item">

@@ -27,9 +27,9 @@ class LawQuestionSidebarRequest extends FormRequest
     public function rules()
     {
         return [
-       'name' => ['required','min:2','max:15','regex:/^[a-zA-Zа-яА-Я\s\-]{2,15}$/'],
+       'name' => ['required','min:2','max:30','regex:/[a-zA-Zа-яА-Я\s\\-]{2,30}$/'],
        'email' => ['min:2','max:255','email','nullable'],
-    'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d)[\d\-\(\) ]{9,}[0-9]$/'],
+        'phone' => ['required','min:11','max:20','regex:/^(?:\+|\d){1}[\d\-\(\)]{10,}$/'],
         ];
     }
 

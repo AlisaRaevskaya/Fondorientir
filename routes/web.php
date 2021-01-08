@@ -116,7 +116,7 @@ Route::post('/problem-form', [AjaxController::class, 'saveProblemMessage'])->nam
 Route::post('/application-form', [AjaxController::class, 'saveApplication'])->name("application-form");;
 Route::post('/call-form', [AjaxController::class, 'saveCallInfo'])->name("call-form");;
 Route::post('/claim-form', [AjaxController::class, 'saveClaim'])->name("claim-form");
-Route::get('/online_priemnaya/reload-captcha',[CaptchaServiceController::class, 'reloadCaptcha']);
+Route::get('/support/reload-captcha',[CaptchaServiceController::class, 'reloadCaptcha']);
 
 Route::view('/admin-panel', 'admin.admin_home')->middleware('auth')->name('admin');
 

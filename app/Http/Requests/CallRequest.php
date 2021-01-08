@@ -26,8 +26,8 @@ class CallRequest extends FormRequest
     public function rules()
     {
         return [
-        'name' => ['required','min:2','max:255','regex:/^[a-zA-Zа-яА-Я\s\-]{2,15}$/'],
-        'phone' => ['required','min:11','regex:/^(?:\+|\d)[\d\-\(\) ]{11,25}[0-9]$/'],
+        'name' => ['required','min:2','max:30','regex:/[a-zA-Zа-яА-Я\s\\-]{2,30}$/'],
+        'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d){1}[\d\-\(\) ]{10,}$/'],
         ];
     }
     protected function failedValidation(Validator $validator)

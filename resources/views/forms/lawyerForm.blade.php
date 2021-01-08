@@ -32,8 +32,7 @@
 
              <div class="form-group">
                  <label for="phone">Ваш телефон</label>
-                 <input type="text" class="form-control" placeholder="Введите номер телефона для связи" name="phone"
-                     id="phone">
+                 <input type="text" class="form-control" placeholder="+79876543210" name="phone" id="phone">
                  <span class="text-danger" id="phoneErrorLaw"></span>
              </div>
 
@@ -63,12 +62,11 @@
      </form>
 
 
-
      <script type="text/javascript">
          $('#reload').on("click", function() {
              $.ajax({
                  type: 'GET',
-                 url: 'reload-captcha',
+                 url: '/support/reload-captcha',
                  success: function(data) {
                      $(".captcha span").html(data.captcha);
                  }
@@ -76,8 +74,3 @@
          });
 
      </script>
-
-
-     {{-- <div class="entity_thumb">
-         <img class="img-responsive" src="/assets/images/pravo.jpg" alt="feature-top">
-     </div> --}}

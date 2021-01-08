@@ -107,7 +107,7 @@
     $('#reload').on("click", function() {
         $.ajax({
             type: 'GET',
-            url: 'reload-captcha',
+            url: '/support/reload-captcha',
             success: function(data) {
                 $(".captcha span").html(data.captcha);
             }

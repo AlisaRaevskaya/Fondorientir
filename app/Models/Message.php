@@ -13,23 +13,26 @@ class Message extends Model
 {
     use Notifiable;
 
-     protected $fillable = [
-    'name','email','phone','address', 'message', 'status', 'consent','job', 'message_category_id'];
+    protected $fillable = [
+    'name','email','phone', 'message', 'consent','job', 'message_category_id'];
 
     protected $guarded = [];
 
     public $timestamps = true;
 
 
-    public function replies(){
+    public function replies()
+    {
         return $this->belongsTo('App\Models\Reply');
     }
 
-    public function pages(){
+    public function pages()
+    {
         return $this->hasOne('App\Models\Page');
     }
 
-    public function messageCategory(){
+    public function messageCategory()
+    {
         return $this->hasOne('App\Models\MessageCategory', 'id', 'message_category_id');
     }
 
@@ -38,20 +41,22 @@ class Message extends Model
         $this->attributes['dateline'] = $this->created_at->format('d F Y H:i');
     }
 
-    public function setMessageAttribute($value){
-        $this->attributes['message'] = htmlspecialchars($value,ENT_HTML5);
+    public function setMessageAttribute($value)
+    {
+        $this->attributes['message'] = htmlspecialchars($value, ENT_HTML5);
     }
 
-    public function getNameAttribute($value){
-        return htmlspecialchars_decode($value,ENT_HTML5);
+    public function getNameAttribute($value)
+    {
+        return htmlspecialchars_decode($value, ENT_HTML5);
     }
 
-     public function getDatelineAttribute($value)
-  {
-    $date = Carbon::createFromTimestamp($value)->toDateTimeString();
-    return $date;
+    public function getDatelineAttribute($value)
+    {
+        $date = Carbon::createFromTimestamp($value)->toDateTimeString();
+        return $date;
     }
-  public function getFormatDateCreate()
+    public function getFormatDateCreate()
     {
         return $this->created_at->format('d F Y H:i');
     }
@@ -60,16 +65,19 @@ class Message extends Model
         return $this->updated_at->format('d F Y H:i');
     }
 
-    public function getMessageAttribute($value){
-        return htmlspecialchars_decode($value,ENT_HTML5);
+    public function getMessageAttribute($value)
+    {
+        return htmlspecialchars_decode($value, ENT_HTML5);
     }
-    public function getMiniContent(){
+    public function getMiniContent()
+    {
         return Str::substr($this->message, 0, 80) . "...";
     }
-    public function setPhoneAttribute($value){
+    public function setPhoneAttribute($value)
+    {
         $this->attributes['phone'] = Str::of($value)->trim();
     }
-     public static function add($fields)
+    public static function add($fields)
     {
         $pages= new static;
         $pages->fill($fields);
@@ -84,7 +92,8 @@ class Message extends Model
         $this->save($fields);
     }
 
-    public function getCategory(){
+    public function getCategory()
+    {
         return $this->messageCategory;
     }
 }

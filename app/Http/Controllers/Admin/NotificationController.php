@@ -14,8 +14,6 @@ class NotificationController extends Controller
     {
         $cat=MessageCategory::where('category', $category);
         $id=$cat->pluck('id')->first();
-        // $previous = Post::where('id', '<', $post->id)->max('id');
-        // $next = Post::where('id', '>', $post->id)->min('id');
         $messages=Message::where('message_category_id', $id)->paginate(10);
         return view('admin.messages.index', compact('messages', 'category'));
     }

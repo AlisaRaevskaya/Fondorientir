@@ -14,8 +14,10 @@
                                     <li class="breadcrumb-item"><a href="{{ route('admin.notices.all') }}">Новые
                                             сообщения</a>
                                     </li>
-                                    <li class="breadcrumb-item active">
-                                        Сообщение из категории: {{ $cat }}
+                                    <li class="breadcrumb-item active">Категория: {{ $cat }} @if ($message->category)
+                                            <p>/{{ $message->category }}</p>
+                                        @endif
+
                                     </li>
                                 </ol>
                             </div>
@@ -68,13 +70,6 @@
                                                         </tr>
 
                                                         <tr>
-                                                            <td scope="col">Почтовый адрес: </td>
-                                                            <th>
-                                                                <p>{{ $message->address }}
-                                                                </p>
-                                                            </th>
-                                                        </tr>
-                                                        <tr>
                                                             <td scope="col">Место работы/учебы:</td>
                                                             <th>{{ $message->job }}</th>
                                                         </tr>
@@ -86,17 +81,12 @@
                                                             </th>
                                                         </tr>
                                                         <tr>
-                                                            <td scope="col">Email</td>
-                                                            <th>
-                                                                <p>{{ $message->email }}</p>
-                                                            </th>
-                                                        </tr>
-                                                        <tr>
                                                             <td scope="col">Дата создания</td>
                                                             <th>
                                                                 <p>{{ $message->created_at }}</p>
                                                             </th>
                                                         </tr>
+
 
                                                     </tbody>
                                                 </table>
