@@ -94,7 +94,7 @@
                                                     <a href="{{ url()->previous() }}" class="btn btn-default">Назад</a>
                                                     <button class="btn btn-primary pull-right" style="margin-left:20px;"><i
                                                             class="fas fa-save"></i>
-                                                        Сохранить</button>
+                                                        Добавить новость</button>
                                                 </div>
                                             </div>
                                         </div>

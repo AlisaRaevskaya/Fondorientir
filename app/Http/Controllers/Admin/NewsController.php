@@ -48,15 +48,16 @@ class NewsController extends Controller
         $validatedData = $request->validated();
 
         $news= new News();
-
-        $imageName = $request->image->getClientOriginalName();
-        $request->image->move(storage_path('/app/public/news'), $imageName);
-
-        $news->image=$imageName;
+if ($request->hasFile('image')) {
+    $imageName = $request->image->getClientOriginalName();
+    $request->image->move(storage_path('/app/public/news'), $imageName);
+    $news->image=$imageName;
+}
         $news->title=$request->title;
         $news->date_published=$request->date_published;
         $news->body=$request->body;
         $news->intro=$request->intro;
+        $news->category_id=1;
         $news->save();
         return redirect()->route('admin.news.index');
     }
@@ -69,7 +70,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        $news= News::where('id', $id)->get();
+        $news= News::where('id', $id)->first();
         return view('admin.news.show', compact('news'));
     }
 

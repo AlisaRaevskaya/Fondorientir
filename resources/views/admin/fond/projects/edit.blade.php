@@ -150,7 +150,7 @@
                                                         {{ Form::text('seo_title', $seo->seo_title, ['class' => 'form-control required']) }}
                                                         <i>Заголовок конкретной страницы</i>
                                                     </div>
-                                                    <div class="form-group required">
+                                                    <div class="form-group">
                                                         {{ Form::label('description', 'Description') }}
                                                         {{ Form::textArea('description', htmlspecialchars_decode($seo->description, ENT_QUOTES), ['class' => 'form-control']) }}
                                                         <i>Описание конкретной страницы</i>
@@ -199,11 +199,13 @@
                                                                 @csrf
                                                                 <tr style="color:black;">
                                                                     <th scope="row">{{ $project->id }}</th>
-                                                                    <td>
+                                                                    <td class="col-md-2">
                                                                         {{ $project->term }}
                                                                     </td>
                                                                     <td>
-                                                                        {!! $project->name !!}
+                                                                        <div style="max-width:500px;overflow:hidden"> {!!
+                                                                            $project->name !!}
+                                                                        </div>
                                                                     </td>
 
                                                                     <td style="width:10.66%;" class="text-center">

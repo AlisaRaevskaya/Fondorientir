@@ -60,7 +60,7 @@ Route::get('/support/fzakon', [MessageController::class, 'fzakon'])->name('feedb
 Route::get('/support/faq', [FaqController::class, 'index'])->name('faq');
 
 
-Route::get('/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
+Route::get('/support/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
 
 Route::get('/info-center/useful-info', [InfoController::class, 'usefulInfo'])->name('useful-info');
 Route::get('/info-center/blanks', [InfoController::class, 'blanks'])->name('blanks');

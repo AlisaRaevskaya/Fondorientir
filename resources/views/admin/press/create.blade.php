@@ -11,8 +11,9 @@
                         <div class="row mb-2">
                             <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right ">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.news.index') }}">Новости</a></li>
-                                    <li class="breadcrumb-item active">СМИ о нас/{{ $news->id }}</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.press.index') }}">Новости"СМИ о
+                                            нас"</a></li>
+                                    <li class="breadcrumb-item active">Добавить новость</li>
                                 </ol>
                             </div>
                         </div>

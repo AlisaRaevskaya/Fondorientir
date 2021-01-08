@@ -45,7 +45,7 @@ class ForFaqController extends Controller
     {
         $validatedData = $request->validated();
         $topic =Topic::add($request->all());
-        $message="Новый ответ создан";
+        $message="Данные успешно добавлены";
         return redirect()->route('admin.faq.edit', 6)->with('message', $message);
     }
 

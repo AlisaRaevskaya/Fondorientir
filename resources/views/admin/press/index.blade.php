@@ -61,12 +61,12 @@
                                                 <td class="col-md-1">{!! $new->date_published !!}</td>
                                                 <td class="col-md-1">{!! $new->updated_at !!}</td>
                                                 <td class="col-md-1">
-                                                    <a href="{{ route('admin.news.edit', $new->id) }}"
+                                                    <a href="{{ route('admin.press.edit', $new->id) }}"
                                                         class="btn btn-primary"><i class="far fa-edit"></i>
                                                         Редактировать</a>
                                                 </td>
                                                 <td class="col-md-1">
-                                                    <form action="{{ route('admin.news.destroy', $new->id) }}" method="post"
+                                                    <form action="{{ route('admin.press.destroy', $new->id) }}" method="post"
                                                         class="text-center">
                                                         @csrf
                                                         {{ method_field('DELETE') }}

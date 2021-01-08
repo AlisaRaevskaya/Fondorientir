@@ -30,7 +30,6 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="box">
-                                        <!-- /.card-header -->
 
                                         <div class="box-header with-border">
                                             @if ($errors->any())

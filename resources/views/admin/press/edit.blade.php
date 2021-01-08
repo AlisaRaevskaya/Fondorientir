@@ -9,8 +9,9 @@
                         <div class="row mb-2">
                             <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right ">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.news.index') }}">Новости</a></li>
-                                    <li class="breadcrumb-item active">СМИ о нас/{{ $news->id }}</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.press.index') }}">
+                                            Новости СМИ о нас</a></li>
+                                    <li class="breadcrumb-item active">Редактировать новость/{{ $news->id }}</li>
                                 </ol>
                             </div>
                         </div>
@@ -92,7 +93,7 @@
                                                             style="margin-left:20px;"><i class="fas fa-save"></i>
                                                             Сохранить</button>
 
-                                                        <a href="{{ route('admin.news.show', $news->id) }}"
+                                                        <a href="{{ route('admin.press.show', $news->id) }}"
                                                             class="btn btn-warning pull-right"><i class="fas fa-folder">
                                                             </i> Просмотр</a>
                                                     </div>

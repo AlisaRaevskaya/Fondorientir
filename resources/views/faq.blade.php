@@ -37,7 +37,7 @@
                                 <!-- entity_meta -->
                                 <div>
                                     <!-- entity_social -->
-                                    <h3><a href="/faq/{{ $reply->id }}" target="_self"
+                                    <h3><a href="{{ route('faq.id', $reply->id) }}" target="_self"
                                             class="btn btn-outline-primary btn-lg active" role="button" aria-pressed="true">
                                             Читать ответ</a></h3>
                                 </div>

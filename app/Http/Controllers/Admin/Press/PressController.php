@@ -33,26 +33,27 @@ class PressController extends Controller
     {
         return view('admin.press.create');
     }
-  /**
-     * Store a newly created resource in storage.
-     *
-    *  @param  NewsRequest $request
-     * @return \Illuminate\Http\Response
-     */
+    /**
+       * Store a newly created resource in storage.
+       *
+      *  @param  NewsRequest $request
+       * @return \Illuminate\Http\Response
+       */
     public function store(NewsRequest $request)
     {
-      $validatedData = $request->validated();
+        $validatedData = $request->validated();
 
         $news= new News();
-
-        $imageName = $request->image->getClientOriginalName();
-        $request->image->move(storage_path('/app/public/news'), $imageName);
-
-        $news->image=$imageName;
+if ($request->hasFile('image')) {
+    $imageName = $request->image->getClientOriginalName();
+    $request->image->move(storage_path('/app/public/news'), $imageName);
+    $news->image=$imageName;
+}
         $news->title=$request->title;
         $news->date_published=$request->date_published;
         $news->body=$request->body;
         $news->intro=$request->intro;
+        $news->category_id=3;
         $news->save();
         $message='Данные загружены';
         return redirect()->route('admin.press.index');
@@ -68,7 +69,8 @@ class PressController extends Controller
      */
     public function show($id)
     {
-        //
+        $news= News::where('id', $id)->first();
+        return view('admin.press.show', compact('news'));
     }
 
     /**
@@ -93,18 +95,20 @@ class PressController extends Controller
      */
     public function update(NewsRequest $request, $id)
     {
-$validatedData = $request->validated();
+        $validatedData = $request->validated();
         $news=News::findOrFail($id);
-        if($request->hasFile('image')) {
+
+        if ($request->hasFile('image')) {
             $oldFileName = $news->image;
             if ($oldFileName !== null) {
                 $news->deleteImage($oldFileName);
             }
-
             $imageName = $request->image->getClientOriginalName();
             $request->image->move(storage_path('/app/public/news'), $imageName);
             $news->image=$imageName;
         }
+
+
         $news->title=$request->title;
         $news->date_published=$request->date_published;
         $news->body=$request->body;

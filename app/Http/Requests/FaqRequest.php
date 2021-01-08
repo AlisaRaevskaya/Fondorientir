@@ -24,7 +24,7 @@ class FaqRequest extends FormRequest
     public function rules()
     {
         return [
-        'title' => [ 'required','string','min:8','max:255'],
+        'title' => [ 'required','string','min:8','max:250'],
         'body' => [ 'required','string','min:8','max:25000'],
         'intro' => [ 'string','max:250'],
         'date_published'=>['required','date'],

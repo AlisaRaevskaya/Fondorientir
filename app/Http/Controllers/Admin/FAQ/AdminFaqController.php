@@ -64,7 +64,7 @@ class AdminFaqController extends Controller
     {
         $page= Page::findOrFail($id);
         $seo = $page->seo;
-        $replies=Topic::orderBy('date_published', 'asc')->paginate(5);
+        $replies=Topic::orderBy('date_published', 'desc')->paginate(5);
 
         return view('admin.faq.page_edit', compact('page', 'seo', 'replies'));
 

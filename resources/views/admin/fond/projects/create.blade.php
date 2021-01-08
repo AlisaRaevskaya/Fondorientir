@@ -56,7 +56,7 @@
 
                                                 <div class="form-group">
                                                     {{ Form::label('name', 'Наименование и адрес заказчика') }}
-                                                    {{ Form::textArea('name', '', ['class' => 'form-control summernote required']) }}
+                                                    {{ Form::textArea('name', '', ['class' => 'required form-control summernote']) }}
                                                 </div>
 
                                                 @if (session()->has('project_message'))

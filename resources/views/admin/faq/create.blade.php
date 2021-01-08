@@ -76,7 +76,7 @@
 
                                                             <button class="btn btn-primary pull-right"
                                                                 style="margin-left:20px;"><i class="fas fa-save"></i>
-                                                                Сохранить</button>
+                                                                Добавить</button>
                                                         </div>
                                                     </div>
                                                 </div>

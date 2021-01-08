@@ -13,10 +13,8 @@
                     </div>
                     <h1 class="text-center">Успешно реализованные проекты:</h1>
                     <table class="table table-bordered table-responsive">
-
                         <thead>
                             <tr style="color:black;font-weight:bold;">
-
                                 <th scope="col">Период выполнения</th>
                                 <th scope="col">Наименование проекта</th>
                             </tr>
@@ -25,7 +23,7 @@
                             @foreach ($projects as $project)
                                 <tr>
                                     <td>{!! $project->term !!}</td>
-                                    <td>{!! $project->name !!}</td>
+                                    <td style="display:block; max-width:700px;overflow:hidden">{!! $project->name !!}</td>
                                 </tr>
                             @endforeach
                         </tbody>
