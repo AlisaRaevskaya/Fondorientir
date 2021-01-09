@@ -34,7 +34,7 @@
                                     <th>Название</th>
                                     <th>Url</th>
                                     <th>Опубликована</th>
-                                    <th>Меню</th>
+
                                     <th>Изменена</th>
                                     <th>Действия</th>
 
@@ -46,7 +46,7 @@
                                     <th>Название</th>
                                     <th>Url</th>
                                     <th>Опубликована</th>
-                                    <th>Меню</th>
+
                                     <th>Изменена</th>
                                     <th>Действия</th>
                                 </tr>
@@ -56,22 +56,17 @@
                                 @foreach ($pages as $page)
                                     <tr>
                                         <td>{{ $page->id }}</td>
-                                        <td class="col-md-3">{{ $page->title }}</td>
+                                        <td class="col-md-2">{{ $page->title }}</td>
                                         <td class="col-md-2">{{ $page->url }}</td>
                                         <td class="col-md-1">
                                             @if ($page->published == 1) да
                                             @else нет
                                             @endif
                                         </td>
-                                        <td class="col-md-1">
-                                            @if ($page->is_menu == 1) да
-                                            @else нет
-                                            @endif
-                                        </td>
 
-                                        <td class="col-md-1">{{ $page->updated_at }}</td>
+                                        <td class="col-md-2">{{ $page->updated_at }}</td>
 
-                                        <td class="text-center col-md-4 pl10">
+                                        <td class="text-center col-md-5 pl10">
                                             <div class="row justify-content-between">
                                                 <a href="{{ route($page->getAdminUrlEdit(), $page->id) }}"
                                                     class="btn btn-primary"><i class="fas fa-pencil-alt"></i>

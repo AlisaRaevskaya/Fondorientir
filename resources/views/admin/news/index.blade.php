@@ -33,11 +33,10 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Название</th>
-
                                             <th>Дата публикации</th>
                                             <th>Дата изменения</th>
-                                            <th>Редактировать</th>
-                                            <th>Удалить</th>
+                                            <th>Действия</th>
+
 
                                         </tr>
                                     </thead>
@@ -48,9 +47,7 @@
 
                                             <th>Дата создания</th>
                                             <th>Дата публикации</th>
-                                            <th>Редактировать</th>
-                                            <th>Удалить</th>
-
+                                            <th>Действия</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -61,19 +58,23 @@
 
                                                 <td class="col-md-1">{!! $new->date_published !!}</td>
                                                 <td class="col-md-1">{!! $new->updated_at !!}</td>
-                                                <td class="col-md-1">
-                                                    <a href="{{ route('admin.news.edit', $new->id) }}"
-                                                        class="btn btn-primary"><i class="far fa-edit"></i>
-                                                        Редактировать</a>
-                                                </td>
-                                                <td class="col-md-1">
-                                                    <form action="{{ route('admin.news.destroy', $new->id) }}" method="post"
-                                                        class="text-center">
-                                                        @csrf
-                                                        {{ method_field('DELETE') }}
-                                                        <button type="submit" class="btn btn-danger "><i
-                                                                class="fa fa-trash"></i> Удалить</button>
-                                                    </form>
+
+
+                                                <td class="text-center col-md-3 pl10">
+                                                    <div class="row justify-content-between">
+                                                        <a href="{{ route('admin.news.edit', $new->id) }}"
+                                                            class="btn btn-primary"><i class="far fa-edit"></i>
+                                                            Редактировать</a>
+
+
+                                                        <form action="{{ route('admin.news.destroy', $new->id) }}"
+                                                            method="post" class="text-center">
+                                                            @csrf
+                                                            {{ method_field('DELETE') }}
+                                                            <button type="submit" class="btn btn-danger "><i
+                                                                    class="fa fa-trash"></i></button>
+                                                        </form>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach

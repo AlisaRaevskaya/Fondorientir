@@ -32,22 +32,16 @@
                                 </div>
                                 <!-- /.card-header -->
 
-                                <div class="table-responsive mailbox-messages">
+                                <div class="table-responsive mailbox-messages col-md-12">
                                     <table class="table table-hover table-striped table-responsive">
                                         <thead>
                                             <tr>
-                                                <th class="col-md-1">№</th>
-                                                @if (isset($messages))
-                                                    @foreach ($messages as $new)
-                                                    @endforeach
-                                                    @if (isset($new->category))
-                                                        <th class="col-md-2">Категория</th>
-                                                    @endif
-                                                @endif
+                                                <th>№</th>
+                                                <th class="col-md-2">Категория</th>
                                                 <th class="col-md-2">ФИО</th>
                                                 <th class="col-md-2">Сообщение</th>
-                                                <th class="col-md-1">Дата</th>
-                                                <th class="col-md-1">Статус</th>
+                                                <th class="col-md-2">Дата</th>
+                                                <th class="col-md-2">Статус</th>
                                                 <th class="col-md-2">Посмотреть</th>
                                             </tr>
                                         </thead>
@@ -55,28 +49,27 @@
                                             @foreach ($messages as $item)
                                                 <tr>
                                                     <td class="mailbox-name">{{ $item->id }}</td>
-
-                                                    @if ($item->category)
-                                                        <td class="mailbox-name">
-                                                            <p>{{ $item->category }}</p>
-                                                        </td>
+                                                    @if (isset($item->category))
+                                                        <td class="col-md-2">{{ $item->category }}</td>
+                                                    @else
+                                                        <td class="col-md-2">{{ $item->getCategory()->category_name }}</td>
                                                     @endif
-                                                    <td class="mailbox-subject">{{ $item->name }}</td>
+                                                    <td class="mailbox-subject col-md-2">{{ $item->name }}</td>
                                                     <td class="mailbox-name col-md-2">
                                                         <a
                                                             href="{{ route('admin.message.show', ['category' => $item->getCategory()->category, 'id' => $item->id]) }}">
                                                             {{ $item->getMiniContent() }}</a>
 
                                                     </td>
-                                                    <td class="mailbox-date col-md-1">{{ $item->created_at }}</td>
-                                                    <td class="mailbox-name col-md-1">
+                                                    <td class="mailbox-date col-md-2">{{ $item->created_at }}</td>
+                                                    <td class="mailbox-name col-md-2">
                                                         @if ($item->is_read == true)
                                                             <p>Прочитано</p>
                                                         @else
                                                             <p>Не прочитано</p>
                                                         @endif
                                                     </td>
-                                                    <td class="col-md-1">
+                                                    <td class="col-md-2">
                                                         <a href="{{ route('admin.message.show', ['category' => $item->getCategory()->category, 'id' => $item->id]) }}"
                                                             class="btn btn-primary"><i class="fas fa-eye"></i>
                                                             Посмотреть</a>
@@ -85,9 +78,12 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <a href="{{ route('admin.messages.show.all') }}"
+                                        class="btn btn-outline-primary float-right">Все
+                                        сообщения</a>
                                 </div>
                                 <div class="card-body p-0">
-                                    <div class="float-right">
+                                    <div class="float-left ml1">
                                         <div class="btn-group">
                                             <nav aria-label="Page navigation" class="pagination_section">
                                                 <ul class="pagination">

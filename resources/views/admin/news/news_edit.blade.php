@@ -46,11 +46,11 @@
                 </div>
             </div>
 
- <nav aria-label="Page navigation" class="pagination_section">
-                            <ul class="pagination">
-                                <li>{{ $news->links() }}</li>
-                            </ul>
-                        </nav>
+            <nav aria-label="Page navigation" class="pagination_section">
+                <ul class="pagination">
+                    <li>{{ $news->links() }}</li>
+                </ul>
+            </nav>
         </div>
     </section>
 @endsection
