@@ -128,7 +128,6 @@ if ($request->hasFile('image')) {
 
         $news->deleteImage($news->image);
 
-        // $articles->deleteMiniImages($articles->images);
 
         $news->delete();
 

@@ -15,7 +15,7 @@
     <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown">
             <div class="row">
-                <a href="{{ route('admin.notices.all') }}">
+                <a href="{{ route('admin.messages.all.not-read') }}">
                     @if ($not_read_message !== 0)
                         <i class="fa fa-envelope-square" aria-hidden="true"></i>
                         {{ $not_read_message }}

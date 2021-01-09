@@ -19,8 +19,8 @@ class PressController extends Controller
      */
     public function index()
     {
-        $category = Category::where('name', 'press')->first();
-        $pressnews = $category->news()->orderBy('date_published', 'desc')->paginate(7);
+        $pressnews = News::where('category_id', 3)->orderBy('date_published', 'desc')->paginate(7);
+        $category= Category::where('name', 'press');
         return view('admin.press.index', compact('pressnews', 'category'));
     }
 
@@ -129,8 +129,6 @@ if ($request->hasFile('image')) {
         $news = News::findOrFail($id);
 
         $news->deleteImage($news->image);
-
-        // $articles->deleteMiniImages($articles->images);
 
         $news->delete();
 

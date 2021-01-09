@@ -33,11 +33,10 @@
                             @endif
                             {!! $item->body !!}
                         </div>
-                    
+
                         <div class="m30">
-                            <h6><a href="{{ url()->previous() }}" class="btn btn-default btn-sm" style="padding:10px;">
-                                    <<< Назад </a>
-                            </h6>
+                            <a href="{{ url()->previous() }}" class="previous">
+                                « Назад </a>
                         </div>
                     </div>
                 </div>

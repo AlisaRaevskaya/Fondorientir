@@ -71,7 +71,7 @@ class Message extends Model
     }
     public function getMiniContent()
     {
-        return Str::substr($this->message, 0, 80) . "...";
+        return Str::substr($this->message, 0, 50) . "...";
     }
     public function setPhoneAttribute($value)
     {
@@ -96,4 +96,5 @@ class Message extends Model
     {
         return $this->messageCategory;
     }
+
 }

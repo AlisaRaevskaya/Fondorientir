@@ -34,10 +34,9 @@
                             <div class="main_fond_item">
                                 <div>
                                     <p class="text-tel"><a href="tel:78123856969">+7(812)-385-69-89</a></p>
-                                    <button class="btn btn-sm btn-primary" id="btn_popup" data-toggle="modal"
-                                        data-target="#lawyerQuestion" data-category="Решение трудовых споров">Спросить
-                                        юриста
-                                    </button>
+                                    <button class="btn btn-sm btn-primary btn_law_popup" data-toggle="modal"
+                                        data-target="#lawyerQuestion" data-category="Миграционные вопросы">Спросить
+                                        юриста</button>
                                 </div>
                                 <div>
                                     <img class="img-responsive main_fond_img" src="/storage/fond-2.png" alt="fond.jpg"

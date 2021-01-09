@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group pop_modal">
                         <label for="phone">Ваш телефон</label>
-                        <input type="text" class="form-control" placeholder="Ваш номер телефона для связи" name="phone">
+                        <input type="text" class="form-control" placeholder="+79876543210" name="phone">
                         <span class="text-danger" id="phoneErrorSidebar"></span>
                     </div>
                     <div class="form-group">

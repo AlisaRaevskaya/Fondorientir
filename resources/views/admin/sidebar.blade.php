@@ -55,7 +55,7 @@
                 <div class="collapse" id="collapseEmail" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         @foreach ($messageCategories as $notice)
-                            <a class="nav-link" href="{{ route('admin.notice', $notice->category) }}">
+                            <a class="nav-link" href="{{ route('admin.message', $notice->category) }}">
                                 {{ $notice->category_name }}
                                 @if ($notice->countNotRead() != 0)<i
                                         class="fa fa-envelope-square" aria-hidden="true" style="margin:0 3px;"></i>

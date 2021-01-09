@@ -39,6 +39,7 @@ class AjaxController extends Controller
         $data->phone = $req->input('phone');
         $data->message = $req->input('message');
         $data->message_category_id = 1;
+        $data->category="Правовая приемная";
         $data->save();
 
         $message_category=MessageCategory::where('id', 1)->pluck('category_name');

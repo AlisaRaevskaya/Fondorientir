@@ -3,18 +3,19 @@
 
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid admin-container" style="margin-top:30px;">
-
-                <section class="content-header">
+            <div class="content-wrapper admin-container mb50">
+                <!-- Content Header (Page header) -->
+                <section class="content-header pt10">
                     <div class="container-fluid">
                         <div class="row mb-2">
 
-                            <div class="col-sm-12 col-md-11" style="margin-left:2rem;">
+                            <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.notices.all') }}">Новые
-                                            сообщения</a>
+                                    <li class="breadcrumb-item">
+                                        Cообщения
                                     </li>
-                                    <li class="breadcrumb-item active">Категория: {{ $cat }} @if ($message->category)
+                                    <li class="breadcrumb-item active">Из категории: {{ $cat }}
+                                        @if ($message->category)
                                             <p>/{{ $message->category }}</p>
                                         @endif
 
@@ -29,15 +30,12 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-11" style="margin-left:2rem;">
+                        <div class="col-md-11 ml1">
                             <div class="card card-outline card-info">
                                 <div class="card-header ">
                                     <div class="card-title row">
                                         <div class="pull-left">
                                             <h3> Просмотр сообщения</h3>
-                                        </div>
-                                        <div class="pull-right">
-
                                         </div>
                                     </div>
                                 </div>
@@ -86,8 +84,6 @@
                                                                 <p>{{ $message->created_at }}</p>
                                                             </th>
                                                         </tr>
-
-
                                                     </tbody>
                                                 </table>
                                                 <div>

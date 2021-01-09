@@ -19,7 +19,7 @@
                             <h5> Фондом "ОРИЕНТИР" разработаны новые брошюры по миграционному и трудовому
                                 законодательству в доступной и понятной мигрантам форме.</h5>
                         </div>
-                        <div class="entity_content text-justify">
+                        <div class="entity_content">
 
                             {!! $page->content !!}
 
@@ -59,9 +59,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="brochures flex-row m30 text-justify">
+                            <div class="brochures flex-row m30">
                                 <div class="brochure-item_2 col-md-4 col-sm-12">
-                                    <h6>Полезная информация для трудовых мигрантов на русском языке</h6>
+                                    <h6 class="text-center">Полезная информация для трудовых мигрантов на русском языке</h6>
                                     <a href="/storage/pdf/Брошюра-1.pdf">
                                         <img src="/storage/broch-1-1.jpeg" class="img-responsive"
                                             title="Информация для трудовых мигрантов на русском языке"></a>
@@ -72,7 +72,8 @@
                                     </div>
                                 </div>
                                 <div class="brochure-item_2 col-md-4 col-sm-12">
-                                    <h6>Полезная информация для трудовых мигрантов на узбекском языке</h6>
+                                    <h6 class="text-center">Полезная информация для трудовых мигрантов на узбекском языке
+                                    </h6>
                                     <a href="/storage/pdf/Брошюра-2.pdf">
                                         <img src="/storage/broch-3-3.jpeg" class="img-responsive"
                                             title="Информация для трудовых мигрантов на узбекском языке">
@@ -84,7 +85,8 @@
                                     </div>
                                 </div>
                                 <div class="brochure-item_2 col-md-4 col-sm-12">
-                                    <h6>Полезная информация для трудовых мигрантов на таджикском языке</h6>
+                                    <h6 class="text-center">Полезная информация для трудовых мигрантов на таджикском языке
+                                    </h6>
                                     <a href="/storage/pdf/Брошюра-3.pdf">
                                         <img src="/storage/broch-2-2.jpeg" class="img-responsive"
                                             title="Информация для трудовых мигрантов на узбекском языке">

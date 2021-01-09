@@ -26,5 +26,4 @@ class NewsController extends Controller
         return view('news.news_single', compact('item','category','page'));
     }
 
-
 }

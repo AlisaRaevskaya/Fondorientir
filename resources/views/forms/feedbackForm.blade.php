@@ -86,7 +86,7 @@
 
     <div class="form-group mt-4 mb-4">
         <div class="col-xs-offset-3 col-xs-9">
-            <input id="captcha" type="text" class="form-control" placeholder="Введите код" name="captcha">
+            <input id="captcha" type="text" class="form-control" placeholder="Введите код с картинки" name="captcha">
         </div>
     </div>
 

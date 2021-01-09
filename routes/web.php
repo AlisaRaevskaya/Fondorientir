@@ -13,7 +13,7 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SecondSiteController;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Admin\AdminMessageController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Admin\DefaultController;
@@ -153,10 +153,11 @@ Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
 
 Route::get('/page-hide/{id}', [PageController::class, 'hide'])->name('page.hide');
 
-Route::get('/notifications/all',[NotificationController::class, 'showAll'])->name('notices.all');
-Route::get('/notifications/{category}', [NotificationController::class, 'index'])->where('category', '[a-z]+')->name('notice');
-Route::get('/notifications/{category}/{id}',[NotificationController::class, 'show'])->name('notice.show');
-Route::get('/notifications/feedback-call',[NotificationController::class, 'call'])->name('notices.call');
+Route::get('/messages/all',[AdminMessageController::class, 'showAll'])->name('messages.show.all');
+Route::get('/messages/all/not-read',[AdminMessageController::class, 'showAllNotRead'])->name('messages.all.not-read');
+Route::get('/messages/{category}', [AdminMessageController::class, 'showByCategory'])->where('category', '[a-z-A-Z]+')->name('message');
+Route::get('/messages/{category}/{id}',[AdminMessageController::class, 'showById'])->name('message.show');
+
 });
 
 Route::get('/{page}', [ DefaultController::class, 'index' ])->name('index');

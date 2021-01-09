@@ -54,7 +54,8 @@
              </div>
              <span class="text-danger" id="captchaErrorLaw"></span>
              <div class="form-group mb-4">
-                 <input id="captcha" type="text" class="form-control" placeholder="Введите код" name="captcha">
+                 <input id="captcha" type="text" class="form-control" placeholder="Введите код с картинки"
+                     name="captcha">
              </div>
 
              <input type="submit" class="form-group btn btn-primary" id="lawyer-btn" value="Отправить">
