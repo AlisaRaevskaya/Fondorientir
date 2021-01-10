@@ -3,7 +3,7 @@
         <a href="{{ route('second_main') }}"><img class="img-responsive" src="{{ asset('storage/banner1.png') }}"
                 title="Онлайн Приемная" alt="main.jpg"></a>
     </div>
-    <div class="text-center item_center sidebar_fond_img">
+    <div class="text-center sidebar_fond_img">
         <a href="https://президентскиегранты.рф/"><img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg"
                 title="Фонд президентских грантов" class="img-responsive"></a>
     </div>
