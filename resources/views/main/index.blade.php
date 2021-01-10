@@ -51,7 +51,7 @@
                             </div>
                             <div class="flex-row">
                                 @foreach ($news as $new)
-                                    <div class="category_news_body" style="padding-left:10px;">
+                                    <div class="category_news_body">
                                         <div class="category_article_img">
                                             <a href="{{ route('news_category.id', $new->id) }}" target="_self">
                                                 <img class="img-responsive" style="max-width:400px;max-height:250px;"
