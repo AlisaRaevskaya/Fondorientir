@@ -122,6 +122,7 @@ body {
   min-height: 430px;
   max-height: 550px;
   flex: 50%;
+  width:50%;
   padding-left: 10px;
   -webkit-flex: 50%;
   -ms-flex: 50%;
@@ -458,7 +459,7 @@ a.previous:hover {
   }
   .sidebar {
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .sidebar_fond_img {
     max-width: 300px;
