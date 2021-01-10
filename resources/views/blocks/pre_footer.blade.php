@@ -9,7 +9,7 @@
                         <div class="part_img">
                             <img src="{{ asset('storage/footer/kadastr.jpg') }}" alt="kadastrovaya_palata">
                         </div>
-                        <p style="padding-top:10px;">Кадастровая палата</p>
+                        <p class="pt10">Кадастровая палата</p>
                     </div>
 
                     <div class="partner_item flex-2">
@@ -17,7 +17,7 @@
                             <img src="{{ asset('storage/footer/nalogovaya.jpg') }}" alt="nalogovaya"
                                 class="rounded-circle">
                         </div>
-                        <p style="padding-top:10px;">Федеральная налоговая служба</p>
+                        <p class="pt10">Федеральная налоговая служба</p>
                     </div>
 
                     <div class="partner_item flex-2">
@@ -25,22 +25,22 @@
                         <div class="part_img flex-2">
                             <img src="{{ asset('storage/footer/pristavy.jpg') }}" alt="pristavy">
                         </div>
-                        <p style="padding-top:10px;">Служба судебных приставов</p>
+                        <p class="pt10">Служба судебных приставов</p>
                     </div>
 
-                    <div class="partner_item flex-2">
+                    <div class="partner_item flex-2 pt10">
 
                         <div class="part_img">
                             <img src="{{ asset('storage/footer/potrebitel.jpg') }}" alt="potrebitel_service">
                         </div>
-                        <div style="padding-top:10px;"> Федеральная служба защиты <br>прав потребителей</div>
+                        <div class="pt10 footer_partners_1_item"> Федеральная служба защиты <br>прав потребителей</div>
                     </div>
 
                     <div class="partner_item flex-2">
                         <div>
                             <img src="{{ asset('storage/footer/rossotrudnichestvo.png') }}" alt="rossotrudnichestvo">
                         </div>
-                        <p style="padding-top:10px;">Россотрудничество</p>
+                        <p class="pt10 ">Россотрудничество</p>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                             <img src="{{ asset('storage/footer/fadn.jpg') }}" alt="fadn.png"
                                 class="img-responsive footer_partners_2_item_img">
                         </div>
-                        <p style="padding-top:10px;"> Федеральное агентство по делам национальностей</p>
+                        <p class="pt10"> Федеральное агентство по делам национальностей</p>
                     </div>
 
                     <div class="col-md-3 footer_partners_2_item">
@@ -59,7 +59,7 @@
                             <img src="{{ asset('storage/footer/rosteh1.jpg') }}" alt="rostehnadzor"
                                 class="img-responsive footer_partners_2_item_img">
                         </div>
-                        <p style="padding-top:10px;">
+                        <p class="pt10">
                             Федеральная служба по экологическому,<br>
                             технологическому и атомному
                             надзору

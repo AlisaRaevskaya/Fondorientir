@@ -11,7 +11,7 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="entity_wrapper text-justify">
+                    <div class="entity_wrapper">
                         {!! $page->content !!}
                     </div>
                 </div>

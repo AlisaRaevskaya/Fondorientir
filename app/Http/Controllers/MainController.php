@@ -25,11 +25,13 @@ class MainController extends Controller
     return view('main.index', compact('page', 'news', 'category','replies',));
     }
 
-    public function about(){
-        $projects=Project::all();
-        $page= Page::where('laravel_name', 'about')->IsPublished()->first();
-        return view('main.about', compact('page', 'projects'));
+    public function fond(){
+        $page= Page::where('laravel_name', 'fond')->IsPublished()->first();
+        $id=$page->id;
+        $items=Page::where('parent_id', $id)->orderBy('id', 'asc')->IsPublished()->get();
+        return view('main.fond', compact('page','items'));
     }
+
 
      public function history(){
         $page= Page::where('laravel_name', 'history')->IsPublished()->first();

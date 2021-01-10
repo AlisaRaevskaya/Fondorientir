@@ -7,8 +7,11 @@ use App\Models\Page;
 
 class MessageController extends Controller
 {
-    public function index(){
-        return view('reception.index');
+    public function support(){
+         $page= Page::where('laravel_name', 'support')->OfSort(['sort_order' => 'asc'])->IsPublished()->first();
+         $id=$page->id;
+        $items=Page::where('parent_id', $id)->IsPublished()->get();
+        return view('reception.support', compact('page','items'));
     }
 
     public function reception(){
@@ -40,4 +43,5 @@ class MessageController extends Controller
     public function fzakon(){
         return view('blocks.fzakon59-f3');
     }
+
 }

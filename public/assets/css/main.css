@@ -69,6 +69,14 @@ body {
   align-content: center;
   align-items: center;
 }
+.flex-column{
+display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: space-between;
+}
+
 .text-tel {
   font-size: 20px;
 }
@@ -119,12 +127,14 @@ padding-left:2em;
 .mb15{
 margin-bottom:15px;
 }
+.info_container_item{
+   padding-bottom:20px;
+}
 .useful_info_item {
 text-align:center;
 font-weight:bold;
 margin-top:10px;
 }
-
 .useful_info_item a:hover{
      background-color:#6699cc;
      color:white;
@@ -137,6 +147,7 @@ padding:8px 0 !important;
 }
 .info_breadcrumb a{
     color:black !important;}
+
 /*
 .t-indent-30 {
   text-indent: 2rem !important;
@@ -324,6 +335,9 @@ hr {
 .m20{
     margin-top:20px;
 }
+.pt10{
+padding-top:10px;
+}
 .previous {
     background-color: #f1f1f1;
 }
@@ -429,7 +443,7 @@ max-height:128;
   }
   .sidebar {
     margin: 0 auto;
-    padding-top: 20px;
+    margin-top: 30px;
   }
   .sidebar_fond_img {
     max-width: 300px;
@@ -448,14 +462,15 @@ max-height:128;
 .footer_partners_2_item {
     margin: 0 auto;
   }
+.footer_partners_1_item {
+   padding-bottom:10px;
+   padding-top:10px;
+  }
   .brochures,
   .brochures img {
     margin: 0 auto;
     align-items: center;
     text-align: center;
-    /* display:flex;
-flex-direction: column;
-} */
   }
   .partners_flex{
       flex-direction:column;
