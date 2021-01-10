@@ -63,6 +63,9 @@ body {
 }
 .flex-row {
   display: flex;
+  display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
