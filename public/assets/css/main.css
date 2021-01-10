@@ -114,9 +114,12 @@ padding-left:2em;
 .category_news_body {
   min-height: 430px;
   max-height: 550px;
-  display:flex;
   flex: 50%;
   padding-left:10px;
+}
+.category_article_img img{
+max-width:400px;
+max-height:250px;
 }
 .btn-feedback-call {
   border-radius: 50px !important;
