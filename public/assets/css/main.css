@@ -28,6 +28,8 @@ body {
 }
 .sidebar {
   align-items: center;
+  padding-right:0 !important;
+ 
 }
 .header_phone {
   font-weight: bold;

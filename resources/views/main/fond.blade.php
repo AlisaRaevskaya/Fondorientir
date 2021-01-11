@@ -12,9 +12,7 @@
                         </ol>
                     </div>
                     <div class="fond">
-                        <div class="fond_title">
-                            Здесь вы найдете информацию о Фонде "ОРИЕНТИР".
-                        </div>
+                        {!! $page->content !!}
                         <div class="fond_container m30">
                             <div class="fond_container_items">
                                 @foreach ($items as $item)
