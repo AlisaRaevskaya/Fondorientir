@@ -12,11 +12,11 @@
                         </div>
                         <div class="slide">
                             <a href="{{ route('second_main') }}"><img src="/storage/banner2.png" class="img-responsive"
-                                    alt="main.jpg"></a>
+                                    alt="banner2.jpg"></a>
                         </div>
                         <div class="slide">
                             <a href="{{ route('second_main') }}"> <img src="/storage/banner3.png" class="img-responsive"
-                                    alt="main.jpg"></a>
+                                    alt="banner3.jpg"></a>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 <div class="col-md-3 sidebar">
     <div class="text-center item_center">
         <a href="{{ route('second_main') }}"><img class="img-responsive" src="{{ asset('storage/banner-4.png') }}"
-                title="Онлайн Приемная" alt="main.jpg"></a>
+                title="Онлайн Приемная" alt="banner.jpg"></a>
     </div>
     <div class="text-center sidebar_fond_img">
         <a href="https://президентскиегранты.рф/"><img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg"
