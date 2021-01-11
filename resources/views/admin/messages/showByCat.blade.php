@@ -83,7 +83,7 @@
                                         сообщения</a>
                                 </div>
                                 <div class="card-body p-0">
-                                    <div class="float-left ml1">
+                                    <div class="float-right">
                                         <div class="btn-group">
                                             <nav aria-label="Page navigation" class="pagination_section">
                                                 <ul class="pagination">
