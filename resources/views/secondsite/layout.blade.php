@@ -6,23 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     @if (is_object($seo))
-        <meta name="description" content="{{ $seo->description ? $seo->description : '__(E-Mail Address)' }}">
-        <meta name="keywords" content="{{ $seo->keywords }}/">
-        <meta property="og:title" content="{{ $seo->seo_title }}/" />
-        <meta property="og:description" content="{{ $seo->description }}/">
+        <meta name="description" content="{!!  $seo->description ? $seo->description : '__(E-Mail Address)' !!}">
+        <meta name="keywords" content="{!!  $seo->keywords !!}/">
+        <meta property="og:title" content="{!!  $seo->seo_title !!}/" />
+        <meta property="og:description" content="{!!  $seo->description !!}/">
         <meta property="og:image" content="{{ asset('storage/logo.png') }}" />
         <meta property="og:type" content="article" />
-        {{--
-        <meta property="og:url" content="{{ config('app.url') }}/" />
-        <meta property="og:site_name" content="{{ config('app.name') }}/" /> --}}
+        <meta property="og:url" content="{!!  config('app.url') !!}/" />
+        <meta property="og:site_name" content="{!!  config('app.name') !!}/" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ $seo->seo_title }}</title>
+        <title>{!! $seo->seo_title !!}</title>
     @else
         <meta name="description" content="Фонд Ориентир">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="keywords" content="мигранты/">
+        <meta name="keywords" content="Фонд Ориентир/">
+        <meta property="og:type" content="article" />
         <title>Фонд "Ориентир"</title>
     @endif
+
 
 
     <link href="/assets/css/main.css" rel="stylesheet">

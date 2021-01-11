@@ -122,10 +122,7 @@ body {
   min-height: 430px;
   max-height: 550px;
   flex: 50%;
-  width:50%;
   padding-left: 10px;
-  -webkit-flex: 50%;
-  -ms-flex: 50%;
 }
 .category_article_img img {
   max-width: 400px;

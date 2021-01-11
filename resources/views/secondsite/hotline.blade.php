@@ -15,7 +15,10 @@
                     <div class="entity_title m30">
                         <h1 style="font-weight:bold">Горячая линия</h1>
                     </div>
-                    @include('blocks.hotline')
+                    <div class="entity_wrapper">
+                        {!! $page->content !!}
+                    </div>
+
                 </div>
                 @include('layouts.sidebar')
             </div>

@@ -71,19 +71,19 @@
                                                             <td scope="col">Место работы/учебы:</td>
                                                             <th>{{ $message->job }}</th>
                                                         </tr>
-
-                                                        <tr>
-                                                            <td scope="col">Сообщение</td>
-                                                            <th>
-                                                                <p>{{ $message->message }}</p>
-                                                            </th>
-                                                        </tr>
                                                         <tr>
                                                             <td scope="col">Дата создания</td>
                                                             <th>
                                                                 <p>{{ $message->created_at }}</p>
                                                             </th>
                                                         </tr>
+                                                        <tr>
+                                                            <td scope="col">Сообщение</td>
+                                                            <th>
+                                                                <p>{{ $message->message }}</p>
+                                                            </th>
+                                                        </tr>
+
                                                     </tbody>
                                                 </table>
                                                 <div>

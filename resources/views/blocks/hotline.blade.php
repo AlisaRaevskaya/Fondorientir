@@ -34,7 +34,7 @@
         </li>
         <div>
             <h1 class="phone-text"><img src="{{ asset('storage/phone.png') }}" alt="phone.png"><a
-                    href="tel:+78126124817"> +7 (812 )612-48-17</a>
+                    href="tel:+78126124817"> +7 (812 ) 612-48-17</a>
             </h1>
         </div>
         <h6 class="widget_divider"></h6>
@@ -50,7 +50,7 @@
         <div>
             <div class="m30">
                 <h1 class="phone-text"><img src="{{ asset('storage/phone.png') }}" alt="phone.png">
-                    <a href="tel:+78123856989">+7 (812 )385-69-89</a>
+                    <a href="tel:+78123856989">+7 (812 ) 385-69-89</a>
                 </h1>
             </div>
         </div>
