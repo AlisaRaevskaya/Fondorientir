@@ -29,7 +29,7 @@ body {
 .sidebar {
   align-items: center;
   padding-right:0 !important;
- 
+
 }
 .header_phone {
   font-weight: bold;
@@ -148,7 +148,12 @@ body {
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
+  word-wrap:break-word;
 }
+.useful_info_item a{
+    width:338px;
+    word-break: break-all;
+ }
 .useful_info_item a:hover {
   background-color: #6699cc;
   color: white;
@@ -353,6 +358,12 @@ hr {
 .pt10 {
   padding-top: 10px;
 }
+.p10{
+    padding:10px 0;
+}
+.m15{margin-top:17px;
+}
+
 .previous {
   background-color: #f1f1f1;
 }
@@ -511,14 +522,14 @@ a.previous:hover {
   .divider:after {
     width: 78% !important;
   }
-  .useful_contacts_links_item a {
+  .useful_contacts_links_item a{
     font-size: 9px;
   }
   .partner_blocks {
     align-items: center;
     margin: 0 auto;
   }
-  .useful_info_block_first_item {
+  .useful_info_row_col_2:first-child {
     margin-top: 10px !important;
   }
 }
@@ -570,6 +581,9 @@ a.previous:hover {
     font-size: 9px !important;
     padding-right: 3px;
   }
+  .useful_info_item a{
+      font-size:11px;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -584,4 +598,17 @@ a.previous:hover {
     display: flex;
     flex-direction: column;
   }
+  .useful_info_item a{
+    width: 300px;
+    word-break: break-all;
+    font-size:10px;
+ }
+ @media screen and (max-width: 280px) {
+     .useful_info_item a{
+    width: 278px;
+    word-break: break-all;
+    font-size:9px;
+     }
+ }
+
 }

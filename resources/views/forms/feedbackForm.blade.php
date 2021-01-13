@@ -25,11 +25,10 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group job_div">
         <label class="control-label col-xs-3" for="job" id="job_label">Место работы или учебы</label>
         <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputPasswordjob" name="job"
-                placeholder="Место работы или учебы">
+            <input type="text" class="form-control" id="job" name="job" placeholder="Введите Ваше Место работы/учебы">
             <span class="text-danger" id="jobError"></span>
         </div>
     </div>
@@ -38,14 +37,15 @@
                 class="color_red">*</span>
         </label>
         <div class="col-xs-9">
-            <input type="tel" required class="form-control" id="phoneNumber" name="phone" placeholder="+79012345678">
+            <input type="tel" required class="form-control" id="phoneNumber" name="phone"
+                placeholder="Введите Ваш номер телефона">
             <span class="text-danger phoneError"></span>
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-xs-3" for="inputEmail" id="email_label">Электронная почта </label>
         <div class="col-xs-9">
-            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Введите Ваш Email">
             <span class="text-danger" id="emailError"></span>
         </div>
     </div>
@@ -53,7 +53,7 @@
         <label class="control-label col-xs-3" for="yourMessage">Ваш вопрос<span class="color_red">*</span></label>
         <div class="col-xs-9">
             <textarea rows="9" required class="form-control" id="yourMessage" name="message"
-                placeholder="Ваш вопрос"></textarea>
+                placeholder="Введите Ваш вопрос"></textarea>
             <span class="text-danger" id="messageError"></span>
         </div>
     </div>
@@ -63,8 +63,8 @@
         <div class="col-xs-offset-3 col-xs-9">
             <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
             <label for="rules_ok">Ознакомлен(-а) и согласен
-                <a href="/assets/dw/soglasie.pdf" target="_blank" class="consent"> на
-                    обработку моих данных
+                <a href="/storage/pdf/soglasie.pdf" target="_blank" class="consent"> <span class="link_color">на
+                        обработку моих персональных данных</span>
                 </a></label>
             <div>
                 <span class="text-danger" id="consentError"></span>

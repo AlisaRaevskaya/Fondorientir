@@ -15,7 +15,7 @@
                 @csrf
                 <div class="modal-body">
                     {{-- <div class="form-group"> --}}
-                        <label class="control-label" for="user_name">Вашe имя</label>
+                        <label class="control-label pt10" for="user_name">Вашe имя</label>
                         <input type="text" class="form-control" required id="user_name" name="name"
                             placeholder="Ваше Имя">
                         <span class="text-danger" id="nameError"></span>
@@ -23,15 +23,16 @@
                     </div> --}}
                     {{--
                     <div class="form-group"> --}}
-                        <label class="control-label" for="user_phone">Ваш телефон</label>
-                        <input id="user_phone" class="form-control" required type="text" name="phone" placeholder="+7">
+                        <label class="control-label pt10" for="user_phone">Ваш контактный телефон</label>
+                        <input id="user_phone" class="form-control" required type="text" name="phone"
+                            placeholder="Ваш номер телефона">
                         <span class="text-danger" id="phoneError"></span>
                         {{--
                     </div> --}}
                 </div>
                 <div class="modal-footer">
                     <p class="success_call text-center"></p>
-                    <input type="button" value="Отправить" id="btn_call">
+                    <input type="button" class="btn btn-primary" value="Отправить" id="btn_call">
                 </div>
             </form>
         </div>

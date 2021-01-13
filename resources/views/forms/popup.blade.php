@@ -21,18 +21,19 @@
                     @csrf
                     <div class="form-group pop_modal">
                         <label for="contactName">Контактное лицо:</label>
-                        <input type="text" class="form-control form-control-small" placeholder="Ваше имя" name="name">
+                        <input type="text" class="form-control form-control-small" placeholder="Введите Ваше имя"
+                            name="name">
                         <span class="text-danger" id="nameErrorSidebar"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="email-input">Ваш email</label>
-                        <input type="email" class="form-control" placeholder="Введите email" name="email">
+                        <input type="email" class="form-control" placeholder="Введите Ваш email" name="email">
                         <span class="text-danger" id="emailErrorSidebar"></span>
                     </div>
                     <div class="form-group pop_modal">
                         <label for="phone">Ваш телефон</label>
-                        <input type="text" class="form-control" placeholder="+79876543210" name="phone">
+                        <input type="text" class="form-control" placeholder="Введите Ваш номер телефона" name="phone">
                         <span class="text-danger" id="phoneErrorSidebar"></span>
                     </div>
                     <div class="form-group">

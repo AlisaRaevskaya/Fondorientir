@@ -43,7 +43,11 @@
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/owl.carousel.min.js"></script>
+    @if (is_object($page))
+        @if ($page->id = 1)
+            <script src="/assets/js/owl.carousel.min.js"></script>
+        @endif
+    @endif
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU"
         type="text/javascript">
     </script>
@@ -77,7 +81,8 @@
     <!-- Theme Menu -->
     <script src="/assets/js/mobile-menu.js"></script>
 
-    <!-- Theme Script -->
+    <!-- All Scripts -->
+    <script src="/assets/js/index.js"></script>
     <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/ajax/call-ajax.js"></script>

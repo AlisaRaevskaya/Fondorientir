@@ -19,9 +19,11 @@ $(".pop_call_link").on("click", function (e) {
 });
 
 
-let w = $(window).width(); // Получаем ширину окна
-if (w <= 480){
+let wdth = $(window).width(); // Получаем ширину окна
+if (wdth <= 480){
   $("#job_label").html("");
+  $(".job_div").addClass("");
+   $("#job").addClass("m15");
   $("#job_label").html("Место работы/учебы");
   $("#email_label").html("");
   $("#email_label").html("Email");

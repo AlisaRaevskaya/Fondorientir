@@ -76,7 +76,7 @@
                         <div class="col-sm-4">
                         </div>
                         <div class="col-sm-3">
-                            <p>&copy;2016 "ОРИЕНТИР"</a></p>
+                            <p>&copy;2021 "ОРИЕНТИР"</a></p>
                         </div>
                     </div>
                 </div>

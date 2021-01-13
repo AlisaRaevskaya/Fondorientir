@@ -14,9 +14,9 @@
                     </div>
                     <h1 class="text-center usefu_info_title"><strong>Полезная информация</strong></h1>
                     <div class="m30 ">
-                        <div class="flex-row">
-                            <div class="col-md-6 col-sm-6 text-center">
-                                <div>
+                        <div class="flex-row useful_info_row">
+                            <div class="useful_info_row_col_1 col-md-6 col-sm-6 text-center">
+                                <div class="useful_info_item">
                                     <a class="btn btn-sm btn-primary" href="{{ route('info-10') }}">
                                         Пересечение границы Российской Федерации
                                     </a>
@@ -105,11 +105,11 @@
                                         разрешения на работу </a>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6 text-center" style="align-items:center;">
-                                <div class="useful_info_block_first_item">
+                            <div class="useful_info_row_col_2 col-md-6 col-sm-6 text-center" style="align-items:center;">
+                                <div class="useful_info_item ">
                                     <a class="btn btn-sm btn-primary " href="{{ route('info-7') }}">Разрешение
                                         на временное
-                                        проживание(РВП) в РФ</a>
+                                        проживание (РВП) в РФ</a>
                                 </div>
 
                                 <div class="useful_info_item">
@@ -166,7 +166,7 @@
                                     </a>
                                 </div>
                                 <div class="useful_info_item">
-                                    <a class="btn btn-sm btn-primary" href="{{ route('info-8-4') }}">СНИЛС(страховое
+                                    <a class="btn btn-sm btn-primary" href="{{ route('info-8-4') }}">СНИЛС (страховое
                                         пенсионное свидетельство)
                                     </a>
                                 </div>
