@@ -19,8 +19,7 @@ $(".pop_call_link").on("click", function (e) {
 });
 
 
-let wdth = $(window).width(); // Получаем ширину окна
-if (wdth <= 480){
+if($(window).width()<= 480){
   $("#job_label").html("");
   $(".job_div").addClass("");
    $("#job").addClass("m15");

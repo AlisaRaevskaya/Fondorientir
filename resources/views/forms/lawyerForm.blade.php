@@ -1,7 +1,6 @@
      <form action="/lawyer-form" method="POST" name="lawyerForm">
          @csrf
          <div class="col-md-6 justify-content-center" style="font-size:15px;">
-
              <div style="margin-top:5%;">
                  <span>
                      <i class="fa fa-question"></i> Кратко опишите проблему и
