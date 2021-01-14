@@ -28,11 +28,11 @@
     </div>
 </div>
 
-<script>
+{{-- <script>
     $(".btn_law_popup").on("click", function(e) {
         let value = $(e.target).data("category");
         console.log(value);
         $('#hidden_input').val(value);
     });
 
-</script>
+</script> --}}

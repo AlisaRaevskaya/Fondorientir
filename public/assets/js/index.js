@@ -1,3 +1,8 @@
+$(".btn_law_popup").on("click", function (e) {
+  let value = $(e.target).data("category");
+  // console.log(value);
+  $("#hidden_input").val(value);
+});
 $(".pop_map_link").on("click", function (e) {
   e.preventDefault();
   $(".popup_map").removeClass("hidden");
@@ -18,11 +23,10 @@ $(".pop_call_link").on("click", function (e) {
   $(".popup_call").removeClass("hidden");
 });
 
-
-if($(window).width()<= 480){
+if ($(window).width() <= 480) {
   $("#job_label").html("");
   $(".job_div").addClass("");
-   $("#job").addClass("m15");
+  $("#job").addClass("m15");
   $("#job_label").html("Место работы/учебы");
   $("#email_label").html("");
   $("#email_label").html("Email");
