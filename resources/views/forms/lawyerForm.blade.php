@@ -44,19 +44,19 @@
                  <span class="text-danger" id="messageErrorLaw"></span>
              </div>
 
-             {{-- <div class="form-group">
-                 <div>
+             <div class="form-group">
+                 <div class="row">
                      <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
-                     <label for="rules_ok">Ознакомлен(-а) и согласен
-                         <a href="/storage/pdf/soglasie.pdf" target="_blank" class="consent"> <span
-                                 class="link_color">на
-                                 обработку моих персональных данных</span>
-                         </a></label>
-                     <div>
-                         <span class="text-danger" id="consentError"></span>
-                     </div>
+                     <span>Ознакомлен(-а) и согласен
+                         <a href="/storage/pdf/politika_conf.pdf" target="_blank" class="consent"><span
+                                 class="link_color">с
+                                 политикой обработки персональных данных</span>
+                         </a></span>
                  </div>
-             </div> --}}
+                 <div>
+                     <span class="text-danger" id="consentError"></span>
+                 </div>
+             </div>
 
              <div class="form-group mt-4 mb-4">
                  <div class="captcha">

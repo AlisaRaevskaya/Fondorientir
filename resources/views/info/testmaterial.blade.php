@@ -24,21 +24,21 @@
                         <div class="tests">
                             <div class="tests_items">
                                 <div class="tests_items_item_1">
-                                    <a href="/storage/pdf/test-zakon.pdf" class="target_blank">
+                                    <a href="/storage/pdf/test-zakon.pdf" target="_blank">
                                         <img src="/storage/zakon.png" title="Тест по законодательству"
                                             alt="russian-lawtest.png">
                                     </a>
-                                    <a href="/storage/pdf/test-zakon.pdf" class="target_blank">
+                                    <a href="/storage/pdf/test-zakon.pdf" target="_blank">
                                         <h6>Тест по законодательству</h6>
                                     </a>
                                 </div>
                             </div>
                             <div class="ml30 tests_items mb15">
                                 <div class="tests_items_item_1 pl-14">
-                                    <a href="/storage/pdf/test-history.pdf" class="target_blank">
+                                    <a href="/storage/pdf/test-history.pdf" target="_blank">
                                         <img src="/storage/history.png" title="Тест по истории"></a>
 
-                                    <a href="/storage/pdf/test-history.pdf" class="target_blank">
+                                    <a href="/storage/pdf/test-history.pdf" target="_blank">
                                         <h6>Тест по истории России</h6>
                                     </a>
                                 </div>

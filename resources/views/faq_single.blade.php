@@ -28,6 +28,7 @@
                             </div>
                         @endforeach
                     @endif
+                    @include('forms.faq-form')
                 </div>
                 @include('layouts.sidebar')
             </div>

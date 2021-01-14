@@ -4,8 +4,8 @@
                 src="{{ asset('storage/banner-4.png') }}" title="Онлайн Приемная" alt="banner.jpg"></a>
     </div>
     <div class="text-center sidebar_fond_img">
-        <a href="https://президентскиегранты.рф/"><img src="{{ asset('storage/fond.png') }}" alt="president-fond.jpg"
-                title="Фонд президентских грантов" class="img-responsive"></a>
+        <a href="https://президентскиегранты.рф/" target="_blank"><img src="{{ asset('storage/fond.png') }}"
+                alt="president-fond.jpg" title="Фонд президентских грантов" class="img-responsive"></a>
     </div>
 
     <div class="text-center item_center">
@@ -37,4 +37,5 @@
         // console.log(value);
         $('#hidden_input').val(value);
     });
+
 </script> --}}

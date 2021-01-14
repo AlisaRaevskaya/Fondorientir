@@ -2,7 +2,8 @@ $("#lawyer-btn").on("click", function(event) {
     event.preventDefault();
 
     let data = $('form[name="lawyerForm"]').serialize();
-
+    let checkbox = $("input[type='checkbox']");
+    checkbox.is(":checked") ? checkbox.val(1) : checkbox.val(0);
 
     $.ajaxSetup({
         headers: {
@@ -27,6 +28,7 @@ $("#lawyer-btn").on("click", function(event) {
         $("#nameErrorLaw").text(response.errors.name);
         $("#phoneErrorLaw").text(response.errors.phone);
         $("#messageErrorLaw").text(response.errors.message);
+        $("#consentError").text(response.errors.consent);
         $("#captchaErrorLaw").text(response.errors.captcha);
       }
     },
