@@ -27,8 +27,8 @@ class ReceptionMessageRequest extends FormRequest
     {
         return [
         'lastName' => ['required','string','regex:/[a-zA-Zа-яА-Я\s\\-]{2,25}$/'],
-        'firstName' => ['required','regex:/[a-zA-Zа-яА-Я]{2,25}$/'],
-        'fatherName' => ['nullable','regex:/[a-zA-Zа-яА-Я]{2,25}$/'],
+        'firstName' => ['required','string','regex:/[a-zA-Zа-яА-Я\s\\-]{2,25}$/'],
+        'fatherName' => ['nullable','string'],
         'message' => [ 'required','string','min:8','max:2500'],
         'email' => ['min:2','max:255','email','nullable'],
         'phone' => ['required','min:11','max:25','regex:/^(?:\+|\d){1}[\d\-\(\) ]{10,}$/'],
