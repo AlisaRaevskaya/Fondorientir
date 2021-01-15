@@ -1,5 +1,5 @@
 <div class="col-md-11 faq_form">
-    <h1>Бесплатная онлайн консультация</h1>
+    <div class="h3 faq_form_title">Бесплатная онлайн консультация</div>
     <div class="faq_form_box">
         <div class="row justify-content-center faq_form_box_item">
 
@@ -7,13 +7,13 @@
                 <img class="d-flex img-circle avatar z-depth-1-half mr-3 img-responsive"
                     src="/assets/images/avatar-5.jpg" alt="Avatar">
             </div>
-            <div class="h4 ml30 text-justify w-color">
+            <div class="h4 ml30 w-color faq_form_box_item_title">
                 Вы можете получить консультацию нашего миграционного юриста
                 бесплатно, заполнив форму:
             </div>
         </div>
 
-        <form action="/lawyer-form-faq" method="POST" name="lawyerFormFaq">
+        <form action="/lawyer-form-faq" method="POST" name="lawyerFormFaq" class="faqForm">
             @csrf
             <div class="row">
                 <div class="form-group col-sm-6">

@@ -641,6 +641,16 @@ a.previous:hover {
     flex-direction: column;
     align-items: center;
   }
+  .faq_form_box_item_title{
+font-size:12px !important;
+  }
+  .faqForm label{
+      font-size:15px;
+  }
+  .faq_form_title{
+ font-size:16px;
+
+  }
 }
 
 @media screen and (max-width: 360px) {
