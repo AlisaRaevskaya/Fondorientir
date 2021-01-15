@@ -11,13 +11,14 @@
                             {{ $item->title }}
                             <span><i class="fa fa-angle-down"></i></span>
                         </a>
-                        <ul class="dropdown-menu m-menu-fw">
+                        <ul class="dropdown-menu">
                             <li>
                                 <div class="m-menu-content">
-                                    @foreach ($item->children as $children)
-                                        <a href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}"
-                                            style="color:black">{{ $children->title }}</a>
-                                    @endforeach
+                                    <ul class="col-sm-3">
+                                        @foreach ($item->children as $children)
+                                            <li> <a href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}"
+                                                    style="color:black">{{ $children->title }}</a></li>
+                                        @endforeach
                                 </div>
                             </li>
                         </ul>
@@ -32,5 +33,3 @@
         </ul>
     </div>
 </div>
-
-<!-- .uc-mobile-menu -->

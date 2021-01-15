@@ -76,7 +76,8 @@
                                                         @foreach ($item->children as $children)
                                                             <li><a
                                                                     href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}">
-                                                                    {{ $children->title }}</a></li>
+                                                                    {{ $children->title }}</a>
+                                                            </li>
                                                         @endforeach
                                                     </ul>
                                                 </div>
