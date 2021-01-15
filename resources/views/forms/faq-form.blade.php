@@ -4,8 +4,8 @@
         <div class="row justify-content-center faq_form_box_item">
 
             <div class="faq_form_box_item_img_block">
-                <img class="d-flex img-circle avatar z-depth-1-half mr-3 img-responsive"
-                    src="/assets/images/avatar-5.jpg" alt="Avatar">
+                <img class="d-flex img-circle avatar z-depth-1-half mr-3" src="/assets/images/avatar-5.jpg"
+                    alt="Avatar">
             </div>
             <div class="h4 ml30 w-color faq_form_box_item_title">
                 Вы можете получить консультацию нашего миграционного юриста
