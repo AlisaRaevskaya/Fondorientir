@@ -26,10 +26,20 @@ body {
 .reply-title {
   word-wrap: break-word;
 }
+.faq_form_box{
+border:1px solid  #0275d8;padding:0;border-radius:3pt;
+        overflow:hidden; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"
+}
+.faq_form_box_item{
+display:flex;justify-content:space-around;
+        background-color:#0275d8;padding:15px;
+}
+.faq_form_box_item_img_block_img{
+
+}
 .sidebar {
   align-items: center;
-  padding-right:0 !important;
-
+  padding-right: 0 !important;
 }
 .header_phone {
   font-weight: bold;
@@ -63,6 +73,12 @@ body {
   max-width: 750px;
   height: 570px;
 }
+.d-flex{
+    display:flex;
+}
+.flex-2 {
+  flex: 16.66%;
+}
 .flex-row {
   display: flex;
   display: -webkit-box;
@@ -71,8 +87,8 @@ body {
   -ms-flex-direction: row;
   -webkit-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap:wrap;
-  -webkit-flex-wrap:wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
@@ -85,26 +101,25 @@ body {
   align-content: space-between;
   align-items: space-between;
 }
-.tests{
-    display:flex;
+.tests {
+  display: flex;
 }
-.tests_items_item_1{
-display:flex;
-flex-direction:column;
-justify-content: space-between;
-align-items: flex-start;
-align-content: center;
-max-width:250px;
-position: relative;
+.tests_items_item_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
 }
-.tests_items_item_1 a{
-    display:block;
+.tests_items_item_1 a {
+  display: block;
 }
-.tests_items_item_1 img{
-    padding-left:20%;
+
+.tests_items_item_1 img {
+  padding: 0 45px;
 }
-.pl14{
- padding-left:14%;
+.history_link {
+  padding-left: 10%;
 }
 
 .ul_padding {
@@ -166,12 +181,12 @@ position: relative;
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
-.useful_info_item a{
-    width:338px;
-    word-break: break-all;
- }
+.useful_info_item a {
+  width: 338px;
+  word-break: break-all;
+}
 .useful_info_item a:hover {
   background-color: #6699cc;
   color: white;
@@ -186,10 +201,6 @@ position: relative;
   color: black !important;
 }
 
-/*
-.t-indent-30 {
-  text-indent: 2rem !important;
-} */
 .useful_contacts_links_row {
   display: flex;
   justify-content: space-around;
@@ -323,9 +334,7 @@ hr {
 .news_divider {
   padding-bottom: 20px;
 }
-.flex-2 {
-  flex: 16.66%;
-}
+
 .doc_style {
   font-family: arial, helvetica, sans-serif;
   font-size: medium;
@@ -364,6 +373,9 @@ hr {
 .pl30 {
   padding-left: 30px;
 }
+.ml10 {
+  margin-left: 20px;
+}
 .ml20 {
   margin-left: 20px;
 }
@@ -376,10 +388,11 @@ hr {
 .pt10 {
   padding-top: 10px;
 }
-.p10{
-    padding:10px 0;
+.p10 {
+  padding: 10px 0;
 }
-.m15{margin-top:17px;
+.m15 {
+  margin-top: 17px;
 }
 
 .previous {
@@ -445,7 +458,6 @@ a.previous:hover {
   justify-content: center;
   align-items: center;
 }
-
 .search {
   max-width: 23rem;
 }
@@ -541,7 +553,7 @@ a.previous:hover {
   .divider:after {
     width: 78% !important;
   }
-  .useful_contacts_links_item a{
+  .useful_contacts_links_item a {
     font-size: 9px;
   }
   .partner_blocks {
@@ -600,13 +612,25 @@ a.previous:hover {
     font-size: 9px !important;
     padding-right: 3px;
   }
-  .useful_info_item a{
-      font-size:11px;
-    }
-    .tests_items_item_1 img{
-    padding-left:0%;
-}
-
+  .useful_info_item a {
+    font-size: 11px;
+  }
+  .tests_items_item_1 img {
+    padding: 0%;
+  }
+  .history_link {
+    padding-left: 0%;
+  }
+  .tests_items,
+  .tests_items a {
+    margin: 0 auto;
+  }
+  .tests {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -616,27 +640,16 @@ a.previous:hover {
 }
 
 @media screen and (max-width: 320px) {
-  .tests {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-  }
-  .tests_items,
-  .tests_items a{
-    margin: 0 auto;
-}
-  .useful_info_item a{
+  .useful_info_item a {
     width: 300px;
     word-break: break-all;
-    font-size:10px;
- }
- @media screen and (max-width: 280px) {
-     .useful_info_item a{
-    width: 278px;
-    word-break: break-all;
-    font-size:9px;
-     }
- }
-
+    font-size: 10px;
+  }
+  @media screen and (max-width: 280px) {
+    .useful_info_item a {
+      width: 278px;
+      word-break: break-all;
+      font-size: 9px;
+    }
+  }
 }

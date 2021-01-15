@@ -2,6 +2,7 @@ $("#lawyer-btn").on("click", function(event) {
     event.preventDefault();
 
     let data = $('form[name="lawyerForm"]').serialize();
+
     let checkbox = $("input[type='checkbox']");
     checkbox.is(":checked") ? checkbox.val(1) : checkbox.val(0);
 

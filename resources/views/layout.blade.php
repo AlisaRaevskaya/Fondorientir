@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     @if (is_object($seo))
-        <meta name="description" content="{!!  $seo->description ? $seo->description : '__(E-Mail Address)' !!}">
+        <meta name="description" content="{!!  $seo->description ? $seo->description : 'Фонд " ОРИЕНТИР"-приемная по
+            вопросам миграции и трудовым спорам' !!}">
         <meta name="keywords" content="{!!  $seo->keywords !!}/">
         <meta property="og:title" content="{!!  $seo->seo_title !!}/" />
         <meta property="og:description" content="{!!  $seo->description !!}/">
@@ -83,17 +84,13 @@
 
     <!-- All Scripts -->
     <script src="/assets/js/index.js"></script>
-    <script src="/assets/js/index.js"></script>
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/ajax/call-ajax.js"></script>
-    <script src="/assets/js/ajax/problem-ajax.js"></script>
     <script src="/assets/js/ajax/reception-ajax.js"></script>
     <script src="/assets/js/ajax/sidebar-ajax.js"></script>
-    <script src="/assets/js/ajax/claim-ajax.js"></script>
-    <script src="/assets/js/ajax/application-ajax.js"></script>
     <script src="/assets/js/ajax/lawyer-ajax.js"></script>
+    <script src="/assets/js/ajax/faq-ajax.js"></script>
     <script src="/assets/js/slider.js"></script>
-
 </body>
 
 </html>

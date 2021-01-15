@@ -15,10 +15,6 @@
                                         Cообщения
                                     </li>
                                     <li class="breadcrumb-item active">Из категории: {{ $cat }}
-                                        @if ($message->category)
-                                            <p>/{{ $message->category }}</p>
-                                        @endif
-
                                     </li>
                                 </ol>
                             </div>

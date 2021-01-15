@@ -11,7 +11,6 @@
                             <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right ">
                                     <li class="breadcrumb-item">Все сообщения</a></li>
-
                                 </ol>
                             </div>
                         </div>

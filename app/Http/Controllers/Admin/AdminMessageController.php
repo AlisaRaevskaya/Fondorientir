@@ -15,7 +15,7 @@ class AdminMessageController extends Controller
         $cat=MessageCategory::where('category', $category);
         $categoryName=$cat->pluck('category_name')->first();
         $id=$cat->pluck('id');
-        $messages=Message::where('message_category_id', $id)->paginate(10);
+        $messages=Message::where('message_category_id', $id)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.messages.showByCat', compact('messages', 'categoryName'));
     }
 
@@ -30,13 +30,13 @@ class AdminMessageController extends Controller
 
     public function showAllNotRead()
     {
-        $messages=Message::where('is_read', false)->paginate(10);
+        $messages=Message::where('is_read', false)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.messages.showAllNotRead', compact('messages'));
     }
 
     public function showAll()
     {
-        $messages=Message::orderBy('id', 'desc')->paginate(10);
+        $messages=Message::orderBy('created_at', 'desc')->paginate(10);
   return view('admin.messages.showAll', compact('messages'));
 
     }

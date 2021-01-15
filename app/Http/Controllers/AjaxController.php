@@ -8,7 +8,7 @@ use App\Http\Requests\ReceptionMessageRequest;
 use App\Http\Requests\CallRequest;
 use App\Http\Requests\LawQuestionSidebarRequest;
 use App\Http\Requests\LawQuestionRequest;
-use App\Http\Requests\ClaimRequest;
+use App\Http\Requests\FaqFormRequest;
 use App\Http\Requests\ApplicationRequest;
 use App\Http\Requests\ProblemRequest;
 
@@ -144,62 +144,7 @@ class AjaxController extends Controller
         // });
         return response()->json(['success'=>'Данные успешно отправлены']);
     }
-    /**
-     *
-     *
-     * @param  ClaimRequest  $req
-     * @return Response
-     */
-    public function saveClaim(ClaimRequest $req)
-    {
-        $validatedData = $req->validated();
 
-        $data = new Message();
-        $data->message_category_id = 4;
-
-        $data->name = $req->input('name');
-        $data->email = $req->input('email');
-        $data->phone = $req->input('phone');
-        $data->message = $req->input('message');
-        $data->save();
-
-        $message_category=MessageCategory::where('id', 4)->pluck('category_name');
-        $name=$req->input('name');
-        $phone=$req->input('phone');
-
-        // Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
-        return response()->json(['success'=>'Ваша заявка принята!Наш специалист свяжется с вами в ближайшее время.']);
-    }
-
-    /**
-     *
-     *
-     * @param  ProblemRequest  $req
-     * @return Response
-     */
-    public function saveProblemMessage(ProblemRequest $req)
-    {
-        $validatedData = $req->validated();
-        $data = new Message();
-
-        $data->name = $req->input('name');
-        $data->email = $req->input('email');
-        $data->phone = $req->input('phone');
-        $data->message = $req->input('message');
-        $data->message_category_id = 5;
-        $data->save();
-
-        $message_category=MessageCategory::where('id', 5)->pluck('category_name');
-        $name=$req->input('name');
-        $phone=$req->input('phone');
-
-        // Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
-        return response()->json(['success'=>"Ваша заявка принята!"]);
-    }
     /**
       *
       *
@@ -224,5 +169,33 @@ class AjaxController extends Controller
         //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
         // });
         return response()->json(['success'=>"Ваша заявка принята. Ждите нашего звонка."]);
+    }
+
+     /**
+     *
+     *
+     * @param  FaqFormRequest $req
+     * @return Response
+     */
+    public function saveFaqQuestionForm(FaqFormRequest $req)
+    {
+        $validatedData = $req->validated();
+        $data = new Message;
+
+
+        $data->name=$req->input('name');
+        $data->message = $req->input('message');
+        $data->phone = $req->input('phone');
+        $data->message_category_id = 1;
+        $data->category="Правовая приемная";
+        $data->save();
+
+        $name=$req->input('name');
+        $phone=$req->input('phone');
+        $message_category=$req->input('category');
+        // Mail::send('email.message_mail', ['message_category'=>$message_category, 'name'=>$name,'phone'=>$phone], function ($message) {
+        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
+        // });
+        return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
 }

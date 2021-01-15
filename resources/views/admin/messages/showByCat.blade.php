@@ -13,7 +13,7 @@
                                     <li class="breadcrumb-item">
                                         Cообщения</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Из Категории:{{ $categoryName }}
+                                    <li class="breadcrumb-item active">Из Категории: {{ $categoryName }}
                                     </li>
                                 </ol>
                             </div>

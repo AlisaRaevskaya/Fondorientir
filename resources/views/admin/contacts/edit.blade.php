@@ -111,6 +111,18 @@
                                                         {{ Form::label('hours', 'Часы работы') }}
                                                         {{ Form::text('hours', $contact->hours, ['class' => 'form-control required']) }}
                                                     </div>
+                                                      <div class="form-group">
+                                                        {{ Form::label('fb_link', 'Фейсбук') }}
+                                                        {{ Form::text('fb_link', $contact->fb_link, ['class' => 'form-control required']) }}
+                                                    </div>
+                                                      <div class="form-group">
+                                                        {{ Form::label('vk_link', 'Вконтакте') }}
+                                                        {{ Form::text('vk_link', $contact->fb_link, ['class' => 'form-control required']) }}
+                                                    </div>
+                                                      <div class="form-group">
+                                                        {{ Form::label('inst_link', 'Instagram') }}
+                                                        {{ Form::text('inst_link', $contact->inst_link, ['class' => 'form-control required']) }}
+                                                    </div>
                                                     <div class="form-group">
                                                         {{ Form::label('logo', 'Основной Лого') }}
                                                         {{ Form::file('logo') }}

@@ -58,13 +58,27 @@
                     <h3><a href="{{ route('contacts') }}" target="_self">Контакты</a></h3>
                 </div>
                 <div class="footer_contacts footer_padding">
-                    <p class="text-left" style="font-size:15px;"><strong>{{ $contact->name }}</strong></p>
+                    <p class="text-left f-size15"><strong>{{ $contact->name }}</strong></p>
                     <p><strong>Адрес: </strong>{{ $contact->index }}, {{ $contact->city }},{{ $contact->street }}
                     </p>
                     <p><strong>Электронный адрес: </strong>{{ $contact->email }}</p>
                     <p><strong>Cайт: </strong>{{ $contact->web }}</p>
                     <p><strong>Телефон:<strong><a href='tel:{{ $contact->changePhoneForHref() }}'
                                     class="link_color">{{ $contact->phone }}</a></p>
+                    <div class="d-flex">
+                        <div>Социальные сети:</div>
+                        <div class="contacts_social">
+                            <a class="icons-sm fb-ic" href="{{ $contact->fb_link }}" target="_blank"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a class="icons-sm inst-ic" href="{{ $contact->inst_link }}" target="_blank"><i
+                                    class="fa fa-instagram"> </i></a>
+
+                            <a class="icons-sm tmb-ic" href="{{ $contact->vk_link }}" target="_blank"><i
+                                    class="fa fa-vk">
+                                </i></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

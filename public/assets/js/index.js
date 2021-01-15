@@ -3,6 +3,15 @@ $(".btn_law_popup").on("click", function (e) {
   // console.log(value);
   $("#hidden_input").val(value);
 });
+$('#reload').on("click", function() {
+        $.ajax({
+            type: 'GET',
+            url: '/support/reload-captcha',
+            success: function(data) {
+                $(".captcha span").html(data.captcha);
+            }
+        });
+    });
 $(".pop_map_link").on("click", function (e) {
   e.preventDefault();
   $(".popup_map").removeClass("hidden");

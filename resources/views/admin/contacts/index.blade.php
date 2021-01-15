@@ -85,6 +85,14 @@
                                                     </th>
                                                 </tr>
                                                 <tr>
+                                                    <td scope="col">Соц.сети</td>
+                                                    <th>
+                                                        <div>Фейсбук: {{ $contact->fb_link }}</div>
+                                                        <div>Вк: {{ $contact->vk_link }}</div>
+                                                        <div>Instagram: {{ $contact->inst_link }}</div>
+                                                    </th>
+                                                </tr>
+                                                <tr>
                                                     <td scope="col">Метро</td>
                                                     <th>
                                                         <p>{{ $contact->metro }}</p>

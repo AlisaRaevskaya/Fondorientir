@@ -110,10 +110,10 @@ Route::get('/press-news/{id}', [MainController::class, 'showByCategoryId'])->whe
 Route::post('/lawyer-form', [AjaxController::class, 'saveLawQuestion'])->name("lawyer-question");
 Route::post('/lawyer-form-sidebar', [AjaxController::class, 'saveLawQuestionSidebar'])->name("lawyer-sidebar");
 Route::post('/reception-form', [AjaxController::class, 'saveReceptionMessage'])->name("reception-form");
-Route::post('/problem-form', [AjaxController::class, 'saveProblemMessage'])->name("problem-form");;
-Route::post('/application-form', [AjaxController::class, 'saveApplication'])->name("application-form");;
-Route::post('/call-form', [AjaxController::class, 'saveCallInfo'])->name("call-form");;
-Route::post('/claim-form', [AjaxController::class, 'saveClaim'])->name("claim-form");
+Route::post('/problem-form', [AjaxController::class, 'saveProblemMessage'])->name("problem-form");
+Route::post('/application-form', [AjaxController::class, 'saveApplication'])->name("application-form");
+Route::post('/call-form', [AjaxController::class, 'saveCallInfo'])->name("call-form");
+Route::post('/lawyer-form-faq', [AjaxController::class, 'saveFaqQuestionForm'])->name("faq-form");
 Route::get('/support/reload-captcha',[CaptchaServiceController::class, 'reloadCaptcha']);
 
 Route::view('/admin-panel', 'admin.admin_home')->middleware('auth')->name('admin');

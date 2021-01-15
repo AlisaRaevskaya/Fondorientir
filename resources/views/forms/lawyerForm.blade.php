@@ -25,14 +25,15 @@
          <div class="col-md-6">
              <div class="form-group">
                  <label for="contactName">Контактное лицо:</label>
-                 <input type="text" class="form-control form-control-small" placeholder="Введите Ваше имя" name="name">
+                 <input type="text" class="form-control form-control-small" placeholder="Введите Ваше имя" name="name"
+                     required>
                  <span class="text-danger" id="nameErrorLaw"></span>
              </div>
 
              <div class="form-group">
                  <label for="phone">Ваш телефон</label>
                  <input type="text" class="form-control" placeholder="Введите Ваш номер телефона" name="phone"
-                     id="phone">
+                     id="phone" required>
                  <span class="text-danger" id="phoneErrorLaw"></span>
              </div>
 
@@ -76,7 +77,7 @@
              <div id="law-success" class="success-btn"></div>
      </form>
 
-
+     {{--
      <script type="text/javascript">
          $('#reload').on("click", function() {
              $.ajax({
@@ -88,4 +89,4 @@
              });
          });
 
-     </script>
+     </script> --}}

@@ -19,14 +19,13 @@
                                             Схема проезда (интерактивная карта)</i></a></h6>
                                 <p>Телефон: +7 (911) 253-85-01; +7 (812) 385 -69-89</p>
                                 <p>Пн-Пт: 10:00 -18:00 СБ,ВС – выходной</p>
-                                <div class="social">
-                                    <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                                    <!--Twitter-->
-                                    <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                                    <!--Google +-->
-                                    <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                                    <!--Linkedin-->
-                                    <a class="icons-sm tmb-ic"><i class="fa fa-vk"> </i></a>
+                                <div class="contacts_social">
+                                    <a class="icons-sm fb-ic" href="{{ $contact->fb_link }}" target="_blank"><i
+                                            class="fa fa-facebook"></i></a>
+                                    <a class="icons-sm inst-ic" href="{{ $contact->inst_link }}" target="_blank"><i
+                                            class="fa fa-instagram"> </i></a>
+                                    <a class="icons-sm tmb-ic" href="{{ $contact->vk_link }}" target="_blank"><i
+                                            class="fa fa-vk"> </i></a>
                                 </div>
                             </div>
 
@@ -38,15 +37,14 @@
                                 <p>Электронная почта:<span class="link_color">info@fondorientir.ru</span>
                                 </p>
                                 <p>
-                                    Мессенджеры:</p>
+                                    Социальные сети:</p>
                                 <div class="contacts_social">
-                                    <a class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
-                                    <!--Twitter-->
-                                    <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
-                                    <!--Google +-->
-                                    <a class="icons-sm inst-ic"><i class="fa fa-instagram"> </i></a>
-                                    <!--Linkedin-->
-                                    <a class="icons-sm tmb-ic"><i class="fa fa-vk"> </i></a>
+                                    <a class="icons-sm fb-ic" href="{{ $contact->fb_link }}" target="_blank"><i
+                                            class="fa fa-facebook"></i></a>
+                                    <a class="icons-sm inst-ic" href="{{ $contact->inst_link }}" target="_blank"><i
+                                            class="fa fa-instagram"> </i></a>
+                                    <a class="icons-sm tmb-ic" href="{{ $contact->vk_link }}" target="_blank"><i
+                                            class="fa fa-vk"> </i></a>
                                 </div>
                             </div>
 
