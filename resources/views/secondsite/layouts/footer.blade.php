@@ -64,6 +64,19 @@
                         <p><strong>Cайт: </strong>{{ $contact->web }}</p>
                          <p><strong>Телефон:<strong><a href='tel:{{ $contact->changePhoneForHref() }}'
                         class="link_color">{{ $contact->phone }}</a></p>
+                        <div class="d-flex">
+                        <div>Социальные сети:</div>
+                        <div class="contacts_social">
+                            <a class="icons-sm fb-ic" href="{{ $contact->fb_link }}" target="_blank"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a class="icons-sm inst-ic" href="{{ $contact->inst_link }}" target="_blank"><i
+                                    class="fa fa-instagram"> </i></a>
+
+                            <a class="icons-sm tmb-ic" href="{{ $contact->vk_link }}" target="_blank"><i
+                                    class="fa fa-vk">
+                                </i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
