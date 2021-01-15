@@ -7,7 +7,7 @@
                 <img class="d-flex img-circle avatar z-depth-1-half mr-3 img-responsive"
                     src="/assets/images/avatar-5.jpg" alt="Avatar">
             </div>
-            <div class="h4 ml30 text-justify" style="color:white;">
+            <div class="h4 ml30 text-justify w-color">
                 Вы можете получить консультацию нашего миграционного юриста
                 бесплатно, заполнив форму:
             </div>
@@ -36,8 +36,7 @@
                 <span class="text-danger" id="messageErrorLawFaq"></span>
             </div>
             <div id="law-success-faq" class="success-btn form-group ml10"></div>
-            <input type="submit" class="form-group btn btn-primary" id="lawyer-btn-faq" style="margin:0 0 10pt 10pt"
-                value="Отправить">
+            <input type="submit" class="form-group btn" id="lawyer-btn-faq" value="Отправить">
 
         </form>
     </div>
