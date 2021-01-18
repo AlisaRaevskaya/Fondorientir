@@ -48,17 +48,12 @@ Route::get('/partners', [MainController::class, 'partners'])->name('partners');
 Route::get('/reports', [MainController::class, 'reports'])->name('reports');
 Route::get('/rekvizity', [MainController::class, 'bankinfo'])->name('bankinfo');
 
-Route::get('/support/lawyer', [MessageController::class, 'lawyer'])->name('lawyer');
-Route::get('/support/reception', [MessageController::class, 'reception'])->name('reception');
-Route::get('/support/hotline', [MessageController::class, 'hotline'])->name('hotline');
-Route::get('/support/application', [MessageController::class, 'application'])->name('application');
-Route::get('/support/claim', [MessageController::class, 'claim'])->name('claim');
-Route::get('/support/problem', [MessageController::class, 'problem'])->name('problem');
-Route::get('/support/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
-Route::get('/support/faq', [FaqController::class, 'index'])->name('faq');
-
-
-Route::get('/support/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
+Route::get('/center-podderzhky/pravovaya-priemnaya', [MessageController::class, 'lawyer'])->name('lawyer');
+Route::get('/center-podderzhky/online-priemnaya', [MessageController::class, 'reception'])->name('reception');
+Route::get('/center-podderzhky/hotline', [MessageController::class, 'hotline'])->name('hotline');
+Route::get('/center-podderzhky/fzakon', [MessageController::class, 'fzakon'])->name('feedback.fzakon');
+Route::get('/center-podderzhky/faq', [FaqController::class, 'index'])->name('faq');
+Route::get('/center-podderzhky/faq/{id}', [FaqController::class, 'replyByid'])->name('faq.id');
 
 Route::get('/info-center/useful-info', [InfoController::class, 'usefulInfo'])->name('useful-info');
 Route::get('/info-center/blanks', [InfoController::class, 'blanks'])->name('blanks');
@@ -100,7 +95,7 @@ Route::get('/info-center/useful-info/snyatiye-zapreta-na-vyezd', [UsefulInfoCont
 Route::get('/info-center/useful-info/peresechenie_graniz', [UsefulInfoController::class, 'granizy'])->name('info-10');
 Route::get('/info-center/useful-info/pereseleniye_migrantov', [UsefulInfoController::class, 'pereseleniye'])->name('info-11');
 
-Route::get('/smi_o_nas', [MainController::class, 'showPressNews'])->name('press');
+Route::get('/smi-o-nas', [MainController::class, 'showPressNews'])->name('press');
 Route::get('/migration-news/{id}', [NewsController::class, 'showByCategoryId'])->where('id', '[0-9]+')
 ->name('news_category.id');
 Route::get('/press-news/{id}', [MainController::class, 'showByCategoryId'])->where('id', '[0-9]+')
@@ -134,7 +129,6 @@ Route::put('/uploadNewsImage', [ UploadController::class, 'imageNewsStore' ])->n
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
-
 Route::resource('/user', '\App\Http\Controllers\Admin\UsersController', ['except' => ['create', 'show','save']]);
 Route::resource('/main', '\App\Http\Controllers\Admin\MainController');
 Route::resource('/news', '\App\Http\Controllers\Admin\NewsController');
@@ -150,7 +144,6 @@ Route::resource('/forprojects', '\App\Http\Controllers\Admin\Main\ForProjectsCon
 Route::resource('/press', '\App\Http\Controllers\Admin\Press\PressController');
 
 Route::get('/page-hide/{id}', [PageController::class, 'hide'])->name('page.hide');
-
 Route::get('/messages/all',[AdminMessageController::class, 'showAll'])->name('messages.show.all');
 Route::get('/messages/all/not-read',[AdminMessageController::class, 'showAllNotRead'])->name('messages.all.not-read');
 Route::get('/messages/{category}', [AdminMessageController::class, 'showByCategory'])->where('category', '[a-z-A-Z]+')->name('message');

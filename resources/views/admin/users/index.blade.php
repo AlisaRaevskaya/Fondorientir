@@ -38,25 +38,25 @@
                                             @foreach ($users as $user)
                                                 <tr>
                                                     <th scope="row">{{ $user->id }}</th>
-                                                    <td>{{ $user->name }}</td>
-                                                    <td>{{ $user->email }}</td>
+                                                    <td class="col-md-2">{{ $user->name }}</td>
+                                                    <td class="col-md-2">{{ $user->email }}</td>
 
-                                                    <td>{{ implode(
+                                                    <td class="col-md-2">{{ implode(
                                                             ',',
                                                             $user->roles()->get()->pluck('name')->toArray(),
                                                         ) }}
                                                     </td>
-                                                    <td>
-                                                        <div class="row justify-content-between">
+                                                    <td class="col-md-4">
+                                                        <div class="row mlr5">
                                                             <a href="{{ route('admin.user.edit', $user->id) }}"
-                                                                class="btn btn-primary"><i class="fas fa-edit">
+                                                                class="btn btn-primary pull-left"><i class="fas fa-edit">
                                                                 </i> Редактировать</a>
 
                                                             <form action="{{ route('admin.user.destroy', $user) }}"
-                                                                method="post" class="text-center">
+                                                                method="post" class="text-center ml5">
                                                                 @csrf
                                                                 {{ method_field('DELETE') }}
-                                                                <button type="submit" class="btn btn-danger"><i
+                                                                <button type="submit" class="btn btn-danger pull-right"><i
                                                                         class="fas fa-trash">
                                                                     </i> Удалить</button>
                                                             </form>

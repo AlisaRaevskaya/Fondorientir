@@ -33,7 +33,7 @@
                             Новости
                         </a>
                         <a class="nav-link" href="{{ route('admin.press.index') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <div class="sb-nav-link-icon"><i class="far fa-newspaper"></i></div>
                             СМИ о нас
                         </a>
                     </nav>

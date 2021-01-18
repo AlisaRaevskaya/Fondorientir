@@ -8,8 +8,7 @@
                 <section class="content-header pt10">
                     <div class="container-fluid">
                         <div class="row mb-2">
-
-                            <div class="col-sm-12 col-md-11 ml1">
+                            <div class="col-sm-12 col-md-9 ml1">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
                                     <li class="breadcrumb-item active"><a href="{{ route('admin.projects.edit', 13) }}">К
@@ -20,9 +19,11 @@
                     </div><!-- /.container-fluid -->
                 </section>
 
+                <!-- Main content -->
+
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-11 ml1">
+                        <div class="col-md-9 ml1">
                             <div class="card card-outline card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">
@@ -31,7 +32,9 @@
                                 </div>
                                 <!-- Main content -->
 
+
                                 <div class="card-body">
+
                                     <div class="box">
                                         <div class="box-header with-border">
                                             @if ($errors->any())
@@ -46,7 +49,7 @@
                                         </div>
 
                                         <div class="box-body">
-                                            <div class="col-md-11">
+                                            <div class="col-md-12 justify-content-center">
                                                 {{ Form::open(['route' => ['admin.forprojects.store'], 'method' => 'post', 'files' => false]) }}
                                                 @csrf
                                                 <div class="form-group">
@@ -79,7 +82,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
         </main>

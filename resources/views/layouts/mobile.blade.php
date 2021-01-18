@@ -16,7 +16,8 @@
                                 <div class="m-menu-content">
                                     <ul class="col-sm-3">
                                         @foreach ($item->children as $children)
-                                            <li> <a href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}"
+                                            <li style="list-style:none"> <a
+                                                    href="{{ $children->laravel_name ? route($children->laravel_name) : $children->url }}"
                                                     style="color:black">{{ $children->title }}</a></li>
                                         @endforeach
                                 </div>
