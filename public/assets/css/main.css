@@ -49,8 +49,8 @@ body {
   padding-right: 0 !important;
 }
 .header_phone {
-  font-weight: bold;
-  font-size: large;
+  font-weight: 900;
+  font-size: 17px;
   text-decoration: underline;
 }
 .contacts_social a {
@@ -85,6 +85,12 @@ body {
 }
 .d-flex {
   display: flex;
+}
+.justify-between{
+justify-content: space-between;
+}
+.align-center{
+    align-items: center;
 }
 .flex-2 {
   flex: 16.66%;
@@ -237,6 +243,11 @@ body {
 #hotline_phone {
   font-weight: 900 !important;
 }
+.hotline_items{
+    display:flex;
+}
+.hotline_item_2{
+margin-left:20px;}
 .btn_news {
   padding: 1rem;
 }
@@ -246,6 +257,7 @@ body {
 .phone-text {
   font-weight: 900;
   color: #090950;
+  padding-left:5px;
 }
 .hotline_img {
   padding-left: 15px !important;
@@ -401,8 +413,17 @@ hr {
 .p10 {
   padding: 10px 0;
 }
+.p0{
+    padding:0 !important;
+}
 .m15 {
   margin-top: 17px;
+}
+.ml3{
+    margin-left:3px;
+}
+.mt1-7{
+margin-top:1.7rem;
 }
 
 .previous {
@@ -474,6 +495,13 @@ a.previous:hover {
 .f-size15 {
   font-size: 15px;
 }
+.f-size10{
+     font-size:9px;
+}
+.requisites p,
+.contacts p{
+font-size:17px;
+}
 .underline {
   text-decoration: underline;
 }
@@ -482,6 +510,7 @@ a.previous:hover {
   display: block;
 }
 
+
 @media (min-width: 1200px) {
   .main_container {
     width: 1200px;
@@ -489,13 +518,16 @@ a.previous:hover {
   }
 }
 
-@media screen and (max-width: 1190px) {
-  .header_phone {
-    font-size: 13px;
-  }
+@media screen and (max-width: 1196px) {
   .menu_item {
     padding: 0 15px;
   }
+   .header_phone{
+  font-size: 17px;
+}
+.btn-feedback-call {
+    font-size:10px !important;
+}
 }
 
 @media screen and (max-width: 1000px) {
@@ -542,6 +574,18 @@ a.previous:hover {
   .partners_flex {
     flex-direction: column;
   }
+  .footer_contacts_phones_item_numbers{
+margin-left:0;
+padding:0 !important;
+  }
+}
+@media screen and (max-width: 990px) {
+     .header_phone{
+  font-size: 14px;
+}
+.btn-feedback-call {
+    font-size:12px !important;
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -597,6 +641,13 @@ a.previous:hover {
   .main_fond_img {
     padding-left: 10px;
   }
+  .hotline_items{
+      display:flex;
+      flex-direction: column;
+}
+.hotline_item_2{
+    margin-left:0;
+}
 }
 @media screen and (max-width: 480px) {
   .category_news_body {
@@ -651,12 +702,18 @@ font-size:12px !important;
  font-size:16px;
 
   }
+.footer_contacts_phones{
+    display:flex;
+    flex-direction:column;
+}
 }
 
 @media screen and (max-width: 360px) {
   .divider:after {
     width: 60% !important;
   }
+  .phone-text {
+      font-size:17px}
 }
 
 @media screen and (max-width: 320px) {

@@ -82,6 +82,7 @@
                                                     <th>
                                                         <p>{{ $contact->phone }}</p>
                                                         <p>{{ $contact->phone2 }}</p>
+                                                        <p>{{ $contact->phone_rus }}</p>
                                                     </th>
                                                 </tr>
                                                 <tr>

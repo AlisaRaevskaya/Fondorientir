@@ -36,12 +36,15 @@ class Contact extends Model
 
     }
  public function changePhoneForHref(){
-    $pattern ='/\(|\)|-/';
+    $pattern ='/\(|\)|-| /';
    return preg_replace($pattern, '', $this->phone);
 }
  public function changeSecondPhoneForHref(){
-    $pattern ='/\(|\)|-/';
+    $pattern ='/\(|\)|-| /';
    return preg_replace($pattern, '', $this->phone2);
 }
-
+ public function changePhoneRus(){
+    $pattern ='/\(|\)|-| /';
+   return preg_replace($pattern, '', $this->phone_rus);
+}
 }

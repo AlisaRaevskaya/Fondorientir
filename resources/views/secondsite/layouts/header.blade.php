@@ -16,9 +16,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 text-center" style="margin-top:1.7rem;">
+                <div class="col-md-2 text-center mt1-7">
                 </div>
-                <div class="col-md-3 text-center" style="margin-top:1.7rem;">
+                <div class="col-md-3 text-center mt1-7">
                     <p style="font-size:15px;"><strong>Правовая приемная</strong></p>
                     <p>{{ $contact->city }},</p>
                     <p>{{ $contact->street }}</p>
@@ -27,12 +27,18 @@
                         </i> Схема проезда (интерактивная карта)</a>
                 </div>
 
-                <div class="col-md-2 text-center" style="margin-top:1.7rem;">
+                <div class="col-md-2 text-center align-center">
                     <div>
-                        <p class="header_phone"><a
-                                href='tel:{{ $contact->changePhoneForHref() }}'>{{ $contact->phone }}</a></p>
-                        <p class="header_phone"><a
-                                href='tel:{{ $contact->changeSecondPhoneForHref() }}'>{{ $contact->phone2 }}</a></p>
+                        <h5>Вся Россия:</h5>
+                        <p class="header_phone"><a href='tel:{{ $contact->changePhoneRus() }}' style="color:red"><i
+                                    class="fa fa-phone"></i> {{ $contact->phone_rus }}</a>
+                        </p>
+                        <h5>Санкт-Петербург:</h5>
+                        <p class="header_phone"><a href='tel:{{ $contact->changePhoneForHref() }}'><i
+                                    class="fa fa-phone"></i>{{ $contact->phone }}</a>
+                        </p>
+                        <p class="header_phone"><a href='tel:{{ $contact->changeSecondPhoneForHref() }}'><i
+                                    class="fa fa-phone"></i>{{ $contact->phone2 }}</a></p>
                     </div>
                     <div>
                         <a href="#" type="button" class="btn btn-feedback-call text-center turquoise-back"

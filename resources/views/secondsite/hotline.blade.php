@@ -2,7 +2,6 @@
 
 @section('content')
 
-    {{-- {!! $page->content !!} --}}
     <section class="entity_section">
         <div class="container">
             <div class="row">
@@ -13,7 +12,7 @@
                     </div>
 
                     <div class="entity_title m30">
-                        <h1 style="font-weight:bold">Горячая линия</h1>
+                        <h1><strong>Горячая линия</strong></h1>
                     </div>
                     <div class="entity_wrapper">
                         {!! $page->content !!}
