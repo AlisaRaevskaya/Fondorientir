@@ -1,5 +1,5 @@
 <div class="col-md-11 faq_form">
-    <div class="h3 faq_form_title">Бесплатная онлайн консультация</div>
+    <div class="faq_form_title">Бесплатная онлайн консультация</div>
     <div class="faq_form_box">
         <div class="row justify-content-center faq_form_box_item">
 
@@ -36,8 +36,12 @@
                 <span class="text-danger" id="messageErrorLawFaq"></span>
             </div>
             <div id="law-success-faq" class="success-btn form-group ml10"></div>
-            <input type="submit" class="form-group btn" id="lawyer-btn-faq" value="Отправить">
-
+            <div class="row">
+                <input type="submit" class="form-group btn pull-left" id="lawyer-btn-faq" value="Отправить">
+                <span class="ml5">Нажимая «Отправить» вы соглашаетесь с <a href="/storage/pdf/politika_confidence.pdf"
+                        target="_blank" class="consent underline">
+                        Политикой обработки персональных данных.</a></span>
+            </div>
         </form>
     </div>
 </div>

@@ -33,7 +33,7 @@ use App\Http\Controllers\CaptchaServiceController;
 //Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
 
 Route::get('/', [MainController::class, 'index'])->name('main');
-Route::get('/support', [MessageController::class, 'support'])->name('support');
+Route::get('/center-podderzhky', [MessageController::class, 'support'])->name('center-podderzhky');
 Route::get('/migration-news', [NewsController::class, 'index'])->name('news');
 Route::get('/info', [InfoController::class, 'index'])->name('info');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');

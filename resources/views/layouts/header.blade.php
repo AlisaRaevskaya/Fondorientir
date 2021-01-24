@@ -30,11 +30,11 @@
 
                 <div class="col-md-2 text-center align-center">
                     <div>
-                        <h5>Вся Россия:</h5>
+                        <h6>Вся Россия:</h6>
                         <p class="header_phone"><a href='tel:{{ $contact->changePhoneRus() }}' style="color:red"><i
                                     class="fa fa-phone"></i> {{ $contact->phone_rus }}</a>
                         </p>
-                        <h5>Санкт-Петербург:</h5>
+                        <h6>Санкт-Петербург:</h6>
                         <p class="header_phone"><a href='tel:{{ $contact->changePhoneForHref() }}'><i
                                     class="fa fa-phone"></i>{{ $contact->phone }}</a>
                         </p>
@@ -63,9 +63,8 @@
                         </button>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="#navbar-collapse-1"
-                        style="display:flex;justify-content:space-around;align-items:center">
-                        <ul class="nav navbar-nav main-nav" style="display:flex;justify-content:space-around;">
+                    <div class="collapse navbar-collapse menu-flex" id="#navbar-collapse-1">
+                        <ul class="nav navbar-nav main-nav" class="d-flex justify-around">
                             @foreach ($menuitems as $item)
                                 @if (!!$item->children)
                                     <li class="dropdown m-menu-fw menu_item ">

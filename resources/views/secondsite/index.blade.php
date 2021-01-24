@@ -15,7 +15,7 @@
                     <div class="entity_title m30">
                         <h1 style="font-weight:bold">Онлайн приемная</h1>
                     </div>
-                    @include('blocks.hotline')
+                    {!! $page->content !!}
                 </div>
                 @include('layouts.sidebar')
             </div>

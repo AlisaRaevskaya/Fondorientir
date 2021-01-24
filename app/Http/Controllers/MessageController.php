@@ -8,7 +8,7 @@ use App\Models\Page;
 class MessageController extends Controller
 {
     public function support(){
-         $page= Page::where('laravel_name', 'support')->OfSort(['sort_order' => 'asc'])->IsPublished()->first();
+         $page= Page::where('laravel_name', 'center-podderzhky')->OfSort(['sort_order' => 'asc'])->IsPublished()->first();
          $id=$page->id;
         $items=Page::where('parent_id', $id)->IsPublished()->get();
         return view('reception.support', compact('page','items'));

@@ -61,11 +61,21 @@
 
     <div class="form-group">
         <div class="col-xs-offset-3 col-xs-9">
-            <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
-            <label for="rules_ok">Ознакомлен(-а) и согласен
-                <a href="/storage/pdf/soglasie.pdf" target="_blank" class="consent"> <span class="link_color">на
-                        обработку моих персональных данных</span>
-                </a></label>
+            <div class="d-flex">
+                <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
+
+                <span>Я подтверждаю, что ознакомлен(-а) с
+                    <a href="/storage/pdf/politika_confidence.pdf" target="_blank" class="consent"><span
+                            class="underline">
+                            Политикой обработки персональных данных</span></a>, а также даю согласие <a
+                        href="/storage/pdf/soglasie.pdf"><span class="underline">«Согласие на обработку
+                            персональных
+                            данных»</span></a>
+                    на обработку своих персональных данных в соответствии Федеральным законом от 27.07.2006 №
+                    152-ФЗ
+                    "О персональных данных". Настоящее согласие даётся мною бессрочно.
+                </span>
+            </div>
             <div>
                 <span class="text-danger" id="consentError"></span>
             </div>
@@ -96,10 +106,11 @@
             <input type="submit" class="btn btn-primary g-recaptcha" id="btn-messages" value="Отправить">
         </div>
     </div>
-</form>
-<div class="form-group">
-    <div class="col-xs-offset-3 col-xs-9">
-        <span class="text-center" id="success_messages">
-        </span>
+    <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+            <span class="text-center success-btn" id="success_messages">
+            </span>
+        </div>
     </div>
-</div>
+
+</form>

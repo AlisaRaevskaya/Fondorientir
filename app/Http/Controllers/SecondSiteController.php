@@ -9,7 +9,7 @@ use App\Models\Topic;
 class SecondSiteController extends Controller
 {
      public function index(){
-        $page= Page::where('id', 3)->IsPublished()->first();
+        $page= Page::where('laravel_name', 'center-podderzhki')->IsPublished()->first();
         return view('secondsite.index', compact('page'));
     }
 

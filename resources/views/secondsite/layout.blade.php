@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     @if (is_object($seo))
-        <meta name="description" content="{!!  $seo->description ? $seo->description : 'Фонд " ОРИЕНТИР"-приемная по
-            вопросам миграции и трудовым спорам' !!}">
+        <meta name="description" content="{!!  $seo->description
+            ? $seo->description
+            : 'Фонд " ОРИЕНТИР"-приемная по вопросам миграции и трудовым спорам' !!}">
         <meta name="keywords" content="{!!  $seo->keywords !!}/">
         <meta property="og:title" content="{!!  $seo->seo_title !!}/" />
         <meta property="og:description" content="{!!  $seo->description !!}/">
@@ -25,8 +26,6 @@
         <title>Фонд "Ориентир"</title>
     @endif
 
-
-
     <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/fonts.css" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
@@ -38,6 +37,7 @@
     <!-- Mobile Menu Style -->
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/mobile-menu.css" rel="stylesheet">
+
 
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
@@ -83,8 +83,6 @@
     <script src="/assets/js/ajax/sidebar-ajax.js"></script>
     <script src="/assets/js/ajax/lawyer-ajax.js"></script>
     <script src="/assets/js/ajax/faq-ajax.js"></script>
-    <script src="/assets/js/slider.js"></script>
-
 </body>
 
 </html>

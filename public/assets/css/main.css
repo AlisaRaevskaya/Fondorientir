@@ -89,6 +89,14 @@ body {
 .justify-between{
 justify-content: space-between;
 }
+.justify-around{
+justify-content:space-around;
+}
+.menu-flex{
+    display:flex !important;
+    justify-content:space-around !important;
+    align-items:center !important;
+}
 .align-center{
     align-items: center;
 }
@@ -375,26 +383,19 @@ hr {
 .password {
   position: relative;
 }
-.password-control {
-  position: absolute;
-  top: 11px;
-  right: 6px;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url("../assets/images/view.svg") 0 0 no-repeat;
-  /* background: url("https://snipp.ru/demo/495/view.svg") 0 0 no-repeat; */
+.consent-text{
+margin-left:2%;
+font-size: 12px;
+padding-top:10px;
 }
 
-.password-control.view {
-  background: url("../assets/images/no-view.svg") 0 0 no-repeat;
-}
 .pl20 {
   padding-left: 20px;
 }
 .pl30 {
   padding-left: 30px;
 }
+
 .ml10 {
   margin-left: 20px;
 }
@@ -409,6 +410,9 @@ hr {
 }
 .pt10 {
   padding-top: 10px;
+}
+.pt20{
+padding-top:20px;
 }
 .p10 {
   padding: 10px 0;
@@ -425,7 +429,12 @@ hr {
 .mt1-7{
 margin-top:1.7rem;
 }
-
+.mr{
+    margin-right:10px;
+}
+.ml5{
+    margin-left:5px;
+}
 .previous {
   background-color: #f1f1f1;
 }
@@ -496,7 +505,7 @@ a.previous:hover {
   font-size: 15px;
 }
 .f-size10{
-     font-size:9px;
+     font-size:10px;
 }
 .requisites p,
 .contacts p{
@@ -509,7 +518,11 @@ font-size:17px;
   margin: 0 auto;
   display: block;
 }
-
+ .faq_form_title{
+ font-size:23px;
+ font-weight:bold;
+ padding-bottom:10px;
+  }
 
 @media (min-width: 1200px) {
   .main_container {
@@ -700,11 +713,13 @@ font-size:12px !important;
   }
   .faq_form_title{
  font-size:16px;
-
   }
 .footer_contacts_phones{
     display:flex;
     flex-direction:column;
+}
+.consent-text{
+font-size:10px;
 }
 }
 
@@ -714,6 +729,14 @@ font-size:12px !important;
   }
   .phone-text {
       font-size:17px}
+
+.consent-text span{
+display:block;
+font-size:9px;
+}
+.faq_form_title{
+font-size:14px;
+}
 }
 
 @media screen and (max-width: 320px) {

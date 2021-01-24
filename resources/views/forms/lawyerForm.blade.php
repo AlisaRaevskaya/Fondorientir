@@ -1,6 +1,6 @@
      <form action="/lawyer-form" method="POST" name="lawyerForm">
          @csrf
-         <div class="col-md-6 justify-content-center" style="font-size:15px;">
+         <div class="col-md-6 justify-content-center f-size15">
              <div style="margin-top:5%;">
                  <span>
                      <i class="fa fa-question"></i> Кратко опишите проблему и
@@ -8,13 +8,13 @@
                      контактные данные.</span>
              </div>
 
-             <div style="padding-top:20px;">
+             <div class="pt20">
                  <span>
                      <i class="fa fa-comments"></i> C вами
                      свяжется наш юрист и
                      ответит на ваши вопросы.</span>
              </div>
-             <div style="padding-top:20px;">
+             <div class="pt20">
                  <span>
                      <i class="fa fa-check-circle"></i> Вы получаете
                      развернутый
@@ -48,11 +48,17 @@
              <div class="form-group">
                  <div class="row">
                      <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
-                     <span>Ознакомлен(-а) и согласен
-                         <a href="/storage/pdf/politika_conf.pdf" target="_blank" class="consent"><span
-                                 class="link_color">с
-                                 политикой обработки персональных данных</span>
-                         </a></span>
+                     <span>Я подтверждаю, что ознакомлен(-а) с
+                         <a href="/storage/pdf/politika_confidence.pdf" target="_blank" class="consent"><span
+                                 class="underline">
+                                 Политикой обработки персональных данных</span></a>, а также даю согласие <a
+                             href="/storage/pdf/soglasie.pdf"><span class="underline">«Согласие на обработку
+                                 персональных
+                                 данных»</span></a>
+                         на обработку своих персональных данных в соответствии Федеральным законом от 27.07.2006 №
+                         152-ФЗ
+                         "О персональных данных". Настоящее согласие даётся мною бессрочно.
+                     </span>
                  </div>
                  <div>
                      <span class="text-danger" id="consentError"></span>
@@ -76,17 +82,3 @@
              <input type="submit" class="form-group btn btn-primary" id="lawyer-btn" value="Отправить">
              <div id="law-success" class="success-btn"></div>
      </form>
-
-     {{--
-     <script type="text/javascript">
-         $('#reload').on("click", function() {
-             $.ajax({
-                 type: 'GET',
-                 url: '/support/reload-captcha',
-                 success: function(data) {
-                     $(".captcha span").html(data.captcha);
-                 }
-             });
-         });
-
-     </script> --}}

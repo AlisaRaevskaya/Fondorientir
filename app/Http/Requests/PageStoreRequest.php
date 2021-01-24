@@ -33,7 +33,7 @@ class PageStoreRequest extends FormRequest
         'is_menu'=>['required','boolean'],
         'second_sort_order'=>['nullable','numeric'],
         'sort_order'=>['nullable','numeric'],
-        'url'=>['unique:pages','required','max:2048','regex:/^\\/[^@"[\.\?!><)(,:]?+[a-zA-Z0-9]*?\/*?[a-zA-Z0-9]*?$/'],
+        'url'=>['unique:pages','required','max:2048','regex:/^\\/([a-zA-Z0-9]*?[-|_]*+[a-zA-Z0-9]*?[-|_]*+[^@"[\.\?!><)(,:])*+$/'],
         'seo_title' => ['required','max:255'],
         'seo_name' => ['nullable','max:255'],
         'description' => ['nullable','max:255'],
@@ -41,4 +41,5 @@ class PageStoreRequest extends FormRequest
         'og_title'=> ['nullable','max:255'],
         'og_description'=> ['nullable','max:255'],
         ];
+    }
 }

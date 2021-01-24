@@ -78,11 +78,11 @@
                                                         class="fas fa-eye-slash"></i>
                                                     Скрыть</a>
 
-                                                <form action="{{ route($page->getAdminUrlEdit(), $page->id) }}"
+                                                <form action="{{ route($page->getAdminUrlDestroy(), $page->id) }}"
                                                     method="post" class="text-center deleteForm ">
                                                     @csrf
                                                     {{ method_field('DELETE') }}
-                                                    <button class="btn btn-danger pull-right ml10" type="button">
+                                                    <button class="btn btn-danger pull-right ml10">
                                                         <i class="fas fa-trash">
                                                         </i></button>
                                                 </form>
