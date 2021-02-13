@@ -9,7 +9,7 @@
                         {!!$page->content!!}
                     </div>
                     <div class="text-center m30">
-                        <h4><a href='tel:{{ $contact->changePhoneForHref() }}' class="link_color">{{ $contact->phone }}</a>
+                        <h4><a href='tel:{{ $contact->changePhoneForHref() }}' class="phone_color">{{ $contact->phone }}</a>
                         </h4>
                         <button class="btn btn-sm btn-primary btn_law_popup" data-toggle="modal"
                             data-target="#lawyerQuestion" data-category="Миграционные вопросы">Спросить

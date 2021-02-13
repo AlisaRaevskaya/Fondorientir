@@ -10,7 +10,8 @@
                     <div class="footer_row_logo flex-row">
                         <div class="text-center logo">
                             <a href="{{ route('main') }}">
-                                <img src="/storage/{{ $contact->logo }}" alt="Logo" class="img-responsive"></a>
+                                <img src="/storage/app/public/{{ $contact->logo }}" alt="Logo"
+                                    class="img-responsive"></a>
                         </div>
                         <div class="text-center">
                             <h3>
@@ -78,11 +79,11 @@
                         <div class="col-md-9 ml3 footer_contacts_phones_item_numbers">
                             <div class="">
                                 <p> Вся Россия: <a href='tel:{{ $contact->changePhoneRus() }}'
-                                        class="link_color">{{ $contact->phone_rus }}</a></p>
+                                        class="phone_color">{{ $contact->phone_rus }}</a></p>
                             </div>
                             <div class="">
                                 <p> Санкт-Петербург: <a href='tel:{{ $contact->changePhoneForHref() }}'
-                                        class="link_color">{{ $contact->phone }}</a></p>
+                                        class="phone_color">{{ $contact->phone }}</a></p>
                             </div>
                         </div>
                     </div>
@@ -109,21 +110,25 @@
             <div class="container">
                 <div class="row">
                     <div class="footer">
-                        <div class="col-sm-3">
-                        </div>
-                        <div class="col-sm-5">
-                            <p>&copy;2011 - 2021 ФОНД «ОРИЕНТИР»
-                            </p>
-                            <div class="f-size10">Все права на сайт защищены и охраняются
-                                законодательством Российской Федерации.</div>
-                            <div class="f-size10">Визуальный контент (фотографии, иллюстрации и другие векторные
-                                изображения) для сайта<br>предоставлены Фондом С Э С и Р С З и AP.</div>
-                            <div class="f-size10">Фотоматериалы для раздела «Новости» предоставлены <a
-                                    href="http://rdc-itgroup.ru/" class="link_color">RDC-ITgroup.</a></div>
-                            <div class="f-size10"> При перепечатке материалов обязательно согласие Фонда «ОРИЕНТИР».
+                        <div class="row">
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-5">
+                                <p>&copy;2011 - 2021 ФОНД «ОРИЕНТИР»
+                                </p>
+                                <div class="col-sm-3">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="d-flex" style="margin-right:10px;">
+                            <div class="f-size10">Все права на сайт защищены и охраняются
+                                законодательством Российской Федерации. Визуальный контент (фотографии, иллюстрации и
+                                другие векторные
+                                изображения) для сайта предоставлены Фондом С Э С и Р С З и AP. Фотоматериалы для
+                                раздела «Новости» предоставлены <a href="http://rdc-itgroup.ru/"
+                                    class="link_color">RDC-ITgroup. </a>При перепечатке материалов обязательно согласие
+                                Фонда «ОРИЕНТИР».
+                            </div>
                         </div>
                     </div>
                 </div>

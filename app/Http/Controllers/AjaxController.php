@@ -49,9 +49,9 @@ class AjaxController extends Controller
 
         $message_category=MessageCategory::where('id', 1)->pluck('category_name');
 
-        // Mail::send('email.message_mail', ['message_category'=> $message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
+        Mail::send('email.message_mail', ['message_category'=> $message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
+            $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
+        });
 
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
@@ -80,9 +80,9 @@ class AjaxController extends Controller
         $name=$req->input('name');
         $phone=$req->input('phone');
         $message_category=$req->input('category');
-        // Mail::send('email.message_mail', ['message_category'=>$message_category, 'name'=>$name,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
+        Mail::send('email.message_mail', ['message_category'=>$message_category, 'name'=>$name,'phone'=>$phone], function ($message) {
+            $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
+        });
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
     /**
@@ -110,13 +110,13 @@ class AjaxController extends Controller
 
         $data->save();
 
-        // $name=$req->input('name');
+        $name=$req->input('name');
         $phone=$req->input('phone');
         $message_category=MessageCategory::where('id', 2)->pluck('category_name');
 
-        // Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$fullname,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
+        Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$fullname,'phone'=>$phone], function ($message) {
+            $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
+        });
 
         return response()->json(['success'=>'Ваша заявка отправлена, В ближайшее время с Вами свяжется наш специалист.']);
     }
@@ -139,9 +139,9 @@ class AjaxController extends Controller
         $name=$req->input('name');
         $phone=$req->input('phone');
 
-        // Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
+        Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
+            $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
+        });
         return response()->json(['success'=>'Данные успешно отправлены']);
     }
 
@@ -165,9 +165,9 @@ class AjaxController extends Controller
         $name=$req->input('name');
         $phone=$req->input('phone');
 
-        // Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
+        Mail::send('email.message_mail', ['message_category'=>$message_category[0], 'name'=>$name,'phone'=>$phone], function ($message) {
+            $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
+        });
         return response()->json(['success'=>"Ваша заявка принята. Ждите нашего звонка."]);
     }
 
@@ -193,9 +193,9 @@ class AjaxController extends Controller
         $name=$req->input('name');
         $phone=$req->input('phone');
         $message_category=$req->input('category');
-        // Mail::send('email.message_mail', ['message_category'=>$message_category, 'name'=>$name,'phone'=>$phone], function ($message) {
-        //     $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
-        // });
+        Mail::send('email.message_mail', ['message_category'=>$message_category, 'name'=>$name,'phone'=>$phone], function ($message) {
+            $message->to(env('MAIL_CLIENT'), 'Фонд')->subject('Сообщение с сайта');
+        });
         return response()->json(['success'=>'Ваша заявка отправлена. Наш юрист свяжется с Вами в ближайшее время']);
     }
 }

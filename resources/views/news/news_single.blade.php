@@ -25,9 +25,8 @@
                         <div class="entity_content text-justify">
                             <!-- entity_meta -->
                             @if (isset($item->image))
-                                <div class="entity_thumb"
-                                    style="max-width:330px; border-radius:8px;float:left;margin: 5px 10px 5px 0px ">
-                                    <img class="img-responsive" src="{{ asset('storage/news/' . $item->image) }}"
+                                <div class="entity_thumb news_single">
+                                    <img class="img-responsive" src="{{ asset('storage/app/public/news/' . $item->image) }}"
                                         alt="{{ $item->image }}">
                                 </div>
                             @endif

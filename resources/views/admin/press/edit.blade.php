@@ -63,7 +63,7 @@
                                                     {{ Form::file('image') }}
                                                     @if (isset($news->image))
                                                         <p>
-                                                            <img src="{{ asset('storage/news/' . $news->image) }}"
+                                                            <img src="{{ asset('/storage/app/public/news/' . $news->image) }}"
                                                                 title="{{ $news->title }}" style="width: 200px">
                                                         </p>
                                                     @endif

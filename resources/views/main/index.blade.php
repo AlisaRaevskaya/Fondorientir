@@ -7,16 +7,16 @@
                 <div class="row">
                     <div class="owl-carousel owl-theme">
                         <div class="slide">
-                            <a href="{{ route('second_main') }}"><img src="/storage/ban3.png" class="img-responsive"
-                                    alt="main.jpg"></a>
+                            <a href="{{ route('second_main') }}"><img src="../public/storage/ban3.png"
+                                    class="img-responsive" alt="main.jpg"></a>
                         </div>
                         <div class="slide">
-                            <a href="{{ route('second_main') }}"><img src="/storage/banner2.png" class="img-responsive"
-                                    alt="banner2.jpg"></a>
+                            <a href="{{ route('second_main') }}"><img src="../public/storage/banner2.png"
+                                    class="img-responsive" alt="banner2.jpg"></a>
                         </div>
                         <div class="slide">
-                            <a href="{{ route('second_main') }}"> <img src="/storage/banner3.png" class="img-responsive"
-                                    alt="banner3.jpg"></a>
+                            <a href="{{ route('second_main') }}"> <img src="../public/storage/banner3.png"
+                                    class="img-responsive" alt="banner3.jpg"></a>
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                                         юриста</button>
                                 </div>
                                 <div>
-                                    <img class="img-responsive main_fond_img" src="/storage/fond-2.png" alt="fond.jpg"
-                                        title="Фонд президентских грантов">
+                                    <img class="img-responsive main_fond_img" src="../public/storage/fond-2.png"
+                                        alt="fond.jpg" title="Фонд президентских грантов">
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                     <div class="category_news_body">
                                         <div class="category_article_img">
                                             <a href="{{ route('news_category.id', $new->id) }}" target="_self">
-                                                <img class="img-responsive" src="{{ asset('storage/news/' . $new->image) }}"
+                                                <img class="img-responsive" src="../public/storage/news/{{ $new->image }}"
                                                     alt="{{ $new->image }}"></a>
                                         </div>
                                         <div class="category_article_title">
@@ -74,8 +74,8 @@
                                         @endif
 
                                         <div>
-                                            <h6><a
-                                                    href="{{ route('news_category.id', [$category->name, $new->id]) }}">Подробнее>></a>
+                                            <h6><a href="{{ route('news_category.id', $new->id) }}"
+                                                    target="_self">Подробнее>></a>
                                             </h6>
                                         </div>
 

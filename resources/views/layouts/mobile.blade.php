@@ -1,6 +1,6 @@
 <button type="button" class="close" aria-hidden="true" data-toggle="offcanvas"
     id="uc-mobile-menu-close-btn">&times;</button>
-<div>
+<div class="mobile_box hidden">
     <div>
         <ul id="menu">
             @foreach ($menuitems as $item)
@@ -34,3 +34,9 @@
         </ul>
     </div>
 </div>
+
+<script>
+    $(window).on("load", function() {
+        $(".mobile_box").removeClass('hidden');
+    });
+</script>

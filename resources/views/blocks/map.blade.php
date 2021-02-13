@@ -38,7 +38,7 @@
                         // Необходимо указать данный тип макета.
                         iconLayout: 'default#image',
                         // Своё изображение иконки метки.
-                        iconImageHref: '/assets/images/maps.svg',
+                        iconImageHref: '/public/assets/images/maps.svg',
                         // Размеры метки.
                         iconImageSize: [43, 55],
                         // Смещение левого верхнего угла иконки относительно

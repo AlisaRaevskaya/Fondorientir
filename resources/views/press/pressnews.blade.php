@@ -18,8 +18,9 @@
                             <div class="row justify-content-md-center m30">
                                 <div class="col-md-6">
                                     <div class="entity_img" style="max-width:370px;">
-                                        <img class="img-responsive" src="/storage/news/{{ $item->image }}"
-                                            alt="{{ $item->title }}">
+                                        <img class="img-responsive"
+                                            src="{{ asset('storage/app/public/news/' . $item->image) }}"
+                                            alt="{{ $item->image }}">
                                     </div>
                                 </div>
 

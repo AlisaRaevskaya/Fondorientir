@@ -47,4 +47,8 @@ class Contact extends Model
     $pattern ='/\(|\)|-| /';
    return preg_replace($pattern, '', $this->phone_rus);
 }
+ public function changeThirdPhone(){
+    $pattern ='/\(|\)|-| /';
+   return preg_replace($pattern, '', $this->phone_3);
+}
 }

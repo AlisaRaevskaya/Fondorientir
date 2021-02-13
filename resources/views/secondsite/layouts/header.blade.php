@@ -5,8 +5,8 @@
                 <div class="left_section col-md-5" style="padding:0;">
                     <div style="display:flex;justify-content:center">
                         <div class="text-center logo" style="position:relative;">
-                            <a href="{{ route('second_main') }}"><img src="/storage/{{ $contact->logo2 }}" alt="Logo"
-                                    class="img-responsive"></a>
+                            <a href="{{ route('second_main') }}"><img src="/storage/app/public/{{ $contact->logo2 }}"
+                                    alt="Logo" class="img-responsive"></a>
                         </div>
                         <div class="text-center" id="second_logo_name">
                             <p class="turquoise">Центр правовой поддержки<br>
@@ -16,7 +16,16 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 text-center mt1-7">
+                <div class="col-md-2 text-center">
+                    <div class="social">
+                        <a class="icons-sm fb-ic" href="{{ $contact->fb_link }}" target="_blank"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="icons-sm inst-ic" href="{{ $contact->inst_link }}" target="_blank"><i
+                                class="fa fa-instagram"> </i></a>
+
+                        <a class="icons-sm tmb-ic" href="{{ $contact->vk_link }}" target="_blank"><i class="fa fa-vk">
+                            </i></a>
+                    </div>
                 </div>
                 <div class="col-md-3 text-center mt1-7">
                     <p style="font-size:15px;"><strong>Правовая приемная</strong></p>
@@ -73,7 +82,7 @@
                                             {{ $item->title }}
                                             <span><i class="fa fa-angle-down"></i></span>
                                         </a>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu" style="right:0">
                                             <li>
                                                 <div class="m-menu-content">
                                                     <ul class="col-sm-3">

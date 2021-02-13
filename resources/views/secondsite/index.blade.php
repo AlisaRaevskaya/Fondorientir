@@ -9,7 +9,7 @@
 
                 <div class="col-md-9 hotline_box">
                     <div>
-                        <img src="/assets/images/hotline.jpg" alt="hotline" class="img-responsive">
+                        <img src="/storage/app/public/hotline.jpg" alt="hotline.jpg" class="img-responsive">
                     </div>
 
                     <div class="entity_title m30">

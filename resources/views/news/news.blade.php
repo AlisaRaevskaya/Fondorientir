@@ -17,9 +17,10 @@
                         @foreach ($news as $item)
                             <div class="row justify-content-md-center m30">
                                 <div class="col-md-6">
-                                    <div class="entity_img" style="max-width:370px;">
-                                        <img class="img-responsive" src="/storage/news/{{ $item->image }}"
-                                            alt="{{ $item->title }}">
+                                    <div class="entity_img news_entity_img">
+                                        <img class="img-responsive"
+                                            src="{{ asset('storage/app/public/news/' . $item->image) }}"
+                                            alt="{{ $item->image }}">
                                     </div>
                                 </div>
 
@@ -34,14 +35,14 @@
                                     <div class="entity_meta">
                                         <p>{{ $item->cutDateline() }}</p>
                                     </div>
-                                    
-                                    @if(isset($item->intro))
-                                    <div class="entity_intro">
-                                        {!! $item->intro !!}
-                                    </div>
+
+                                    @if (isset($item->intro))
+                                        <div class="entity_intro">
+                                            {!! $item->intro !!}
+                                        </div>
                                     @endif
 
-                                    <div style="margin-top:10px">
+                                    <div class="mt10">
                                         <a href="{{ route('news_category.id', $item->id) }}"
                                             class="btn btn-outline-primary btn-lg active btn_news" role="button"
                                             aria-pressed="true">

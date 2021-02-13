@@ -11,7 +11,8 @@
 
                             <div class="col-sm-12 col-md-11 ml1">
                                 <ol class="breadcrumb float-sm-right ">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a>
+                                    </li>
                                     <li class="breadcrumb-item active">Редактировать информацию о компании</li>
                                 </ol>
                             </div>
@@ -95,12 +96,16 @@
                                                         {{ Form::text('email', $contact->email, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('phone', 'Телефон №1') }}
+                                                        {{ Form::label('phone', 'Телефон Основной') }}
                                                         {{ Form::text('phone', $contact->phone, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
-                                                        {{ Form::label('phone2', 'Телефон №2') }}
+                                                        {{ Form::label('phone2', 'Телефон "Трудовые споры"') }}
                                                         {{ Form::text('phone2', $contact->phone2, ['class' => 'form-control required']) }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        {{ Form::label('phone2', 'Телефон "Миграционные вопросы"') }}
+                                                        {{ Form::text('phone2', $contact->phone_3, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
                                                         {{ Form::label('phone_rus', 'Телефон "Вся Россия"') }}
@@ -120,7 +125,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         {{ Form::label('vk_link', 'Вконтакте') }}
-                                                        {{ Form::text('vk_link', $contact->fb_link, ['class' => 'form-control required']) }}
+                                                        {{ Form::text('vk_link', $contact->vk_link, ['class' => 'form-control required']) }}
                                                     </div>
                                                     <div class="form-group">
                                                         {{ Form::label('inst_link', 'Instagram') }}
@@ -132,7 +137,8 @@
                                                         @if (isset($contact->logo))
                                                             <br>
                                                             <p>
-                                                                <img class="image" src="/storage/{{ $contact->logo }}"
+                                                                <img class="image"
+                                                                    src="/storage/app/public/{{ $contact->logo }}"
                                                                     alt="{{ $contact->logo }}" style="width: 100px">
                                                             </p>
                                                         @endif
@@ -143,7 +149,8 @@
                                                         @if (isset($contact->logo2))
                                                             <br>
                                                             <p>
-                                                                <img class="image" src="/storage/{{ $contact->logo2 }}"
+                                                                <img class="image"
+                                                                    src="/storage/app/public/{{ $contact->logo2 }}"
                                                                     alt="{{ $contact->logo2 }}" style="width: 100px">
                                                             </p>
                                                         @endif

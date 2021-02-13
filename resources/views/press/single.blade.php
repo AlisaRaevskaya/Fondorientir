@@ -9,14 +9,18 @@
                         <div class="entity_title">
                             <h1 class="text-justify">{!! $item->title !!}</h1>
                         </div>
-                        <!-- entity_title -->
 
                         <div class="entity_meta">
                             <p>{{ $item->cutDateline() }}</p>
                         </div>
-                        <!-- entity_meta -->
 
                         <div class="entity_content">
+                            @if (isset($item->image))
+                                <div class="entity_thumb news_single">
+                                    <img class="img-responsive" src="{{ asset('storage/app/public/news/' . $item->image) }}"
+                                        alt="{{ $item->image }}">
+                                </div>
+                            @endif
                             {!! $item->body !!}
                         </div>
 

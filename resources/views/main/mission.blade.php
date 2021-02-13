@@ -12,9 +12,6 @@
                         </ol>
                     </div>
                     <div class="entity_wrapper">
-                        <div class="text-center">
-                            <img src="{{ asset('storage/putin.jpg') }}" alt="putin.jpeg">
-                        </div>
                         {!! $page->content !!}
                     </div>
                 </div>

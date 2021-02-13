@@ -67,7 +67,7 @@
                                                 {{ Form::file('image') }}
                                                 @if (isset($item->image))
                                                     <p>
-                                                        <img src="/storage/news/{{ $item->image }}"
+                                                        <img src="/storage/app/public/news/{{ $item->image }}"
                                                             alt="{{ $item->laravel_name }}" title="{{ $item->title }}"
                                                             style="width: 200px">
                                                     </p>

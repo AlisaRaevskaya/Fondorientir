@@ -65,10 +65,10 @@
                 <input required checked type="checkbox" id="rules_ok" class="check-box" name="consent">
 
                 <span>Я подтверждаю, что ознакомлен(-а) с
-                    <a href="/storage/pdf/politika_confidence.pdf" target="_blank" class="consent"><span
+                    <a href="/storage/app/public/pdf/politika_confidence.pdf" target="_blank" class="consent"><span
                             class="underline">
                             Политикой обработки персональных данных</span></a>, а также даю согласие <a
-                        href="/storage/pdf/soglasie.pdf"><span class="underline">«Согласие на обработку
+                        href="/storage/app/public/pdf/soglasie.pdf"><span class="underline">«Согласие на обработку
                             персональных
                             данных»</span></a>
                     на обработку своих персональных данных в соответствии Федеральным законом от 27.07.2006 №

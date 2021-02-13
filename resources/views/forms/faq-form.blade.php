@@ -4,7 +4,7 @@
         <div class="row justify-content-center faq_form_box_item">
 
             <div class="faq_form_box_item_img_block">
-                <img class="d-flex img-circle avatar z-depth-1-half mr-3" src="/assets/images/avatar-5.jpg"
+                <img class="d-flex img-circle avatar z-depth-1-half mr-3" src="/storage/app/public/avatar-5.jpg"
                     alt="Avatar">
             </div>
             <div class="h4 ml30 w-color faq_form_box_item_title">
@@ -38,8 +38,9 @@
             <div id="law-success-faq" class="success-btn form-group ml10"></div>
             <div class="row">
                 <input type="submit" class="form-group btn pull-left" id="lawyer-btn-faq" value="Отправить">
-                <span class="ml5">Нажимая «Отправить» вы соглашаетесь с <a href="/storage/pdf/politika_confidence.pdf"
-                        target="_blank" class="consent underline">
+                <span class="ml5">Нажимая «Отправить» вы соглашаетесь с <a
+                        href="/storage/app/public/pdf/politika_confidence.pdf" target="_blank"
+                        class="consent underline">
                         Политикой обработки персональных данных.</a></span>
             </div>
         </form>

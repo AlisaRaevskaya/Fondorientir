@@ -82,6 +82,7 @@
                                                     <th>
                                                         <p>{{ $contact->phone }}</p>
                                                         <p>{{ $contact->phone2 }}</p>
+                                                        <p>{{ $contact->phone_3 }}</p>
                                                         <p>{{ $contact->phone_rus }}</p>
                                                     </th>
                                                 </tr>
@@ -113,8 +114,8 @@
                                                 </tr>
                                                 <tr>
                                                     <td scope="col">Лого</td>
-                                                    <th><img src="/storage/{{ $contact->logo }}" alt="Logo">
-                                                        <img src="/storage/{{ $contact->logo2 }}" alt="Logo2">
+                                                    <th><img src="/storage/app/public/{{ $contact->logo }}" alt="Logo">
+                                                        <img src="/storage/app/public/{{ $contact->logo2 }}" alt="Logo2">
                                                     </th>
                                                 </tr>
                                             </tbody>

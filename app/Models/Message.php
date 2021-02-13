@@ -14,7 +14,7 @@ class Message extends Model
     use Notifiable;
 
     protected $fillable = [
-    'name','email','phone', 'message', 'consent','job', 'message_category_id'];
+    'id','name','email','phone', 'message', 'consent','job', 'message_category_id'];
 
     protected $guarded = [];
 

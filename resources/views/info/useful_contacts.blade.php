@@ -15,28 +15,28 @@
                     <div class="useful_contacts_links m30">
                         <div class="useful_contacts_links_row text-center">
                             <div class="useful_contacts_links_item ">
-                                <a href="https://дгск.мвд.рф/" target="_blank"><img src="/storage/partners/dgsk.jpg"
+                                <a href="https://дгск.мвд.рф/" target="_blank"><img src="/storage/app/public/partners/dgsk.jpg"
                                         alt="dskv" class="img-responsive" title="ДГСК МВД России">ДГСК МВД России</a>
                             </div>
                             <div class="useful_contacts_links_item">
-                                <a href="https://ос.мвд.рф/" target="_blank"> <img src="/storage/partners/mvd.jpg" alt="mvd"
+                                <a href="https://ос.мвд.рф/" target="_blank"> <img src="/storage/app/public/partners/mvd.jpg" alt="mvd"
                                         class="img-responsive" title="Общественный совет при МВД России">Общественный совет
                                     при МВД<br> России</a>
 
                             </div>
                             <div class="useful_contacts_links_item ">
                                 <a href="https://гибдд.рф/" target="_blank">
-                                    <img src="/storage/partners/gibdd.png" alt="gibdd.png" class="img-responsive"
+                                    <img src="/storage/app/public/partners/gibdd.png" alt="gibdd.png" class="img-responsive"
                                         title="Сайт ГИБДД">Сайт ГИБДД</a>
                             </div>
 
                             <div class="useful_contacts_links_item">
-                                <a href="https://мвд.рф/" target="_blank"> <img src="/storage/partners/mvdros.jpg"
+                                <a href="https://мвд.рф/" target="_blank"> <img src="/storage/app/public/partners/mvdros.jpg"
                                         alt="mvdrossii.jpg" class="img-responsive" title="Сайт МВД России">Сайт МВД России
                                 </a>
                             </div>
                             <div class="useful_contacts_links_item">
-                                <a href="https://ветеран.мвд.рф/" target="_blank"><img src="/storage/partners/mvdros.jpg"
+                                <a href="https://ветеран.мвд.рф/" target="_blank"><img src="/storage/app/public/partners/mvdros.jpg"
                                         alt="sovet.jpg" class="img-responsive" title="Сайт Совета ветеранов МВД">Сайт
                                     Совета
                                     ветеранов
@@ -44,12 +44,12 @@
                             </div>
                             <div class="useful_contacts_links_item">
                                 <a href="https://гут.мвд.рф/" target="_blank">
-                                    <img src="/storage/partners/gutmvd.jpg" alt="gutmvd.jpg" class="img-responsive"
+                                    <img src="/storage/app/public/partners/gutmvd.jpg" alt="gutmvd.jpg" class="img-responsive"
                                         title="ГУТ МВД России">
                                     ГУТ МВД России</a>
                             </div>
                             <div class="useful_contacts_links_item">
-                                <a href="http://pravo.gov.ru/"><img src="/storage/partners/pravovportal.jpg"
+                                <a href="http://pravo.gov.ru/"><img src="/storage/app/public/partners/pravovportal.jpg"
                                         alt="pravportal.jpg" class="img-responsive" title="Порталы правовой информации">
                                     Порталы
                                     правовой
@@ -57,13 +57,13 @@
                             </div>
                             <div class="useful_contacts_links_item">
                                 <a href="http://www.kremlin.ru/" target="_blank"> <img
-                                        src="/storage/partners/president_site.jpg" alt="president-site.jpg"
+                                        src="/storage/app/public/partners/president_site.jpg" alt="president-site.jpg"
                                         class="img-responsive" title="Сайт Президента РФ">Сайт Президента РФ
                                 </a>
                             </div>
                             <div class="useful_contacts_links_item">
                                 <a href="https://www.gosuslugi.ru/" target="_blank"><img
-                                        src="/storage/partners/gosuslugi.jpg" alt="gosuslugi_logo.jpg"
+                                        src="/storage/app/public/partners/gosuslugi.jpg" alt="gosuslugi_logo.jpg"
                                         class="img-responsive" title="Сайт Госуслуги">Госуслуги</a>
                             </div>
                         </div>

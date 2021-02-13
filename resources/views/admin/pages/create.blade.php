@@ -10,7 +10,8 @@
                         <div class="row mb-2">
                             <div class="col-sm-12 col-md-9 ml1">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.pages.index') }}">Страницы</a>
+                                    </li>
                                     <li class="breadcrumb-item active">Добавить страницу</li>
                                 </ol>
                             </div>
@@ -66,11 +67,11 @@
                                                     {{ Form::textArea('content', '', ['class' => 'form-control summernote']) }}
                                                 </div>
                                                 <div class="form-group">
-                                                    <p style="color: tomato;">В URL могут присутствовать только
-                                                        буквы и цифры латинского алфавита.Пробелы заменяются на "_"
-                                                        или "-"
-                                                        тире. Знаки препинания должны отсутствовать.
-                                                        Пример:/fond-orientir
+                                                    <p style="color: tomato;">URL адрес должен начинаться с "/". В нем могут
+                                                        присутствовать только буквы и цифры латинского алфавита.Пробелы
+                                                        заменяются на "_" или "-" тире. Знаки препинания должны
+                                                        отсутствовать.
+                                                        Пример:/new-page.
                                                     </p>
                                                     {{ Form::label('url', 'URL') }}
                                                     {{ Form::text('url', '', ['class' => 'form-control']) }}

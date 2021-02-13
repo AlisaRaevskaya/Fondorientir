@@ -26,21 +26,21 @@
         <title>Фонд "Ориентир"</title>
     @endif
 
-    <link href="/assets/css/main.css" rel="stylesheet">
-    <link href="/assets/css/fonts.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link href="/public/assets/css/main.css" rel="stylesheet">
+    <link href="/public/assets/css/fonts.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/public/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/public/assets/images/favicon.ico" type="image/x-icon">
 
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/assets/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
     <!-- Mobile Menu Style -->
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <link href="/assets/css/mobile-menu.css" rel="stylesheet">
+    <link href="/public/assets/css/style.css" rel="stylesheet">
+    <link href="/public/assets/css/mobile-menu.css" rel="stylesheet">
 
 
-    <script src="/assets/js/jquery-3.5.1.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/public/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="/public/assets/js/bootstrap.min.js"></script>
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a43ed7b6-cb6c-4d15-b403-9ba8685214e4&lang=ru_RU"
         type="text/javascript">
@@ -48,7 +48,7 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
-    @include('blocks.call')
+    @include('forms.call')
     <div id="main-wrapper">
         <div class="uc-mobile-menu-pusher">
             <div class="content-wrapper">
@@ -72,17 +72,17 @@
     </div>
 
     <!-- Theme Menu -->
-    <script src="/assets/js/mobile-menu.js"></script>
+    <script src="/public/assets/js/mobile-menu.js"></script>
 
     <!-- Theme Script -->
     <!-- All Scripts -->
-    <script src="/assets/js/index.js"></script>
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/ajax/call-ajax.js"></script>
-    <script src="/assets/js/ajax/reception-ajax.js"></script>
-    <script src="/assets/js/ajax/sidebar-ajax.js"></script>
-    <script src="/assets/js/ajax/lawyer-ajax.js"></script>
-    <script src="/assets/js/ajax/faq-ajax.js"></script>
+    <script src="/public/assets/js/index.js"></script>
+    <script src="/public/assets/js/script.js"></script>
+    <script src="/public/assets/js/ajax/call-ajax.js"></script>
+    <script src="/public/assets/js/ajax/reception-ajax.js"></script>
+    <script src="/public/assets/js/ajax/sidebar-ajax.js"></script>
+    <script src="/public/assets/js/ajax/lawyer-ajax.js"></script>
+    <script src="/public/assets/js/ajax/faq-ajax.js"></script>
 </body>
 
 </html>

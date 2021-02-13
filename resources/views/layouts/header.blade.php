@@ -6,7 +6,8 @@
                     <div style="display:flex;justify-content:center;">
                         <div class="text-center logo">
                             <a href="{{ route('main') }}">
-                                <img src="/storage/{{ $contact->logo }}" alt="Logo" class="img-responsive"></a>
+                                <img src="/storage/app/public/{{ $contact->logo }}" alt="Logo"
+                                    class="img-responsive"></a>
                         </div>
                         <div class="text-center" id="logo_name">
                             <p>Фонд поддержки<br>
@@ -15,7 +16,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 text-center mt1-7">
+                <div class="col-md-2 text-center">
+                    <div class="social">
+                        <a class="icons-sm fb-ic" href="{{ $contact->fb_link }}" target="_blank"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="icons-sm inst-ic" href="{{ $contact->inst_link }}" target="_blank"><i
+                                class="fa fa-instagram"> </i></a>
+
+                        <a class="icons-sm" href="{{ $contact->vk_link }}" target="_blank"><i class="fa fa-vk">
+                            </i></a>
+                    </div>
                 </div>
 
                 <div class="col-md-3 text-center mt1-7">
@@ -73,7 +83,7 @@
                                             {{ $item->title }}
                                             <span><i class="fa fa-angle-down"></i></span>
                                         </a>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu" style="right:0">
                                             <li>
                                                 <div class="m-menu-content">
                                                     <ul class="col-sm-3">

@@ -9,7 +9,7 @@
                 </button>
                 <div class="d-flex justify-between" style="padding:5pt 10pt">
                     <div class=""><img class="d-flex img-circle avatar z-depth-1-half mr-3"
-                            src="/assets/images/avatar-5.jpg" alt="Avatar"></div>
+                            src="/storage/app/public/avatar-5.jpg" alt="Avatar"></div>
                     <div class="pt10 ml3">
                         <h6>Задать вопрос юристу бесплатно</h6>
                         <p>Оставить заявку на бесплатную консультацию по вашему вопросу</p>
@@ -47,8 +47,9 @@
                                 value="Отправить">
                         </div>
                         <div class="consent-text">
-                            <span> Нажимая «Отправить» вы соглашаетесь с <a href="/storage/pdf/politika_confidence.pdf"
-                                    target="_blank" class="underline">
+                            <span> Нажимая «Отправить» вы соглашаетесь с <a
+                                    href="/storage/app/public/pdf/politika_confidence.pdf" target="_blank"
+                                    class="underline">
                                     Политикой обработки персональных данных.</a>
                             </span>
                         </div>
